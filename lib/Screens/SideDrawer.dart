@@ -15,16 +15,6 @@ class _SideDrawerState extends State<SideDrawer> {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-          // DrawerHeader(
-          //   decoration: BoxDecoration(
-          //     color: Colors.teal,
-          //     image: DecorationImage(
-          //       image: AssetImage("images/syrianlogo.jpg"),
-          //       fit: BoxFit.cover
-          //     )
-          //   ),
-          //   child: Text("Syrian"),
-          // ),
         Container(
         height: 250,
         decoration: BoxDecoration(
@@ -34,6 +24,13 @@ class _SideDrawerState extends State<SideDrawer> {
           ),
           ),
           ),
+          ListTile(
+            title: Text("About us "),
+            leading: Icon(
+              Icons.person
+            ),
+            onTap: (){},
+          )
         ],
       ),
     );
