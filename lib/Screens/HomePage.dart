@@ -22,9 +22,25 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
       drawer: SideDrawer(),
-      body: Center(
-        child: Text("Hello everyone"),
-      ),
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: ListView(
+          children: [
+            Column(
+              children: [
+                MaterialButton(
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                  height: 40,
+                  minWidth: 230,
+                  color: Colors.grey,
+                  child: Text("Add things +"),
+                  onPressed: (){},
+                )
+              ],
+            )
+          ],
+        ),
+      )
     );
   }
 }
