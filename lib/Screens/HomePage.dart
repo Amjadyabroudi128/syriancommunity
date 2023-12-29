@@ -15,6 +15,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: Icon(Icons.list),
+              onPressed: (){
+                Scaffold.of(context).openDrawer();
+              },
+            );
+
+          },
+
+        ),
+
         toolbarHeight: 34,
         title: Align(
           alignment: Alignment.centerRight,
