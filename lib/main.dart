@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
      debugShowCheckedModeBanner: false,
+      initialRoute: "homepage",
       title: "Syrian Community ",
     //     theme: ThemeData(
     //     // Define the default brightness and colors.
@@ -23,6 +24,10 @@ class MyApp extends StatelessWidget {
     // ),
     // ),
       home: HomePage(),
+      routes: {
+       "homepage" : (context) => HomePage(),
+
+      },
     );
   }
 }
