@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 33,
+        toolbarHeight: 34,
         title: Align(
           alignment: Alignment.centerRight,
           child: Text("Syrian Community"),
@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
             Column(
               children: [
                 MaterialButton(
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
                   height: 40,
                   minWidth: 230,
                   color: Colors.grey,
