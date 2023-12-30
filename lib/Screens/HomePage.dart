@@ -15,7 +15,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
@@ -26,10 +25,8 @@ class _HomePageState extends State<HomePage> {
             );
 
           },
-
         ),
-
-        toolbarHeight: 34,
+        toolbarHeight: 70,
         title: Align(
           alignment: Alignment.centerRight,
           child: Text("Syrian Community"),
@@ -49,8 +46,11 @@ class _HomePageState extends State<HomePage> {
                   minWidth: 230,
                   color: Colors.grey,
                   child: Text("Add things +"),
-                  onPressed: (){},
-                )
+                  onPressed: (){
+                    Navigator.of(context).pushNamed("addInfo");
+                  },
+                ),
+                SizedBox(height: 12,),
               ],
             )
           ],
