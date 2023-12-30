@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "362925763810",
+    "project_id": "syriancommunity-5239d",
+    "storage_bucket": "syriancommunity-5239d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362925763810:android:3e179ce12ca5c3c64a02bb",
+        "android_client_info": {
+          "package_name": "com.example.syrianadmin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSQtMlQwLsEkK5B1P4fjASVfZ0GCq1eLU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
