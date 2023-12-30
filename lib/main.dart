@@ -1,8 +1,20 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/Screens/Add%20information.dart';
 
 import 'Screens/HomePage.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+        apiKey: "AIzaSyDSQtMlQwLsEkK5B1P4fjASVfZ0GCq1eLU",
+        appId: "syriancommunity-5239d",
+        messagingSenderId:
+        "362925763810",
+        projectId: "syriancommunity-5239d"
+    ),
+  );
   runApp(const MyApp());
 }
 
@@ -26,6 +38,7 @@ class MyApp extends StatelessWidget {
       home: HomePage(),
       routes: {
        "homepage" : (context) => HomePage(),
+        "addInfo" : (context) => AddInfo(),
 
       },
     );
