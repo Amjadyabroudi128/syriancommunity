@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'DropDown.dart';
+
 import 'SideDrawer.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,20 +15,16 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // leading: Builder(
-        //   builder: (BuildContext context) {
-        //     return IconButton(
-        //       icon: Icon(Icons.list),
-        //       onPressed: (){
-        //         Scaffold.of(context).openDrawer();
-        //       },
-        //     );
-        //
-        //   },
-        // ),
-        actions: [
-          DropDown(),
-        ],
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: Icon(Icons.list),
+              onPressed: (){
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          },
+        ),
         toolbarHeight: 70,
         title: Align(
           alignment: Alignment.centerRight,
@@ -36,7 +32,7 @@ class _HomePageState extends State<HomePage> {
         ),
         backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
-      // drawer: SideDrawer(),
+      drawer: SideDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: ListView(
