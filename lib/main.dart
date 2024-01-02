@@ -39,7 +39,6 @@ class MyApp extends StatelessWidget {
       routes: {
        "homepage" : (context) => HomePage(),
         "addInfo" : (context) => AddInfo(),
-
       },
     );
   }
