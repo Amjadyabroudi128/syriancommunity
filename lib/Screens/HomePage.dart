@@ -33,6 +33,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
       drawer: SideDrawer(),
+      // i prefer the drawer to the DropDownMenu
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: ListView(
