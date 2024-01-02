@@ -71,6 +71,7 @@ class _SideDrawerState extends State<SideDrawer> {
               size: 30,
             ),
           ),
+          // these are the pages that i am trying to make
         ],
       ),
     );
