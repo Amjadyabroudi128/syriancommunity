@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/Screens/Add%20information.dart';
+import 'package:syrianadmin/Screens/team/Team.dart';
+import 'package:syrianadmin/Screens/team/addTeam.dart';
 
 import 'Screens/HomePage.dart';
 
@@ -39,6 +41,8 @@ class MyApp extends StatelessWidget {
       routes: {
        "homepage" : (context) => HomePage(),
         "addInfo" : (context) => AddInfo(),
+        "ourteam" : (context) => MeetOurTeam(),
+        "addMember" : (context) => AddMember(),
       },
     );
   }
