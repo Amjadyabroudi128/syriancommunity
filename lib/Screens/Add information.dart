@@ -12,6 +12,11 @@ class _AddInfoState extends State<AddInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("adding to home page "),
+        backgroundColor: Color.fromARGB(255, 33, 173, 168),
+      ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
