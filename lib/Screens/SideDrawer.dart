@@ -32,9 +32,9 @@ class _SideDrawerState extends State<SideDrawer> {
             ),
           ),
           ListTile(
-            title: Text("About us "),
+            title: Text("contact us "),
             leading: Icon(
-              CupertinoIcons.person_fill,
+              CupertinoIcons.mail_solid,
               size: 30,
 
             ),
@@ -55,7 +55,10 @@ class _SideDrawerState extends State<SideDrawer> {
               CupertinoIcons.group_solid,
               size: 30,
             ),
-            onTap: (){},
+            onTap: (){
+              Navigator.of(context).pushNamed("ourteam");
+
+            },
           ),
           ListTile(
             title: Text("Learning Resources"),
