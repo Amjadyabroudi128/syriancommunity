@@ -30,15 +30,21 @@ class _SideDrawerState extends State<SideDrawer> {
               CupertinoIcons.home,
               size: 30,
             ),
+            onTap: (){
+              Navigator.of(context).pushReplacementNamed("homepage");
+
+            },
           ),
           ListTile(
             title: Text("contact us "),
             leading: Icon(
               CupertinoIcons.mail_solid,
               size: 30,
-
             ),
-            onTap: (){},
+            onTap: (){
+              Navigator.of(context).pushNamed("contactus");
+
+            },
           ),
           ListTile(
             title: Text("Latest News"),
