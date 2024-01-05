@@ -80,6 +80,16 @@ class _SideDrawerState extends State<SideDrawer> {
               size: 30,
             ),
           ),
+          ListTile(
+            title: Text("Celebrations"),
+            leading: Icon(
+              IconData(0xe149, fontFamily: 'MaterialIcons'),
+              size: 30,
+            ),
+            onTap: (){
+              Navigator.of(context).pushNamed("celebrations");
+            },
+          ),
           // these are the pages that i am trying to make
         ],
       ),
