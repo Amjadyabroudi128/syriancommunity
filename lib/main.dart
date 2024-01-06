@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/Celebrations/AddCelebration.dart';
 import 'package:syrianadmin/Celebrations/CelebrationView.dart';
 import 'package:syrianadmin/Screens/Add%20information.dart';
 import 'package:syrianadmin/Screens/Contact/AddContactDetails.dart';
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
         "contactus" : (context) => ContactUs(),
         "addcontact" : (context) => AddContactDetails(),
         "celebrations" : (context) => Celebrations(),
+        "addcelebration" : (context) => AddCelebration(),
       },
     );
   }
