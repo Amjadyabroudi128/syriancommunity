@@ -13,7 +13,7 @@ class Celebrations extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
       body: Center(
-        child: Text("Celebrations"),
+        child: Text("here you can see the celebrations "),
       ),
     );
   }
