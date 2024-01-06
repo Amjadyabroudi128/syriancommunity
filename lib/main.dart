@@ -34,13 +34,6 @@ class MyApp extends StatelessWidget {
      debugShowCheckedModeBanner: false,
       initialRoute: "homepage",
       title: "Syrian Community ",
-    //     theme: ThemeData(
-    //     // Define the default brightness and colors.
-    //     colorScheme: ColorScheme.f(
-    //     seedColor: Color.fromARGB(255, 33, 173, 168),
-    //       brightness: Brightness.light
-    // ),
-    // ),
       home: HomePage(),
       routes: {
        "homepage" : (context) => HomePage(),
