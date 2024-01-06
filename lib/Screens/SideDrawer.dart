@@ -47,15 +47,6 @@ class _SideDrawerState extends State<SideDrawer> {
             },
           ),
           ListTile(
-            title: Text("Latest News"),
-            leading: Icon(
-              CupertinoIcons.news_solid,
-              size: 30,
-
-            ),
-            onTap: (){},
-          ),
-          ListTile(
             title: Text("meet Our Teeam "),
             leading: Icon(
               CupertinoIcons.group_solid,
