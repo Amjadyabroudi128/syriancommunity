@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/components/SubmitButton.dart';
 
 import '../components/TextField.dart';
 
@@ -40,6 +41,13 @@ class _AddCelebrationState extends State<AddCelebration> {
                 child: Text("Details"),
               ),
               CustomTextForm(hinttext: "what we do ", myController: celebrationName),
+              SizedBox(height: 15,),
+              Center(
+                child: CustomButton(
+                    onPressed: (){
+
+                    }, title: "submit"),
+              )
             ],
           ),
         ),
