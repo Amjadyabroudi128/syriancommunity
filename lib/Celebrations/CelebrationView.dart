@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../components/SubmitButton.dart';
+
 class Celebrations extends StatelessWidget {
   const Celebrations({Key? key}) : super(key: key);
 
@@ -12,8 +14,18 @@ class Celebrations extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
-      body: Center(
-        child: Text("here you can see the celebrations "),
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: ListView(
+          children: [
+            CustomButton(
+                onPressed: (){
+                  Navigator.of(context).pushNamed("addcelebration");
+                },
+                title: "Add celebrations")
+          ],
+
+        ),
       ),
     );
   }
