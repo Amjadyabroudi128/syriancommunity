@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
@@ -20,9 +21,24 @@ class ContactUs extends StatelessWidget {
            onPressed: (){
     Navigator.of(context).pushNamed("addcontact");
     },
-           title: "Add contact details")
-          ],
+           title: "Add contact details"),
+            StreamBuilder(
+              stream: FirebaseFirestore.instance.collection("contact").snapshots(),
+              builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot)
+                {
+                  if (!snapshot.hasData) {
+                    return Center(child: Text("no data yet"));
+                  }
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      child: ,
+                    ),
+                  );
+                }
 
+            )
+          ],
       ),
       ),
     );
