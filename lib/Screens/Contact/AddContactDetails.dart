@@ -18,7 +18,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
   TextEditingController city = TextEditingController();
   TextEditingController postcode = TextEditingController();
   TextEditingController email = TextEditingController();
-
+  TextEditingController phone = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +64,14 @@ class _AddContactDetailsState extends State<AddContactDetails> {
               ),
               CustomTextForm(
                   hinttext: "email", myController: email),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("phone"),
+              ),
+              CustomTextForm(
+                  hinttext: "phone", myController: phone),
               SizedBox(height: 15,),
+
               Center(child:
               CustomButton(onPressed: () async {
                 await FirebaseFirestore.instance.collection("contact").doc().set({
@@ -73,6 +80,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
                   "city" : city.text,
                   "post code" : postcode.text,
                   "email" : email.text,
+                  "phone" : phone.text
                 });
                 clearText();
               }, title: "Submit"))
