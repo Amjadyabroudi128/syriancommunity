@@ -45,7 +45,6 @@ class MyApp extends StatelessWidget {
         "addcontact" : (context) => AddContactDetails(),
         "celebrations" : (context) => Celebrations(),
         "addcelebration" : (context) => AddCelebration(),
-        "edit" : (context) => EditContact(),
       },
     );
   }
