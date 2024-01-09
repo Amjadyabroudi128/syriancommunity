@@ -110,6 +110,10 @@ class _ContactUsState extends State<ContactUs> {
                                         ),
                                       ),
                                       SizedBox(height: 15,),
+                                      Text("Or you can Contact us through email or phone", style: TextStyle(
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.bold),),
+                                      
                                     ],
                                   ),
                                 );
