@@ -92,7 +92,13 @@ class _ContactUsState extends State<ContactUs> {
                                                     IconButton(onPressed: () {
                                                       Navigator.of(context).push(
                                                           MaterialPageRoute(builder: (context) =>
-                                                          EditDetails(DocID: document.id,)));
+                                                          EditDetails(DocID: document.id,
+                                                            oldPlace: data["place"],
+                                                            oldRoad: data["street name"],
+                                                            oldCity: data["city"],
+                                                            oldEmail: data["email"],
+                                                            oldPHone: data["phone"],
+                                                            oldPostCode: data["post code"],)));
                                                     },
                                                         icon: Icon(Icons.edit,)
                                                     ),
