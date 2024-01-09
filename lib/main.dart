@@ -8,6 +8,7 @@ import 'package:syrianadmin/Screens/Contact/ContactUS.dart';
 import 'package:syrianadmin/Screens/team/Team.dart';
 import 'package:syrianadmin/Screens/team/addTeam.dart';
 
+import 'Screens/Contact/Edit.dart';
 import 'Screens/HomePage.dart';
 
 void main() async {
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         "addcontact" : (context) => AddContactDetails(),
         "celebrations" : (context) => Celebrations(),
         "addcelebration" : (context) => AddCelebration(),
+        "edit" : (context) => EditContact(),
       },
     );
   }
