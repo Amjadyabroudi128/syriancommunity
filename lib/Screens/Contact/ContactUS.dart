@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/Screens/Contact/Edit.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 
 class ContactUs extends StatefulWidget {
@@ -14,6 +15,7 @@ class ContactUs extends StatefulWidget {
 class _ContactUsState extends State<ContactUs> {
   final CollectionReference contact =
   FirebaseFirestore.instance.collection('contact');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,7 +90,9 @@ class _ContactUsState extends State<ContactUs> {
                                                         icon: Icon(Icons.delete, color: Colors.red,)
                                                     ),
                                                     IconButton(onPressed: () {
-
+                                                      Navigator.of(context).push(
+                                                          MaterialPageRoute(builder: (context) =>
+                                                          EditDetails(DocID: document.id,)));
                                                     },
                                                         icon: Icon(Icons.edit,)
                                                     ),

@@ -1,18 +1,19 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:syrianadmin/components/SubmitButton.dart';
-import 'package:syrianadmin/components/TextField.dart';
 
-class AddContactDetails extends StatefulWidget {
-  const AddContactDetails({Key? key}) : super(key: key);
+import '../../components/SubmitButton.dart';
+import '../../components/TextField.dart';
+
+class EditDetails extends StatefulWidget {
+  final String DocID;
+  const EditDetails({Key? key, required this.DocID}) : super(key: key);
 
   @override
-  State<AddContactDetails> createState() => _AddContactDetailsState();
+  State<EditDetails> createState() => _AddContactDetailsState();
 }
 
-class _AddContactDetailsState extends State<AddContactDetails> {
+class _AddContactDetailsState extends State<EditDetails> {
 
   TextEditingController place = TextEditingController();
   TextEditingController road = TextEditingController();
@@ -24,18 +25,18 @@ class _AddContactDetailsState extends State<AddContactDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
+      appBar: AppBar(
         centerTitle: true,
-        title: Text("adding contactDetails"),
-    backgroundColor: Color.fromARGB(255, 33, 173, 168),
-        ),
+        title: Text("editing contactDetails"),
+        backgroundColor: Color.fromARGB(255, 33, 173, 168),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(child: Text("Add Contact info")),
+              Center(child: Text("edit Contact info")),
               SizedBox(height: 12,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -76,7 +77,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
               Center(child:
               CustomButton
                 (onPressed: () async {
-                await FirebaseFirestore.instance.collection("contact").doc().set({
+                await FirebaseFirestore.instance.collection("contact").doc(widget.DocID).update({
                   "place" : place.text,
                   "street name" : road.text,
                   "city" : city.text,
@@ -85,7 +86,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
                   "phone" : phone.text
                 });
                 clearText();
-              }, title: "Submit")
+              }, title: "Update")
               )
             ],
           ),
@@ -99,5 +100,6 @@ class _AddContactDetailsState extends State<AddContactDetails> {
     city.clear();
     postcode.clear();
     email.clear();
+    phone.clear();
   }
 }

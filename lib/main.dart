@@ -7,8 +7,6 @@ import 'package:syrianadmin/Screens/Contact/AddContactDetails.dart';
 import 'package:syrianadmin/Screens/Contact/ContactUS.dart';
 import 'package:syrianadmin/Screens/team/Team.dart';
 import 'package:syrianadmin/Screens/team/addTeam.dart';
-
-import 'Screens/Contact/Edit.dart';
 import 'Screens/HomePage.dart';
 
 void main() async {
