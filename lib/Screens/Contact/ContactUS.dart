@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/Screens/Contact/Edit.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 
 class ContactUs extends StatefulWidget {
@@ -27,12 +28,17 @@ class _ContactUsState extends State<ContactUs> {
                 padding: const EdgeInsets.all(8.0),
                 child:
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CustomButton(
-                        onPressed: (){
-                          Navigator.of(context).pushNamed("addcontact");
-                        },
-                        title: "Add contact details"),
+                    Center(
+                      child: CustomButton(
+                          onPressed: (){
+                            Navigator.of(context).pushNamed("addcontact");
+                          },
+                          title: "Add contact details"),
+                    ),
+                    SizedBox(height: 30,),
+                    Text("You can visit us here ", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
                     StreamBuilder <QuerySnapshot>(
                       stream: FirebaseFirestore.instance.collection("contact").snapshots(),
                         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -43,87 +49,74 @@ class _ContactUsState extends State<ContactUs> {
                           if (snapshot.connectionState == ConnectionState.waiting) {
                             return Text("Loading");
                           }
+                          return 
+                            SingleChildScrollView(
+                              child: ListView(
+                              shrinkWrap: true,
+                              children: snapshot.data!.docs.map((DocumentSnapshot document) {
+                                Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        width: 400,
+                                        child: Card(
+                                          color: Colors.grey[300],
+                                          child: Padding(
+                                            padding: EdgeInsets.all(12),
+                                            child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                        Text("our Address"),
+                                                        SizedBox(height: 10,),
+                                                        Text(data["place"]),
+                                                        SizedBox(height: 10,),
+                                                        Text(data["street name"]),
+                                                        SizedBox(height: 10,),
+                                                        Text(data["city"]),
+                                                        SizedBox(height: 10,),
+                                                        Text(data["post code"]),
+                                                Row(
+                                                  mainAxisAlignment: MainAxisAlignment.end,
+                                                  children: [
+                                                    IconButton(onPressed: () async{
+                                                      await FirebaseFirestore.instance.collection("contact").doc(document.id).delete();
+                                                      Navigator.of(context).pushNamed("contactus");
 
-                          return ListView(
-                            shrinkWrap: true,
-                            children: snapshot.data!.docs.map((DocumentSnapshot document) {
-                              Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
-                              return ListTile(
-                                title: Text(data['street name']),
-                                subtitle: Text(data['post code']),
-                              );
-                            }).toList(),
-                        );
+                                                    },
+                                                        icon: Icon(Icons.delete, color: Colors.red,)
+                                                    ),
+                                                    IconButton(onPressed: () {
+                                                      Navigator.of(context).pushNamed("edit");
+                                                    },
+                                                        icon: Icon(Icons.edit,)
+                                                    ),
+                                                  ],
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 15,),
+                                    ],
+                                  ),
+                                );
+
+                              }).toList(),
+                        ),
+                            );
                       }
                     ),
+
                   ],
                 ),
 
               ),
             ),
-            // StreamBuilder <QuerySnapshot>(
-            //   stream: FirebaseFirestore.instance.collection("contact").snapshots(),
-            //     builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-            //       if (snapshot.hasError) {
-            //         return Text('Something went wrong');
-            //       }
-            //
-            //       if (snapshot.connectionState == ConnectionState.waiting) {
-            //         return Text("Loading");
-            //       }
-            //
-            //       return ListView(
-            //         children: snapshot.data!.docs.map((DocumentSnapshot document) {
-            //           Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
-            //           return ListTile(
-            //             title: Text(data['street name']),
-            //             subtitle: Text(data['post code']),
-            //           );
-            //         }).toList(),
-            //     );
-            //
-            //   }
-            // )
+
     );
   }
 }
-
-// class ContactUs extends StatelessWidget {
-//   ContactUs({required this.document});
-//   final document;
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text("Contact us "),
-//         backgroundColor: Color.fromARGB(255, 33, 173, 168),
-//       ),
-//       body: Padding(
-//         padding: const EdgeInsets.all(15.0),
-//         child: ListView(
-//           children: [
-//             CustomButton(
-//            onPressed: (){
-//     Navigator.of(context).pushNamed("addcontact");
-//     },
-//            title: "Add contact details"),
-//             StreamBuilder(
-//               stream: FirebaseFirestore.instance.collection("contact").snapshots(),
-//               builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot)
-//                 {
-//                   if (!snapshot.hasData) {
-//                     return Center(child: Text("no data yet"));
-//                   }
-//                   return ListView(
-//
-//                   );
-//                 }
-//
-//             )
-//           ],
-//       ),
-//       ),
-//     );
-//   }
-// }
