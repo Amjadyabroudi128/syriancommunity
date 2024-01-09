@@ -84,6 +84,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
                   "email" : email.text,
                   "phone" : phone.text
                 });
+                Navigator.of(context).pushNamed("contactus");
                 clearText();
               }, title: "Submit")
               )
