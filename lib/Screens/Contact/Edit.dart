@@ -35,7 +35,8 @@ class _AddContactDetailsState extends State<EditDetails> {
     road.text = widget.oldRoad;
     city.text = widget.oldCity;
     postcode.text = widget.oldPostCode;
-    place.text = widget.oldPlace;
+    phone.text = widget.oldPHone;
+    email.text = widget.oldEmail;
 
 
   }
@@ -102,6 +103,7 @@ class _AddContactDetailsState extends State<EditDetails> {
                   "email" : email.text,
                   "phone" : phone.text
                 });
+                Navigator.of(context).pushNamed("contactus");
                 clearText();
               }, title: "Update")
               )
