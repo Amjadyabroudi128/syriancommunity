@@ -7,7 +7,14 @@ import '../../components/TextField.dart';
 
 class EditDetails extends StatefulWidget {
   final String DocID;
-  const EditDetails({Key? key, required this.DocID}) : super(key: key);
+  final String oldPlace;
+  final String oldRoad;
+  final String oldCity;
+  final String oldEmail;
+  final String oldPHone;
+  final String oldPostCode;
+
+  const EditDetails({Key? key, required this.DocID, required this.oldPlace, required this.oldRoad, required this.oldCity, required this.oldEmail, required this.oldPHone, required this.oldPostCode}) : super(key: key);
 
   @override
   State<EditDetails> createState() => _AddContactDetailsState();
@@ -21,7 +28,17 @@ class _AddContactDetailsState extends State<EditDetails> {
   TextEditingController postcode = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController phone = TextEditingController();
+  @override
+  void initState() {
+    super.initState();
+    place.text = widget.oldPlace;
+    road.text = widget.oldRoad;
+    city.text = widget.oldCity;
+    postcode.text = widget.oldPostCode;
+    place.text = widget.oldPlace;
 
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
