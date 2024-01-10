@@ -1,10 +1,11 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:path/path.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:image_picker/image_picker.dart';
@@ -19,19 +20,17 @@ class AddMember extends StatefulWidget {
 class _AddMemberState extends State<AddMember> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
-  File? image;
-
+  File? file;
+  String? url;
   Future pickImage() async {
-    try {
-      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
-
-      if(image == null) return;
-
-      final imageTemp = File(image.path);
-
-      setState(() => this.image = imageTemp);
-    } on PlatformException catch(e) {
-      print('Failed to pick image: $e');
+    final ImagePicker picker = ImagePicker();
+    final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
+    if (imageCamera != null) {
+      file = File(imageCamera!.path);
+      var imagename = basename(imageCamera!.path);
+      var refStorage = FirebaseStorage.instance.ref(imagename);
+      await refStorage.putFile(file!);
+       url = await refStorage.getDownloadURL();
     }
   }
   @override
@@ -75,7 +74,7 @@ class _AddMemberState extends State<AddMember> {
                     },
                   ),
                 ),
-                // if (image != null) Image.file(image!),
+                // if (url != null) Image.network("https://firebasestorage.googleapis.com/v0/b/syriancommunity-5239d.appspot.com/o/Fathi_Khalil.jpg?alt=media&token=5b3ea083-6c67-499c-b528-33c46cffe528"),
                 SizedBox(height: 15,),
                 Center(
                   child: CustomButton(
