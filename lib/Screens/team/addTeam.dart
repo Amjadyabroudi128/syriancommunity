@@ -1,9 +1,13 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
+import 'package:image_picker/image_picker.dart';
 
 class AddMember extends StatefulWidget {
   const AddMember({Key? key}) : super(key: key);
@@ -15,6 +19,21 @@ class AddMember extends StatefulWidget {
 class _AddMemberState extends State<AddMember> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
+  File? image;
+
+  Future pickImage() async {
+    try {
+      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+
+      if(image == null) return;
+
+      final imageTemp = File(image.path);
+
+      setState(() => this.image = imageTemp);
+    } on PlatformException catch(e) {
+      print('Failed to pick image: $e');
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +64,18 @@ class _AddMemberState extends State<AddMember> {
                 CustomTextForm(
                     hinttext: "details",
                     myController: details),
+                SizedBox(height: 12,),
+                Center(
+                  child: CustomButton(
+                    title: "get image",
+                    onPressed: () async {
+                    await pickImage();
+                      setState(() {
+                      });
+                    },
+                  ),
+                ),
+                // if (image != null) Image.file(image!),
                 SizedBox(height: 15,),
                 Center(
                   child: CustomButton(
