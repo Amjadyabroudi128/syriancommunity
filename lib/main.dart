@@ -12,12 +12,14 @@ import 'Screens/HomePage.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
+    // name: "syriancommunity-5239d",
     options: FirebaseOptions(
         apiKey: "AIzaSyDSQtMlQwLsEkK5B1P4fjASVfZ0GCq1eLU",
         appId: "syriancommunity-5239d",
         messagingSenderId:
         "362925763810",
-        projectId: "syriancommunity-5239d"
+        projectId: "syriancommunity-5239d",
+      storageBucket: "syriancommunity-5239d.appspot.com",
     ),
   );
   runApp(const MyApp());
