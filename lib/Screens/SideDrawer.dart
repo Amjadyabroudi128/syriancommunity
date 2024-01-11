@@ -73,7 +73,7 @@ class _SideDrawerState extends State<SideDrawer> {
           ListTile(
             title: Text("Celebrations"),
             leading: Icon(
-              IconData(0xe149, fontFamily: 'MaterialIcons'),
+              Icons.celebration,
               size: 30,
             ),
             onTap: (){
