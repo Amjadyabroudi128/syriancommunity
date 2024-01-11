@@ -52,8 +52,8 @@ class _ContactUsState extends State<ContactUs> {
                               return Text("Loading");
                             }
                             return 
-                              SingleChildScrollView(
-                                child: ListView(
+                              ListView(
+                                scrollDirection: Axis.vertical,
                                 shrinkWrap: true,
                                 children: snapshot.data!.docs.map((DocumentSnapshot document) {
                                   Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
@@ -166,7 +166,6 @@ class _ContactUsState extends State<ContactUs> {
                                   );
 
                                 }).toList(),
-                          ),
                               );
                         }
                       ),
