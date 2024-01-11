@@ -83,6 +83,7 @@ class _AddMemberState extends State<AddMember> {
                             {
                               "name" : name.text,
                               "details" : details.text,
+                              "image" : url,
                             }
                         );
                         clearText();
