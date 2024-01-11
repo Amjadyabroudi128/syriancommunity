@@ -23,7 +23,6 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
         backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
       body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
         child: Column(
           children: [
             StreamBuilder(
@@ -38,6 +37,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                   }
                   return SingleChildScrollView(
                     child: ListView(
+                      physics: ScrollPhysics(),
                       shrinkWrap: true,
                       children: snapshot.data!.docs.map((DocumentSnapshot document){
                       Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
