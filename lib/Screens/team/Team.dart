@@ -1,6 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/components/SubmitButton.dart';
+
+import 'EditTeam.dart';
 
 
 class MeetOurTeam extends StatefulWidget {
@@ -25,6 +28,16 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: CustomButton(
+                onPressed: (){
+                  Navigator.of(context).pushNamed("addMember");
+
+                },
+                title: "Add members +",
+              ),
+            ),
             StreamBuilder(
               stream: members.snapshots(),
                 builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -50,8 +63,8 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                             clipBehavior: Clip.antiAlias,
                             child: Image.network(
                               data["image"],
-                              width: 270,
-                              height: 270,
+                              width: 240,
+                              height: 240,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -62,10 +75,46 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                           Container(
                             child: Card(
                               color: Colors.grey[300],
-                              child: Center(child: Text(data["details"])),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Text(data["details"], style: TextStyle(fontSize: 17),),
+                                  ),
+                                  Row(
+                                    children: [
+                                      IconButton(
+                                        onPressed: (){
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(builder: (context) =>
+                                                  EditMember(DocID: document.id ,
+                                                    oldName: data["name"],
+                                                    oldDetail: data["details"],
+                                                    oldUrl: data["image"],)
+                                          ));
+                                        },
+                                        icon: Icon(
+                                            Icons.edit
+                                        ),
+                                      ),
+                                      IconButton(
+                                        onPressed: () async {
+                                          await FirebaseFirestore.instance.collection("members").doc(document.id).delete();
+                                          Navigator.of(context).pushNamed("ourteam");
+                                        },
+                                        icon: Icon(
+                                            Icons.delete,
+                                          color: Colors.red,
+                                        ),
+                                      ),
+                                    ],
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                  ),
+                                ],
+                              ),
                             ),
-                            height: 120,
-                            width: 400,
+                            height: 160,
+                            width: MediaQuery.of(context).size.width,
                           ),
                         ],
                       );
