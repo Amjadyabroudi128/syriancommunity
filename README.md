@@ -13,4 +13,8 @@ here are some screenshots so far
 shows the team for Brighton community
 ![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/9fffb693-5c62-40d8-b5ab-d7b246ddcb9f)
 
+here is another screenshot of another page 
+
+![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/4c2090e7-5f36-43d0-860d-10be819325f1)
+
 
