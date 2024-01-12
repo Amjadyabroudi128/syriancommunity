@@ -55,7 +55,6 @@ class _ContactUsState extends State<ContactUs> {
                               }
                               return 
                                 ListView(
-                                  scrollDirection: Axis.vertical,
                                   physics: ScrollPhysics(),
                                   shrinkWrap: true,
                                   children: snapshot.data!.docs.map((DocumentSnapshot document) {
