@@ -64,13 +64,6 @@ class _SideDrawerState extends State<SideDrawer> {
             ),
           ),
           ListTile(
-            title: Text("Links"),
-            leading: Icon(
-              CupertinoIcons.link,
-              size: 30,
-            ),
-          ),
-          ListTile(
             title: Text("Celebrations"),
             leading: Icon(
               Icons.celebration,
