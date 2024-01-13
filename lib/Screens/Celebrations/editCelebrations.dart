@@ -15,6 +15,7 @@ class _EditCelebrationState extends State<EditCelebration> {
       appBar: AppBar(
         centerTitle: true,
         title: Text("edit celebrations "),
+        backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
     );
   }
