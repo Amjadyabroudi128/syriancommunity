@@ -17,6 +17,9 @@ class _EditCelebrationState extends State<EditCelebration> {
         title: Text("edit celebrations "),
         backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
+      body: Center(
+        child: Text("this is the editing page "),
+      ),
     );
   }
 }
