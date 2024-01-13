@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../components/SubmitButton.dart';
-
+import '../../components/SubmitButton.dart';
 class Celebrations extends StatelessWidget {
   const Celebrations({Key? key}) : super(key: key);
 
