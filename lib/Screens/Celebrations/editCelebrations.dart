@@ -12,7 +12,10 @@ class _EditCelebrationState extends State<EditCelebration> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("edit celebrations "),
+      ),
     );
   }
 }
