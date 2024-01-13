@@ -1,13 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:syrianadmin/Celebrations/AddCelebration.dart';
-import 'package:syrianadmin/Celebrations/CelebrationView.dart';
 import 'package:syrianadmin/Screens/Add%20information.dart';
 import 'package:syrianadmin/Screens/Contact/AddContactDetails.dart';
 import 'package:syrianadmin/Screens/Contact/ContactUS.dart';
 import 'package:syrianadmin/Screens/team/EditTeam.dart';
 import 'package:syrianadmin/Screens/team/Team.dart';
 import 'package:syrianadmin/Screens/team/addTeam.dart';
+import 'Screens/Celebrations/AddCelebration.dart';
+import 'Screens/Celebrations/CelebrationView.dart';
 import 'Screens/HomePage.dart';
 
 void main() async {
