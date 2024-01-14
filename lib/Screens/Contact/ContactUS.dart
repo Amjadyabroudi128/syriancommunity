@@ -67,6 +67,7 @@ class _ContactUsState extends State<ContactUs> {
                                           Container(
                                             width: 400,
                                             child: Card(
+                                              elevation: 0,
                                               child: Padding(
                                                 padding: EdgeInsets.all(12),
                                                 child: Column(
