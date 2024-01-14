@@ -75,7 +75,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                           Container(
                             child: Card(
                               elevation: 0,
-                              color: Colors.grey[10],
+                              color: Colors.grey[300],
                               child: Column(
                                 children: [
                                   Padding(
