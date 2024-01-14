@@ -1,6 +1,11 @@
+import 'dart:io';
+
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
+import 'package:path/path.dart';
 
 import '../../components/TextField.dart';
 class AddCelebration extends StatefulWidget {
@@ -14,7 +19,19 @@ class _AddCelebrationState extends State<AddCelebration> {
   TextEditingController celebrationName = TextEditingController();
   TextEditingController celebrationDetail = TextEditingController();
 
-
+  File? file;
+  String? url;
+  Future pickImage() async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
+    if (imageCamera != null) {
+      file = File(imageCamera!.path);
+      var imagename = basename(imageCamera!.path);
+      var refStorage = FirebaseStorage.instance.ref(imagename);
+      await refStorage.putFile(file!);
+      url = await refStorage.getDownloadURL();
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
