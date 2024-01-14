@@ -74,7 +74,8 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                           SizedBox(height: 12,),
                           Container(
                             child: Card(
-                              color: Colors.grey[300],
+                              elevation: 0,
+                              color: Colors.grey[10],
                               child: Column(
                                 children: [
                                   Padding(
