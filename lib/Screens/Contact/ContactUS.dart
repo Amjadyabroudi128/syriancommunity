@@ -67,7 +67,6 @@ class _ContactUsState extends State<ContactUs> {
                                           Container(
                                             width: 400,
                                             child: Card(
-                                              color: Colors.grey[300],
                                               child: Padding(
                                                 padding: EdgeInsets.all(12),
                                                 child: Column(
