@@ -121,6 +121,7 @@ class _ContactUsState extends State<ContactUs> {
                                             height: 200,
                                             width: 400,
                                             child: Card(
+                                              elevation: 0,
                                               child: Column(
                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
