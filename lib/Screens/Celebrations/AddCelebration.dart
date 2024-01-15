@@ -58,14 +58,17 @@ class _AddCelebrationState extends State<AddCelebration> {
               ),
               CustomTextForm(hinttext: "what we do ", myController: celebrationName),
               SizedBox(height: 15,),
-              Center(
-                child: CustomButton(
-                  title: "celebration image",
-                  onPressed: () async {
-                    await pickImage();
-                    setState(() {
-                    });
-                  },
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                  child: CustomButton(
+                    title: "celebration image",
+                    onPressed: () async {
+                      await pickImage();
+                      setState(() {
+                      });
+                    },
+                  ),
                 ),
               ),
               Center(
