@@ -60,7 +60,7 @@ class _AddCelebrationState extends State<AddCelebration> {
               SizedBox(height: 15,),
               Center(
                 child: CustomButton(
-                  title: "get image",
+                  title: "celebration image",
                   onPressed: () async {
                     await pickImage();
                     setState(() {
