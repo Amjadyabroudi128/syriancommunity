@@ -75,6 +75,7 @@ class _AddCelebrationState extends State<AddCelebration> {
                 child: CustomButton(
                     onPressed: (){
 
+                      Navigator.of(context).pushNamed("celebrations");
                     }, title: "submit"),
               )
             ],
