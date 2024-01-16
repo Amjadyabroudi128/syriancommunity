@@ -61,6 +61,7 @@ class _AddMemberState extends State<AddMember> {
                   child: Text("Details"),
                 ),
                 CustomTextForm(
+                    maxLines: 5,
                     hinttext: "details",
                     myController: details),
                 SizedBox(height: 12,),
