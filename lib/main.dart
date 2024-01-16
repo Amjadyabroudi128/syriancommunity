@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/Screens/Add%20information.dart';
+import 'package:syrianadmin/Screens/Celebrations/editCelebrations.dart';
 import 'package:syrianadmin/Screens/Contact/AddContactDetails.dart';
 import 'package:syrianadmin/Screens/Contact/ContactUS.dart';
 import 'package:syrianadmin/Screens/team/EditTeam.dart';
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
         "celebrations" : (context) => Celebrations(),
         "addcelebration" : (context) => AddCelebration(),
         "editMember" : (context) => EditMember(DocID: '', oldName: '', oldDetail: '', oldUrl: '',),
+        "editCelebration" : (context) => EditCelebration(DocID: "", oldName: "", oldDetail: "", oldUrl: "")
       },
     );
   }
