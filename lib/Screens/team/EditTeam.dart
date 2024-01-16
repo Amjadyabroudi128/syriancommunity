@@ -71,6 +71,7 @@ class _EditMemberState extends State<EditMember> {
                   child: Text("Details"),
                 ),
                 CustomTextForm(
+                  maxLines: 5,
                     hinttext: "details",
                     myController: details),
                 SizedBox(height: 12,),
