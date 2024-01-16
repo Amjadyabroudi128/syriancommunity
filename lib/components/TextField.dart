@@ -4,14 +4,16 @@ import 'package:flutter/material.dart';
 class CustomTextForm extends StatelessWidget {
   final String hinttext;
   final TextEditingController myController;
+  final int? maxLines;
   const CustomTextForm
   ({ required this.hinttext,
-  required this.myController,
+  required this.myController, this.maxLines,
 
 });
 @override
 Widget build(BuildContext context) {
   return TextField(
+    maxLines: maxLines,
     controller: myController,
     decoration: InputDecoration(
         hintText: hinttext,
