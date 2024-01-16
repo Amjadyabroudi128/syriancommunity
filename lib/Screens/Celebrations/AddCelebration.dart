@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +57,8 @@ class _AddCelebrationState extends State<AddCelebration> {
                 padding: const EdgeInsets.all(8.0),
                 child: Text("Details"),
               ),
-              CustomTextForm(hinttext: "what we do ", myController: celebrationName),
+              CustomTextForm(hinttext: "what we do ", myController: celebrationDetail,
+              maxLines: 7,),
               SizedBox(height: 15,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -73,8 +75,14 @@ class _AddCelebrationState extends State<AddCelebration> {
               ),
               Center(
                 child: CustomButton(
-                    onPressed: (){
-
+                    onPressed: () async{
+                      await FirebaseFirestore.instance.collection("Celebrations").doc().set(
+                        {
+                        "name" : celebrationName.text,
+                        "details" : celebrationDetail.text,
+                        "image" : url
+                        }
+                      );
                       Navigator.of(context).pushNamed("celebrations");
                     }, title: "submit"),
               )
