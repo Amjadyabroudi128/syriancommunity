@@ -17,4 +17,7 @@ here is another screenshot of another page
 
 ![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/4c2090e7-5f36-43d0-860d-10be819325f1)
 
+i was able to make images work on chrome i will look into it a bit more
+![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/8be25117-36df-41cc-ba2a-e1d4cf559e6a)
+
 
