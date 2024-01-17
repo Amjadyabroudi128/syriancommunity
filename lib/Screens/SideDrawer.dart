@@ -62,6 +62,9 @@ class _SideDrawerState extends State<SideDrawer> {
               CupertinoIcons.book_solid,
               size: 30,
             ),
+            onTap: (){
+              Navigator.of(context).pushNamed("learning");
+            },
           ),
           ListTile(
             title: Text("Celebrations"),
