@@ -49,6 +49,7 @@ class MyApp extends StatelessWidget {
         "addcelebration" : (context) => AddCelebration(),
         "editMember" : (context) => EditMember(DocID: '', oldName: '', oldDetail: '', oldUrl: '',),
         "editCelebration" : (context) => EditCelebration(DocID: "", oldName: "", oldDetail: "", oldUrl: "")
+        // add navigation for learning resources
       },
     );
   }
