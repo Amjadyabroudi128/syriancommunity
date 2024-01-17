@@ -76,7 +76,7 @@ class Celebrations extends StatelessWidget {
                               Card(
                                   child: Image.network(
                                     data["image"],
-                                    height: 240,
+                                    height: MediaQuery.of(context).size.height,
                                     fit: BoxFit.cover,
                                     width: MediaQuery.of(context).size.width,
                                   ),
@@ -106,7 +106,6 @@ class Celebrations extends StatelessWidget {
                                                           oldUrl: data["image"])
                                                 ),
                                               );
-
                                             },
                                             icon: Icon(
                                                 Icons.edit
