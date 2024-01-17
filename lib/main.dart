@@ -4,6 +4,7 @@ import 'package:syrianadmin/Screens/Add%20information.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations.dart';
 import 'package:syrianadmin/Screens/Contact/AddContactDetails.dart';
 import 'package:syrianadmin/Screens/Contact/ContactUS.dart';
+import 'package:syrianadmin/Screens/Learning/viewLearning.dart';
 import 'package:syrianadmin/Screens/team/EditTeam.dart';
 import 'package:syrianadmin/Screens/team/Team.dart';
 import 'package:syrianadmin/Screens/team/addTeam.dart';
@@ -48,7 +49,8 @@ class MyApp extends StatelessWidget {
         "celebrations" : (context) => Celebrations(),
         "addcelebration" : (context) => AddCelebration(),
         "editMember" : (context) => EditMember(DocID: '', oldName: '', oldDetail: '', oldUrl: '',),
-        "editCelebration" : (context) => EditCelebration(DocID: "", oldName: "", oldDetail: "", oldUrl: "")
+        "editCelebration" : (context) => EditCelebration(DocID: "", oldName: "", oldDetail: "", oldUrl: ""),
+        "learning" : (context) => LearningResources(),
         // add navigation for learning resources
       },
     );
