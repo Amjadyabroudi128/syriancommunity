@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class LearningResources extends StatefulWidget {
   const LearningResources({Key? key}) : super(key: key);
@@ -10,6 +11,11 @@ class LearningResources extends StatefulWidget {
 class _LearningResourcesState extends State<LearningResources> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Learning resources"),
+      ),
+    );
   }
 }
