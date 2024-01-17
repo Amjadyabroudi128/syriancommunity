@@ -15,6 +15,7 @@ class _LearningResourcesState extends State<LearningResources> {
       appBar: AppBar(
         centerTitle: true,
         title: Text("Learning resources"),
+        backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
     );
   }
