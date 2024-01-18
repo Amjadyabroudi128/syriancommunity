@@ -76,7 +76,7 @@ class Celebrations extends StatelessWidget {
                               Card(
                                   child: Image.network(
                                     data["image"],
-                                    height: MediaQuery.of(context).size.height,
+                                    height: MediaQuery.of(context).size.height * 0.40,
                                     fit: BoxFit.cover,
                                     width: MediaQuery.of(context).size.width,
                                   ),
