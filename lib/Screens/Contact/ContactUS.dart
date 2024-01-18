@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/Screens/Contact/Edit.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
-
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 class ContactUs extends StatefulWidget {
   final document;
   const ContactUs({ @required this.document});
@@ -171,7 +171,30 @@ class _ContactUsState extends State<ContactUs> {
                                 );
                           }
                         ),
+                        Text("OUR LOCATION "),
+                        SizedBox(height: 12,),
+                        Center(
+                          child: Container(
+                            height: 300,
+                            width: 300,
+                            child: GoogleMap(
+                              initialCameraPosition: CameraPosition(
+                                target: LatLng(50.82062318563144, -0.12208351759729541),
+                                zoom: 14,
+                              ),
+                              markers: {
+                                Marker(
+                                  markerId: MarkerId("college"),
+                                  position: LatLng(50.82062318563144, -0.12208351759729541),
+                                  draggable: true,
+                                  onDragEnd: (value) {
 
+                                  }
+                                )
+                              },
+                            ),
+                          ),
+                        )
                       ],
                     ),
 
