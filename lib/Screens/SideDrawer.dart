@@ -57,7 +57,7 @@ class _SideDrawerState extends State<SideDrawer> {
             },
           ),
           ListTile(
-            title: Text("Learning Resources"),
+            title: Text("community Resources"),
             leading: Icon(
               CupertinoIcons.book_solid,
               size: 30,
