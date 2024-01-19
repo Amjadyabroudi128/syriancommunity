@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AddLearning extends StatefulWidget {
-  const AddLearning({Key? key}) : super(key: key);
+class addCommunity extends StatefulWidget {
+  const addCommunity({Key? key}) : super(key: key);
 
   @override
-  State<AddLearning> createState() => _AddLearningState();
+  State<addCommunity> createState() => _addCommunityState();
 }
 
-class _AddLearningState extends State<AddLearning> {
+class _addCommunityState extends State<addCommunity> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
