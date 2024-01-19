@@ -1,19 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class EditLearning extends StatefulWidget {
-  const EditLearning({Key? key}) : super(key: key);
+class EditCommunity extends StatefulWidget {
+  const EditCommunity({Key? key}) : super(key: key);
 
   @override
-  State<EditLearning> createState() => _EditLearningState();
+  State<EditCommunity> createState() => _EditCommunityState();
 }
 
-class _EditLearningState extends State<EditLearning> {
+class _EditCommunityState extends State<EditCommunity> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Edit Learning "),
+        title: Text("Edit community "),
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
