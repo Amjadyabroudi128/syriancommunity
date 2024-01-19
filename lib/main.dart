@@ -4,14 +4,14 @@ import 'package:syrianadmin/Screens/Add%20information.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations.dart';
 import 'package:syrianadmin/Screens/Contact/AddContactDetails.dart';
 import 'package:syrianadmin/Screens/Contact/ContactUS.dart';
-import 'package:syrianadmin/Screens/Learning/addLearning.dart';
-import 'package:syrianadmin/Screens/Learning/viewLearning.dart';
 import 'package:syrianadmin/Screens/team/EditTeam.dart';
 import 'package:syrianadmin/Screens/team/Team.dart';
 import 'package:syrianadmin/Screens/team/addTeam.dart';
 import 'Screens/Celebrations/AddCelebration.dart';
 import 'Screens/Celebrations/CelebrationView.dart';
 import 'Screens/HomePage.dart';
+import 'Screens/community/addCommunity.dart';
+import 'Screens/community/Community.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -51,8 +51,8 @@ class MyApp extends StatelessWidget {
         "addcelebration" : (context) => AddCelebration(),
         "editMember" : (context) => EditMember(DocID: '', oldName: '', oldDetail: '', oldUrl: '',),
         "editCelebration" : (context) => EditCelebration(DocID: "", oldName: "", oldDetail: "", oldUrl: ""),
-        "learning" : (context) => LearningResources(),
-        "addLearning" : (context) => AddLearning(),
+        "community" : (context) => Community(),
+        "addCommunity" : (context) => addCommunity(),
         // add navigation for learning resources
       },
     );
