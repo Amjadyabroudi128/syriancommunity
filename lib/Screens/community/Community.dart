@@ -2,20 +2,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 
-class LearningResources extends StatefulWidget {
-  const LearningResources({Key? key}) : super(key: key);
+class Community extends StatefulWidget {
+  const Community({Key? key}) : super(key: key);
 
   @override
-  State<LearningResources> createState() => _LearningResourcesState();
+  State<Community> createState() => _CommunityState();
 }
 
-class _LearningResourcesState extends State<LearningResources> {
+class _CommunityState extends State<Community> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Learning resources"),
+        title: Text("community"),
         backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
       body: SingleChildScrollView(
@@ -26,9 +26,9 @@ class _LearningResourcesState extends State<LearningResources> {
               child: Center(
                 child: CustomButton(
                     onPressed: (){
-                      Navigator.of(context).pushNamed("addLearning");
+                      Navigator.of(context).pushNamed("addCommunity");
                     },
-                    title: "add learning "),
+                    title: "add community "),
               ),
             )
           ],
