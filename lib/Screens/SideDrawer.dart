@@ -59,11 +59,11 @@ class _SideDrawerState extends State<SideDrawer> {
           ListTile(
             title: Text("community Resources"),
             leading: Icon(
-              CupertinoIcons.book_solid,
+              CupertinoIcons.book_circle,
               size: 30,
             ),
             onTap: (){
-              Navigator.of(context).pushNamed("learning");
+              Navigator.of(context).pushNamed("community");
             },
           ),
           ListTile(
