@@ -82,31 +82,69 @@ class _ContactUsState extends State<ContactUs> {
                                                             Text(data["city"]),
                                                             SizedBox(height: 10,),
                                                             Text(data["post code"]),
-                                                    Row(
-                                                      mainAxisAlignment: MainAxisAlignment.end,
-                                                      children: [
-                                                        IconButton(onPressed: () async{
-                                                          await FirebaseFirestore.instance.collection("contact").doc(document.id).delete();
-                                                          Navigator.of(context).pushNamed("contactus");
+                                                    // Row(
+                                                    //   mainAxisAlignment: MainAxisAlignment.end,
+                                                    //   children: [
+                                                    //     IconButton(onPressed: () async{
+                                                    //       await FirebaseFirestore.instance.collection("contact").doc(document.id).delete();
+                                                    //       Navigator.of(context).pushNamed("contactus");
+                                                    //
+                                                    //     },
+                                                    //         icon: Icon(Icons.delete, color: Colors.red,)
+                                                    //     ),
+                                                    //     IconButton(onPressed: () {
+                                                    //       Navigator.of(context).push(
+                                                    //           MaterialPageRoute(builder: (context) =>
+                                                    //           EditDetails(DocID: document.id,
+                                                    //             oldPlace: data["place"],
+                                                    //             oldRoad: data["street name"],
+                                                    //             oldCity: data["city"],
+                                                    //             oldEmail: data["email"],
+                                                    //             oldPHone: data["phone"],
+                                                    //             oldPostCode: data["post code"],)));
+                                                    //     },
+                                                    //         icon: Icon(Icons.edit,)
+                                                    //     ),
+                                                    //   ],
+                                                    // )
+                                                    Padding(
+                                                      padding: const EdgeInsets.only(left: 300),
+                                                      child: PopupMenuButton(
+                                                        iconSize: 30,
+                                                        // add icon, by default "3 dot" icon
+                                                        // icon: Icon(Icons.book)
+                                                        itemBuilder: (context){
+                                                          return [
+                                                            PopupMenuItem<int>(
+                                                                value: 0,
+                                                                child:Icon(Icons.edit)
+                                                            ),
 
+                                                            PopupMenuItem<int>(
+                                                              value: 1,
+                                                              child: Icon(Icons.delete, color: Colors.red,),
+                                                            ),
+                                                          ];
                                                         },
-                                                            icon: Icon(Icons.delete, color: Colors.red,)
-                                                        ),
-                                                        IconButton(onPressed: () {
-                                                          Navigator.of(context).push(
-                                                              MaterialPageRoute(builder: (context) =>
-                                                              EditDetails(DocID: document.id,
-                                                                oldPlace: data["place"],
-                                                                oldRoad: data["street name"],
-                                                                oldCity: data["city"],
-                                                                oldEmail: data["email"],
-                                                                oldPHone: data["phone"],
-                                                                oldPostCode: data["post code"],)));
+                                                        onSelected:(value){
+                                                          if(value == 0){
+                                                            Navigator.of(context).push(
+                                                                MaterialPageRoute(builder: (context) =>
+                                                                    EditDetails(DocID: document.id,
+                                                                      oldPlace: data["place"],
+                                                                      oldRoad: data["street name"],
+                                                                      oldCity: data["city"],
+                                                                      oldEmail: data["email"],
+                                                                      oldPHone: data["phone"],
+                                                                      oldPostCode: data["post code"],)));
+                                                          }else if(value == 1){
+                                                            FirebaseFirestore.instance.collection("contact").doc(document.id).delete();
+                                                            Navigator.of(context).pushNamed("contactus");
+                                                          }
                                                         },
-                                                            icon: Icon(Icons.edit,)
-                                                        ),
-                                                      ],
-                                                    )
+
+                                                      ),
+                                                    ),
                                                   ],
                                                 ),
                                               ),
@@ -134,31 +172,69 @@ class _ContactUsState extends State<ContactUs> {
                                                     padding: const EdgeInsets.all(12.0),
                                                     child: Text("Ahmad Yabroudi  ${data["phone"]}"),
                                                   ),
-                                                  Row(
-                                                    mainAxisAlignment: MainAxisAlignment.end,
-                                                    children: [
-                                                      IconButton(onPressed: () async{
-                                                        await FirebaseFirestore.instance.collection("contact").doc(document.id).delete();
-                                                        Navigator.of(context).pushNamed("contactus");
+                                                  // Row(
+                                                  //   mainAxisAlignment: MainAxisAlignment.end,
+                                                  //   children: [
+                                                  //     IconButton(onPressed: () async{
+                                                  //       await FirebaseFirestore.instance.collection("contact").doc(document.id).delete();
+                                                  //       Navigator.of(context).pushNamed("contactus");
+                                                  //
+                                                  //     },
+                                                  //         icon: Icon(Icons.delete, color: Colors.red,)
+                                                  //     ),
+                                                  //     IconButton(onPressed: () {
+                                                  //       Navigator.of(context).push(
+                                                  //           MaterialPageRoute(builder: (context) =>
+                                                  //               EditDetails(DocID: document.id,
+                                                  //                 oldPlace: data["place"],
+                                                  //                 oldRoad: data["street name"],
+                                                  //                 oldCity: data["city"],
+                                                  //                 oldEmail: data["email"],
+                                                  //                 oldPHone: data["phone"],
+                                                  //                 oldPostCode: data["post code"],)));
+                                                  //     },
+                                                  //         icon: Icon(Icons.edit,)
+                                                  //     ),
+                                                  //   ],
+                                                  // ),
+                                                  Padding(
+                                                    padding: const EdgeInsets.only(left: 310),
+                                                    child: PopupMenuButton(
+                                                      iconSize: 30,
+                                                        // add icon, by default "3 dot" icon
+                                                      // icon: Icon(Icons.book)
+                                                        itemBuilder: (context){
+                                                          return [
+                                                            PopupMenuItem<int>(
+                                                              value: 0,
+                                                              child:Icon(Icons.edit)
+                                                            ),
 
-                                                      },
-                                                          icon: Icon(Icons.delete, color: Colors.red,)
-                                                      ),
-                                                      IconButton(onPressed: () {
-                                                        Navigator.of(context).push(
-                                                            MaterialPageRoute(builder: (context) =>
-                                                                EditDetails(DocID: document.id,
-                                                                  oldPlace: data["place"],
-                                                                  oldRoad: data["street name"],
-                                                                  oldCity: data["city"],
-                                                                  oldEmail: data["email"],
-                                                                  oldPHone: data["phone"],
-                                                                  oldPostCode: data["post code"],)));
-                                                      },
-                                                          icon: Icon(Icons.edit,)
-                                                      ),
-                                                    ],
-                                                  )
+                                                            PopupMenuItem<int>(
+                                                              value: 1,
+                                                              child: Icon(Icons.delete, color: Colors.red,),
+                                                            ),
+                                                          ];
+                                                        },
+                                                        onSelected:(value){
+                                                          if(value == 0){
+                                                            Navigator.of(context).push(
+                                                                MaterialPageRoute(builder: (context) =>
+                                                                    EditDetails(DocID: document.id,
+                                                                      oldPlace: data["place"],
+                                                                      oldRoad: data["street name"],
+                                                                      oldCity: data["city"],
+                                                                      oldEmail: data["email"],
+                                                                      oldPHone: data["phone"],
+                                                                      oldPostCode: data["post code"],)));
+                                                          }else if(value == 1){
+                                                            FirebaseFirestore.instance.collection("contact").doc(document.id).delete();
+                                                            Navigator.of(context).pushNamed("contactus");
+                                                          }
+                                                        },
+                                                    ),
+                                                  ),
+
                                                 ],
                                               ),
                                             ),
