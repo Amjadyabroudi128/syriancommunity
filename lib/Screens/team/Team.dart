@@ -73,6 +73,8 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                             color: Color.fromARGB(255, 33, 173, 168),),),
                           SizedBox(height: 12,),
                           Container(
+                            height: 160,
+                            width: MediaQuery.of(context).size.width,la
                             child: Card(
                               elevation: 0,
                               color: Colors.grey[300],
@@ -111,11 +113,37 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                   //   ],
                                   //   mainAxisAlignment: MainAxisAlignment.center,
                                   // ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 310),
+                                    child: PopupMenuButton(
+                                      iconSize: 30,
+                                      // add icon, by default "3 dot" icon
+                                      // icon: Icon(Icons.book)
+                                      itemBuilder: (context){
+                                        return [
+                                          PopupMenuItem<int>(
+                                              value: 0,
+                                              child:Icon(Icons.edit)
+                                          ),
+
+                                          PopupMenuItem<int>(
+                                            value: 1,
+                                            child: Icon(Icons.delete, color: Colors.red,),
+                                          ),
+                                        ];
+                                      },
+                                      onSelected:(value){
+                                        if(value == 0){
+
+                                        }else if(value == 1){
+
+                                        }
+                                      },
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
-                            height: 160,
-                            width: MediaQuery.of(context).size.width,
                           ),
                         ],
                       );
