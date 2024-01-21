@@ -20,4 +20,8 @@ here is another screenshot of another page
 i was able to make images work on chrome i will look into it a bit more
 ![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/8be25117-36df-41cc-ba2a-e1d4cf559e6a)
 
+i have added a popUp Menu as i felt it would be better when used 
+![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/c6da1b8e-b92f-4879-a3a6-369db4e5c8b9)
+
+
 
