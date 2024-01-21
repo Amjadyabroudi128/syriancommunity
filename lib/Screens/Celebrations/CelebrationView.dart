@@ -92,38 +92,38 @@ class Celebrations extends StatelessWidget {
                                         padding: const EdgeInsets.all(10.0),
                                         child: Text(data["details"], style: TextStyle(fontSize: 17),),
                                       ),
-                                      Row(
-                                        children: [
-                                          IconButton(
-                                            onPressed: (){
-                                              Navigator.of(context).push(
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      EditCelebration(
-                                                          DocID: document.id,
-                                                          oldName: data["name"],
-                                                          oldDetail: data["details"],
-                                                          oldUrl: data["image"])
-                                                ),
-                                              );
-                                            },
-                                            icon: Icon(
-                                                Icons.edit
-                                            ),
-                                          ),
-                                          IconButton(
-                                            onPressed: ()async {
-                                              await FirebaseFirestore.instance.collection("Celebrations").doc(document.id).delete();
-                                              Navigator.of(context).pushNamed("celebrations");
-                                            },
-                                            icon: Icon(
-                                              Icons.delete,
-                                              color: Colors.red,
-                                            ),
-                                          ),
-                                        ],
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                      ),
+                                      // Row(
+                                      //   children: [
+                                      //     IconButton(
+                                      //       onPressed: (){
+                                      //         Navigator.of(context).push(
+                                      //           MaterialPageRoute(
+                                      //             builder: (context) =>
+                                      //                 EditCelebration(
+                                      //                     DocID: document.id,
+                                      //                     oldName: data["name"],
+                                      //                     oldDetail: data["details"],
+                                      //                     oldUrl: data["image"])
+                                      //           ),
+                                      //         );
+                                      //       },
+                                      //       icon: Icon(
+                                      //           Icons.edit
+                                      //       ),
+                                      //     ),
+                                      //     IconButton(
+                                      //       onPressed: ()async {
+                                      //         await FirebaseFirestore.instance.collection("Celebrations").doc(document.id).delete();
+                                      //         Navigator.of(context).pushNamed("celebrations");
+                                      //       },
+                                      //       icon: Icon(
+                                      //         Icons.delete,
+                                      //         color: Colors.red,
+                                      //       ),
+                                      //     ),
+                                      //   ],
+                                      //   mainAxisAlignment: MainAxisAlignment.center,
+                                      // ),
                                     ],
                                   ),
                                 ),
