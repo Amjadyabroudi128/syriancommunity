@@ -74,7 +74,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                           SizedBox(height: 12,),
                           Container(
                             height: 160,
-                            width: MediaQuery.of(context).size.width,la
+                            width: MediaQuery.of(context).size.width,
                             child: Card(
                               elevation: 0,
                               color: Colors.grey[300],
@@ -134,9 +134,16 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                       },
                                       onSelected:(value){
                                         if(value == 0){
-
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(builder: (context) =>
+                                                          EditMember(DocID: document.id ,
+                                                            oldName: data["name"],
+                                                            oldDetail: data["details"],
+                                                            oldUrl: data["image"],)
+                                                  ));
                                         }else if(value == 1){
-
+                                          FirebaseFirestore.instance.collection("members").doc(document.id).delete();
+                                                  Navigator.of(context).pushNamed("ourteam");
                                         }
                                       },
                                     ),
