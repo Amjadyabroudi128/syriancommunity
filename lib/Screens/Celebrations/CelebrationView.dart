@@ -123,7 +123,35 @@ class Celebrations extends StatelessWidget {
                                       //     ),
                                       //   ],
                                       //   mainAxisAlignment: MainAxisAlignment.center,
-                                      // ),
+                                      // ),,
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 310),
+                                        child: PopupMenuButton(
+                                          iconSize: 30,
+                                          // add icon, by default "3 dot" icon
+                                          // icon: Icon(Icons.book)
+                                          itemBuilder: (context){
+                                            return [
+                                              PopupMenuItem<int>(
+                                                  value: 0,
+                                                  child:Icon(Icons.edit)
+                                              ),
+
+                                              PopupMenuItem<int>(
+                                                value: 1,
+                                                child: Icon(Icons.delete, color: Colors.red,),
+                                              ),
+                                            ];
+                                          },
+                                          onSelected:(value){
+                                            if(value == 0){
+
+                                            }else if(value == 1){
+
+                                            }
+                                          },
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ),
