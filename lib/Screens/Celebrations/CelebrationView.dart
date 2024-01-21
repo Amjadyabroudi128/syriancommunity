@@ -145,9 +145,19 @@ class Celebrations extends StatelessWidget {
                                           },
                                           onSelected:(value){
                                             if(value == 0){
-
+                                                      Navigator.of(context).push(
+                                                        MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              EditCelebration(
+                                                                  DocID: document.id,
+                                                                  oldName: data["name"],
+                                                                  oldDetail: data["details"],
+                                                                  oldUrl: data["image"])
+                                                        ),
+                                                      );
                                             }else if(value == 1){
-
+                                              FirebaseFirestore.instance.collection("Celebrations").doc(document.id).delete();
+                                                     Navigator.of(context).pushNamed("celebrations");
                                             }
                                           },
                                         ),
