@@ -59,7 +59,7 @@ class _addCommunityState extends State<addCommunity> {
                 padding: const EdgeInsets.all(8.0),
                 child: Text("Details"),
               ),
-              CustomTextForm(hinttext: "What we do ", myController: details),
+              CustomTextForm(hinttext: "What we do ", myController: details, maxLines: 6,),
               SizedBox(height: 15,),
               Center(
                 child: CustomButton(
