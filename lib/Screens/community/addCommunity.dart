@@ -81,6 +81,7 @@ class _addCommunityState extends State<addCommunity> {
                     }
                   );
                   Navigator.of(context).pushNamed("community");
+                  clearText();
 
                 }
                 , title: "Submit",
@@ -91,5 +92,9 @@ class _addCommunityState extends State<addCommunity> {
         ),
       ),
       );
+  }
+  void clearText() {
+    name.clear();
+    details.clear();
   }
 }
