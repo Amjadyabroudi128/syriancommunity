@@ -80,8 +80,10 @@ class _addCommunityState extends State<addCommunity> {
                     "image" : url
                     }
                   );
+                  Navigator.of(context).pushNamed("community");
+
                 }
-                , title: "Submit"
+                , title: "Submit",
                 ),
               ),
             ],
