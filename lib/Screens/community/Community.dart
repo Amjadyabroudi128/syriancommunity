@@ -47,9 +47,49 @@ class _CommunityState extends State<Community> {
               child: ListView(
                 physics: ScrollPhysics(),
                 shrinkWrap: true,
-
+                children: snapshot.data!.docs.map((DocumentSnapshot document){
+                  Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
+                  return Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Card(
+                          child: Image.network(
+                            data["image"],
+                            height: MediaQuery.of(context).size.height * 0.40,
+                            fit: BoxFit.cover,
+                            width: MediaQuery.of(context).size.width,
+                          ),
+                        ),
+                      ),
+                      Text(data["name"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,
+                        color: Color.fromARGB(255, 33, 173, 168),),),
+                      SizedBox(height: 12,),
+                      Container(
+                        height: 160,
+                        width: MediaQuery.of(context).size.width,
+                        child: Card(
+                          elevation: 0,
+                          color: Colors.grey[300],
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(data["details"], style: TextStyle(fontSize: 17),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 310),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+                ).toList(),
               ),
-            );
+              );
               },
             )
           ],
