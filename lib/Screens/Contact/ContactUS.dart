@@ -82,31 +82,7 @@ class _ContactUsState extends State<ContactUs> {
                                                             Text(data["city"]),
                                                             SizedBox(height: 10,),
                                                             Text(data["post code"]),
-                                                    // Row(
-                                                    //   mainAxisAlignment: MainAxisAlignment.end,
-                                                    //   children: [
-                                                    //     IconButton(onPressed: () async{
-                                                    //       await FirebaseFirestore.instance.collection("contact").doc(document.id).delete();
-                                                    //       Navigator.of(context).pushNamed("contactus");
-                                                    //
-                                                    //     },
-                                                    //         icon: Icon(Icons.delete, color: Colors.red,)
-                                                    //     ),
-                                                    //     IconButton(onPressed: () {
-                                                    //       Navigator.of(context).push(
-                                                    //           MaterialPageRoute(builder: (context) =>
-                                                    //           EditDetails(DocID: document.id,
-                                                    //             oldPlace: data["place"],
-                                                    //             oldRoad: data["street name"],
-                                                    //             oldCity: data["city"],
-                                                    //             oldEmail: data["email"],
-                                                    //             oldPHone: data["phone"],
-                                                    //             oldPostCode: data["post code"],)));
-                                                    //     },
-                                                    //         icon: Icon(Icons.edit,)
-                                                    //     ),
-                                                    //   ],
-                                                    // )
+
                                                     Padding(
                                                       padding: const EdgeInsets.only(left: 300),
                                                       child: PopupMenuButton(
