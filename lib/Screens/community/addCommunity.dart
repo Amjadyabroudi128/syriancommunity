@@ -1,5 +1,14 @@
+import 'dart:io';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:path/path.dart';
+
+import '../../components/SubmitButton.dart';
+import '../../components/TextField.dart';
 
 class addCommunity extends StatefulWidget {
   const addCommunity({Key? key}) : super(key: key);
@@ -9,12 +18,76 @@ class addCommunity extends StatefulWidget {
 }
 
 class _addCommunityState extends State<addCommunity> {
+  TextEditingController name = TextEditingController();
+  TextEditingController details = TextEditingController();
+  File? file;
+  String? url;
+  Future pickImage() async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
+    if (imageCamera != null) {
+      file = File(imageCamera!.path);
+      var imagename = basename(imageCamera!.path);
+      var refStorage = FirebaseStorage.instance.ref(imagename);
+      await refStorage.putFile(file!);
+      url = await refStorage.getDownloadURL();
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("this is for adding things "),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("adding Community Details"),
+        backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
-    );
+      body: Padding(
+        padding: EdgeInsets.all(12),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(child: Text("Add Community info ")),
+              SizedBox(height: 12,),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("Name"),
+              ),
+              CustomTextForm(hinttext: "BreakFast Club", myController: name),
+              SizedBox(height: 12,),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("Details"),
+              ),
+              CustomTextForm(hinttext: "What we do ", myController: details),
+              SizedBox(height: 15,),
+              Center(
+                child: CustomButton(
+                  title: "get image",
+                  onPressed: () async {
+                    await pickImage();
+                    setState(() {
+                    });
+                  },
+                ),
+              ),
+              Center(
+                child: CustomButton(onPressed: () async {
+                  await FirebaseFirestore.instance.collection("Community").doc().set(
+                    {
+                    "Name" : name.text,
+                    "details" : details.text,
+                    "image" : url
+                    }
+                  );
+                }
+                , title: "Submit"
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      );
   }
 }

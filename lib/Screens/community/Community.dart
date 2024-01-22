@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
@@ -10,6 +11,8 @@ class Community extends StatefulWidget {
 }
 
 class _CommunityState extends State<Community> {
+  final CollectionReference community =
+  FirebaseFirestore.instance.collection('community');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,6 +33,24 @@ class _CommunityState extends State<Community> {
                     },
                     title: "add community "),
               ),
+            ),
+            StreamBuilder(
+              stream: community.snapshots(),
+              builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+            if (snapshot.hasError) {
+              return Text('Something went wrong');
+            }
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return Text("Loading");
+            }
+            return SingleChildScrollView(
+              child: ListView(
+                physics: ScrollPhysics(),
+                shrinkWrap: true,
+
+              ),
+            );
+              },
             )
           ],
         ),
