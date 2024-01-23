@@ -85,7 +85,6 @@ class _EditMemberState extends State<EditMember> {
                     },
                   ),
                 ),
-                // if (url != null) Image.network("https://firebasestorage.googleapis.com/v0/b/syriancommunity-5239d.appspot.com/o/Fathi_Khalil.jpg?alt=media&token=5b3ea083-6c67-499c-b528-33c46cffe528"),
                 SizedBox(height: 15,),
                 Center(
                   child: CustomButton(
