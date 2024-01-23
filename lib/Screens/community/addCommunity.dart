@@ -20,19 +20,21 @@ class addCommunity extends StatefulWidget {
 class _addCommunityState extends State<addCommunity> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
-  // File? file;
-  // String? url;
-  // Future pickImage() async {
-  //   final ImagePicker picker = ImagePicker();
-  //   final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
-  //   if (imageCamera != null) {
-  //     file = File(imageCamera!.path);
-  //     var imagename = basename(imageCamera!.path);
-  //     var refStorage = FirebaseStorage.instance.ref(imagename);
-  //     await refStorage.putFile(file!);
-  //     url = await refStorage.getDownloadURL();
-  //   }
-  // }
+  File? file;
+  String? url;
+  Future pickImage() async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
+    if (imageCamera != null) {
+      file = File(imageCamera!.path);
+      var imagename = basename(imageCamera!.path);
+      var refStorage = FirebaseStorage.instance.ref(imagename);
+      await refStorage.putFile(file!);
+      url = await refStorage.getDownloadURL();
+    }
+  }
+  final CollectionReference community =
+  FirebaseFirestore.instance.collection('Community');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +53,7 @@ class _addCommunityState extends State<addCommunity> {
               SizedBox(height: 12,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("Name"),
+                child: Text("name"),
               ),
               CustomTextForm(hinttext: "BreakFast Club", myController: name),
               SizedBox(height: 12,),
@@ -61,27 +63,32 @@ class _addCommunityState extends State<addCommunity> {
               ),
               CustomTextForm(hinttext: "What we do ", myController: details, maxLines: 6,),
               SizedBox(height: 15,),
-              // Center(
-              //   child: CustomButton(
-              //     title: "get image",
-              //     onPressed: () async {
-              //       await pickImage();
-              //       setState(() {
-              //
-              //       });
-              //     },
-              //   ),
-              // ),
+              Center(
+                child: CustomButton(
+                  title: "get image",
+                  onPressed: () async {
+                    await pickImage();
+                    setState(() {
+
+                    });
+                  },
+                ),
+              ),
               Center(
                 child: CustomButton(onPressed: () async {
-                  await FirebaseFirestore.instance.collection("Community").doc().set(
-                    {
-                    "Name" : name.text,
-                    "details" : details.text,
-                    }
-                  );
-                  Navigator.of(context).pushNamed("community");
-                  clearText();
+                  if(url == null) {
+                 await   community.doc().set({
+                      "name" : name.text,
+                      "details" : details.text
+                    });
+                  } else {
+                   await community.doc().set({
+                      "name" : name.text,
+                      "details" : details.text,
+                      "image" : url
+                    });
+                   Navigator.of(context).pushNamed("community");
+                  }
 
                 }
                 , title: "Submit",
