@@ -2,7 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class EditCommunity extends StatefulWidget {
-  const EditCommunity({Key? key}) : super(key: key);
+  final String DocID;
+  final String oldName;
+  final String oldDetails;
+  final String oldUrl;
+
+  const EditCommunity({Key? key, required this.DocID, required this.oldName, required this.oldDetails, required this.oldUrl}) : super(key: key);
 
   @override
   State<EditCommunity> createState() => _EditCommunityState();
