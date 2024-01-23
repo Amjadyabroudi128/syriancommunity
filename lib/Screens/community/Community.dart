@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 
+import 'editCommunity.dart';
+
 class Community extends StatefulWidget {
   final document;
 
@@ -69,61 +71,62 @@ class _CommunityState extends State<Community> {
                         color: Color.fromARGB(255, 33, 173, 168),),),
                       SizedBox(height: 12,),
                       Container(
-                        height: 200,
                         width: MediaQuery.of(context).size.width,
-                        child: Card(
-                          elevation: 0,
-                          color: Colors.grey[300],
-                          child: Column(
-                            children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 2),
-                                  child: Text(data["details"], style: TextStyle(fontSize: 17),),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 310, ),
-                                  child: PopupMenuButton(
-                                    iconSize: 30,
-                                    // add icon, by default "3 dot" icon
-                                    // icon: Icon(Icons.book)
-                                    itemBuilder: (context){
-                                      return [
-                                        PopupMenuItem<int>(
-                                            value: 0,
-                                            child:Icon(Icons.edit)
-                                        ),
-
-                                        PopupMenuItem<int>(
-                                          value: 1,
-                                          child: Icon(Icons.delete, color: Colors.red,),
-                                        ),
-                                      ];
-                                    },
-                                    onSelected:(value){
-                                      if(value == 0){
-                                        // Navigator.of(context).push(
-                                        //     MaterialPageRoute(builder: (context) =>
-                                        //         EditCommunity(DocID: document.id ,
-                                        //           oldName: data["name"],
-                                        //           oldUrl: data["image"],
-                                        //           oldDetails: data["details"],)
-                                        //     ));
-                                        // Navigator.of(context).push(
-                                        //   MaterialPageRoute(
-                                        //     builder: (context) => EditCommunity(
-                                        //         DocID: document.id,
-                                        //         oldName: data["name"],
-                                        //         oldDetails: data["details"],)
-                                        //   )
-                                        // );
-                                      }else if(value == 1){
-                                        FirebaseFirestore.instance.collection("Community").doc(document.id).delete();
-                                        Navigator.of(context).pushNamed("community");
-                                      }
-                                    },
+                        child: IntrinsicHeight(
+                          child: Card(
+                            elevation: 0,
+                            color: Colors.grey[300],
+                            child: Column(
+                              children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 2),
+                                    child: Text(data["details"], style: TextStyle(fontSize: 17),),
                                   ),
-                                ),
-                            ],
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 310, ),
+                                    child: PopupMenuButton(
+                                      iconSize: 30,
+                                      // add icon, by default "3 dot" icon
+                                      // icon: Icon(Icons.book)
+                                      itemBuilder: (context){
+                                        return [
+                                          PopupMenuItem<int>(
+                                              value: 0,
+                                              child:Icon(Icons.edit)
+                                          ),
+
+                                          PopupMenuItem<int>(
+                                            value: 1,
+                                            child: Icon(Icons.delete, color: Colors.red,),
+                                          ),
+                                        ];
+                                      },
+                                      onSelected:(value){
+                                        if(value == 0){
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(builder: (context) =>
+                                                  EditCommunity(DocID: document.id ,
+                                                    oldName: data["name"],
+                                                    oldUrl: data["image"],
+                                                    oldDetails: data["details"],)
+                                              ));
+                                          // Navigator.of(context).push(
+                                          //   MaterialPageRoute(
+                                          //     builder: (context) => EditCommunity(
+                                          //         DocID: document.id,
+                                          //         oldName: data["name"],
+                                          //         oldDetails: data["details"],)
+                                          //   )
+                                          // );
+                                        }else if(value == 1){
+                                          FirebaseFirestore.instance.collection("Community").doc(document.id).delete();
+                                          Navigator.of(context).pushNamed("community");
+                                        }
+                                      },
+                                    ),
+                                  ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
