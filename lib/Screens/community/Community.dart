@@ -12,7 +12,7 @@ class Community extends StatefulWidget {
 
 class _CommunityState extends State<Community> {
   final CollectionReference community =
-  FirebaseFirestore.instance.collection('community');
+  FirebaseFirestore.instance.collection('Community');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,18 +51,19 @@ class _CommunityState extends State<Community> {
                   Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
                   return Column(
                     children: [
+
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Card(
-                          child: Image.network(
+                          child: data["image"] != null ? Image.network(
                             data["image"],
                             height: MediaQuery.of(context).size.height * 0.40,
                             fit: BoxFit.cover,
                             width: MediaQuery.of(context).size.width,
-                          ),
+                          ) : SizedBox.shrink(),
                         ),
                       ),
-                      Text(data["name"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,
+                      Text(data["Name"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,
                         color: Color.fromARGB(255, 33, 173, 168),),),
                       SizedBox(height: 12,),
                       Container(
