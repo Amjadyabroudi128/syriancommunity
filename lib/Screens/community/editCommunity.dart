@@ -15,9 +15,9 @@ class EditCommunity extends StatefulWidget {
   final String DocID;
   final String oldName;
   final String oldDetails;
-  final String oldUrl;
+  final String? oldUrl;
 
-  const EditCommunity({Key? key, required this.DocID, required this.oldName, required this.oldDetails, required this.oldUrl}) : super(key: key);
+  const EditCommunity({Key? key, required this.DocID, required this.oldName, required this.oldDetails, this.oldUrl}) : super(key: key);
 
   @override
   State<EditCommunity> createState() => _EditCommunityState();
