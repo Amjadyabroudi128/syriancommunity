@@ -20,19 +20,19 @@ class addCommunity extends StatefulWidget {
 class _addCommunityState extends State<addCommunity> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
-  File? file;
-  String? url;
-  Future pickImage() async {
-    final ImagePicker picker = ImagePicker();
-    final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
-    if (imageCamera != null) {
-      file = File(imageCamera!.path);
-      var imagename = basename(imageCamera!.path);
-      var refStorage = FirebaseStorage.instance.ref(imagename);
-      await refStorage.putFile(file!);
-      url = await refStorage.getDownloadURL();
-    }
-  }
+  // File? file;
+  // String? url;
+  // Future pickImage() async {
+  //   final ImagePicker picker = ImagePicker();
+  //   final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
+  //   if (imageCamera != null) {
+  //     file = File(imageCamera!.path);
+  //     var imagename = basename(imageCamera!.path);
+  //     var refStorage = FirebaseStorage.instance.ref(imagename);
+  //     await refStorage.putFile(file!);
+  //     url = await refStorage.getDownloadURL();
+  //   }
+  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,16 +61,17 @@ class _addCommunityState extends State<addCommunity> {
               ),
               CustomTextForm(hinttext: "What we do ", myController: details, maxLines: 6,),
               SizedBox(height: 15,),
-              Center(
-                child: CustomButton(
-                  title: "get image",
-                  onPressed: () async {
-                    await pickImage();
-                    setState(() {
-                    });
-                  },
-                ),
-              ),
+              // Center(
+              //   child: CustomButton(
+              //     title: "get image",
+              //     onPressed: () async {
+              //       await pickImage();
+              //       setState(() {
+              //
+              //       });
+              //     },
+              //   ),
+              // ),
               Center(
                 child: CustomButton(onPressed: () async {
                   await FirebaseFirestore.instance.collection("Community").doc().set(

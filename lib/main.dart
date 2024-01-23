@@ -4,7 +4,6 @@ import 'package:syrianadmin/Screens/Add%20information.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations.dart';
 import 'package:syrianadmin/Screens/Contact/AddContactDetails.dart';
 import 'package:syrianadmin/Screens/Contact/ContactUS.dart';
-import 'package:syrianadmin/Screens/community/editCommunity.dart';
 import 'package:syrianadmin/Screens/team/EditTeam.dart';
 import 'package:syrianadmin/Screens/team/Team.dart';
 import 'package:syrianadmin/Screens/team/addTeam.dart';

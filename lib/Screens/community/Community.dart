@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:syrianadmin/Screens/community/editCommunity.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 
 class Community extends StatefulWidget {
@@ -109,14 +108,14 @@ class _CommunityState extends State<Community> {
                                         //           oldUrl: data["image"],
                                         //           oldDetails: data["details"],)
                                         //     ));
-                                        Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                            builder: (context) => EditCommunity(
-                                                DocID: document.id,
-                                                oldName: data["name"],
-                                                oldDetails: data["details"],)
-                                          )
-                                        );
+                                        // Navigator.of(context).push(
+                                        //   MaterialPageRoute(
+                                        //     builder: (context) => EditCommunity(
+                                        //         DocID: document.id,
+                                        //         oldName: data["name"],
+                                        //         oldDetails: data["details"],)
+                                        //   )
+                                        // );
                                       }else if(value == 1){
                                         FirebaseFirestore.instance.collection("Community").doc(document.id).delete();
                                         Navigator.of(context).pushNamed("community");
