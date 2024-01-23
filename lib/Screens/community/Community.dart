@@ -70,7 +70,7 @@ class _CommunityState extends State<Community> {
                         color: Color.fromARGB(255, 33, 173, 168),),),
                       SizedBox(height: 12,),
                       Container(
-                        height: 160,
+                        height: 200,
                         width: MediaQuery.of(context).size.width,
                         child: Card(
                           elevation: 0,
@@ -82,7 +82,7 @@ class _CommunityState extends State<Community> {
                                   child: Text(data["details"], style: TextStyle(fontSize: 17),),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 310),
+                                  padding: const EdgeInsets.only(left: 310, ),
                                   child: PopupMenuButton(
                                     iconSize: 30,
                                     // add icon, by default "3 dot" icon
@@ -114,10 +114,9 @@ class _CommunityState extends State<Community> {
                                             builder: (context) => EditCommunity(
                                                 DocID: document.id,
                                                 oldName: data["name"],
-                                                oldDetails: data["details"],
-                                                // oldUrl: data["image"])
+                                                oldDetails: data["details"],)
                                           )
-                                        ));
+                                        );
                                       }else if(value == 1){
                                         FirebaseFirestore.instance.collection("Community").doc(document.id).delete();
                                         Navigator.of(context).pushNamed("community");

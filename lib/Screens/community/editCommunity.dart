@@ -15,9 +15,8 @@ class EditCommunity extends StatefulWidget {
   final String DocID;
   final String oldName;
   final String oldDetails;
-  final String? oldUrl;
 
-  const EditCommunity({Key? key, required this.DocID, required this.oldName, required this.oldDetails, this.oldUrl}) : super(key: key);
+  const EditCommunity({Key? key,  required this.DocID,  required this.oldName,  required this.oldDetails,}) : super(key: key);
 
   @override
   State<EditCommunity> createState() => _EditCommunityState();
@@ -26,24 +25,11 @@ class EditCommunity extends StatefulWidget {
 class _EditCommunityState extends State<EditCommunity> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
-  String? url;
-  File? file;
+
   void initState() {
     super.initState();
     name.text = widget.oldName;
     details.text = widget.oldDetails;
-    url = widget.oldUrl;
-  }
-  Future pickImage() async {
-    final ImagePicker picker = ImagePicker();
-    final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
-    if (imageCamera != null) {
-      file = File(imageCamera!.path);
-      var imagename = basename(imageCamera!.path);
-      var refStorage = FirebaseStorage.instance.ref(imagename);
-      await refStorage.putFile(file!);
-      url = await refStorage.getDownloadURL();
-    }
   }
   @override
   Widget build(BuildContext context) {
@@ -77,24 +63,12 @@ class _EditCommunityState extends State<EditCommunity> {
                     hinttext: "details",
                     myController: details),
                 SizedBox(height: 12,),
-                Center(
-                  child: CustomButton(
-                    title: "get image",
-                    onPressed: () async {
-                      await pickImage();
-                      setState(() {
-                      });
-                    },
-                  ),
-                ),
-                // if (url != null) Image.network("https://firebasestorage.googleapis.com/v0/b/syriancommunity-5239d.appspot.com/o/Fathi_Khalil.jpg?alt=media&token=5b3ea083-6c67-499c-b528-33c46cffe528"),
                 SizedBox(height: 15,),
                 Center(
                   child: CustomButton(
                       onPressed: () async {
                         await FirebaseFirestore.instance.collection("Community").doc(widget.DocID).update(
                             {
-                              "image" : url,
                               "name" : name.text,
                               "details" : details.text
                             }

@@ -77,7 +77,6 @@ class _addCommunityState extends State<addCommunity> {
                     {
                     "Name" : name.text,
                     "details" : details.text,
-                    "image" : url
                     }
                   );
                   Navigator.of(context).pushNamed("community");
