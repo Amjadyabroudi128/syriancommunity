@@ -12,6 +12,7 @@ import 'Screens/Celebrations/CelebrationView.dart';
 import 'Screens/HomePage.dart';
 import 'Screens/community/addCommunity.dart';
 import 'Screens/community/Community.dart';
+import 'Screens/community/editCommunity.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
         "editCelebration" : (context) => EditCelebration(DocID: "", oldName: "", oldDetail: "", oldUrl: ""),
         "community" : (context) => Community(),
         "addCommunity" : (context) => addCommunity(),
-        // "editCommunity" : (context) => EditCommunity(DocID: '', oldDetails: '', oldName: '',),
+        "editCommunity" : (context) => EditCommunity(DocID: '', oldName: '', oldDetails: '',),
         // add navigation for learning resources
       },
     );
