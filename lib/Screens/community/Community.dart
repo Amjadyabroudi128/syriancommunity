@@ -65,7 +65,7 @@ class _CommunityState extends State<Community> {
                           ) : SizedBox.shrink(),
                         ),
                       ),
-                      Text(data["Name"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,
+                      Text(data["name"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,
                         color: Color.fromARGB(255, 33, 173, 168),),),
                       SizedBox(height: 12,),
                       Container(
