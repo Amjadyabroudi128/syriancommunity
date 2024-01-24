@@ -83,55 +83,57 @@ class Celebrations extends StatelessWidget {
                                 ),
                               SizedBox(height: 7,),
                               Container(
-                                child: Card(
-                                  color: Colors.grey[300],
-                                  elevation: 0,
-                                  child: Column(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(10.0),
-                                        child: Text(data["details"], style: TextStyle(fontSize: 17),),
-                                      ),
-
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 310),
-                                        child: PopupMenuButton(
-                                          iconSize: 30,
-                                          // add icon, by default "3 dot" icon
-                                          // icon: Icon(Icons.book)
-                                          itemBuilder: (context){
-                                            return [
-                                              PopupMenuItem<int>(
-                                                  value: 0,
-                                                  child:Icon(Icons.edit)
-                                              ),
-
-                                              PopupMenuItem<int>(
-                                                value: 1,
-                                                child: Icon(Icons.delete, color: Colors.red,),
-                                              ),
-                                            ];
-                                          },
-                                          onSelected:(value){
-                                            if(value == 0){
-                                                      Navigator.of(context).push(
-                                                        MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              EditCelebration(
-                                                                  DocID: document.id,
-                                                                  oldName: data["name"],
-                                                                  oldDetail: data["details"],
-                                                                  oldUrl: data["image"])
-                                                        ),
-                                                      );
-                                            }else if(value == 1){
-                                              FirebaseFirestore.instance.collection("Celebrations").doc(document.id).delete();
-                                                     Navigator.of(context).pushNamed("celebrations");
-                                            }
-                                          },
+                                child: IntrinsicHeight(
+                                  child: Card(
+                                    color: Colors.grey[300],
+                                    elevation: 0,
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Text(data["details"], style: TextStyle(fontSize: 17),),
                                         ),
-                                      ),
-                                    ],
+
+                                        Padding(
+                                          padding: const EdgeInsets.only(left: 310),
+                                          child: PopupMenuButton(
+                                            iconSize: 30,
+                                            // add icon, by default "3 dot" icon
+                                            // icon: Icon(Icons.book)
+                                            itemBuilder: (context){
+                                              return [
+                                                PopupMenuItem<int>(
+                                                    value: 0,
+                                                    child:Icon(Icons.edit)
+                                                ),
+
+                                                PopupMenuItem<int>(
+                                                  value: 1,
+                                                  child: Icon(Icons.delete, color: Colors.red,),
+                                                ),
+                                              ];
+                                            },
+                                            onSelected:(value){
+                                              if(value == 0){
+                                                        Navigator.of(context).push(
+                                                          MaterialPageRoute(
+                                                            builder: (context) =>
+                                                                EditCelebration(
+                                                                    DocID: document.id,
+                                                                    oldName: data["name"],
+                                                                    oldDetail: data["details"],
+                                                                    oldUrl: data["image"])
+                                                          ),
+                                                        );
+                                              }else if(value == 1){
+                                                FirebaseFirestore.instance.collection("Celebrations").doc(document.id).delete();
+                                                       Navigator.of(context).pushNamed("celebrations");
+                                              }
+                                            },
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               )
