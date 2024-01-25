@@ -81,15 +81,15 @@ class _addCommunityState extends State<addCommunity> {
                       "name" : name.text,
                       "details" : details.text
                     });
+                 Navigator.pushReplacementNamed(context, 'community');
                   } else {
                    await community.doc().set({
                       "name" : name.text,
                       "details" : details.text,
-                      "image" : url
+                      "image" : url,
                     });
-                   Navigator.of(context).pushNamed("community");
+                   Navigator.pushReplacementNamed(context, 'community');
                   }
-
                 }
                 , title: "Submit",
                 ),
