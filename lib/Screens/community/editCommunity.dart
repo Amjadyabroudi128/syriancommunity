@@ -89,16 +89,16 @@ class _EditCommunityState extends State<EditCommunity> {
                   if(url == null) {
                   await community.doc(widget.DocID).update({
                       "name" : name.text,
-                      "details" : details.text
+                      "details" : details.text,
                     });
+                  Navigator.pushReplacementNamed(context, 'community');
                   } else {
                   await community.doc(widget.DocID).update({
                       "name" : name.text,
                       "details" : details.text,
                       "image" : url
                     });
-                  Navigator.of(context).pushNamed("community");
-
+                  Navigator.pushReplacementNamed(context, 'community');
                   }
                 }
                   , title: "edit",
