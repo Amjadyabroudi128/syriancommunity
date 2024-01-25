@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 SizedBox(height: 12,),
-                Text("here you will see the latest news for the Community")
+                Text("here you will see the latest news for the Community"),
               ],
             )
           ],

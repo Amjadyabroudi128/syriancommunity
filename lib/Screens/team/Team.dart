@@ -50,7 +50,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                   }
                   return SingleChildScrollView(
                     child: ListView(
-                      physics: ScrollPhysics(),
+                      physics: BouncingScrollPhysics(),
                       shrinkWrap: true,
                       children: snapshot.data!.docs.map((DocumentSnapshot document){
                       Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
