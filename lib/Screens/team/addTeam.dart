@@ -79,13 +79,27 @@ class _AddMemberState extends State<AddMember> {
                 Center(
                   child: CustomButton(
                       onPressed: () async {
-                        await FirebaseFirestore.instance.collection("members").doc().set(
-                            {
-                              "name" : name.text,
-                              "details" : details.text,
-                              "image" : url,
-                            }
-                        );
+                        if (url == null) {
+                          await FirebaseFirestore.instance.collection("members").doc().set(
+                              {
+                                "name" : name.text,
+                                "details" : details.text,
+                              }
+                          );
+                          Navigator.pop(context);
+
+                        } else {
+                          await FirebaseFirestore.instance.collection("members").doc().set(
+                              {
+                                "name" : name.text,
+                                "details" : details.text,
+                                "image" : url,
+                              }
+                          );
+                          Navigator.pop(context);
+
+                        }
+
                         clearText();
                       },
                       title: "Submit"),
