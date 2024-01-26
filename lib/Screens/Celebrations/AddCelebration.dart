@@ -76,14 +76,23 @@ class _AddCelebrationState extends State<AddCelebration> {
               Center(
                 child: CustomButton(
                     onPressed: () async{
-                      await FirebaseFirestore.instance.collection("Celebrations").doc().set(
-                        {
-                        "name" : celebrationName.text,
-                        "details" : celebrationDetail.text,
-                        "image" : url
-                        }
-                      );
-                      Navigator.of(context).pushNamed("celebrations");
+                      if (url == null ) {
+                        await FirebaseFirestore.instance.collection("Celebrations").doc().set(
+                            {
+                              "name" : celebrationName.text,
+                              "details" : celebrationDetail.text,
+                            }
+                        );
+                      } else  {
+                        await FirebaseFirestore.instance.collection("Celebrations").doc().set(
+                            {
+                              "name" : celebrationName.text,
+                              "details" : celebrationDetail.text,
+                              "image" : url
+                            }
+                        );
+                      }
+                      Navigator.of(context).pop();
                     }, title: "submit"),
               )
             ],
