@@ -33,6 +33,8 @@ class _AddMemberState extends State<AddMember> {
        url = await refStorage.getDownloadURL();
     }
   }
+  final CollectionReference members =
+  FirebaseFirestore.instance.collection('members');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,7 +82,7 @@ class _AddMemberState extends State<AddMember> {
                   child: CustomButton(
                       onPressed: () async {
                         if (url == null) {
-                          await FirebaseFirestore.instance.collection("members").doc().set(
+                          await members.doc().set(
                               {
                                 "name" : name.text,
                                 "details" : details.text,
@@ -89,7 +91,7 @@ class _AddMemberState extends State<AddMember> {
                           Navigator.pop(context);
 
                         } else {
-                          await FirebaseFirestore.instance.collection("members").doc().set(
+                          await members.doc().set(
                               {
                                 "name" : name.text,
                                 "details" : details.text,

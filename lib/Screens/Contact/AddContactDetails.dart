@@ -20,7 +20,8 @@ class _AddContactDetailsState extends State<AddContactDetails> {
   TextEditingController postcode = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController phone = TextEditingController();
-
+  final CollectionReference contact =
+  FirebaseFirestore.instance.collection('contact');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,7 +77,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
               Center(child:
               CustomButton
                 (onPressed: () async {
-                await FirebaseFirestore.instance.collection("contact").doc().set({
+                await contact.doc().set({
                   "place" : place.text,
                   "street name" : road.text,
                   "city" : city.text,
