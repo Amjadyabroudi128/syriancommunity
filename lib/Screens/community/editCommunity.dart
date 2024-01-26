@@ -91,14 +91,14 @@ class _EditCommunityState extends State<EditCommunity> {
                       "name" : name.text,
                       "details" : details.text,
                     });
-                  Navigator.pushReplacementNamed(context, 'community');
+                  Navigator.pop(context);
                   } else {
                   await community.doc(widget.DocID).update({
                       "name" : name.text,
                       "details" : details.text,
                       "image" : url
                     });
-                  Navigator.pushReplacementNamed(context, 'community');
+                  Navigator.pop(context);
                   }
                 }
                   , title: "edit",
