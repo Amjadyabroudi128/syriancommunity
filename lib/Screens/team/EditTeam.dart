@@ -13,9 +13,9 @@ class EditMember extends StatefulWidget {
   final String DocID;
   final String oldName;
   final String oldDetail;
-  final String oldUrl;
+  final String? oldUrl;
 
-  const EditMember({Key? key, required this.DocID, required this.oldName, required this.oldDetail, required this.oldUrl,}) : super(key: key);
+  const EditMember({Key? key, required this.DocID, required this.oldName, required this.oldDetail,  this.oldUrl,}) : super(key: key);
 
   @override
   State<EditMember> createState() => _EditMemberState();
