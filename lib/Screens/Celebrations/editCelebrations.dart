@@ -106,13 +106,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                             }
                         );
                       }
-                      // await FirebaseFirestore.instance.collection("Celebrations").doc(widget.DocID).update(
-                      //     {
-                      //       "image" : url,
-                      //       "name" : celebrationName.text,
-                      //       "details" : celebrationDetails.text
-                      //     }
-                      // );
+
                       Navigator.of(context).pushNamed("celebrations");
                     },
                     title: "Edit"),
