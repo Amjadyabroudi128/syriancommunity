@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:path/path.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:syrianadmin/Screens/Celebrations/CelebrationView.dart';
 
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
@@ -14,9 +15,9 @@ class EditCelebration extends StatefulWidget {
   final String DocID;
   final String oldName;
   final String oldDetail;
-  final String oldUrl;
+  final String? oldUrl;
 
-  const EditCelebration({Key? key, required this.DocID, required this.oldName, required this.oldDetail, required this.oldUrl}) : super(key: key);
+  const EditCelebration({Key? key, required this.DocID, required this.oldName, required this.oldDetail, this.oldUrl}) : super(key: key);
 
   @override
   State<EditCelebration> createState() => _EditCelebrationState();
@@ -44,6 +45,8 @@ class _EditCelebrationState extends State<EditCelebration> {
       url = await refStorage.getDownloadURL();
     }
   }
+  final CollectionReference celebrations =
+  FirebaseFirestore.instance.collection('Celebrations');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,16 +89,33 @@ class _EditCelebrationState extends State<EditCelebration> {
               ),
               Center(
                 child: CustomButton(
-                    onPressed: () async{
-                      await FirebaseFirestore.instance.collection("Celebrations").doc(widget.DocID).update(
+                    onPressed: () async {
+                      if(url == null ) {
+                        await celebrations.doc(widget.DocID).update(
                           {
-                            "image" : url,
                             "name" : celebrationName.text,
                             "details" : celebrationDetails.text
                           }
-                      );
+                        );
+                      } else {
+                       await celebrations.doc(widget.DocID).update(
+                            {
+                              "name" : celebrationName.text,
+                              "details" : celebrationDetails.text,
+                              "image" : url
+                            }
+                        );
+                      }
+                      // await FirebaseFirestore.instance.collection("Celebrations").doc(widget.DocID).update(
+                      //     {
+                      //       "image" : url,
+                      //       "name" : celebrationName.text,
+                      //       "details" : celebrationDetails.text
+                      //     }
+                      // );
                       Navigator.of(context).pushNamed("celebrations");
-                    }, title: "Edit"),
+                    },
+                    title: "Edit"),
               )
             ],
           ),
