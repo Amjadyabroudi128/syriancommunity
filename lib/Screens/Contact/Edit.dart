@@ -103,7 +103,7 @@ class _AddContactDetailsState extends State<EditDetails> {
                   "email" : email.text,
                   "phone" : phone.text
                 });
-                Navigator.of(context).pushNamed("contactus");
+                Navigator.pop(context);
                 clearText();
               }, title: "Update")
               )
