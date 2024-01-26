@@ -55,7 +55,7 @@ class _ContactUsState extends State<ContactUs> {
                               }
                               return 
                                 ListView(
-                                  physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                                  physics: ScrollPhysics(),
                                   shrinkWrap: true,
                                   children: snapshot.data!.docs.map((DocumentSnapshot document) {
                                     Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
