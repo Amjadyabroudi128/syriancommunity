@@ -96,7 +96,7 @@ class _EditMemberState extends State<EditMember> {
                               "details" : details.text
                             }
                         );
-                        Navigator.of(context).pushNamed("ourteam");
+                        Navigator.pop(context);
 
                       },
                       title: "Edit"),
