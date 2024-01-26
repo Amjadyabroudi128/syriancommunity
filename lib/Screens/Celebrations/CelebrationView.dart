@@ -6,7 +6,9 @@ import 'package:syrianadmin/Screens/Celebrations/editCelebrations.dart';
 
 import '../../components/SubmitButton.dart';
 class Celebrations extends StatelessWidget {
-  const Celebrations({Key? key}) : super(key: key);
+  final document;
+
+  const Celebrations({Key? key, this.document}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +63,7 @@ class Celebrations extends StatelessWidget {
                     }
                     return SingleChildScrollView(
                       child: ListView(
-                        physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                        physics: ScrollPhysics(),
                         shrinkWrap: true,
                         children: snapshot.data!.docs.map((DocumentSnapshot document){
                           Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
@@ -74,12 +76,12 @@ class Celebrations extends StatelessWidget {
                                   color: Color.fromARGB(255, 33, 173, 168),),),
                               ),
                               Card(
-                                  child: Image.network(
+                                  child: data["image"] != null ? Image.network(
                                     data["image"],
                                     height: MediaQuery.of(context).size.height * 0.40,
                                     fit: BoxFit.cover,
                                     width: MediaQuery.of(context).size.width,
-                                  ),
+                                  ) : SizedBox.shrink(),
                                 ),
                               SizedBox(height: 7,),
                               Container(
@@ -115,16 +117,26 @@ class Celebrations extends StatelessWidget {
                                             },
                                             onSelected:(value){
                                               if(value == 0){
-                                                        Navigator.of(context).push(
-                                                          MaterialPageRoute(
-                                                            builder: (context) =>
-                                                                EditCelebration(
-                                                                    DocID: document.id,
-                                                                    oldName: data["name"],
-                                                                    oldDetail: data["details"],
-                                                                    oldUrl: data["image"])
-                                                          ),
-                                                        );
+                                                Navigator.of(context).push(
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          EditCelebration(
+                                                              DocID: document.id,
+                                                              oldName: data["name"],
+                                                              oldDetail: data["details"],
+                                                              oldUrl: data["image"])
+                                                  ),
+                                                );
+                                                        // Navigator.of(context).push(
+                                                        //   MaterialPageRoute(
+                                                        //     builder: (context) =>
+                                                        //         EditCelebration(
+                                                        //             DocID: document.id,
+                                                        //             oldName: data["name"],
+                                                        //             oldDetail: data["details"],
+                                                        //             oldUrl: data["image"])
+                                                        //   ),
+                                                        // );
                                               }else if(value == 1){
                                                 FirebaseFirestore.instance.collection("Celebrations").doc(document.id).delete();
                                                        Navigator.of(context).pushNamed("celebrations");
