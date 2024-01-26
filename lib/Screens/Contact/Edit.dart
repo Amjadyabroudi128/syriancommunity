@@ -37,9 +37,9 @@ class _AddContactDetailsState extends State<EditDetails> {
     postcode.text = widget.oldPostCode;
     phone.text = widget.oldPHone;
     email.text = widget.oldEmail;
-
-
   }
+  final CollectionReference contact =
+  FirebaseFirestore.instance.collection('contact');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,7 +95,7 @@ class _AddContactDetailsState extends State<EditDetails> {
               Center(child:
               CustomButton
                 (onPressed: () async {
-                await FirebaseFirestore.instance.collection("contact").doc(widget.DocID).update({
+                await contact.doc(widget.DocID).update({
                   "place" : place.text,
                   "street name" : road.text,
                   "city" : city.text,

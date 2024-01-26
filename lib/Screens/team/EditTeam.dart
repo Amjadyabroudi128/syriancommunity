@@ -43,6 +43,8 @@ class _EditMemberState extends State<EditMember> {
       url = await refStorage.getDownloadURL();
     }
   }
+  final CollectionReference members =
+  FirebaseFirestore.instance.collection('members');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,7 +91,7 @@ class _EditMemberState extends State<EditMember> {
                 Center(
                   child: CustomButton(
                       onPressed: () async {
-                        await FirebaseFirestore.instance.collection("members").doc(widget.DocID).update(
+                        await members.doc(widget.DocID).update(
                             {
                               "image" : url,
                               "name" : name.text,
