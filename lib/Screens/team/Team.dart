@@ -61,12 +61,12 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                           child: Card(
                             shape: const CircleBorder(),
                             clipBehavior: Clip.antiAlias,
-                            child: Image.network(
+                            child: data["image"] != null ? Image.network(
                               data["image"],
                               width: 240,
                               height: 240,
                               fit: BoxFit.cover,
-                            ),
+                            ) : SizedBox.shrink(),
                           ),
                         ),
                           Text(data["name"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,
