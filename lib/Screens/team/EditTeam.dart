@@ -60,6 +60,11 @@ class _EditMemberState extends State<EditMember> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Card(
+                  shape: const CircleBorder(),
+                  clipBehavior: Clip.antiAlias,
+                  child: Image.network(url!),
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 12, bottom: 10),
                   child: Text("Name"),
