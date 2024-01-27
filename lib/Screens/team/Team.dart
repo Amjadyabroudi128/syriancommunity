@@ -58,15 +58,26 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                         children: [
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Card(
-                            shape: const CircleBorder(),
-                            clipBehavior: Clip.antiAlias,
-                            child: data["image"] != null ? Image.network(
-                              data["image"],
-                              width: 240,
-                              height: 240,
-                              fit: BoxFit.cover,
-                            ) : SizedBox.shrink(),
+                          child: GestureDetector(
+                            child: Card(
+                              shape: const CircleBorder(),
+                              clipBehavior: Clip.antiAlias,
+                              child: data["image"] != null ? Image.network(
+                                data["image"],
+                                width: 240,
+                                height: 240,
+                                fit: BoxFit.cover,
+                              ) : SizedBox.shrink(),
+                            ),
+                            onTap: () {
+                              Navigator.of(context).push(
+                                  MaterialPageRoute(builder: (context) =>
+                                      EditMember(DocID: document.id ,
+                                        oldName: data["name"],
+                                        oldDetail: data["details"],
+                                        oldUrl: data["image"],)
+                                  ));
+                            },
                           ),
                         ),
                           Text(data["name"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,
