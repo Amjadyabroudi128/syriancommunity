@@ -63,7 +63,13 @@ class _EditMemberState extends State<EditMember> {
                 Card(
                   shape: const CircleBorder(),
                   clipBehavior: Clip.antiAlias,
-                  child: Image.network(url!),
+                  child: Center(
+                    child: Image.network(url!,
+                      width: 240,
+                      height: 240,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 12, bottom: 10),
