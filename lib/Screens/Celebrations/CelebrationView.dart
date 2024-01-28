@@ -75,14 +75,28 @@ class Celebrations extends StatelessWidget {
                                 child: Text(data["name"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,
                                   color: Color.fromARGB(255, 33, 173, 168),),),
                               ),
-                              Card(
-                                  child: data["image"] != null ? Image.network(
-                                    data["image"],
-                                    height: MediaQuery.of(context).size.height * 0.40,
-                                    fit: BoxFit.cover,
-                                    width: MediaQuery.of(context).size.width,
-                                  ) : SizedBox.shrink(),
-                                ),
+                              GestureDetector(
+                                child: Card(
+                                    child: data["image"] != null ? Image.network(
+                                      data["image"],
+                                      height: MediaQuery.of(context).size.height * 0.40,
+                                      fit: BoxFit.cover,
+                                      width: MediaQuery.of(context).size.width,
+                                    ) : SizedBox.shrink(),
+                                  ),
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            EditCelebration(
+                                                DocID: document.id,
+                                                oldName: data["name"],
+                                                oldDetail: data["details"],
+                                                oldUrl: data["image"])
+                                    ),
+                                  );
+                                },
+                              ),
                               SizedBox(height: 7,),
                               Container(
                                 child: IntrinsicHeight(
