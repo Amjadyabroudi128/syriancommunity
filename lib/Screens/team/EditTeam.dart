@@ -64,11 +64,7 @@ class _EditMemberState extends State<EditMember> {
                   shape: const CircleBorder(),
                   clipBehavior: Clip.antiAlias,
                   child: Center(
-                    child: Image.network(url!,
-                      width: 240,
-                      height: 240,
-                      fit: BoxFit.cover,
-                    ),
+                    child: url != null ? Image.network(url!) : SizedBox.shrink()
                   ),
                 ),
                 Padding(
