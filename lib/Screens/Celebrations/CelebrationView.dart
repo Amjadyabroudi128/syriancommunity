@@ -76,14 +76,17 @@ class Celebrations extends StatelessWidget {
                                   color: Color.fromARGB(255, 33, 173, 168),),),
                               ),
                               GestureDetector(
-                                child: Card(
-                                    child: data["image"] != null ? Image.network(
-                                      data["image"],
-                                      height: MediaQuery.of(context).size.height * 0.40,
-                                      fit: BoxFit.cover,
-                                      width: MediaQuery.of(context).size.width,
-                                    ) : SizedBox.shrink(),
-                                  ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(4.0),
+                                  child: Container(
+                                      child: data["image"] != null ? Image.network(
+                                        data["image"],
+                                        height: MediaQuery.of(context).size.height * 0.40,
+                                        // fit: BoxFit.cover,
+                                        width: MediaQuery.of(context).size.width,
+                                      ) : SizedBox.shrink(),
+                                    ),
+                                ),
                                 onTap: () {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
