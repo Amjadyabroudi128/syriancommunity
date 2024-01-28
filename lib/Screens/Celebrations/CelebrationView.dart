@@ -104,6 +104,7 @@ class Celebrations extends StatelessWidget {
                               Container(
                                 child: IntrinsicHeight(
                                   child: Card(
+
                                     color: Colors.grey[300],
                                     elevation: 0,
                                     child: Column(
@@ -112,9 +113,8 @@ class Celebrations extends StatelessWidget {
                                           padding: const EdgeInsets.all(10.0),
                                           child: Text(data["details"], style: TextStyle(fontSize: 17),),
                                         ),
-
                                         Padding(
-                                          padding: const EdgeInsets.only(left: 310),
+                                          padding: const EdgeInsets.only(left: 300),
                                           child: PopupMenuButton(
                                             iconSize: 30,
                                             // add icon, by default "3 dot" icon
@@ -159,6 +159,8 @@ class Celebrations extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+                                width: MediaQuery.of(context).size.width,
+
                               )
                             ]
                           );
