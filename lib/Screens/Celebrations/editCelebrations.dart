@@ -61,6 +61,7 @@ class _EditCelebrationState extends State<EditCelebration> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Image.network(url!),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text("celebration"),
