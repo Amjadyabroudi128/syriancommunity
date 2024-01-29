@@ -22,14 +22,14 @@ class EditMember extends StatefulWidget {
 }
 
 class _EditMemberState extends State<EditMember> {
-  TextEditingController? name = TextEditingController();
-  TextEditingController? details = TextEditingController();
+  TextEditingController name = TextEditingController();
+  TextEditingController details = TextEditingController();
   String? url;
   File? file;
   void initState() {
     super.initState();
-    name?.text = widget.oldName;
-    details?.text = widget.oldDetail;
+    name.text = widget.oldName;
+    details.text = widget.oldDetail;
     url = widget.oldUrl;
   }
   Future pickImage() async {
@@ -77,16 +77,16 @@ class _EditMemberState extends State<EditMember> {
                 ),
                 CustomTextForm(
                     hinttext: "name",
-                    myController: name!),
+                    myController: name),
                 SizedBox(height: 20,),
                 Padding(
                   padding: const EdgeInsets.only(left: 12, bottom: 10),
                   child: Text("Details"),
                 ),
-              CustomTextForm(hinttext: "details", myController: details!) != null ? CustomTextForm(
+                CustomTextForm(
                   maxLines: 5,
                     hinttext: "details",
-                    myController: details!) : SizedBox.shrink(),
+                    myController: details),
                 SizedBox(height: 12,),
                 Center(
                   child: CustomButton(
@@ -105,8 +105,8 @@ class _EditMemberState extends State<EditMember> {
                         await members.doc(widget.DocID).update(
                             {
                               "image" : url,
-                              "name" : name?.text,
-                              "details" : details?.text
+                              "name" : name.text,
+                              "details" : details.text
                             }
                         );
                         Navigator.pop(context);
