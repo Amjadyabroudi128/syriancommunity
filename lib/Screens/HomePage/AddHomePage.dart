@@ -52,9 +52,11 @@ class _AddInfoState extends State<AddInfo> {
                          {
                          "name" : name.text,
                            "details" : details.text,
+                           "time" : DateTime.now(),
                          }
                        );
                        clearText();
+                       Navigator.of(context).pushNamed("homepage");
                       },
                       title: "Submit"),
                 )
