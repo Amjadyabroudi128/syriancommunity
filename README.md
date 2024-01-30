@@ -22,7 +22,9 @@ i was able to make images work on chrome i will look into it a bit more
 
 i have added a popUp Menu as i felt it would be better when used 
 ![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/c6da1b8e-b92f-4879-a3a6-369db4e5c8b9)
+
 i have added time of "post" to show the community when it was released 
+
 ![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/6f3d7b1a-5f33-400e-9bed-c19729b6ba52)
 
 
