@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
 
@@ -14,6 +15,11 @@ class AddInfo extends StatefulWidget {
 class _AddInfoState extends State<AddInfo> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
+
+  String formattedDate(timeStamp){
+    var dateFromTimeStamp = DateTime.fromMillisecondsSinceEpoch(timeStamp.seconds *1000);
+    return DateFormat('dd-MM-yyyy').format(dateFromTimeStamp);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,4 +77,5 @@ class _AddInfoState extends State<AddInfo> {
     name.clear();
     details.clear();
   }
+
 }
