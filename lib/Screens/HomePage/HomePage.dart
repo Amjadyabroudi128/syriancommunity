@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -18,6 +19,8 @@ class _HomePageState extends State<HomePage> {
   }
   @override
   Widget build(BuildContext context) {
+    final CollectionReference home =
+    FirebaseFirestore.instance.collection('home');
     return Scaffold(
       appBar: AppBar(
         leading: Builder(
@@ -57,6 +60,20 @@ class _HomePageState extends State<HomePage> {
                 ),
                 SizedBox(height: 12,),
                 Text("here you will see the latest news for the Community"),
+                StreamBuilder(
+                  stream: home.snapshots(),
+                  builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                    if (snapshot.hasError) {
+                      return Text('Something went wrong');
+                    }
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return Text("Loading");
+                    }
+                    return SingleChildScrollView(
+
+                    );
+                  },
+                )
               ],
             )
           ],
