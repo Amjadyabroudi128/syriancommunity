@@ -1,5 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../components/SubmitButton.dart';
+import '../../components/TextField.dart';
 
 class EditHome extends StatefulWidget {
   final String DocID;
@@ -21,6 +25,8 @@ class _EditHomeState extends State<EditHome> {
   }
   @override
   Widget build(BuildContext context) {
+    final CollectionReference home =
+    FirebaseFirestore.instance.collection('home');
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 33, 173, 168),
@@ -53,23 +59,22 @@ class _EditHomeState extends State<EditHome> {
                 Center(
                   child: CustomButton(
                       onPressed: () async {
-                        await FirebaseFirestore.instance.collection("home").doc().set(
-                            {
-                              "name" : name.text,
-                              "details" : details.text,
-                              "time" : DateTime.now(),
-                            }
+                        await home.doc(widget.DocID).update(
+                          {
+                            "name" : name.text,
+                            "details" : details.text,
+                            "time" : DateTime.now()
+                          }
                         );
-                        clearText();
                         Navigator.of(context).pushNamed("homepage");
                       },
-                      title: "Submit"),
+                      title: "Edit"),
                 )
               ],
             ),
           ),
         ),
-      ),,
+      ),
     );
   }
 }

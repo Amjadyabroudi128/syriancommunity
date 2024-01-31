@@ -47,6 +47,7 @@ class _EditMemberState extends State<EditMember> {
   FirebaseFirestore.instance.collection('members');
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
