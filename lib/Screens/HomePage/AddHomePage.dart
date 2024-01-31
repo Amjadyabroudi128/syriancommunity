@@ -15,11 +15,7 @@ class AddInfo extends StatefulWidget {
 class _AddInfoState extends State<AddInfo> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
- // trying to add this to Github from the terminal xD
-  String formattedDate(timeStamp){
-    var dateFromTimeStamp = DateTime.fromMillisecondsSinceEpoch(timeStamp.seconds *1000);
-    return DateFormat('dd-MM-yyyy').format(dateFromTimeStamp);
-  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
