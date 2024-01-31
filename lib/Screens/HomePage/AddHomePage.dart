@@ -45,7 +45,9 @@ class _AddInfoState extends State<AddInfo> {
                 ),
                 CustomTextForm(
                     hinttext: "details",
-                    myController: details),
+                    myController: details,
+                  maxLines: 6,
+                ),
                 SizedBox(height: 15,),
                 Center(
                   child: CustomButton(
