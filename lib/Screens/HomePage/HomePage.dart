@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../SideDrawer.dart';
 
@@ -11,6 +12,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String formattedDate(timeStamp){
+    var dateFromTimeStamp = DateTime.fromMillisecondsSinceEpoch(timeStamp.seconds *1000);
+    return DateFormat('dd-MM-yyyy').format(dateFromTimeStamp);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
