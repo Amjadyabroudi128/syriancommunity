@@ -70,7 +70,17 @@ class _HomePageState extends State<HomePage> {
                       return Text("Loading");
                     }
                     return SingleChildScrollView(
-
+                      child: ListView(
+                        physics: ScrollPhysics(),
+                        shrinkWrap: true,
+                        children: snapshot.data!.docs.map((DocumentSnapshot document){
+                    Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
+                    return Column(
+                    children: [],
+                    );
+                    },
+                      ).toList(),
+                    )
                     );
                   },
                 )
