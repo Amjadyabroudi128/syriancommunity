@@ -14,6 +14,11 @@ class EditHome extends StatefulWidget {
 class _EditHomeState extends State<EditHome> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
+  void initState() {
+    super.initState();
+    name.text = widget.oldName;
+    details.text = widget.oldDetail;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
