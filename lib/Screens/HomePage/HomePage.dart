@@ -76,7 +76,15 @@ class _HomePageState extends State<HomePage> {
                         children: snapshot.data!.docs.map((DocumentSnapshot document){
                     Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
                     return Column(
-                    children: [],
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Card(
+                          child: Padding(
+                            padding: EdgeInsets.all(13),
+                            child: Text(data["name"]),
+                          ),
+                        )
+                      ],
                     );
                     },
                       ).toList(),
