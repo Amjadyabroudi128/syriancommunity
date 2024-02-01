@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:syrianadmin/components/TextField.dart';
 
 import '../SideDrawer.dart';
 
@@ -17,6 +18,8 @@ class _HomePageState extends State<HomePage> {
     var dateFromTimeStamp = DateTime.fromMillisecondsSinceEpoch(timeStamp.seconds *1000);
     return DateFormat('dd-MM-yyyy').format(dateFromTimeStamp);
   }
+  TextEditingController thoughts = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final CollectionReference home =
@@ -48,15 +51,22 @@ class _HomePageState extends State<HomePage> {
           children: [
             Column(
               children: [
-                MaterialButton(
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
-                  height: 40,
-                  minWidth: 230,
-                  color: Colors.grey,
-                  child: Text("Add things +"),
-                  onPressed: (){
-                    Navigator.of(context).pushNamed("addInfo");
-                  },
+                // MaterialButton(
+                //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
+                //   height: 40,
+                //   minWidth: 230,
+                //   color: Colors.grey,
+                //   child: Text("Add things +"),
+                //   onPressed: (){
+                //     Navigator.of(context).pushNamed("addInfo");
+                //   },
+                // ),
+                GestureDetector(
+                    child: Container(
+                        child: CustomTextForm(hinttext: "what are your thoughts ", myController: thoughts, maxLines: 3,)),
+                  onTap: (){
+                      Navigator.of(context).pushNamed("addInfo");
+                  } ,
                 ),
                 SizedBox(height: 12,),
                 Text("here you will see the latest news for the Community"),
