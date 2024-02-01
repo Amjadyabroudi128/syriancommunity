@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String formattedDate(timeStamp){
-    var dateFromTimeStamp = DateTime.fromMillisecondsSinceEpoch(timeStamp.seconds *1000);
+    var dateFromTimeStamp = DateTime.fromMillisecondsSinceEpoch(timeStamp.seconds * 1000);
     return DateFormat('dd-MM-yyyy').format(dateFromTimeStamp);
   }
   @override
@@ -79,11 +79,18 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Card(
-                          child: Padding(
-                            padding: EdgeInsets.all(13),
-                            child: Text(data["name"]),
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.all(8),
+                                // child: Text("${data["time"]}", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                                child: Text(formattedDate(
+                                  data["time"]
+                                )),
+                              )
+                            ],
                           ),
-                        )
+                        ),
                       ],
                     );
                     },
