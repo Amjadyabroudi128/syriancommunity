@@ -76,21 +76,25 @@ class _HomePageState extends State<HomePage> {
                         children: snapshot.data!.docs.map((DocumentSnapshot document){
                     Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
                     return Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Card(
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.all(8),
-                                // child: Text("${data["time"]}", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                                child: Text(formattedDate(
-                                  data["time"]
-                                )),
-                                // this is so the community knows when the post was released so they can stay up to date
-                              )
-                            ],
+                        Container(
+                          child: Card(
+                            color: Colors.grey,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(8),
+                                  child: Text(formattedDate(
+                                    data["time"]
+                                  )),
+                                  // this is so the community knows when the post was released so they can stay up to date
+                                )
+                              ],
+                            ),
+
                           ),
+                          width: MediaQuery.of(context).size.width,
                         ),
                       ],
                     );
