@@ -87,6 +87,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Text(formattedDate(
                                   data["time"]
                                 )),
+                                // this is so the community knows when the post was released so they can stay up to date
                               )
                             ],
                           ),
