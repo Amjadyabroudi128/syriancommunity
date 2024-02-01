@@ -15,7 +15,8 @@ class AddInfo extends StatefulWidget {
 class _AddInfoState extends State<AddInfo> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
-
+  TimeOfDay time = TimeOfDay(hour: 12, minute: 12);
+  DateTime today = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +57,7 @@ class _AddInfoState extends State<AddInfo> {
                          {
                          "name" : name.text,
                            "details" : details.text,
-                           "time" : DateTime.now(),
+                           "time" :today
                          }
                        );
                        clearText();
