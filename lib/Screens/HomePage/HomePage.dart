@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Container(
                           child: Card(
-                            color: Colors.grey,
+                            color: Colors.grey[300],
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -87,7 +87,8 @@ class _HomePageState extends State<HomePage> {
                                   padding: EdgeInsets.all(8),
                                   child: Text(formattedDate(
                                     data["time"]
-                                  )),
+                                  ), style: TextStyle(color: Colors.grey),
+                                  ),
                                   // this is so the community knows when the post was released so they can stay up to date
                                 )
                               ],
