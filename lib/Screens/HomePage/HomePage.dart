@@ -90,9 +90,15 @@ class _HomePageState extends State<HomePage> {
                                   ), style: TextStyle(color: Colors.grey),
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 10, bottom: 3),
-                                  child: Text(data["name"], style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                                Padding(padding: EdgeInsets.all(13),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(data["name"]),
+                                      SizedBox(height: 5,),
+                                      Text(data["details"])
+                                    ],
+                                  ),
                                 )
                               ],
                             ),
