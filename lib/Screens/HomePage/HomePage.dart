@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                                   ), style: TextStyle(color: Colors.grey),
                                   ),
                                 ),
-                                Text(data["name"])
+                                Text(data["name"], style: TextStyle(fontSize: 18),)
                               ],
                             ),
 
