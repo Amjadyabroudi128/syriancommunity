@@ -89,7 +89,6 @@ class _HomePageState extends State<HomePage> {
                                     data["time"]
                                   ), style: TextStyle(color: Colors.grey),
                                   ),
-                                  // this is so the community knows when the post was released so they can stay up to date
                                 )
                               ],
                             ),
