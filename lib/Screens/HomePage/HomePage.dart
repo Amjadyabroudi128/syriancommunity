@@ -78,31 +78,34 @@ class _HomePageState extends State<HomePage> {
                     return Column(
                       children: [
                         Container(
-                          child: Card(
-                            color: Colors.grey[300],
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.all(8),
-                                  child: Text(formattedDate(
-                                    data["time"]
-                                  ), style: TextStyle(color: Colors.grey),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Card(
+                              color: Colors.grey[300],
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.all(8),
+                                    child: Text(formattedDate(
+                                      data["time"]
+                                    ), style: TextStyle(color: Colors.grey),
+                                    ),
                                   ),
-                                ),
-                                Padding(padding: EdgeInsets.all(13),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(data["name"]),
-                                      SizedBox(height: 5,),
-                                      Text(data["details"])
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
+                                  Padding(padding: EdgeInsets.all(13),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(data["name"]),
+                                        SizedBox(height: 5,),
+                                        Text(data["details"])
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
 
+                            ),
                           ),
                           width: MediaQuery.of(context).size.width,
                         ),
