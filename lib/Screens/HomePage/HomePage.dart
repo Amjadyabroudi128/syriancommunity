@@ -90,7 +90,10 @@ class _HomePageState extends State<HomePage> {
                                   ), style: TextStyle(color: Colors.grey),
                                   ),
                                 ),
-                                Text(data["name"], style: TextStyle(fontSize: 18),)
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 10, bottom: 3),
+                                  child: Text(data["name"], style: TextStyle(fontSize: 18),),
+                                )
                               ],
                             ),
 
