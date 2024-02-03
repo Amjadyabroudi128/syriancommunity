@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../SideDrawer.dart';
+import 'editHomePage.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final document;
+
+  const HomePage({Key? key, this.document}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -15,7 +18,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   String formattedDate(timeStamp){
     var dateFromTimeStamp = DateTime.fromMillisecondsSinceEpoch(timeStamp.seconds * 1000);
-    return DateFormat('dd-MM-yyyy').format(dateFromTimeStamp);
+    return DateFormat('yMMMEd').format(dateFromTimeStamp);
   }
   @override
   Widget build(BuildContext context) {
@@ -69,6 +72,18 @@ class _HomePageState extends State<HomePage> {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return Text("Loading");
                     }
+                    if (snapshot.data!.docs.isEmpty) {
+                      return SafeArea(
+                        child: Center(
+                         child: Column(
+                           children: [
+                             SizedBox(height: 200,),
+                             Text("nothing to see here yet :( ", style: TextStyle(color: Colors.grey, fontSize: 20),)
+                           ],
+                         ),
+                        ),
+                      );
+                    }
                     return SingleChildScrollView(
                       child: ListView(
                         physics: ScrollPhysics(),
@@ -76,39 +91,100 @@ class _HomePageState extends State<HomePage> {
                         children: snapshot.data!.docs.map((DocumentSnapshot document){
                     Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
                     return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        // Container(
+                        //   child: Padding(
+                        //     padding: const EdgeInsets.all(2.0),
+                        //     child: Card(
+                        //       color: Colors.grey[300],
+                        //       child: Column(
+                        //         crossAxisAlignment: CrossAxisAlignment.start,
+                        //         children: [
+                        //           Padding(
+                        //             padding: EdgeInsets.all(8),
+                        //             child: Text(formattedDate(
+                        //               data["time"]
+                        //             ), style: TextStyle(color: Colors.grey),
+                        //             ),
+                        //           ),
+                        //           Padding(padding: EdgeInsets.all(3),
+                        //             child: Column(
+                        //               crossAxisAlignment: CrossAxisAlignment.start,
+                        //               children: [
+                        //                 Text(data["name"]),
+                        //                 SizedBox(height: 5,),
+                        //                 Text(data["details"])
+                        //               ],
+                        //             ),
+                        //           )
+                        //         ],
+                        //       ),
+                        //
+                        //     ),
+                        //   ),
+                        //   width: MediaQuery.of(context).size.width,
+                        // ),
                         Container(
-                          child: Padding(
-                            padding: const EdgeInsets.all(2.0),
+                          width: MediaQuery.of(context).size.width ,
+                          child: IntrinsicHeight(
                             child: Card(
                               color: Colors.grey[300],
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.all(8),
-                                    child: Text(formattedDate(
-                                      data["time"]
-                                    ), style: TextStyle(color: Colors.grey),
-                                    ),
-                                  ),
-                                  Padding(padding: EdgeInsets.all(3),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(data["name"]),
-                                        SizedBox(height: 5,),
-                                        Text(data["details"])
-                                      ],
-                                    ),
-                                  )
-                                ],
-                              ),
+                              elevation: 0,
+                              child: Padding(
+                                padding: EdgeInsets.all(12),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(formattedDate(data["time"]), style: TextStyle(color: Colors.grey),),
+                                      SizedBox(height: 6,),
+                                      Text(data["name"]),
+                                    SizedBox(height: 6,),
+                                    Text(data["details"]),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 300),
+                                      child: PopupMenuButton(
+                                        iconSize: 30,
+                                        // add icon, by default "3 dot" icon
+                                        // icon: Icon(Icons.book)
+                                        itemBuilder: (context){
+                                          return [
+                                            PopupMenuItem<int>(
+                                                value: 0,
+                                                child:Icon(Icons.edit)
+                                            ),
 
+                                            PopupMenuItem<int>(
+                                              value: 1,
+                                              child: Icon(Icons.delete, color: Colors.red,),
+                                            ),
+                                          ];
+                                        },
+                                        onSelected:(value){
+                                          if(value == 0){
+                                            Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                              builder: (context) {
+                                                return
+                                                  EditHome(DocID: document.id,
+                                                    oldName: data["name"],
+                                                    oldDetail: data["details"],
+                                                );
+                                              }
+                                              )
+                                            );
+                                          }else if(value == 1){
+                                            FirebaseFirestore.instance.collection("home").doc(document.id).delete();
+                                          }
+                                        },
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
-                          width: MediaQuery.of(context).size.width,
-                        ),
+                        )
                       ],
                     );
                     },
