@@ -48,6 +48,18 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return Text("Loading");
                   }
+                  if (snapshot.data!.docs.isEmpty) {
+                    return SafeArea(
+                      child: Center(
+                        child: Column(
+                          children: [
+                            SizedBox(height: 200,),
+                            Text("nothing to see here yet :( ", style: TextStyle(color: Colors.grey, fontSize: 20),)
+                          ],
+                        ),
+                      ),
+                    );
+                  }
                   return SingleChildScrollView(
                     child: ListView(
                       physics: ScrollPhysics(),
