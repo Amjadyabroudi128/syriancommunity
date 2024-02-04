@@ -1,3 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +12,7 @@ class SideDrawer extends StatefulWidget {
 }
 
 class _SideDrawerState extends State<SideDrawer> {
+  final FirebaseAuth auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -76,6 +80,44 @@ class _SideDrawerState extends State<SideDrawer> {
               Navigator.of(context).pushNamed("celebrations");
             },
           ),
+          //  ListTile (
+          //   title: Text("Login"),
+          //   leading:  Icon(
+          //     Icons.login,
+          //     size: 30,
+          //   ),
+          //   onTap: (){
+          //     Navigator.of(context).pushNamed("login" );
+          //   },
+          // ),
+      StreamBuilder<User?>(
+        // The stream is the auth state changes from Firebase
+        stream: auth.authStateChanges(),
+        // The builder takes a snapshot of the stream data
+        builder: (context, snapshot) {
+          // If the snapshot has data, it means the user is signed in
+          if (snapshot.hasData) {
+            // Return the list tile for signed in users
+            return ListTile(
+              title: Text("SignOut"),
+              leading: Icon(Icons.logout),
+              onTap: () {
+                // Perform sign out logic here
+                auth.signOut();
+              },
+            );
+          } else {
+            // Return the list tile for signed out users
+            return ListTile(
+              leading: Icon(Icons.login),
+              title: Text('Sign in'),
+              onTap: () {
+                Navigator.of(context).pushNamed("signup");
+              },
+            );
+          }
+        },
+      ),
           // these are the pages that i am trying to make
         ],
       ),
