@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                                     Text(data["details"]),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 300),
-                                      child:  PopupMenuButton(
+                                      child: user != null ?  PopupMenuButton(
                                         iconSize: 30,
                                         // add icon, by default "3 dot" icon
                                         // icon: Icon(Icons.book)
@@ -148,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                                             FirebaseFirestore.instance.collection("home").doc(document.id).delete();
                                           }
                                         },
-                                      ),
+                                      ) : SizedBox.shrink(),
                                     ),
                                   ],
                                 ),
