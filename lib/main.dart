@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/LogIn.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations.dart';
 import 'package:syrianadmin/Screens/Contact/AddContactDetails.dart';
 import 'package:syrianadmin/Screens/Contact/ContactUS.dart';
@@ -56,7 +57,8 @@ class MyApp extends StatelessWidget {
         "community" : (context) => Community(),
         "addCommunity" : (context) => addCommunity(),
         "editCommunity" : (context) => EditCommunity(DocID: '', oldName: '', oldDetails: '',),
-        "editHome" : (context) => EditHome(DocID: "", oldName: "", oldDetail: "")
+        "editHome" : (context) => EditHome(DocID: "", oldName: "", oldDetail: ""),
+        "signup" : (context) => Signup(),
         // add navigation for learning resources
       },
     );
