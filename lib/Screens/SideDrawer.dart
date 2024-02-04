@@ -80,16 +80,6 @@ class _SideDrawerState extends State<SideDrawer> {
               Navigator.of(context).pushNamed("celebrations");
             },
           ),
-          //  ListTile (
-          //   title: Text("Login"),
-          //   leading:  Icon(
-          //     Icons.login,
-          //     size: 30,
-          //   ),
-          //   onTap: (){
-          //     Navigator.of(context).pushNamed("login" );
-          //   },
-          // ),
       StreamBuilder<User?>(
         // The stream is the auth state changes from Firebase
         stream: auth.authStateChanges(),

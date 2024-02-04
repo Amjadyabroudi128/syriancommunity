@@ -25,8 +25,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final CollectionReference home =
     FirebaseFirestore.instance.collection('home');
-    User? user = FirebaseAuth.instance.currentUser;
 
+    User? user = FirebaseAuth.instance.currentUser;
     return Scaffold(
       appBar: AppBar(
         leading: Builder(
