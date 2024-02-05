@@ -33,13 +33,13 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
           children: [
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: CustomButton(
+              child: user != null ? CustomButton(
                 onPressed: (){
                   Navigator.of(context).pushNamed("addMember");
 
                 },
                 title: "Add members +",
-              ),
+              ) : SizedBox(),
             ),
             StreamBuilder(
               stream: members.snapshots(),
