@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Column(
               children: [
-                MaterialButton(
+              user != null ?  MaterialButton(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
                   height: 40,
                   minWidth: 230,
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                   onPressed: (){
                     Navigator.of(context).pushNamed("addInfo");
                   },
-                ),
+                ) : SizedBox(),
                 SizedBox(height: 12,),
                 Text("here you will see the latest news for the Community"),
                 StreamBuilder(
