@@ -153,7 +153,7 @@ class _ContactUsState extends State<ContactUs> {
                                                   ),
                                                   Padding(
                                                     padding: const EdgeInsets.only(left: 310),
-                                                    child: PopupMenuButton(
+                                                    child: user != null ? PopupMenuButton(
                                                       iconSize: 30,
                                                         // add icon, by default "3 dot" icon
                                                       // icon: Icon(Icons.book)
@@ -186,7 +186,7 @@ class _ContactUsState extends State<ContactUs> {
                                                             Navigator.of(context).pushNamed("contactus");
                                                           }
                                                         },
-                                                    ),
+                                                    ) : SizedBox(),
                                                   ),
 
                                                 ],
