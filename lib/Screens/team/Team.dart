@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
@@ -17,6 +18,8 @@ class MeetOurTeam extends StatefulWidget {
 class _MeetOurTeamState extends State<MeetOurTeam> {
   final CollectionReference members =
   FirebaseFirestore.instance.collection('members');
+  User? user = FirebaseAuth.instance.currentUser;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +73,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                         children: [
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: GestureDetector(
+                          child: user != null ? GestureDetector(
                             child: Card(
                               shape: const CircleBorder(),
                               clipBehavior: Clip.antiAlias,
@@ -90,6 +93,15 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                         oldUrl: data["image"],)
                                   ));
                             },
+                          ) : Card(
+                            shape: const CircleBorder(),
+                            clipBehavior: Clip.antiAlias,
+                            child: data["image"] != null ? Image.network(
+                              data["image"],
+                              width: 240,
+                              height: 240,
+                              fit: BoxFit.cover,
+                            ) : SizedBox.shrink(),
                           ),
                         ),
                           Text(data["name"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,
