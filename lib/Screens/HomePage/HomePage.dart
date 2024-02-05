@@ -23,8 +23,8 @@ class _HomePageState extends State<HomePage> {
   }
   @override
   Widget build(BuildContext context) {
-    final CollectionReference home =
-    FirebaseFirestore.instance.collection('home');
+    var home =
+    FirebaseFirestore.instance.collection('home').orderBy("time", descending: true);
 
     User? user = FirebaseAuth.instance.currentUser;
     return Scaffold(
@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                         physics: ScrollPhysics(),
                         shrinkWrap: true,
                         children: snapshot.data!.docs.map((DocumentSnapshot document){
-                    Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
+                    // Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -107,11 +107,11 @@ class _HomePageState extends State<HomePage> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(formattedDate(data["time"]), style: TextStyle(color: Colors.grey),),
+                                    Text(formattedDate(document["time"]), style: TextStyle(color: Colors.grey),),
                                       SizedBox(height: 6,),
-                                      Text(data["name"]),
+                                      Text(document["name"]),
                                     SizedBox(height: 6,),
-                                    Text(data["details"]),
+                                    Text(document["details"]),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 300),
                                       child: user != null ?  PopupMenuButton(
@@ -138,8 +138,8 @@ class _HomePageState extends State<HomePage> {
                                               builder: (context) {
                                                 return
                                                   EditHome(DocID: document.id,
-                                                    oldName: data["name"],
-                                                    oldDetail: data["details"],
+                                                    oldName: document["name"],
+                                                    oldDetail: document["details"],
                                                 );
                                               }
                                               )

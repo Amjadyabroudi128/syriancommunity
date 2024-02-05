@@ -12,7 +12,6 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
-
   final adminEmail = TextEditingController();
   final adminPass = TextEditingController();
   @override
@@ -28,7 +27,9 @@ class _SignupState extends State<Signup> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("LOG in as an adming to add things to the pages"),
-            SizedBox(height: 15,),
+            SizedBox(
+              height: 15,
+            ),
             // TextFormField(
             //   decoration: InputDecoration(
             //     labelText: "Email",
@@ -43,7 +44,9 @@ class _SignupState extends State<Signup> {
             //   },
             // ),
             CustomTextForm(hinttext: "email", myController: adminEmail),
-            SizedBox(height: 13,),
+            SizedBox(
+              height: 13,
+            ),
             // TextFormField(
             //   decoration: InputDecoration(
             //     labelText: "Password",
@@ -58,7 +61,9 @@ class _SignupState extends State<Signup> {
             //   },
             // ),
             CustomTextForm(hinttext: "pass", myController: adminPass),
-            SizedBox(height: 15,),
+            SizedBox(
+              height: 15,
+            ),
             Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(
@@ -72,13 +77,11 @@ class _SignupState extends State<Signup> {
                 ),
                 onPressed: () async {
                   await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                      email: adminEmail.text,
-                      password: adminPass.text
-                  );
+                      email: adminEmail.text, password: adminPass.text);
                   Navigator.of(context).pushNamed("homepage");
                 },
                 child: const Text(
-                  'Signup',
+                  'Signup  ',
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
