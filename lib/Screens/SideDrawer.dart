@@ -94,6 +94,7 @@ class _SideDrawerState extends State<SideDrawer> {
               onTap: () {
                 // Perform sign out logic here
                 auth.signOut();
+                Navigator.of(context).pushNamed("homepage");
               },
             );
           } else {
