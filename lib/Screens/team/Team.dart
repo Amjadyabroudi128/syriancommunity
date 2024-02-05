@@ -122,7 +122,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 310),
-                                      child: PopupMenuButton(
+                                      child: user != null ? PopupMenuButton(
                                         iconSize: 30,
                                         // add icon, by default "3 dot" icon
                                         // icon: Icon(Icons.book)
@@ -153,7 +153,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                                     Navigator.of(context).pushNamed("ourteam");
                                           }
                                         },
-                                      ),
+                                      ) : SizedBox(),
                                     ),
                                   ],
                                 ),
