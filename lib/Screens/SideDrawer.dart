@@ -88,7 +88,14 @@ class _SideDrawerState extends State<SideDrawer> {
               // If the snapshot has data, it means the user is signed in
               if (snapshot.hasData) {
                 // Return the list tile for signed in users
-                return SizedBox();
+                return ListTile(
+                  leading: Icon(Icons.logout),
+                  title: Text("Log out"),
+                  onTap: (){
+                    auth.signOut();
+                    Navigator.of(context).pushNamed("homepage");
+                  },
+                );
               } else {
                 // Return the list tile for signed out users
                 return ListTile(
