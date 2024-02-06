@@ -37,11 +37,11 @@ class _ContactUsState extends State<ContactUs> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Center(
-                          child: CustomButton(
+                          child: user != null ? CustomButton(
                               onPressed: (){
                                 Navigator.of(context).pushNamed("addcontact");
                               },
-                              title: "Add contact details"),
+                              title: "Add contact details") : SizedBox(height: 15,),
                         ),
                         SizedBox(height: 30,),
                         Text("You can visit us here ", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
@@ -144,12 +144,12 @@ class _ContactUsState extends State<ContactUs> {
                                                 children: [
                                                   Padding(
                                                     padding: const EdgeInsets.all(12.0),
-                                                    child: Text("Email ${data["email"]}"),
+                                                    child: SelectableText("Email ${data["email"]}"),
                                                   ),
                                                   SizedBox(height: 14,),
                                                   Padding(
                                                     padding: const EdgeInsets.all(12.0),
-                                                    child: Text("Ahmad Yabroudi  ${data["phone"]}"),
+                                                    child: SelectableText("Ahmad Yabroudi  ${data["phone"]}"),
                                                   ),
                                                   Padding(
                                                     padding: const EdgeInsets.only(left: 310),
