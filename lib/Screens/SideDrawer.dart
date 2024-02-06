@@ -80,35 +80,28 @@ class _SideDrawerState extends State<SideDrawer> {
               Navigator.of(context).pushNamed("celebrations");
             },
           ),
-      StreamBuilder<User?>(
-        // The stream is the auth state changes from Firebase
-        stream: auth.authStateChanges(),
-        // The builder takes a snapshot of the stream data
-        builder: (context, snapshot) {
-          // If the snapshot has data, it means the user is signed in
-          if (snapshot.hasData) {
-            // Return the list tile for signed in users
-            return ListTile(
-              title: Text("SignOut"),
-              leading: Icon(Icons.logout),
-              onTap: () {
-                // Perform sign out logic here
-                auth.signOut();
-                Navigator.of(context).pushNamed("homepage");
-              },
-            );
-          } else {
-            // Return the list tile for signed out users
-            return ListTile(
-              leading: Icon(Icons.login),
-              title: Text('Sign in'),
-              onTap: () {
-                Navigator.of(context).pushNamed("signup");
-              },
-            );
-          }
-        },
-      ),
+          StreamBuilder<User?>(
+            // The stream is the auth state changes from Firebase
+            stream: auth.authStateChanges(),
+            // The builder takes a snapshot of the stream data
+            builder: (context, snapshot) {
+              // If the snapshot has data, it means the user is signed in
+              if (snapshot.hasData) {
+                // Return the list tile for signed in users
+                return SizedBox();
+              } else {
+                // Return the list tile for signed out users
+                return ListTile(
+                  leading: Icon(Icons.login),
+                  title: Text('Log in'),
+                  onTap: () {
+                    Navigator.of(context).pushNamed("login");
+                  },
+                );
+              }
+            },
+          ),
+
           // these are the pages that i am trying to make
         ],
       ),
