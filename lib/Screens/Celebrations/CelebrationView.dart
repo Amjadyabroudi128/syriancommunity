@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,8 @@ class Celebrations extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    User? user = FirebaseAuth.instance.currentUser;
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Celebrations"),
@@ -24,11 +27,11 @@ class Celebrations extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Center(
-                  child: CustomButton(
+                  child: user != null ? CustomButton(
                       onPressed: (){
                         Navigator.of(context).pushNamed("addcelebration");
                       },
-                      title: "Add celebrations +"),
+                      title: "Add celebrations +") : SizedBox(height: 15,),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -87,7 +90,7 @@ class Celebrations extends StatelessWidget {
                                 child: Text(data["name"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,
                                   color: Color.fromARGB(255, 33, 173, 168),),),
                               ),
-                              GestureDetector(
+                             user != null ? GestureDetector(
                                 child: Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: Container(
@@ -111,7 +114,17 @@ class Celebrations extends StatelessWidget {
                                     ),
                                   );
                                 },
-                              ),
+                              ) : Padding(
+                               padding: const EdgeInsets.all(4.0),
+                               child: Container(
+                                 child: data["image"] != null ? Image.network(
+                                   data["image"],
+                                   height: MediaQuery.of(context).size.height * 0.40,
+                                   // fit: BoxFit.cover,
+                                   width: MediaQuery.of(context).size.width,
+                                 ) : SizedBox.shrink(),
+                               ),
+                             ),
                               SizedBox(height: 7,),
                               Container(
                                 child: IntrinsicHeight(
