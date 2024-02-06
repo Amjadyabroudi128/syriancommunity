@@ -32,28 +32,11 @@ class _LoginState extends State<Login> {
             SizedBox(
               height: 15,
             ),
-            // TextFormField(
-            //   decoration: InputDecoration(
-            //     labelText: "Email",
-            //     border: OutlineInputBorder(
-            //       borderRadius: BorderRadius.circular(25.0),
-            //     ),
-            //   ),
-            // ),
-            CustomTextForm(hinttext: "email",),
+                        CustomTextForm(hinttext: "email",),
             SizedBox(
               height: 13,
             ),
-            // TextFormField(
-            //   obscureText: true,
-            //   decoration: InputDecoration(
-            //     labelText: "Password",
-            //     border: OutlineInputBorder(
-            //       borderRadius: BorderRadius.circular(25.0),
-            //     ),
-            //   ),
-            // ),
-            CustomTextForm(hinttext: "pass",),
+                       CustomTextForm(hinttext: "pass",),
             SizedBox(
               height: 15,
             ),
