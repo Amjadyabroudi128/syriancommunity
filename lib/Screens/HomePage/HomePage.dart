@@ -25,7 +25,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     var home =
     FirebaseFirestore.instance.collection('home').orderBy("time", descending: true);
-
     User? user = FirebaseAuth.instance.currentUser;
     return Scaffold(
       appBar: AppBar(
