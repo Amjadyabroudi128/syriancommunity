@@ -32,28 +32,28 @@ class _LoginState extends State<Login> {
             SizedBox(
               height: 15,
             ),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: "Email",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(25.0),
-                ),
-              ),
-            ),
-            // CustomTextForm(hinttext: "email", myController: adminEmail),
+            // TextFormField(
+            //   decoration: InputDecoration(
+            //     labelText: "Email",
+            //     border: OutlineInputBorder(
+            //       borderRadius: BorderRadius.circular(25.0),
+            //     ),
+            //   ),
+            // ),
+            CustomTextForm(hinttext: "email",),
             SizedBox(
               height: 13,
             ),
-            TextFormField(
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: "Password",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(25.0),
-                ),
-              ),
-            ),
-            // CustomTextForm(hinttext: "pass", myController: adminPass),
+            // TextFormField(
+            //   obscureText: true,
+            //   decoration: InputDecoration(
+            //     labelText: "Password",
+            //     border: OutlineInputBorder(
+            //       borderRadius: BorderRadius.circular(25.0),
+            //     ),
+            //   ),
+            // ),
+            CustomTextForm(hinttext: "pass",),
             SizedBox(
               height: 15,
             ),
@@ -69,7 +69,7 @@ class _LoginState extends State<Login> {
                   padding: const EdgeInsets.symmetric(vertical: 14),
                 ),
                 onPressed: () async {
-                  await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                  await FirebaseAuth.instance.signInWithEmailAndPassword(
                       email: testEmail, password: testPassword);
                   Navigator.of(context).pushNamed("homepage");
                 },

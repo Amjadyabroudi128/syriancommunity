@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 class CustomTextForm extends StatelessWidget {
   final String hinttext;
-  final TextEditingController myController;
+  final TextEditingController? myController;
   final int? maxLines;
   final TextDirection? textDirection;
   const CustomTextForm
   ({ required this.hinttext,
-  required this.myController, this.maxLines, this.textDirection,
+   this.myController, this.maxLines, this.textDirection,
 
 });
 @override
