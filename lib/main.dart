@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:syrianadmin/Cubits/auth_cubit.dart';
 import 'package:syrianadmin/Register/LogIn.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations.dart';
 import 'package:syrianadmin/Screens/Contact/AddContactDetails.dart';
@@ -9,7 +10,6 @@ import 'package:syrianadmin/Screens/HomePage/editHomePage.dart';
 import 'package:syrianadmin/Screens/team/EditTeam.dart';
 import 'package:syrianadmin/Screens/team/Team.dart';
 import 'package:syrianadmin/Screens/team/addTeam.dart';
-import 'AuthBloc/auth_bloc.dart';
 import 'Screens/Celebrations/AddCelebration.dart';
 import 'Screens/Celebrations/CelebrationView.dart';
 import 'Screens/HomePage/AddHomePage.dart';
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
         //   create: (context) => AuthCubit(),
         // ),
         BlocProvider(
-          create: (context) => AuthBloc(),
+          create: (context) => AuthCubit(),
         ),
       ],
       child: MaterialApp(
