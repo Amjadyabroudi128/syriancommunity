@@ -9,6 +9,7 @@ import 'package:syrianadmin/Screens/HomePage/editHomePage.dart';
 import 'package:syrianadmin/Screens/team/EditTeam.dart';
 import 'package:syrianadmin/Screens/team/Team.dart';
 import 'package:syrianadmin/Screens/team/addTeam.dart';
+import 'AuthBloc/auth_bloc.dart';
 import 'Screens/Celebrations/AddCelebration.dart';
 import 'Screens/Celebrations/CelebrationView.dart';
 import 'Screens/HomePage/AddHomePage.dart';
@@ -41,12 +42,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (context) => AuthCubit(),
-        ),
         // BlocProvider(
-        //   create: (context) => AuthBloc(),
+        //   create: (context) => AuthCubit(),
         // ),
+        BlocProvider(
+          create: (context) => AuthBloc(),
+        ),
       ],
       child: MaterialApp(
        debugShowCheckedModeBanner: false,
