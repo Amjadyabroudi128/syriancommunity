@@ -52,8 +52,8 @@ class _LoginState extends State<Login> {
                   padding: const EdgeInsets.symmetric(vertical: 14),
                 ),
                 onPressed: () async {
-                  await FirebaseAuth.instance.signInWithEmailAndPassword(
-                      email: testEmail, password: testPassword);
+                  // await FirebaseAuth.instance.signInWithEmailAndPassword(
+                  //     email: testEmail, password: testPassword);
                   Navigator.of(context).pushNamed("homepage");
                 },
                 child: const Text(
