@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:syrianadmin/Register/LogIn.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations.dart';
 import 'package:syrianadmin/Screens/Contact/AddContactDetails.dart';
@@ -38,29 +39,39 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-     debugShowCheckedModeBanner: false,
-      initialRoute: "homepage",
-      title: "Syrian Community ",
-      home: HomePage(),
-      routes: {
-       "homepage" : (context) => HomePage(),
-        "addInfo" : (context) => AddInfo(),
-        "ourteam" : (context) => MeetOurTeam(),
-        "addMember" : (context) => AddMember(),
-        "contactus" : (context) => ContactUs(),
-        "addcontact" : (context) => AddContactDetails(),
-        "celebrations" : (context) => Celebrations(),
-        "addcelebration" : (context) => AddCelebration(),
-        "editMember" : (context) => EditMember(DocID: '', oldName: '', oldDetail: '', oldUrl: '',),
-        "editCelebration" : (context) => EditCelebration(DocID: "", oldName: "", oldDetail: "", oldUrl: ""),
-        "community" : (context) => Community(),
-        "addCommunity" : (context) => addCommunity(),
-        "editCommunity" : (context) => EditCommunity(DocID: '', oldName: '', oldDetails: '',),
-        "editHome" : (context) => EditHome(DocID: "", oldName: "", oldDetail: ""),
-        "login" : (context) => Login(),
-        // add navigation for learning resources
-      },
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AuthCubit(),
+        ),
+        BlocProvider(
+          create: (context) => AuthBloc(),
+        ),
+      ],
+      child: MaterialApp(
+       debugShowCheckedModeBanner: false,
+        initialRoute: "homepage",
+        title: "Syrian Community ",
+        home: HomePage(),
+        routes: {
+         "homepage" : (context) => HomePage(),
+          "addInfo" : (context) => AddInfo(),
+          "ourteam" : (context) => MeetOurTeam(),
+          "addMember" : (context) => AddMember(),
+          "contactus" : (context) => ContactUs(),
+          "addcontact" : (context) => AddContactDetails(),
+          "celebrations" : (context) => Celebrations(),
+          "addcelebration" : (context) => AddCelebration(),
+          "editMember" : (context) => EditMember(DocID: '', oldName: '', oldDetail: '', oldUrl: '',),
+          "editCelebration" : (context) => EditCelebration(DocID: "", oldName: "", oldDetail: "", oldUrl: ""),
+          "community" : (context) => Community(),
+          "addCommunity" : (context) => addCommunity(),
+          "editCommunity" : (context) => EditCommunity(DocID: '', oldName: '', oldDetails: '',),
+          "editHome" : (context) => EditHome(DocID: "", oldName: "", oldDetail: ""),
+          "login" : (context) => Login(),
+          // add navigation for learning resources
+        },
+      ),
     );
   }
 }
