@@ -14,7 +14,9 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  String testEmail = "sussexsyriancommunity@gmail.com";
+  // final adminEmail = TextEditingController();
+  // final adminPass = TextEditingController();
+  String testEmail = "SussexCommunity@gmail.com";
   String testPassword = "Syria963";
   @override
   Widget build(BuildContext context) {
@@ -58,7 +60,10 @@ class _LoginState extends State<Login> {
                   backgroundColor: Colors.blue,
                   padding: const EdgeInsets.symmetric(vertical: 14),
                 ),
-                onPressed: ()  {
+                onPressed: () async {
+                  // await FirebaseAuth.instance.signInWithEmailAndPassword(
+                  //     email: testEmail, password: testPassword);
+                  // Navigator.of(context).pushNamed("homepage");
                   BlocProvider.of<AuthCubit>(context).login(email: testEmail, password: testPassword);
                 },
                 child: const Text(
