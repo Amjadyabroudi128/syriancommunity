@@ -14,8 +14,6 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  // final adminEmail = TextEditingController();
-  // final adminPass = TextEditingController();
   String testEmail = "SussexCommunity@gmail.com";
   String testPassword = "Syria963";
   @override
@@ -61,9 +59,7 @@ class _LoginState extends State<Login> {
                   padding: const EdgeInsets.symmetric(vertical: 14),
                 ),
                 onPressed: () async {
-                  // await FirebaseAuth.instance.signInWithEmailAndPassword(
-                  //     email: testEmail, password: testPassword);
-                  // Navigator.of(context).pushNamed("homepage");
+
                   BlocProvider.of<AuthCubit>(context).login(email: testEmail, password: testPassword);
                 },
                 child: const Text(
