@@ -24,7 +24,6 @@ import 'Screens/community/editCommunity.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    // name: "syriancommunity-5239d",
     options: FirebaseOptions(
         apiKey: "AIzaSyDSQtMlQwLsEkK5B1P4fjASVfZ0GCq1eLU",
         appId: "1:362925763810:android:3e179ce12ca5c3c64a02bb",
@@ -35,6 +34,7 @@ void main() async {
     ),
   );
   await FirebaseApi().initNotifications();
+  await FirebaseMessaging.instance.subscribeToTopic("topic");
   runApp(const MyApp());
 }
 
