@@ -5,6 +5,8 @@ import 'package:intl/intl.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
 
+import '../../Api/Firebase_api.dart';
+
 class AddInfo extends StatefulWidget {
   const AddInfo({Key? key}) : super(key: key);
 
@@ -60,6 +62,7 @@ class _AddInfoState extends State<AddInfo> {
                          }
                        );
                        clearText();
+                       await FirebaseApi().initNotifications();
                        Navigator.of(context).pushNamed("homepage");
                       },
                       title: "Submit"),
