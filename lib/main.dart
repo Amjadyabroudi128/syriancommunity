@@ -12,6 +12,7 @@ import 'package:syrianadmin/Screens/HomePage/editHomePage.dart';
 import 'package:syrianadmin/Screens/team/EditTeam.dart';
 import 'package:syrianadmin/Screens/team/Team.dart';
 import 'package:syrianadmin/Screens/team/addTeam.dart';
+import 'Api/Firebase_api.dart';
 import 'Screens/Celebrations/AddCelebration.dart';
 import 'Screens/Celebrations/CelebrationView.dart';
 import 'Screens/HomePage/AddHomePage.dart';
@@ -19,20 +20,21 @@ import 'Screens/HomePage/HomePage.dart';
 import 'Screens/community/addCommunity.dart';
 import 'Screens/community/Community.dart';
 import 'Screens/community/editCommunity.dart';
-
+ final NavigatorKey = GlobalKey<NavigatorState>();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     // name: "syriancommunity-5239d",
     options: FirebaseOptions(
         apiKey: "AIzaSyDSQtMlQwLsEkK5B1P4fjASVfZ0GCq1eLU",
-        appId: "syriancommunity-5239d",
+        appId: "1:362925763810:android:3e179ce12ca5c3c64a02bb",
         messagingSenderId:
         "362925763810",
         projectId: "syriancommunity-5239d",
       storageBucket: "syriancommunity-5239d.appspot.com",
     ),
   );
+  await FirebaseApi().initNotifications();
   runApp(const MyApp());
 }
 
@@ -56,6 +58,7 @@ class MyApp extends StatelessWidget {
         initialRoute: "homepage",
         title: "Syrian Community ",
         home: HomePage(),
+        navigatorKey: NavigatorKey,
         routes: {
          "homepage" : (context) => HomePage(),
           "addInfo" : (context) => AddInfo(),
