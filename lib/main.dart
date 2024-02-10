@@ -21,7 +21,9 @@ import 'Screens/community/addCommunity.dart';
 import 'Screens/community/Community.dart';
 import 'Screens/community/editCommunity.dart';
  final NavigatorKey = GlobalKey<NavigatorState>();
-void main() async {
+
+    void main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: FirebaseOptions(
