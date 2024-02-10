@@ -38,5 +38,6 @@ I have Learnt a lot of things while making this app and i feel like it was very 
 * Google Cloud maps API
 * FCM (Firebase cloud messaging for notifications )
 * Bloc ( used for Authentication )
+* only allow one user (admin ) to sign in
 * 
 
