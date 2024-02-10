@@ -64,7 +64,7 @@ class _AddInfoState extends State<AddInfo> {
                        );
                        clearText();
                        await FirebaseApi().initNotifications();
-                       // await FirebaseMessaging.instance.subscribeToTopic("topic");
+                       await FirebaseMessaging.instance.subscribeToTopic("topic");
                        Navigator.of(context).pushNamed("homepage");
                       },
                       title: "Submit"),
