@@ -39,5 +39,5 @@ I have Learnt a lot of things while making this app and i feel like it was very 
 * FCM (Firebase cloud messaging for notifications )
 * Bloc ( used for Authentication )
 * only allow one user (admin ) to sign in
-* 
+* Hide/Show buttons depending on user 
 
