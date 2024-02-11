@@ -31,6 +31,11 @@ i have added time of "post" to show the community when it was released
 
 ![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/6f3d7b1a-5f33-400e-9bed-c19729b6ba52)
 
+when admin signed in 
+
+![Screenshot 2024-02-11 151353](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/fb76e1d4-18c4-45dc-8fca-e68a318c5c58)
+
+
 I have Learnt a lot of things while making this app and i feel like it was very beneficial for me 
 * Image picking from gallery/camera
 * adding image with text and make image nullable so text alone can be submitted
