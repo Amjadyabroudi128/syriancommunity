@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../../components/formatedData.dart';
 import '../SideDrawer.dart';
 import 'editHomePage.dart';
 
@@ -17,10 +18,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String formattedDate(timeStamp){
-    var dateFromTimeStamp = DateTime.fromMillisecondsSinceEpoch(timeStamp.seconds * 1000);
-    return DateFormat('yMMMEd').format(dateFromTimeStamp);
-  }
+
   @override
   Widget build(BuildContext context) {
     var home =
@@ -99,6 +97,9 @@ class _HomePageState extends State<HomePage> {
                           width: MediaQuery.of(context).size.width ,
                           child: IntrinsicHeight(
                             child: Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(18.0),
+                              ),
                               color: Colors.grey[300],
                               elevation: 0,
                               child: Padding(
