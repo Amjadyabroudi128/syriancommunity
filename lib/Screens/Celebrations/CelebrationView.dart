@@ -44,14 +44,21 @@ class Celebrations extends StatelessWidget {
                 Container(
                   width: 400,
                   height: 100,
-                  child: Card(
-                    color: Colors.grey[200],
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text("join us in our celebrations to bring the community together  throughout the year",
-                      style: TextStyle(fontSize: 16),),
-                    ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18.0),
+                      ),
+                      color: Colors.grey[200],
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("join us in our celebrations to bring the community together  throughout the year",
+                        style: TextStyle(fontSize: 16),),
+                      ),
 
+                    ),
                   ),
                 ),
                 StreamBuilder(
