@@ -129,6 +129,9 @@ class Celebrations extends StatelessWidget {
                               Container(
                                 child: IntrinsicHeight(
                                   child: Card(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(18.0),
+                                    ),
                                     color: Colors.grey[300],
                                     elevation: 0,
                                     child: Column(
