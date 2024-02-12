@@ -18,6 +18,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -96,6 +97,7 @@ class _HomePageState extends State<HomePage> {
                         Container(
                           width: MediaQuery.of(context).size.width ,
                           child: IntrinsicHeight(
+
                             child: Card(
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(18.0),

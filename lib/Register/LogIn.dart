@@ -20,12 +20,10 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
   listener: (context, state) {
-    if (state is LoginSuccess) {
+    if (state is LoginSuccess)  {
       Navigator.of(context).pushNamed("homepage");
     } else if (state is LoginLoading) {
-      Center(
-        child: CircularProgressIndicator(),
-      );
+
     }
   },
   builder: (context, state) {
