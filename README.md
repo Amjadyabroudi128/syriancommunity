@@ -26,9 +26,27 @@ i have added a popUp Menu as i felt it would be better when used
 
 ![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/c6da1b8e-b92f-4879-a3a6-369db4e5c8b9)
 
+
 i have added time of "post" to show the community when it was released 
 
 ![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/6f3d7b1a-5f33-400e-9bed-c19729b6ba52)
 
+when admin signed in 
 
+![Screenshot 2024-02-11 151353](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/fb76e1d4-18c4-45dc-8fca-e68a318c5c58)
+
+when admin is signed out 
+
+![Screenshot 2024-02-11 151402](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/951bf342-65dd-49d3-8ca2-e6b6766fde78)
+
+I have Learnt a lot of things while making this app and i feel like it was very beneficial for me 
+* Image picking from gallery/camera
+* adding image with text and make image nullable so text alone can be submitted
+* Added date to post so people know when it was released
+* Google Cloud maps API
+* FCM (Firebase cloud messaging for notifications )
+* Bloc ( used for Authentication )
+* only allow one user (admin ) to sign in
+* Hide/Show buttons depending on user
+* selectable text in case someone wants to copy the phone number or the email address of the Community 
 
