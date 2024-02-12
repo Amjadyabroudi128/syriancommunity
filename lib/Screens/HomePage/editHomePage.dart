@@ -63,6 +63,7 @@ class _EditHomeState extends State<EditHome> {
                           {
                             "name" : name.text,
                             "details" : details.text,
+                            // i can add the time but then the edited post will be first 
                           }
                         );
                         Navigator.of(context).pushNamed("homepage");
