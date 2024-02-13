@@ -82,11 +82,11 @@ class _CommunityState extends State<Community> {
                             child: Column(
                               children: [
                                   Padding(
-                                    padding: const EdgeInsets.only(top: 2),
+                                    padding:  EdgeInsets.only(top: 2),
                                     child: Text(data["details"], style: TextStyle(fontSize: 17),),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 310, ),
+                                    padding:  EdgeInsets.only(left: 310, ),
                                     child: PopupMenuButton(
                                       iconSize: 30,
                                       // add icon, by default "3 dot" icon
