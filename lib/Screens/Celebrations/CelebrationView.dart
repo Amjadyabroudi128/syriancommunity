@@ -14,7 +14,6 @@ class Celebrations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     User? user = FirebaseAuth.instance.currentUser;
-
     return Scaffold(
       appBar: AppBar(
         title: Text("Celebrations"),
