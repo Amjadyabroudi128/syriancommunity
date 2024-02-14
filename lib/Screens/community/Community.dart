@@ -90,7 +90,7 @@ class _CommunityState extends State<Community> {
                                   ),
                                   Padding(
                                     padding:  EdgeInsets.only(left: 310, ),
-                                    child: PopupMenuButton(
+                                    child: user != null ? PopupMenuButton(
                                       iconSize: 30,
                                       // add icon, by default "3 dot" icon
                                       // icon: Icon(Icons.book)
@@ -122,7 +122,7 @@ class _CommunityState extends State<Community> {
                                           Navigator.of(context).pushNamed("community");
                                         }
                                       },
-                                    ),
+                                    ) : SizedBox(height: 42),
                                   ),
                               ],
                             ),
