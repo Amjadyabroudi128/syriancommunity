@@ -61,7 +61,7 @@ class MyApp extends StatelessWidget {
           "addInfo" : (context) => AddInfo(),
           "ourteam" : (context) => const MeetOurTeam(),
           "addMember" : (context) => AddMember(),
-          "contactus" : (context) => ContactUs(),
+          "contactus" : (context) => const ContactUs(),
           "addcontact" : (context) => AddContactDetails(),
           "celebrations" : (context) => Celebrations(),
           "addcelebration" : (context) => AddCelebration(),
