@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +42,6 @@ import 'Screens/community/editCommunity.dart';
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -61,7 +59,7 @@ class MyApp extends StatelessWidget {
         routes: {
          "homepage" : (context) => HomePage(),
           "addInfo" : (context) => AddInfo(),
-          "ourteam" : (context) => MeetOurTeam(),
+          "ourteam" : (context) => const MeetOurTeam(),
           "addMember" : (context) => AddMember(),
           "contactus" : (context) => ContactUs(),
           "addcontact" : (context) => AddContactDetails(),
