@@ -74,7 +74,6 @@ class MyApp extends StatelessWidget {
           "editCommunity" : (context) => EditCommunity(DocID: '', oldName: '', oldDetails: '',),
           "editHome" : (context) => EditHome(DocID: "", oldName: "", oldDetail: ""),
           "login" : (context) => Login(),
-          // add navigation for learning resources
         },
       ),
     );
