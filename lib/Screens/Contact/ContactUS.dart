@@ -23,8 +23,6 @@ class _ContactUsState extends State<ContactUs> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Contact us"),
-        centerTitle: true,
-         backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
             body: ScrollConfiguration(
               behavior: ScrollBehavior(),

@@ -51,9 +51,7 @@ class _EditCelebrationState extends State<EditCelebration> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text("adding celebrations"),
-        backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),

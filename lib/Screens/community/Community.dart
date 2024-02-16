@@ -24,9 +24,7 @@ class _CommunityState extends State<Community> {
 
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text("community"),
-        backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
       body: SingleChildScrollView(
         child: Column(

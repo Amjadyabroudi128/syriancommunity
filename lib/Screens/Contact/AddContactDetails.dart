@@ -26,9 +26,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        centerTitle: true,
         title: Text("adding contactDetails"),
-    backgroundColor: Color.fromARGB(255, 33, 173, 168),
         ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),

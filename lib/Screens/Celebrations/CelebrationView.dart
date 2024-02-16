@@ -14,12 +14,9 @@ class Celebrations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     User? user = FirebaseAuth.instance.currentUser;
-     final CollectionReference celebrations = FirebaseFirestore.instance.collection("celebrations");
     return Scaffold(
       appBar: AppBar(
         title: Text("Celebrations"),
-        centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -62,7 +59,7 @@ class Celebrations extends StatelessWidget {
                   ),
                 ),
                 StreamBuilder(
-                  stream: celebrations.snapshots(),
+                  stream: FirebaseFirestore.instance.collection("Celebrations").snapshots(),
                   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
                     if (snapshot.hasError) {
                       return Text('Something went wrong');
