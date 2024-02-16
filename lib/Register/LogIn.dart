@@ -29,9 +29,7 @@ class _LoginState extends State<Login> {
   builder: (context, state) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 33, 173, 168),
         title: Text("Login screen"),
-        centerTitle: true,
       ),
       body: Center(
         child: Column(
