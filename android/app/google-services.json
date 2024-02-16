@@ -7,9 +7,28 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:362925763810:android:3e179ce12ca5c3c64a02bb",
+        "mobilesdk_app_id": "1:362925763810:android:d2a05fb59755d2e04a02bb",
         "android_client_info": {
           "package_name": "com.amjad.syrianadmin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSQtMlQwLsEkK5B1P4fjASVfZ0GCq1eLU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362925763810:android:3e179ce12ca5c3c64a02bb",
+        "android_client_info": {
+          "package_name": "com.example.syrianadmin"
         }
       },
       "oauth_client": [],
