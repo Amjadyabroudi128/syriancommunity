@@ -14,6 +14,7 @@ class Celebrations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     User? user = FirebaseAuth.instance.currentUser;
+     final CollectionReference celebrations = FirebaseFirestore.instance.collection("celebrations");
     return Scaffold(
       appBar: AppBar(
         title: Text("Celebrations"),
@@ -61,7 +62,7 @@ class Celebrations extends StatelessWidget {
                   ),
                 ),
                 StreamBuilder(
-                  stream: FirebaseFirestore.instance.collection("Celebrations").snapshots(),
+                  stream: celebrations.snapshots(),
                   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
                     if (snapshot.hasError) {
                       return Text('Something went wrong');
@@ -132,7 +133,7 @@ class Celebrations extends StatelessWidget {
                                ),
                              ),
                               SizedBox(height: 7,),
-                              Container(
+                             Container(
                                 child: IntrinsicHeight(
                                   child: Card(
                                     shape: RoundedRectangleBorder(
@@ -140,7 +141,7 @@ class Celebrations extends StatelessWidget {
                                     ),
                                     color: Colors.grey[300],
                                     elevation: 0,
-                                    child: Column(
+                                    child:  Column(
                                       children: [
                                         Padding(
                                           padding: const EdgeInsets.all(10.0),
