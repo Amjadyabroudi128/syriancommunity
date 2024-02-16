@@ -29,7 +29,7 @@ class _EditHomeState extends State<EditHome> {
     FirebaseFirestore.instance.collection('home');
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 33, 173, 168),
+        title: Text("editing "),
       ),
       body: Center(
         child: SingleChildScrollView(

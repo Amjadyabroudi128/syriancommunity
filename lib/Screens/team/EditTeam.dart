@@ -50,9 +50,7 @@ class _EditMemberState extends State<EditMember> {
 
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text("editing Memebets"),
-        backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
       body: Center(
         child: SingleChildScrollView(

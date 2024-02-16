@@ -49,9 +49,7 @@ class _EditCommunityState extends State<EditCommunity> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text("adding Community Details"),
-        backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
       body: Padding(
         padding: EdgeInsets.all(12),
