@@ -2,8 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-
 import '../../components/formatedData.dart';
 import '../SideDrawer.dart';
 import 'editHomePage.dart';
@@ -90,7 +88,6 @@ class _HomePageState extends State<HomePage> {
                         physics: ScrollPhysics(),
                         shrinkWrap: true,
                         children: snapshot.data!.docs.map((DocumentSnapshot document){
-                    // Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
