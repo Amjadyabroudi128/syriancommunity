@@ -11,6 +11,7 @@ import 'package:syrianadmin/Screens/HomePage/editHomePage.dart';
 import 'package:syrianadmin/Screens/team/EditTeam.dart';
 import 'package:syrianadmin/Screens/team/Team.dart';
 import 'package:syrianadmin/Screens/team/addTeam.dart';
+import 'package:syrianadmin/firebase_options.dart';
 import 'Api/Firebase_api.dart';
 import 'Screens/Celebrations/AddCelebration.dart';
 import 'Screens/Celebrations/CelebrationView.dart';
@@ -25,14 +26,7 @@ import 'Screens/community/editCommunity.dart';
 
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: FirebaseOptions(
-        apiKey: "AIzaSyDSQtMlQwLsEkK5B1P4fjASVfZ0GCq1eLU",
-        appId: "1:362925763810:android:3e179ce12ca5c3c64a02bb",
-        messagingSenderId:
-        "362925763810",
-        projectId: "syriancommunity-5239d",
-      storageBucket: "syriancommunity-5239d.appspot.com",
-    ),
+    options: DefaultFirebaseOptions.currentPlatform,
   );
   await FirebaseApi().initNotifications();
   await FirebaseMessaging.instance.subscribeToTopic("topic");
@@ -54,6 +48,13 @@ class MyApp extends StatelessWidget {
        debugShowCheckedModeBanner: false,
         initialRoute: "homepage",
         title: "Syrian Community ",
+        theme: ThemeData(
+          useMaterial3: false,
+          appBarTheme: AppBarTheme(
+            color: Color.fromARGB(255, 33, 173, 168),
+            centerTitle: true,
+          )
+        ),
         home: HomePage(),
         navigatorKey: NavigatorKey,
         routes: {
