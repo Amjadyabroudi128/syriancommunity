@@ -93,7 +93,8 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                         oldUrl: data["image"],)
                                   ));
                             },
-                          ) : Card(
+                          ) :
+                          Card(
                             shape: const CircleBorder(),
                             clipBehavior: Clip.antiAlias,
                             child: data["image"] != null ? Image.network(
