@@ -24,9 +24,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text("our tean"),
-        backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
       body: SingleChildScrollView(
         child: Column(
