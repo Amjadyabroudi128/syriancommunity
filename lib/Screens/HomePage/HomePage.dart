@@ -36,11 +36,7 @@ class _HomePageState extends State<HomePage> {
           },
         ),
         toolbarHeight: 70,
-        title: Align(
-          alignment: Alignment.centerRight,
-          child: Text("Syrian Community"),
-        ),
-        backgroundColor: Color.fromARGB(255, 33, 173, 168),
+        title: Text("Syrian community"),
       ),
       drawer: SideDrawer(),
       // i prefer the drawer to the DropDownMenu
