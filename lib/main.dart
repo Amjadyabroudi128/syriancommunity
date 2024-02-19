@@ -20,6 +20,7 @@ import 'Screens/HomePage/HomePage.dart';
 import 'Screens/community/addCommunity.dart';
 import 'Screens/community/Community.dart';
 import 'Screens/community/editCommunity.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
  final NavigatorKey = GlobalKey<NavigatorState>();
 
     void main() async {
@@ -48,6 +49,15 @@ class MyApp extends StatelessWidget {
        debugShowCheckedModeBanner: false,
         initialRoute: "homepage",
         title: "Syrian Community ",
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: [
+          Locale("ar"),
+          Locale("en")
+        ],
         theme: ThemeData(
           useMaterial3: false,
           appBarTheme: AppBarTheme(
