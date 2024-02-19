@@ -6,7 +6,7 @@
   static List<language> languageList() {
     return <language> [
       language("English", "en"),
-      language("Arabic", "العربية"),
+      language("Arabic", "ar"),
     ];
   }
 
