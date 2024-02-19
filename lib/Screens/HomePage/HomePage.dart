@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/classes/language.dart';
 import '../../components/formatedData.dart';
 import '../SideDrawer.dart';
 import 'editHomePage.dart';
@@ -37,6 +38,23 @@ class _HomePageState extends State<HomePage> {
         ),
         toolbarHeight: 70,
         title: Text("Syrian community"),
+        // actions: <Widget>[
+        //   Padding (
+        //     padding: EdgeInsets.all(8),
+        //     child: DropdownButton<language>(
+        //       underline: SizedBox(),
+        //       icon: Icon(
+        //         Icons.language,
+        //         color: Colors.white,
+        //       ),
+        //       onChanged: (language? language) async {
+        //         if (language != null) {
+        //           Locale _locale = await (language.languageCode);
+        //         }
+        //       },
+        //     ),
+        //   ),
+        // ],
       ),
       drawer: SideDrawer(),
       // i prefer the drawer to the DropDownMenu
