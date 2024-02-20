@@ -4,9 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/classes/language.dart';
 import '../../components/formatedData.dart';
+import '../../main.dart';
 import '../SideDrawer.dart';
 import 'editHomePage.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HomePage extends StatefulWidget {
   final document;
 
@@ -37,24 +38,41 @@ class _HomePageState extends State<HomePage> {
           },
         ),
         toolbarHeight: 70,
-        title: Text("Syrian community"),
-        // actions: <Widget>[
-        //   Padding (
-        //     padding: EdgeInsets.all(8),
-        //     child: DropdownButton<language>(
-        //       underline: SizedBox(),
-        //       icon: Icon(
-        //         Icons.language,
-        //         color: Colors.white,
-        //       ),
-        //       onChanged: (language? language) async {
-        //         if (language != null) {
-        //           Locale _locale = await (language.languageCode);
-        //         }
-        //       },
-        //     ),
-        //   ),
-        // ],
+        title: Text(AppLocalizations.of(context)!.syrianCommunity),
+        actions: <Widget>[
+          Padding (
+            padding: EdgeInsets.all(8),
+            child: DropdownButton<language>(
+              underline: SizedBox(),
+              icon: Icon(
+                Icons.language,
+                color: Colors.white,
+              ),
+              onChanged: (language? language) async {
+                if (language != null) {
+                  MyApp.setLocale(context, Locale(language.languageCode));
+                }
+              },
+              items: language.languageList()
+                  .map<DropdownMenuItem<language>>(
+                    (e) => DropdownMenuItem<language>(
+                  value: e,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Text(
+                        e.languageCode,
+                        style: const TextStyle(fontSize: 30),
+                      ),
+                      Text(e.name)
+                    ],
+                  ),
+                ),
+              )
+                  .toList(),
+            ),
+          ),
+        ],
       ),
       drawer: SideDrawer(),
       // i prefer the drawer to the DropDownMenu
