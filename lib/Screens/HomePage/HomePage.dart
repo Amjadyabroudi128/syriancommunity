@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Text(
-                        e.languageCode,
+                        e.flag,
                         style: const TextStyle(fontSize: 30),
                       ),
                       Text(e.name)
