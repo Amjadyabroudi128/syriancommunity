@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/Screens/Contact/Edit.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class ContactUs extends StatefulWidget {
   final document;
   const ContactUs({ @required this.document});
@@ -22,7 +24,7 @@ class _ContactUsState extends State<ContactUs> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Contact us"),
+        title: Text(AppLocalizations.of(context)!.contact),
       ),
             body: ScrollConfiguration(
               behavior: ScrollBehavior(),
@@ -39,10 +41,10 @@ class _ContactUsState extends State<ContactUs> {
                               onPressed: (){
                                 Navigator.of(context).pushNamed("addcontact");
                               },
-                              title: "Add contact details") : SizedBox(height: 15,),
+                              title: AppLocalizations.of(context)!.addThings) : SizedBox(height: 15,),
                         ),
                         SizedBox(height: 30,),
-                        Text("You can visit us here ", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                        Text(AppLocalizations.of(context)!.visitHere, style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
                         StreamBuilder <QuerySnapshot>(
                           stream: FirebaseFirestore.instance.collection("contact").snapshots(),
                             builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -128,7 +130,7 @@ class _ContactUsState extends State<ContactUs> {
                                             ),
                                           ),
                                           SizedBox(height: 15,),
-                                          Text("Or you can Contact us through email or phone", style: TextStyle(
+                                          Text(AppLocalizations.of(context)!.phoneContact, style: TextStyle(
                                               fontSize: 13,
                                               fontWeight: FontWeight.bold),),
                                           SizedBox(height: 13,),
@@ -199,7 +201,7 @@ class _ContactUsState extends State<ContactUs> {
                                 );
                           }
                         ),
-                        Text("OUR LOCATION "),
+                        Text(AppLocalizations.of(context)!.location),
                         SizedBox(height: 12,),
                         Center(
                           child: Container(
