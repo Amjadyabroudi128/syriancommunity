@@ -1,11 +1,16 @@
 {
   "syrianCommunity" : "الجالية السورية",
   "home": "الرئيسية",
+  "addThings": "أضف شيئا",
   "contact" : "تواصل",
   "team" : "فريقنا",
-  "celebrations": "احتفال",
+  "celebrations": "احتفالات",
   "login": "تسجيل الدخول",
-  "admin" :"سجل دخول كأدمن"
-
+  "logout": "تسجيل الخروج",
+  "admin" :"سجل دخول كأدمن",
+  "communityResources": "مجتمعنا",
+  "visitHere": "يمكنك زيارتنا هتا ",
+  "phoneContact": "اتصل بنا او ارسل بريدا",
+  "location": "عنوان"
 
 }
