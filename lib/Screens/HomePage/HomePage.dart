@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                   height: 40,
                   minWidth: 230,
                   color: Colors.grey,
-                  child: Text("Add things +"),
+                  child: Text(AppLocalizations.of(context)!.addThings),
                   onPressed: (){
                     Navigator.of(context).pushNamed("addInfo");
                   },
