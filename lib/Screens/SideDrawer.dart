@@ -3,6 +3,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../classes/language.dart';
+import '../main.dart';
 
 class SideDrawer extends StatefulWidget {
   const SideDrawer({Key? key}) : super(key: key);
@@ -29,7 +33,7 @@ class _SideDrawerState extends State<SideDrawer> {
           ),
           ),
           ListTile(
-            title: Text("Home"),
+            title: Text(AppLocalizations.of(context)!.home),
             leading: Icon(
               CupertinoIcons.home,
               size: 30,
@@ -40,7 +44,7 @@ class _SideDrawerState extends State<SideDrawer> {
             },
           ),
           ListTile(
-            title: Text("contact us "),
+            title: Text(AppLocalizations.of(context)!.contact),
             leading: Icon(
               CupertinoIcons.mail_solid,
               size: 30,
@@ -51,7 +55,7 @@ class _SideDrawerState extends State<SideDrawer> {
             },
           ),
           ListTile(
-            title: Text("meet Our Teeam "),
+            title: Text(AppLocalizations.of(context)!.team),
             leading: Icon(
               CupertinoIcons.group_solid,
               size: 30,
@@ -61,7 +65,7 @@ class _SideDrawerState extends State<SideDrawer> {
             },
           ),
           ListTile(
-            title: Text("community Resources"),
+            title: Text(AppLocalizations.of(context)!.communityResources),
             leading: Icon(
               CupertinoIcons.book_circle,
               size: 30,
@@ -71,7 +75,7 @@ class _SideDrawerState extends State<SideDrawer> {
             },
           ),
           ListTile(
-            title: Text("Celebrations"),
+            title: Text(AppLocalizations.of(context)!.celebrations),
             leading: Icon(
               Icons.celebration,
               size: 30,
@@ -90,7 +94,7 @@ class _SideDrawerState extends State<SideDrawer> {
                 // Return the list tile for signed in users
                 return ListTile(
                   leading: Icon(Icons.logout),
-                  title: Text("Log out"),
+                  title: Text(AppLocalizations.of(context)!.logout),
                   onTap: (){
                     auth.signOut();
                     Navigator.of(context).pushNamed("homepage");
@@ -100,7 +104,7 @@ class _SideDrawerState extends State<SideDrawer> {
                 // Return the list tile for signed out users
                 return ListTile(
                   leading: Icon(Icons.login),
-                  title: Text('Log in'),
+                  title: Text(AppLocalizations.of(context)!.login),
                   onTap: () {
                     Navigator.of(context).pushNamed("login");
                   },
@@ -109,7 +113,6 @@ class _SideDrawerState extends State<SideDrawer> {
             },
           ),
 
-          // these are the pages that i am trying to make
         ],
       ),
     );
