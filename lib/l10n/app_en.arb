@@ -1,9 +1,16 @@
 {
   "syrianCommunity": "Syrian community",
   "home": "Home",
+  "addThings": "add things",
   "contact" : "contact us",
   "team" : "meet our team",
   "celebrations": "celebrations",
   "login": "login",
-  "admin" :"Login as admin to to add things to pages"
+  "logout": "logout",
+  "admin" :"Login as admin to to add things to pages",
+  "communityResources": "community Resources",
+  "visitHere": "visit us here",
+  "phoneContact": "or contact us with phone/email",
+  "location": "location"
+
 }
