@@ -20,7 +20,6 @@ import 'Screens/HomePage/HomePage.dart';
 import 'Screens/community/addCommunity.dart';
 import 'Screens/community/Community.dart';
 import 'Screens/community/editCommunity.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
  final NavigatorKey = GlobalKey<NavigatorState>();
 
