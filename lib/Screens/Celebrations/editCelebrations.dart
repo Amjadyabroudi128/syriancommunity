@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:path/path.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:syrianadmin/Screens/Celebrations/CelebrationView.dart';
-
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 
