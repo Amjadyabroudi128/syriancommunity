@@ -113,6 +113,49 @@ class _SideDrawerState extends State<SideDrawer> {
               }
             },
           ),
+          // ListTile(
+          //   leading: Icon(Icons.language),
+          //   title: Text(AppLocalizations.of(context)!.arabic),
+          //   onTap: (){
+          //     MyApp.setLocale(context, Locale("ar"));
+          //
+          //   },
+          // ),
+          // ListTile(
+          //   leading: Icon(Icons.language),
+          //   title: Text(AppLocalizations.of(context)!.english),
+          //
+          //   onTap: (){
+          //     MyApp.setLocale(context, Locale("en"));
+          //   },
+          // ),
+          Padding(
+            padding: const EdgeInsets.only(),
+            child: ExpansionTile(
+              leading: Icon(
+                Icons.language
+              ),
+              title: Text("Language"),
+
+              children: <Widget>[
+                ListTile(
+                  leading: Text("🇬🇧"),
+                  title: Text(AppLocalizations.of(context)!.english),
+                  onTap: (){
+                    MyApp.setLocale(context, Locale("en"));
+                  },
+                ),
+                ListTile(
+                  leading: Text("🇸🇦"),
+                  title: Text(AppLocalizations.of(context)!.arabic),
+
+                  onTap: (){
+                    MyApp.setLocale(context, Locale("ar"));
+                  },
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
