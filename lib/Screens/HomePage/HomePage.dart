@@ -1,10 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:syrianadmin/classes/language.dart';
 import '../../components/formatedData.dart';
-import '../../main.dart';
 import '../SideDrawer.dart';
 import 'editHomePage.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
