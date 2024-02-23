@@ -2,10 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 import '../classes/language.dart';
 import '../main.dart';
-
+import 'package:syrianadmin/components/facebook_url.dart';
 class SideDrawer extends StatefulWidget {
   const SideDrawer({Key? key}) : super(key: key);
 
@@ -133,6 +132,7 @@ class _SideDrawerState extends State<SideDrawer> {
                     MyApp.setLocale(context, Locale("ar"));
                   },
                 ),
+
               ],
             ),
         ],
@@ -140,3 +140,4 @@ class _SideDrawerState extends State<SideDrawer> {
     );
   }
 }
+
