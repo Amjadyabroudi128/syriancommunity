@@ -111,29 +111,11 @@ class _SideDrawerState extends State<SideDrawer> {
               }
             },
           ),
-          // ListTile(
-          //   leading: Icon(Icons.language),
-          //   title: Text(AppLocalizations.of(context)!.arabic),
-          //   onTap: (){
-          //     MyApp.setLocale(context, Locale("ar"));
-          //
-          //   },
-          // ),
-          // ListTile(
-          //   leading: Icon(Icons.language),
-          //   title: Text(AppLocalizations.of(context)!.english),
-          //
-          //   onTap: (){
-          //     MyApp.setLocale(context, Locale("en"));
-          //   },
-          // ),
-          Padding(
-            padding: const EdgeInsets.only(),
-            child: ExpansionTile(
+          ExpansionTile(
               leading: Icon(
                 Icons.language
               ),
-              title: Text("Language"),
+              title: Text(AppLocalizations.of(context)!.language),
 
               children: <Widget>[
                 ListTile(
@@ -153,7 +135,6 @@ class _SideDrawerState extends State<SideDrawer> {
                 ),
               ],
             ),
-          ),
         ],
       ),
     );
