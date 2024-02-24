@@ -1,10 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:syrianadmin/Cubits/auth_cubit.dart';
 import 'package:syrianadmin/components/TextField.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -29,21 +27,21 @@ class _LoginState extends State<Login> {
   builder: (context, state) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login screen"),
+        title: Text(AppLocalizations.of(context)!.login),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Log in as an admin to add things to the pages"),
+            Text(AppLocalizations.of(context)!.loginAdmin),
             SizedBox(
               height: 15,
             ),
-            CustomTextForm(hinttext: "email",),
+            CustomTextForm(hinttext: AppLocalizations.of(context)!.email,),
             SizedBox(
               height: 13,
             ),
-            CustomTextForm(hinttext: "pass",),
+            CustomTextForm(hinttext: AppLocalizations.of(context)!.password,),
             SizedBox(
               height: 15,
             ),
@@ -62,8 +60,8 @@ class _LoginState extends State<Login> {
 
                   BlocProvider.of<AuthCubit>(context).login(email: testEmail, password: testPassword);
                 },
-                child: const Text(
-                  'Login',
+                child:  Text(
+                  AppLocalizations.of(context)!.login,
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
