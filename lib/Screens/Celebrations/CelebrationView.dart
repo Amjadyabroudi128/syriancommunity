@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../components/SubmitButton.dart';
 class Celebrations extends StatelessWidget {
@@ -15,7 +15,7 @@ class Celebrations extends StatelessWidget {
     User? user = FirebaseAuth.instance.currentUser;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Celebrations"),
+        title: Text(AppLocalizations.of(context)!.celebrations),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -30,8 +30,8 @@ class Celebrations extends StatelessWidget {
                       title: "Add celebrations +") : SizedBox(height: 15,),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("Celebrations ", style: TextStyle(
+                  padding:  EdgeInsets.all(8.0),
+                  child: Text(AppLocalizations.of(context)!.celebrations, style: TextStyle(
                       color: Color.fromARGB(255, 33, 173, 168),
                       fontWeight: FontWeight.bold, fontSize: 16),
                   ),
@@ -50,7 +50,7 @@ class Celebrations extends StatelessWidget {
                       color: Colors.grey[200],
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text("join us in our celebrations to bring the community together  throughout the year",
+                        child: Text(AppLocalizations.of(context)!.join,
                         style: TextStyle(fontSize: 16),),
                       ),
 
