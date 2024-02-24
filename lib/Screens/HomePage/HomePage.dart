@@ -36,8 +36,6 @@ class _HomePageState extends State<HomePage> {
         ),
         toolbarHeight: 70,
         title: Text(AppLocalizations.of(context)!.syrianCommunity),
-        actions: <Widget>[
-        ],
       ),
       drawer: SideDrawer(),
       // i prefer the drawer to the DropDownMenu
