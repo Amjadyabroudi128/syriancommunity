@@ -25,8 +25,8 @@ class _addCommunityState extends State<addCommunity> {
     final ImagePicker picker = ImagePicker();
     final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
     if (imageCamera != null) {
-      file = File(imageCamera!.path);
-      var imagename = basename(imageCamera!.path);
+      file = File(imageCamera.path);
+      var imagename = basename(imageCamera.path);
       var refStorage = FirebaseStorage.instance.ref(imagename);
       await refStorage.putFile(file!);
       url = await refStorage.getDownloadURL();
