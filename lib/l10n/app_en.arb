@@ -14,5 +14,9 @@
   "location": "location",
   "language": "language",
   "arabic": "arabic",
-  "english": "english"
+  "english": "english",
+  "loginAdmin": "log in as admin",
+  "email": "email",
+  "password": "password",
+  "join": "join us in our celebrations to bring the community together  throughout the year"
 }
