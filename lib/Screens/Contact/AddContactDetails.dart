@@ -43,7 +43,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
               SizedBox(height: 12,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("street name"),
+                child: Text(AppLocalizations.of(context)!.streetName),
               ),
               CustomTextForm(hinttext: "e.g: Eastern Road",  myController: road),
               Padding(
