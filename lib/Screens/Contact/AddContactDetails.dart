@@ -37,7 +37,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
               SizedBox(height: 12,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("place"),
+                child: Text(AppLocalizations.of(context)!.place),
               ),
               CustomTextForm(hinttext: "e.g : Brighton college", myController: place),
               SizedBox(height: 12,),
