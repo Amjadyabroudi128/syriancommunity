@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AddContactDetails extends StatefulWidget {
   const AddContactDetails({Key? key}) : super(key: key);
