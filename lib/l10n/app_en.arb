@@ -20,5 +20,6 @@
   "password": "password",
   "join": "join us in our celebrations to bring the community together  throughout the year",
   "place": "place",
-  "streetName": "street name"
+  "streetName": "street name",
+  "city": "city"
 }
