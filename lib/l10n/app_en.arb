@@ -23,5 +23,6 @@
   "streetName": "street name",
   "city": "city",
   "postCode": "post code",
-  "phone": "phone"
+  "phone": "phone",
+  "addDetails": "add contact details"
 }
