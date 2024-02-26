@@ -65,7 +65,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
                   hinttext: AppLocalizations.of(context)!.email, myController: email),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("phone"),
+                child: Text(AppLocalizations.of(context)!.phone),
               ),
               CustomTextForm(
                   hinttext: "phone", myController: phone),
