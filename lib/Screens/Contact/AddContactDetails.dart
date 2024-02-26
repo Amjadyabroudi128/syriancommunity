@@ -68,7 +68,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
                 child: Text(AppLocalizations.of(context)!.phone),
               ),
               CustomTextForm(
-                  hinttext: "phone", myController: phone),
+                  hinttext: AppLocalizations.of(context)!.phone, myController: phone),
               SizedBox(height: 15,),
 
               Center(child:
