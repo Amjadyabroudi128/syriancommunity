@@ -48,7 +48,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
               CustomTextForm(hinttext: "e.g: Eastern Road",  myController: road),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("city"),
+                child: Text(AppLocalizations.of(context)!.city),
               ),
               CustomTextForm(hinttext: "e.g: Brighton", myController: city),
               Padding(
