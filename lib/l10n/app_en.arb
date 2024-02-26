@@ -21,5 +21,6 @@
   "join": "join us in our celebrations to bring the community together  throughout the year",
   "place": "place",
   "streetName": "street name",
-  "city": "city"
+  "city": "city",
+  "postCode": "post code"
 }
