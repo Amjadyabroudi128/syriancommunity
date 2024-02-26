@@ -25,7 +25,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        title: Text("adding contactDetails"),
+        title: Text(AppLocalizations.of(context)!.addDetails),
         ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -33,7 +33,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(child: Text("Add Contact info")),
+              Center(child: Text(AppLocalizations.of(context)!.addThings)),
               SizedBox(height: 12,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
