@@ -22,5 +22,6 @@
   "place": "مكان",
   "streetName": "اسم الشارع",
   "city": "مدينة",
-  "postCode": "رمز بريدي"
+  "postCode": "رمز بريدي",
+  "phone": "هاتف"
 }
