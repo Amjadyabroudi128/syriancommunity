@@ -74,7 +74,7 @@ class _ContactUsState extends State<ContactUs> {
                                                   child: Column(
                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
-                                                              Text("our Address"),
+                                                              Text(AppLocalizations.of(context)!.location),
                                                               SizedBox(height: 10,),
                                                               Text(data["place"]),
                                                               SizedBox(height: 10,),
@@ -143,12 +143,24 @@ class _ContactUsState extends State<ContactUs> {
                                                 children: [
                                                   Padding(
                                                     padding: const EdgeInsets.all(12.0),
-                                                    child: SelectableText("Email ${data["email"]}"),
+                                                    child: Row(
+                                                      children: [
+                                                        Text(AppLocalizations.of(context)!.email),
+                                                        SizedBox(width: 3,),
+                                                        SelectableText(data["email"])
+                                                      ],
+                                                    ),
                                                   ),
                                                   SizedBox(height: 14,),
                                                   Padding(
                                                     padding: const EdgeInsets.all(12.0),
-                                                    child: SelectableText("Ahmad Yabroudi  ${data["phone"]}"),
+                                                    child: Row(
+                                                      children: [
+                                                        Text(AppLocalizations.of(context)!.phone),
+                                                        SizedBox(width: 3,),
+                                                        SelectableText(data["phone"])
+                                                      ],
+                                                    ),
                                                   ),
                                                   Padding(
                                                     padding: const EdgeInsets.only(left: 310),
