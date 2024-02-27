@@ -24,5 +24,6 @@
   "city": "city",
   "postCode": "post code",
   "phone": "phone",
-  "addDetails": "add contact details"
+  "addDetails": "add contact details",
+  "editDetails": "edit contact details"
 }
