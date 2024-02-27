@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class EditDetails extends StatefulWidget {
   final String DocID;
@@ -45,7 +46,7 @@ class _AddContactDetailsState extends State<EditDetails> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("editing contactDetails"),
+        title: Text(AppLocalizations.of(context)!.editDetails),
         backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
       body: Padding(
@@ -54,39 +55,38 @@ class _AddContactDetailsState extends State<EditDetails> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(child: Text("edit Contact info")),
               SizedBox(height: 12,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("place"),
+                child: Text(AppLocalizations.of(context)!.place),
               ),
               CustomTextForm(hinttext: "e.g : Brighton college", myController: place),
               SizedBox(height: 12,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("street name"),
+                child: Text(AppLocalizations.of(context)!.streetName),
               ),
               CustomTextForm(hinttext: "e.g: Eastern Road",  myController: road),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("city"),
+                child: Text(AppLocalizations.of(context)!.city),
               ),
               CustomTextForm(hinttext: "e.g: Brighton", myController: city),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("post code"),
+                child: Text(AppLocalizations.of(context)!.postCode),
               ),
               CustomTextForm(
                   hinttext: "e.g: BN2 OAL", myController: postcode),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("email"),
+                child: Text(AppLocalizations.of(context)!.email),
               ),
               CustomTextForm(
                   hinttext: "email", myController: email),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("phone"),
+                child: Text(AppLocalizations.of(context)!.phone),
               ),
               CustomTextForm(
                   hinttext: "phone", myController: phone),
