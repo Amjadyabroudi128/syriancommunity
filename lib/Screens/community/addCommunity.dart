@@ -8,6 +8,7 @@ import 'package:path/path.dart';
 
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class addCommunity extends StatefulWidget {
   const addCommunity({Key? key}) : super(key: key);
@@ -38,7 +39,7 @@ class _addCommunityState extends State<addCommunity> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("adding Community Details"),
+        title: Text(AppLocalizations.of(context)!.addDetails),
       ),
       body: Padding(
         padding: EdgeInsets.all(12),
@@ -50,19 +51,19 @@ class _addCommunityState extends State<addCommunity> {
               SizedBox(height: 12,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("name"),
+                child: Text(AppLocalizations.of(context)!.name),
               ),
               CustomTextForm(hinttext: "BreakFast Club", myController: name),
               SizedBox(height: 12,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("Details"),
+                child: Text(AppLocalizations.of(context)!.details),
               ),
               CustomTextForm(hinttext: "What we do ", myController: details, maxLines: 6,),
               SizedBox(height: 15,),
               Center(
                 child: CustomButton(
-                  title: "get image",
+                  title: AppLocalizations.of(context)!.image,
                   onPressed: () async {
                     await pickImage();
                     setState(() {
@@ -88,7 +89,7 @@ class _addCommunityState extends State<addCommunity> {
                    Navigator.pushReplacementNamed(context, 'community');
                   }
                 }
-                , title: "Submit",
+                , title: AppLocalizations.of(context)!.submit,
                 ),
               ),
             ],
