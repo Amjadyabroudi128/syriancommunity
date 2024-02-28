@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 
 import 'editCommunity.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Community extends StatefulWidget {
   final document;
@@ -23,7 +24,7 @@ class _CommunityState extends State<Community> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("community"),
+        title: Text(AppLocalizations.of(context)!.communityResources),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -35,7 +36,7 @@ class _CommunityState extends State<Community> {
                     onPressed: (){
                       Navigator.of(context).pushNamed("addCommunity");
                     },
-                    title: "add community ") : SizedBox(height: 12),
+                    title: AppLocalizations.of(context)!.addDetails) : SizedBox(height: 12),
               ),
             ),
             StreamBuilder(
@@ -55,7 +56,6 @@ class _CommunityState extends State<Community> {
                   Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
                   return Column(
                     children: [
-
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Card(
