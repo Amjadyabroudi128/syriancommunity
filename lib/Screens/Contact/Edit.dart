@@ -105,7 +105,7 @@ class _AddContactDetailsState extends State<EditDetails> {
                 });
                 Navigator.pop(context);
                 clearText();
-              }, title: "Update")
+              }, title: AppLocalizations.of(context)!.update)
               )
             ],
           ),
