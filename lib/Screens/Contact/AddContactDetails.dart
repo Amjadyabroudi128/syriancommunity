@@ -84,7 +84,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
                 });
                 Navigator.of(context).pushNamed("contactus");
                 clearText();
-              }, title: "Submit")
+              }, title: AppLocalizations.of(context)!.submit)
               )
             ],
           ),
