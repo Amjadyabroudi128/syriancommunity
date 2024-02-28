@@ -27,7 +27,7 @@ class Celebrations extends StatelessWidget {
                       onPressed: (){
                         Navigator.of(context).pushNamed("addcelebration");
                       },
-                      title: "Add celebrations +") : SizedBox(height: 15,),
+                      title: AppLocalizations.of(context)!.addCelebration,) : SizedBox(height: 15,),
                 ),
                 Padding(
                   padding:  EdgeInsets.all(8.0),
@@ -90,12 +90,14 @@ class Celebrations extends StatelessWidget {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.all(13.0),
-                                child: Text(data["name"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,
-                                  color: Color.fromARGB(255, 33, 173, 168),),),
+                                child: Center(
+                                  child: Text(data["name"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,
+                                    color: Color.fromARGB(255, 33, 173, 168),),),
+                                ),
                               ),
                              user != null ? GestureDetector(
                                 child: Padding(
-                                  padding: const EdgeInsets.all(4.0),
+                                  padding: const EdgeInsets.all(1.0),
                                   child: Container(
                                       child: data["image"] != null ? Image.network(
                                         data["image"],
