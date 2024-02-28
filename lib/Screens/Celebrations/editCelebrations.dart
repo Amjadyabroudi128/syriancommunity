@@ -6,6 +6,7 @@ import 'package:path/path.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 class EditCelebration extends StatefulWidget {
@@ -48,7 +49,7 @@ class _EditCelebrationState extends State<EditCelebration> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("adding celebrations"),
+        title: Text(AppLocalizations.of(context)!.addCelebration),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -65,13 +66,13 @@ class _EditCelebrationState extends State<EditCelebration> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("celebration"),
+                child: Text(AppLocalizations.of(context)!.celebrations),
               ),
               CustomTextForm(hinttext: "e.g: Christmas", myController: celebrationName),
               SizedBox(height: 15,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("Details"),
+                child: Text(AppLocalizations.of(context)!.details),
               ),
               CustomTextForm(hinttext: "what we do ", myController: celebrationDetails,
                 maxLines: 7,),
@@ -111,7 +112,7 @@ class _EditCelebrationState extends State<EditCelebration> {
 
                       Navigator.of(context).pushNamed("celebrations");
                     },
-                    title: "Edit"),
+                    title: AppLocalizations.of(context)!.update),
               )
             ],
           ),
