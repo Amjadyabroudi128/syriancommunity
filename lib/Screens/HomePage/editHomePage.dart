@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class EditHome extends StatefulWidget {
   final String DocID;
@@ -28,7 +29,7 @@ class _EditHomeState extends State<EditHome> {
     FirebaseFirestore.instance.collection('home');
     return Scaffold(
       appBar: AppBar(
-        title: Text("editing "),
+        title: Text(AppLocalizations.of(context)!.editDetails),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -39,7 +40,7 @@ class _EditHomeState extends State<EditHome> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 12, bottom: 10),
-                  child: Text("Name"),
+                  child: Text(AppLocalizations.of(context)!.name),
                 ),
                 CustomTextForm(
                     hinttext: "name",
@@ -47,7 +48,7 @@ class _EditHomeState extends State<EditHome> {
                 SizedBox(height: 20,),
                 Padding(
                   padding: const EdgeInsets.only(left: 12, bottom: 10),
-                  child: Text("Details"),
+                  child: Text(AppLocalizations.of(context)!.details),
                 ),
                 CustomTextForm(
                   hinttext: "details",
@@ -67,7 +68,7 @@ class _EditHomeState extends State<EditHome> {
                         );
                         Navigator.of(context).pushNamed("homepage");
                       },
-                      title: "Edit"),
+                      title: AppLocalizations.of(context)!.update),
                 )
               ],
             ),
