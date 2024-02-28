@@ -24,6 +24,12 @@
   "city": "city",
   "postCode": "post code",
   "phone": "phone",
-  "addDetails": "add contact details",
-  "editDetails": "edit contact details"
+  "addDetails": "add details",
+  "editDetails": "edit details",
+  "update": "update",
+  "submit": "submit",
+  "addCelebration": "add celebration",
+  "details": "details",
+  "image": "image",
+  "name": "name"
 }

@@ -24,6 +24,12 @@
   "city": "مدينة",
   "postCode": "رمز بريدي",
   "phone": "هاتف",
-  "addDetails": "إضافة تفاصيل الاتصال",
-  "editDetails": "تعديل بيانات الاتصال"
+  "addDetails": "إضافة تفاصيل ",
+  "editDetails": "تعديل بيانات ",
+  "update": "تعديل",
+  "submit": "إرسال",
+  "addCelebration": "إضافة احتفال",
+  "details": "التفاصيل",
+  "image": "صورة",
+  "name": "اسم"
 }
