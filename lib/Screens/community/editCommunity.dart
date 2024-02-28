@@ -8,6 +8,7 @@ import 'package:path/path.dart';
 
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class EditCommunity extends StatefulWidget {
   final String DocID;
@@ -56,23 +57,22 @@ class _EditCommunityState extends State<EditCommunity> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(child: Text("Add Community info ")),
               SizedBox(height: 12,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("name"),
+                child: Text(AppLocalizations.of(context)!.name),
               ),
               CustomTextForm(hinttext: "BreakFast Club", myController: name),
               SizedBox(height: 12,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("Details"),
+                child: Text(AppLocalizations.of(context)!.details),
               ),
               CustomTextForm(hinttext: "What we do ", myController: details, maxLines: 6,),
               SizedBox(height: 15,),
               Center(
                 child: CustomButton(
-                  title: "get image",
+                  title: AppLocalizations.of(context)!.image,
                   onPressed: () async {
                     await pickImage();
                     setState(() {
@@ -98,7 +98,7 @@ class _EditCommunityState extends State<EditCommunity> {
                   Navigator.pop(context);
                   }
                 }
-                  , title: "edit",
+                  , title: AppLocalizations.of(context)!.update,
                 ),
               ),
             ],
