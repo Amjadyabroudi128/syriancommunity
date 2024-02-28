@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:path/path.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../components/TextField.dart';
 class AddCelebration extends StatefulWidget {
@@ -36,7 +37,7 @@ class _AddCelebrationState extends State<AddCelebration> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("adding celebrations"),
+        title: Text(AppLocalizations.of(context)!.addCelebration),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -46,13 +47,13 @@ class _AddCelebrationState extends State<AddCelebration> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("celebration"),
+                child: Text(AppLocalizations.of(context)!.celebrations),
               ),
               CustomTextForm(hinttext: "e.g: Christmas", myController: celebrationName),
               SizedBox(height: 15,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("Details"),
+                child: Text(AppLocalizations.of(context)!.details),
               ),
               CustomTextForm(hinttext: "what we do ", myController: celebrationDetail,
               maxLines: 7,),
@@ -61,7 +62,7 @@ class _AddCelebrationState extends State<AddCelebration> {
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
                   child: CustomButton(
-                    title: "celebration image",
+                    title: AppLocalizations.of(context)!.image,
                     onPressed: () async {
                       await pickImage();
                       setState(() {
@@ -90,7 +91,7 @@ class _AddCelebrationState extends State<AddCelebration> {
                         );
                       }
                       Navigator.of(context).pop();
-                    }, title: "submit"),
+                    }, title: AppLocalizations.of(context)!.submit),
               )
             ],
           ),
