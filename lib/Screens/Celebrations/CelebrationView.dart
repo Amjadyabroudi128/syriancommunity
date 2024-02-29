@@ -88,13 +88,13 @@ class Celebrations extends StatelessWidget {
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.all(13.0),
-                                child: Center(
-                                  child: Text(data["name"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,
-                                    color: Color.fromARGB(255, 33, 173, 168),),),
+                              Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(5.0),
+                                    child: Text(data["name"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,
+                                      color: Color.fromARGB(255, 33, 173, 168),),),
+                                  ),
                                 ),
-                              ),
                              user != null ? GestureDetector(
                                 child: Padding(
                                   padding: const EdgeInsets.all(1.0),
@@ -120,7 +120,7 @@ class Celebrations extends StatelessWidget {
                                   );
                                 },
                               ) : Padding(
-                               padding: const EdgeInsets.all(4.0),
+                               padding: const EdgeInsets.all(1.0),
                                child: Container(
                                  child: data["image"] != null ? Image.network(
                                    data["image"],
@@ -130,7 +130,6 @@ class Celebrations extends StatelessWidget {
                                  ) : SizedBox.shrink(),
                                ),
                              ),
-                              SizedBox(height: 7,),
                              Container(
                                 child: IntrinsicHeight(
                                   child: Card(
@@ -142,7 +141,7 @@ class Celebrations extends StatelessWidget {
                                     child:  Column(
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.all(10.0),
+                                          padding: const EdgeInsets.all(8.0),
                                           child: Text(data["details"], style: TextStyle(fontSize: 17),),
                                         ),
                                         Padding(
