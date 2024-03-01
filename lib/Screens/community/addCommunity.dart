@@ -47,7 +47,7 @@ class _addCommunityState extends State<addCommunity> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(child: Text("Add Community info ")),
+              const Center(child: Text("Add Community info ")),
               SizedBox(height: 12,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
