@@ -70,7 +70,7 @@ class _CommunityState extends State<Community> {
                       Text(data["name"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,
                         color: Color.fromARGB(255, 33, 173, 168),),),
                       SizedBox(height: 12,),
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width,
                         child: IntrinsicHeight(
                           child: Card(
