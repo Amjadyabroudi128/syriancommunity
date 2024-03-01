@@ -66,8 +66,11 @@ class _ContactUsState extends State<ContactUs> {
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           Container(
+                                            height: 200,
+                                            width: MediaQuery.of(context).size.width,
                                             child: IntrinsicWidth(
                                               child: Card(
+                                                color: Colors.grey[200],
                                                 elevation: 0,
                                                 child: Padding(
                                                   padding: EdgeInsets.all(12),
@@ -135,8 +138,9 @@ class _ContactUsState extends State<ContactUs> {
                                           SizedBox(height: 13,),
                                           Container(
                                             height: 200,
-                                            width: 400,
+                                            width: MediaQuery.of(context).size.width,
                                             child: Card(
+                                              color: Colors.grey[200],
                                               elevation: 0,
                                               child: Column(
                                                 crossAxisAlignment: CrossAxisAlignment.start,
