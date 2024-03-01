@@ -37,7 +37,7 @@ class _AddInfoState extends State<AddInfo> {
                   CustomTextForm(
                       hinttext: "name",
                       myController: name),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 Padding(
                   padding: const EdgeInsets.only(left: 12, bottom: 10),
                   child: Text(AppLocalizations.of(context)!.details),
@@ -47,7 +47,7 @@ class _AddInfoState extends State<AddInfo> {
                     myController: details,
                   maxLines: 6,
                 ),
-                SizedBox(height: 15,),
+                const SizedBox(height: 15,),
                 Center(
                   child: CustomButton(
                       onPressed: () async {
