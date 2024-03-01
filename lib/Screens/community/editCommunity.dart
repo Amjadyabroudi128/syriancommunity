@@ -63,13 +63,13 @@ class _EditCommunityState extends State<EditCommunity> {
                 child: Text(AppLocalizations.of(context)!.name),
               ),
               CustomTextForm(hinttext: "BreakFast Club", myController: name),
-              SizedBox(height: 12,),
+              const SizedBox(height: 12,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(AppLocalizations.of(context)!.details),
               ),
               CustomTextForm(hinttext: "What we do ", myController: details, maxLines: 6,),
-              SizedBox(height: 15,),
+              const SizedBox(height: 15,),
               Center(
                 child: CustomButton(
                   title: AppLocalizations.of(context)!.image,
