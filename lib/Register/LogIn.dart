@@ -34,7 +34,7 @@ class _LoginState extends State<Login> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(AppLocalizations.of(context)!.loginAdmin),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             CustomTextForm(hinttext: AppLocalizations.of(context)!.email,),
@@ -62,7 +62,7 @@ class _LoginState extends State<Login> {
                 },
                 child:  Text(
                   AppLocalizations.of(context)!.login,
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: const TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
             ),
