@@ -7,7 +7,7 @@ class CustomTextForm extends StatelessWidget {
   final int? maxLines;
   final TextDirection? textDirection;
   const CustomTextForm
-  ({ required this.hinttext,
+  ({  required this.hinttext,
    this.myController, this.maxLines, this.textDirection,
 
 });
@@ -31,7 +31,7 @@ Widget build(BuildContext context) {
         ),
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30),
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
                 color: Colors.black
             )
         )
