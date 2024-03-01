@@ -48,16 +48,16 @@ class _AddMemberState extends State<AddMember> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 12, bottom: 10),
+                const Padding(
+                  padding: EdgeInsets.only(left: 12, bottom: 10),
                   child: Text("Name"),
                 ),
                 CustomTextForm(
                     hinttext: "name",
                     myController: name),
                 SizedBox(height: 20,),
-                Padding(
-                  padding: const EdgeInsets.only(left: 12, bottom: 10),
+                const Padding(
+                  padding: EdgeInsets.only(left: 12, bottom: 10),
                   child: Text("Details"),
                 ),
                 CustomTextForm(
