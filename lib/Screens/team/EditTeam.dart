@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart';
@@ -36,8 +35,8 @@ class _EditMemberState extends State<EditMember> {
     final ImagePicker picker = ImagePicker();
     final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
     if (imageCamera != null) {
-      file = File(imageCamera!.path);
-      var imagename = basename(imageCamera!.path);
+      file = File(imageCamera.path);
+      var imagename = basename(imageCamera.path);
       var refStorage = FirebaseStorage.instance.ref(imagename);
       await refStorage.putFile(file!);
       url = await refStorage.getDownloadURL();
