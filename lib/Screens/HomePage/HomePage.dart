@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ) : SizedBox(),
                 SizedBox(height: 12,),
-                Text("here you will see the latest news for the Community"),
+                const Text("here you will see the latest news for the Community"),
                 StreamBuilder(
                   stream: home.snapshots(),
                   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                       return Text("Loading");
                     }
                     if (snapshot.data!.docs.isEmpty) {
-                      return SafeArea(
+                      return const SafeArea(
                         child: Center(
                          child: Column(
                            children: [
