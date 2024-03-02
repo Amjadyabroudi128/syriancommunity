@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../components/Sizedbox.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -55,13 +56,13 @@ class _AddContactDetailsState extends State<EditDetails> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 12,),
+              sizedBox(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(AppLocalizations.of(context)!.place),
               ),
               CustomTextForm(hinttext: "e.g : Brighton college", myController: place),
-              SizedBox(height: 12,),
+              sizedBox(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(AppLocalizations.of(context)!.streetName),
@@ -90,7 +91,7 @@ class _AddContactDetailsState extends State<EditDetails> {
               ),
               CustomTextForm(
                   hinttext: "phone", myController: phone),
-              SizedBox(height: 15,),
+              sizedBox(),
 
               Center(child:
               CustomButton
