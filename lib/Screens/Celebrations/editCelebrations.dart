@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:path/path.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:syrianadmin/components/Sizedbox.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -76,7 +77,7 @@ class _EditCelebrationState extends State<EditCelebration> {
               ),
               CustomTextForm(hinttext: "what we do ", myController: celebrationDetails,
                 maxLines: 7,),
-              SizedBox(height: 15,),
+              sizedBox(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
