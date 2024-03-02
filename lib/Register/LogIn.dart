@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:syrianadmin/Cubits/auth_cubit.dart';
+import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/themes/colors.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -38,13 +40,9 @@ class _LoginState extends State<Login> {
               height: 15,
             ),
             CustomTextForm(hinttext: AppLocalizations.of(context)!.email,),
-            SizedBox(
-              height: 13,
-            ),
+            sizedBox(),
             CustomTextForm(hinttext: AppLocalizations.of(context)!.password,),
-            SizedBox(
-              height: 15,
-            ),
+            sizedBox(),
             Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(
@@ -53,7 +51,7 @@ class _LoginState extends State<Login> {
               child: TextButton(
                 style: TextButton.styleFrom(
                   shape: const StadiumBorder(),
-                  backgroundColor: Colors.blue,
+                  backgroundColor: ColorManager.buttonColor,
                   padding: const EdgeInsets.symmetric(vertical: 14),
                 ),
                 onPressed: () async {
