@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/themes/colors.dart';
 
 class CustomButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -11,7 +12,7 @@ class CustomButton extends StatelessWidget {
 
     return MaterialButton(
         height: 40,
-        color: const Color.fromARGB(255, 33, 173, 168),
+        color: ColorManager.specialGreen,
         textColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         onPressed: onPressed,
