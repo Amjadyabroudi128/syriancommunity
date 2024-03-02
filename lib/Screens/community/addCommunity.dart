@@ -5,6 +5,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart';
+import 'package:syrianadmin/components/Sizedbox.dart';
 
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
@@ -48,19 +49,19 @@ class _addCommunityState extends State<addCommunity> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Center(child: Text("Add Community info ")),
-              SizedBox(height: 12,),
+              sizedBox(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(AppLocalizations.of(context)!.name),
               ),
               CustomTextForm(hinttext: "BreakFast Club", myController: name),
-              SizedBox(height: 12,),
+              sizedBox(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(AppLocalizations.of(context)!.details),
               ),
               CustomTextForm(hinttext: "What we do ", myController: details, maxLines: 6,),
-              SizedBox(height: 15,),
+              sizedBox(),
               Center(
                 child: CustomButton(
                   title: AppLocalizations.of(context)!.image,
