@@ -6,6 +6,8 @@ import 'package:syrianadmin/components/TextField.dart';
 import '../../Api/Firebase_api.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../components/Sizedbox.dart';
+
 class AddInfo extends StatefulWidget {
   const AddInfo({Key? key}) : super(key: key);
 
@@ -47,7 +49,7 @@ class _AddInfoState extends State<AddInfo> {
                     myController: details,
                   maxLines: 6,
                 ),
-                const SizedBox(height: 15,),
+                sizedBox(),
                 Center(
                   child: CustomButton(
                       onPressed: () async {
