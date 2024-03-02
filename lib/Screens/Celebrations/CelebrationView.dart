@@ -3,6 +3,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/themes/colors.dart';
+import 'package:syrianadmin/themes/font_weight_helper.dart';
 
 import '../../components/SubmitButton.dart';
 class Celebrations extends StatelessWidget {
@@ -32,11 +35,11 @@ class Celebrations extends StatelessWidget {
                 Padding(
                   padding:  EdgeInsets.all(8.0),
                   child: Text(AppLocalizations.of(context)!.celebrations, style: TextStyle(
-                      color: Color.fromARGB(255, 33, 173, 168),
-                      fontWeight: FontWeight.bold, fontSize: 16),
+                      color: ColorManager.specialGreen,
+                      fontWeight: FontWeightHelper.bold, fontSize: 16),
                   ),
                 ),
-                SizedBox(height: 8,),
+                sizedBox(),
                 Container(
                   width: 400,
                   height: 100,
@@ -47,7 +50,7 @@ class Celebrations extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
                       ),
-                      color: Colors.grey[200],
+                      color: ColorManager.cardColor,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(AppLocalizations.of(context)!.join,
@@ -88,13 +91,15 @@ class Celebrations extends StatelessWidget {
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Center(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                    child: Text(data["name"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,
-                                      color: Color.fromARGB(255, 33, 173, 168),),),
-                                  ),
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 5, top: 10),
+                                child: Center(
+                                    child: Text(data["name"],
+                                      style: TextStyle(fontSize: 14,
+                                          color: ColorManager.specialGreen,
+                                          fontWeight: FontWeightHelper.bold),)
                                 ),
+                              ),
                              user != null ? GestureDetector(
                                 child: Padding(
                                   padding: const EdgeInsets.all(1.0),
@@ -125,8 +130,8 @@ class Celebrations extends StatelessWidget {
                                  child: data["image"] != null ? Image.network(
                                    data["image"],
                                    height: MediaQuery.of(context).size.height * 0.40,
-                                   // fit: BoxFit.cover,
                                    width: MediaQuery.of(context).size.width,
+                                   // fit: BoxFit.cover,
                                  ) : SizedBox.shrink(),
                                ),
                              ),
@@ -137,7 +142,7 @@ class Celebrations extends StatelessWidget {
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(18.0),
                                     ),
-                                    color: Colors.grey[300],
+                                    color: ColorManager.cardColor,
                                     elevation: 0,
                                     child:  Column(
                                       children: [
