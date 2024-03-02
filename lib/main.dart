@@ -12,6 +12,7 @@ import 'package:syrianadmin/Screens/team/EditTeam.dart';
 import 'package:syrianadmin/Screens/team/Team.dart';
 import 'package:syrianadmin/Screens/team/addTeam.dart';
 import 'package:syrianadmin/firebase_options.dart';
+import 'package:syrianadmin/themes/colors.dart';
 import 'Api/Firebase_api.dart';
 import 'Screens/Celebrations/AddCelebration.dart';
 import 'Screens/Celebrations/CelebrationView.dart';
@@ -73,7 +74,7 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
           useMaterial3: false,
           appBarTheme: AppBarTheme(
-            color: Color.fromARGB(255, 33, 173, 168),
+            color: ColorManager.specialGreen,
             centerTitle: true,
           )
         ),
