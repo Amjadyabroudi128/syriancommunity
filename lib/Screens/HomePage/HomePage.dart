@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/themes/colors.dart';
 import '../../components/formatedData.dart';
 import '../SideDrawer.dart';
 import 'editHomePage.dart';
@@ -94,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(18.0),
                               ),
-                              color: Colors.grey[300],
+                              color: ColorManager.cardColor,
                               elevation: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(12),
