@@ -5,6 +5,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart';
+import 'package:syrianadmin/components/Sizedbox.dart';
 
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
@@ -57,19 +58,19 @@ class _EditCommunityState extends State<EditCommunity> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 12,),
+              sizedBox(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(AppLocalizations.of(context)!.name),
               ),
               CustomTextForm(hinttext: "BreakFast Club", myController: name),
-              const SizedBox(height: 12,),
+              sizedBox(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(AppLocalizations.of(context)!.details),
               ),
               CustomTextForm(hinttext: "What we do ", myController: details, maxLines: 6,),
-              const SizedBox(height: 15,),
+              sizedBox(),
               Center(
                 child: CustomButton(
                   title: AppLocalizations.of(context)!.image,
