@@ -2,9 +2,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/Screens/Contact/Edit.dart';
+import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/themes/colors.dart';
+
+import '../../themes/font_weight_helper.dart';
 
 class ContactUs extends StatefulWidget {
   final document;
@@ -70,7 +74,7 @@ class _ContactUsState extends State<ContactUs> {
                                             width: MediaQuery.of(context).size.width,
                                             child: IntrinsicWidth(
                                               child: Card(
-                                                color: Colors.grey[200],
+                                                color: ColorManager.cardColor,
                                                 elevation: 0,
                                                 child: Padding(
                                                   padding: EdgeInsets.all(12),
@@ -78,13 +82,13 @@ class _ContactUsState extends State<ContactUs> {
                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
                                                               Text(AppLocalizations.of(context)!.location),
-                                                              SizedBox(height: 10,),
+                                                              sizedBox(),
                                                               Text(data["place"]),
-                                                              SizedBox(height: 10,),
+                                                              sizedBox(),
                                                               Text(data["street name"]),
-                                                              SizedBox(height: 10,),
+                                                              sizedBox(),
                                                               Text(data["city"]),
-                                                              SizedBox(height: 10,),
+                                                              sizedBox(),
                                                               Text(data["post code"]),
 
                                                       Padding(
@@ -134,13 +138,13 @@ class _ContactUsState extends State<ContactUs> {
                                           SizedBox(height: 15,),
                                           Text(AppLocalizations.of(context)!.phoneContact, style: TextStyle(
                                               fontSize: 13,
-                                              fontWeight: FontWeight.bold),),
-                                          SizedBox(height: 13,),
+                                              fontWeight: FontWeightHelper.bold),),
+                                          sizedBox(),
                                           Container(
                                             height: 200,
                                             width: MediaQuery.of(context).size.width,
                                             child: Card(
-                                              color: Colors.grey[200],
+                                              color: ColorManager.cardColor,
                                               elevation: 0,
                                               child: Column(
                                                 crossAxisAlignment: CrossAxisAlignment.start,
