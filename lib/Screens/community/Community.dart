@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 
+import '../../themes/colors.dart';
+import '../../themes/font_weight_helper.dart';
 import 'editCommunity.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -67,8 +69,8 @@ class _CommunityState extends State<Community> {
                           ) : SizedBox.shrink(),
                         ),
                       ),
-                      Text(data["name"], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,
-                        color: Color.fromARGB(255, 33, 173, 168),),),
+                      Text(data["name"], style: TextStyle(fontWeight: FontWeightHelper.bold,fontSize: 15,
+                        color: ColorManager.specialGreen, ),),
                       SizedBox(height: 12,),
                       SizedBox(
                         width: MediaQuery.of(context).size.width,
@@ -78,7 +80,6 @@ class _CommunityState extends State<Community> {
                               borderRadius: BorderRadius.circular(18.0),
                             ),
                             elevation: 0,
-                            color: Colors.grey[300],
                             child: Column(
                               children: [
                                   Padding(
@@ -123,6 +124,7 @@ class _CommunityState extends State<Community> {
                                   ),
                               ],
                             ),
+                            color: ColorManager.cardColor,
                           ),
                         ),
                       ),
