@@ -48,5 +48,6 @@ I have Learnt a lot of things while making this app and i feel like it was very 
 * Bloc ( used for Authentication )
 * only allow one user (admin ) to sign in
 * Hide/Show buttons depending on user
-* selectable text in case someone wants to copy the phone number or the email address of the Community 
+* selectable text in case someone wants to copy the phone number or the email address of the Community
+* Localization
 what i am hoping to do is add messaging and Localisations/ translation for Arabic users 
