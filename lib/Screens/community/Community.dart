@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 
 import '../../themes/colors.dart';
@@ -38,7 +39,7 @@ class _CommunityState extends State<Community> {
                     onPressed: (){
                       Navigator.of(context).pushNamed("addCommunity");
                     },
-                    title: AppLocalizations.of(context)!.addDetails) : SizedBox(height: 12),
+                    title: AppLocalizations.of(context)!.addDetails) : sizedBox(),
               ),
             ),
             StreamBuilder(
