@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:path/path.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/padding.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -65,16 +66,10 @@ class _EditCelebrationState extends State<EditCelebration> {
                     width: MediaQuery.of(context).size.width,
                   ) : SizedBox.shrink()
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context)!.celebrations),
-              ),
+              padding(child: Text(AppLocalizations.of(context)!.celebrations)),
               CustomTextForm(hinttext: "e.g: Christmas", myController: celebrationName),
-              SizedBox(height: 15,),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context)!.details),
-              ),
+              sizedBox(),
+              padding(child: Text(AppLocalizations.of(context)!.details)),
               CustomTextForm(hinttext: "what we do ", myController: celebrationDetails,
                 maxLines: 7,),
               sizedBox(),
