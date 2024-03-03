@@ -36,9 +36,7 @@ class _LoginState extends State<Login> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(AppLocalizations.of(context)!.loginAdmin),
-            const SizedBox(
-              height: 15,
-            ),
+            sizedBox(),
             CustomTextForm(hinttext: AppLocalizations.of(context)!.email,),
             sizedBox(),
             CustomTextForm(hinttext: AppLocalizations.of(context)!.password,),
@@ -50,9 +48,9 @@ class _LoginState extends State<Login> {
               ),
               child: TextButton(
                 style: TextButton.styleFrom(
-                  shape: const StadiumBorder(),
+                  shape:  StadiumBorder(),
                   backgroundColor: ColorManager.buttonColor,
-                  padding: const EdgeInsets.symmetric(vertical: 14),
+                  padding:  EdgeInsets.symmetric(vertical: 14),
                 ),
                 onPressed: () async {
 
