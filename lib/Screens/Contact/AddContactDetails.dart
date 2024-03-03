@@ -4,6 +4,7 @@ import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/components/padding.dart';
 
 class AddContactDetails extends StatefulWidget {
   const AddContactDetails({Key? key}) : super(key: key);
@@ -41,21 +42,16 @@ class _AddContactDetailsState extends State<AddContactDetails> {
                 child: Text(AppLocalizations.of(context)!.place),
               ),
               CustomTextForm(hinttext: "e.g : Brighton college", myController: place),
-              SizedBox(height: 12,),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context)!.streetName),
-              ),
+              sizedBox(),
+              // Padding(
+              //   padding: const EdgeInsets.all(8.0),
+              //   child: Text(AppLocalizations.of(context)!.streetName),
+              // ),
+              padding(child: Text(AppLocalizations.of(context)!.streetName)),
               CustomTextForm(hinttext: "e.g: Eastern Road",  myController: road),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context)!.city),
-              ),
+              padding(child: Text(AppLocalizations.of(context)!.city)),
               CustomTextForm(hinttext: "e.g: Brighton", myController: city),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context)!.postCode),
-              ),
+              padding(child: Text(AppLocalizations.of(context)!.postCode)),
               CustomTextForm(
                   hinttext: "e.g: BN2 OAL", myController: postcode),
               Padding(
