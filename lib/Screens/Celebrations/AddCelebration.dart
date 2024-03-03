@@ -1,12 +1,13 @@
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:path/path.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/components/padding.dart';
 
 import '../../components/TextField.dart';
 class AddCelebration extends StatefulWidget {
@@ -45,19 +46,13 @@ class _AddCelebrationState extends State<AddCelebration> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context)!.celebrations),
-              ),
+              padding(child: Text(AppLocalizations.of(context)!.celebrations)),
               CustomTextForm(hinttext: "e.g: Christmas", myController: celebrationName),
-              SizedBox(height: 15,),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context)!.details),
-              ),
+              sizedBox(),
+              padding(child: Text(AppLocalizations.of(context)!.details),),
               CustomTextForm(hinttext: "what we do ", myController: celebrationDetail,
               maxLines: 7,),
-              SizedBox(height: 15,),
+              sizedBox(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
