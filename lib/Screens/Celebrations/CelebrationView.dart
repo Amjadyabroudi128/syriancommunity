@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/themes/colors.dart';
 import 'package:syrianadmin/themes/font_weight_helper.dart';
 
@@ -51,12 +52,9 @@ class Celebrations extends StatelessWidget {
                         borderRadius: BorderRadius.circular(18.0),
                       ),
                       color: ColorManager.cardColor,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(AppLocalizations.of(context)!.join,
-                        style: TextStyle(fontSize: 16),),
+                      child: padding(
+                        child: Text(AppLocalizations.of(context)!.join, style: TextStyle(fontSize: 16),),
                       ),
-
                     ),
                   ),
                 ),
@@ -190,7 +188,7 @@ class Celebrations extends StatelessWidget {
                                                 );
                                               }
                                             },
-                                          ) : SizedBox(),
+                                          ) : const SizedBox(),
                                         ),
                                       ],
                                     ),
