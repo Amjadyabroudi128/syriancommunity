@@ -51,4 +51,3 @@ I have Learnt a lot of things while making this app and i feel like it was very 
 * selectable text in case someone wants to copy the phone number or the email address of the Community
 * Localization
 * theming 
-what i am hoping to do is add messaging and Localisations/ translation for Arabic users 
