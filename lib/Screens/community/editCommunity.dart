@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/padding.dart';
 
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
@@ -59,16 +60,10 @@ class _EditCommunityState extends State<EditCommunity> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               sizedBox(),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context)!.name),
-              ),
+              padding(child: Text(AppLocalizations.of(context)!.name)),
               CustomTextForm(hinttext: "BreakFast Club", myController: name),
               sizedBox(),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context)!.details),
-              ),
+              padding(child: Text(AppLocalizations.of(context)!.details)),
               CustomTextForm(hinttext: "What we do ", myController: details, maxLines: 6,),
               sizedBox(),
               Center(
