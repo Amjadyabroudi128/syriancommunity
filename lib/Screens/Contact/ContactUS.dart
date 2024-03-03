@@ -6,6 +6,7 @@ import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/themes/colors.dart';
 
 import '../../themes/font_weight_helper.dart';
@@ -135,7 +136,7 @@ class _ContactUsState extends State<ContactUs> {
                                               ),
                                             ),
                                           ),
-                                          SizedBox(height: 15,),
+                                          sizedBox(),
                                           Text(AppLocalizations.of(context)!.phoneContact, style: TextStyle(
                                               fontSize: 13,
                                               fontWeight: FontWeightHelper.bold),),
@@ -159,14 +160,13 @@ class _ContactUsState extends State<ContactUs> {
                                                       ],
                                                     ),
                                                   ),
-                                                  SizedBox(height: 14,),
-                                                  Padding(
-                                                    padding: const EdgeInsets.all(12.0),
+                                                  sizedBox(),
+                                                  padding(
                                                     child: Row(
                                                       children: [
-                                                        Text(AppLocalizations.of(context)!.phone),
-                                                        SizedBox(width: 3,),
-                                                        SelectableText(data["phone"])
+                                                              Text(AppLocalizations.of(context)!.phone),
+                                                              SizedBox(width: 3,),
+                                                              SelectableText(data["phone"])
                                                       ],
                                                     ),
                                                   ),
@@ -221,7 +221,7 @@ class _ContactUsState extends State<ContactUs> {
                           }
                         ),
                         Text(AppLocalizations.of(context)!.location),
-                        SizedBox(height: 12,),
+                        sizedBox(),
                         Center(
                           child: Container(
                             height: 300,
