@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/themes/colors.dart';
 import '../../components/formatedData.dart';
 import '../SideDrawer.dart';
@@ -56,8 +58,8 @@ class _HomePageState extends State<HomePage> {
                     Navigator.of(context).pushNamed("addInfo");
                   },
                 ) : SizedBox(),
-                SizedBox(height: 12,),
-                const Text("here you will see the latest news for the Community"),
+                sizedBox(),
+                 Text("here you will see the latest news for the Community"),
                 StreamBuilder(
                   stream: home.snapshots(),
                   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -97,12 +99,11 @@ class _HomePageState extends State<HomePage> {
                               ),
                               color: ColorManager.cardColor,
                               elevation: 0,
-                              child: Padding(
-                                padding: EdgeInsets.all(12),
+                              child: padding(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(formattedDate(document["time"]), style: TextStyle(color: Colors.grey),),
+                                    Text(formattedDate(document["time" ],context), style: TextStyle(color: Colors.grey),),
                                       SizedBox(height: 6,),
                                       Text(document["name"]),
                                     SizedBox(height: 6,),
