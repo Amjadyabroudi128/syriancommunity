@@ -37,29 +37,18 @@ class _AddContactDetailsState extends State<AddContactDetails> {
             children: [
               Center(child: Text(AppLocalizations.of(context)!.addThings)),
               sizedBox(),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context)!.place),
-              ),
+
+              padding(child: Text(AppLocalizations.of(context)!.place)),
               CustomTextForm(hinttext: "e.g : Brighton college", myController: place),
               sizedBox(),
-              // Padding(
-              //   padding: const EdgeInsets.all(8.0),
-              //   child: Text(AppLocalizations.of(context)!.streetName),
-              // ),
               padding(child: Text(AppLocalizations.of(context)!.streetName)),
               CustomTextForm(hinttext: "e.g: Eastern Road",  myController: road),
               padding(child: Text(AppLocalizations.of(context)!.city)),
               CustomTextForm(hinttext: "e.g: Brighton", myController: city),
               padding(child: Text(AppLocalizations.of(context)!.postCode)),
-              CustomTextForm(
-                  hinttext: "e.g: BN2 OAL", myController: postcode),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context)!.email),
-              ),
-              CustomTextForm(
-                  hinttext: AppLocalizations.of(context)!.email, myController: email),
+              CustomTextForm(hinttext: "e.g: BN2 OAL", myController: postcode),
+              padding(child: Text(AppLocalizations.of(context)!.email)),
+              CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: email),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(AppLocalizations.of(context)!.phone),
