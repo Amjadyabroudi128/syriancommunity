@@ -41,6 +41,9 @@ when admin is signed out
 
 I was able to localize date
 
+![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/75caf7ef-4eab-44cf-8980-c863dd40bab5)
+
+
 I have Learnt a lot of things while making this app and i feel like it was very beneficial for me 
 * Image picking from gallery/camera
 * adding image with text and make image nullable so text alone can be submitted
