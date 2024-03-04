@@ -150,16 +150,13 @@ class _ContactUsState extends State<ContactUs> {
                                               child: Column(
                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
-                                                  Padding(
-                                                    padding: const EdgeInsets.all(12.0),
-                                                    child: Row(
-                                                      children: [
-                                                        Text(AppLocalizations.of(context)!.email),
-                                                        SizedBox(width: 3,),
-                                                        SelectableText(data["email"])
-                                                      ],
-                                                    ),
-                                                  ),
+                                                  padding(child: Row(
+                                                    children: [
+                                                      Text(AppLocalizations.of(context)!.email),
+                                                            SizedBox(width: 3,),
+                                                            SelectableText(data["email"])
+                                                    ],
+                                                  )),
                                                   sizedBox(),
                                                   padding(
                                                     child: Row(
