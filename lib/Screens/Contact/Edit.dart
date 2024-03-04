@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/components/padding.dart';
 
 import '../../components/Sizedbox.dart';
 import '../../components/SubmitButton.dart';
@@ -57,42 +58,24 @@ class _AddContactDetailsState extends State<EditDetails> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               sizedBox(),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context)!.place),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.all(8.0),
+              //   child: Text(AppLocalizations.of(context)!.place),
+              // ),
+              padding(child: Text(AppLocalizations.of(context)!.place)),
               CustomTextForm(hinttext: "e.g : Brighton college", myController: place),
               sizedBox(),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context)!.streetName),
-              ),
+              padding(child: Text(AppLocalizations.of(context)!.streetName)),
               CustomTextForm(hinttext: "e.g: Eastern Road",  myController: road),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context)!.city),
-              ),
+              padding(child: Text(AppLocalizations.of(context)!.city)),
               CustomTextForm(hinttext: "e.g: Brighton", myController: city),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context)!.postCode),
-              ),
-              CustomTextForm(
-                  hinttext: "e.g: BN2 OAL", myController: postcode),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context)!.email),
-              ),
-              CustomTextForm(
-                  hinttext: "email", myController: email),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context)!.phone),
-              ),
-              CustomTextForm(
-                  hinttext: "phone", myController: phone),
+              padding(child: Text(AppLocalizations.of(context)!.postCode)),
+              CustomTextForm(hinttext: "e.g: BN2 OAL", myController: postcode),
+              padding(child: Text(AppLocalizations.of(context)!.email)),
+              CustomTextForm(hinttext: "email", myController: email),
+              padding(child: Text(AppLocalizations.of(context)!.phone)),
+              CustomTextForm(hinttext: "phone", myController: phone),
               sizedBox(),
-
               Center(child:
               CustomButton
                 (onPressed: () async {
