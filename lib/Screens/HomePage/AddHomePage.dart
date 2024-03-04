@@ -39,7 +39,7 @@ class _AddInfoState extends State<AddInfo> {
                   CustomTextForm(
                       hinttext: "name",
                       myController: name),
-                const SizedBox(height: 20,),
+                sizedBox(),
                 Padding(
                   padding: const EdgeInsets.only(left: 12, bottom: 10),
                   child: Text(AppLocalizations.of(context)!.details),
