@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -53,8 +52,7 @@ class _EditCommunityState extends State<EditCommunity> {
       appBar: AppBar(
         title: Text("adding Community Details"),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(12),
+      body: padding(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
