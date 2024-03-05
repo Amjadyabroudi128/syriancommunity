@@ -58,7 +58,7 @@ class _LoginState extends State<Login> {
                 },
                 child:  Text(
                   AppLocalizations.of(context)!.login,
-                  style: const TextStyle(fontSize: 20, color: Colors.white),
+                  style:  TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
             ),
