@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/components/padding.dart';
 
 import '../../components/Sizedbox.dart';
 import '../../components/SubmitButton.dart';
@@ -34,8 +35,7 @@ class _EditHomeState extends State<EditHome> {
       ),
       body: Center(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
+          child: padding(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
