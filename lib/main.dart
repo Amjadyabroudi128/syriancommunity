@@ -11,7 +11,7 @@ import 'package:syrianadmin/Screens/HomePage/editHomePage.dart';
 import 'package:syrianadmin/Screens/team/EditTeam.dart';
 import 'package:syrianadmin/Screens/team/Team.dart';
 import 'package:syrianadmin/Screens/team/addTeam.dart';
-import 'package:syrianadmin/firebase_options.dart';
+import 'package:syrianadmin/components/firebase_options.dart';
 import 'package:syrianadmin/themes/colors.dart';
 import 'Api/Firebase_api.dart';
 import 'Screens/Celebrations/AddCelebration.dart';
@@ -87,15 +87,15 @@ class _MyAppState extends State<MyApp> {
           "addMember" : (context) => AddMember(),
           "contactus" : (context) => const ContactUs(),
           "addcontact" : (context) => AddContactDetails(),
-          "celebrations" : (context) => Celebrations(),
-          "addcelebration" : (context) => AddCelebration(),
-          "editMember" : (context) => EditMember(DocID: '', oldName: '', oldDetail: '', oldUrl: '',),
+          "celebrations" : (context) => const Celebrations(),
+          "addcelebration" : (context) => const AddCelebration(),
+          "editMember" : (context) => const EditMember(DocID: '', oldName: '', oldDetail: '', oldUrl: '',),
           "editCelebration" : (context) => EditCelebration(DocID: "", oldName: "", oldDetail: "", oldUrl: ""),
           "community" : (context) => Community(),
           "addCommunity" : (context) => addCommunity(),
           "editCommunity" : (context) => EditCommunity(DocID: '', oldName: '', oldDetails: '',),
-          "editHome" : (context) => EditHome(DocID: "", oldName: "", oldDetail: ""),
-          "login" : (context) => Login(),
+          "editHome" : (context) => const EditHome(DocID: "", oldName: "", oldDetail: ""),
+          "login" : (context) => const Login(),
         },
       ),
     );
