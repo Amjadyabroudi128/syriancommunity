@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:path/path.dart';
+import 'package:syrianadmin/components/padding.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:image_picker/image_picker.dart';
@@ -37,14 +38,11 @@ class _AddMemberState extends State<AddMember> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text("adding team"),
-        backgroundColor: Color.fromARGB(255, 33, 173, 168),
       ),
       body: Center(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
+          child: padding(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
