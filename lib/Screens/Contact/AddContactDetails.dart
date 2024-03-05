@@ -29,8 +29,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
         appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.addDetails),
         ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
+      body: padding(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,8 +48,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
               CustomTextForm(hinttext: "e.g: BN2 OAL", myController: postcode),
               padding(child: Text(AppLocalizations.of(context)!.email)),
               CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: email),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              padding(
                 child: Text(AppLocalizations.of(context)!.phone),
               ),
               CustomTextForm(
