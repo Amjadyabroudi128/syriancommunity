@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
+import 'package:syrianadmin/components/padding.dart';
 
 import '../../themes/colors.dart';
 import '../../themes/font_weight_helper.dart';
@@ -32,8 +33,7 @@ class _CommunityState extends State<Community> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            padding(
               child: Center(
                 child: user != null ? CustomButton(
                     onPressed: (){
@@ -72,7 +72,7 @@ class _CommunityState extends State<Community> {
                       ),
                       Text(data["name"], style: TextStyle(fontWeight: FontWeightHelper.bold,fontSize: 15,
                         color: ColorManager.specialGreen, ),),
-                      SizedBox(height: 12,),
+                      sizedBox(height: 12,),
                       SizedBox(
                         width: MediaQuery.of(context).size.width,
                         child: IntrinsicHeight(
