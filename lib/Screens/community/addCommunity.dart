@@ -42,8 +42,7 @@ class _addCommunityState extends State<addCommunity> {
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.addDetails),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(12),
+      body: padding(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
