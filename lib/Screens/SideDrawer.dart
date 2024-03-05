@@ -8,6 +8,7 @@ import '../main.dart';
 
 
 class SideDrawer extends StatefulWidget {
+
   const SideDrawer({Key? key}) : super(key: key);
 
   @override
@@ -15,8 +16,8 @@ class SideDrawer extends StatefulWidget {
 }
 
 class _SideDrawerState extends State<SideDrawer> {
+
   final FirebaseAuth auth = FirebaseAuth.instance;
-  bool isDarkMode = false;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -106,7 +107,6 @@ class _SideDrawerState extends State<SideDrawer> {
                   leading: Icon(Icons.login),
                   title: Text(AppLocalizations.of(context)!.login),
                   onTap: () {
-                    // Navigator.of(context).pushNamed("login");
                     Navigator.push(
                         context,
                         CupertinoPageRoute<Widget>(
