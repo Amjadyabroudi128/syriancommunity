@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/Register/LogIn.dart';
 import '../main.dart';
 
 
@@ -15,7 +16,7 @@ class SideDrawer extends StatefulWidget {
 
 class _SideDrawerState extends State<SideDrawer> {
   final FirebaseAuth auth = FirebaseAuth.instance;
-
+  bool isDarkMode = false;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -105,7 +106,15 @@ class _SideDrawerState extends State<SideDrawer> {
                   leading: Icon(Icons.login),
                   title: Text(AppLocalizations.of(context)!.login),
                   onTap: () {
-                    Navigator.of(context).pushNamed("login");
+                    // Navigator.of(context).pushNamed("login");
+                    Navigator.push(
+                        context,
+                        CupertinoPageRoute<Widget>(
+                        builder: (BuildContext context) {
+                      return const Login();
+                    },
+                    )
+                    );
                   },
                 );
               }
@@ -136,6 +145,7 @@ class _SideDrawerState extends State<SideDrawer> {
 
               ],
             ),
+
         ],
       ),
     );
