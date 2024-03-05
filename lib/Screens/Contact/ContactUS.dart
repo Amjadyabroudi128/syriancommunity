@@ -47,7 +47,7 @@ class _ContactUsState extends State<ContactUs> {
                               },
                               title: AppLocalizations.of(context)!.addThings) : SizedBox(height: 15,),
                         ),
-                        SizedBox(height: 30,),
+                        sizedBox(height: 25,),
                         Text(AppLocalizations.of(context)!.visitHere, style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
                         StreamBuilder <QuerySnapshot>(
                           stream: FirebaseFirestore.instance.collection("contact").snapshots(),
@@ -65,8 +65,7 @@ class _ContactUsState extends State<ContactUs> {
                                   shrinkWrap: true,
                                   children: snapshot.data!.docs.map((DocumentSnapshot document) {
                                     Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
-                                    return Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                    return padding(
                                       child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
