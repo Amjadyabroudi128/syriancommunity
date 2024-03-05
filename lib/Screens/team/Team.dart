@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
+import 'package:syrianadmin/components/padding.dart';
 
 import '../../themes/colors.dart';
 import '../../themes/font_weight_helper.dart';
@@ -30,15 +32,13 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
+            padding(
               child: user != null ? CustomButton(
                 onPressed: (){
                   Navigator.of(context).pushNamed("addMember");
-
                 },
                 title: "Add members +",
-              ) : SizedBox(),
+              ) : sizedBox(),
             ),
             StreamBuilder(
               stream: members.snapshots(),
