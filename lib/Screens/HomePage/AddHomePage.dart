@@ -3,6 +3,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
+import 'package:syrianadmin/components/padding.dart';
 import '../../Api/Firebase_api.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -27,8 +28,7 @@ class _AddInfoState extends State<AddInfo> {
       ),
       body: Center(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
+          child: padding(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
