@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/themes/colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../components/formatedData.dart';
+import '../../themes/fontSize.dart';
 import '../SideDrawer.dart';
 import 'editHomePage.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -18,7 +20,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +40,8 @@ class _HomePageState extends State<HomePage> {
         ),
         toolbarHeight: 70,
         title: Text(AppLocalizations.of(context)!.syrianCommunity),
+        actions: [
+        ],
       ),
       drawer: SideDrawer(),
       // i prefer the drawer to the DropDownMenu
@@ -57,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                   onPressed: (){
                     Navigator.of(context).pushNamed("addInfo");
                   },
-                ) : SizedBox(),
+                ) : sizedBox(),
                 sizedBox(),
                  Text("here you will see the latest news for the Community"),
                 StreamBuilder(
@@ -70,12 +73,13 @@ class _HomePageState extends State<HomePage> {
                       return Text("Loading");
                     }
                     if (snapshot.data!.docs.isEmpty) {
-                      return const SafeArea(
+                      return  SafeArea(
                         child: Center(
                          child: Column(
                            children: [
                              SizedBox(height: 200,),
-                             Text("nothing to see here yet :( ", style: TextStyle(color: Colors.grey, fontSize: 20),)
+                             Text("nothing to see here yet :( ",
+                               style: TextStyles.font20grey,)
                            ],
                          ),
                         ),
@@ -151,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                           ),
-                        )
+                        ),
                       ],
                     );
                     },
