@@ -31,5 +31,6 @@
   "addCelebration": "add celebration",
   "details": "details",
   "image": "image",
-  "name": "name"
+  "name": "name",
+  "facebook" : "our facebook page"
 }
