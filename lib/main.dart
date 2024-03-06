@@ -22,6 +22,8 @@ import 'Screens/community/addCommunity.dart';
 import 'Screens/community/Community.dart';
 import 'Screens/community/editCommunity.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+
  final NavigatorKey = GlobalKey<NavigatorState>();
 
     void main() async {
@@ -55,7 +57,7 @@ class _MyAppState extends State<MyApp> {
       _locale = locale;
     });
   }
-
+  bool isSwitched = false;
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
