@@ -57,7 +57,6 @@ class _MyAppState extends State<MyApp> {
       _locale = locale;
     });
   }
-  bool isSwitched = false;
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
