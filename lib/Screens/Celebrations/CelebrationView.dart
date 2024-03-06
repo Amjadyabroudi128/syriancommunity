@@ -9,6 +9,7 @@ import 'package:syrianadmin/themes/colors.dart';
 import 'package:syrianadmin/themes/font_weight_helper.dart';
 
 import '../../components/SubmitButton.dart';
+import '../../themes/fontSize.dart';
 class Celebrations extends StatelessWidget {
   final document;
 
@@ -35,10 +36,7 @@ class Celebrations extends StatelessWidget {
                 ),
                 Padding(
                   padding:  EdgeInsets.all(8.0),
-                  child: Text(AppLocalizations.of(context)!.celebrations, style: TextStyle(
-                      color: ColorManager.specialGreen,
-                      fontWeight: FontWeightHelper.bold, fontSize: 16),
-                  ),
+                  child: Text(AppLocalizations.of(context)!.celebrations, style: TextStyles.font16green,),
                 ),
                 sizedBox(),
                 Container(
@@ -74,7 +72,7 @@ class Celebrations extends StatelessWidget {
                           child: Column(
                             children: [
                               SizedBox(height: 200,),
-                              Text("nothing to see here yet :( ", style: TextStyle(color: Colors.grey, fontSize: 20),)
+                              Text("nothing to see here ", style: TextStyles.font20grey,)
                             ],
                           ),
                         ),
@@ -90,12 +88,10 @@ class Celebrations extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.only(bottom: 5, top: 10),
+                                padding:  EdgeInsets.only(bottom: 5, top: 10),
                                 child: Center(
                                     child: Text(data["name"],
-                                      style: TextStyle(fontSize: 14,
-                                          color: ColorManager.specialGreen,
-                                          fontWeight: FontWeightHelper.bold),)
+                                      style: TextStyles.font14green)
                                 ),
                               ),
                              user != null ? GestureDetector(
@@ -144,8 +140,7 @@ class Celebrations extends StatelessWidget {
                                     elevation: 0,
                                     child:  Column(
                                       children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
+                                        padding(
                                           child: Text(data["details"], style: TextStyle(fontSize: 17),),
                                         ),
                                         Padding(
