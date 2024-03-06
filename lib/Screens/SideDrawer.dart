@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/Register/LogIn.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../main.dart';
 
 
@@ -18,6 +19,7 @@ class SideDrawer extends StatefulWidget {
 class _SideDrawerState extends State<SideDrawer> {
 
   final FirebaseAuth auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -145,7 +147,13 @@ class _SideDrawerState extends State<SideDrawer> {
 
               ],
             ),
-
+          ListTile(
+            leading: Icon(Icons.facebook),
+            title: Text(AppLocalizations.of(context)!.facebook),
+            onTap: () {
+              launchUrl(Uri.parse('https://www.facebook.com/groups/SyrianCommunityGroup'));
+            }
+          )
         ],
       ),
     );
