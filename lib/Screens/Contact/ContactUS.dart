@@ -9,6 +9,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/themes/colors.dart';
 
+import '../../themes/fontSize.dart';
 import '../../themes/font_weight_helper.dart';
 
 class ContactUs extends StatefulWidget {
@@ -45,10 +46,10 @@ class _ContactUsState extends State<ContactUs> {
                               onPressed: (){
                                 Navigator.of(context).pushNamed("addcontact");
                               },
-                              title: AppLocalizations.of(context)!.addThings) : SizedBox(height: 15,),
+                              title: AppLocalizations.of(context)!.addThings) : sizedBox(height: 15,)
                         ),
                         sizedBox(height: 25,),
-                        Text(AppLocalizations.of(context)!.visitHere, style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                        Text(AppLocalizations.of(context)!.visitHere, style: TextStyles.font15,),
                         StreamBuilder <QuerySnapshot>(
                           stream: FirebaseFirestore.instance.collection("contact").snapshots(),
                             builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
