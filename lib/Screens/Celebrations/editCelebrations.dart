@@ -62,7 +62,6 @@ class _EditCelebrationState extends State<EditCelebration> {
               Center(
                   child: url != null ? Image.network(url!,
                     height: MediaQuery.of(context).size.height * 0.40,
-                    // fit: BoxFit.cover,
                     width: MediaQuery.of(context).size.width,
                   ) : SizedBox.shrink()
               ),
