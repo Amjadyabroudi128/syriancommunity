@@ -11,8 +11,6 @@ import 'package:syrianadmin/themes/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../themes/fontSize.dart';
-import '../../themes/font_weight_helper.dart';
-
 class ContactUs extends StatefulWidget {
   final document;
   const ContactUs({ @required this.document});
@@ -138,9 +136,6 @@ class _ContactUsState extends State<ContactUs> {
                                             ),
                                           ),
                                           sizedBox(),
-                                          // Text(AppLocalizations.of(context)!.phoneContact, style: TextStyle(
-                                          //     fontSize: 13,
-                                          //     fontWeight: FontWeightHelper.bold),),
                                           Text(AppLocalizations.of(context)!.phoneContact, style: TextStyles.font15,),
                                           sizedBox(),
                                           Container(
