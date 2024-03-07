@@ -37,11 +37,11 @@ class _LoginState extends State<Login> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(AppLocalizations.of(context)!.loginAdmin),
-            sizedBox(),
+            sizedBox(height: 19,),
             CustomTextForm(hinttext: AppLocalizations.of(context)!.email,),
-            sizedBox(),
+            sizedBox(height: 15,),
             CustomTextForm(hinttext: AppLocalizations.of(context)!.password,),
-            sizedBox(),
+            sizedBox(height: 20,),
             Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(
