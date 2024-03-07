@@ -5,9 +5,6 @@ import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/themes/fontSize.dart';
-
-import '../../themes/colors.dart';
-import '../../themes/font_weight_helper.dart';
 import 'EditTeam.dart';
 
 
@@ -105,8 +102,6 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                             ) : SizedBox.shrink(),
                           ),
                         ),
-                          // Text(data["name"], style: TextStyle(fontWeight: FontWeightHelper.bold, fontSize: 15,
-                          //     color: ColorManager.specialGreen ),),
                           Text(data["name"], style: TextStyles.font14green,),
                           sizedBox(height: 12,),
                           SizedBox(
