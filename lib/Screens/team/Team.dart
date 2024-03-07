@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/themes/fontSize.dart';
 
 import '../../themes/colors.dart';
 import '../../themes/font_weight_helper.dart';
@@ -56,7 +57,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                         child: Column(
                           children: [
                             SizedBox(height: 200,),
-                            Text("nothing to see here yet :( ", style: TextStyle(color: Colors.grey, fontSize: 20),)
+                            Text("nothing to see here yet", style: TextStyles.font20grey,)
                           ],
                         ),
                       ),
@@ -104,10 +105,11 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                             ) : SizedBox.shrink(),
                           ),
                         ),
-                          Text(data["name"], style: TextStyle(fontWeight: FontWeightHelper.bold, fontSize: 15,
-                              color: ColorManager.specialGreen ),),
-                          SizedBox(height: 12,),
-                          Container(
+                          // Text(data["name"], style: TextStyle(fontWeight: FontWeightHelper.bold, fontSize: 15,
+                          //     color: ColorManager.specialGreen ),),
+                          Text(data["name"], style: TextStyles.font14green,),
+                          sizedBox(height: 12,),
+                          SizedBox(
                             // height: 160,
                             width: MediaQuery.of(context).size.width,
                             child: IntrinsicHeight(
@@ -119,10 +121,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                 color: Colors.grey[300],
                                 child: Column(
                                   children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Text(data["details"], style: TextStyle(fontSize: 17),),
-                                    ),
+                                    padding(child: Text(data["details"], style: TextStyles.font17,) ,),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 310),
                                       child: user != null ? PopupMenuButton(
