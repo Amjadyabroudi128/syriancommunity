@@ -5,6 +5,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart';
+import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/padding.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
@@ -76,7 +77,7 @@ class _EditMemberState extends State<EditMember> {
                 CustomTextForm(
                     hinttext: "name",
                     myController: name),
-                SizedBox(height: 20,),
+                sizedBox(height: 20,),
                 Padding(
                   padding: const EdgeInsets.only(left: 12, bottom: 10),
                   child: Text("Details"),
@@ -85,7 +86,7 @@ class _EditMemberState extends State<EditMember> {
                   maxLines: 5,
                     hinttext: "details",
                     myController: details),
-                SizedBox(height: 12,),
+                sizedBox(),
                 Center(
                   child: CustomButton(
                     title: "get image",
@@ -96,7 +97,7 @@ class _EditMemberState extends State<EditMember> {
                     },
                   ),
                 ),
-                SizedBox(height: 15,),
+                sizedBox(height: 15,),
                 Center(
                   child: CustomButton(
                       onPressed: () async {
