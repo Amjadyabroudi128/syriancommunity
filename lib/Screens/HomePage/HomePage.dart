@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                         child: Center(
                          child: Column(
                            children: [
-                             SizedBox(height: 200,),
+                             sizedBox(height: 200,),
                              Text("nothing to see here yet :( ",
                                style: TextStyles.font20grey,)
                            ],
@@ -104,9 +104,9 @@ class _HomePageState extends State<HomePage> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(formattedDate(document["time" ],context), style: TextStyle(color: Colors.grey),),
-                                      SizedBox(height: 6,),
+                                      sizedBox(height: 6,),
                                       Text(document["name"]),
-                                    SizedBox(height: 6,),
+                                    sizedBox(height: 6,),
                                     Text(document["details"]),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 300),

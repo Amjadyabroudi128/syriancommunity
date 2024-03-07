@@ -8,7 +8,7 @@ class sizedBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   return  SizedBox(
-    height: 10,
+    height: height,
     width: width ,
   );
   }
