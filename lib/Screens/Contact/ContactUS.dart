@@ -70,7 +70,6 @@ class _ContactUsState extends State<ContactUs> {
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           Container(
-                                            height: 200,
                                             width: MediaQuery.of(context).size.width,
                                             child: IntrinsicWidth(
                                               child: Card(
@@ -79,16 +78,17 @@ class _ContactUsState extends State<ContactUs> {
                                                 child: Padding(
                                                   padding: EdgeInsets.all(12),
                                                   child: Column(
+                                                    mainAxisSize: MainAxisSize.min,
                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
                                                               Text(AppLocalizations.of(context)!.location),
-                                                              sizedBox(),
+                                                              sizedBox(height: 5,),
                                                               Text(data["place"]),
-                                                              sizedBox(),
+                                                              sizedBox(height: 5,),
                                                               Text(data["street name"]),
-                                                              sizedBox(),
+                                                              sizedBox(height: 5,),
                                                               Text(data["city"]),
-                                                              sizedBox(),
+                                                              sizedBox(height: 5,),
                                                               Text(data["post code"]),
 
                                                       Padding(
@@ -139,12 +139,12 @@ class _ContactUsState extends State<ContactUs> {
                                           Text(AppLocalizations.of(context)!.phoneContact, style: TextStyles.font15,),
                                           sizedBox(),
                                           Container(
-                                            height: 200,
                                             width: MediaQuery.of(context).size.width,
                                             child: Card(
                                               color: ColorManager.cardColor,
                                               elevation: 0,
                                               child: Column(
+                                                mainAxisSize: MainAxisSize.min,
                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
                                                   padding(child: Row(
@@ -161,6 +161,20 @@ class _ContactUsState extends State<ContactUs> {
                                                               Text(AppLocalizations.of(context)!.phone),
                                                               sizedBox(width: 3,),
                                                               SelectableText(data["phone"])
+                                                      ],
+
+                                                    ),
+                                                  ),
+                                                  padding(
+                                                    child: Row(
+                                                      children: [
+                                                        Text("or you can visit ""${AppLocalizations.of(context)!.facebook}"),
+                                                        IconButton(
+                                                          onPressed: (){
+                                                            launchUrl(Uri.parse('https://www.facebook.com/groups/SyrianCommunityGroup'));
+                                                          },
+                                                          icon: Icon(Icons.facebook),
+                                                        )
                                                       ],
 
                                                     ),
@@ -202,20 +216,20 @@ class _ContactUsState extends State<ContactUs> {
                                                         },
                                                     ) : SizedBox(),
                                                   ),
-                                                  padding(
-                                                    child: Row(
-                                                      children: [
-                                                        Text("or you can visit ""${AppLocalizations.of(context)!.facebook}"),
-                                                        IconButton(
-                                                          onPressed: (){
-                                                            launchUrl(Uri.parse('https://www.facebook.com/groups/SyrianCommunityGroup'));
-                                                          },
-                                                          icon: Icon(Icons.facebook),
-                                                        )
-                                                      ],
-
-                                                    ),
-                                                  ),
+                                                  // padding(
+                                                  //   child: Row(
+                                                  //     children: [
+                                                  //       Text("or you can visit ""${AppLocalizations.of(context)!.facebook}"),
+                                                  //       IconButton(
+                                                  //         onPressed: (){
+                                                  //           launchUrl(Uri.parse('https://www.facebook.com/groups/SyrianCommunityGroup'));
+                                                  //         },
+                                                  //         icon: Icon(Icons.facebook),
+                                                  //       )
+                                                  //     ],
+                                                  //
+                                                  //   ),
+                                                  // ),
                                                 ],
                                               ),
                                             ),
