@@ -26,4 +26,7 @@ import 'font_weight_helper.dart';
      color: ColorManager.specialGreen,
      fontWeight: FontWeightHelper.bold,
    );
+   static TextStyle font17 = TextStyle(
+     fontSize: 17,
+   );
  }
