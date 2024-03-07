@@ -8,6 +8,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/themes/colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../themes/fontSize.dart';
 import '../../themes/font_weight_helper.dart';
@@ -137,9 +138,10 @@ class _ContactUsState extends State<ContactUs> {
                                             ),
                                           ),
                                           sizedBox(),
-                                          Text(AppLocalizations.of(context)!.phoneContact, style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeightHelper.bold),),
+                                          // Text(AppLocalizations.of(context)!.phoneContact, style: TextStyle(
+                                          //     fontSize: 13,
+                                          //     fontWeight: FontWeightHelper.bold),),
+                                          Text(AppLocalizations.of(context)!.phoneContact, style: TextStyles.font15,),
                                           sizedBox(),
                                           Container(
                                             height: 200,
@@ -153,7 +155,7 @@ class _ContactUsState extends State<ContactUs> {
                                                   padding(child: Row(
                                                     children: [
                                                       Text(AppLocalizations.of(context)!.email),
-                                                            SizedBox(width: 3,),
+                                                            sizedBox(width: 3,),
                                                             SelectableText(data["email"])
                                                     ],
                                                   )),
@@ -162,9 +164,10 @@ class _ContactUsState extends State<ContactUs> {
                                                     child: Row(
                                                       children: [
                                                               Text(AppLocalizations.of(context)!.phone),
-                                                              SizedBox(width: 3,),
+                                                              sizedBox(width: 3,),
                                                               SelectableText(data["phone"])
                                                       ],
+
                                                     ),
                                                   ),
                                                   Padding(
@@ -204,7 +207,20 @@ class _ContactUsState extends State<ContactUs> {
                                                         },
                                                     ) : SizedBox(),
                                                   ),
+                                                  padding(
+                                                    child: Row(
+                                                      children: [
+                                                        Text("or you can visit ""${AppLocalizations.of(context)!.facebook}"),
+                                                        IconButton(
+                                                          onPressed: (){
+                                                            launchUrl(Uri.parse('https://www.facebook.com/groups/SyrianCommunityGroup'));
+                                                          },
+                                                          icon: Icon(Icons.facebook),
+                                                        )
+                                                      ],
 
+                                                    ),
+                                                  ),
                                                 ],
                                               ),
                                             ),
