@@ -83,7 +83,7 @@ class _CommunityState extends State<Community> {
                               children: [
                                   Padding(
                                     padding:  EdgeInsets.all(14),
-                                    child: Text(data["details"], style: TextStyle(fontSize: 17),),
+                                    child: Text(data["details"], style: TextStyles.font17,),
                                   ),
                                   Padding(
                                     padding:  EdgeInsets.only(left: 310, ),
