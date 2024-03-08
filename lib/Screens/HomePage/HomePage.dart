@@ -74,8 +74,7 @@ class _HomePageState extends State<HomePage> {
                          child: Column(
                            children: [
                              sizedBox(height: 200,),
-                             Text("nothing to see here yet :( ",
-                               style: TextStyles.font20grey,)
+                             Text("nothing to see here yet :( ", style: TextStyles.font20grey,)
                            ],
                          ),
                         ),
@@ -89,10 +88,9 @@ class _HomePageState extends State<HomePage> {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
+                        SizedBox(
                           width: MediaQuery.of(context).size.width ,
                           child: IntrinsicHeight(
-
                             child: Card(
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(18.0),
@@ -103,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(formattedDate(document["time" ],context), style: TextStyle(color: Colors.grey),),
+                                    Text(formattedDate(document["time" ],context), style: TextStyles.fontdate,),
                                       sizedBox(height: 6,),
                                       Text(document["name"]),
                                     sizedBox(height: 6,),
