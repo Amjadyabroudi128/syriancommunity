@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:path/path.dart';
+import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/padding.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
@@ -46,23 +47,20 @@ class _AddMemberState extends State<AddMember> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(left: 12, bottom: 10),
-                  child: Text("Name"),
-                ),
-                CustomTextForm(
-                    hinttext: "name",
-                    myController: name),
-                SizedBox(height: 20,),
-                const Padding(
-                  padding: EdgeInsets.only(left: 12, bottom: 10),
-                  child: Text("Details"),
-                ),
-                CustomTextForm(
-                    maxLines: 5,
-                    hinttext: "details",
-                    myController: details),
-                SizedBox(height: 12,),
+                // const Padding(
+                //   padding: EdgeInsets.only(left: 12, bottom: 10),
+                //   child: Text("Name"),
+                // ),
+                padding(child: Text("Name")),
+                CustomTextForm(hinttext: "name", myController: name),
+                sizedBox(height: 20,),
+                // const Padding(
+                //   padding: EdgeInsets.only(left: 12, bottom: 10),
+                //   child: Text("Details"),
+                // ),
+                padding(child: Text("Details")),
+                CustomTextForm(maxLines: 5, hinttext: "details", myController: details),
+                sizedBox(height: 12,),
                 Center(
                   child: CustomButton(
                     title: "get image",
@@ -73,7 +71,7 @@ class _AddMemberState extends State<AddMember> {
                     },
                   ),
                 ),
-                SizedBox(height: 15,),
+                sizedBox(height: 15,),
                 Center(
                   child: CustomButton(
                       onPressed: () async {
