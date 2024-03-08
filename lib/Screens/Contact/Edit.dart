@@ -56,10 +56,6 @@ class _AddContactDetailsState extends State<EditDetails> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               sizedBox(),
-              // Padding(
-              //   padding: const EdgeInsets.all(8.0),
-              //   child: Text(AppLocalizations.of(context)!.place),
-              // ),
               padding(child: Text(AppLocalizations.of(context)!.place)),
               CustomTextForm(hinttext: "e.g : Brighton college", myController: place),
               sizedBox(),
