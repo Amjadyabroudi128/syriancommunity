@@ -36,7 +36,6 @@ class _AddContactDetailsState extends State<AddContactDetails> {
             children: [
               Center(child: Text(AppLocalizations.of(context)!.addThings)),
               sizedBox(),
-
               padding(child: Text(AppLocalizations.of(context)!.place)),
               CustomTextForm(hinttext: "e.g : Brighton college", myController: place),
               sizedBox(),
@@ -48,11 +47,8 @@ class _AddContactDetailsState extends State<AddContactDetails> {
               CustomTextForm(hinttext: "e.g: BN2 OAL", myController: postcode),
               padding(child: Text(AppLocalizations.of(context)!.email)),
               CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: email),
-              padding(
-                child: Text(AppLocalizations.of(context)!.phone),
-              ),
-              CustomTextForm(
-                  hinttext: AppLocalizations.of(context)!.phone, myController: phone),
+              padding(child: Text(AppLocalizations.of(context)!.phone),),
+              CustomTextForm(hinttext: AppLocalizations.of(context)!.phone, myController: phone),
               sizedBox(),
               Center(child:
               CustomButton
