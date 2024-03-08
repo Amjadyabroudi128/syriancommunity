@@ -39,23 +39,11 @@ class _EditHomeState extends State<EditHome> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 12, bottom: 10),
-                  child: Text(AppLocalizations.of(context)!.name),
-                ),
-                CustomTextForm(
-                    hinttext: "name",
-                    myController: name),
+                padding(child: Text(AppLocalizations.of(context)!.name)),
+                CustomTextForm(hinttext: "name", myController: name),
                 sizedBox(height: 20,),
-                Padding(
-                  padding: const EdgeInsets.only(left: 12, bottom: 10),
-                  child: Text(AppLocalizations.of(context)!.details),
-                ),
-                CustomTextForm(
-                  hinttext: "details",
-                  myController: details,
-                  maxLines: 6,
-                ),
+                padding(child: Text(AppLocalizations.of(context)!.details)),
+                CustomTextForm(hinttext: "details", myController: details, maxLines: 6,),
                 sizedBox(),
                 Center(
                   child: CustomButton(
