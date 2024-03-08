@@ -50,8 +50,7 @@ class _AddCelebrationState extends State<AddCelebration> {
               CustomTextForm(hinttext: "e.g: Christmas", myController: celebrationName),
               sizedBox(),
               padding(child: Text(AppLocalizations.of(context)!.details),),
-              CustomTextForm(hinttext: "what we do ", myController: celebrationDetail,
-              maxLines: 7,),
+              CustomTextForm(hinttext: "what we do ", myController: celebrationDetail, maxLines: 7,),
               sizedBox(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
