@@ -12,7 +12,7 @@ import 'package:syrianadmin/Screens/team/EditTeam.dart';
 import 'package:syrianadmin/Screens/team/Team.dart';
 import 'package:syrianadmin/Screens/team/addTeam.dart';
 import 'package:syrianadmin/components/firebase_options.dart';
-import 'package:syrianadmin/themes/colors.dart';
+import 'package:syrianadmin/themes/app_theme.dart';
 import 'Api/Firebase_api.dart';
 import 'Screens/Celebrations/AddCelebration.dart';
 import 'Screens/Celebrations/CelebrationView.dart';
@@ -72,13 +72,7 @@ class _MyAppState extends State<MyApp> {
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         locale: _locale,
-        theme: ThemeData(
-          useMaterial3: false,
-          appBarTheme: AppBarTheme(
-            color: ColorManager.specialGreen,
-            centerTitle: true,
-          )
-        ),
+        theme: appTheme,
         home: HomePage(),
         navigatorKey: NavigatorKey,
         routes: {
