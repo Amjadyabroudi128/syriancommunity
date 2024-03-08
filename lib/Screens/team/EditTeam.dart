@@ -70,18 +70,14 @@ class _EditMemberState extends State<EditMember> {
                     ) : SizedBox.shrink()
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 12, bottom: 10),
-                  child: Text("Name"),
-                ),
-                CustomTextForm(
-                    hinttext: "name",
-                    myController: name),
+                // Padding(
+                //   padding: const EdgeInsets.only(left: 12, bottom: 10),
+                //   child: Text("Name"),
+                // ),
+                padding(child: Text("Name"),),
+                CustomTextForm(hinttext: "name", myController: name),
                 sizedBox(height: 20,),
-                Padding(
-                  padding: const EdgeInsets.only(left: 12, bottom: 10),
-                  child: Text("Details"),
-                ),
+                padding(child: Text("Details"),),
                 CustomTextForm(
                   maxLines: 5,
                     hinttext: "details",
