@@ -147,13 +147,6 @@ class _SideDrawerState extends State<SideDrawer> {
 
               ],
             ),
-          ListTile(
-            leading: Icon(Icons.facebook),
-            title: Text(AppLocalizations.of(context)!.facebook),
-            onTap: () {
-              launchUrl(Uri.parse('https://www.facebook.com/groups/SyrianCommunityGroup'));
-            }
-          )
         ],
       ),
     );
