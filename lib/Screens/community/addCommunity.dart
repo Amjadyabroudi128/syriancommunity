@@ -48,9 +48,7 @@ class _addCommunityState extends State<addCommunity> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               sizedBox(),
-              padding(
-                child: Text(AppLocalizations.of(context)!.name),
-              ),
+              padding(child: Text(AppLocalizations.of(context)!.name),),
               CustomTextForm(hinttext: "BreakFast Club", myController: name),
               sizedBox(),
               padding(
