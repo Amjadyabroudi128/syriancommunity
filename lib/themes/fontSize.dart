@@ -19,7 +19,6 @@ import 'font_weight_helper.dart';
        fontSize: 16,
        color: ColorManager.specialGreen,
        fontWeight: FontWeightHelper.bold,
-
    );
    static TextStyle font14green = TextStyle(
      fontSize: 14,
@@ -28,5 +27,9 @@ import 'font_weight_helper.dart';
    );
    static TextStyle font17 = TextStyle(
      fontSize: 17,
+   );
+   static TextStyle fontdate = TextStyle(
+     fontSize: 15,
+     color: ColorManager.dateColor
    );
  }
