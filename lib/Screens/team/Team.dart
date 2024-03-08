@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/themes/colors.dart';
 import 'package:syrianadmin/themes/fontSize.dart';
 import 'EditTeam.dart';
 
@@ -53,7 +54,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                       child: Center(
                         child: Column(
                           children: [
-                            SizedBox(height: 200,),
+                            sizedBox(height: 200),
                             Text("nothing to see here yet", style: TextStyles.font20grey,)
                           ],
                         ),
@@ -113,7 +114,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                   borderRadius: BorderRadius.circular(18.0),
                                 ),
                                 elevation: 0,
-                                color: Colors.grey[300],
+                                color: ColorManager.cardColor,
                                 child: Column(
                                   children: [
                                     padding(child: Text(data["details"], style: TextStyles.font17,) ,),
