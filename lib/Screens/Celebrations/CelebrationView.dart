@@ -71,7 +71,7 @@ class Celebrations extends StatelessWidget {
                         child: Center(
                           child: Column(
                             children: [
-                              SizedBox(height: 200,),
+                              sizedBox(height: 200,),
                               Text("nothing to see here ", style: TextStyles.font20grey,)
                             ],
                           ),
@@ -89,10 +89,7 @@ class Celebrations extends StatelessWidget {
                             children: [
                               Padding(
                                 padding:  EdgeInsets.only(bottom: 5, top: 10),
-                                child: Center(
-                                    child: Text(data["name"],
-                                      style: TextStyles.font14green)
-                                ),
+                                child: Center(child: Text(data["name"], style: TextStyles.font14green)),
                               ),
                              user != null ? GestureDetector(
                                 child: Padding(
@@ -141,7 +138,7 @@ class Celebrations extends StatelessWidget {
                                     child:  Column(
                                       children: [
                                         padding(
-                                          child: Text(data["details"], style: TextStyle(fontSize: 17),),
+                                          child: Text(data["details"], style: TextStyles.font17,),
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.only(left: 300),
@@ -183,7 +180,7 @@ class Celebrations extends StatelessWidget {
                                                 );
                                               }
                                             },
-                                          ) : const SizedBox(),
+                                          ) :  SizedBox(),
                                         ),
                                       ],
                                     ),
