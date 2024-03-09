@@ -6,4 +6,5 @@ class ColorManager {
   static Color cardColor = Color(0xFFEEEEEE);
   static Color buttonColor = Colors.blue;
   static Color dateColor = Color(0xFF9E9E9E);
+  static Color hintText = Color(0xFF000000);
 }
