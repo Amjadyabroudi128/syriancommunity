@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:syrianadmin/themes/app_theme.dart';
-
 import '../themes/fontSize.dart';
 
 class CustomTextForm extends StatelessWidget {
@@ -22,22 +20,6 @@ Widget build(BuildContext context) {
     decoration: InputDecoration(
         hintText: hinttext,
         hintStyle: TextStyles.hintText
-    //     hintStyle: TextStyle(fontSize: 13, color: Colors.black),
-    //     border: OutlineInputBorder(
-    //       borderRadius: BorderRadius.circular(30),
-    //       borderSide: BorderSide(color: Colors.black),
-    //     ),
-    //     enabledBorder: OutlineInputBorder(
-    //       borderSide:
-    //       BorderSide(width: 1, color: Colors.black), //<-- SEE HERE
-    //       borderRadius: BorderRadius.circular(50.0),
-    //     ),
-    //     focusedBorder: OutlineInputBorder(
-    //         borderRadius: BorderRadius.circular(30),
-    //         borderSide: const BorderSide(
-    //             color: Colors.black
-    //         )
-    //     )
      ),
   );
   // custom text field
