@@ -32,4 +32,8 @@ import 'font_weight_helper.dart';
      fontSize: 15,
      color: ColorManager.dateColor
    );
+   static TextStyle hintText = TextStyle(
+     fontSize: 13,
+     color: ColorManager.hintText
+   );
  }
