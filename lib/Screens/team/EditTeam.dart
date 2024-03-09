@@ -9,6 +9,7 @@ import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/padding.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
+import '../../themes/fontSize.dart';
 
 class EditMember extends StatefulWidget {
   final String DocID;
@@ -70,14 +71,10 @@ class _EditMemberState extends State<EditMember> {
                     ) : SizedBox.shrink()
                   ),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.only(left: 12, bottom: 10),
-                //   child: Text("Name"),
-                // ),
-                padding(child: Text("Name"),),
+                padding(child: Text("Name", style: TextStyles.font14green,)),
                 CustomTextForm(hinttext: "name", myController: name),
                 sizedBox(height: 20,),
-                padding(child: Text("Details"),),
+                padding(child: Text("Details", style: TextStyles.font14green,)),
                 CustomTextForm(
                   maxLines: 5,
                     hinttext: "details",
