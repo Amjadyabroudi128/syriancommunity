@@ -10,6 +10,8 @@ import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../themes/fontSize.dart';
+
 class AddMember extends StatefulWidget {
   const AddMember({Key? key}) : super(key: key);
 
@@ -47,18 +49,14 @@ class _AddMemberState extends State<AddMember> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // const Padding(
-                //   padding: EdgeInsets.only(left: 12, bottom: 10),
-                //   child: Text("Name"),
-                // ),
-                padding(child: Text("Name")),
+                padding(child: Text("Name", style: TextStyles.font14green,)),
                 CustomTextForm(hinttext: "name", myController: name),
                 sizedBox(height: 20,),
                 // const Padding(
                 //   padding: EdgeInsets.only(left: 12, bottom: 10),
                 //   child: Text("Details"),
                 // ),
-                padding(child: Text("Details")),
+                padding(child: Text("Details", style: TextStyles.font14green,)),
                 CustomTextForm(maxLines: 5, hinttext: "details", myController: details),
                 sizedBox(height: 12,),
                 Center(
