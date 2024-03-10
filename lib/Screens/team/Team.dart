@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/padding.dart';
-import 'package:syrianadmin/themes/colors.dart';
 import 'package:syrianadmin/themes/fontSize.dart';
 import 'EditTeam.dart';
 
