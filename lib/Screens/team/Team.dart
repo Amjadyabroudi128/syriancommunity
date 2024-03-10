@@ -112,7 +112,6 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(18.0),
                                 ),
-                                elevation: 0,
                                 child: Column(
                                   children: [
                                     padding(child: Text(data["details"], style: TextStyles.font17,) ,),

@@ -4,6 +4,9 @@ import 'colors.dart';
  ThemeData appTheme = ThemeData(
      useMaterial3: false,
      cardColor: ColorManager.cardColor,
+     cardTheme: CardTheme(
+       elevation: 0
+     ),
      appBarTheme: AppBarTheme(
        color: ColorManager.specialGreen,
        centerTitle: true,
