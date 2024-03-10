@@ -114,7 +114,6 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                   borderRadius: BorderRadius.circular(18.0),
                                 ),
                                 elevation: 0,
-                                color: ColorManager.cardColor,
                                 child: Column(
                                   children: [
                                     padding(child: Text(data["details"], style: TextStyles.font17,) ,),

@@ -3,9 +3,11 @@ import 'colors.dart';
 
  ThemeData appTheme = ThemeData(
      useMaterial3: false,
+     cardColor: ColorManager.cardColor,
      appBarTheme: AppBarTheme(
        color: ColorManager.specialGreen,
        centerTitle: true,
+
      ),
    inputDecorationTheme: InputDecorationTheme(
      // contentPadding: EdgeInsets.all(30),
