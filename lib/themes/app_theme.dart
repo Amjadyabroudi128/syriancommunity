@@ -7,6 +7,9 @@ import 'colors.dart';
      cardTheme: CardTheme(
        elevation: 0
      ),
+     drawerTheme: DrawerThemeData(
+       backgroundColor: Colors.white
+     ),
      appBarTheme: AppBarTheme(
        color: ColorManager.specialGreen,
        centerTitle: true,
