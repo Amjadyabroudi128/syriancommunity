@@ -139,7 +139,6 @@ class _ContactUsState extends State<ContactUs> {
                                           Container(
                                             width: MediaQuery.of(context).size.width,
                                             child: Card(
-                                              color: ColorManager.cardColor,
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.min,
                                                 crossAxisAlignment: CrossAxisAlignment.start,
