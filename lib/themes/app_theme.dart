@@ -6,7 +6,7 @@ import 'colors.dart';
      cardColor: ColorManager.cardColor,
      cardTheme: CardTheme(
        elevation: 0,
-       color: ColorManager.cardColor
+       color: ColorManager.cardColor,
      ),
      drawerTheme: DrawerThemeData(
        backgroundColor: Colors.white
