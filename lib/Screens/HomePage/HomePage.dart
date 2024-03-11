@@ -96,7 +96,6 @@ class _HomePageState extends State<HomePage> {
                                 borderRadius: BorderRadius.circular(18.0),
                               ),
                               color: ColorManager.cardColor,
-                              elevation: 0,
                               child: padding(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
