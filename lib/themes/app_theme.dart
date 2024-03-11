@@ -5,7 +5,8 @@ import 'colors.dart';
      useMaterial3: false,
      cardColor: ColorManager.cardColor,
      cardTheme: CardTheme(
-       elevation: 0
+       elevation: 0,
+       color: ColorManager.cardColor
      ),
      drawerTheme: DrawerThemeData(
        backgroundColor: Colors.white
@@ -13,7 +14,6 @@ import 'colors.dart';
      appBarTheme: AppBarTheme(
        color: ColorManager.specialGreen,
        centerTitle: true,
-
      ),
    inputDecorationTheme: InputDecorationTheme(
      // contentPadding: EdgeInsets.all(30),
