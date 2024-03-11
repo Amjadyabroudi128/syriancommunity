@@ -73,7 +73,6 @@ class _ContactUsState extends State<ContactUs> {
                                             width: MediaQuery.of(context).size.width,
                                             child: IntrinsicWidth(
                                               child: Card(
-                                                color: ColorManager.cardColor,
                                                 elevation: 0,
                                                 child: Padding(
                                                   padding: EdgeInsets.all(12),
