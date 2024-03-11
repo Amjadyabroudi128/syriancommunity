@@ -95,7 +95,6 @@ class _HomePageState extends State<HomePage> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(18.0),
                               ),
-                              color: ColorManager.cardColor,
                               child: padding(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
