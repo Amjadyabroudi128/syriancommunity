@@ -105,7 +105,6 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                           Text(data["name"], style: TextStyles.font14green,),
                           sizedBox(height: 12,),
                           SizedBox(
-                            // height: 160,
                             width: MediaQuery.of(context).size.width,
                             child: IntrinsicHeight(
                               child: Card(
