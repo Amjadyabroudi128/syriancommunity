@@ -73,7 +73,6 @@ class _ContactUsState extends State<ContactUs> {
                                             width: MediaQuery.of(context).size.width,
                                             child: IntrinsicWidth(
                                               child: Card(
-                                                elevation: 0,
                                                 child: Padding(
                                                   padding: EdgeInsets.all(12),
                                                   child: Column(
@@ -141,7 +140,6 @@ class _ContactUsState extends State<ContactUs> {
                                             width: MediaQuery.of(context).size.width,
                                             child: Card(
                                               color: ColorManager.cardColor,
-                                              elevation: 0,
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.min,
                                                 crossAxisAlignment: CrossAxisAlignment.start,
