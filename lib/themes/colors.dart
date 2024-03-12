@@ -7,5 +7,6 @@ class ColorManager {
   static Color buttonColor = Color.fromARGB(255, 33, 173, 168);
   static Color dateColor = Color(0xFF9E9E9E);
   static Color hintText = Color(0xFF000000);
+  static Color fbColor = Color(0xFF0D47A1);
 
 }
