@@ -36,4 +36,8 @@ import 'font_weight_helper.dart';
      fontSize: 13,
      color: ColorManager.hintText
    );
+   static TextStyle fbText = TextStyle(
+     fontSize: 14,
+     color: ColorManager.fbColor
+   );
  }
