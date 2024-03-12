@@ -9,6 +9,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../themes/colors.dart';
 import '../../themes/fontSize.dart';
 class ContactUs extends StatefulWidget {
   final document;
@@ -169,7 +170,7 @@ class _ContactUsState extends State<ContactUs> {
                                                           onPressed: (){
                                                             launchUrl(Uri.parse('https://www.facebook.com/groups/SyrianCommunityGroup'));
                                                           },
-                                                          icon: Icon(Icons.facebook),
+                                                          icon: Icon(Icons.facebook, color: ColorManager.fbColor),
                                                         )
                                                       ],
 
