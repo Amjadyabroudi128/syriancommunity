@@ -55,7 +55,6 @@ class _ContactUsState extends State<ContactUs> {
                               if (snapshot.hasError) {
                                 return Text('Something went wrong');
                               }
-
                               if (snapshot.connectionState == ConnectionState.waiting) {
                                 return Text("Loading");
                               }
