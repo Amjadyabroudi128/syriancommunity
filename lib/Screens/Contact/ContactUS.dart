@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/Screens/Contact/Edit.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/mapContainer.dart';
 import 'package:syrianadmin/components/padding.dart';
