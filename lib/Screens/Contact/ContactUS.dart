@@ -6,6 +6,7 @@ import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/components/mapContainer.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -228,26 +229,7 @@ class _ContactUsState extends State<ContactUs> {
                         Text(AppLocalizations.of(context)!.location),
                         sizedBox(),
                         Center(
-                          child: Container(
-                            height: 300,
-                            width: 300,
-                            child: GoogleMap(
-                              initialCameraPosition: CameraPosition(
-                                target: LatLng(50.82062318563144, -0.12208351759729541),
-                                zoom: 14,
-                              ),
-                              markers: {
-                                Marker(
-                                  markerId: MarkerId("college"),
-                                  position: LatLng(50.82062318563144, -0.12208351759729541),
-                                  draggable: true,
-                                  onDragEnd: (value) {
-
-                                  }
-                                )
-                              },
-                            ),
-                          ),
+                          child: MyLocation(),
                         )
                       ],
                     ),
