@@ -50,7 +50,7 @@ class _ContactUsState extends State<ContactUs> {
                         sizedBox(height: 25,),
                         Text(AppLocalizations.of(context)!.visitHere, style: TextStyles.font15,),
                         StreamBuilder <QuerySnapshot>(
-                          stream: FirebaseFirestore.instance.collection("contact").snapshots(),
+                          stream: contact.snapshots(),
                             builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
                               if (snapshot.hasError) {
                                 return Text('Something went wrong');
@@ -165,7 +165,7 @@ class _ContactUsState extends State<ContactUs> {
                                                   padding(
                                                     child: Row(
                                                       children: [
-                                                        Text("or you can visit ""${AppLocalizations.of(context)!.facebook}"),
+                                                        Text("${AppLocalizations.of(context)!.visit} " "${AppLocalizations.of(context)!.facebook}"),
                                                         IconButton(
                                                           onPressed: (){
                                                             launchUrl(Uri.parse('https://www.facebook.com/groups/SyrianCommunityGroup'));
