@@ -80,7 +80,7 @@ class _MyAppState extends State<MyApp> {
           "addInfo" : (context) => AddInfo(),
           "ourteam" : (context) => const MeetOurTeam(),
           "addMember" : (context) => AddMember(),
-          "contactus" : (context) => const ContactUs(),
+          "contactus" : (context) =>  ContactUs(),
           "addcontact" : (context) => AddContactDetails(),
           "celebrations" : (context) => const Celebrations(),
           "addcelebration" : (context) => const AddCelebration(),

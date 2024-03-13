@@ -5,10 +5,10 @@ import 'package:syrianadmin/Screens/Contact/Edit.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:syrianadmin/components/mapContainer.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../themes/Container.dart';
 import '../../themes/colors.dart';
 import '../../themes/fontSize.dart';
 class ContactUs extends StatefulWidget {
@@ -228,7 +228,7 @@ class _ContactUsState extends State<ContactUs> {
                         Text(AppLocalizations.of(context)!.location),
                         sizedBox(),
                         Center(
-                          child: MyLocation(),
+                          child: Containers.location,
                         )
                       ],
                     ),
