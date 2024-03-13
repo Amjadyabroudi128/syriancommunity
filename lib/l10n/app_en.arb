@@ -32,5 +32,6 @@
   "details": "details",
   "image": "image",
   "name": "name",
-  "facebook" : "our facebook page"
+  "facebook" : "our facebook page",
+  "visit": "or visit"
 }
