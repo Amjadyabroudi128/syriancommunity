@@ -10,6 +10,8 @@ import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../themes/colors.dart';
+
 
 class EditCelebration extends StatefulWidget {
   final String DocID;
@@ -82,6 +84,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                       setState(() {
                       });
                     },
+                    color: ColorManager.addEdit,
                   ),
                 ),
               ),
@@ -107,7 +110,7 @@ class _EditCelebrationState extends State<EditCelebration> {
 
                       Navigator.of(context).pushNamed("celebrations");
                     },
-                    title: AppLocalizations.of(context)!.update),
+                    title: AppLocalizations.of(context)!.update, color: ColorManager.addEdit),
               )
             ],
           ),
