@@ -5,6 +5,7 @@ import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/themes/colors.dart';
 
 class AddContactDetails extends StatefulWidget {
   const AddContactDetails({Key? key}) : super(key: key);
@@ -63,7 +64,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
                 });
                 Navigator.of(context).pushNamed("contactus");
                 clearText();
-              }, title: AppLocalizations.of(context)!.submit)
+              }, title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,)
               )
             ],
           ),
