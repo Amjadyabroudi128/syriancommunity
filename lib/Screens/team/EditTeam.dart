@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/themes/colors.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import '../../themes/fontSize.dart';
@@ -88,6 +89,7 @@ class _EditMemberState extends State<EditMember> {
                       setState(() {
                       });
                     },
+                    color: ColorManager.addEdit,
                   ),
                 ),
                 sizedBox(height: 15,),
@@ -104,7 +106,7 @@ class _EditMemberState extends State<EditMember> {
                         Navigator.pop(context);
 
                       },
-                      title: "Edit"),
+                      title: "Edit", color: ColorManager.addEdit,),
                 )
               ],
             ),
