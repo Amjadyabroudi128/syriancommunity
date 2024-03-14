@@ -6,6 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/themes/colors.dart';
 
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
@@ -65,6 +66,7 @@ class _addCommunityState extends State<addCommunity> {
 
                     });
                   },
+                  color: ColorManager.addEdit,
                 ),
               ),
               Center(
@@ -84,7 +86,7 @@ class _addCommunityState extends State<addCommunity> {
                    Navigator.pushReplacementNamed(context, 'community');
                   }
                 }
-                , title: AppLocalizations.of(context)!.submit,
+                , title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,
                 ),
               ),
             ],
