@@ -8,6 +8,7 @@ import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:path/path.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/themes/colors.dart';
 
 import '../../components/TextField.dart';
 class AddCelebration extends StatefulWidget {
@@ -62,6 +63,7 @@ class _AddCelebrationState extends State<AddCelebration> {
                       setState(() {
                       });
                     },
+                    color: ColorManager.addEdit,
                   ),
                 ),
               ),
@@ -85,7 +87,7 @@ class _AddCelebrationState extends State<AddCelebration> {
                         );
                       }
                       Navigator.of(context).pop();
-                    }, title: AppLocalizations.of(context)!.submit),
+                    }, title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,),
               )
             ],
           ),
