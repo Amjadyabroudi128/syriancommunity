@@ -10,6 +10,7 @@ import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../themes/colors.dart';
 import '../../themes/fontSize.dart';
 
 class AddMember extends StatefulWidget {
@@ -67,6 +68,7 @@ class _AddMemberState extends State<AddMember> {
                       setState(() {
                       });
                     },
+                    color: ColorManager.addEdit,
                   ),
                 ),
                 sizedBox(height: 15,),
@@ -96,7 +98,7 @@ class _AddMemberState extends State<AddMember> {
 
                         clearText();
                       },
-                      title: "Submit"),
+                      title: "Submit", color: ColorManager.addEdit,),
                 )
               ],
             ),
