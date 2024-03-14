@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:syrianadmin/themes/colors.dart';
 
 class CustomButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String title;
-  const CustomButton({ super.key, required this.onPressed, required this.title});
+  final Color? color;
+  const CustomButton({ super.key, required this.onPressed, required this.title, this.color});
 
   @override
   Widget build(BuildContext context) {
 
     return MaterialButton(
         height: 40,
-        color: ColorManager.buttonColor,
+        color: color,
         textColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         onPressed: onPressed,
