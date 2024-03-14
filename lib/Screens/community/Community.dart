@@ -40,7 +40,7 @@ class _CommunityState extends State<Community> {
                     onPressed: (){
                       Navigator.of(context).pushNamed("addCommunity");
                     },
-                    title: AppLocalizations.of(context)!.addDetails) : sizedBox(),
+                    title: AppLocalizations.of(context)!.addDetails, color: ColorManager.addEdit,) : sizedBox(),
               ),
             ),
             StreamBuilder(
