@@ -32,7 +32,7 @@ class Celebrations extends StatelessWidget {
                       onPressed: (){
                         Navigator.of(context).pushNamed("addcelebration");
                       },
-                      title: AppLocalizations.of(context)!.addCelebration,) : SizedBox(height: 15,),
+                      title: AppLocalizations.of(context)!.addCelebration,color: ColorManager.addEdit,) : sizedBox(height: 15,),
                 ),
                 Padding(
                   padding:  EdgeInsets.all(8.0),
@@ -45,7 +45,6 @@ class Celebrations extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Card(
-                      elevation: 0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
                       ),
@@ -98,7 +97,6 @@ class Celebrations extends StatelessWidget {
                                       child: data["image"] != null ? Image.network(
                                         data["image"],
                                         height: MediaQuery.of(context).size.height * 0.40,
-                                        // fit: BoxFit.cover,
                                         width: MediaQuery.of(context).size.width,
                                       ) : SizedBox.shrink(),
                                     ),
@@ -133,8 +131,7 @@ class Celebrations extends StatelessWidget {
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(18.0),
                                     ),
-                                    color: ColorManager.cardColor,
-                                    elevation: 0,
+
                                     child:  Column(
                                       children: [
                                         padding(
