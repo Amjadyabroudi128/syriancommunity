@@ -8,5 +8,5 @@ class ColorManager {
   static Color dateColor = Color(0xFF9E9E9E);
   static Color hintText = Color(0xFF000000);
   static Color fbColor = Color(0xFF0D47A1);
-
+  static Color? addEdit = Color(0xFF757575);
 }
