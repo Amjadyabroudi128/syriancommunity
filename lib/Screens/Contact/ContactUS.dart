@@ -45,7 +45,7 @@ class _ContactUsState extends State<ContactUs> {
                               onPressed: (){
                                 Navigator.of(context).pushNamed("addcontact");
                               },
-                              title: AppLocalizations.of(context)!.addThings) : sizedBox(height: 15,)
+                              title: AppLocalizations.of(context)!.addThings, color: ColorManager.addEdit,) : sizedBox(height: 15,)
                         ),
                         sizedBox(height: 25,),
                         Text(AppLocalizations.of(context)!.visitHere, style: TextStyles.font15,),
