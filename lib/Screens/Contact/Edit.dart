@@ -8,6 +8,8 @@ import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../themes/colors.dart';
+
 class EditDetails extends StatefulWidget {
   final String DocID;
   final String oldPlace;
@@ -83,7 +85,7 @@ class _AddContactDetailsState extends State<EditDetails> {
                 });
                 Navigator.pop(context);
                 clearText();
-              }, title: AppLocalizations.of(context)!.update)
+              }, title: AppLocalizations.of(context)!.update, color: ColorManager.addEdit,)
               )
             ],
           ),
