@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/themes/colors.dart';
 
 import '../../components/Sizedbox.dart';
 import '../../components/SubmitButton.dart';
@@ -57,7 +58,7 @@ class _EditHomeState extends State<EditHome> {
                         );
                         Navigator.of(context).pushNamed("homepage");
                       },
-                      title: AppLocalizations.of(context)!.update),
+                      title: AppLocalizations.of(context)!.update, color: ColorManager.addEdit,),
                 )
               ],
             ),
