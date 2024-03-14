@@ -2,7 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/themes/colors.dart';
 import '../../components/formatedData.dart';
 import '../../themes/fontSize.dart';
 import '../SideDrawer.dart';
@@ -46,16 +48,9 @@ class _HomePageState extends State<HomePage> {
           children: [
             Column(
               children: [
-              user != null ?  MaterialButton(
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
-                  height: 40,
-                  minWidth: 230,
-                  color: Colors.grey,
-                  child: Text(AppLocalizations.of(context)!.addThings),
-                  onPressed: (){
-                    Navigator.of(context).pushNamed("addInfo");
-                  },
-                ) : sizedBox(),
+                user != null ? CustomButton(onPressed: (){
+                  Navigator.of(context).pushNamed("addInfo");
+                }, title: AppLocalizations.of(context)!.addThings, color: ColorManager.addEdit) : sizedBox(),
                 sizedBox(),
                  Text("here you will see the latest news for the Community"),
                 StreamBuilder(
