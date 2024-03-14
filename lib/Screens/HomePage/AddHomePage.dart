@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/themes/colors.dart';
 import '../../Api/Firebase_api.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -65,7 +66,7 @@ class _AddInfoState extends State<AddInfo> {
                        await FirebaseMessaging.instance.subscribeToTopic("topic");
                        Navigator.of(context).pushNamed("homepage");
                       },
-                      title: AppLocalizations.of(context)!.submit),
+                      title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,),
                 )
               ],
             ),
