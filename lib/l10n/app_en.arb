@@ -33,5 +33,7 @@
   "image": "image",
   "name": "name",
   "facebook" : "our facebook page",
-  "visit": "or visit"
+  "visit": "or visit",
+  "edit": "Edit",
+  "delete": "Delete"
 }
