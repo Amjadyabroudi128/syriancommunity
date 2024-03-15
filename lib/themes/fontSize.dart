@@ -40,4 +40,7 @@ import 'font_weight_helper.dart';
      fontSize: 14,
      color: ColorManager.fbColor
    );
+   static TextStyle delete = TextStyle(
+     color: ColorManager.delete
+   );
  }
