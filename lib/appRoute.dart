@@ -1,5 +1,3 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/Register/LogIn.dart';
 import 'package:syrianadmin/Screens/Celebrations/AddCelebration.dart';
@@ -15,7 +13,6 @@ import 'package:syrianadmin/Screens/community/editCommunity.dart';
 import 'package:syrianadmin/Screens/team/EditTeam.dart';
 import 'package:syrianadmin/Screens/team/Team.dart';
 import 'package:syrianadmin/Screens/team/addTeam.dart';
-
 import 'Screens/HomePage/HomePage.dart';
 
 class  AppRouter{

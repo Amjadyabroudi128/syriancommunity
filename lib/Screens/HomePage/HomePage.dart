@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                   Navigator.of(context).pushNamed("addInfo");
                 }, title: AppLocalizations.of(context)!.addThings, color: ColorManager.addEdit) : sizedBox(),
                 sizedBox(),
-                 Text("here you will see the latest news for the Community"),
+                 Text(AppLocalizations.of(context)!.news),
                 StreamBuilder(
                   stream: home.snapshots(),
                   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
