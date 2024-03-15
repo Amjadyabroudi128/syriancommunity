@@ -3,24 +3,12 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:syrianadmin/Cubits/auth_cubit.dart';
-import 'package:syrianadmin/Register/LogIn.dart';
-import 'package:syrianadmin/Screens/Celebrations/editCelebrations.dart';
-import 'package:syrianadmin/Screens/Contact/AddContactDetails.dart';
-import 'package:syrianadmin/Screens/Contact/ContactUS.dart';
-import 'package:syrianadmin/Screens/HomePage/editHomePage.dart';
-import 'package:syrianadmin/Screens/team/EditTeam.dart';
-import 'package:syrianadmin/Screens/team/Team.dart';
-import 'package:syrianadmin/Screens/team/addTeam.dart';
+import 'package:syrianadmin/appRoute.dart';
 import 'package:syrianadmin/components/firebase_options.dart';
 import 'package:syrianadmin/themes/app_theme.dart';
 import 'Api/Firebase_api.dart';
-import 'Screens/Celebrations/AddCelebration.dart';
-import 'Screens/Celebrations/CelebrationView.dart';
-import 'Screens/HomePage/AddHomePage.dart';
+
 import 'Screens/HomePage/HomePage.dart';
-import 'Screens/community/addCommunity.dart';
-import 'Screens/community/Community.dart';
-import 'Screens/community/editCommunity.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
@@ -75,23 +63,7 @@ class _MyAppState extends State<MyApp> {
         theme: appTheme,
         home: HomePage(),
         navigatorKey: NavigatorKey,
-        routes: {
-         "homepage" : (context) => HomePage(),
-          "addInfo" : (context) => AddInfo(),
-          "ourteam" : (context) => const MeetOurTeam(),
-          "addMember" : (context) => AddMember(),
-          "contactus" : (context) =>  ContactUs(),
-          "addcontact" : (context) => AddContactDetails(),
-          "celebrations" : (context) => const Celebrations(),
-          "addcelebration" : (context) => const AddCelebration(),
-          "editMember" : (context) => const EditMember(DocID: '', oldName: '', oldDetail: '', oldUrl: '',),
-          "editCelebration" : (context) => EditCelebration(DocID: "", oldName: "", oldDetail: "", oldUrl: ""),
-          "community" : (context) => Community(),
-          "addCommunity" : (context) => addCommunity(),
-          "editCommunity" : (context) => EditCommunity(DocID: '', oldName: '', oldDetails: '',),
-          "editHome" : (context) => const EditHome(DocID: "", oldName: "", oldDetail: ""),
-          "login" : (context) => const Login(),
-        },
+        onGenerateRoute: AppRouter.onGenerateRoute,
       ),
     );
   }
