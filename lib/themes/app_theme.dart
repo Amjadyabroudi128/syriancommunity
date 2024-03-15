@@ -15,6 +15,13 @@ import 'colors.dart';
        color: ColorManager.specialGreen,
        centerTitle: true,
      ),
+   popupMenuTheme: PopupMenuThemeData(
+     shape: RoundedRectangleBorder(
+       borderRadius: BorderRadius.all(
+         Radius.circular(20.0),
+       )
+     )
+   ),
    inputDecorationTheme: InputDecorationTheme(
      // contentPadding: EdgeInsets.all(30),
        border: OutlineInputBorder(
