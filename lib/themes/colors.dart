@@ -9,4 +9,5 @@ class ColorManager {
   static Color hintText = Color(0xFF000000);
   static Color fbColor = Color(0xFF0D47A1);
   static Color? addEdit = Color(0xFF757575);
+  static Color delete = Color(0xFFD32F2F);
 }
