@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/components/popUpMenu.dart';
 import 'package:syrianadmin/themes/colors.dart';
 import '../../components/formatedData.dart';
 import '../../themes/fontSize.dart';
@@ -102,41 +103,37 @@ class _HomePageState extends State<HomePage> {
                                     Text(data["details"]),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 300),
-                                      child: user != null ?  PopupMenuButton(
-                                        iconSize: 30,
-                                        // add icon, by default "3 dot" icon
-                                        // icon: Icon(Icons.book)
-                                        itemBuilder: (context){
-                                          return [
-                                            PopupMenuItem<int>(
+                                      child: user != null ? MyPopUpMenu(
+                                          itemBuilder: (context) {
+                                            return [
+                                              PopupMenuItem<int>(
                                                 value: 0,
-                                                child:Icon(Icons.edit)
-                                            ),
-
-                                            PopupMenuItem<int>(
-                                              value: 1,
-                                              child: Icon(Icons.delete, color: Colors.red,),
-                                            ),
-                                          ];
-                                        },
-                                        onSelected:(value){
-                                          if(value == 0){
-                                            Navigator.of(context).push(
-                                              MaterialPageRoute(
-                                              builder: (context) {
-                                                return
-                                                  EditHome(DocID: document.id,
-                                                    oldName: document["name"],
-                                                    oldDetail: document["details"],
-                                                );
-                                              }
-                                              )
-                                            );
-                                          }else if(value == 1){
-                                            FirebaseFirestore.instance.collection("home").doc(document.id).delete();
-                                          }
-                                        },
-                                      ) : SizedBox.shrink(),
+                                                child: Text(AppLocalizations.of(context)!.edit),
+                                              ),
+                                              PopupMenuItem<int>(
+                                                value: 1,
+                                                child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),
+                                              ),
+                                            ];
+                                          },
+                                          onSelected: (value) {
+                                            if(value == 0) {
+                                              Navigator.of(context).push(
+                                                  MaterialPageRoute(
+                                                      builder: (context) {
+                                                        return
+                                                          EditHome(DocID: document.id,
+                                                            oldName: document["name"],
+                                                            oldDetail: document["details"],
+                                                            );
+                                                          }
+                                                          )
+                                                        );
+                                            } else if (value == 1) {
+                                              FirebaseFirestore.instance.collection("home").doc(document.id).delete();
+                                            }
+                                          },
+                                          iconSize: 30): SizedBox.shrink(),
                                     ),
                                   ],
                                 ),
