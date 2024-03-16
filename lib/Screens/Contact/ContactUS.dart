@@ -1,11 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/Screens/Contact/Edit.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/components/popUpMenu.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../components/Container.dart';
@@ -177,27 +179,18 @@ class _ContactUsState extends State<ContactUs> {
                                                   ),
                                                   Padding(
                                                     padding: const EdgeInsets.only(left: 310),
-                                                    child: user != null ? PopupMenuButton(
-                                                      iconSize: 30,
-                                                        // add icon, by default "3 dot" icon
-                                                      // icon: Icon(Icons.book)
-                                                        itemBuilder: (context){
+                                                    child: user != null ? MyPopUpMenu(
+                                                        itemBuilder: (context) {
                                                           return [
-                                                            PopupMenuItem<int>(
-                                                              value: 0,
-                                                              child:Icon(Icons.edit)
-                                                            ),
-
-                                                            PopupMenuItem<int>(
-                                                              value: 1,
-                                                              child: Icon(Icons.delete, color: Colors.red,),
-                                                            ),
+                                                            PopupMenuItem(value: 0, child: Text(AppLocalizations.of(context)!.edit),),
+                                                            PopupMenuItem(value: 1, child: Text(AppLocalizations.of(context)!.delete),)
                                                           ];
                                                         },
-                                                        onSelected:(value){
-                                                          if(value == 0){
+                                                        onSelected: (value) {
+                                                          if (value == 0) {
                                                             Navigator.of(context).push(
-                                                                MaterialPageRoute(builder: (context) =>
+                                                              CupertinoPageRoute(
+                                                                builder: (context) =>
                                                                     EditDetails(DocID: document.id,
                                                                       oldPlace: data["place"],
                                                                       oldRoad: data["street name"],
@@ -205,12 +198,12 @@ class _ContactUsState extends State<ContactUs> {
                                                                       oldEmail: data["email"],
                                                                       oldPHone: data["phone"],
                                                                       oldPostCode: data["post code"],)));
-                                                          }else if(value == 1){
-                                                            FirebaseFirestore.instance.collection("contact").doc(document.id).delete();
+                                                          } else if (value == 1) {
+                                                            contact.doc(document.id).delete();
                                                             Navigator.of(context).pushNamed("contactus");
                                                           }
-                                                        },
-                                                    ) : SizedBox(),
+                                                        }): SizedBox.shrink(),
+
                                                   ),
                                                 ],
                                               ),
