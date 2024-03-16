@@ -26,4 +26,13 @@ class Containers {
       },
     ),
   );
+  static Container image = Container(
+    height: 250,
+    decoration: BoxDecoration(
+      image: new DecorationImage(
+        image: AssetImage("images/syrianlogo.jpg"),
+        fit: BoxFit.cover,
+      ),
+    ),
+  );
 }
