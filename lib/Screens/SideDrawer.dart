@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/Register/LogIn.dart';
+import '../components/Container.dart';
 import '../main.dart';
 
 
@@ -25,15 +26,7 @@ class _SideDrawerState extends State<SideDrawer> {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-        Container(
-        height: 250,
-        decoration: BoxDecoration(
-          image: new DecorationImage(
-            image: AssetImage("images/syrianlogo.jpg"),
-            fit: BoxFit.cover,
-          ),
-          ),
-          ),
+        Containers.image,
           ListTile(
             title: Text(AppLocalizations.of(context)!.home),
             leading: Icon(
@@ -42,7 +35,6 @@ class _SideDrawerState extends State<SideDrawer> {
             ),
             onTap: (){
               Navigator.of(context).pushReplacementNamed("homepage");
-
             },
           ),
           ListTile(
