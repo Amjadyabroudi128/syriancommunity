@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
@@ -119,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                                           onSelected: (value) {
                                             if(value == 0) {
                                               Navigator.of(context).push(
-                                                  MaterialPageRoute(
+                                                  CupertinoPageRoute(
                                                       builder: (context) {
                                                         return
                                                           EditHome(DocID: document.id,
@@ -133,7 +134,7 @@ class _HomePageState extends State<HomePage> {
                                               FirebaseFirestore.instance.collection("home").doc(document.id).delete();
                                             }
                                           },
-                                          iconSize: 30): SizedBox.shrink(),
+                                          ): SizedBox.shrink(),
                                     ),
                                   ],
                                 ),
