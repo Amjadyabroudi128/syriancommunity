@@ -6,7 +6,7 @@ class CustomTextForm extends StatelessWidget {
   final TextEditingController? myController;
   final int? maxLines;
   final TextDirection? textDirection;
-  const CustomTextForm
+  CustomTextForm
   ({super.key,   required this.hinttext,
    this.myController, this.maxLines, this.textDirection,
 
