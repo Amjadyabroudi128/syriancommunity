@@ -40,7 +40,6 @@ class _SideDrawerState extends State<SideDrawer> {
             title: Text(AppLocalizations.of(context)!.contact),
             leading: Icon(
               CupertinoIcons.mail_solid,
-              size: 30,
             ),
             onTap: (){
               Navigator.of(context).pushNamed("contactus");
@@ -51,7 +50,6 @@ class _SideDrawerState extends State<SideDrawer> {
             title: Text(AppLocalizations.of(context)!.team),
             leading: Icon(
               CupertinoIcons.group_solid,
-              size: 30,
             ),
             onTap: (){
               Navigator.of(context).pushNamed("ourteam");
@@ -61,7 +59,6 @@ class _SideDrawerState extends State<SideDrawer> {
             title: Text(AppLocalizations.of(context)!.communityResources),
             leading: Icon(
               CupertinoIcons.book_circle,
-              size: 30,
             ),
             onTap: (){
               Navigator.of(context).pushNamed("community");
@@ -71,7 +68,6 @@ class _SideDrawerState extends State<SideDrawer> {
             title: Text(AppLocalizations.of(context)!.celebrations),
             leading: Icon(
               Icons.celebration,
-              size: 30,
             ),
             onTap: (){
               Navigator.of(context).pushNamed("celebrations");
