@@ -24,6 +24,9 @@ import 'colors.dart';
    ),
    expansionTileTheme: ExpansionTileThemeData(
      backgroundColor: ColorManager.expanstionTile,
+     expansionAnimationStyle: AnimationStyle(
+       duration: Duration(milliseconds: 200)
+     )
    ),
    inputDecorationTheme: InputDecorationTheme(
      // contentPadding: EdgeInsets.all(30),
