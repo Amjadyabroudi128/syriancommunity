@@ -31,7 +31,6 @@ class _SideDrawerState extends State<SideDrawer> {
             title: Text(AppLocalizations.of(context)!.home),
             leading: Icon(
               CupertinoIcons.home,
-              size: 30,
             ),
             onTap: (){
               Navigator.of(context).pushReplacementNamed("homepage");
