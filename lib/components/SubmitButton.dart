@@ -4,16 +4,14 @@ class CustomButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String title;
   final Color? color;
-  const CustomButton({ super.key, required this.onPressed, required this.title, this.color});
+  final ButtonStyle? style;
+  const CustomButton({ super.key, required this.onPressed, required this.title, this.color, this.style,});
 
   @override
   Widget build(BuildContext context) {
 
-    return MaterialButton(
-        height: 40,
-        color: color,
-        textColor: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+    return TextButton(
+        style: style,
         onPressed: onPressed,
         child: Text(title));
     // custom button component to be used when necessary

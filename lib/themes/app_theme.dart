@@ -49,6 +49,8 @@ import 'colors.dart';
            borderSide:  BorderSide(
                 color: ColorManager.hintText
            )
-       )
+       ),
+
    ),
+
  );
