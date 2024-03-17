@@ -8,6 +8,9 @@ import 'colors.dart';
        elevation: 0,
        color: ColorManager.cardColor,
      ),
+     iconTheme: IconThemeData(
+       size: 30,
+     ),
      drawerTheme: DrawerThemeData(
        backgroundColor: Colors.white
      ),
