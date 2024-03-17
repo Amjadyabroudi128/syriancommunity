@@ -27,8 +27,9 @@ import 'colors.dart';
      expansionAnimationStyle: AnimationStyle(
        duration: Duration(milliseconds: 200)
      ),
-     collapsedIconColor: Colors.red,
+     collapsedIconColor: Colors.black,
      textColor: Colors.black,
+     iconColor: Colors.black
    ),
    inputDecorationTheme: InputDecorationTheme(
      // contentPadding: EdgeInsets.all(30),
