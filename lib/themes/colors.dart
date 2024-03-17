@@ -10,4 +10,5 @@ class ColorManager {
   static Color fbColor = Color(0xFF0D47A1);
   static Color? addEdit = Color(0xFF757575);
   static Color delete = Color(0xFFD32F2F);
+  static Color expanstionTile = Color(0xFFEEEEEE);
 }
