@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:path/path.dart';
@@ -61,11 +62,16 @@ class _EditCelebrationState extends State<EditCelebration> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
-                  child: url != null ? Image.network(url!,
-                    height: MediaQuery.of(context).size.height * 0.40,
-                    width: MediaQuery.of(context).size.width,
-                  ) : SizedBox.shrink()
+              GestureDetector(
+                onTap: (){
+                  pickImage();
+                },
+                child: Center(
+                    child: url != null ? Image.network(url!,
+                      height: MediaQuery.of(context).size.height * 0.40,
+                      width: MediaQuery.of(context).size.width,
+                    ) : SizedBox.shrink()
+                ),
               ),
               padding(child: Text(AppLocalizations.of(context)!.celebrations)),
               CustomTextForm(hinttext: "e.g: Christmas", myController: celebrationName),
