@@ -35,9 +35,7 @@ import 'colors.dart';
      iconColor: Colors.black
    ),
    buttonTheme: ButtonThemeData(
-     shape: RoundedRectangleBorder(
-       borderRadius: BorderRadius.circular(20),
-     ),
+     shape: StadiumBorder(),
    ),
    inputDecorationTheme: InputDecorationTheme(
      // contentPadding: EdgeInsets.all(30),
