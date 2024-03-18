@@ -1,15 +1,13 @@
-import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:path/path.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/themes/colors.dart';
-
+import '../../classes/pickImage.dart' as url;
+import '../../classes/pickImage.dart';
 import '../../components/TextField.dart';
 class AddCelebration extends StatefulWidget {
   const AddCelebration({Key? key}) : super(key: key);
@@ -22,19 +20,6 @@ class _AddCelebrationState extends State<AddCelebration> {
   TextEditingController celebrationName = TextEditingController();
   TextEditingController celebrationDetail = TextEditingController();
 
-  File? file;
-  String? url;
-  Future pickImage() async {
-    final ImagePicker picker = ImagePicker();
-    final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
-    if (imageCamera != null) {
-      file = File(imageCamera.path);
-      var imagename = basename(imageCamera.path);
-      var refStorage = FirebaseStorage.instance.ref(imagename);
-      await refStorage.putFile(file!);
-      url = await refStorage.getDownloadURL();
-    }
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,8 +43,8 @@ class _AddCelebrationState extends State<AddCelebration> {
                 child: Center(
                   child: CustomButton(
                     title: AppLocalizations.of(context)!.image,
-                    onPressed: () async {
-                      await pickImage();
+                    onPressed: () {
+                      pickImage();
                       setState(() {
                       });
                     },
@@ -70,7 +55,7 @@ class _AddCelebrationState extends State<AddCelebration> {
               Center(
                 child: CustomButton(
                     onPressed: () async{
-                      if (url == null ) {
+                      if (url.url == null ) {
                         await FirebaseFirestore.instance.collection("Celebrations").doc().set(
                             {
                               "name" : celebrationName.text,
@@ -82,7 +67,7 @@ class _AddCelebrationState extends State<AddCelebration> {
                             {
                               "name" : celebrationName.text,
                               "details" : celebrationDetail.text,
-                              "image" : url
+                              "image" : url.url,
                             }
                         );
                       }
