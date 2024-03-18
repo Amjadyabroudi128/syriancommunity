@@ -34,6 +34,11 @@ import 'colors.dart';
      textColor: Colors.black,
      iconColor: Colors.black
    ),
+   buttonTheme: ButtonThemeData(
+     shape: RoundedRectangleBorder(
+       borderRadius: BorderRadius.circular(20),
+     ),
+   ),
    inputDecorationTheme: InputDecorationTheme(
      // contentPadding: EdgeInsets.all(30),
        border: OutlineInputBorder(
