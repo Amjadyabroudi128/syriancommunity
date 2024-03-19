@@ -12,6 +12,13 @@ import 'colors.dart';
      iconTheme: IconThemeData(
        size: 30,
      ),
+     textButtonTheme: TextButtonThemeData(
+       style: TextButton.styleFrom(
+         shape:  StadiumBorder(),
+         backgroundColor: ColorManager.buttonColor,
+         padding:  EdgeInsets.symmetric(vertical: 14),
+       ),
+     ),
      drawerTheme: DrawerThemeData(
        backgroundColor: Colors.white
      ),
