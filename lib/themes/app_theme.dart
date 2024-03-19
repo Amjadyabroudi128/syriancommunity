@@ -17,6 +17,7 @@ import 'colors.dart';
      appBarTheme: AppBarTheme(
        color: ColorManager.specialGreen,
        centerTitle: true,
+       toolbarHeight: 20,
        iconTheme: IconThemeData(
          size: 25,
          color: ColorManager.expanstionTile
