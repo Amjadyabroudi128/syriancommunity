@@ -7,7 +7,7 @@ import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/themes/colors.dart';
 import 'package:syrianadmin/themes/fontSize.dart';
 import 'EditTeam.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MeetOurTeam extends StatefulWidget {
   final document;
@@ -26,7 +26,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("our tean"),
+        title: Text(AppLocalizations.of(context)!.team),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -36,7 +36,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                 onPressed: (){
                   Navigator.of(context).pushNamed("addMember");
                 },
-                title: "Add members +",
+                title: AppLocalizations.of(context)!.addThings,
                 color: ColorManager.addEdit,
               ) : sizedBox(),
             ),
