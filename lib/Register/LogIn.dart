@@ -49,13 +49,7 @@ class _LoginState extends State<Login> {
                 horizontal: MediaQuery.of(context).size.width / 8,
               ),
               child: TextButton(
-                style: TextButton.styleFrom(
-                  shape:  StadiumBorder(),
-                  backgroundColor: ColorManager.buttonColor,
-                  padding:  EdgeInsets.symmetric(vertical: 14),
-                ),
                 onPressed: () async {
-
                   BlocProvider.of<AuthCubit>(context).login(email: testEmail, password: testPassword);
                 },
                 child:  Text(AppLocalizations.of(context)!.login,style: TextStyles.font20white
