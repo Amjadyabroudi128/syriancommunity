@@ -11,6 +11,7 @@ import 'package:syrianadmin/themes/colors.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import '../../themes/fontSize.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class EditMember extends StatefulWidget {
   final String DocID;
@@ -53,7 +54,7 @@ class _EditMemberState extends State<EditMember> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("editing Memebets"),
+        title: Text(AppLocalizations.of(context)!.editDetails),
       ),
       body: Center(
         child: SingleChildScrollView(
