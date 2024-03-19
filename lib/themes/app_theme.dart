@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 
  ThemeData appTheme = ThemeData(
+
      useMaterial3: false,
      cardColor: ColorManager.cardColor,
      cardTheme: CardTheme(
@@ -17,7 +18,7 @@ import 'colors.dart';
      appBarTheme: AppBarTheme(
        color: ColorManager.specialGreen,
        centerTitle: true,
-       toolbarHeight: 20,
+       toolbarHeight: 65,
        iconTheme: IconThemeData(
          size: 25,
          color: ColorManager.expanstionTile
