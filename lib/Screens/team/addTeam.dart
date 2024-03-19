@@ -12,6 +12,7 @@ import 'package:image_picker/image_picker.dart';
 
 import '../../themes/colors.dart';
 import '../../themes/fontSize.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AddMember extends StatefulWidget {
   const AddMember({Key? key}) : super(key: key);
@@ -42,7 +43,7 @@ class _AddMemberState extends State<AddMember> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("adding team"),
+        title: Text(AppLocalizations.of(context)!.addThings),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -50,19 +51,19 @@ class _AddMemberState extends State<AddMember> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                padding(child: Text("Name", style: TextStyles.font14green,)),
+                padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
                 CustomTextForm(hinttext: "name", myController: name),
                 sizedBox(height: 20,),
                 // const Padding(
                 //   padding: EdgeInsets.only(left: 12, bottom: 10),
                 //   child: Text("Details"),
                 // ),
-                padding(child: Text("Details", style: TextStyles.font14green,)),
+                padding(child: Text(AppLocalizations.of(context)!.details, style: TextStyles.font14green,)),
                 CustomTextForm(maxLines: 5, hinttext: "details", myController: details),
                 sizedBox(height: 12,),
                 Center(
                   child: CustomButton(
-                    title: "get image",
+                    title: AppLocalizations.of(context)!.image,
                     onPressed: () async {
                     await pickImage();
                       setState(() {
@@ -98,7 +99,7 @@ class _AddMemberState extends State<AddMember> {
 
                         clearText();
                       },
-                      title: "Submit", color: ColorManager.addEdit,),
+                      title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,),
                 )
               ],
             ),
