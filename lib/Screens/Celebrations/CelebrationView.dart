@@ -151,7 +151,7 @@ class Celebrations extends StatelessWidget {
 
                                                 PopupMenuItem<int>(
                                                   value: 1,
-                                                  child: Icon(Icons.delete, color: Colors.red,),
+                                                  child: Icon(Icons.delete, color: ColorManager.delete,),
                                                 ),
                                               ];
                                             },
