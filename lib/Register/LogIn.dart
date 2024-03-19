@@ -5,7 +5,6 @@ import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:syrianadmin/themes/colors.dart';
 import 'package:syrianadmin/themes/fontSize.dart';
 
 class Login extends StatefulWidget {
