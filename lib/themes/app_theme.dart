@@ -17,6 +17,10 @@ import 'colors.dart';
      appBarTheme: AppBarTheme(
        color: ColorManager.specialGreen,
        centerTitle: true,
+       iconTheme: IconThemeData(
+         size: 25,
+         color: ColorManager.expanstionTile
+       )
      ),
    popupMenuTheme: PopupMenuThemeData(
      shape: RoundedRectangleBorder(
