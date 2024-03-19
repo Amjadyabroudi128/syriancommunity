@@ -94,7 +94,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                             {
                               "name" : celebrationName.text,
                               "details" : celebrationDetails.text,
-                              "image" : url.url
+                              "image" : url.url,
                             }
                         );
                       }
