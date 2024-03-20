@@ -4,10 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/padding.dart';
-
 import '../../themes/colors.dart';
 import '../../themes/fontSize.dart';
-import '../../themes/font_weight_helper.dart';
 import 'editCommunity.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -83,7 +81,6 @@ class _CommunityState extends State<Community> {
                                   Padding(
                                     padding:  EdgeInsets.only(left: 310, ),
                                     child: user != null ? PopupMenuButton(
-
                                       // add icon, by default "3 dot" icon
                                       // icon: Icon(Icons.book)
                                       itemBuilder: (context){
@@ -114,7 +111,7 @@ class _CommunityState extends State<Community> {
                                           Navigator.of(context).pushNamed("community");
                                         }
                                       },
-                                    ) : SizedBox(height: 42),
+                                    ) : sizedBox(height: 42,)
                                   ),
                               ],
                             ),
