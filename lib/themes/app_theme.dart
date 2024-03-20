@@ -8,7 +8,9 @@ import 'colors.dart';
      cardTheme: CardTheme(
        elevation: 0,
        color: ColorManager.cardColor,
-       shape:
+       shape: RoundedRectangleBorder(
+         borderRadius: BorderRadius.circular(18.0),
+       ),
      ),
      iconTheme: IconThemeData(
        size: 30,

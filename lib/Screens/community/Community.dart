@@ -74,9 +74,6 @@ class _CommunityState extends State<Community> {
                         width: MediaQuery.of(context).size.width,
                         child: IntrinsicHeight(
                           child: Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
-                            ),
                             child: Column(
                               children: [
                                   Padding(
