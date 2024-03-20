@@ -69,7 +69,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
                   child: CustomButton(
-                    title: "celebration image",
+                    title: AppLocalizations.of(context)!.image,
                     onPressed: () async {
                       await url.pickImage();
                       setState(() {
@@ -79,30 +79,41 @@ class _EditCelebrationState extends State<EditCelebration> {
                   ),
                 ),
               ),
-              Center(
-                child: CustomButton(
-                    onPressed: () async {
-                      if(url.url == null ) {
-                        await celebrations.doc(widget.DocID).update(
-                          {
-                            "name" : celebrationName.text,
-                            "details" : celebrationDetails.text
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+                   CustomButton(
+                        onPressed: () async {
+                          if(url.url == null ) {
+                            await celebrations.doc(widget.DocID).update(
+                              {
+                                "name" : celebrationName.text,
+                                "details" : celebrationDetails.text
+                              }
+                            );
+                          } else {
+                           await celebrations.doc(widget.DocID).update(
+                                {
+                                  "name" : celebrationName.text,
+                                  "details" : celebrationDetails.text,
+                                  "image" : url.url,
+                                }
+                            );
                           }
-                        );
-                      } else {
-                       await celebrations.doc(widget.DocID).update(
-                            {
-                              "name" : celebrationName.text,
-                              "details" : celebrationDetails.text,
-                              "image" : url.url,
-                            }
-                        );
-                      }
 
-                      Navigator.of(context).pushNamed("celebrations");
-                    },
-                    title: AppLocalizations.of(context)!.update, color: ColorManager.addEdit),
-              )
+                          Navigator.of(context).pushNamed("celebrations");
+                        },
+                        title: AppLocalizations.of(context)!.update, color: ColorManager.addEdit),
+                   sizedBox(width: 20,),
+                   CustomButton(
+                     onPressed: (){
+                       Navigator.pop(context);
+                     },
+                     title: AppLocalizations.of(context)!.cancel,
+                     color: ColorManager.addEdit,
+                   )
+                 ],
+               ),
             ],
           ),
         ),
