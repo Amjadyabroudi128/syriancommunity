@@ -8,6 +8,7 @@ import 'colors.dart';
      cardTheme: CardTheme(
        elevation: 0,
        color: ColorManager.cardColor,
+       shape:
      ),
      iconTheme: IconThemeData(
        size: 30,
@@ -31,6 +32,7 @@ import 'colors.dart';
          color: ColorManager.expanstionTile
        )
      ),
+
    popupMenuTheme: PopupMenuThemeData(
      shape: RoundedRectangleBorder(
        borderRadius: BorderRadius.all(
