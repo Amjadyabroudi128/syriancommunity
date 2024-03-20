@@ -26,7 +26,6 @@ class _CommunityState extends State<Community> {
   @override
   Widget build(BuildContext context) {
     User? user = FirebaseAuth.instance.currentUser;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.communityResources),
@@ -78,7 +77,6 @@ class _CommunityState extends State<Community> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(18.0),
                             ),
-                            elevation: 0,
                             child: Column(
                               children: [
                                   Padding(
