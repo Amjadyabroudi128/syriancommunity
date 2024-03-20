@@ -36,5 +36,6 @@
   "visit": "or visit",
   "edit": "Edit",
   "delete": "Delete",
-  "news" : "here you will see all the information you need about the community "
+  "news" : "here you will see all the information you need about the community ",
+  "cancel": "cancel"
 }
