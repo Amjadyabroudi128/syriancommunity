@@ -3,9 +3,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 class Containers {
-  final CollectionReference contact =
-  FirebaseFirestore.instance.collection('contact');
-  User? user = FirebaseAuth.instance.currentUser;
+  // final CollectionReference contact =
+  // FirebaseFirestore.instance.collection('contact');
+  // User? user = FirebaseAuth.instance.currentUser;
 
   static Container location = Container(
     height: 300,
