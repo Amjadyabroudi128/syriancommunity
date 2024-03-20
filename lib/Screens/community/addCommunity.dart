@@ -1,13 +1,10 @@
-import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:path/path.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/themes/colors.dart';
-
+import 'package:syrianadmin/classes/pickImage.dart' as url;
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -22,19 +19,20 @@ class addCommunity extends StatefulWidget {
 class _addCommunityState extends State<addCommunity> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
-  File? file;
-  String? url;
-  Future pickImage() async {
-    final ImagePicker picker = ImagePicker();
-    final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
-    if (imageCamera != null) {
-      file = File(imageCamera.path);
-      var imagename = basename(imageCamera.path);
-      var refStorage = FirebaseStorage.instance.ref(imagename);
-      await refStorage.putFile(file!);
-      url = await refStorage.getDownloadURL();
-    }
-  }
+
+  // File? file;
+  // String? url;
+  // Future pickImage() async {
+  //   final ImagePicker picker = ImagePicker();
+  //   final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
+  //   if (imageCamera != null) {
+  //     file = File(imageCamera.path);
+  //     var imagename = basename(imageCamera.path);
+  //     var refStorage = FirebaseStorage.instance.ref(imagename);
+  //     await refStorage.putFile(file!);
+  //     url = await refStorage.getDownloadURL();
+  //   }
+  // }
   final CollectionReference community =
   FirebaseFirestore.instance.collection('Community');
   @override
@@ -61,9 +59,8 @@ class _addCommunityState extends State<addCommunity> {
                 child: CustomButton(
                   title: AppLocalizations.of(context)!.image,
                   onPressed: () async {
-                    await pickImage();
+                    await url.pickImage();
                     setState(() {
-
                     });
                   },
                   color: ColorManager.addEdit,
@@ -71,7 +68,7 @@ class _addCommunityState extends State<addCommunity> {
               ),
               Center(
                 child: CustomButton(onPressed: () async {
-                  if(url == null) {
+                  if(url.url == null) {
                  await   community.doc().set({
                       "name" : name.text,
                       "details" : details.text
@@ -81,7 +78,7 @@ class _addCommunityState extends State<addCommunity> {
                    await community.doc().set({
                       "name" : name.text,
                       "details" : details.text,
-                      "image" : url,
+                      "image" : url.url,
                     });
                    Navigator.pushReplacementNamed(context, 'community');
                   }
