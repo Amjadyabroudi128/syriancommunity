@@ -12,6 +12,7 @@ import 'colors.dart';
          borderRadius: BorderRadius.circular(18.0),
        ),
      ),
+
      iconTheme: IconThemeData(
        size: 30,
      ),
