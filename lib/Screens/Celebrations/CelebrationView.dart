@@ -5,6 +5,7 @@ import 'package:syrianadmin/Screens/Celebrations/editCelebrations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/components/popUpMenu.dart';
 import 'package:syrianadmin/themes/colors.dart';
 import 'package:syrianadmin/themes/font_weight_helper.dart';
 
@@ -139,43 +140,39 @@ class Celebrations extends StatelessWidget {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.only(left: 300),
-                                          child: user != null ? PopupMenuButton(
-                                            // add icon, by default "3 dot" icon
-                                            // icon: Icon(Icons.book)
-                                            itemBuilder: (context){
-                                              return [
-                                                PopupMenuItem<int>(
-                                                    value: 0,
-                                                    child:Icon(Icons.edit)
+                                          child: user != null ? MyPopUpMenu(
+                                              itemBuilder: (context) {
+                                                return [
+                                                  PopupMenuItem<int>(
+                                                  value: 0,
+                                                    child: Text(AppLocalizations.of(context)!.edit),
                                                 ),
-
-                                                PopupMenuItem<int>(
-                                                  value: 1,
-                                                  child: Icon(Icons.delete, color: ColorManager.delete,),
-                                                ),
-                                              ];
-                                            },
+                                                        PopupMenuItem<int>(
+                                                          value: 1,
+                                                          child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),
+                                                        ),
+                                                ];
+                                              },
                                             onSelected:(value){
-                                              if(value == 0){
-                                                Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          EditCelebration(
-                                                              DocID: document.id,
-                                                              oldName: data["name"],
-                                                              oldDetail: data["details"],
-                                                              oldUrl: data["image"])
-                                                  ),
-                                                );
-                                              }else if(value == 1){
-                                                FirebaseFirestore.instance.collection("Celebrations").doc(document.id).delete();
-                                                Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                    builder: (context) => Celebrations()
-                                                  )
-                                                );
-                                              }
-                                            },
+                                                if(value == 0){
+                                                  Navigator.of(context).push(
+                                                    MaterialPageRoute(
+                                                        builder: (context) => EditCelebration(
+                                                            DocID: document.id,
+                                                            oldName: data["name"],
+                                                            oldDetail: data["details"],
+                                                            oldUrl: data["image"])
+                                                    ),
+                                                  );
+                                                }else if(value == 1){
+                                                  FirebaseFirestore.instance.collection("Celebrations").doc(document.id).delete();
+                                                  Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) => Celebrations()
+                                                      )
+                                                  );
+                                                }
+                                                },
                                           ) :  SizedBox(),
                                         ),
                                       ],
