@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
-import 'package:path/path.dart';
+// import 'package:path/path.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/themes/colors.dart';
@@ -51,28 +51,39 @@ class _AddCelebrationState extends State<AddCelebration> {
                   ),
                 ),
               ),
-              Center(
-                child: CustomButton(
-                    onPressed: () async{
-                      if (url.url == null ) {
-                        await FirebaseFirestore.instance.collection("Celebrations").doc().set(
-                            {
-                              "name" : celebrationName.text,
-                              "details" : celebrationDetail.text,
-                            }
-                        );
-                      } else  {
-                        await FirebaseFirestore.instance.collection("Celebrations").doc().set(
-                            {
-                              "name" : celebrationName.text,
-                              "details" : celebrationDetail.text,
-                              "image" : url.url,
-                            }
-                        );
-                      }
-                      Navigator.of(context).pop();
-                    }, title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,),
-              )
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+                   CustomButton(
+                        onPressed: () async{
+                          if (url.url == null ) {
+                            await FirebaseFirestore.instance.collection("Celebrations").doc().set(
+                                {
+                                  "name" : celebrationName.text,
+                                  "details" : celebrationDetail.text,
+                                }
+                            );
+                          } else  {
+                            await FirebaseFirestore.instance.collection("Celebrations").doc().set(
+                                {
+                                  "name" : celebrationName.text,
+                                  "details" : celebrationDetail.text,
+                                  "image" : url.url,
+                                }
+                            );
+                          }
+                          Navigator.of(context).pop();
+                        }, title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,),
+                   sizedBox(width: 20,),
+                   CustomButton(
+                     onPressed: (){
+                       Navigator.pop(context);
+                     },
+                     title: AppLocalizations.of(context)!.cancel,
+                     color: ColorManager.addEdit,
+                   )
+                 ],
+               ),
             ],
           ),
         ),
