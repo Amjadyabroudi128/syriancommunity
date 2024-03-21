@@ -7,8 +7,6 @@ import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
 import 'package:syrianadmin/themes/colors.dart';
-import 'package:syrianadmin/themes/font_weight_helper.dart';
-
 import '../../components/SubmitButton.dart';
 import '../../themes/fontSize.dart';
 class Celebrations extends StatelessWidget {
@@ -35,10 +33,7 @@ class Celebrations extends StatelessWidget {
                       },
                       title: AppLocalizations.of(context)!.addCelebration,color: ColorManager.addEdit,) : sizedBox(height: 15,),
                 ),
-                Padding(
-                  padding:  EdgeInsets.all(8.0),
-                  child: Text(AppLocalizations.of(context)!.celebrations, style: TextStyles.font16green,),
-                ),
+                padding(child: Text(AppLocalizations.of(context)!.celebrations, style: TextStyles.font16green,)),
                 sizedBox(),
                 Container(
                   width: 400,
