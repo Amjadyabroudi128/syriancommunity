@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/components/popUpMenu.dart';
 import '../../themes/colors.dart';
 import '../../themes/fontSize.dart';
 import 'editCommunity.dart';
@@ -57,12 +58,18 @@ class _CommunityState extends State<Community> {
                   Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
                   return Column(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      // Padding(
+                      //   padding: const EdgeInsets.all(8.0),
+                      //   child: Card(
+                      //     child: data["image"] != null ? Image.network(
+                      //       data["image"],
+                      //       height: MediaQuery.of(context).size.height * 0.40,
+                      //     ) : SizedBox.shrink(),
+                      //   ),
+                      // ),
+                      padding(
                         child: Card(
-                          child: data["image"] != null ? Image.network(
-                            data["image"],
-                            height: MediaQuery.of(context).size.height * 0.40,
+                          child: data["image"] != null ? Image.network(data["image"], height: MediaQuery.of(context).size.height * 0.40,
                           ) : SizedBox.shrink(),
                         ),
                       ),
@@ -80,42 +87,38 @@ class _CommunityState extends State<Community> {
                                   ),
                                   Padding(
                                     padding:  EdgeInsets.only(left: 310, ),
-                                    child: user != null ? PopupMenuButton(
-                                      // add icon, by default "3 dot" icon
-                                      // icon: Icon(Icons.book)
-                                      itemBuilder: (context){
-                                        return [
-                                          PopupMenuItem<int>(
-                                              value: 0,
-                                              child:Icon(Icons.edit)
-                                          ),
-
-                                          PopupMenuItem<int>(
-                                            value: 1,
-                                            child: Icon(Icons.delete, color: Colors.red,),
-                                          ),
-                                        ];
+                                    child: user != null ? MyPopUpMenu(
+                                      itemBuilder: (context) {
+                                      return [
+                                        PopupMenuItem<int>(
+                                          value: 0,
+                                          child: Text(AppLocalizations.of(context)!.edit),
+                                        ),
+                                        PopupMenuItem<int>(
+                                          value: 1,
+                                          child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),
+                                        ),
+                                      ];
                                       },
-                                      onSelected:(value){
-                                        if(value == 0){
-                                          Navigator.of(context).push(
-                                              MaterialPageRoute(builder: (context) =>
-                                                  EditCommunity(DocID: document.id ,
-                                                    oldName: data["name"],
-                                                    oldUrl: data["image"],
-                                                    oldDetails: data["details"],)
-                                              ));
+                                        onSelected:(value){
+                                          if(value == 0){
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(builder: (context) =>
+                                                    EditCommunity(DocID: document.id ,
+                                                      oldName: data["name"],
+                                                      oldUrl: data["image"],
+                                                      oldDetails: data["details"],)
+                                                ));
 
-                                        }else if(value == 1){
-                                          FirebaseFirestore.instance.collection("Community").doc(document.id).delete();
-                                          Navigator.of(context).pushNamed("community");
-                                        }
-                                      },
-                                    ) : sizedBox(height: 42,)
+                                          }else if(value == 1){
+                                            FirebaseFirestore.instance.collection("Community").doc(document.id).delete();
+                                            Navigator.of(context).pushNamed("community");
+                                          }
+                                        },
+                                    ) : sizedBox(height: 40,),
                                   ),
                               ],
                             ),
-                            color: ColorManager.cardColor,
                           ),
                         ),
                       ),
