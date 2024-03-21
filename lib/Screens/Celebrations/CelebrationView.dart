@@ -46,10 +46,6 @@ class Celebrations extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18.0),
-                      ),
-                      color: ColorManager.cardColor,
                       child: padding(
                         child: Text(AppLocalizations.of(context)!.join, style: TextStyle(fontSize: 16),),
                       ),
