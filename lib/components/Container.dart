@@ -2,11 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+late double? height;
+late double? width;
+late Widget? child;
 class Containers {
   // final CollectionReference contact =
   // FirebaseFirestore.instance.collection('contact');
   // User? user = FirebaseAuth.instance.currentUser;
-
   static Container location = Container(
     height: 300,
     width: 300,

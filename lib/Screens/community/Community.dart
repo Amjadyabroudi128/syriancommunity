@@ -58,18 +58,10 @@ class _CommunityState extends State<Community> {
                   Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
                   return Column(
                     children: [
-                      // Padding(
-                      //   padding: const EdgeInsets.all(8.0),
-                      //   child: Card(
-                      //     child: data["image"] != null ? Image.network(
-                      //       data["image"],
-                      //       height: MediaQuery.of(context).size.height * 0.40,
-                      //     ) : SizedBox.shrink(),
-                      //   ),
-                      // ),
                       padding(
                         child: Card(
-                          child: data["image"] != null ? Image.network(data["image"], height: MediaQuery.of(context).size.height * 0.40,
+                          child: data["image"] != null ? Image.network(data["image"],
+                            height: MediaQuery.of(context).size.height * 0.40,
                           ) : SizedBox.shrink(),
                         ),
                       ),
