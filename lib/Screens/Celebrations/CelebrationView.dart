@@ -38,12 +38,9 @@ class Celebrations extends StatelessWidget {
                 Container(
                   width: 400,
                   height: 100,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  child: padding(
                     child: Card(
-                      child: padding(
-                        child: Text(AppLocalizations.of(context)!.join, style: TextStyle(fontSize: 16),),
-                      ),
+                      child: Text(AppLocalizations.of(context)!.join, style: TextStyle(fontSize: 16),),
                     ),
                   ),
                 ),
