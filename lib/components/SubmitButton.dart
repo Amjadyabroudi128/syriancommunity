@@ -5,7 +5,8 @@ class CustomButton extends StatelessWidget {
   final String title;
   final Color? color;
   final EdgeInsetsGeometry? padding;
-  const CustomButton({ super.key, required this.onPressed, required this.title, this.color, this.padding});
+  final Color? textColor;
+  const CustomButton({ super.key, required this.onPressed, required this.title, this.color, this.padding, this.textColor,});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class CustomButton extends StatelessWidget {
       padding: padding,
         height: 40,
         color: color,
-        textColor: Colors.white,
+        textColor: textColor,
         onPressed: onPressed,
         child: Text(title));
     // custom button component to be used when necessary
