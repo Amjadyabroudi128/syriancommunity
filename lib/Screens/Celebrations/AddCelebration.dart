@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
-// import 'package:path/path.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/themes/colors.dart';
