@@ -89,9 +89,6 @@ class _HomePageState extends State<HomePage> {
                           width: MediaQuery.of(context).size.width ,
                           child: IntrinsicHeight(
                             child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0),
-                              ),
                               child: padding(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
