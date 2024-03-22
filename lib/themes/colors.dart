@@ -11,4 +11,5 @@ class ColorManager {
   static Color? addEdit = Color(0xFF757575);
   static Color delete = Color(0xFFD32F2F);
   static Color expanstionTile = Color(0xFFEEEEEE);
+  static Color submit =Color(0xFF4CAF50);
 }
