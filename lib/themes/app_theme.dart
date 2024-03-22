@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'colors.dart';
+import 'fontSize.dart';
 
  ThemeData appTheme = ThemeData(
 
@@ -43,6 +44,7 @@ import 'colors.dart';
        )
      )
    ),
+
    expansionTileTheme: ExpansionTileThemeData(
      backgroundColor: ColorManager.expanstionTile,
      expansionAnimationStyle: AnimationStyle(
@@ -58,9 +60,11 @@ import 'colors.dart';
          Radius.circular(15),
        )
      ),
-     textTheme: ButtonTextTheme.primary
+     textTheme: ButtonTextTheme.primary,
+
    ),
    inputDecorationTheme: InputDecorationTheme(
+     hintStyle: TextStyles.hintText,
      // contentPadding: EdgeInsets.all(30),
        border: OutlineInputBorder(
          borderRadius: BorderRadius.circular(30),
