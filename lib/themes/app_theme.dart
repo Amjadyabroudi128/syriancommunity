@@ -12,6 +12,7 @@ import 'colors.dart';
          borderRadius: BorderRadius.circular(18.0),
        ),
      ),
+
      iconTheme: IconThemeData(
        size: 30,
      ),
@@ -52,7 +53,12 @@ import 'colors.dart';
      iconColor: Colors.black
    ),
    buttonTheme: ButtonThemeData(
-     shape: StadiumBorder(),
+     shape: RoundedRectangleBorder(
+       borderRadius: BorderRadius.all(
+         Radius.circular(15),
+       )
+     ),
+     textTheme: ButtonTextTheme.primary
    ),
    inputDecorationTheme: InputDecorationTheme(
      // contentPadding: EdgeInsets.all(30),
