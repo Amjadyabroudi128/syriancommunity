@@ -72,14 +72,15 @@ class _AddCelebrationState extends State<AddCelebration> {
                             );
                           }
                           Navigator.of(context).pop();
-                        }, title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,),
+                        }, title: AppLocalizations.of(context)!.submit, color:ColorManager.submit, ),
                    sizedBox(width: 20,),
                    CustomButton(
                      onPressed: (){
                        Navigator.pop(context);
                      },
                      title: AppLocalizations.of(context)!.cancel,
-                     color: ColorManager.addEdit,
+                     color: ColorManager.delete,
+                     textColor: Colors.white,
                    )
                  ],
                ),
