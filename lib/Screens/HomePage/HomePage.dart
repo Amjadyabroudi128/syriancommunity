@@ -40,7 +40,6 @@ class _HomePageState extends State<HomePage> {
             );
           },
         ),
-        toolbarHeight: 70,
         title: Text(AppLocalizations.of(context)!.syrianCommunity),
       ),
       drawer: SideDrawer(),
