@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import '../../classes/pickImage.dart' as url;
 import '../../components/SubmitButton.dart';
@@ -52,10 +53,9 @@ class _EditCelebrationState extends State<EditCelebration> {
                   url.pickImage();
                 },
                 child: Center(
-                    child: url.url != null ? Image.network(url.url!,
-                      height: MediaQuery.of(context).size.height * 0.40,
-                      width: MediaQuery.of(context).size.width,
-                    ) : SizedBox.shrink()
+                  child: url.url != null ?myImage(
+                    src: url.url,
+                  ) : SizedBox.shrink(),
                 ),
               ),
               padding(child: Text(AppLocalizations.of(context)!.celebrations)),
