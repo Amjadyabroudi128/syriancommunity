@@ -19,7 +19,6 @@ Widget build(BuildContext context) {
     controller: myController,
     decoration: InputDecoration(
         hintText: hinttext,
-        hintStyle: TextStyles.hintText
      ),
   );
   // custom text field
