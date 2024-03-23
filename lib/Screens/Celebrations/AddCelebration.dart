@@ -17,7 +17,8 @@ class AddCelebration extends StatefulWidget {
 class _AddCelebrationState extends State<AddCelebration> {
   TextEditingController celebrationName = TextEditingController();
   TextEditingController celebrationDetail = TextEditingController();
-
+  final CollectionReference celebrations =
+  FirebaseFirestore.instance.collection('Celebrations');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,14 +57,14 @@ class _AddCelebrationState extends State<AddCelebration> {
                    CustomButton(
                         onPressed: () async{
                           if (url.url == null ) {
-                            await FirebaseFirestore.instance.collection("Celebrations").doc().set(
+                            await celebrations.doc().set(
                                 {
                                   "name" : celebrationName.text,
                                   "details" : celebrationDetail.text,
                                 }
                             );
                           } else  {
-                            await FirebaseFirestore.instance.collection("Celebrations").doc().set(
+                            await celebrations.doc().set(
                                 {
                                   "name" : celebrationName.text,
                                   "details" : celebrationDetail.text,
