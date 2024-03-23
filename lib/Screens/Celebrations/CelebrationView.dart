@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
 import 'package:syrianadmin/themes/colors.dart';
@@ -83,11 +84,14 @@ class Celebrations extends StatelessWidget {
                                 child: Padding(
                                   padding: const EdgeInsets.all(1.0),
                                   child: Container(
-                                      child: data["image"] != null ? Image.network(
-                                        data["image"],
-                                        height: MediaQuery.of(context).size.height * 0.40,
-                                        width: MediaQuery.of(context).size.width,
-                                      ) : SizedBox.shrink(),
+                                    child: data["image"] != null? myImage(
+                                      src: data["image"],
+                                    ) : SizedBox.shrink(),
+                                      // child: data["image"] != null ? Image.network(
+                                      //   data["image"],
+                                      //   height: MediaQuery.of(context).size.height * 0.40,
+                                      //   width: MediaQuery.of(context).size.width,
+                                      // ) : SizedBox.shrink(),
                                     ),
                                 ),
                                 onTap: () {
