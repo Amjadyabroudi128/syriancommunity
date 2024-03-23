@@ -50,22 +50,48 @@ class _AddContactDetailsState extends State<AddContactDetails> {
               CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: email),
               padding(child: Text(AppLocalizations.of(context)!.phone),),
               CustomTextForm(hinttext: AppLocalizations.of(context)!.phone, myController: phone),
-              sizedBox(),
-              Center(child:
-              CustomButton
-                (onPressed: () async {
-                await contact.doc().set({
-                  "place" : place.text,
-                  "street name" : road.text,
-                  "city" : city.text,
-                  "post code" : postcode.text,
-                  "email" : email.text,
-                  "phone" : phone.text
-                });
-                Navigator.of(context).pushNamed("contactus");
-                clearText();
-              }, title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,)
+              sizedBox(height: 10,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomButton(
+                    onPressed: ()async {
+                      await contact.doc().set({
+                            "place" : place.text,
+                            "street name" : road.text,
+                            "city" : city.text,
+                            "post code" : postcode.text,
+                            "email" : email.text,
+                            "phone" : phone.text
+                      });
+                      Navigator.of(context).pushNamed("contactus");
+                      clearText();
+                    },
+                    title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,
+                  ),
+                  sizedBox(width: 15,),
+                  CustomButton(
+                    onPressed: (){},
+                    title: AppLocalizations.of(context)!.cancel,
+                    color: ColorManager.delete,
+                  )
+                ],
               )
+              // Center(child:
+              // CustomButton
+              //   (onPressed: () async {
+              //   await contact.doc().set({
+              //     "place" : place.text,
+              //     "street name" : road.text,
+              //     "city" : city.text,
+              //     "post code" : postcode.text,
+              //     "email" : email.text,
+              //     "phone" : phone.text
+              //   });
+              //   Navigator.of(context).pushNamed("contactus");
+              //   clearText();
+              // }, title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,)
+              // )
             ],
           ),
         ),
