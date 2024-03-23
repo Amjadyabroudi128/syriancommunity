@@ -17,6 +17,7 @@ class AddCelebration extends StatefulWidget {
 class _AddCelebrationState extends State<AddCelebration> {
   TextEditingController celebrationName = TextEditingController();
   TextEditingController celebrationDetail = TextEditingController();
+
   final CollectionReference celebrations =
   FirebaseFirestore.instance.collection('Celebrations');
   @override

@@ -108,7 +108,7 @@ class Celebrations extends StatelessWidget {
                                child: Container(
                                  child: data["image"] != null ? myImage(
                                    src: data["image"],
-                                 ) : Text("no image for this post "),
+                                 ) : SizedBox.shrink(),
                                ),
                              ),
                              SizedBox(
@@ -147,7 +147,7 @@ class Celebrations extends StatelessWidget {
                                                     ),
                                                   );
                                                 }else if(value == 1){
-                                                  FirebaseFirestore.instance.collection("Celebrations").doc(document.id).delete();
+                                                  celebrations.doc(document.id).delete();
                                                   Navigator.of(context).push(
                                                       MaterialPageRoute(
                                                           builder: (context) => Celebrations()
