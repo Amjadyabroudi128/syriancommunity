@@ -103,7 +103,7 @@ class _CommunityState extends State<Community> {
                                                 ));
 
                                           }else if(value == 1){
-                                            FirebaseFirestore.instance.collection("Community").doc(document.id).delete();
+                                            community.doc(document.id).delete();
                                             Navigator.of(context).pushNamed("community");
                                           }
                                         },
