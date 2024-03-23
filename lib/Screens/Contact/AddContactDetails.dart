@@ -71,27 +71,14 @@ class _AddContactDetailsState extends State<AddContactDetails> {
                   ),
                   sizedBox(width: 15,),
                   CustomButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.pop(context);
+                    },
                     title: AppLocalizations.of(context)!.cancel,
                     color: ColorManager.delete,
                   )
                 ],
               )
-              // Center(child:
-              // CustomButton
-              //   (onPressed: () async {
-              //   await contact.doc().set({
-              //     "place" : place.text,
-              //     "street name" : road.text,
-              //     "city" : city.text,
-              //     "post code" : postcode.text,
-              //     "email" : email.text,
-              //     "phone" : phone.text
-              //   });
-              //   Navigator.of(context).pushNamed("contactus");
-              //   clearText();
-              // }, title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,)
-              // )
             ],
           ),
         ),
