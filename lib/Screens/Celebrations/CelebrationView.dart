@@ -43,7 +43,7 @@ class Celebrations extends StatelessWidget {
                   height: 100,
                   child: padding(
                     child: Card(
-                      child: Text(AppLocalizations.of(context)!.join, style: TextStyle(fontSize: 16),),
+                      child: Text(AppLocalizations.of(context)!.join, style: TextStyles.font17,),
                     ),
                   ),
                 ),
