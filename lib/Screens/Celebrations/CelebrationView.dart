@@ -13,8 +13,10 @@ import '../../themes/fontSize.dart';
 class Celebrations extends StatelessWidget {
   final document;
 
-  const Celebrations({Key? key, this.document}) : super(key: key);
+   Celebrations({Key? key, this.document}) : super(key: key);
 
+  final CollectionReference celebrations =
+  FirebaseFirestore.instance.collection('Celebrations');
   @override
   Widget build(BuildContext context) {
     User? user = FirebaseAuth.instance.currentUser;
@@ -46,7 +48,7 @@ class Celebrations extends StatelessWidget {
                   ),
                 ),
                 StreamBuilder(
-                  stream: FirebaseFirestore.instance.collection("Celebrations").snapshots(),
+                  stream: celebrations.snapshots(),
                   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
                     if (snapshot.hasError) {
                       return Text('Something went wrong');
@@ -87,11 +89,6 @@ class Celebrations extends StatelessWidget {
                                     child: data["image"] != null? myImage(
                                       src: data["image"],
                                     ) : SizedBox.shrink(),
-                                      // child: data["image"] != null ? Image.network(
-                                      //   data["image"],
-                                      //   height: MediaQuery.of(context).size.height * 0.40,
-                                      //   width: MediaQuery.of(context).size.width,
-                                      // ) : SizedBox.shrink(),
                                     ),
                                 ),
                                 onTap: () {
@@ -109,19 +106,15 @@ class Celebrations extends StatelessWidget {
                               ) : Padding(
                                padding: const EdgeInsets.all(1.0),
                                child: Container(
-                                 child: data["image"] != null ? Image.network(
-                                   data["image"],
-                                   height: MediaQuery.of(context).size.height * 0.40,
-                                   width: MediaQuery.of(context).size.width,
-                                   // fit: BoxFit.cover,
-                                 ) : SizedBox.shrink(),
+                                 child: data["image"] != null ? myImage(
+                                   src: data["image"],
+                                 ) : Text("no image for this post "),
                                ),
                              ),
                              SizedBox(
                                 width: MediaQuery.of(context).size.width,
                                 child: IntrinsicHeight(
                                   child: Card(
-
                                     child:  Column(
                                       children: [
                                         padding(
