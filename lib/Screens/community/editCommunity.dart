@@ -60,27 +60,35 @@ class _EditCommunityState extends State<EditCommunity> {
                 ),
 
               ),
-              Center(
-                child: CustomButton(onPressed: () async {
-                  if(url.url == null) {
-                  await community.doc(widget.DocID).update({
-                      "name" : name.text,
-                      "details" : details.text,
-                    });
-                  Navigator.pop(context);
-                  } else {
-                  await community.doc(widget.DocID).update({
-                      "name" : name.text,
-                      "details" : details.text,
-                      "image" : url.url
-                    });
-                  Navigator.pop(context);
-                  }
-                }
-                  , title: AppLocalizations.of(context)!.update,
-                  color: ColorManager.addEdit,
-                ),
-              ),
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+                   CustomButton(onPressed: () async {
+                      if(url.url == null) {
+                      await community.doc(widget.DocID).update({
+                          "name" : name.text,
+                          "details" : details.text,
+                        });
+                      Navigator.pop(context);
+                      } else {
+                      await community.doc(widget.DocID).update({
+                          "name" : name.text,
+                          "details" : details.text,
+                          "image" : url.url
+                        });
+                      Navigator.pop(context);
+                      }
+                    }
+                      , title: AppLocalizations.of(context)!.update,
+                      color: ColorManager.addEdit,
+                    ),
+                   CustomButton(
+                     onPressed: (){},
+                     title: AppLocalizations.of(context)!.cancel,
+                     color: ColorManager.delete,
+                   )
+                 ],
+               ),
             ],
           ),
         ),
