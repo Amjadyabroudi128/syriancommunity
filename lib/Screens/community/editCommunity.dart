@@ -1,17 +1,13 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:path/path.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/themes/colors.dart';
-
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
+import '../../classes/pickImage.dart' as url;
 class EditCommunity extends StatefulWidget {
   final String DocID;
   final String oldName;
@@ -26,24 +22,11 @@ class EditCommunity extends StatefulWidget {
 class _EditCommunityState extends State<EditCommunity> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
-  String? url;
-  File? file;
   void initState() {
     super.initState();
     name.text = widget.oldName;
     details.text = widget.oldDetails;
-    url = widget.oldUrl;
-  }
-  Future pickImage() async {
-    final ImagePicker picker = ImagePicker();
-    final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
-    if (imageCamera != null) {
-      file = File(imageCamera.path);
-      var imagename = basename(imageCamera.path);
-      var refStorage = FirebaseStorage.instance.ref(imagename);
-      await refStorage.putFile(file!);
-      url = await refStorage.getDownloadURL();
-    }
+    url.url = widget.oldUrl;
   }
   final CollectionReference community =
   FirebaseFirestore.instance.collection('Community');
@@ -69,7 +52,7 @@ class _EditCommunityState extends State<EditCommunity> {
                 child: CustomButton(
                   title: AppLocalizations.of(context)!.image,
                   onPressed: () async {
-                    await pickImage();
+                    await url.pickImage();
                     setState(() {
 
                     });
@@ -78,7 +61,7 @@ class _EditCommunityState extends State<EditCommunity> {
               ),
               Center(
                 child: CustomButton(onPressed: () async {
-                  if(url == null) {
+                  if(url.url == null) {
                   await community.doc(widget.DocID).update({
                       "name" : name.text,
                       "details" : details.text,
@@ -88,7 +71,7 @@ class _EditCommunityState extends State<EditCommunity> {
                   await community.doc(widget.DocID).update({
                       "name" : name.text,
                       "details" : details.text,
-                      "image" : url
+                      "image" : url.url
                     });
                   Navigator.pop(context);
                   }
