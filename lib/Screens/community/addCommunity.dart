@@ -20,19 +20,6 @@ class _addCommunityState extends State<addCommunity> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
 
-  // File? file;
-  // String? url;
-  // Future pickImage() async {
-  //   final ImagePicker picker = ImagePicker();
-  //   final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
-  //   if (imageCamera != null) {
-  //     file = File(imageCamera.path);
-  //     var imagename = basename(imageCamera.path);
-  //     var refStorage = FirebaseStorage.instance.ref(imagename);
-  //     await refStorage.putFile(file!);
-  //     url = await refStorage.getDownloadURL();
-  //   }
-  // }
   final CollectionReference community =
   FirebaseFirestore.instance.collection('Community');
   @override
