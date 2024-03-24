@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
@@ -57,7 +56,9 @@ class _EditCommunityState extends State<EditCommunity> {
 
                     });
                   },
+                  color: ColorManager.addEdit,
                 ),
+
               ),
               Center(
                 child: CustomButton(onPressed: () async {
