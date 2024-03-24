@@ -82,8 +82,11 @@ class _EditCommunityState extends State<EditCommunity> {
                       , title: AppLocalizations.of(context)!.update,
                       color: ColorManager.addEdit,
                     ),
+                   sizedBox(width: 15,),
                    CustomButton(
-                     onPressed: (){},
+                     onPressed: (){
+                       Navigator.pop(context);
+                     },
                      title: AppLocalizations.of(context)!.cancel,
                      color: ColorManager.delete,
                    )
