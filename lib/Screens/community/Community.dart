@@ -59,10 +59,13 @@ class _CommunityState extends State<Community> {
                   return Column(
                     children: [
                       padding(
-                        child: Card(
-                          child: data["image"] != null ? Image.network(data["image"],
-                            height: MediaQuery.of(context).size.height * 0.40,
-                          ) : SizedBox.shrink(),
+                        child: GestureDetector(
+                          child: Card(
+                            child: data["image"] != null ? Image.network(data["image"],
+                              height: MediaQuery.of(context).size.height * 0.40,
+                            ) : SizedBox.shrink(),
+                          ),
+                          onTap: (){},
                         ),
                       ),
                       Text(data["name"], style: TextStyles.font14green,),
