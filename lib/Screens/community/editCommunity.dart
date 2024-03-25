@@ -92,7 +92,7 @@ class _EditCommunityState extends State<EditCommunity> {
                       }
                     }
                       , title: AppLocalizations.of(context)!.update,
-                      color: ColorManager.addEdit,
+                      color: ColorManager.submit,
                     ),
                    sizedBox(width: 15,),
                    CustomButton(
