@@ -41,7 +41,7 @@ class _addCommunityState extends State<addCommunity> {
                 child: Text(AppLocalizations.of(context)!.details),
               ),
               CustomTextForm(hinttext: "What we do ", myController: details, maxLines: 6,),
-              sizedBox(),
+              sizedBox(height: 10,),
               Center(
                 child: CustomButton(
                   title: AppLocalizations.of(context)!.image,
@@ -72,9 +72,12 @@ class _addCommunityState extends State<addCommunity> {
                        Navigator.pushReplacementNamed(context, 'community');
                       }
                     }
-                    , title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,
+                    , title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,
                     ),
-                  CustomButton(onPressed: (){}, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,)
+                  sizedBox(width: 10,),
+                  CustomButton(onPressed: (){
+                    Navigator.pop(context);
+                  }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,)
                 ],
               ),
 
