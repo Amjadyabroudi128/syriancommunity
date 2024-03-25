@@ -7,6 +7,7 @@ import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../classes/pickImage.dart' as url;
+import '../../components/image.network.dart';
 class EditCommunity extends StatefulWidget {
   final String DocID;
   final String oldName;
@@ -40,6 +41,18 @@ class _EditCommunityState extends State<EditCommunity> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              GestureDetector(
+                onTap: () async {
+                  await url.pickImage();
+                  setState(() {
+                  });
+                },
+                child: Center(
+                  child: url.url != null ?myImage(
+                    src: url.url,
+                  ) : SizedBox.shrink(),
+                ),
+              ),
               sizedBox(),
               padding(child: Text(AppLocalizations.of(context)!.name)),
               CustomTextForm(hinttext: "BreakFast Club", myController: name),
@@ -53,7 +66,6 @@ class _EditCommunityState extends State<EditCommunity> {
                   onPressed: () async {
                     await url.pickImage();
                     setState(() {
-
                     });
                   },
                   color: ColorManager.addEdit,
