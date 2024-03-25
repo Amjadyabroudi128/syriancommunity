@@ -51,6 +51,8 @@ class _EditCelebrationState extends State<EditCelebration> {
               GestureDetector(
                 onTap: (){
                   url.pickImage();
+                  setState(() {
+                  });
                 },
                 child: Center(
                   child: url.url != null ?myImage(
@@ -103,14 +105,14 @@ class _EditCelebrationState extends State<EditCelebration> {
 
                           Navigator.of(context).pushNamed("celebrations");
                         },
-                        title: AppLocalizations.of(context)!.update, color: ColorManager.addEdit),
+                        title: AppLocalizations.of(context)!.update, color: ColorManager.submit),
                    sizedBox(width: 20,),
                    CustomButton(
                      onPressed: (){
                        Navigator.pop(context);
                      },
                      title: AppLocalizations.of(context)!.cancel,
-                     color: ColorManager.addEdit,
+                     color: ColorManager.delete,
                    )
                  ],
                ),
