@@ -65,7 +65,15 @@ class _CommunityState extends State<Community> {
                               height: MediaQuery.of(context).size.height * 0.40,
                             ) : SizedBox.shrink(),
                           ),
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.of(context).push(
+                                MaterialPageRoute(builder: (context) =>
+                                    EditCommunity(DocID: document.id ,
+                                      oldName: data["name"],
+                                      oldUrl: data["image"],
+                                      oldDetails: data["details"],)
+                                ));
+                          },
                         ) : SizedBox(),
                       ),
                       Text(data["name"], style: TextStyles.font14green,),
