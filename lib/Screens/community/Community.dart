@@ -74,7 +74,11 @@ class _CommunityState extends State<Community> {
                                       oldDetails: data["details"],)
                                 ));
                           },
-                        ) : SizedBox(),
+                        ) : Card(
+                          child: data["image"] != null ? Image.network(data["image"],
+                            height: MediaQuery.of(context).size.height * 0.40,
+                          ) : SizedBox.shrink(),
+                        ),
                       ),
                       Text(data["name"], style: TextStyles.font14green,),
                       sizedBox(height: 12,),
