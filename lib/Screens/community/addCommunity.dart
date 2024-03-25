@@ -53,26 +53,31 @@ class _addCommunityState extends State<addCommunity> {
                   color: ColorManager.addEdit,
                 ),
               ),
-              Center(
-                child: CustomButton(onPressed: () async {
-                  if(url.url == null) {
-                 await   community.doc().set({
-                      "name" : name.text,
-                      "details" : details.text
-                    });
-                 Navigator.pushReplacementNamed(context, 'community');
-                  } else {
-                   await community.doc().set({
-                      "name" : name.text,
-                      "details" : details.text,
-                      "image" : url.url,
-                    });
-                   Navigator.pushReplacementNamed(context, 'community');
-                  }
-                }
-                , title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomButton(onPressed: () async {
+                      if(url.url == null) {
+                     await   community.doc().set({
+                          "name" : name.text,
+                          "details" : details.text
+                        });
+                     Navigator.pushReplacementNamed(context, 'community');
+                      } else {
+                       await community.doc().set({
+                          "name" : name.text,
+                          "details" : details.text,
+                          "image" : url.url,
+                        });
+                       Navigator.pushReplacementNamed(context, 'community');
+                      }
+                    }
+                    , title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,
+                    ),
+                  CustomButton(onPressed: (){}, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,)
+                ],
               ),
+
             ],
           ),
         ),
