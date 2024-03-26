@@ -21,8 +21,11 @@ class _AddInfoState extends State<AddInfo> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
   DateTime today = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
+    final CollectionReference home =
+    FirebaseFirestore.instance.collection('home');
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.addDetails),
@@ -54,7 +57,7 @@ class _AddInfoState extends State<AddInfo> {
                 Center(
                   child: CustomButton(
                       onPressed: () async {
-                       await FirebaseFirestore.instance.collection("home").doc().set(
+                       await home.doc().set(
                          {
                          "name" : name.text,
                            "details" : details.text,
