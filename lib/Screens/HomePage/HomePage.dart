@@ -22,11 +22,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
     var home =
     FirebaseFirestore.instance.collection('home').orderBy("time", descending: true);
+
+    final CollectionReference myHome =
+    FirebaseFirestore.instance.collection('home');
+
     User? user = FirebaseAuth.instance.currentUser;
     return Scaffold(
       appBar: AppBar(
@@ -127,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                                                           )
                                                         );
                                             } else if (value == 1) {
-                                              FirebaseFirestore.instance.collection("home").doc(document.id).delete();
+                                              myHome.doc(document.id).delete();
                                             }
                                           },
                                           ): SizedBox.shrink(),
