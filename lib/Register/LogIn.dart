@@ -44,20 +44,13 @@ class _LoginState extends State<Login> {
             sizedBox(height: 15,),
             CustomTextForm(hinttext: AppLocalizations.of(context)!.password,),
             sizedBox(height: 20,),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width / 8,
-              ),
-              child: TextButton(
-
+             TextButton(
                 onPressed: () async {
                   BlocProvider.of<AuthCubit>(context).login(email: testEmail, password: testPassword);
                 },
                 child:  Text(AppLocalizations.of(context)!.login,style: TextStyles.font20white
                 ),
               ),
-            ),
           ],
         ),
       ),
