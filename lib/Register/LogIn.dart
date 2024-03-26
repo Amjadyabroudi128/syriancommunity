@@ -46,7 +46,7 @@ class _LoginState extends State<Login> {
             sizedBox(height: 20,),
              TextButton(
                 onPressed: () async {
-                  BlocProvider.of<AuthCubit>(context).login(email: testEmail, password: testPassword);
+               await  BlocProvider.of<AuthCubit>(context).login(email: testEmail, password: testPassword);
                 },
                 child:  Text(AppLocalizations.of(context)!.login,style: TextStyles.font20white
                 ),
