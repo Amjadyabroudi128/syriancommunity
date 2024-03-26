@@ -7,6 +7,8 @@ import 'package:syrianadmin/components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/themes/fontSize.dart';
 
+import '../themes/colors.dart';
+
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
@@ -37,7 +39,7 @@ class _LoginState extends State<Login> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(AppLocalizations.of(context)!.loginAdmin),
-           const  sizedBox(height: 19,),
+             sizedBox(height: 19,),
             CustomTextForm(hinttext: AppLocalizations.of(context)!.email,),
             sizedBox(height: 15,),
             CustomTextForm(hinttext: AppLocalizations.of(context)!.password,),
@@ -48,6 +50,7 @@ class _LoginState extends State<Login> {
                 horizontal: MediaQuery.of(context).size.width / 8,
               ),
               child: TextButton(
+
                 onPressed: () async {
                   BlocProvider.of<AuthCubit>(context).login(email: testEmail, password: testPassword);
                 },
