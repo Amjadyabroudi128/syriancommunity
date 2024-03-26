@@ -20,7 +20,7 @@ import 'fontSize.dart';
      textButtonTheme: TextButtonThemeData(
        style: TextButton.styleFrom(
          shape:  StadiumBorder(),
-         backgroundColor: ColorManager.buttonColor,
+         backgroundColor: ColorManager.addEdit,
          padding:  EdgeInsets.symmetric(vertical: 14),
        ),
      ),
@@ -61,7 +61,6 @@ import 'fontSize.dart';
        )
      ),
      textTheme: ButtonTextTheme.primary,
-
    ),
    inputDecorationTheme: InputDecorationTheme(
      hintStyle: TextStyles.hintText,
