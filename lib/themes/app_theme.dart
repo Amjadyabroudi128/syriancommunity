@@ -19,9 +19,12 @@ import 'fontSize.dart';
      ),
      textButtonTheme: TextButtonThemeData(
        style: TextButton.styleFrom(
-         shape:  StadiumBorder(),
+         minimumSize: Size(200, 50),
+         shape:  RoundedRectangleBorder(
+           borderRadius: BorderRadius.circular(9.0),
+         ),
          backgroundColor: ColorManager.addEdit,
-         padding:  EdgeInsets.symmetric(vertical: 14),
+         padding:  EdgeInsets.symmetric(vertical: 9),
        ),
      ),
      drawerTheme: DrawerThemeData(
