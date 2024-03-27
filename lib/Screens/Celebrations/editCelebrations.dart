@@ -49,8 +49,8 @@ class _EditCelebrationState extends State<EditCelebration> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               GestureDetector(
-                onTap: (){
-                  url.pickImage();
+                onTap: () async {
+                 await url.pickImage();
                   setState(() {
                   });
                 },
