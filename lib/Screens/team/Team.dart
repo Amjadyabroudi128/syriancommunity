@@ -121,11 +121,11 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                           return [
                                             PopupMenuItem<int>(
                                                 value: 0,
-                                                child:Icon(Icons.edit)
+                                                child: Text(AppLocalizations.of(context)!.edit)
                                             ),
                                             PopupMenuItem<int>(
                                               value: 1,
-                                              child: Icon(Icons.delete, color: Colors.red,),
+                                              child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),
                                             ),
                                           ];
                                           },
