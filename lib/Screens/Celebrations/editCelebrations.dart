@@ -67,20 +67,19 @@ class _EditCelebrationState extends State<EditCelebration> {
               CustomTextForm(hinttext: "what we do ", myController: celebrationDetails,
                 maxLines: 7,),
               sizedBox(),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              padding(
                 child: Center(
-                  child: CustomButton(
-                    title: AppLocalizations.of(context)!.image,
-                    onPressed: () async {
-                      await url.pickImage();
-                      setState(() {
-                      });
-                    },
-                    color: ColorManager.addEdit,
+                      child: CustomButton(
+                        title: AppLocalizations.of(context)!.image,
+                        onPressed: () async {
+                          await url.pickImage();
+                          setState(() {
+                          });
+                        },
+                        color: ColorManager.addEdit,
+                      ),
+                    ),
                   ),
-                ),
-              ),
                Row(
                  mainAxisAlignment: MainAxisAlignment.center,
                  children: [
