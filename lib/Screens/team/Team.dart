@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/components/popUpMenu.dart';
 import 'package:syrianadmin/themes/colors.dart';
 import 'package:syrianadmin/themes/fontSize.dart';
 import 'EditTeam.dart';
@@ -110,44 +111,40 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                             width: MediaQuery.of(context).size.width,
                             child: IntrinsicHeight(
                               child: Card(
-
                                 child: Column(
                                   children: [
                                     padding(child: Text(data["details"], style: TextStyles.font17,) ,),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 310),
-                                      child: user != null ? PopupMenuButton(
-                                        iconSize: 30,
-                                        // add icon, by default "3 dot" icon
-                                        // icon: Icon(Icons.book)
+                                      child: user != null ? MyPopUpMenu(
                                         itemBuilder: (context){
                                           return [
                                             PopupMenuItem<int>(
                                                 value: 0,
                                                 child:Icon(Icons.edit)
                                             ),
-
                                             PopupMenuItem<int>(
                                               value: 1,
                                               child: Icon(Icons.delete, color: Colors.red,),
                                             ),
                                           ];
-                                        },
+                                          },
                                         onSelected:(value){
                                           if(value == 0){
-                                                    Navigator.of(context).push(
-                                                        MaterialPageRoute(builder: (context) =>
-                                                            EditMember(DocID: document.id ,
-                                                              oldName: data["name"],
-                                                              oldDetail: data["details"],
-                                                              oldUrl: data["image"],)
-                                                    ));
-                                          }else if(value == 1){
-                                            FirebaseFirestore.instance.collection("members").doc(document.id).delete();
-                                                    Navigator.of(context).pushNamed("ourteam");
-                                          }
-                                        },
-                                      ) : SizedBox(),
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(builder: (context) =>
+                                              EditMember(DocID: document.id ,
+                                                oldName: data["name"],
+                                                oldDetail: data["details"],
+                                                oldUrl: data["image"],)
+                                      ));
+                             } else if(value == 1){
+                              FirebaseFirestore.instance.collection("members").doc(document.id).delete();
+                               Navigator.of(context).pushNamed("ourteam");
+                            }
+                          },
+                        ) : SizedBox(),
+
                                     ),
                                   ],
                                 ),
