@@ -33,7 +33,8 @@ class _AddMemberState extends State<AddMember> {
         child: SingleChildScrollView(
           child: padding(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
                 CustomTextForm(hinttext: "name", myController: name),
@@ -53,7 +54,6 @@ class _AddMemberState extends State<AddMember> {
                   ),
                 ),
                 sizedBox(height: 15,),
-
                    Row(
                      mainAxisAlignment: MainAxisAlignment.center,
                      children: [

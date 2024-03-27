@@ -1,10 +1,7 @@
-import 'dart:io';
 
+import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:path/path.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/themes/colors.dart';
@@ -28,24 +25,12 @@ class EditMember extends StatefulWidget {
 class _EditMemberState extends State<EditMember> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
-  String? url;
-  File? file;
+
   void initState() {
     super.initState();
     name.text = widget.oldName;
     details.text = widget.oldDetail;
-    url = widget.oldUrl;
-  }
-  Future pickImage() async {
-    final ImagePicker picker = ImagePicker();
-    final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
-    if (imageCamera != null) {
-      file = File(imageCamera.path);
-      var imagename = basename(imageCamera.path);
-      var refStorage = FirebaseStorage.instance.ref(imagename);
-      await refStorage.putFile(file!);
-      url = await refStorage.getDownloadURL();
-    }
+    url.url = widget.oldUrl;
   }
   final CollectionReference members =
   FirebaseFirestore.instance.collection('members');
@@ -66,7 +51,7 @@ class _EditMemberState extends State<EditMember> {
                   shape: const CircleBorder(),
                   clipBehavior: Clip.antiAlias,
                   child: Center(
-                    child: url != null ? Image.network(url!,
+                    child: url.url != null ? Image.network(url.url!,
                       width: 240,
                       height: 240,
                       fit: BoxFit.cover,
@@ -86,7 +71,7 @@ class _EditMemberState extends State<EditMember> {
                   child: CustomButton(
                     title: "get image",
                     onPressed: () async {
-                      await pickImage();
+                      await url.pickImage();
                       setState(() {
                       });
                     },
@@ -99,7 +84,7 @@ class _EditMemberState extends State<EditMember> {
                       onPressed: () async {
                         await members.doc(widget.DocID).update(
                             {
-                              "image" : url,
+                              "image" : url.url,
                               "name" : name.text,
                               "details" : details.text
                             }
