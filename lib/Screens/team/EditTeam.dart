@@ -79,21 +79,24 @@ class _EditMemberState extends State<EditMember> {
                   ),
                 ),
                 sizedBox(height: 15,),
-                Center(
-                  child: CustomButton(
-                      onPressed: () async {
-                        await members.doc(widget.DocID).update(
-                            {
-                              "image" : url.url,
-                              "name" : name.text,
-                              "details" : details.text
-                            }
-                        );
-                        Navigator.pop(context);
-
-                      },
-                      title: "Edit", color: ColorManager.addEdit,),
-                )
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.center,
+                   children: [
+                     CustomButton(
+                          onPressed: () async {
+                            await members.doc(widget.DocID).update(
+                                {
+                                  "image" : url.url,
+                                  "name" : name.text,
+                                  "details" : details.text
+                                }
+                            );
+                            Navigator.pop(context);
+                          },
+                          title: "Edit", color: ColorManager.addEdit,),
+                     CustomButton(onPressed: (){}, title: ""),
+                   ],
+                 ),
               ],
             ),
           ),
