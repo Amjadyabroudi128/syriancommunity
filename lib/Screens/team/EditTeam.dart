@@ -98,7 +98,7 @@ class _EditMemberState extends State<EditMember> {
                      CustomButton(onPressed: (){
                        Navigator.pop(context);
 
-                     }, title: ""),
+                     }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,),
                    ],
                  ),
               ],
