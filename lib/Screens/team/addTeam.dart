@@ -87,7 +87,10 @@ class _AddMemberState extends State<AddMember> {
                             clearText();
                           },
                           title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,),
-                       CustomButton(onPressed: (){}, title: AppLocalizations.of(context)!.delete, color: ColorManager.delete,)
+                       sizedBox(width: 15,),
+                       CustomButton(onPressed: (){
+                         Navigator.pop(context);
+                       }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,)
                      ],
                    ),
 
