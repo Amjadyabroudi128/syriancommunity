@@ -38,10 +38,6 @@ class _AddMemberState extends State<AddMember> {
                 padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
                 CustomTextForm(hinttext: "name", myController: name),
                 sizedBox(height: 20,),
-                // const Padding(
-                //   padding: EdgeInsets.only(left: 12, bottom: 10),
-                //   child: Text("Details"),
-                // ),
                 padding(child: Text(AppLocalizations.of(context)!.details, style: TextStyles.font14green,)),
                 CustomTextForm(maxLines: 5, hinttext: "details", myController: details),
                 sizedBox(height: 12,),
