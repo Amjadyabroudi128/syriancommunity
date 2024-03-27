@@ -139,7 +139,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                                 oldUrl: data["image"],)
                                       ));
                              } else if(value == 1){
-                              FirebaseFirestore.instance.collection("members").doc(document.id).delete();
+                              members.doc(document.id).delete();
                                Navigator.of(context).pushNamed("ourteam");
                             }
                           },
