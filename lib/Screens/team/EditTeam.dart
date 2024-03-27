@@ -94,7 +94,11 @@ class _EditMemberState extends State<EditMember> {
                             Navigator.pop(context);
                           },
                           title: "Edit", color: ColorManager.addEdit,),
-                     CustomButton(onPressed: (){}, title: ""),
+                     sizedBox(width: 16,),
+                     CustomButton(onPressed: (){
+                       Navigator.pop(context);
+
+                     }, title: ""),
                    ],
                  ),
               ],
