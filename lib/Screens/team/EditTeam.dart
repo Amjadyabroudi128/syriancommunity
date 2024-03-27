@@ -1,4 +1,5 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -47,15 +48,22 @@ class _EditMemberState extends State<EditMember> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Card(
-                  shape: const CircleBorder(),
-                  clipBehavior: Clip.antiAlias,
-                  child: Center(
-                    child: url.url != null ? Image.network(url.url!,
-                      width: 240,
-                      height: 240,
-                      fit: BoxFit.cover,
-                    ) : SizedBox.shrink()
+                GestureDetector(
+                  onTap: () async {
+                    await url.pickImage();
+                    setState(() {
+                    });
+                  },
+                  child: Card(
+                    shape: const CircleBorder(),
+                    clipBehavior: Clip.antiAlias,
+                    child: Center(
+                      child: url.url != null ? Image.network(url.url!,
+                        width: 240,
+                        height: 240,
+                        fit: BoxFit.cover,
+                      ) : SizedBox.shrink()
+                    ),
                   ),
                 ),
                 padding(child: Text("Name", style: TextStyles.font14green,)),
