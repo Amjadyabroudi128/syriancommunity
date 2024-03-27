@@ -1,14 +1,10 @@
-import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/padding.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:syrianadmin/classes/pickImage.dart' as url;
 
 import '../../themes/colors.dart';
 import '../../themes/fontSize.dart';
@@ -24,19 +20,6 @@ class AddMember extends StatefulWidget {
 class _AddMemberState extends State<AddMember> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
-  // File? file;
-  // String? url;
-  // Future pickImage() async {
-  //   final ImagePicker picker = ImagePicker();
-  //   final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
-  //   if (imageCamera != null) {
-  //     file = File(imageCamera.path);
-  //     var imagename = basename(imageCamera.path);
-  //     var refStorage = FirebaseStorage.instance.ref(imagename);
-  //     await refStorage.putFile(file!);
-  //      url = await refStorage.getDownloadURL();
-  //   }
-  // }
   final CollectionReference members =
   FirebaseFirestore.instance.collection('members');
   @override
@@ -65,7 +48,7 @@ class _AddMemberState extends State<AddMember> {
                   child: CustomButton(
                     title: AppLocalizations.of(context)!.image,
                     onPressed: () async {
-                    await ();
+                    await url.pickImage();
                       setState(() {
                       });
                     },
@@ -76,7 +59,7 @@ class _AddMemberState extends State<AddMember> {
                 Center(
                   child: CustomButton(
                       onPressed: () async {
-                        if (url == null) {
+                        if (url.url == null) {
                           await members.doc().set(
                               {
                                 "name" : name.text,
@@ -90,7 +73,7 @@ class _AddMemberState extends State<AddMember> {
                               {
                                 "name" : name.text,
                                 "details" : details.text,
-                                "image" : url,
+                                "image" : url.url,
                               }
                           );
                           Navigator.pop(context);
