@@ -12,6 +12,7 @@ class myImage extends StatelessWidget {
       src!,
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height * 0.40,
+
     );
   }
 }

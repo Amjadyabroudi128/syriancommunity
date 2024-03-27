@@ -110,9 +110,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                             width: MediaQuery.of(context).size.width,
                             child: IntrinsicHeight(
                               child: Card(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(18.0),
-                                ),
+
                                 child: Column(
                                   children: [
                                     padding(child: Text(data["details"], style: TextStyles.font17,) ,),
