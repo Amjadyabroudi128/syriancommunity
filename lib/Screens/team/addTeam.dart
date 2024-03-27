@@ -24,6 +24,7 @@ class _AddMemberState extends State<AddMember> {
   FirebaseFirestore.instance.collection('members');
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.addThings),
@@ -56,34 +57,40 @@ class _AddMemberState extends State<AddMember> {
                   ),
                 ),
                 sizedBox(height: 15,),
-                Center(
-                  child: CustomButton(
-                      onPressed: () async {
-                        if (url.url == null) {
-                          await members.doc().set(
-                              {
-                                "name" : name.text,
-                                "details" : details.text,
-                              }
-                          );
-                          Navigator.pop(context);
 
-                        } else {
-                          await members.doc().set(
-                              {
-                                "name" : name.text,
-                                "details" : details.text,
-                                "image" : url.url,
-                              }
-                          );
-                          Navigator.pop(context);
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                       CustomButton(
+                          onPressed: () async {
+                            if (url.url == null) {
+                              await members.doc().set(
+                                  {
+                                    "name" : name.text,
+                                    "details" : details.text,
+                                  }
+                              );
+                              Navigator.pop(context);
 
-                        }
+                            } else {
+                              await members.doc().set(
+                                  {
+                                    "name" : name.text,
+                                    "details" : details.text,
+                                    "image" : url.url,
+                                  }
+                              );
+                              Navigator.pop(context);
 
-                        clearText();
-                      },
-                      title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,),
-                )
+                            }
+
+                            clearText();
+                          },
+                          title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,),
+                       CustomButton(onPressed: (){}, title: AppLocalizations.of(context)!.delete, color: ColorManager.delete,)
+                     ],
+                   ),
+
               ],
             ),
           ),
