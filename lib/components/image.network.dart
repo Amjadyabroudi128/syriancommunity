@@ -3,8 +3,8 @@ import 'package:flutter/cupertino.dart';
 class myImage extends StatelessWidget {
  final String? src;
  final double? height;
- final double? weight;
-  const myImage({super.key,  this.src, this.height, this.weight});
+ final double? width;
+  const myImage({super.key,  this.src, this.height, this.width});
 
   @override
   Widget build(BuildContext context) {

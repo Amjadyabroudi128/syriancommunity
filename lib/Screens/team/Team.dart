@@ -47,7 +47,6 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                   if (snapshot.hasError) {
                     return Text('Something went wrong');
                   }
-
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return Text("Loading");
                   }

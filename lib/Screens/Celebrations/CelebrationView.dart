@@ -107,6 +107,7 @@ class Celebrations extends StatelessWidget {
                                padding: const EdgeInsets.all(1.0),
                                child: Container(
                                  child: data["image"] != null ? myImage(
+
                                    src: data["image"],
                                  ) : SizedBox.shrink(),
                                ),
