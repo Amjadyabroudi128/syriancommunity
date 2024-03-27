@@ -24,19 +24,19 @@ class AddMember extends StatefulWidget {
 class _AddMemberState extends State<AddMember> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
-  File? file;
-  String? url;
-  Future pickImage() async {
-    final ImagePicker picker = ImagePicker();
-    final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
-    if (imageCamera != null) {
-      file = File(imageCamera.path);
-      var imagename = basename(imageCamera.path);
-      var refStorage = FirebaseStorage.instance.ref(imagename);
-      await refStorage.putFile(file!);
-       url = await refStorage.getDownloadURL();
-    }
-  }
+  // File? file;
+  // String? url;
+  // Future pickImage() async {
+  //   final ImagePicker picker = ImagePicker();
+  //   final XFile? imageCamera = await picker.pickImage(source: ImageSource.gallery);
+  //   if (imageCamera != null) {
+  //     file = File(imageCamera.path);
+  //     var imagename = basename(imageCamera.path);
+  //     var refStorage = FirebaseStorage.instance.ref(imagename);
+  //     await refStorage.putFile(file!);
+  //      url = await refStorage.getDownloadURL();
+  //   }
+  // }
   final CollectionReference members =
   FirebaseFirestore.instance.collection('members');
   @override
@@ -65,7 +65,7 @@ class _AddMemberState extends State<AddMember> {
                   child: CustomButton(
                     title: AppLocalizations.of(context)!.image,
                     onPressed: () async {
-                    await pickImage();
+                    await ();
                       setState(() {
                       });
                     },
