@@ -38,13 +38,13 @@ class _AddMemberState extends State<AddMember> {
               children: [
                 padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
                 CustomTextForm(hinttext: "name", myController: name,
-                    suffixIcon: IconButton(onPressed: clearText, icon: Icon(Icons.clear), color: Colors.black,)
+                    suffixIcon: IconButton(onPressed: name.clear, icon: Icon(Icons.clear), color: Colors.black,)
 
                 ),
                 sizedBox(height: 20,),
                 padding(child: Text(AppLocalizations.of(context)!.details, style: TextStyles.font14green,)),
                 CustomTextForm(maxLines: null, hinttext: "details", myController: details,
-                  suffixIcon: IconButton(onPressed: clearText, icon: Icon(Icons.clear), color: Colors.black,)
+                  suffixIcon: IconButton(onPressed: details.clear, icon: Icon(Icons.clear), color: Colors.black,)
                 ),
                 sizedBox(height: 12,),
                 Center(
@@ -99,9 +99,5 @@ class _AddMemberState extends State<AddMember> {
         ),
       ),
     );
-  }
-  void clearText() {
-    name.clear();
-    details.clear();
   }
 }
