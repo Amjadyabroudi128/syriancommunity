@@ -67,14 +67,20 @@ class _EditMemberState extends State<EditMember> {
                   ),
                 ),
                 padding(child: Text("Name", style: TextStyles.font14green,)),
-                CustomTextForm(hinttext: "name", myController: name),
+                CustomTextForm(hinttext: "name", myController: name,
+                    suffixIcon: IconButton(onPressed: name.clear, icon: Icon(Icons.clear), color: Colors.black,)
+
+                ),
                 sizedBox(height: 20,),
                 padding(child: Text("Details", style: TextStyles.font14green,)),
                 CustomTextForm(
                   maxLines: 5,
                     hinttext: "details",
-                    myController: details),
-                sizedBox(),
+                    myController: details,
+                    suffixIcon: IconButton(onPressed: details.clear, icon: Icon(Icons.clear), color: Colors.black,)
+
+                ),
+                sizedBox(height: 2,),
                 Center(
                   child: CustomButton(
                     title: "get image",
@@ -86,7 +92,7 @@ class _EditMemberState extends State<EditMember> {
                     color: ColorManager.addEdit,
                   ),
                 ),
-                sizedBox(height: 15,),
+                sizedBox(height: 5,),
                  Row(
                    mainAxisAlignment: MainAxisAlignment.center,
                    children: [
@@ -101,7 +107,7 @@ class _EditMemberState extends State<EditMember> {
                             );
                             Navigator.pop(context);
                           },
-                          title: "Edit", color: ColorManager.addEdit,),
+                          title: "Edit", color: ColorManager.submit,),
                      sizedBox(width: 16,),
                      CustomButton(onPressed: (){
                        Navigator.pop(context);
