@@ -20,6 +20,8 @@ class AddInfo extends StatefulWidget {
 class _AddInfoState extends State<AddInfo> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
+  ScrollController _scrollController = ScrollController();
+
   DateTime today = DateTime.now();
 
   @override
@@ -47,7 +49,7 @@ class _AddInfoState extends State<AddInfo> {
                     myController: details,
                   maxLines: 6,
                 ),
-                sizedBox(),
+                sizedBox(height: 10,),
                    Row(
                      mainAxisAlignment: MainAxisAlignment.center,
                      children: [
