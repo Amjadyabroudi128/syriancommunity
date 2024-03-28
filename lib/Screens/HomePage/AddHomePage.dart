@@ -36,19 +36,12 @@ class _AddInfoState extends State<AddInfo> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Padding(
-                //   padding: const EdgeInsets.only(left: 12, bottom: 10),
-                //   child: Text(AppLocalizations.of(context)!.name),
-                // ),
                 padding(child: Text(AppLocalizations.of(context)!.name)),
                   CustomTextForm(
                       hinttext: "name",
                       myController: name),
                 sizedBox(),
-                Padding(
-                  padding: const EdgeInsets.only(left: 12, bottom: 10),
-                  child: Text(AppLocalizations.of(context)!.details),
-                ),
+                padding(child: Text(AppLocalizations.of(context)!.details,)),
                 CustomTextForm(
                     hinttext: "details",
                     myController: details,
