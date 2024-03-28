@@ -65,7 +65,7 @@ class _AddInfoState extends State<AddInfo> {
                            await FirebaseMessaging.instance.subscribeToTopic("topic");
                            Navigator.of(context).pushNamed("homepage");
                           },
-                          title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,),
+                          title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,),
                        sizedBox(width: 15,),
                        CustomButton(onPressed: (){
                          Navigator.pop(context);
