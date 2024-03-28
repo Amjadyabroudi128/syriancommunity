@@ -37,10 +37,15 @@ class _AddMemberState extends State<AddMember> {
               // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
-                CustomTextForm(hinttext: "name", myController: name),
+                CustomTextForm(hinttext: "name", myController: name,
+                    suffixIcon: IconButton(onPressed: clearText, icon: Icon(Icons.clear), color: Colors.black,)
+
+                ),
                 sizedBox(height: 20,),
                 padding(child: Text(AppLocalizations.of(context)!.details, style: TextStyles.font14green,)),
-                CustomTextForm(maxLines: 5, hinttext: "details", myController: details),
+                CustomTextForm(maxLines: null, hinttext: "details", myController: details,
+                  suffixIcon: IconButton(onPressed: clearText, icon: Icon(Icons.clear), color: Colors.black,)
+                ),
                 sizedBox(height: 12,),
                 Center(
                   child: CustomButton(
@@ -79,8 +84,6 @@ class _AddMemberState extends State<AddMember> {
                               Navigator.pop(context);
 
                             }
-
-                            clearText();
                           },
                           title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,),
                        sizedBox(width: 15,),
