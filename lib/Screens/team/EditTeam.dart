@@ -17,7 +17,7 @@ class EditMember extends StatefulWidget {
   final String oldDetail;
   final String? oldUrl;
 
-  const EditMember({Key? key, required this.DocID, required this.oldName, required this.oldDetail,  this.oldUrl,}) : super(key: key);
+  const EditMember({Key? key, required this.DocID, required this.oldName, required this.oldDetail,  this.oldUrl, this.document,}) : super(key: key);
 
   @override
   State<EditMember> createState() => _EditMemberState();
@@ -66,13 +66,13 @@ class _EditMemberState extends State<EditMember> {
                     ),
                   ),
                 ),
-                padding(child: Text("Name", style: TextStyles.font14green,)),
+                padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
                 CustomTextForm(hinttext: "name", myController: name,
                     suffixIcon: IconButton(onPressed: name.clear, icon: Icon(Icons.clear), color: Colors.black,)
 
                 ),
                 sizedBox(height: 20,),
-                padding(child: Text("Details", style: TextStyles.font14green,)),
+                padding(child: Text(AppLocalizations.of(context)!.details, style: TextStyles.font14green,)),
                 CustomTextForm(
                   maxLines: 5,
                     hinttext: "details",
@@ -83,7 +83,7 @@ class _EditMemberState extends State<EditMember> {
                 sizedBox(height: 2,),
                 Center(
                   child: CustomButton(
-                    title: "get image",
+                    title: AppLocalizations.of(context)!.image,
                     onPressed: () async {
                       await url.pickImage();
                       setState(() {
@@ -107,7 +107,7 @@ class _EditMemberState extends State<EditMember> {
                             );
                             Navigator.pop(context);
                           },
-                          title: "Edit", color: ColorManager.submit,),
+                       title: AppLocalizations.of(context)!.edit, color: ColorManager.submit,),
                      sizedBox(width: 16,),
                      CustomButton(onPressed: (){
                        Navigator.pop(context);
