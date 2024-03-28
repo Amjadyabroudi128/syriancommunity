@@ -84,10 +84,11 @@ class Celebrations extends StatelessWidget {
                               ),
                              user != null ? GestureDetector(
                                 child: Padding(
-                                  padding: const EdgeInsets.all(1.0),
+                                  padding:  EdgeInsets.all(1.0),
                                   child: Container(
                                     child: data["image"] != null? myImage(
-                                      src: data["image"],
+                                      width: MediaQuery.of(context).size.width,
+                                    src: data["image"],
                                     ) : SizedBox.shrink(),
                                     ),
                                 ),
@@ -107,7 +108,6 @@ class Celebrations extends StatelessWidget {
                                padding: const EdgeInsets.all(1.0),
                                child: Container(
                                  child: data["image"] != null ? myImage(
-
                                    src: data["image"],
                                  ) : SizedBox.shrink(),
                                ),
