@@ -10,7 +10,8 @@ class myImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.network(
       src!,
-      width: MediaQuery.of(context).size.width,
+      // width: MediaQuery.of(context).size.width,
+      width: width,
       height: MediaQuery.of(context).size.height * 0.40,
 
     );
