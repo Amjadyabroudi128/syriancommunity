@@ -108,6 +108,7 @@ class Celebrations extends StatelessWidget {
                                padding: const EdgeInsets.all(1.0),
                                child: Container(
                                  child: data["image"] != null ? myImage(
+                                   width: MediaQuery.of(context).size.width,
                                    src: data["image"],
                                  ) : SizedBox.shrink(),
                                ),
