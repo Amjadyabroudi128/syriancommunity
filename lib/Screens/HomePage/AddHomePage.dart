@@ -48,23 +48,31 @@ class _AddInfoState extends State<AddInfo> {
                   maxLines: 6,
                 ),
                 sizedBox(),
-                Center(
-                  child: CustomButton(
-                      onPressed: () async {
-                       await home.doc().set(
-                         {
-                         "name" : name.text,
-                           "details" : details.text,
-                           "time" :today,
-                         }
-                       );
-                       clearText();
-                       await FirebaseApi().initNotifications();
-                       await FirebaseMessaging.instance.subscribeToTopic("topic");
-                       Navigator.of(context).pushNamed("homepage");
-                      },
-                      title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,),
-                )
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                       CustomButton(
+                          onPressed: () async {
+                           await home.doc().set(
+                             {
+                             "name" : name.text,
+                               "details" : details.text,
+                               "time" :today,
+                             }
+                           );
+                           clearText();
+                           await FirebaseApi().initNotifications();
+                           await FirebaseMessaging.instance.subscribeToTopic("topic");
+                           Navigator.of(context).pushNamed("homepage");
+                          },
+                          title: AppLocalizations.of(context)!.submit, color: ColorManager.addEdit,),
+                       sizedBox(width: 15,),
+                       CustomButton(onPressed: (){
+                         Navigator.pop(context);
+                       }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,)
+                     ],
+                   ),
+
               ],
             ),
           ),
