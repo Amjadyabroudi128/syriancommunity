@@ -65,6 +65,7 @@ import 'fontSize.dart';
      ),
      textTheme: ButtonTextTheme.primary,
    ),
+
    inputDecorationTheme: InputDecorationTheme(
      hintStyle: TextStyles.hintText,
      // contentPadding: EdgeInsets.all(30),
