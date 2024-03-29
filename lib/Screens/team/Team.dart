@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/classes/pickImage.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
+import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
 import 'package:syrianadmin/themes/colors.dart';
@@ -76,10 +78,10 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                             child: Card(
                               shape: const CircleBorder(),
                               clipBehavior: Clip.antiAlias,
-                              child: data["image"] != null ? Image.network(
-                                data["image"],
-                                width: 240,
+                              child: data["image"] !=  null ? myImage(
+                                src: data["image"],
                                 height: 240,
+                                width: 240,
                                 fit: BoxFit.cover,
                               ) : SizedBox.shrink(),
                             ),
