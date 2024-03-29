@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
+import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
 import '../../themes/colors.dart';
@@ -61,7 +62,8 @@ class _CommunityState extends State<Community> {
                       padding(
                         child: user != null ? GestureDetector(
                           child: Card(
-                            child: data["image"] != null ? Image.network(data["image"],
+                            child: data["image"] != null ? myImage(
+                              src: data["image"],
                               height: MediaQuery.of(context).size.height * 0.40,
                             ) : SizedBox.shrink(),
                           ),
@@ -75,8 +77,9 @@ class _CommunityState extends State<Community> {
                                 ));
                           },
                         ) : Card(
-                          child: data["image"] != null ? Image.network(data["image"],
-                            height: MediaQuery.of(context).size.height * 0.40,
+                          child: data["image"] != null ? myImage(
+                            src: data["image"],
+                              height: MediaQuery.of(context).size.height * 0.40,
                           ) : SizedBox.shrink(),
                         ),
                       ),
