@@ -4,6 +4,7 @@ import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/themes/colors.dart';
 import '../../components/SubmitButton.dart';
@@ -17,7 +18,7 @@ class EditMember extends StatefulWidget {
   final String oldDetail;
   final String? oldUrl;
 
-  const EditMember({Key? key, required this.DocID, required this.oldName, required this.oldDetail,  this.oldUrl, this.document,}) : super(key: key);
+  const EditMember({Key? key, required this.DocID, required this.oldName, required this.oldDetail,  this.oldUrl,}) : super(key: key);
 
   @override
   State<EditMember> createState() => _EditMemberState();
@@ -58,12 +59,20 @@ class _EditMemberState extends State<EditMember> {
                     shape: const CircleBorder(),
                     clipBehavior: Clip.antiAlias,
                     child: Center(
-                      child: url.url != null ? Image.network(url.url!,
+                      child: url.url != null ? myImage(
+                        src: url.url,
                         width: 240,
                         height: 240,
-                        fit: BoxFit.cover,
-                      ) : SizedBox.shrink()
+                        fit: BoxFit.cover
+                      ) : SizedBox.shrink(),
                     ),
+                    // child: Center(
+                    //   child: url.url != null ? Image.network(url.url!,
+                    //     width: 240,
+                    //     height: 240,
+                    //     fit: BoxFit.cover,
+                    //   ) : SizedBox.shrink()
+                    // ),
                   ),
                 ),
                 padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
