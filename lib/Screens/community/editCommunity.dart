@@ -50,8 +50,6 @@ class _EditCommunityState extends State<EditCommunity> {
                 child: Center(
                   child: url.url != null ?myImage(
                     src: url.url,
-                    height: MediaQuery.of(context).size.height * 0.40,
-                    width: MediaQuery.of(context).size.width,
                   ) : SizedBox.shrink(),
                 ),
               ),
