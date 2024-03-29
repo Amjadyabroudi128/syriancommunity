@@ -98,10 +98,10 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                           Card(
                             shape: const CircleBorder(),
                             clipBehavior: Clip.antiAlias,
-                            child: data["image"] != null ? Image.network(
-                              data["image"],
-                              width: 240,
+                            child: data["image"] !=  null ? myImage(
+                              src: data["image"],
                               height: 240,
+                              width: 240,
                               fit: BoxFit.cover,
                             ) : SizedBox.shrink(),
                           ),
