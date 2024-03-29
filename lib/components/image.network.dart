@@ -4,7 +4,8 @@ class myImage extends StatelessWidget {
  final String? src;
  final double? height;
  final double? width;
-  const myImage({super.key,  this.src, this.height, this.width});
+ final BoxFit? fit;
+  const myImage({super.key,  this.src, this.height, this.width, this.fit});
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +13,9 @@ class myImage extends StatelessWidget {
       src!,
       // width: MediaQuery.of(context).size.width,
       width: width,
-      height: MediaQuery.of(context).size.height * 0.40,
-
+      height: height,
+      // height: MediaQuery.of(context).size.height * 0.40,
+      fit: fit,
     );
   }
 }
