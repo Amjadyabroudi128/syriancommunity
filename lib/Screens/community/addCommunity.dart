@@ -73,7 +73,7 @@ class _addCommunityState extends State<addCommunity> {
                           "details" : details.text,
                           "image" : url.url,
                         });
-                       Navigator.pushReplacementNamed(context, 'community');
+                       Navigator.pushReplacementNamed(context,'community');
                       }
                     }
                     , title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,

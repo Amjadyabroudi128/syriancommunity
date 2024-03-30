@@ -88,7 +88,8 @@ class Celebrations extends StatelessWidget {
                                   child: Container(
                                     child: data["image"] != null? myImage(
                                       width: MediaQuery.of(context).size.width,
-                                    src: data["image"],
+                                      height: MediaQuery.of(context).size.height * 0.40,
+                                      src: data["image"],
                                     ) : SizedBox.shrink(),
                                     ),
                                 ),
@@ -109,6 +110,7 @@ class Celebrations extends StatelessWidget {
                                child: Container(
                                  child: data["image"] != null ? myImage(
                                    width: MediaQuery.of(context).size.width,
+                                   height: MediaQuery.of(context).size.height * 0.40,
                                    src: data["image"],
                                  ) : SizedBox.shrink(),
                                ),

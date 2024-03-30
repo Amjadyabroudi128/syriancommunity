@@ -3,7 +3,6 @@ import 'colors.dart';
 import 'fontSize.dart';
 
  ThemeData appTheme = ThemeData(
-
      useMaterial3: false,
      cardColor: ColorManager.cardColor,
      cardTheme: CardTheme(
