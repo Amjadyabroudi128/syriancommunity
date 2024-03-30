@@ -15,6 +15,7 @@ import 'fontSize.dart';
 
      iconTheme: IconThemeData(
        size: 30,
+       color: Colors.black
      ),
      textButtonTheme: TextButtonThemeData(
        style: TextButton.styleFrom(
