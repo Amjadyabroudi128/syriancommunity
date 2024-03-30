@@ -33,10 +33,16 @@ class _AddCelebrationState extends State<AddCelebration> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               padding(child: Text(AppLocalizations.of(context)!.celebrations)),
-              CustomTextForm(hinttext: "e.g: Christmas", myController: celebrationName),
+              CustomTextForm(hinttext: "e.g: Christmas", myController: celebrationName,
+                  suffixIcon: IconButton(onPressed: celebrationName.clear, icon: Icon(Icons.clear), color: Colors.black,)
+
+              ),
               sizedBox(),
               padding(child: Text(AppLocalizations.of(context)!.details),),
-              CustomTextForm(hinttext: "what we do ", myController: celebrationDetail, maxLines: 7,),
+              CustomTextForm(hinttext: "what we do ", myController: celebrationDetail, maxLines: 6,
+                  suffixIcon: IconButton(onPressed: celebrationDetail.clear, icon: Icon(Icons.clear), color: Colors.black,)
+
+              ),
               sizedBox(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
