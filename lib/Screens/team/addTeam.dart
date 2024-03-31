@@ -39,7 +39,6 @@ class _AddMemberState extends State<AddMember> {
                 padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
                 CustomTextForm(hinttext: "name", myController: name,
                     suffixIcon: IconButton(onPressed: name.clear, icon: Icon(Icons.clear), color: Colors.black,)
-
                 ),
                 sizedBox(height: 20,),
                 padding(child: Text(AppLocalizations.of(context)!.details, style: TextStyles.font14green,)),
@@ -84,6 +83,7 @@ class _AddMemberState extends State<AddMember> {
                               Navigator.pop(context);
 
                             }
+                            clearText();
                           },
                           title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,),
                        sizedBox(width: 15,),
@@ -99,5 +99,9 @@ class _AddMemberState extends State<AddMember> {
         ),
       ),
     );
+  }
+  void clearText() {
+    name.clear();
+    details.clear();
   }
 }
