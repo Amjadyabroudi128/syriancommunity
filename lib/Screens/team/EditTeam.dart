@@ -66,13 +66,6 @@ class _EditMemberState extends State<EditMember> {
                         fit: BoxFit.cover
                       ) : SizedBox.shrink(),
                     ),
-                    // child: Center(
-                    //   child: url.url != null ? Image.network(url.url!,
-                    //     width: 240,
-                    //     height: 240,
-                    //     fit: BoxFit.cover,
-                    //   ) : SizedBox.shrink()
-                    // ),
                   ),
                 ),
                 padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),

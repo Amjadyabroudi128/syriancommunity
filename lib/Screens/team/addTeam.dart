@@ -20,6 +20,7 @@ class AddMember extends StatefulWidget {
 class _AddMemberState extends State<AddMember> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
+
   final CollectionReference members =
   FirebaseFirestore.instance.collection('members');
   @override
