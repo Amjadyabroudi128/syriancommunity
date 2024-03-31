@@ -124,4 +124,8 @@ class _EditMemberState extends State<EditMember> {
       ),
     );
   }
+  void clearText() {
+    name.clear();
+    details.clear();
+  }
 }
