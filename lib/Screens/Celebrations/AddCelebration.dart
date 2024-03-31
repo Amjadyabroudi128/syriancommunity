@@ -90,7 +90,7 @@ class _AddCelebrationState extends State<AddCelebration> {
                      },
                      title: AppLocalizations.of(context)!.cancel,
                      color: ColorManager.delete,
-                     textColor: Colors.white,
+
                    )
                  ],
                ),
