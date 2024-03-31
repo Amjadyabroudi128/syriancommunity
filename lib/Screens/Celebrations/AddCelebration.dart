@@ -26,8 +26,7 @@ class _AddCelebrationState extends State<AddCelebration> {
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.addCelebration),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
+      body: padding(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

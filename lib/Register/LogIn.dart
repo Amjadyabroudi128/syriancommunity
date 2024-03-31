@@ -15,6 +15,8 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   String testEmail = "SussexCommunity@gmail.com";
   String testPassword = "Syria963";
+  bool passwordVisible=false;
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
