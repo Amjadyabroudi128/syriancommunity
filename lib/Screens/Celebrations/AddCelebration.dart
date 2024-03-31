@@ -81,6 +81,7 @@ class _AddCelebrationState extends State<AddCelebration> {
                             );
                           }
                           Navigator.of(context).pop();
+                          clearText();
                         }, title: AppLocalizations.of(context)!.submit, color:ColorManager.submit, ),
                    sizedBox(width: 20,),
                    CustomButton(
@@ -98,5 +99,9 @@ class _AddCelebrationState extends State<AddCelebration> {
         ),
       ),
     );
+  }
+  void clearText() {
+    celebrationName.clear();
+    celebrationDetail.clear();
   }
 }
