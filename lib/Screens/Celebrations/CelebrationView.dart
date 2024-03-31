@@ -76,13 +76,10 @@ class Celebrations extends StatelessWidget {
                         children: snapshot.data!.docs.map((DocumentSnapshot document){
                           Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
                           return Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Padding(
-                                padding:  EdgeInsets.only(bottom: 5, top: 10),
-                                child: Center(child: Text(data["name"], style: TextStyles.font14green)),
-                              ),
-                             user != null ? GestureDetector(
+                              padding(child: Text(data["name"], style: TextStyles.font14green,)),
+                              user != null ? GestureDetector(
                                 child: Padding(
                                   padding:  EdgeInsets.all(1.0),
                                   child: Container(

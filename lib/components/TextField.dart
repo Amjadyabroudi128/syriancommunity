@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../themes/fontSize.dart';
 
 class CustomTextForm extends StatelessWidget {
   final String hinttext;
