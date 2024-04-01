@@ -36,8 +36,7 @@ class _ContactUsState extends State<ContactUs> {
               behavior: ScrollBehavior(),
               child: SingleChildScrollView(
                 child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  child: padding(
                     child:
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,8 +73,7 @@ class _ContactUsState extends State<ContactUs> {
                                             width: MediaQuery.of(context).size.width,
                                             child: IntrinsicWidth(
                                               child: Card(
-                                                child: Padding(
-                                                  padding: EdgeInsets.all(12),
+                                                child: padding(
                                                   child: Column(
                                                     mainAxisSize: MainAxisSize.min,
                                                     crossAxisAlignment: CrossAxisAlignment.start,
