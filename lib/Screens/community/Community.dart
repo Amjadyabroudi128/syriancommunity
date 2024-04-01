@@ -91,8 +91,7 @@ class _CommunityState extends State<Community> {
                           child: Card(
                             child: Column(
                               children: [
-                                  Padding(
-                                    padding:  EdgeInsets.all(14),
+                                  padding(
                                     child: Text(data["details"], style: TextStyles.font17,),
                                   ),
                                   Padding(
