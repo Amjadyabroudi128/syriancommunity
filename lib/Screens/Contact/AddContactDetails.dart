@@ -55,9 +55,13 @@ class _AddContactDetailsState extends State<AddContactDetails> {
                   suffixIcon: IconButton(onPressed: postcode.clear, icon: Icon(Icons.clear), color: Colors.black,)
               ),
               padding(child: Text(AppLocalizations.of(context)!.email)),
-              CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: email),
+              CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: email,
+                  suffixIcon: IconButton(onPressed: email.clear, icon: Icon(Icons.clear), color: Colors.black,)
+              ),
               padding(child: Text(AppLocalizations.of(context)!.phone),),
-              CustomTextForm(hinttext: AppLocalizations.of(context)!.phone, myController: phone),
+              CustomTextForm(hinttext: AppLocalizations.of(context)!.phone, myController: phone,
+                  suffixIcon: IconButton(onPressed: phone.clear, icon: Icon(Icons.clear), color: Colors.black,)
+              ),
               sizedBox(height: 10,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
