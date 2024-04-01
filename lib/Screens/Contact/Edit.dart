@@ -57,21 +57,37 @@ class _AddContactDetailsState extends State<EditDetails> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              sizedBox(),
               padding(child: Text(AppLocalizations.of(context)!.place)),
-              CustomTextForm(hinttext: "e.g : Brighton college", myController: place),
+              sizedBox(height: 8,),
+              CustomTextForm(hinttext: "e.g : Brighton college", myController: place,
+                  suffixIcon: IconButton(onPressed: place.clear, icon: Icon(Icons.clear), color: Colors.black,)
+              ),
               sizedBox(),
               padding(child: Text(AppLocalizations.of(context)!.streetName)),
-              CustomTextForm(hinttext: "e.g: Eastern Road",  myController: road),
+              sizedBox(height: 7,),
+              CustomTextForm(hinttext: "e.g: Eastern Road",  myController: road,
+                  suffixIcon: IconButton(onPressed: road.clear, icon: Icon(Icons.clear), color: Colors.black,)
+              ),
               padding(child: Text(AppLocalizations.of(context)!.city)),
-              CustomTextForm(hinttext: "e.g: Brighton", myController: city),
+              sizedBox(height: 7,),
+              CustomTextForm(hinttext: "e.g: Brighton", myController: city,
+                  suffixIcon: IconButton(onPressed: city.clear, icon: Icon(Icons.clear), color: Colors.black,)
+              ),
               padding(child: Text(AppLocalizations.of(context)!.postCode)),
-              CustomTextForm(hinttext: "e.g: BN2 OAL", myController: postcode),
+              sizedBox(height: 7,),
+              CustomTextForm(hinttext: "e.g: BN2 OAL", myController: postcode,
+                  suffixIcon: IconButton(onPressed: postcode.clear, icon: Icon(Icons.clear), color: Colors.black,)
+              ),
               padding(child: Text(AppLocalizations.of(context)!.email)),
-              CustomTextForm(hinttext: "email", myController: email),
-              padding(child: Text(AppLocalizations.of(context)!.phone)),
-              CustomTextForm(hinttext: "phone", myController: phone),
-              sizedBox(),
+              sizedBox(height: 7,),
+              CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: email,
+                  suffixIcon: IconButton(onPressed: email.clear, icon: Icon(Icons.clear), color: Colors.black,)
+              ),
+              padding(child: Text(AppLocalizations.of(context)!.phone),),
+              sizedBox(height: 7,),
+              CustomTextForm(hinttext: AppLocalizations.of(context)!.phone, myController: phone,
+                  suffixIcon: IconButton(onPressed: phone.clear, icon: Icon(Icons.clear), color: Colors.black,)
+              ),
               Center(child:
               CustomButton
                 (onPressed: () async {
