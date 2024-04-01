@@ -42,8 +42,7 @@ class _EditCelebrationState extends State<EditCelebration> {
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.addCelebration),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
+      body: padding(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
