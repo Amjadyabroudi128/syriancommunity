@@ -90,41 +90,30 @@ class _ContactUsState extends State<ContactUs> {
 
                                                       Padding(
                                                         padding: const EdgeInsets.only(left: 300),
-                                                        child: user != null ? PopupMenuButton(
-                                                          iconSize: 30,
-                                                          // add icon, by default "3 dot" icon
-                                                          // icon: Icon(Icons.book)
-                                                          itemBuilder: (context){
-                                                            return [
-                                                              PopupMenuItem<int>(
-                                                                  value: 0,
-                                                                  child:Icon(Icons.edit)
-                                                              ),
-
-                                                              PopupMenuItem<int>(
-                                                                value: 1,
-                                                                child: Icon(Icons.delete, color: Colors.red,),
-                                                              ),
-                                                            ];
-                                                          },
-                                                          onSelected:(value){
-                                                            if(value == 0){
-                                                              Navigator.of(context).push(
-                                                                  MaterialPageRoute(builder: (context) =>
-                                                                      EditDetails(DocID: document.id,
-                                                                        oldPlace: data["place"],
-                                                                        oldRoad: data["street name"],
-                                                                        oldCity: data["city"],
-                                                                        oldEmail: data["email"],
-                                                                        oldPHone: data["phone"],
-                                                                        oldPostCode: data["post code"],)));
-                                                            }else if(value == 1){
-                                                              FirebaseFirestore.instance.collection("contact").doc(document.id).delete();
-                                                              Navigator.of(context).pushNamed("contactus");
-                                                            }
-                                                          },
-
-                                                        ) : SizedBox(),
+                                                        child: user != null ? MyPopUpMenu(
+                                                            itemBuilder: (context) {
+                                                              return [
+                                                                PopupMenuItem(value: 0, child: Text(AppLocalizations.of(context)!.edit),),
+                                                                PopupMenuItem(value: 1, child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),)
+                                                              ];
+                                                            },
+                                                            onSelected: (value) {
+                                                              if (value == 0) {
+                                                                Navigator.of(context).push(
+                                                                    CupertinoPageRoute(
+                                                                        builder: (context) =>
+                                                                            EditDetails(DocID: document.id,
+                                                                              oldPlace: data["place"],
+                                                                              oldRoad: data["street name"],
+                                                                              oldCity: data["city"],
+                                                                              oldEmail: data["email"],
+                                                                              oldPHone: data["phone"],
+                                                                              oldPostCode: data["post code"],)));
+                                                              } else if (value == 1) {
+                                                                contact.doc(document.id).delete();
+                                                                Navigator.of(context).pushNamed("contactus");
+                                                              }
+                                                            }): SizedBox.shrink(),
                                                       ),
                                                     ],
                                                   ),
