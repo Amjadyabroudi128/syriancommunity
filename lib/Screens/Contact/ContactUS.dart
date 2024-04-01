@@ -181,7 +181,7 @@ class _ContactUsState extends State<ContactUs> {
                                                         itemBuilder: (context) {
                                                           return [
                                                             PopupMenuItem(value: 0, child: Text(AppLocalizations.of(context)!.edit),),
-                                                            PopupMenuItem(value: 1, child: Text(AppLocalizations.of(context)!.delete),)
+                                                            PopupMenuItem(value: 1, child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),)
                                                           ];
                                                         },
                                                         onSelected: (value) {
