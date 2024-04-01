@@ -88,21 +88,30 @@ class _AddContactDetailsState extends State<EditDetails> {
               CustomTextForm(hinttext: AppLocalizations.of(context)!.phone, myController: phone,
                   suffixIcon: IconButton(onPressed: phone.clear, icon: Icon(Icons.clear), color: Colors.black,)
               ),
-              Center(child:
-              CustomButton
-                (onPressed: () async {
-                await contact.doc(widget.DocID).update({
-                  "place" : place.text,
-                  "street name" : road.text,
-                  "city" : city.text,
-                  "post code" : postcode.text,
-                  "email" : email.text,
-                  "phone" : phone.text
-                });
-                Navigator.pop(context);
-                clearText();
-              }, title: AppLocalizations.of(context)!.update, color: ColorManager.addEdit,)
+              sizedBox(height: 5,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomButton
+                    (onPressed: () async {
+                    await contact.doc(widget.DocID).update({
+                      "place" : place.text,
+                      "street name" : road.text,
+                      "city" : city.text,
+                      "post code" : postcode.text,
+                      "email" : email.text,
+                      "phone" : phone.text
+                    });
+                    Navigator.pop(context);
+                    clearText();
+                  }, title: AppLocalizations.of(context)!.update, color: ColorManager.submit,),
+                  sizedBox(width: 10,),
+                  CustomButton(onPressed: (){
+                    Navigator.pop(context);
+                  }, title: "Cancel", color: ColorManager.delete,)
+                ],
               )
+
             ],
           ),
         ),
