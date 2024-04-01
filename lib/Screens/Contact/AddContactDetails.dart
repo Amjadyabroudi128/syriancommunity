@@ -47,9 +47,13 @@ class _AddContactDetailsState extends State<AddContactDetails> {
                   suffixIcon: IconButton(onPressed: road.clear, icon: Icon(Icons.clear), color: Colors.black,)
               ),
               padding(child: Text(AppLocalizations.of(context)!.city)),
-              CustomTextForm(hinttext: "e.g: Brighton", myController: city),
+              CustomTextForm(hinttext: "e.g: Brighton", myController: city,
+                  suffixIcon: IconButton(onPressed: city.clear, icon: Icon(Icons.clear), color: Colors.black,)
+              ),
               padding(child: Text(AppLocalizations.of(context)!.postCode)),
-              CustomTextForm(hinttext: "e.g: BN2 OAL", myController: postcode),
+              CustomTextForm(hinttext: "e.g: BN2 OAL", myController: postcode,
+                  suffixIcon: IconButton(onPressed: postcode.clear, icon: Icon(Icons.clear), color: Colors.black,)
+              ),
               padding(child: Text(AppLocalizations.of(context)!.email)),
               CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: email),
               padding(child: Text(AppLocalizations.of(context)!.phone),),
