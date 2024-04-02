@@ -60,6 +60,7 @@ class _EditHomeState extends State<EditHome> {
                               Navigator.of(context).pushNamed("homepage");
                             },
                             title: AppLocalizations.of(context)!.update, color: ColorManager.submit,),
+                    sizedBox(width: 10,),
                     CustomButton(onPressed: (){
                       Navigator.pop(context);
                     }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,)
