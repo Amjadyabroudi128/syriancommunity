@@ -94,7 +94,6 @@ class _HomePageState extends State<HomePage> {
                             child: Card(
                               child: padding(
                                 child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(formattedDate(data["time" ],context), style: TextStyles.fontdate,),
                                       sizedBox(height: 6,),
@@ -138,6 +137,7 @@ class _HomePageState extends State<HomePage> {
                                           ): SizedBox.shrink(),
                                     ),
                                   ],
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                 ),
                               ),
                             ),
