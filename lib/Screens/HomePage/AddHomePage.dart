@@ -60,18 +60,25 @@ class _AddInfoState extends State<AddInfo> {
                                "time" : today
                                }
                              );
-                           } else {
+                           } else if (details == null){
                                  await home.doc().set(
                                    {
                                    "name" : name.text,
-                                     "details" : details.text,
                                      "time" :today,
                                    }
                                  );
-                                 clearText();
-                                 await FirebaseApi().initNotifications();
-                                 await FirebaseMessaging.instance.subscribeToTopic("topic");
-                                 Navigator.of(context).pushNamed("homepage");
+                           } else {
+                             await home.doc().set(
+                                 {
+                                   "name" : name.text,
+                                   "details" : details.text,
+                                   "time" :today,
+                                 }
+                             );
+                             clearText();
+                             await FirebaseApi().initNotifications();
+                             await FirebaseMessaging.instance.subscribeToTopic("topic");
+                             Navigator.of(context).pushNamed("homepage");
                            }
                          },
                             title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,),
