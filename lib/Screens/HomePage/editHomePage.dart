@@ -53,7 +53,6 @@ class _EditHomeState extends State<EditHome> {
                           {
                             "name" : name.text,
                             "details" : details.text,
-
                           }
                         );
                         Navigator.of(context).pushNamed("homepage");
