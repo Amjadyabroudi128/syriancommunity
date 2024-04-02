@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     Text(formattedDate(data["time" ],context), style: TextStyles.fontdate,),
                                       sizedBox(height: 6,),
-                                      Text(data["name"] != null ? data["name"] : SizedBox()),
+                                      Text(data["name"] != null ? data["name"] : SizedBox.shrink()),
                                     sizedBox(height: 6,),
                                     Text(data["details"]),
                                     Padding(
