@@ -20,8 +20,6 @@ class AddInfo extends StatefulWidget {
 class _AddInfoState extends State<AddInfo> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
-  ScrollController _scrollController = ScrollController();
-
   DateTime today = DateTime.now();
 
   @override
@@ -54,20 +52,44 @@ class _AddInfoState extends State<AddInfo> {
                      mainAxisAlignment: MainAxisAlignment.center,
                      children: [
                        CustomButton(
-                          onPressed: () async {
-                           await home.doc().set(
-                             {
-                             "name" : name.text,
-                               "details" : details.text,
-                               "time" :today,
-                             }
-                           );
-                           clearText();
-                           await FirebaseApi().initNotifications();
-                           await FirebaseMessaging.instance.subscribeToTopic("topic");
-                           Navigator.of(context).pushNamed("homepage");
-                          },
-                          title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,),
+                         onPressed: () async {
+                           if (name == null) {
+                             await home.doc().set(
+                               {
+                               "details": details.text,
+                               "time" : today
+                               }
+                             );
+                           } else {
+                                 await home.doc().set(
+                                   {
+                                   "name" : name.text,
+                                     "details" : details.text,
+                                     "time" :today,
+                                   }
+                                 );
+                                 clearText();
+                                 await FirebaseApi().initNotifications();
+                                 await FirebaseMessaging.instance.subscribeToTopic("topic");
+                                 Navigator.of(context).pushNamed("homepage");
+                           }
+                         },
+                            title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,),
+                       // CustomButton(
+                       //    onPressed: () async {
+                       //     await home.doc().set(
+                       //       {
+                       //       "name" : name.text,
+                       //         "details" : details.text,
+                       //         "time" :today,
+                       //       }
+                       //     );
+                       //     clearText();
+                       //     await FirebaseApi().initNotifications();
+                       //     await FirebaseMessaging.instance.subscribeToTopic("topic");
+                       //     Navigator.of(context).pushNamed("homepage");
+                       //    },
+                       //    title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,),
                        sizedBox(width: 15,),
                        CustomButton(onPressed: (){
                          Navigator.pop(context);
