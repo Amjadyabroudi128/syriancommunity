@@ -46,19 +46,26 @@ class _EditHomeState extends State<EditHome> {
                 padding(child: Text(AppLocalizations.of(context)!.details)),
                 CustomTextForm(hinttext: "details", myController: details, maxLines: 6,),
                 sizedBox(),
-                Center(
-                  child: CustomButton(
-                      onPressed: () async {
-                        await home.doc(widget.DocID).update(
-                          {
-                            "name" : name.text,
-                            "details" : details.text,
-                          }
-                        );
-                        Navigator.of(context).pushNamed("homepage");
-                      },
-                      title: AppLocalizations.of(context)!.update, color: ColorManager.addEdit,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CustomButton(
+                            onPressed: () async {
+                              await home.doc(widget.DocID).update(
+                                {
+                                  "name" : name.text,
+                                  "details" : details.text,
+                                }
+                              );
+                              Navigator.of(context).pushNamed("homepage");
+                            },
+                            title: AppLocalizations.of(context)!.update, color: ColorManager.addEdit,),
+                    CustomButton(onPressed: (){
+                      Navigator.pop(context);
+                    }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,)
+                  ],
                 )
+
               ],
             ),
           ),
