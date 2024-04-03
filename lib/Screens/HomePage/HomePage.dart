@@ -48,8 +48,8 @@ class _HomePageState extends State<HomePage> {
         title: Text(AppLocalizations.of(context)!.syrianCommunity),
       ),
       drawer: SideDrawer(),
-      body: Padding(
-        padding: const EdgeInsets.all(15.0),
+      body: padding(
+        // padding: const EdgeInsets.all(15.0),
         child: ListView(
           children: [
             Column(
