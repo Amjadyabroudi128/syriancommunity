@@ -86,6 +86,8 @@ class _AddMemberState extends State<AddMember> {
                                        "image" : url.url,
                                      }
                                  );
+                                 Navigator.pop(context);
+
                            }
                          },
                           // onPressed: () async {
