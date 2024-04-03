@@ -45,7 +45,8 @@ import 'fontSize.dart';
        borderRadius: BorderRadius.all(
          Radius.circular(20.0),
        )
-     )
+     ),
+
    ),
 
    expansionTileTheme: ExpansionTileThemeData(
@@ -83,7 +84,6 @@ import 'fontSize.dart';
                 color: ColorManager.hintText
            )
        ),
-
    ),
 
  );

@@ -134,7 +134,10 @@ class _HomePageState extends State<HomePage> {
                                             } else if (value == 1) {
                                               myHome.doc(document.id).delete();
                                             }
-                                          },
+                                            },
+                                        popUpAnimationStyle: AnimationStyle(
+                                          duration: Duration(milliseconds: 400)
+                                        ),
                                           ): SizedBox.shrink(),
                                     ),
                                   ],
