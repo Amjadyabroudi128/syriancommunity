@@ -12,7 +12,7 @@ import 'fontSize.dart';
          borderRadius: BorderRadius.circular(18.0),
        ),
      ),
-
+     
      iconTheme: IconThemeData(
        size: 30,
        color: Colors.black
@@ -41,6 +41,7 @@ import 'fontSize.dart';
      ),
 
    popupMenuTheme: PopupMenuThemeData(
+
      shape: RoundedRectangleBorder(
        borderRadius: BorderRadius.all(
          Radius.circular(20.0),

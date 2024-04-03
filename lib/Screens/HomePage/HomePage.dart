@@ -36,7 +36,9 @@ class _HomePageState extends State<HomePage> {
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
-              icon: Icon(Icons.list),
+              icon: Icon(
+                CupertinoIcons.list_bullet
+              ),
               onPressed: (){
                 Scaffold.of(context).openDrawer();
               },
