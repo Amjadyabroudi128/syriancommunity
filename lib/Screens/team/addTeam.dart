@@ -63,29 +63,54 @@ class _AddMemberState extends State<AddMember> {
                      mainAxisAlignment: MainAxisAlignment.center,
                      children: [
                        CustomButton(
-                          onPressed: () async {
-                            if (url.url == null) {
-                              await members.doc().set(
-                                  {
-                                    "name" : name.text,
-                                    "details" : details.text,
-                                  }
-                              );
-                              Navigator.pop(context);
-
-                            } else {
-                              await members.doc().set(
-                                  {
-                                    "name" : name.text,
-                                    "details" : details.text,
-                                    "image" : url.url,
-                                  }
-                              );
-                              Navigator.pop(context);
-
-                            }
-                            clearText();
-                          },
+                         onPressed: ()async {
+                           if (url.url == null) {
+                             await members.doc().set(
+                               {
+                               "name": name.text,
+                               "details": details.text
+                               }
+                             );
+                           } else if (details == null) {
+                             members.doc().set(
+                               {
+                                 "name": name.text,
+                                 "image": url.url
+                               }
+                             );
+                           } else {
+                                 await members.doc().set(
+                                     {
+                                       "name" : name.text,
+                                       "details" : details.text,
+                                       "image" : url.url,
+                                     }
+                                 );
+                           }
+                         },
+                          // onPressed: () async {
+                          //   if (url.url == null) {
+                          //     await members.doc().set(
+                          //         {
+                          //           "name" : name.text,
+                          //           "details" : details.text,
+                          //         }
+                          //     );
+                          //     Navigator.pop(context);
+                          //
+                          //   } else {
+                          //     await members.doc().set(
+                          //         {
+                          //           "name" : name.text,
+                          //           "details" : details.text,
+                          //           "image" : url.url,
+                          //         }
+                          //     );
+                          //     Navigator.pop(context);
+                          //
+                          //   }
+                          //   clearText();
+                          // },
                           title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,),
                        sizedBox(width: 15,),
                        CustomButton(onPressed: (){
