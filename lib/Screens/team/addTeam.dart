@@ -87,32 +87,10 @@ class _AddMemberState extends State<AddMember> {
                                      }
                                  );
                                  Navigator.pop(context);
-
+                                 clearText();
                            }
                          },
-                          // onPressed: () async {
-                          //   if (url.url == null) {
-                          //     await members.doc().set(
-                          //         {
-                          //           "name" : name.text,
-                          //           "details" : details.text,
-                          //         }
-                          //     );
-                          //     Navigator.pop(context);
-                          //
-                          //   } else {
-                          //     await members.doc().set(
-                          //         {
-                          //           "name" : name.text,
-                          //           "details" : details.text,
-                          //           "image" : url.url,
-                          //         }
-                          //     );
-                          //     Navigator.pop(context);
-                          //
-                          //   }
-                          //   clearText();
-                          // },
+
                           title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,),
                        sizedBox(width: 15,),
                        CustomButton(onPressed: (){
