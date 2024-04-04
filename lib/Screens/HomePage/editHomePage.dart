@@ -41,10 +41,15 @@ class _EditHomeState extends State<EditHome> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 padding(child: Text(AppLocalizations.of(context)!.name)),
-                CustomTextForm(hinttext: "name", myController: name),
+                CustomTextForm(hinttext: "name", myController: name,
+                    suffixIcon: IconButton(onPressed: name.clear, icon: Icon(Icons.clear), color: Colors.black,)
+
+                ),
                 sizedBox(height: 20,),
                 padding(child: Text(AppLocalizations.of(context)!.details)),
-                CustomTextForm(hinttext: "details", myController: details, maxLines: 6,),
+                CustomTextForm(hinttext: "details", myController: details, maxLines: 6,
+                    suffixIcon: IconButton(onPressed: details.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                ),
                 sizedBox(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
