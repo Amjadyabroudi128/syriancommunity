@@ -8,10 +8,7 @@ import '../../classes/pickImage.dart' as url;
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-import '../../themes/colors.dart';
-
-
+import 'package:syrianadmin/core/themes/colors.dart';
 class EditCelebration extends StatefulWidget {
   final String DocID;
   final String oldName;

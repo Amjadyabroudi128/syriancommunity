@@ -7,9 +7,9 @@ import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
-import 'package:syrianadmin/themes/colors.dart';
+import 'package:syrianadmin/core/themes/colors.dart';
+import 'package:syrianadmin/core/themes/fontSize.dart';
 import '../../components/SubmitButton.dart';
-import '../../themes/fontSize.dart';
 class Celebrations extends StatelessWidget {
   final document;
 

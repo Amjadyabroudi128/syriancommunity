@@ -6,8 +6,8 @@ import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
-import '../../themes/colors.dart';
-import '../../themes/fontSize.dart';
+import 'package:syrianadmin/core/themes/colors.dart';
+import 'package:syrianadmin/core/themes/fontSize.dart';
 import 'editCommunity.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

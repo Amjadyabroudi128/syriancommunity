@@ -3,12 +3,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/padding.dart';
-import 'package:syrianadmin/themes/colors.dart';
+import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 class addCommunity extends StatefulWidget {
   const addCommunity({Key? key}) : super(key: key);
 

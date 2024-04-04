@@ -5,7 +5,7 @@ import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/padding.dart';
-import 'package:syrianadmin/themes/colors.dart';
+import 'package:syrianadmin/core/themes/colors.dart';
 import '../../components/TextField.dart';
 class AddCelebration extends StatefulWidget {
   const AddCelebration({Key? key}) : super(key: key);
