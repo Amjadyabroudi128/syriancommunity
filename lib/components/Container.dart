@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:syrianadmin/components/myImages.dart';
 
 late double? height;
 late double? width;
@@ -27,8 +28,8 @@ class Containers {
   static Container image = Container(
     height: 250,
     decoration: BoxDecoration(
-      image: new DecorationImage(
-        image: AssetImage("images/syrianlogo.jpg"),
+      image:  DecorationImage(
+        image: AssetImage(myImages.logo),
         fit: BoxFit.cover,
       ),
     ),
