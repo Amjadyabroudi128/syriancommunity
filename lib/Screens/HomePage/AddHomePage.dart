@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
 import 'package:syrianadmin/components/padding.dart';
-import 'package:syrianadmin/themes/colors.dart';
+import 'package:syrianadmin/core/themes/colors.dart';
 import '../../Api/Firebase_api.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

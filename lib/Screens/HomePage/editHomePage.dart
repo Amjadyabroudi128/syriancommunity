@@ -1,8 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/padding.dart';
-import 'package:syrianadmin/themes/colors.dart';
-
+import 'package:syrianadmin/core/themes/colors.dart';
 import '../../components/Sizedbox.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';

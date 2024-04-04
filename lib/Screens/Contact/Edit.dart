@@ -7,9 +7,7 @@ import '../../components/Sizedbox.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-import '../../themes/colors.dart';
-
+import 'package:syrianadmin/core/themes/colors.dart';
 class EditDetails extends StatefulWidget {
   final String DocID;
   final String oldPlace;

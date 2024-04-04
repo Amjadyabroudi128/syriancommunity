@@ -5,11 +5,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:syrianadmin/Cubits/auth_cubit.dart';
 import 'package:syrianadmin/appRoute.dart';
 import 'package:syrianadmin/components/firebase_options.dart';
-import 'package:syrianadmin/themes/app_theme.dart';
 import 'Api/Firebase_api.dart';
 
 import 'Screens/HomePage/HomePage.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'core/themes/app_theme.dart';
 
 
  final NavigatorKey = GlobalKey<NavigatorState>();

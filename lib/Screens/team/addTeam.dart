@@ -5,10 +5,10 @@ import 'package:syrianadmin/components/padding.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
-
-import '../../themes/colors.dart';
-import '../../themes/fontSize.dart';
+import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../core/themes/fontSize.dart';
 
 class AddMember extends StatefulWidget {
   const AddMember({Key? key}) : super(key: key);
