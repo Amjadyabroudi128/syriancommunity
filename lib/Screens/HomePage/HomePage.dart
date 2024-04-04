@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
+                        sizedBox(
                           width: MediaQuery.of(context).size.width ,
                           child: IntrinsicHeight(
                             child: Card(
