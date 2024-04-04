@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                 user != null ? CustomButton(onPressed: (){
                   Navigator.of(context).pushNamed("addInfo");
                 }, title: AppLocalizations.of(context)!.addThings, color: ColorManager.addEdit) : sizedBox(),
-                sizedBox(),
+                const sizedBox(),
                  Text(AppLocalizations.of(context)!.news),
                 StreamBuilder(
                   stream: home.snapshots(),
@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                       return Text('Something went wrong');
                     }
                     if (snapshot.connectionState == ConnectionState.waiting) {
-                      return Text("Loading");
+                      return const Text("Loading");
                     }
                     if (snapshot.data!.docs.isEmpty) {
                       return  SafeArea(
