@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 import 'fontSize.dart';
 
- ThemeData appTheme = ThemeData(
+ class AppTheme {
+   static final _border = OutlineInputBorder(
+     borderSide: BorderSide(width: 1,
+         color: ColorManager.borderColor), //<-- SEE HERE
+     borderRadius: BorderRadius.circular(18.0),
+   );
+   static final themeData = ThemeData(
      useMaterial3: false,
      cardColor: ColorManager.cardColor,
      cardTheme: CardTheme(
@@ -12,10 +18,10 @@ import 'fontSize.dart';
          borderRadius: BorderRadius.circular(18.0),
        ),
      ),
-     
+
      iconTheme: IconThemeData(
-       size: 30,
-       color: Colors.black
+         size: 30,
+         color: Colors.black
      ),
      textButtonTheme: TextButtonThemeData(
        style: TextButton.styleFrom(
@@ -28,63 +34,56 @@ import 'fontSize.dart';
        ),
      ),
      drawerTheme: DrawerThemeData(
-       backgroundColor: Colors.white
+         backgroundColor: Colors.white
      ),
      appBarTheme: AppBarTheme(
-       color: ColorManager.specialGreen,
-       centerTitle: true,
-       toolbarHeight: 65,
-       iconTheme: IconThemeData(
-         size: 25,
-         color: ColorManager.expanstionTile
-       )
+         color: ColorManager.specialGreen,
+         centerTitle: true,
+         toolbarHeight: 65,
+         iconTheme: IconThemeData(
+             size: 25,
+             color: ColorManager.expanstionTile
+         )
      ),
 
-   popupMenuTheme: PopupMenuThemeData(
+     popupMenuTheme: PopupMenuThemeData(
 
-     shape: RoundedRectangleBorder(
-       borderRadius: BorderRadius.all(
-         Radius.circular(20.0),
-       )
-     ),
-
-   ),
-
-   expansionTileTheme: ExpansionTileThemeData(
-     backgroundColor: ColorManager.expanstionTile,
-     expansionAnimationStyle: AnimationStyle(
-       duration: Duration(milliseconds: 200)
-     ),
-     collapsedIconColor: Colors.black,
-     textColor: Colors.black,
-     iconColor: Colors.black
-   ),
-   buttonTheme: ButtonThemeData(
-     shape: RoundedRectangleBorder(
-       borderRadius: BorderRadius.all(
-         Radius.circular(15),
-       )
-     ),
-     textTheme: ButtonTextTheme.primary,
-   ),
-
-   inputDecorationTheme: InputDecorationTheme(
-     hintStyle: TextStyles.hintText,
-     // contentPadding: EdgeInsets.all(30),
-       border: OutlineInputBorder(
-         borderRadius: BorderRadius.circular(30),
-         borderSide: BorderSide(color: ColorManager.hintText),
-       ),
-     enabledBorder: OutlineInputBorder(
-       borderSide: BorderSide(width: 1, color: ColorManager.hintText), //<-- SEE HERE
-       borderRadius: BorderRadius.circular(50.0),
-     ),
-       focusedBorder: OutlineInputBorder(
-           borderRadius: BorderRadius.circular(30),
-           borderSide:  BorderSide(
-                color: ColorManager.hintText
+       shape: RoundedRectangleBorder(
+           borderRadius: BorderRadius.all(
+             Radius.circular(20.0),
            )
        ),
-   ),
 
- );
+     ),
+
+     expansionTileTheme: ExpansionTileThemeData(
+         backgroundColor: ColorManager.expanstionTile,
+         expansionAnimationStyle: AnimationStyle(
+             duration: Duration(milliseconds: 200)
+         ),
+         collapsedIconColor: Colors.black,
+         textColor: Colors.black,
+         iconColor: Colors.black
+     ),
+     buttonTheme: ButtonThemeData(
+       shape: RoundedRectangleBorder(
+           borderRadius: BorderRadius.all(
+             Radius.circular(15),
+           )
+       ),
+       textTheme: ButtonTextTheme.primary,
+     ),
+
+     inputDecorationTheme: InputDecorationTheme(
+       hintStyle: TextStyles.hintText,
+       // contentPadding: EdgeInsets.all(25),
+       border: OutlineInputBorder(
+         borderRadius: BorderRadius.circular(10),
+         borderSide: BorderSide(color: ColorManager.hintText),
+       ),
+       enabledBorder: _border,
+       focusedBorder: _border
+     ),
+
+   );
+ }
