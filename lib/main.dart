@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         locale: _locale,
-        theme: appTheme,
+        theme: AppTheme.themeData,
         home: HomePage(),
         navigatorKey: NavigatorKey,
         onGenerateRoute: AppRouter.onGenerateRoute,
