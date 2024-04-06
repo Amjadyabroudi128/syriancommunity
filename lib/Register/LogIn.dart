@@ -4,7 +4,6 @@ import 'package:syrianadmin/Cubits/auth_cubit.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -33,7 +32,7 @@ class _LoginState extends State<Login> {
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.login),
       ),
-      body: padding(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -41,7 +40,7 @@ class _LoginState extends State<Login> {
              sizedBox(height: 19,),
             CustomTextForm(hinttext: AppLocalizations.of(context)!.email,),
             sizedBox(height: 15,),
-            CustomTextForm(hinttext: AppLocalizations.of(context)!.password,),
+            CustomTextForm(hinttext: AppLocalizations.of(context)!.password, obscureText: true, maxLines: 1,),
             sizedBox(height: 20,),
              TextButton(
                 onPressed: () async {
