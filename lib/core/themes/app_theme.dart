@@ -9,6 +9,7 @@ import 'fontSize.dart';
      borderRadius: BorderRadius.circular(18.0),
    );
    static final themeData = ThemeData(
+   ).copyWith(
      useMaterial3: false,
      cardColor: ColorManager.cardColor,
      cardTheme: CardTheme(
@@ -75,15 +76,14 @@ import 'fontSize.dart';
      ),
 
      inputDecorationTheme: InputDecorationTheme(
-       hintStyle: TextStyles.hintText,
-       // contentPadding: EdgeInsets.all(25),
-       border: OutlineInputBorder(
-         borderRadius: BorderRadius.circular(10),
-         borderSide: BorderSide(color: ColorManager.hintText),
-       ),
-       enabledBorder: _border,
-       focusedBorder: _border
+         hintStyle: TextStyles.hintText,
+         // contentPadding: EdgeInsets.all(25),
+         border: OutlineInputBorder(
+           borderRadius: BorderRadius.circular(10),
+           borderSide: BorderSide(color: ColorManager.hintText),
+         ),
+         enabledBorder: _border,
+         focusedBorder: _border
      ),
-
    );
  }
