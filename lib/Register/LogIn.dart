@@ -15,7 +15,7 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   String testEmail = "SussexCommunity@gmail.com";
   String testPassword = "Syria963";
-  bool passwordVisible=false;
+  bool _isHidden = true;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,15 @@ class _LoginState extends State<Login> {
              sizedBox(height: 19,),
             CustomTextForm(hinttext: AppLocalizations.of(context)!.email,),
             sizedBox(height: 15,),
-            CustomTextForm(hinttext: AppLocalizations.of(context)!.password, obscureText: true, maxLines: 1,),
+            CustomTextForm(hinttext: AppLocalizations.of(context)!.password, obscureText: _isHidden, maxLines: 1,
+              suffixIcon: IconButton(
+                onPressed: (){
+                  _togglePasswordView();
+                },
+                icon: Icon(_isHidden ? Icons.visibility : Icons.visibility_off, // Add this line
+                ),
+              ),
+            ),
             sizedBox(height: 20,),
              TextButton(
                 onPressed: () async {
@@ -55,5 +63,10 @@ class _LoginState extends State<Login> {
     );
   },
 );
+  }
+  void _togglePasswordView() {
+    setState(() {
+      _isHidden = !_isHidden;
+    });
   }
 }
