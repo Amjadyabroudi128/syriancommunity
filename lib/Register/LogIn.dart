@@ -43,7 +43,9 @@ class _LoginState extends State<Login> {
             CustomTextForm(hinttext: AppLocalizations.of(context)!.password, obscureText: _isHidden, maxLines: 1,
               suffixIcon: IconButton(
                 onPressed: (){
-                  _togglePasswordView();
+                  setState(() {
+                    _isHidden = !_isHidden;
+                  });
                 },
                 icon: Icon(_isHidden ? Icons.visibility : Icons.visibility_off, // Add this line
                 ),
@@ -63,10 +65,5 @@ class _LoginState extends State<Login> {
     );
   },
 );
-  }
-  void _togglePasswordView() {
-    setState(() {
-      _isHidden = !_isHidden;
-    });
   }
 }
