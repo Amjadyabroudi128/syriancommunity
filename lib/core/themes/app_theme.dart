@@ -9,8 +9,8 @@ import 'fontSize.dart';
      borderRadius: BorderRadius.circular(18.0),
    );
    static final themeData = ThemeData(
-   ).copyWith(
      useMaterial3: false,
+   ).copyWith(
      cardColor: ColorManager.cardColor,
      cardTheme: CardTheme(
        elevation: 0,
