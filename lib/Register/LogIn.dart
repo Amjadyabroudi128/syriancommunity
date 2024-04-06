@@ -47,7 +47,8 @@ class _LoginState extends State<Login> {
                     _isHidden = !_isHidden;
                   });
                 },
-                icon: Icon(_isHidden ? Icons.visibility : Icons.visibility_off, // Add this line
+                icon: Icon(_isHidden ? Icons.visibility : Icons.visibility_off,
+                  color: _isHidden ? Colors.red : Colors.green,// Add this line
                 ),
               ),
             ),
