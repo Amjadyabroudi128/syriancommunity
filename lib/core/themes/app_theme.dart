@@ -19,7 +19,13 @@ import 'fontSize.dart';
          borderRadius: BorderRadius.circular(18.0),
        ),
      ),
-
+     menuButtonTheme: MenuButtonThemeData(
+       style: ButtonStyle(
+         animationDuration: Duration(
+             milliseconds: 400,
+         ),
+       )
+     ),
      iconTheme: IconThemeData(
          size: 30,
          color: Colors.black
