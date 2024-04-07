@@ -4,7 +4,6 @@ import 'package:syrianadmin/Cubits/auth_cubit.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -45,11 +44,10 @@ class _LoginState extends State<Login> {
               suffixIcon: IconButton(
                 onPressed: (){
                   setState(() {
-                    _isHidden = !_isHidden;
+                    _togglePasswordView();
                   });
                 },
-                icon: Icon(_isHidden ? Icons.visibility : Icons.visibility_off,
-                  color: _isHidden ? ColorManager.delete : ColorManager.submit,// Add this line
+                icon: Icon(_isHidden ? Icons.visibility : Icons.visibility_off, // Add this line
                 ),
               ),
             ),
@@ -67,5 +65,10 @@ class _LoginState extends State<Login> {
     );
   },
 );
+  }
+  void _togglePasswordView() {
+    setState(() {
+      _isHidden = !_isHidden;
+    });
   }
 }
