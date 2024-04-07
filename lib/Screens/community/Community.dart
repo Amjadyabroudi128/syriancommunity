@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
@@ -112,7 +113,7 @@ class _CommunityState extends State<Community> {
                                         onSelected:(value){
                                           if(value == 0){
                                             Navigator.of(context).push(
-                                                MaterialPageRoute(builder: (context) =>
+                                                CupertinoPageRoute(builder: (context) =>
                                                     EditCommunity(DocID: document.id ,
                                                       oldName: data["name"],
                                                       oldUrl: data["image"],
