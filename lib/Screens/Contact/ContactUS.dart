@@ -188,7 +188,11 @@ class _ContactUsState extends State<ContactUs> {
                                                             contact.doc(document.id).delete();
                                                             Navigator.of(context).pushNamed("contactus");
                                                           }
-                                                        }): SizedBox.shrink(),
+                                                        }, popUpAnimationStyle: AnimationStyle(
+                                                        duration: Duration(milliseconds: 400)
+                                                    ),
+
+                                                        ): SizedBox.shrink(),
 
                                                   ),
                                                 ],
