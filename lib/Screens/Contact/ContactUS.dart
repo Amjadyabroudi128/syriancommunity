@@ -120,7 +120,7 @@ class _ContactUsState extends State<ContactUs> {
                                               ),
                                             ),
                                           ),
-                                          sizedBox(),
+                                          sizedBox(height: 4,),
                                           Text(AppLocalizations.of(context)!.phoneContact, style: TextStyles.font15,),
                                           sizedBox(),
                                           Container(
@@ -208,7 +208,7 @@ class _ContactUsState extends State<ContactUs> {
                           }
                         ),
                         Text(AppLocalizations.of(context)!.location),
-                        sizedBox(),
+                        sizedBox(height: 10),
                         Center(
                           child: Containers.location,
                         )
