@@ -13,6 +13,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return MaterialButton(
+
       padding: padding,
         height: 40,
         color: color,

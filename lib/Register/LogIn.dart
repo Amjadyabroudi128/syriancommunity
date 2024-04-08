@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:syrianadmin/Cubits/auth_cubit.dart';
@@ -14,9 +15,10 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  String testEmail = "SussexCommunity@gmail.com";
-  String testPassword = "Syria963";
-  bool _isHidden = true;
+   final testEmail = TextEditingController();
+   final testPassword = TextEditingController();
+
+   bool _isHidden = true;
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +41,10 @@ class _LoginState extends State<Login> {
           children: [
             Text(AppLocalizations.of(context)!.loginAdmin),
              sizedBox(height: 19,),
-            CustomTextForm(hinttext: AppLocalizations.of(context)!.email,),
+            CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: testEmail,),
             sizedBox(height: 15,),
             CustomTextForm(hinttext: AppLocalizations.of(context)!.password, obscureText: _isHidden, maxLines: 1,
+              myController: testPassword,
               suffixIcon: IconButton(
                 onPressed: (){
                   setState(() {
@@ -56,7 +59,7 @@ class _LoginState extends State<Login> {
             sizedBox(height: 20,),
              TextButton(
                 onPressed: () async {
-               await  BlocProvider.of<AuthCubit>(context).login(email: testEmail, password: testPassword);
+               await  BlocProvider.of<AuthCubit>(context).login(email: testEmail.text, password: testPassword.text);
                 },
                 child:  Text(AppLocalizations.of(context)!.login,style: TextStyles.font20white
                 ),
