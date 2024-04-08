@@ -13,8 +13,10 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return MaterialButton(
-
-      padding: padding,
+        shape:  RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(9.0),
+        ),
+        padding: padding,
         height: 40,
         color: color,
         textColor: textColor,
