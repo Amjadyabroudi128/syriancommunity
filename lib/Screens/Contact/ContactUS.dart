@@ -98,19 +98,15 @@ class _ContactUsState extends State<ContactUs> {
                                           sizedBox(height: 7,),
                                           Text(AppLocalizations.of(context)!.facebook),
                                           Card(
-
-                                            // child: Row(
-                                            //   children: [
-                                            //     IconButton(
-                                            //       onPressed: (){
-                                            //         launchUrl(Uri.parse('https://www.facebook.com/groups/SyrianCommunityGroup'));
-                                            //       },
-                                            //       icon: Icon(Icons.facebook, color: ColorManager.fbColor, size: 38,),
-                                            //     ),
-                                            //     Text("${AppLocalizations.of(context)!.visit} " "${AppLocalizations.of(context)!.facebook}"),
-                                            //   ],
-                                            //
-                                            // ),
+                                            child: ListTile(
+                                              leading: IconButton(
+                                                onPressed: (){
+                                            launchUrl(Uri.parse('https://www.facebook.com/groups/SyrianCommunityGroup'));
+                                          },
+                                          icon: Icon(Icons.facebook, color: ColorManager.fbColor, size: 38,),
+                                        ),
+                                              title: Text("${AppLocalizations.of(context)!.visit} " "${AppLocalizations.of(context)!.facebook}"),
+                                            ),
                                           ),
                                         ],
                                       ),
