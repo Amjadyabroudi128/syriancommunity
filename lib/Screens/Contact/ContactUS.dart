@@ -68,8 +68,20 @@ class _ContactUsState extends State<ContactUs> {
                                       child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
-
                                           Text(AppLocalizations.of(context)!.phoneContact),
+                                          Card(
+                                            child: ListTile(
+                                                leading:Icon
+                                                  (Icons.email,
+                                                  color: Colors.black,
+                                                ),
+                                                title:Text(data["email"],
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                    ))
+                                            ),
+                                          ),
+                                          sizedBox(height: 5,),
                                           Card(
                                             child: ListTile(
                                                 leading:Icon
@@ -80,9 +92,25 @@ class _ContactUsState extends State<ContactUs> {
                                                   style: TextStyle(
                                                     color: Colors.black,
                                                     fontSize: 20.0,
-
-                                                  ) ,)
+                                                  ))
                                             ),
+                                          ),
+                                          sizedBox(height: 7,),
+                                          Text(AppLocalizations.of(context)!.facebook),
+                                          Card(
+
+                                            // child: Row(
+                                            //   children: [
+                                            //     IconButton(
+                                            //       onPressed: (){
+                                            //         launchUrl(Uri.parse('https://www.facebook.com/groups/SyrianCommunityGroup'));
+                                            //       },
+                                            //       icon: Icon(Icons.facebook, color: ColorManager.fbColor, size: 38,),
+                                            //     ),
+                                            //     Text("${AppLocalizations.of(context)!.visit} " "${AppLocalizations.of(context)!.facebook}"),
+                                            //   ],
+                                            //
+                                            // ),
                                           ),
                                         ],
                                       ),
