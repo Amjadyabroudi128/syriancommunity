@@ -122,7 +122,7 @@ class _ContactUsState extends State<ContactUs> {
                                           ),
                                           sizedBox(height: 4,),
                                           Text(AppLocalizations.of(context)!.phoneContact, style: TextStyles.font15,),
-                                          sizedBox(),
+                                          sizedBox(height: 7,),
                                           Container(
                                             width: MediaQuery.of(context).size.width,
                                             child: Card(
