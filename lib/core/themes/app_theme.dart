@@ -44,9 +44,10 @@ import 'fontSize.dart';
          backgroundColor: Colors.white
      ),
      dividerTheme: DividerThemeData(
-       indent: 50,
-       endIndent: 50,
-       thickness: 1
+       indent: 40,
+       endIndent: 40,
+       thickness: 2,
+       color: ColorManager.borderColor
      ),
      appBarTheme: AppBarTheme(
          color: ColorManager.specialGreen,
