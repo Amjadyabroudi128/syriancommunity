@@ -70,31 +70,36 @@ class _ContactUsState extends State<ContactUs> {
                                         children: [
                                           Text(AppLocalizations.of(context)!.phoneContact),
                                           Card(
-                                            child: ListTile(
-                                                leading:Icon
-                                                  (Icons.email,
-                                                  color: Colors.black,
-                                                ),
-                                                title:Text(data["email"],
-                                                    style: TextStyle(
-                                                      color: Colors.black,
-                                                    ))
+                                            child: Column(
+                                              children: [
+                                              ListTile(
+                                                  leading:Icon
+                                                    (Icons.email,
+                                                    color: Colors.black,
+                                                  ),
+                                                  title:Text(data["email"],
+                                                      style: TextStyle(
+                                                        color: Colors.black,
+                                                      ))
+                                              ),
+                                              ],
                                             ),
+                                            // child:
                                           ),
                                           sizedBox(height: 5,),
-                                          Card(
-                                            child: ListTile(
-                                                leading:Icon
-                                                  (Icons.phone,
-                                                  color: Colors.black,
-                                                ),
-                                                title:Text(data["phone"],
-                                                  style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 20.0,
-                                                  ))
-                                            ),
-                                          ),
+                                          // Card(
+                                          //   child: ListTile(
+                                          //       leading:Icon
+                                          //         (Icons.phone,
+                                          //         color: Colors.black,
+                                          //       ),
+                                          //       title:Text(data["phone"],
+                                          //         style: TextStyle(
+                                          //           color: Colors.black,
+                                          //           fontSize: 20.0,
+                                          //         ))
+                                          //   ),
+                                          // ),
                                           sizedBox(height: 7,),
                                           Text(AppLocalizations.of(context)!.facebook),
                                           Card(
