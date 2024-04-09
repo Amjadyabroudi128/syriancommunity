@@ -82,6 +82,11 @@ class _ContactUsState extends State<ContactUs> {
                                                         color: Colors.black,
                                                       ))
                                               ),
+                                                Divider(
+                                                  thickness: 1,
+                                                  endIndent: 50,
+                                                  indent: 50,
+                                                ),
                                               ],
                                             ),
                                             // child:
