@@ -56,7 +56,7 @@ class _MyAppState extends State<MyApp> {
       ],
       child: MaterialApp(
        debugShowCheckedModeBanner: false,
-        initialRoute: "contactus",
+        initialRoute: "homepage",
         title: "Syrian Community ",
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,

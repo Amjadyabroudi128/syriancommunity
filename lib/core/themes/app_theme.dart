@@ -49,6 +49,7 @@ import 'fontSize.dart';
        thickness: 2,
        color: ColorManager.borderColor
      ),
+
      appBarTheme: AppBarTheme(
          color: ColorManager.specialGreen,
          centerTitle: true,
