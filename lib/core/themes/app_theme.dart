@@ -43,6 +43,11 @@ import 'fontSize.dart';
      drawerTheme: DrawerThemeData(
          backgroundColor: Colors.white
      ),
+     dividerTheme: DividerThemeData(
+       indent: 50,
+       endIndent: 50,
+       thickness: 1
+     ),
      appBarTheme: AppBarTheme(
          color: ColorManager.specialGreen,
          centerTitle: true,
