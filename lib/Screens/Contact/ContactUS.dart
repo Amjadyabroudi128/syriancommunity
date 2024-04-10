@@ -98,15 +98,14 @@ class _ContactUsState extends State<ContactUs> {
                                   Card(
                                     child: Column(
                                       children: [
-                                        ListTile(
-                                            leading: Icon(
-                                              Icons.email,
-                                              color: Colors.black,
-                                            ),
-                                            title: Text(data["email"],
-                                                style: TextStyle(
-                                                  color: Colors.black,
-                                                ))),
+                                        MYlist(
+                                          leading: Icon(
+                                            Icons.email
+                                          ),
+                                          title: Text(data["email"], style: TextStyle(
+                                            color: Colors.black
+                                          ),),
+                                        ),
                                         Divider(),
                                         ListTile(
                                             leading: Icon(
