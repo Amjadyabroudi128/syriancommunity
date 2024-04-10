@@ -44,6 +44,6 @@ import 'font_weight_helper.dart';
    );
    static TextStyle ListTile = TextStyle(
      color: Colors.black,
-     fontSize: 20
+     fontSize: 15
    );
  }
