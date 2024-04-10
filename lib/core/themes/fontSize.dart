@@ -42,4 +42,8 @@ import 'font_weight_helper.dart';
    static TextStyle delete = TextStyle(
      color: ColorManager.delete
    );
+   static TextStyle ListTile = TextStyle(
+     color: Colors.black,
+     fontSize: 20
+   );
  }
