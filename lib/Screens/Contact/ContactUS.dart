@@ -80,7 +80,6 @@ class _ContactUsState extends State<ContactUs> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(AppLocalizations.of(context)!.location),
-
                                   Card(
                                     child: Column(
                                       mainAxisAlignment: MainAxisAlignment.start,
@@ -90,7 +89,14 @@ class _ContactUsState extends State<ContactUs> {
                                             Icons.place
                                           ),
                                           title: Text(data["place"], style: TextStyles.ListTile,),
-                                        )
+                                        ),
+                                        Divider(),
+                                        MYlist(
+                                          leading: Icon(
+                                              Icons.add_road
+                                          ),
+                                          title: Text(data["street name"], style: TextStyles.ListTile,),
+                                        ),
                                       ],
                                     ),
                                   ),
@@ -135,8 +141,7 @@ class _ContactUsState extends State<ContactUs> {
                                           size: 38,
                                         ),
                                       ),
-                                      title: Text(
-                                          "${AppLocalizations.of(context)!.visit} "
+                                      title: Text("${AppLocalizations.of(context)!.visit} "
                                           "${AppLocalizations.of(context)!.facebook}"),
                                     ),
                                   ),
