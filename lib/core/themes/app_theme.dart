@@ -46,7 +46,7 @@ import 'fontSize.dart';
      dividerTheme: DividerThemeData(
        indent: 40,
        endIndent: 40,
-       thickness: 2,
+       thickness: 1,
        color: ColorManager.borderColor
      ),
 
