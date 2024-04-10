@@ -78,8 +78,11 @@ class _ContactUsState extends State<ContactUs> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(AppLocalizations.of(context)!
-                                      .phoneContact),
+                                  Text(AppLocalizations.of(context)!.location),
+                                  Card(
+
+                                  ),
+                                  Text(AppLocalizations.of(context)!.phoneContact),
                                   Card(
                                     child: Column(
                                       children: [
