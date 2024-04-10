@@ -107,18 +107,10 @@ class _ContactUsState extends State<ContactUs> {
                                           ),),
                                         ),
                                         Divider(),
-                                        ListTile(
-                                            leading: Icon(
-                                              Icons.phone,
-                                              color: Colors.black,
-                                            ),
-                                            title: Text(data["phone"],
-                                                style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.0,
-                                                )
-                                            )
-                                        ),
+                                        MYlist(
+                                          leading: Icon(Icons.phone),
+                                          title: Text(data["phone"], style: TextStyles.ListTile,),
+                                        )
                                       ],
                                     ),
                                     // child:
@@ -126,9 +118,6 @@ class _ContactUsState extends State<ContactUs> {
                                   sizedBox(
                                     height: 5,
                                   ),
-                                  // Card(
-                                  //   child:
-                                  // ),
                                   sizedBox(
                                     height: 7,
                                   ),
