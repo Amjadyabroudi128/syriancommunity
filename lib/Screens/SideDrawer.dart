@@ -42,6 +42,7 @@ class _SideDrawerState extends State<SideDrawer> {
               CupertinoIcons.mail_solid,
             ),
             onTap: (){
+              Navigator.pop(context);
               Navigator.of(context).pushNamed("contactus");
 
             },
@@ -52,6 +53,7 @@ class _SideDrawerState extends State<SideDrawer> {
               CupertinoIcons.group_solid,
             ),
             onTap: (){
+              Navigator.pop(context);
               Navigator.of(context).pushNamed("ourteam");
             },
           ),
@@ -61,6 +63,7 @@ class _SideDrawerState extends State<SideDrawer> {
               CupertinoIcons.book_circle,
             ),
             onTap: (){
+              Navigator.pop(context);
               Navigator.of(context).pushNamed("community");
             },
           ),
@@ -70,6 +73,7 @@ class _SideDrawerState extends State<SideDrawer> {
               Icons.celebration,
             ),
             onTap: (){
+              Navigator.pop(context);
               Navigator.of(context).pushNamed("celebrations");
             },
           ),
