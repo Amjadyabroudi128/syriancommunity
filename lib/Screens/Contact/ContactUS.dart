@@ -79,8 +79,26 @@ class _ContactUsState extends State<ContactUs> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(AppLocalizations.of(context)!.location),
-                                  Card(
 
+                                  Card(
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        ListTile(
+                                            leading: Icon(
+                                              Icons.place,
+                                              color: Colors.black,
+                                            ),
+                                            title: Text(data["place"],
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 20.0,
+                                                )
+                                            )
+                                        ),
+
+                                      ],
+                                    ),
                                   ),
                                   Text(AppLocalizations.of(context)!.phoneContact),
                                   Card(
