@@ -105,9 +105,14 @@ class _ContactUsState extends State<ContactUs> {
                                     child: Column(
                                       children: [
                                         MYlist(
-                                          leading: Icon(
-                                            Icons.email
-                                          ),
+                                          leading: IconButton(
+                                            onPressed: () {
+                                              launchUrl(Uri.parse(
+                                                  " <sussexsyriancommunity@gmail.com>;"));
+                                            },
+                                            icon: Icon(Icons.email),
+
+                                           ),
                                           title: Text(data["email"], style: TextStyle(
                                             color: Colors.black
                                           ),),
