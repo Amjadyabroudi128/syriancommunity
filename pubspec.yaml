@@ -49,6 +49,7 @@ dependencies:
   flutter_social_button: ^1.1.4+1
   url_launcher: ^6.2.5
   flutter_screenutil: ^5.9.0
+  flutter_linkify: ^6.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

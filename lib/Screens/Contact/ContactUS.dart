@@ -108,7 +108,7 @@ class _ContactUsState extends State<ContactUs> {
                                           leading: IconButton(
                                             onPressed: () {
                                               launchUrl(Uri.parse(
-                                                  " <sussexsyriancommunity@gmail.com>;"));
+                                                  'https://www.facebook.com/groups/SyrianCommunityGroup'));
                                             },
                                             icon: Icon(Icons.email),
 
@@ -304,5 +304,13 @@ class _ContactUsState extends State<ContactUs> {
         ),
       ),
     );
+  }
+  _sendingMails() async {
+    var url = Uri.parse("sussexsyriancommunity@gmail.com");
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
