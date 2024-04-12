@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:syrianadmin/Screens/Contact/Edit.dart';
 import 'package:syrianadmin/components/ListTile.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
@@ -118,9 +119,16 @@ class _ContactUsState extends State<ContactUs> {
                                           },
                                         ),
                                         Divider(),
-                                        MYlist(
-                                          leading: Icon(Icons.phone),
-                                          title: Text(data["phone"], style: TextStyles.ListTile,),
+                                        GestureDetector(
+                                          child: MYlist(
+                                            leading: Icon(Icons.phone),
+                                            title: Text(data["phone"], style: TextStyles.ListTile,),
+                                          ),
+                                          onTap: (){
+                                            launchUrl(
+                                              Uri.parse("tel: +44 7535260379")
+                                            );
+                                          },
                                         )
                                       ],
                                     ),
@@ -138,8 +146,7 @@ class _ContactUsState extends State<ContactUs> {
                                       leading: IconButton(
                                         onPressed: () {
                                           launchUrl(Uri.parse(
-                                              'https://www.facebook.com/groups/SyrianCommunityGroup'));
-                                        },
+                                              'https://www.facebook.com/groups/SyrianCommunityGroup'));},
                                         icon: Icon(
                                           Icons.facebook,
                                           color: ColorManager.fbColor,
