@@ -98,6 +98,18 @@ class _ContactUsState extends State<ContactUs> {
                                           ),
                                           title: Text(data["street name"], style: TextStyles.ListTile,),
                                         ),
+                                        Divider(),
+                                         Row(
+                                            children: [
+                                              Text("Post code"),
+                                              sizedBox(width: 10,),
+                                              Padding(
+                                                padding: const EdgeInsets.only(left: 50),
+                                                child: Text(data["post code"], style: TextStyle(fontSize: 15),),
+                                              ),
+                                            ],
+                                           mainAxisAlignment: MainAxisAlignment.start,
+                                          ),
                                       ],
                                     ),
                                   ),
