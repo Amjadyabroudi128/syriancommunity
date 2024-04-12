@@ -109,9 +109,7 @@ class _ContactUsState extends State<ContactUs> {
                                             leading: Icon(
                                               Icons.email
                                             ),
-                                            title: Text(data["email"], style: TextStyle(
-                                              color: Colors.black
-                                            ),),
+                                            title: Text(data["email"], style: TextStyles.emailLink),
                                           ),
                                           onTap: (){
                                             launchUrl(
@@ -136,7 +134,7 @@ class _ContactUsState extends State<ContactUs> {
                                   ),
                                   Text(AppLocalizations.of(context)!.facebook),
                                   Card(
-                                    child: ListTile(
+                                    child: MYlist(
                                       leading: IconButton(
                                         onPressed: () {
                                           launchUrl(Uri.parse(
@@ -306,13 +304,5 @@ class _ContactUsState extends State<ContactUs> {
         ),
       ),
     );
-  }
-  _sendingMails() async {
-    var url = Uri.parse("sussexsyriancommunity@gmail.com");
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url);
-    } else {
-      throw 'Could not launch $url';
-    }
   }
 }
