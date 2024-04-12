@@ -107,8 +107,9 @@ class _ContactUsState extends State<ContactUs> {
                                         MYlist(
                                           leading: IconButton(
                                             onPressed: () {
-                                              launchUrl(Uri.parse(
-                                                  'https://www.facebook.com/groups/SyrianCommunityGroup'));
+                                              launchUrl(
+                                                Uri.parse("mailto:sussexsyriancommunity@gmail.com?subkect= send email&body= ")
+                                              );
                                             },
                                             icon: Icon(Icons.email),
 
