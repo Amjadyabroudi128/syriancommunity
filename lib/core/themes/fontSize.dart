@@ -49,5 +49,6 @@ import 'font_weight_helper.dart';
    static TextStyle emailLink = TextStyle(
      color: ColorManager.specialGreen,
      decoration: TextDecoration.underline,
+       fontSize: 16
    );
  }
