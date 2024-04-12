@@ -104,19 +104,20 @@ class _ContactUsState extends State<ContactUs> {
                                   Card(
                                     child: Column(
                                       children: [
-                                        MYlist(
-                                          leading: IconButton(
-                                            onPressed: () {
-                                              launchUrl(
+                                        GestureDetector(
+                                          child: MYlist(
+                                            leading: Icon(
+                                              Icons.email
+                                            ),
+                                            title: Text(data["email"], style: TextStyle(
+                                              color: Colors.black
+                                            ),),
+                                          ),
+                                          onTap: (){
+                                            launchUrl(
                                                 Uri.parse("mailto:sussexsyriancommunity@gmail.com?subkect= send email&body= ")
-                                              );
-                                            },
-                                            icon: Icon(Icons.email),
-
-                                           ),
-                                          title: Text(data["email"], style: TextStyle(
-                                            color: Colors.black
-                                          ),),
+                                            );
+                                          },
                                         ),
                                         Divider(),
                                         MYlist(
