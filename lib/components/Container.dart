@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:syrianadmin/components/myImages.dart';
-
-late double? height;
-late double? width;
-late Widget? child;
 class Containers {
   static Container location = Container(
     height: 300,
