@@ -145,9 +145,9 @@ class _ContactUsState extends State<ContactUs> {
                                             title: Text(data["phone"], style: TextStyles.ListTile,),
                                           ),
                                           onTap: (){
-                                            // launchUrl(
-                                            //   Uri.parse("tel: +44 7535260379")
-                                            // );
+                                            launchUrl(
+                                              Uri.parse("tel: +44 7535260379")
+                                            );
                                           },
                                         ),
                                         Padding(
@@ -175,7 +175,8 @@ class _ContactUsState extends State<ContactUs> {
                                                   contact.doc(document.id).delete();
                                                   Navigator.of(context).pushNamed("contactus");
                                                 }
-                                              }): SizedBox.shrink(),
+                                              }, icon: Icon(CupertinoIcons.ellipsis),
+                                              ): SizedBox.shrink(),
                                         ),
                                       ],
                                     ),
