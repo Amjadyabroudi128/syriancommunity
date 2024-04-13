@@ -119,16 +119,13 @@ class _ContactUsState extends State<ContactUs> {
                                   sizedBox(
                                     height: 7,
                                   ),
-                                  Text(AppLocalizations.of(context)!.location),
+                                  Text(AppLocalizations.of(context)!.location, style: TextStyles.font20grey,),
                                   Card(
                                     child: Column(
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       children: [
                                         MYlist(
-                                          leading: Icon(
-                                            Icons.place
-                                          ),
-                                          title: Text(data["place"], style: TextStyles.ListTile,),
+                                          leading: Text(data["place"], style: TextStyles.ListTile,),
                                         ),
                                         MYlist(
                                           leading: Text(data["street name"], style: TextStyles.ListTile,),
@@ -137,10 +134,7 @@ class _ContactUsState extends State<ContactUs> {
                                           leading: SelectableText(data["post code"], style: TextStyle(fontSize: 15),),
                                         ),
                                         MYlist(
-                                          leading: Icon(
-                                              Icons.location_city,
-                                          ),
-                                          title: Text(data["city"], style: TextStyles.ListTile,),
+                                          leading: Text(data["city"], style: TextStyles.ListTile,),
                                         ),
 
                                       ],
