@@ -189,13 +189,6 @@ class _ContactUsState extends State<ContactUs> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       CustomButton(onPressed: (){
-                                        contact.doc(document.id).delete();
-                                        Navigator.of(context).pushNamed("contactus");
-                                      }, title: "${AppLocalizations.of(context)!.delete} this page", color: ColorManager.delete,),
-
-                                      sizedBox(width: 10,),
-
-                                      CustomButton(onPressed: (){
                                         Navigator.of(context).push(
                                             CupertinoPageRoute(
                                                 builder: (context) =>
