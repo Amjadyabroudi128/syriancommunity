@@ -145,11 +145,38 @@ class _ContactUsState extends State<ContactUs> {
                                             title: Text(data["phone"], style: TextStyles.ListTile,),
                                           ),
                                           onTap: (){
-                                            launchUrl(
-                                              Uri.parse("tel: +44 7535260379")
-                                            );
+                                            // launchUrl(
+                                            //   Uri.parse("tel: +44 7535260379")
+                                            // );
                                           },
-                                        )
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(left: 300),
+                                          child: user != null ? MyPopUpMenu(
+                                              itemBuilder: (context) {
+                                                return [
+                                                  PopupMenuItem(value: 0, child: Text(AppLocalizations.of(context)!.edit),),
+                                                  PopupMenuItem(value: 1, child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),)
+                                                ];
+                                              },
+                                              onSelected: (value) {
+                                                if (value == 0) {
+                                                  Navigator.of(context).push(
+                                                      CupertinoPageRoute(
+                                                          builder: (context) =>
+                                                              EditDetails(DocID: document.id,
+                                                                oldPlace: data["place"],
+                                                                oldRoad: data["street name"],
+                                                                oldCity: data["city"],
+                                                                oldEmail: data["email"],
+                                                                oldPHone: data["phone"],
+                                                                oldPostCode: data["post code"],)));
+                                                } else if (value == 1) {
+                                                  contact.doc(document.id).delete();
+                                                  Navigator.of(context).pushNamed("contactus");
+                                                }
+                                              }): SizedBox.shrink(),
+                                        ),
                                       ],
                                     ),
                                     // child:
@@ -201,33 +228,7 @@ class _ContactUsState extends State<ContactUs> {
                               //                         sizedBox(height: 5,),
                               //                         Text(data["post code"]),
                               //
-                              //                 Padding(
-                              //                   padding: const EdgeInsets.only(left: 300),
-                              //                   child: user != null ? MyPopUpMenu(
-                              //                       itemBuilder: (context) {
-                              //                         return [
-                              //                           PopupMenuItem(value: 0, child: Text(AppLocalizations.of(context)!.edit),),
-                              //                           PopupMenuItem(value: 1, child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),)
-                              //                         ];
-                              //                       },
-                              //                       onSelected: (value) {
-                              //                         if (value == 0) {
-                              //                           Navigator.of(context).push(
-                              //                               CupertinoPageRoute(
-                              //                                   builder: (context) =>
-                              //                                       EditDetails(DocID: document.id,
-                              //                                         oldPlace: data["place"],
-                              //                                         oldRoad: data["street name"],
-                              //                                         oldCity: data["city"],
-                              //                                         oldEmail: data["email"],
-                              //                                         oldPHone: data["phone"],
-                              //                                         oldPostCode: data["post code"],)));
-                              //                         } else if (value == 1) {
-                              //                           contact.doc(document.id).delete();
-                              //                           Navigator.of(context).pushNamed("contactus");
-                              //                         }
-                              //                       }): SizedBox.shrink(),
-                              //                 ),
+
                               //               ],
                               //             ),
                               //           ),
