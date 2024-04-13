@@ -131,23 +131,11 @@ class _ContactUsState extends State<ContactUs> {
                                           title: Text(data["place"], style: TextStyles.ListTile,),
                                         ),
                                         MYlist(
-                                          leading: Icon(
-                                              Icons.add_road
-                                          ),
-                                          title: Text(data["street name"], style: TextStyles.ListTile,),
+                                          leading: Text(data["street name"], style: TextStyles.ListTile,),
                                         ),
-                                         Row(
-                                            children: [
-                                              Padding(
-                                                padding: const EdgeInsets.all(14.0),
-                                                child: Text("Post code", style: TextStyle(fontSize: 18),),
-                                              ),
-                                              sizedBox(width: 10,),
-                                              SelectableText(data["post code"], style: TextStyle(fontSize: 15),),
-
-                                            ],
-                                           mainAxisAlignment: MainAxisAlignment.start,
-                                          ),
+                                        MYlist(
+                                          leading: SelectableText(data["post code"], style: TextStyle(fontSize: 15),),
+                                        ),
                                         MYlist(
                                           leading: Icon(
                                               Icons.location_city,
