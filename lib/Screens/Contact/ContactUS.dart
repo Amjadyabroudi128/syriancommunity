@@ -102,14 +102,22 @@ class _ContactUsState extends State<ContactUs> {
                                          Row(
                                             children: [
                                               Padding(
-                                                padding:  EdgeInsets.only(left: 16, right: 10),
+                                                padding: const EdgeInsets.all(14.0),
                                                 child: Text("Post code", style: TextStyle(fontSize: 18),),
                                               ),
                                               sizedBox(width: 10,),
                                               Text(data["post code"], style: TextStyle(fontSize: 15),),
+
                                             ],
                                            mainAxisAlignment: MainAxisAlignment.start,
                                           ),
+                                        Divider(),
+                                        MYlist(
+                                          leading: Icon(
+                                              Icons.location_city,
+                                          ),
+                                          title: Text(data["city"], style: TextStyles.ListTile,),
+                                        ),
                                       ],
                                     ),
                                   ),
