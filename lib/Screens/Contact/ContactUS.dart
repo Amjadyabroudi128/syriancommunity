@@ -143,7 +143,7 @@ class _ContactUsState extends State<ContactUs> {
                                                 child: Text("Post code", style: TextStyle(fontSize: 18),),
                                               ),
                                               sizedBox(width: 10,),
-                                              Text(data["post code"], style: TextStyle(fontSize: 15),),
+                                              SelectableText(data["post code"], style: TextStyle(fontSize: 15),),
 
                                             ],
                                            mainAxisAlignment: MainAxisAlignment.start,
