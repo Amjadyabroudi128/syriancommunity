@@ -127,7 +127,7 @@ class _ContactUsState extends State<ContactUs> {
                                     child: Containers.location,
                                   ),
                                   sizedBox(height: 10,),
-                                  Text(AppLocalizations.of(context)!.phoneContact),
+                                  Text(AppLocalizations.of(context)!.phoneContact, style: TextStyles.font20grey,),
                                   sizedBox(height: 10,),
                                   Card(
                                     child: Column(
@@ -153,40 +153,9 @@ class _ContactUsState extends State<ContactUs> {
                                           ),
                                           onTap: (){
                                             launchUrl(
-                                              Uri.parse("tel: +44 7535260379")
+                                              Uri.parse("tel: ${data["phone"]}")
                                             );
                                           },
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(left: 300),
-                                          child: user != null ? MyPopUpMenu(
-                                              itemBuilder: (context) {
-                                                return [
-                                                  PopupMenuItem(value: 0, child: Text(AppLocalizations.of(context)!.edit),),
-                                                  PopupMenuItem(value: 1, child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),)
-                                                ];
-                                              },
-                                              onSelected: (value) {
-                                                if (value == 0) {
-                                                  Navigator.of(context).push(
-                                                      CupertinoPageRoute(
-                                                          builder: (context) =>
-                                                              EditDetails(DocID: document.id,
-                                                                oldPlace: data["place"],
-                                                                oldRoad: data["street name"],
-                                                                oldCity: data["city"],
-                                                                oldEmail: data["email"],
-                                                                oldPHone: data["phone"],
-                                                                oldPostCode: data["post code"],)));
-                                                } else if (value == 1) {
-                                                  contact.doc(document.id).delete();
-                                                  Navigator.of(context).pushNamed("contactus");
-                                                }
-                                              }, icon: Icon(CupertinoIcons.ellipsis),
-                                              popUpAnimationStyle: AnimationStyle(
-                                                  duration: Duration(milliseconds: 400),
-                                              ),
-                                          ) : SizedBox.shrink(),
                                         ),
                                       ],
                                     ),
@@ -215,6 +184,31 @@ class _ContactUsState extends State<ContactUs> {
                                           "${AppLocalizations.of(context)!.facebook}"),
                                     ),
                                   ),
+                                  sizedBox(height: 15,),
+                                 user!= null ? Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      CustomButton(onPressed: (){
+                                        contact.doc(document.id).delete();
+                                        Navigator.of(context).pushNamed("contactus");
+                                      }, title: "${AppLocalizations.of(context)!.delete} this page", color: ColorManager.delete,),
+
+                                      sizedBox(width: 10,),
+
+                                      CustomButton(onPressed: (){
+                                        Navigator.of(context).push(
+                                            CupertinoPageRoute(
+                                                builder: (context) =>
+                                                    EditDetails(DocID: document.id,
+                                                      oldPlace: data["place"],
+                                                      oldRoad: data["street name"],
+                                                      oldCity: data["city"],
+                                                      oldEmail: data["email"],
+                                                      oldPHone: data["phone"],
+                                                      oldPostCode: data["post code"],)));
+                                      }, title: "${AppLocalizations.of(context)!.edit} this page", color: ColorManager.addEdit,)
+                                    ],
+                                  ) : SizedBox.shrink(),
                                 ],
                               ),
                             );
