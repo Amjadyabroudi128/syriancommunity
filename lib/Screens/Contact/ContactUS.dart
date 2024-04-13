@@ -126,7 +126,9 @@ class _ContactUsState extends State<ContactUs> {
                                   Center(
                                     child: Containers.location,
                                   ),
+                                  sizedBox(height: 10,),
                                   Text(AppLocalizations.of(context)!.phoneContact),
+                                  sizedBox(height: 10,),
                                   Card(
                                     child: Column(
                                       children: [
