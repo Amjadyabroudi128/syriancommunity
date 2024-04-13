@@ -120,25 +120,22 @@ class _ContactUsState extends State<ContactUs> {
                                     height: 7,
                                   ),
                                   Text(AppLocalizations.of(context)!.location, style: TextStyles.font20grey,),
-                                  Card(
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      children: [
-                                        MYlist(
-                                          leading: Text(data["place"], style: TextStyles.ListTile,),
+                                  Container(
+                                    child: Card(
+                                      child: Padding(
+                                        padding: EdgeInsets.all(20),
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            SelectableText(data["place"], style: TextStyles.ListTile,),
+                                            SelectableText(data["street name"], style: TextStyles.ListTile,),
+                                            SelectableText(data["post code"], style: TextStyle(fontSize: 15),),
+                                            SelectableText(data["city"], style: TextStyles.ListTile,),
+                                          ],
                                         ),
-                                        MYlist(
-                                          leading: Text(data["street name"], style: TextStyles.ListTile,),
-                                        ),
-                                        MYlist(
-                                          leading: SelectableText(data["post code"], style: TextStyle(fontSize: 15),),
-                                        ),
-                                        MYlist(
-                                          leading: Text(data["city"], style: TextStyles.ListTile,),
-                                        ),
-
-                                      ],
+                                      ),
                                     ),
+                                    width: MediaQuery.of(context).size.width,
                                   ),
                                   sizedBox(height: 10),
                                   Center(
