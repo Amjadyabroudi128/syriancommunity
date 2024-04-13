@@ -130,14 +130,12 @@ class _ContactUsState extends State<ContactUs> {
                                           ),
                                           title: Text(data["place"], style: TextStyles.ListTile,),
                                         ),
-                                        Divider(),
                                         MYlist(
                                           leading: Icon(
                                               Icons.add_road
                                           ),
                                           title: Text(data["street name"], style: TextStyles.ListTile,),
                                         ),
-                                        Divider(),
                                          Row(
                                             children: [
                                               Padding(
@@ -150,7 +148,6 @@ class _ContactUsState extends State<ContactUs> {
                                             ],
                                            mainAxisAlignment: MainAxisAlignment.start,
                                           ),
-                                        Divider(),
                                         MYlist(
                                           leading: Icon(
                                               Icons.location_city,
