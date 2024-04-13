@@ -101,12 +101,12 @@ class _ContactUsState extends State<ContactUs> {
                                         Divider(),
                                          Row(
                                             children: [
-                                              Text("Post code"),
-                                              sizedBox(width: 10,),
                                               Padding(
-                                                padding: const EdgeInsets.only(left: 50),
-                                                child: Text(data["post code"], style: TextStyle(fontSize: 15),),
+                                                padding:  EdgeInsets.only(left: 16, right: 10),
+                                                child: Text("Post code", style: TextStyle(fontSize: 18),),
                                               ),
+                                              sizedBox(width: 10,),
+                                              Text(data["post code"], style: TextStyle(fontSize: 15),),
                                             ],
                                            mainAxisAlignment: MainAxisAlignment.start,
                                           ),
