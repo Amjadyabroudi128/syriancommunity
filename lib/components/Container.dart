@@ -8,7 +8,7 @@ late Widget? child;
 class Containers {
   static Container location = Container(
     height: 300,
-    width: 300,
+    width: 370,
     child: GoogleMap(
       initialCameraPosition: CameraPosition(
         target: LatLng(50.82062318563144, -0.12208351759729541),
