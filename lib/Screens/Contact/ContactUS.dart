@@ -118,8 +118,13 @@ class _ContactUsState extends State<ContactUs> {
                                           ),
                                           title: Text(data["city"], style: TextStyles.ListTile,),
                                         ),
+
                                       ],
                                     ),
+                                  ),
+                                  sizedBox(height: 10),
+                                  Center(
+                                    child: Containers.location,
                                   ),
                                   Text(AppLocalizations.of(context)!.phoneContact),
                                   Card(
@@ -176,7 +181,10 @@ class _ContactUsState extends State<ContactUs> {
                                                   Navigator.of(context).pushNamed("contactus");
                                                 }
                                               }, icon: Icon(CupertinoIcons.ellipsis),
-                                              ): SizedBox.shrink(),
+                                              popUpAnimationStyle: AnimationStyle(
+                                                  duration: Duration(milliseconds: 400),
+                                              ),
+                                          ) : SizedBox.shrink(),
                                         ),
                                       ],
                                     ),
@@ -207,125 +215,10 @@ class _ContactUsState extends State<ContactUs> {
                                   ),
                                 ],
                               ),
-                              // child: Column(
-                              //   crossAxisAlignment: CrossAxisAlignment.start,
-                              //   children: [
-                              //     SizedBox(
-                              //       width: MediaQuery.of(context).size.width,
-                              //       child: IntrinsicWidth(
-                              //         child: Card(
-                              //           child: padding(
-                              //             child: Column(
-                              //               mainAxisSize: MainAxisSize.min,
-                              //               crossAxisAlignment: CrossAxisAlignment.start,
-                              //               children: [
-                              //                         Text(AppLocalizations.of(context)!.location),
-                              //                         sizedBox(height: 5,),
-                              //                         Text(data["place"]),
-                              //                         sizedBox(height: 5,),
-                              //                         Text(data["street name"]),
-                              //                         sizedBox(height: 5,),
-                              //                         Text(data["city"]),
-                              //                         sizedBox(height: 5,),
-                              //                         Text(data["post code"]),
-                              //
-
-                              //               ],
-                              //             ),
-                              //           ),
-                              //         ),
-                              //       ),
-                              //     ),
-                              //     sizedBox(height: 4,),
-                              //     Text(AppLocalizations.of(context)!.phoneContact, style: TextStyles.font15,),
-                              //     sizedBox(height: 7,),
-                              //     Container(
-                              //       width: MediaQuery.of(context).size.width,
-                              //       child: Card(
-                              //         child: Column(
-                              //           mainAxisSize: MainAxisSize.min,
-                              //           crossAxisAlignment: CrossAxisAlignment.start,
-                              //           children: [
-                              //             padding(child: Row(
-                              //               children: [
-                              //                 Text(AppLocalizations.of(context)!.email),
-                              //                       sizedBox(width: 3,),
-                              //                       SelectableText(data["email"])
-                              //               ],
-                              //             )),
-                              //             sizedBox(height: 10,),
-                              //             padding(
-                              //               child: Row(
-                              //                 children: [
-                              //                         Text(AppLocalizations.of(context)!.phone),
-                              //                         sizedBox(width: 3,),
-                              //                         SelectableText(data["phone"])
-                              //                 ],
-                              //
-                              //               ),
-                              //             ),
-                              //             sizedBox(),
-                              //             padding(
-                              //               child: Row(
-                              //                 children: [
-                              //                   Text("${AppLocalizations.of(context)!.visit} " "${AppLocalizations.of(context)!.facebook}"),
-                              //                   IconButton(
-                              //                     onPressed: (){
-                              //                       launchUrl(Uri.parse('https://www.facebook.com/groups/SyrianCommunityGroup'));
-                              //                     },
-                              //                     icon: Icon(Icons.facebook, color: ColorManager.fbColor),
-                              //                   )
-                              //                 ],
-                              //
-                              //               ),
-                              //             ),
-                              //             Padding(
-                              //               padding: const EdgeInsets.only(left: 310),
-                              //               child: user != null ? MyPopUpMenu(
-                              //                   itemBuilder: (context) {
-                              //                     return [
-                              //                       PopupMenuItem(value: 0, child: Text(AppLocalizations.of(context)!.edit),),
-                              //                       PopupMenuItem(value: 1, child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),)
-                              //                     ];
-                              //                   },
-                              //                   onSelected: (value) {
-                              //                     if (value == 0) {
-                              //                       Navigator.of(context).push(
-                              //                         CupertinoPageRoute(
-                              //                           builder: (context) =>
-                              //                               EditDetails(DocID: document.id,
-                              //                                 oldPlace: data["place"],
-                              //                                 oldRoad: data["street name"],
-                              //                                 oldCity: data["city"],
-                              //                                 oldEmail: data["email"],
-                              //                                 oldPHone: data["phone"],
-                              //                                 oldPostCode: data["post code"],)));
-                              //                     } else if (value == 1) {
-                              //                       contact.doc(document.id).delete();
-                              //                       Navigator.of(context).pushNamed("contactus");
-                              //                     }
-                              //                   }, popUpAnimationStyle: AnimationStyle(
-                              //                   duration: Duration(milliseconds: 400)
-                              //               ),
-                              //
-                              //                   ): SizedBox.shrink(),
-                              //
-                              //             ),
-                              //           ],
-                              //         ),
-                              //       ),
-                              //     )
-                              //   ],
-                              // ),
                             );
                           }).toList(),
                         );
                       }),
-                  Text(AppLocalizations.of(context)!.location),
-                  sizedBox(height: 10),
-                  Center(
-                    child: Containers.location,
-                  ),
                 ],
               ),
             ),
