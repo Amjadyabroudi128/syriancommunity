@@ -80,6 +80,45 @@ class _ContactUsState extends State<ContactUs> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  Text(AppLocalizations.of(context)!.phoneContact, style: TextStyles.font20grey,),
+                                  sizedBox(height: 10,),
+                                  Card(
+                                    child: Column(
+                                      children: [
+                                        GestureDetector(
+                                          child: MYlist(
+                                            leading: Icon(
+                                                Icons.email
+                                            ),
+                                            title: Text(data["email"], style: TextStyles.emailLink),
+                                          ),
+                                          onTap: (){
+                                            launchUrl(
+                                                Uri.parse("mailto:sussexsyriancommunity@gmail.com?subkect= send email&body= ")
+                                            );
+                                          },
+                                        ),
+                                        Divider(),
+                                        GestureDetector(
+                                          child: MYlist(
+                                            leading: Icon(Icons.phone),
+                                            title: Text(data["phone"], style: TextStyles.ListTile,),
+                                          ),
+                                          onTap: (){
+                                            launchUrl(
+                                                Uri.parse("tel: ${data["phone"]}")
+                                            );
+                                          },
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  sizedBox(
+                                    height: 5,
+                                  ),
+                                  sizedBox(
+                                    height: 7,
+                                  ),
                                   Text(AppLocalizations.of(context)!.location),
                                   Card(
                                     child: Column(
@@ -127,46 +166,7 @@ class _ContactUsState extends State<ContactUs> {
                                     child: Containers.location,
                                   ),
                                   sizedBox(height: 10,),
-                                  Text(AppLocalizations.of(context)!.phoneContact, style: TextStyles.font20grey,),
-                                  sizedBox(height: 10,),
-                                  Card(
-                                    child: Column(
-                                      children: [
-                                        GestureDetector(
-                                          child: MYlist(
-                                            leading: Icon(
-                                              Icons.email
-                                            ),
-                                            title: Text(data["email"], style: TextStyles.emailLink),
-                                          ),
-                                          onTap: (){
-                                            launchUrl(
-                                                Uri.parse("mailto:sussexsyriancommunity@gmail.com?subkect= send email&body= ")
-                                            );
-                                          },
-                                        ),
-                                        Divider(),
-                                        GestureDetector(
-                                          child: MYlist(
-                                            leading: Icon(Icons.phone),
-                                            title: Text(data["phone"], style: TextStyles.ListTile,),
-                                          ),
-                                          onTap: (){
-                                            launchUrl(
-                                              Uri.parse("tel: ${data["phone"]}")
-                                            );
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                    // child:
-                                  ),
-                                  sizedBox(
-                                    height: 5,
-                                  ),
-                                  sizedBox(
-                                    height: 7,
-                                  ),
+
                                   Text(AppLocalizations.of(context)!.facebook),
                                   Card(
                                     child: MYlist(
@@ -199,7 +199,8 @@ class _ContactUsState extends State<ContactUs> {
                                                       oldEmail: data["email"],
                                                       oldPHone: data["phone"],
                                                       oldPostCode: data["post code"],)));
-                                      }, title: "${AppLocalizations.of(context)!.edit} this page", color: ColorManager.addEdit,)
+                                      },
+                                        title: "${AppLocalizations.of(context)!.edit} this page", color: ColorManager.addEdit,)
                                     ],
                                   ) : SizedBox.shrink(),
                                 ],
