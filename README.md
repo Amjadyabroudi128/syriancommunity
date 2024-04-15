@@ -27,6 +27,9 @@ i have added a popUp Menu as i felt it would be better when used
 ![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/c6da1b8e-b92f-4879-a3a6-369db4e5c8b9)
 
  improved the contact us screen 
+ 
+ ![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/60abf803-6050-40d6-a2bc-e1399ea948ee)
+
 
 
 i have added time of "post" to show the community when it was released 
