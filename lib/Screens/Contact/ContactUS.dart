@@ -113,9 +113,6 @@ class _ContactUsState extends State<ContactUs> {
                                   sizedBox(
                                     height: 5,
                                   ),
-                                  sizedBox(
-                                    height: 7,
-                                  ),
                                   Text(AppLocalizations.of(context)!.location, style: TextStyles.font20grey,),
                                   sizedBox(
                                     width: MediaQuery.of(context).size.width,
@@ -135,8 +132,7 @@ class _ContactUsState extends State<ContactUs> {
                                     ),
                                   ),
                                   sizedBox(height: 10),
-                                  Center(
-                                    child: Containers.location,),
+                                  ourLocation(),
                                   sizedBox(height: 10,),
 
                                   Text(AppLocalizations.of(context)!.facebook),
@@ -191,5 +187,8 @@ class _ContactUsState extends State<ContactUs> {
             "${AppLocalizations.of(context)!.facebook}"),
       ),
     );
+  }
+  ourLocation (){
+    return Center(child: Containers.location,);
   }
 }
