@@ -36,7 +36,6 @@ import 'fontSize.dart';
          shape:  RoundedRectangleBorder(
            borderRadius: BorderRadius.circular(9.0),
          ),
-         backgroundColor: ColorManager.addEdit,
          padding:  EdgeInsets.symmetric(vertical: 9),
        ),
      ),
@@ -46,7 +45,7 @@ import 'fontSize.dart';
      dividerTheme: DividerThemeData(
        indent: 40,
        endIndent: 40,
-       thickness: 1,
+       thickness: 0.5,
        color: ColorManager.borderColor
      ),
 
@@ -85,7 +84,7 @@ import 'fontSize.dart';
              Radius.circular(15),
            )
        ),
-       textTheme: ButtonTextTheme.primary,
+       textTheme: ButtonTextTheme.primary, // this gives the best text color for the button
      ),
 
      inputDecorationTheme: InputDecorationTheme(
