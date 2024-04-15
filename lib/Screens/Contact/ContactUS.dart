@@ -135,7 +135,6 @@ class _ContactUsState extends State<ContactUs> {
                                   sizedBox(height: 10),
                                   ourLocation(),
                                   sizedBox(height: 10,),
-
                                   Text(AppLocalizations.of(context)!.facebook),
                                   faceBook(),
                                   sizedBox(height: 15,),
