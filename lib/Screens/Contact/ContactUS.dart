@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:syrianadmin/Screens/Contact/Edit.dart';
 import 'package:syrianadmin/components/ListTile.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
@@ -64,8 +63,7 @@ class _ContactUsState extends State<ContactUs> {
                         if (snapshot.hasError) {
                           return Text('Something went wrong');
                         }
-                        if (snapshot.connectionState ==
-                            ConnectionState.waiting) {
+                        if (snapshot.connectionState == ConnectionState.waiting) {
                           return Text("Loading");
                         }
                         return ListView(
@@ -192,4 +190,5 @@ class _ContactUsState extends State<ContactUs> {
       ),
     );
   }
+
 }
