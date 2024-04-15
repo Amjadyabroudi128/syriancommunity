@@ -152,7 +152,9 @@ class _ContactUsState extends State<ContactUs> {
                                                       oldPHone: data["phone"],
                                                       oldPostCode: data["post code"],)));
                                       },
-                                        title: "${AppLocalizations.of(context)!.edit} this page", color: ColorManager.addEdit,)
+                                        title: "${AppLocalizations.of(context)!.edit}"
+                                            " ${AppLocalizations.of(context)!.thisPage}",
+                                        color: ColorManager.addEdit,)
                                     ],
                                   ) : SizedBox.shrink(),
                                 ],
