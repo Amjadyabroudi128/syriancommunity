@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/Screens/Contact/Edit.dart';
+import 'package:syrianadmin/classes/location.dart';
 import 'package:syrianadmin/components/ListTile.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
@@ -187,8 +188,5 @@ class _ContactUsState extends State<ContactUs> {
             "${AppLocalizations.of(context)!.facebook}"),
       ),
     );
-  }
-  ourLocation (){
-    return Center(child: Containers.location,);
   }
 }
