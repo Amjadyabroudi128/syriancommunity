@@ -48,7 +48,7 @@ class _ContactUsState extends State<ContactUs> {
                               },
                               title: AppLocalizations.of(context)!.addThings,
                               color: ColorManager.addEdit,
-                            )
+                      )
                           : sizedBox(
                               height: 15,
                             )),
@@ -82,31 +82,34 @@ class _ContactUsState extends State<ContactUs> {
                                   Card(
                                     child: Column(
                                       children: [
-                                        GestureDetector(
-                                          child: MYlist(
+                                         MYlist(
                                             leading: Icon(
                                                 Icons.email
                                             ),
-                                            title: Text(data["email"], style: TextStyles.emailLink),
+                                            title: GestureDetector(
+                                                child: Text(data["email"], style: TextStyles.emailLink),
+                                              onTap: (){
+                                                launchUrl(
+                                                    Uri.parse("mailto:sussexsyriancommunity@gmail.com?subkect= send email&body= ")
+                                                );
+                                              },
+                                            ),
                                           ),
-                                          onTap: (){
-                                            launchUrl(
-                                                Uri.parse("mailto:sussexsyriancommunity@gmail.com?subkect= send email&body= ")
-                                            );
-                                          },
-                                        ),
+
                                         Divider(),
-                                        GestureDetector(
-                                          child: MYlist(
+                                         MYlist(
                                             leading: Icon(Icons.phone),
-                                            title: Text(data["phone"], style: TextStyles.ListTile,),
+                                            title: GestureDetector(
+                                                child: Text(data["phone"], style: TextStyles.ListTile,),
+                                              onTap: (){
+                                                launchUrl(
+                                                    Uri.parse("tel: ${data["phone"]}")
+                                                );
+                                              },
+                                            ),
                                           ),
-                                          onTap: (){
-                                            launchUrl(
-                                                Uri.parse("tel: ${data["phone"]}")
-                                            );
-                                          },
-                                        ),
+
+
                                       ],
                                     ),
                                   ),
@@ -154,7 +157,8 @@ class _ContactUsState extends State<ContactUs> {
                                       },
                                         title: "${AppLocalizations.of(context)!.edit}"
                                             " ${AppLocalizations.of(context)!.thisPage}",
-                                        color: ColorManager.addEdit,)
+                                        color: ColorManager.addEdit,
+                                      )
                                     ],
                                   ) : SizedBox.shrink(),
                                 ],
