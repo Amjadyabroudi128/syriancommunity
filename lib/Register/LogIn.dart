@@ -36,35 +36,52 @@ class _LoginState extends State<Login> {
         title: Text(AppLocalizations.of(context)!.login),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(AppLocalizations.of(context)!.loginAdmin),
-             sizedBox(height: 19,),
-            CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: testEmail,),
-            sizedBox(height: 15,),
-            CustomTextForm(hinttext: AppLocalizations.of(context)!.password, obscureText: _isHidden, maxLines: 1,
-              myController: testPassword,
-              suffixIcon: IconButton(
-                onPressed: (){
-                  setState(() {
-                    _togglePasswordView();
-                  });
-                },
-                icon: Icon(_isHidden ? Icons.visibility : Icons.visibility_off,
-                  color: _isHidden ? ColorManager.delete : ColorManager.submit,
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(AppLocalizations.of(context)!.loginAdmin),
+               sizedBox(height: 19,),
+              CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: testEmail,),
+              sizedBox(height: 15,),
+              CustomTextForm(hinttext: AppLocalizations.of(context)!.password, obscureText: _isHidden, maxLines: 1,
+                myController: testPassword,
+                suffixIcon: IconButton(
+                  onPressed: (){
+                    setState(() {
+                      _togglePasswordView();
+                    });
+                  },
+                  icon: Icon(_isHidden ? Icons.visibility : Icons.visibility_off,
+                    color: _isHidden ? ColorManager.delete : ColorManager.submit,
+                  ),
                 ),
               ),
-            ),
-            sizedBox(height: 20,),
-             TextButton(
-                onPressed: () async {
-               await  BlocProvider.of<AuthCubit>(context).login(email: testEmail.text, password: testPassword.text);
-                },
-                child:  Text(AppLocalizations.of(context)!.login,style: TextStyles.font20white
-                ),
-              ),
-          ],
+              sizedBox(height: 20,),
+               Container(
+                 decoration: BoxDecoration(
+                   gradient: LinearGradient(
+                     colors: [
+                       Colors.lightBlueAccent,
+                       Colors.blueAccent,
+                       Colors.blueGrey
+                     ],
+                     begin: Alignment.topLeft,
+                     end: Alignment.bottomRight,
+                   )
+                 ),
+                 child: TextButton(
+                    onPressed: () async {
+                   await  BlocProvider.of<AuthCubit>(context).login(email: testEmail.text, password: testPassword.text);
+                    },
+                    child:  Text(AppLocalizations.of(context)!.login,style: TextStyles.font20white,
+
+                    ),
+                  ),
+               ),
+            ],
+          ),
         ),
       ),
     );
