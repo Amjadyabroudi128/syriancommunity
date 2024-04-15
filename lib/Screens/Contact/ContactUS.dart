@@ -135,28 +135,11 @@ class _ContactUsState extends State<ContactUs> {
                                     width: MediaQuery.of(context).size.width,
                                   ),
                                   sizedBox(height: 10),
-                                  Center(
-                                    child: Containers.location,
-                                  ),
+                                  Center(child: Containers.location,),
                                   sizedBox(height: 10,),
 
                                   Text(AppLocalizations.of(context)!.facebook),
-                                  Card(
-                                    child: MYlist(
-                                      leading: IconButton(
-                                        onPressed: () {
-                                          launchUrl(Uri.parse(
-                                              'https://www.facebook.com/groups/SyrianCommunityGroup'));},
-                                        icon: Icon(
-                                          Icons.facebook,
-                                          color: ColorManager.fbColor,
-                                          size: 38,
-                                        ),
-                                      ),
-                                      title: Text("${AppLocalizations.of(context)!.visit} "
-                                          "${AppLocalizations.of(context)!.facebook}"),
-                                    ),
-                                  ),
+                                  faceBook(),
                                   sizedBox(height: 15,),
                                  user!= null ? Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -190,5 +173,22 @@ class _ContactUsState extends State<ContactUs> {
       ),
     );
   }
-
+  faceBook (){
+   return  Card(
+      child: MYlist(
+        leading: IconButton(
+          onPressed: () {
+            launchUrl(Uri.parse(
+                'https://www.facebook.com/groups/SyrianCommunityGroup'));},
+          icon: Icon(
+            Icons.facebook,
+            color: ColorManager.fbColor,
+            size: 38,
+          ),
+        ),
+        title: Text("${AppLocalizations.of(context)!.visit} "
+            "${AppLocalizations.of(context)!.facebook}"),
+      ),
+    );
+  }
 }
