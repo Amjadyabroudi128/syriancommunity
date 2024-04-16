@@ -105,19 +105,22 @@ class _EditCelebrationState extends State<EditCelebration> {
                         },
                         title: AppLocalizations.of(context)!.update, color: ColorManager.submit),
                    sizedBox(width: 20,),
-                   CustomButton(
-                     onPressed: (){
-                       Navigator.pop(context);
-                     },
-                     title: AppLocalizations.of(context)!.cancel,
-                     color: ColorManager.delete,
-                   )
+                   cancelButton(),
                  ],
                ),
             ],
           ),
         ),
       ),
+    );
+  }
+  cancelButton () {
+   return CustomButton(
+      onPressed: (){
+        Navigator.pop(context);
+      },
+      title: AppLocalizations.of(context)!.cancel,
+      color: ColorManager.delete,
     );
   }
 }
