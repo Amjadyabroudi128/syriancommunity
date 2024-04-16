@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:syrianadmin/Cubits/add_celebration_cubit.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
@@ -22,6 +24,19 @@ class _AddCelebrationState extends State<AddCelebration> {
   FirebaseFirestore.instance.collection('Celebrations');
   @override
   Widget build(BuildContext context) {
+    return BlocConsumer<AddCelebrationCubit, AddCelebrationState>(
+  listener: (context, state) {
+    if (state is AddSuccess) {
+      Navigator.of(context).pushNamed("celebrations");
+      ;
+      clearText();
+    }
+    else if ( state is AddLoading){
+      print("still loading data");
+
+    }
+  },
+  builder: (context, state) {
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.addCelebration),
@@ -52,35 +67,15 @@ class _AddCelebrationState extends State<AddCelebration> {
                  mainAxisAlignment: MainAxisAlignment.center,
                  children: [
                    CustomButton(
-                        onPressed: () async{
-                          if (url.url == null ) {
-                            await celebrations.doc().set(
-                                {
-                                  "name" : celebrationName.text,
-                                  "details" : celebrationDetail.text,
-                                }
-                            );
-                          } else  {
-                            await celebrations.doc().set(
-                                {
-                                  "name" : celebrationName.text,
-                                  "details" : celebrationDetail.text,
-                                  "image" : url.url,
-                                }
-                            );
-                          }
-                          Navigator.of(context).pop();
-                          clearText();
-                        }, title: AppLocalizations.of(context)!.submit, color:ColorManager.submit, ),
-                   sizedBox(width: 20,),
-                   CustomButton(
-                     onPressed: (){
-                       Navigator.pop(context);
+                     onPressed: ()async {
+                       await BlocProvider.of<AddCelebrationCubit>(context).addCelebration(
+                           url: url.url,
+                           name: celebrationName.text,
+                           details: celebrationDetail.text);
                      },
-                     title: AppLocalizations.of(context)!.cancel,
-                     color: ColorManager.delete,
-
-                   )
+                     title: AppLocalizations.of(context)!.submit, color:ColorManager.submit,),
+                   sizedBox(width: 20,),
+                   cancelButton()
                  ],
                ),
             ],
@@ -88,6 +83,8 @@ class _AddCelebrationState extends State<AddCelebration> {
         ),
       ),
     );
+  },
+);
   }
   void clearText() {
     celebrationName.clear();
@@ -104,6 +101,16 @@ class _AddCelebrationState extends State<AddCelebration> {
         },
         color: ColorManager.addEdit,
       ),
+    );
+  }
+  cancelButton () {
+    return CustomButton(
+      onPressed: (){
+        Navigator.pop(context);
+      },
+      title: AppLocalizations.of(context)!.cancel,
+      color: ColorManager.delete,
+
     );
   }
 }
