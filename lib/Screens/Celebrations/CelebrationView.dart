@@ -24,158 +24,161 @@ class Celebrations extends StatelessWidget {
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.celebrations),
       ),
-      body: SingleChildScrollView(
-        child: Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Center(
-                  child: user != null ? CustomButton(
-                      onPressed: (){
-                        Navigator.of(context).pushNamed("addcelebration");
-                      },
-                      title: AppLocalizations.of(context)!.addCelebration,color: ColorManager.addEdit,) : sizedBox(height: 15,),
-                ),
-                padding(child: Text(AppLocalizations.of(context)!.celebrations, style: TextStyles.font16green,)),
-                sizedBox(),
-                Container(
-                  width: 400,
-                  height: 100,
-                  child: padding(
-                    child: Card(
-                      child: Text(AppLocalizations.of(context)!.join, style: TextStyles.font17,),
+      body: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: SingleChildScrollView(
+          child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(
+                    child: user != null ? CustomButton(
+                        onPressed: (){
+                          Navigator.of(context).pushNamed("addcelebration");
+                        },
+                        title: AppLocalizations.of(context)!.addCelebration,color: ColorManager.addEdit,) : sizedBox(height: 15,),
+                  ),
+                  padding(child: Text(AppLocalizations.of(context)!.celebrations, style: TextStyles.font16green,)),
+                  sizedBox(),
+                  Container(
+                    width: 400,
+                    height: 100,
+                    child: padding(
+                      child: Card(
+                        child: Text(AppLocalizations.of(context)!.join, style: TextStyles.font17,),
+                      ),
                     ),
                   ),
-                ),
-                StreamBuilder(
-                  stream: celebrations.snapshots(),
-                  builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-                    if (snapshot.hasError) {
-                      return Text('Something went wrong');
-                    }
+                  StreamBuilder(
+                    stream: celebrations.snapshots(),
+                    builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                      if (snapshot.hasError) {
+                        return Text('Something went wrong');
+                      }
 
-                    if (snapshot.connectionState == ConnectionState.waiting) {
-                      return Text("Loading");
-                    }
-                    if (snapshot.data!.docs.isEmpty) {
-                      return SafeArea(
-                        child: Center(
-                          child: Column(
-                            children: [
-                              sizedBox(height: 200,),
-                              Text("nothing to see here ", style: TextStyles.font20grey,)
-                            ],
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return Text("Loading");
+                      }
+                      if (snapshot.data!.docs.isEmpty) {
+                        return SafeArea(
+                          child: Center(
+                            child: Column(
+                              children: [
+                                sizedBox(height: 200,),
+                                Text("nothing to see here ", style: TextStyles.font20grey,)
+                              ],
+                            ),
                           ),
-                        ),
-                      );
-                    }
-                    return SingleChildScrollView(
-                      child: ListView(
-                        physics: ScrollPhysics(),
-                        shrinkWrap: true,
-                        children: snapshot.data!.docs.map((DocumentSnapshot document){
-                          Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
-                          return Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              padding(child: Text(data["name"], style: TextStyles.font14green,)),
-                              user != null ? GestureDetector(
-                                child: Padding(
-                                  padding:  EdgeInsets.all(1.0),
-                                  child: Container(
-                                    child: data["image"] != null? myImage(
-                                      width: MediaQuery.of(context).size.width,
-                                      height: MediaQuery.of(context).size.height * 0.40,
-                                      src: data["image"],
-                                    ) : SizedBox.shrink(),
-                                    ),
-                                ),
-                                onTap: () {
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            EditCelebration(
-                                                DocID: document.id,
-                                                oldName: data["name"],
-                                                oldDetail: data["details"],
-                                                oldUrl: data["image"])
-                                    ),
-                                  );
-                                },
-                              ) : Padding(
-                               padding: const EdgeInsets.all(1.0),
-                               child: Container(
-                                 child: data["image"] != null ? myImage(
-                                   width: MediaQuery.of(context).size.width,
-                                   height: MediaQuery.of(context).size.height * 0.40,
-                                   src: data["image"],
-                                 ) : SizedBox.shrink(),
+                        );
+                      }
+                      return SingleChildScrollView(
+                        child: ListView(
+                          physics: ScrollPhysics(),
+                          shrinkWrap: true,
+                          children: snapshot.data!.docs.map((DocumentSnapshot document){
+                            Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
+                            return Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                padding(child: Text(data["name"], style: TextStyles.font14green,)),
+                                user != null ? GestureDetector(
+                                  child: Padding(
+                                    padding:  EdgeInsets.all(1.0),
+                                    child: Container(
+                                      child: data["image"] != null? myImage(
+                                        width: MediaQuery.of(context).size.width,
+                                        height: MediaQuery.of(context).size.height * 0.40,
+                                        src: data["image"],
+                                      ) : SizedBox.shrink(),
+                                      ),
+                                  ),
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              EditCelebration(
+                                                  DocID: document.id,
+                                                  oldName: data["name"],
+                                                  oldDetail: data["details"],
+                                                  oldUrl: data["image"])
+                                      ),
+                                    );
+                                  },
+                                ) : Padding(
+                                 padding: const EdgeInsets.all(1.0),
+                                 child: Container(
+                                   child: data["image"] != null ? myImage(
+                                     width: MediaQuery.of(context).size.width,
+                                     height: MediaQuery.of(context).size.height * 0.40,
+                                     src: data["image"],
+                                   ) : SizedBox.shrink(),
+                                 ),
                                ),
-                             ),
-                             SizedBox(
-                                width: MediaQuery.of(context).size.width,
-                                child: IntrinsicHeight(
-                                  child: Card(
-                                    child:  Column(
-                                      children: [
-                                        padding(
-                                          child: Text(data["details"], style: TextStyles.font17,),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(left: 300),
-                                          child: user != null ? MyPopUpMenu(
-                                              itemBuilder: (context) {
-                                                return [
-                                                  PopupMenuItem<int>(
-                                                  value: 0,
-                                                    child: Text(AppLocalizations.of(context)!.edit),
-                                                ),
-                                                        PopupMenuItem<int>(
-                                                          value: 1,
-                                                          child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),
-                                                        ),
-                                                ];
-                                              },
-                                            onSelected:(value){
-                                                if(value == 0){
-                                                  Navigator.of(context).push(
-                                                    MaterialPageRoute(
-                                                        builder: (context) => EditCelebration(
-                                                            DocID: document.id,
-                                                            oldName: data["name"],
-                                                            oldDetail: data["details"],
-                                                            oldUrl: data["image"])
-                                                    ),
-                                                  );
-                                                }else if(value == 1){
-                                                  celebrations.doc(document.id).delete();
-                                                  Navigator.of(context).push(
-                                                      MaterialPageRoute(
-                                                          builder: (context) => Celebrations()
-                                                      )
-                                                  );
-                                                }
+                               SizedBox(
+                                  width: MediaQuery.of(context).size.width,
+                                  child: IntrinsicHeight(
+                                    child: Card(
+                                      child:  Column(
+                                        children: [
+                                          padding(
+                                            child: Text(data["details"], style: TextStyles.font17,),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(left: 300),
+                                            child: user != null ? MyPopUpMenu(
+                                                itemBuilder: (context) {
+                                                  return [
+                                                    PopupMenuItem<int>(
+                                                    value: 0,
+                                                      child: Text(AppLocalizations.of(context)!.edit),
+                                                  ),
+                                                          PopupMenuItem<int>(
+                                                            value: 1,
+                                                            child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),
+                                                          ),
+                                                  ];
                                                 },
-                                          ) :  SizedBox(),
-                                        ),
-                                      ],
+                                              onSelected:(value){
+                                                  if(value == 0){
+                                                    Navigator.of(context).push(
+                                                      MaterialPageRoute(
+                                                          builder: (context) => EditCelebration(
+                                                              DocID: document.id,
+                                                              oldName: data["name"],
+                                                              oldDetail: data["details"],
+                                                              oldUrl: data["image"])
+                                                      ),
+                                                    );
+                                                  }else if(value == 1){
+                                                    celebrations.doc(document.id).delete();
+                                                    Navigator.of(context).push(
+                                                        MaterialPageRoute(
+                                                            builder: (context) => Celebrations()
+                                                        )
+                                                    );
+                                                  }
+                                                  },
+                                            ) :  SizedBox(),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                ),
 
-                              )
-                            ]
-                          );
-                        },
-                        ).toList(),
-                      ),
-                    );
-                  },
-                )
-              ],
+                                )
+                              ]
+                            );
+                          },
+                          ).toList(),
+                        ),
+                      );
+                    },
+                  )
+                ],
 
+              ),
             ),
-          ),
+        ),
       ),
     );
   }
