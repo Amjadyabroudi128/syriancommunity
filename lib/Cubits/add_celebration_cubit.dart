@@ -8,23 +8,22 @@ class AddCelebrationCubit extends Cubit<AddCelebrationState> {
   AddCelebrationCubit() : super(AddCelebrationInitial());
 
   Future <void> addCelebration ({required var url, required String name, required String details}) async {
-    emit(AddLoading());
+    emit(AddSuccess());
     if (url == null) {
-      FirebaseFirestore.instance.collection("Celebrations").doc().set(
+     await FirebaseFirestore.instance.collection("Celebrations").doc().set(
           {
             "name": name,
             "details": details
           }
       );
     } else {
-      FirebaseFirestore.instance.collection("Celebrations").doc().set(
+     await  FirebaseFirestore.instance.collection("Celebrations").doc().set(
           {
-            "url": url,
+            "image": url,
             "name": name,
             "details": details
           }
-      );
-      emit(AddSuccess());
+      );  emit(AddLoading());
     }
   }
 }
