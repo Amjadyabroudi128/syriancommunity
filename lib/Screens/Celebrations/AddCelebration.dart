@@ -46,17 +46,7 @@ class _AddCelebrationState extends State<AddCelebration> {
               sizedBox(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Center(
-                  child: CustomButton(
-                    title: AppLocalizations.of(context)!.image,
-                    onPressed: () {
-                      url.pickImage();
-                      setState(() {
-                      });
-                    },
-                    color: ColorManager.addEdit,
-                  ),
-                ),
+                child: imageButton()
               ),
                Row(
                  mainAxisAlignment: MainAxisAlignment.center,
@@ -102,5 +92,18 @@ class _AddCelebrationState extends State<AddCelebration> {
   void clearText() {
     celebrationName.clear();
     celebrationDetail.clear();
+  }
+  imageButton () {
+     return Center(
+      child: CustomButton(
+        title: AppLocalizations.of(context)!.image,
+        onPressed: () {
+          url.pickImage();
+          setState(() {
+          });
+        },
+        color: ColorManager.addEdit,
+      ),
+    );
   }
 }
