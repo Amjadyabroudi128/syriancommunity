@@ -9,6 +9,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../components/TextField.dart';
+import 'CelebrationView.dart';
 class AddCelebration extends StatefulWidget {
   const AddCelebration({Key? key}) : super(key: key);
 
@@ -27,8 +28,11 @@ class _AddCelebrationState extends State<AddCelebration> {
     return BlocConsumer<AddCelebrationCubit, AddCelebrationState>(
   listener: (context, state) {
     if (state is AddSuccess) {
-      Navigator.of(context).pushNamed("celebrations");
-      ;
+      Navigator.of(context).push(
+          MaterialPageRoute(
+              builder: (context) => Celebrations()
+          )
+      );
       clearText();
     }
     else if ( state is AddLoading){
