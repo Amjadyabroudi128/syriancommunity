@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:syrianadmin/Cubits/add_celebration_cubit.dart';
 import 'package:syrianadmin/Cubits/auth_cubit.dart';
 import 'package:syrianadmin/appRoute.dart';
 import 'package:syrianadmin/components/firebase_options.dart';
@@ -53,6 +54,8 @@ class _MyAppState extends State<MyApp> {
         BlocProvider(
           create: (context) => AuthCubit(),
         ),
+        BlocProvider(
+            create: (context) => AddCelebrationCubit()),
       ],
       child: MaterialApp(
        debugShowCheckedModeBanner: false,
