@@ -70,14 +70,7 @@ class _AddCelebrationState extends State<AddCelebration> {
                Row(
                  mainAxisAlignment: MainAxisAlignment.center,
                  children: [
-                   CustomButton(
-                     onPressed: ()async {
-                       await BlocProvider.of<AddCelebrationCubit>(context).addCelebration(
-                           url: url.url,
-                           name: celebrationName.text,
-                           details: celebrationDetail.text);
-                     },
-                     title: AppLocalizations.of(context)!.submit, color:ColorManager.submit,),
+                   addButton(),
                    sizedBox(width: 20,),
                    cancelButton()
                  ],
@@ -116,5 +109,15 @@ class _AddCelebrationState extends State<AddCelebration> {
       color: ColorManager.delete,
 
     );
+  }
+  addButton () {
+   return  CustomButton(
+      onPressed: ()async {
+        await BlocProvider.of<AddCelebrationCubit>(context).addCelebration(
+            url: url.url,
+            name: celebrationName.text,
+            details: celebrationDetail.text);
+      },
+      title: AppLocalizations.of(context)!.submit, color:ColorManager.submit,);
   }
 }
