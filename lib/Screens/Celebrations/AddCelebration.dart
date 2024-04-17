@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:syrianadmin/Cubits/celebration_cubit/add_celebration_cubit.dart';
@@ -21,8 +20,7 @@ class _AddCelebrationState extends State<AddCelebration> {
   TextEditingController celebrationName = TextEditingController();
   TextEditingController celebrationDetail = TextEditingController();
 
-  final CollectionReference celebrations =
-  FirebaseFirestore.instance.collection('Celebrations');
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AddCelebrationCubit, AddCelebrationState>(
