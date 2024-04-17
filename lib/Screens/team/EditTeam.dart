@@ -109,10 +109,7 @@ class _EditMemberState extends State<EditMember> {
                           },
                        title: AppLocalizations.of(context)!.edit, color: ColorManager.submit,),
                      sizedBox(width: 16,),
-                     CustomButton(onPressed: (){
-                       Navigator.pop(context);
-
-                     }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,),
+                     cancelButton()
                    ],
                  ),
               ],
@@ -125,5 +122,11 @@ class _EditMemberState extends State<EditMember> {
   void clearText() {
     name.clear();
     details.clear();
+  }
+  cancelButton() {
+    return CustomButton(onPressed: (){
+      Navigator.pop(context);
+
+    }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
   }
 }
