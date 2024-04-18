@@ -69,15 +69,7 @@ class _EditCelebrationState extends State<EditCelebration> {
               sizedBox(),
               padding(
                 child: Center(
-                      child: CustomButton(
-                        title: AppLocalizations.of(context)!.image,
-                        onPressed: () async {
-                          await url.pickImage();
-                          setState(() {
-                          });
-                        },
-                        color: ColorManager.addEdit,
-                      ),
+                      child: imageButton()
                     ),
                   ),
                Row(
@@ -93,6 +85,18 @@ class _EditCelebrationState extends State<EditCelebration> {
         ),
       ),
     );
+  }
+  imageButton () {
+    return
+      CustomButton(
+        title: AppLocalizations.of(context)!.image,
+        onPressed: () async {
+          await url.pickImage();
+          setState(() {
+          });
+        },
+        color: ColorManager.addEdit,
+      );
   }
   cancelButton () {
     return CustomButton(
