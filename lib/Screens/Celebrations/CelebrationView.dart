@@ -120,8 +120,15 @@ class Celebrations extends StatelessWidget {
                                     child: Card(
                                       child:  Column(
                                         children: [
-                                          padding(
-                                            child: Text(data["details"], style: TextStyles.font17,),
+                                          // padding(
+                                          //   child: Text(data["details"], style: TextStyles.font17,),
+                                          // ),
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Container(
+                                              child: Text(data["details"], style: TextStyles.font17,),
+                                              alignment: Alignment.bottomCenter,
+                                            ),
                                           ),
                                           Padding(
                                             padding: const EdgeInsets.only(left: 300),
