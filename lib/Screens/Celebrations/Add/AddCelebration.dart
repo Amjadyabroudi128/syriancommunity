@@ -8,7 +8,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../../components/TextField.dart';
-import '../CelebrationView.dart';
+import '../CelebrationView/CelebrationView.dart';
 class AddCelebration extends StatefulWidget {
   const AddCelebration({Key? key}) : super(key: key);
 

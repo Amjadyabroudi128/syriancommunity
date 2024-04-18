@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
-import '../../classes/pickImage.dart' as url;
-import '../../components/SubmitButton.dart';
-import '../../components/TextField.dart';
+import '../../../classes/pickImage.dart' as url;
+import '../../../components/SubmitButton.dart';
+import '../../../components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 class EditCelebration extends StatefulWidget {

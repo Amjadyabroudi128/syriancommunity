@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:syrianadmin/Screens/Celebrations/editCelebrations.dart';
+import 'package:syrianadmin/Screens/Celebrations/editCelebrations/editCelebrations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/image.network.dart';
@@ -9,7 +9,7 @@ import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
-import '../../components/SubmitButton.dart';
+import '../../../components/SubmitButton.dart';
 class Celebrations extends StatelessWidget {
   final document;
 

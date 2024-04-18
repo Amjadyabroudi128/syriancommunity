@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/Register/LogIn.dart';
 import 'package:syrianadmin/Screens/Celebrations/Add/AddCelebration.dart';
-import 'package:syrianadmin/Screens/Celebrations/CelebrationView.dart';
-import 'package:syrianadmin/Screens/Celebrations/editCelebrations.dart';
+import 'package:syrianadmin/Screens/Celebrations/CelebrationView/CelebrationView.dart';
+import 'package:syrianadmin/Screens/Celebrations/editCelebrations/editCelebrations.dart';
 import 'package:syrianadmin/Screens/Contact/AddContactDetails.dart';
 import 'package:syrianadmin/Screens/Contact/ContactUS.dart';
 import 'package:syrianadmin/Screens/HomePage/AddHomePage.dart';
