@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:syrianadmin/Screens/Celebrations/Add/add_celebration_cubit.dart';
+import 'package:syrianadmin/Screens/Celebrations/CelebrationView/CelebrationView.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
@@ -8,7 +9,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../../components/TextField.dart';
-import '../CelebrationView/CelebrationView.dart';
 class AddCelebration extends StatefulWidget {
   const AddCelebration({Key? key}) : super(key: key);
 

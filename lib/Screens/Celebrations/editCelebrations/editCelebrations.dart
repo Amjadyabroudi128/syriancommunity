@@ -74,28 +74,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                Row(
                  mainAxisAlignment: MainAxisAlignment.center,
                  children: [
-                   CustomButton(
-                        onPressed: () async {
-                          if(url.url == null ) {
-                            await celebrations.doc(widget.DocID).update(
-                              {
-                                "name" : celebrationName.text,
-                                "details" : celebrationDetails.text
-                              }
-                            );
-                          } else {
-                           await celebrations.doc(widget.DocID).update(
-                                {
-                                  "name" : celebrationName.text,
-                                  "details" : celebrationDetails.text,
-                                  "image" : url.url,
-                                }
-                            );
-                          }
-
-                          Navigator.of(context).pushNamed("celebrations");
-                        },
-                        title: AppLocalizations.of(context)!.update, color: ColorManager.submit),
+                   editButton(),
                    sizedBox(width: 20,),
                    cancelButton(),
                  ],
@@ -125,5 +104,29 @@ class _EditCelebrationState extends State<EditCelebration> {
       },
       color: ColorManager.addEdit,
     );
+  }
+  editButton () {
+    return CustomButton(
+        onPressed: () async {
+          if(url.url == null ) {
+            await celebrations.doc(widget.DocID).update(
+                {
+                  "name" : celebrationName.text,
+                  "details" : celebrationDetails.text
+                }
+            );
+          } else {
+            await celebrations.doc(widget.DocID).update(
+                {
+                  "name" : celebrationName.text,
+                  "details" : celebrationDetails.text,
+                  "image" : url.url,
+                }
+            );
+          }
+
+          Navigator.of(context).pushNamed("celebrations");
+        },
+        title: AppLocalizations.of(context)!.update, color: ColorManager.submit);
   }
 }
