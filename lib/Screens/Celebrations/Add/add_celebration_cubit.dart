@@ -6,10 +6,10 @@ part 'add_celebration_state.dart';
 
 class AddCelebrationCubit extends Cubit<AddCelebrationState> {
   AddCelebrationCubit() : super(AddCelebrationInitial());
-
+  final CollectionReference celebrations =
+  FirebaseFirestore.instance.collection('Celebrations');
   Future <void> addCelebration ({required var url, required String name, required String details}) async {
-    final CollectionReference celebrations =
-    FirebaseFirestore.instance.collection('Celebrations');
+
     emit(AddSuccess());
     if (url == null) {
      await celebrations.doc().set(

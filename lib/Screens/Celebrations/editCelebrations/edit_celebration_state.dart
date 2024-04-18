@@ -4,7 +4,7 @@ part of 'edit_celebration_cubit.dart';
 
 abstract class EditCelebrationState {}
 
-final class EditCelebrationInitial extends EditCelebrationState {}
+ class EditCelebrationInitial extends EditCelebrationState {}
 
  class EditLoading extends EditCelebrationState {}
 
