@@ -1,12 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/SubmitButton.dart';
+import 'package:syrianadmin/components/TextField.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
-import '../../../classes/pickImage.dart' as url;
-import '../../../components/SubmitButton.dart';
-import '../../../components/TextField.dart';
+
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 class EditCelebration extends StatefulWidget {
@@ -68,15 +69,44 @@ class _EditCelebrationState extends State<EditCelebration> {
               sizedBox(),
               padding(
                 child: Center(
-                      child: imageButton(),
+                      child: CustomButton(
+                        title: AppLocalizations.of(context)!.image,
+                        onPressed: () async {
+                          await url.pickImage();
+                          setState(() {
+                          });
+                        },
+                        color: ColorManager.addEdit,
+                      ),
                     ),
                   ),
                Row(
                  mainAxisAlignment: MainAxisAlignment.center,
                  children: [
-                   editButton(),
+                   CustomButton(
+                        onPressed: () async {
+                          if(url.url == null ) {
+                            await celebrations.doc(widget.DocID).update(
+                              {
+                                "name" : celebrationName.text,
+                                "details" : celebrationDetails.text
+                              }
+                            );
+                          } else {
+                           await celebrations.doc(widget.DocID).update(
+                                {
+                                  "name" : celebrationName.text,
+                                  "details" : celebrationDetails.text,
+                                  "image" : url.url,
+                                }
+                            );
+                          }
+
+                          Navigator.of(context).pushNamed("celebrations");
+                        },
+                        title: AppLocalizations.of(context)!.update, color: ColorManager.submit),
                    sizedBox(width: 20,),
-                   cancelButton(),
+                   cancelButton()
                  ],
                ),
             ],
@@ -86,47 +116,12 @@ class _EditCelebrationState extends State<EditCelebration> {
     );
   }
   cancelButton () {
-   return CustomButton(
+    return CustomButton(
       onPressed: (){
         Navigator.pop(context);
       },
       title: AppLocalizations.of(context)!.cancel,
       color: ColorManager.delete,
     );
-  }
-  imageButton () {
-    return CustomButton(
-      title: AppLocalizations.of(context)!.image,
-      onPressed: () async {
-        await url.pickImage();
-        setState(() {
-        });
-      },
-      color: ColorManager.addEdit,
-    );
-  }
-  editButton () {
-    return CustomButton(
-        onPressed: () async {
-          if(url.url == null ) {
-            await celebrations.doc(widget.DocID).update(
-                {
-                  "name" : celebrationName.text,
-                  "details" : celebrationDetails.text
-                }
-            );
-          } else {
-            await celebrations.doc(widget.DocID).update(
-                {
-                  "name" : celebrationName.text,
-                  "details" : celebrationDetails.text,
-                  "image" : url.url,
-                }
-            );
-          }
-
-          Navigator.of(context).pushNamed("celebrations");
-        },
-        title: AppLocalizations.of(context)!.update, color: ColorManager.submit);
   }
 }

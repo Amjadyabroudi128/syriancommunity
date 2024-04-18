@@ -38,6 +38,7 @@ class MyApp extends StatefulWidget {
 
 
 class _MyAppState extends State<MyApp> {
+      String? DocID;
   Locale? _locale;
 
   setLocale(Locale locale) {
