@@ -42,11 +42,7 @@ class _EditCelebrationState extends State<EditCelebration> {
     return BlocConsumer<EditCelebrationCubit, EditCelebrationState>(
   listener: (context, state) {
     if(state is EditSuccess) {
-      Navigator.of(context).push(
-          MaterialPageRoute(
-              builder: (context) => Celebrations()
-          )
-      );
+      Navigator.of(context).pushReplacementNamed("celebrations");
     } else {
       print("loading still fam");
     }
