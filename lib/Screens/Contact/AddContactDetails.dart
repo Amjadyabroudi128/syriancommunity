@@ -80,8 +80,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
                             "email" : email.text,
                             "phone" : phone.text
                       });
-                      Navigator.of(context).pushNamed("contactus");
-                      clearText();
+                      Navigator.of(context).pop();
                     },
                     title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,
                   ),
