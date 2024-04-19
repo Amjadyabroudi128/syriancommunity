@@ -115,10 +115,6 @@ class _AddCelebrationState extends State<AddCelebration> {
             url: url.url,
             name: celebrationName.text,
             details: celebrationDetail.text);
-        // await BlocProvider.of<AddCelebrationCubit>(context).addCelebration(
-        //     url: url.url,
-        //     name: celebrationName.text,
-        //     details: celebrationDetail.text);
       },
       title: AppLocalizations.of(context)!.submit, color:ColorManager.submit,);
   }
