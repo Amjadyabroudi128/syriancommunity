@@ -71,6 +71,8 @@ class _AddMemberState extends State<AddMember> {
                                "details": details.text
                                }
                              );
+                             Navigator.of(context).pushReplacementNamed("ourteam");
+                             clearText();
                            } else if (details == null) {
                              members.doc().set(
                                {
@@ -78,6 +80,8 @@ class _AddMemberState extends State<AddMember> {
                                  "image": url.url
                                }
                              );
+                             Navigator.of(context).pushReplacementNamed("ourteam");
+                             clearText();
                            } else {
                                  await members.doc().set(
                                      {
@@ -86,7 +90,7 @@ class _AddMemberState extends State<AddMember> {
                                        "image" : url.url,
                                      }
                                  );
-                                 Navigator.pop(context);
+                                 Navigator.of(context).pushReplacementNamed("ourteam");
                                  clearText();
                            }
                          },
