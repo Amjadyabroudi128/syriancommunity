@@ -142,7 +142,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                         ));
                                } else if(value == 1){
                                 members.doc(document.id).delete();
-                                 Navigator.of(context).pushNamed("ourteam");
+                                 Navigator.of(context).pushReplacementNamed("ourteam");
                               }
                             },
                           ) : SizedBox(),
