@@ -33,12 +33,10 @@ class Celebrations extends StatelessWidget {
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.celebrations),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(5.0),
-        child: SingleChildScrollView(
+      body:  SingleChildScrollView(
           child: Center(
               child: Column(
-                // crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
                     child: user != null ? CustomButton(
@@ -183,7 +181,7 @@ class Celebrations extends StatelessWidget {
               ),
             ),
         ),
-      ),
+
     );
   },
 );
