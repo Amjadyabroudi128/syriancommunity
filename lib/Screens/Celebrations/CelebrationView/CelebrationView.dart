@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:syrianadmin/Screens/Celebrations/Delete/delete_cubit.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations/editCelebrations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
@@ -20,6 +22,17 @@ class Celebrations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     User? user = FirebaseAuth.instance.currentUser;
+    return BlocConsumer<DeleteCubit, DeleteState>(
+  listener: (context, state) {
+    if (state is DeleteSuccess) {
+      Navigator.of(context).push(
+          MaterialPageRoute(
+              builder: (context) => Celebrations()
+          )
+      );
+    }
+  },
+  builder: (context, state) {
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.celebrations),
@@ -150,12 +163,7 @@ class Celebrations extends StatelessWidget {
                                                       ),
                                                     );
                                                   }else if(value == 1){
-                                                    celebrations.doc(document.id).delete();
-                                                    Navigator.of(context).push(
-                                                        MaterialPageRoute(
-                                                            builder: (context) => Celebrations()
-                                                        )
-                                                    );
+                                                    context.read<DeleteCubit>().delete(document.id);
                                                   }
                                                   },
                                             ) :  SizedBox(),
@@ -181,5 +189,7 @@ class Celebrations extends StatelessWidget {
         ),
       ),
     );
+  },
+);
   }
 }
