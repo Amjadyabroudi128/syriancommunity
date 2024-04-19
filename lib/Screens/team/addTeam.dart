@@ -71,16 +71,7 @@ class _AddMemberState extends State<AddMember> {
                                "details": details.text
                                }
                              );
-                             Navigator.of(context).pushReplacementNamed("ourteam");
-                             clearText();
-                           } else if (details == null) {
-                             members.doc().set(
-                               {
-                                 "name": name.text,
-                                 "image": url.url
-                               }
-                             );
-                             Navigator.of(context).pushReplacementNamed("ourteam");
+                             Navigator.of(context).pop();
                              clearText();
                            } else {
                                  await members.doc().set(
@@ -90,7 +81,7 @@ class _AddMemberState extends State<AddMember> {
                                        "image" : url.url,
                                      }
                                  );
-                                 Navigator.of(context).pushReplacementNamed("ourteam");
+                                 Navigator.of(context).pop();
                                  clearText();
                            }
                          },
@@ -98,7 +89,7 @@ class _AddMemberState extends State<AddMember> {
                           title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,),
                        sizedBox(width: 15,),
                        CustomButton(onPressed: (){
-                         Navigator.pop(context);
+                         Navigator.of(context).pop();
                        }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,)
                      ],
                    ),
