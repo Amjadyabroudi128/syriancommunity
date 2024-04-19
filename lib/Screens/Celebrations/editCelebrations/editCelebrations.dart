@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:syrianadmin/Screens/Celebrations/CelebrationView/CelebrationView.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations/edit_celebration_cubit.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:syrianadmin/components/Sizedbox.dart';

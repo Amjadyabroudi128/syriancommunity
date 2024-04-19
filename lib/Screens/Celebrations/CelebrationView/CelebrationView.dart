@@ -90,7 +90,7 @@ class Celebrations extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(data["name"], style: TextStyles.font14green,),
-                                  sizedBox(height: 3,),
+                                  sizedBox(height: 5,),
                                   // padding(child: Text(data["name"], style: TextStyles.font14green,)),
                                   user != null ? GestureDetector(
                                       child: Container(
