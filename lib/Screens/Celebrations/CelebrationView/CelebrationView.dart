@@ -25,11 +25,7 @@ class Celebrations extends StatelessWidget {
     return BlocConsumer<DeleteCubit, DeleteState>(
   listener: (context, state) {
     if (state is DeleteSuccess) {
-      Navigator.of(context).push(
-          MaterialPageRoute(
-              builder: (context) => Celebrations()
-          )
-      );
+      Navigator.of(context).pushReplacementNamed("celebrations");
     }
   },
   builder: (context, state) {
@@ -47,7 +43,7 @@ class Celebrations extends StatelessWidget {
                   Center(
                     child: user != null ? CustomButton(
                         onPressed: (){
-                          Navigator.of(context).pushNamed("addcelebration");
+                          Navigator.of(context).pushReplacementNamed("addcelebration");
                         },
                         title: AppLocalizations.of(context)!.addCelebration,color: ColorManager.addEdit,) : sizedBox(height: 15,),
                   ),
