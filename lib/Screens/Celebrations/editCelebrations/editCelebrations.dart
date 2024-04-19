@@ -1,6 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:syrianadmin/Screens/Celebrations/CelebrationView/CelebrationView.dart';
+import 'package:syrianadmin/Screens/Celebrations/editCelebrations/edit_celebration_cubit.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
@@ -36,6 +39,19 @@ class _EditCelebrationState extends State<EditCelebration> {
   FirebaseFirestore.instance.collection('Celebrations');
   @override
   Widget build(BuildContext context) {
+    return BlocConsumer<EditCelebrationCubit, EditCelebrationState>(
+  listener: (context, state) {
+    if(state is EditSuccess) {
+      Navigator.of(context).push(
+          MaterialPageRoute(
+              builder: (context) => Celebrations()
+          )
+      );
+    } else {
+      print("loading still fam");
+    }
+  },
+  builder: (context, state) {
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.addCelebration),
@@ -85,6 +101,8 @@ class _EditCelebrationState extends State<EditCelebration> {
         ),
       ),
     );
+  },
+);
   }
   imageButton () {
     return
@@ -108,27 +126,35 @@ class _EditCelebrationState extends State<EditCelebration> {
     );
   }
   editButton () {
-   return CustomButton(
-        onPressed: () async {
-          if(url.url == null ) {
-            await celebrations.doc(widget.DocID).update(
-                {
-                  "name" : celebrationName.text,
-                  "details" : celebrationDetails.text
-                }
-            );
-          } else {
-            await celebrations.doc(widget.DocID).update(
-                {
-                  "name" : celebrationName.text,
-                  "details" : celebrationDetails.text,
-                  "image" : url.url,
-                }
-            );
-          }
-
-          Navigator.of(context).pushNamed("celebrations");
-        },
-        title: AppLocalizations.of(context)!.update, color: ColorManager.submit);
+    return CustomButton(onPressed: () async {
+      context.read<EditCelebrationCubit>().EditCelebration(widget.DocID,
+          {
+            "name": celebrationName.text,
+            "details": celebrationDetails.text,
+            "image": url.url
+          });
+    }, title: "edit");
+   // return CustomButton(
+   //      onPressed: () async {
+   //        if(url.url == null ) {
+   //          await celebrations.doc(widget.DocID).update(
+   //              {
+   //                "name" : celebrationName.text,
+   //                "details" : celebrationDetails.text
+   //              }
+   //          );
+   //        } else {
+   //          await celebrations.doc(widget.DocID).update(
+   //              {
+   //                "name" : celebrationName.text,
+   //                "details" : celebrationDetails.text,
+   //                "image" : url.url,
+   //              }
+   //          );
+   //        }
+   //
+   //        Navigator.of(context).pushNamed("celebrations");
+   //      },
+   //      title: AppLocalizations.of(context)!.update, color: ColorManager.submit);
   }
 }
