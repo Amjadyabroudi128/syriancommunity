@@ -26,11 +26,7 @@ class _AddCelebrationState extends State<AddCelebration> {
     return BlocConsumer<AddCelebrationCubit, AddCelebrationState>(
   listener: (context, state) {
     if (state is AddSuccess) {
-      Navigator.of(context).push(
-          MaterialPageRoute(
-              builder: (context) => Celebrations()
-          )
-      );
+      Navigator.of(context).pushReplacementNamed("celebrations");
       clearText();
     }
     else if ( state is AddLoading){
