@@ -39,11 +39,14 @@ class Celebrations extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
-                    child: user != null ? CustomButton(
-                        onPressed: (){
-                          Navigator.of(context).pushReplacementNamed("addcelebration");
-                        },
-                        title: AppLocalizations.of(context)!.addCelebration,color: ColorManager.addEdit,) : sizedBox(height: 15,),
+                    child: user != null ? Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: CustomButton(
+                          onPressed: (){
+                            Navigator.of(context).pushReplacementNamed("addcelebration");
+                          },
+                          title: AppLocalizations.of(context)!.addCelebration,color: ColorManager.addEdit,),
+                    ) : sizedBox(height: 15,),
                   ),
                   padding(child: Text(AppLocalizations.of(context)!.celebrations, style: TextStyles.font16green,)),
                   sizedBox(),
