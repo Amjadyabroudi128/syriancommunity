@@ -133,28 +133,6 @@ class _EditCelebrationState extends State<EditCelebration> {
             "details": celebrationDetails.text,
             "image": url.url
           });
-    }, title: "edit");
-   // return CustomButton(
-   //      onPressed: () async {
-   //        if(url.url == null ) {
-   //          await celebrations.doc(widget.DocID).update(
-   //              {
-   //                "name" : celebrationName.text,
-   //                "details" : celebrationDetails.text
-   //              }
-   //          );
-   //        } else {
-   //          await celebrations.doc(widget.DocID).update(
-   //              {
-   //                "name" : celebrationName.text,
-   //                "details" : celebrationDetails.text,
-   //                "image" : url.url,
-   //              }
-   //          );
-   //        }
-   //
-   //        Navigator.of(context).pushNamed("celebrations");
-   //      },
-   //      title: AppLocalizations.of(context)!.update, color: ColorManager.submit);
+    }, title: AppLocalizations.of(context)!.update, color: ColorManager.submit,);
   }
 }
