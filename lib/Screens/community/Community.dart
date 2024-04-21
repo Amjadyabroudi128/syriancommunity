@@ -38,7 +38,7 @@ class _CommunityState extends State<Community> {
               child: Center(
                 child: user != null ? CustomButton(
                     onPressed: (){
-                      Navigator.of(context).pushNamed("addCommunity");
+                      Navigator.of(context).pushReplacementNamed("addCommunity");
                     },
                     title: AppLocalizations.of(context)!.addDetails, color: ColorManager.addEdit,) : sizedBox(),
               ),
@@ -122,7 +122,7 @@ class _CommunityState extends State<Community> {
 
                                           }else if(value == 1){
                                             community.doc(document.id).delete();
-                                            Navigator.of(context).pushNamed("community");
+                                            print("delete success");
                                           }
                                         },
                                     ) : sizedBox(height: 40,),
