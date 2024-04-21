@@ -26,7 +26,6 @@ class Celebrations extends StatelessWidget {
   listener: (context, state) {
     if (state is DeleteSuccess) {
       print("delete success");
-      // Navigator.of(context).pushReplacementNamed("celebrations");
     }
   },
   builder: (context, state) {
