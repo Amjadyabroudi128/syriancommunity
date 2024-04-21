@@ -25,7 +25,8 @@ class Celebrations extends StatelessWidget {
     return BlocConsumer<DeleteCubit, DeleteState>(
   listener: (context, state) {
     if (state is DeleteSuccess) {
-      Navigator.of(context).pushReplacementNamed("celebrations");
+      print("delete success");
+      // Navigator.of(context).pushReplacementNamed("celebrations");
     }
   },
   builder: (context, state) {
