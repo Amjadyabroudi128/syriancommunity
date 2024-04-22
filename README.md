@@ -9,6 +9,8 @@ this is the Sidebar where I will have the different categories
 
 the app is almost finished and here is how it looks as of now 
 
+the contact us page 
+![Screenshot (26)](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/79cd72f9-b711-4796-881e-65d5736689b7)
 
 
 I have Learnt a lot of things while making this app and i feel like it was very beneficial for me 
