@@ -9,7 +9,12 @@ this is the Sidebar where I will have the different categories
 
 the app is almost finished and here is how it looks as of now 
 
-the contact us page 
+side bar with English and Arabic 
+
+![Screenshot (27)](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/6e02b8b3-95e6-4392-b0ff-868e631da7c9)
+
+
+The Contact Us page 
 ![Screenshot (26)](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/79cd72f9-b711-4796-881e-65d5736689b7)
 
 
