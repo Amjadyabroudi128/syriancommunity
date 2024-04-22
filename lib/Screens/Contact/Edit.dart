@@ -90,19 +90,7 @@ class _AddContactDetailsState extends State<EditDetails> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CustomButton
-                    (onPressed: () async {
-                    await contact.doc(widget.DocID).update({
-                      "place" : place.text,
-                      "street name" : road.text,
-                      "city" : city.text,
-                      "post code" : postcode.text,
-                      "email" : email.text,
-                      "phone" : phone.text
-                    });
-                    Navigator.pop(context);
-                    clearText();
-                  }, title: AppLocalizations.of(context)!.update, color: ColorManager.submit,),
+                 updateButton(),
                   sizedBox(width: 10,),
                   CustomButton(onPressed: (){
                     Navigator.pop(context);
@@ -123,5 +111,19 @@ class _AddContactDetailsState extends State<EditDetails> {
     postcode.clear();
     email.clear();
     phone.clear();
+  }
+  updateButton() {
+    return CustomButton(onPressed: () async {
+      await contact.doc(widget.DocID).update({
+        "place" : place.text,
+        "street name" : road.text,
+        "city" : city.text,
+        "post code" : postcode.text,
+        "email" : email.text,
+        "phone" : phone.text
+      });
+      Navigator.pop(context);
+      clearText();
+    }, title: AppLocalizations.of(context)!.update, color: ColorManager.submit,);
   }
 }
