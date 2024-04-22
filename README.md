@@ -15,6 +15,8 @@ side bar with English and Arabic
 
 
 The Contact Us page 
+
+
 ![Screenshot (26)](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/79cd72f9-b711-4796-881e-65d5736689b7)
 
 
