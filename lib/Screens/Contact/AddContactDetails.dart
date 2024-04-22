@@ -85,13 +85,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
                     title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,
                   ),
                   sizedBox(width: 15,),
-                  CustomButton(
-                    onPressed: (){
-                      Navigator.pop(context);
-                    },
-                    title: AppLocalizations.of(context)!.cancel,
-                    color: ColorManager.delete,
-                  )
+                  cancelButton()
                 ],
               )
             ],
@@ -106,5 +100,14 @@ class _AddContactDetailsState extends State<AddContactDetails> {
     city.clear();
     postcode.clear();
     email.clear();
+  }
+  cancelButton() {
+    return CustomButton(
+      onPressed: (){
+        Navigator.pop(context);
+      },
+      title: AppLocalizations.of(context)!.cancel,
+      color: ColorManager.delete,
+    );
   }
 }
