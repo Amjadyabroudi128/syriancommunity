@@ -7,8 +7,7 @@ this is a new flutter project for the Syrian Community in Sussex
 this is the Sidebar where I will have the different categories 
 
 
-the app is starting to look better 
-here are some screenshots so far 
+the app is almost finished and here is how it looks as of now 
 
 
 
