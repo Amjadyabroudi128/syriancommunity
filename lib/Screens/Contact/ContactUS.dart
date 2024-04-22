@@ -44,7 +44,7 @@ class _ContactUsState extends State<ContactUs> {
                       child: user != null
                           ? CustomButton(
                               onPressed: () {
-                                Navigator.of(context).pushNamed("addcontact");
+                                Navigator.of(context).pushReplacementNamed("addcontact");
                               },
                               title: AppLocalizations.of(context)!.addThings,
                               color: ColorManager.addEdit,
