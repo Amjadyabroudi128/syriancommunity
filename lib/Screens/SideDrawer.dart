@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/Register/LogIn.dart';
+import 'package:syrianadmin/components/ListTile.dart';
 import '../components/Container.dart';
 import '../main.dart';
 
@@ -27,7 +28,7 @@ class _SideDrawerState extends State<SideDrawer> {
         padding: EdgeInsets.zero,
         children: <Widget>[
         Containers.image,
-          ListTile(
+          MYlist(
             title: Text(AppLocalizations.of(context)!.home),
             leading: Icon(
               CupertinoIcons.home,
@@ -36,7 +37,7 @@ class _SideDrawerState extends State<SideDrawer> {
               Navigator.of(context).pushReplacementNamed("homepage");
             },
           ),
-          ListTile(
+          MYlist(
             title: Text(AppLocalizations.of(context)!.contact),
             leading: Icon(
               CupertinoIcons.mail_solid,
@@ -47,7 +48,7 @@ class _SideDrawerState extends State<SideDrawer> {
 
             },
           ),
-          ListTile(
+          MYlist(
             title: Text(AppLocalizations.of(context)!.team),
             leading: Icon(
               CupertinoIcons.group_solid,
@@ -57,7 +58,7 @@ class _SideDrawerState extends State<SideDrawer> {
               Navigator.of(context).pushNamed("ourteam");
             },
           ),
-          ListTile(
+          MYlist(
             title: Text(AppLocalizations.of(context)!.communityResources),
             leading: Icon(
               CupertinoIcons.book_circle,
@@ -67,7 +68,7 @@ class _SideDrawerState extends State<SideDrawer> {
               Navigator.of(context).pushNamed("community");
             },
           ),
-          ListTile(
+          MYlist(
             title: Text(AppLocalizations.of(context)!.celebrations),
             leading: Icon(
               Icons.celebration,
@@ -85,7 +86,7 @@ class _SideDrawerState extends State<SideDrawer> {
               // If the snapshot has data, it means the user is signed in
               if (snapshot.hasData) {
                 // Return the list tile for signed in users
-                return ListTile(
+                return MYlist(
                   leading: Icon(Icons.logout),
                   title: Text(AppLocalizations.of(context)!.logout),
                   onTap: (){
@@ -95,7 +96,7 @@ class _SideDrawerState extends State<SideDrawer> {
                 );
               } else {
                 // Return the list tile for signed out users
-                return ListTile(
+                return MYlist(
                   leading: Icon(Icons.login),
                   title: Text(AppLocalizations.of(context)!.login),
                   onTap: () {
@@ -119,17 +120,16 @@ class _SideDrawerState extends State<SideDrawer> {
               title: Text(AppLocalizations.of(context)!.language),
 
               children: <Widget>[
-                ListTile(
+                MYlist(
                   leading: Text("🇬🇧"),
                   title: Text(AppLocalizations.of(context)!.english),
                   onTap: (){
                     MyApp.setLocale(context, Locale("en"));
                   },
                 ),
-                ListTile(
+                MYlist(
                   leading: Text("🇸🇦"),
                   title: Text(AppLocalizations.of(context)!.arabic),
-
                   onTap: (){
                     MyApp.setLocale(context, Locale("ar"));
                   },
