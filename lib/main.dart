@@ -55,8 +55,7 @@ class _MyAppState extends State<MyApp> {
         BlocProvider(
           create: (context) => AuthCubit(),
         ),
-        BlocProvider(
-            create: (context) => AddCelebrationCubit()),
+        BlocProvider(create: (context) => AddCelebrationCubit()),
         BlocProvider(create: (context) => EditCelebrationCubit()),
         BlocProvider(create: (context) => DeleteCubit())
       ],

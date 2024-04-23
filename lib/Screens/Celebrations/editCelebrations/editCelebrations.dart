@@ -41,7 +41,7 @@ class _EditCelebrationState extends State<EditCelebration> {
     return BlocConsumer<EditCelebrationCubit, EditCelebrationState>(
   listener: (context, state) {
     if(state is EditSuccess) {
-      Navigator.of(context).pushReplacementNamed("celebrations");
+      Navigator.pop(context);
     } else {
       print("loading still");
     }
