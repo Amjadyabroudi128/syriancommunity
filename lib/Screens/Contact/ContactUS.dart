@@ -95,7 +95,6 @@ class _ContactUsState extends State<ContactUs> {
                                               },
                                             ),
                                           ),
-
                                         Divider(),
                                          MYlist(
                                             leading: Icon(Icons.phone),
@@ -138,6 +137,7 @@ class _ContactUsState extends State<ContactUs> {
                                   ourLocation(),
                                   sizedBox(height: 10,),
                                   Text(AppLocalizations.of(context)!.facebook),
+                                  sizedBox(height: 10,),
                                   faceBook(),
                                   sizedBox(height: 15,),
                                  user!= null ? Row(
