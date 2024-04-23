@@ -4,14 +4,15 @@ import 'package:flutter/material.dart';
 class MYlist extends StatelessWidget {
   final Widget? leading;
   final Widget? title;
-  const MYlist({super.key, this.leading, this.title});
+  final VoidCallback? onTap;
+  const MYlist({super.key, this.leading, this.title, this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       leading: leading,
-      iconColor: Colors.black,
       title: title,
+      onTap: onTap,
     );
   }
 }
