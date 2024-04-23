@@ -48,7 +48,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                 stream: members.snapshots(),
                   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
                     if (snapshot.hasError) {
-                      return Text('Something went wrong');
+                      return const Text('Something went wrong');
                     }
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return Text("Loading");
