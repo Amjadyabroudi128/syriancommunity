@@ -25,7 +25,7 @@ class _LoginState extends State<Login> {
     return BlocConsumer<AuthCubit, AuthState>(
   listener: (context, state) {
     if (state is LoginSuccess)  {
-      Navigator.of(context).pushNamed("homepage");
+      Navigator.of(context).pushReplacementNamed("homepage");
     } else if (state is LoginLoading) {
 
     }
@@ -60,7 +60,7 @@ class _LoginState extends State<Login> {
               ),
               sizedBox(height: 20,),
                Container(
-                 decoration: BoxDecoration(
+                 decoration: const BoxDecoration(
                    gradient: LinearGradient(
                      colors: [
                        Colors.lightBlueAccent,
@@ -71,14 +71,7 @@ class _LoginState extends State<Login> {
                      end: Alignment.bottomRight,
                    )
                  ),
-                 child: TextButton(
-                    onPressed: () async {
-                   await  BlocProvider.of<AuthCubit>(context).login(email: testEmail.text, password: testPassword.text);
-                    },
-                    child:  Text(AppLocalizations.of(context)!.login,style: TextStyles.font20white,
-
-                    ),
-                  ),
+                 child: loginButton()
                ),
             ],
           ),
@@ -92,5 +85,15 @@ class _LoginState extends State<Login> {
     setState(() {
       _isHidden = !_isHidden;
     });
+  }
+  loginButton () {
+    return TextButton(
+      onPressed: () async {
+        await  BlocProvider.of<AuthCubit>(context).login(email: testEmail.text, password: testPassword.text);
+      },
+      child:  Text(AppLocalizations.of(context)!.login,style: TextStyles.font20white,
+
+      ),
+    );
   }
 }
