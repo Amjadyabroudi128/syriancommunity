@@ -43,7 +43,7 @@ class _EditCelebrationState extends State<EditCelebration> {
     if(state is EditSuccess) {
       Navigator.of(context).pushReplacementNamed("celebrations");
     } else {
-      print("loading still fam");
+      print("loading still");
     }
   },
   builder: (context, state) {
