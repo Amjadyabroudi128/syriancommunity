@@ -38,7 +38,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
               padding(
                 child: user != null ? CustomButton(
                   onPressed: (){
-                    Navigator.of(context).pushNamed("addMember");
+                    Navigator.of(context).pushReplacementNamed("addMember");
                   },
                   title: AppLocalizations.of(context)!.addThings,
                   color: ColorManager.addEdit,
@@ -142,7 +142,6 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                         ));
                                } else if(value == 1){
                                 members.doc(document.id).delete();
-                                 Navigator.of(context).pushReplacementNamed("ourteam");
                               }
                             },
                           ) : SizedBox(),
