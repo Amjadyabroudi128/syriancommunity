@@ -28,6 +28,11 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed("homepage");
+            },
+            icon: Icon(Icons.arrow_back)),
         title: Text(AppLocalizations.of(context)!.team),
       ),
       body: Padding(
@@ -38,7 +43,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
               padding(
                 child: user != null ? CustomButton(
                   onPressed: (){
-                    Navigator.of(context).pushReplacementNamed("addMember");
+                    Navigator.of(context).pushNamed("addMember");
                   },
                   title: AppLocalizations.of(context)!.addThings,
                   color: ColorManager.addEdit,
