@@ -86,9 +86,7 @@ class _addCommunityState extends State<addCommunity> {
                     , title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,
                     ),
                   sizedBox(width: 10,),
-                  CustomButton(onPressed: (){
-                    Navigator.pop(context);
-                  }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,)
+                  cancelButton(),
                 ],
               ),
 
@@ -98,5 +96,10 @@ class _addCommunityState extends State<addCommunity> {
       ),
       ),
     );
+  }
+  cancelButton () {
+    return CustomButton(onPressed: (){
+      Navigator.pop(context);
+    }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
   }
 }
