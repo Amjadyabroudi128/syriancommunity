@@ -29,6 +29,11 @@ class _CommunityState extends State<Community> {
     User? user = FirebaseAuth.instance.currentUser;
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed("homepage");
+            },
+            icon: Icon(Icons.arrow_back)),
         title: Text(AppLocalizations.of(context)!.communityResources),
       ),
       body: SingleChildScrollView(
@@ -38,7 +43,7 @@ class _CommunityState extends State<Community> {
               child: Center(
                 child: user != null ? CustomButton(
                     onPressed: (){
-                      Navigator.of(context).pushReplacementNamed("addCommunity");
+                      Navigator.of(context).pushNamed("addCommunity");
                     },
                     title: AppLocalizations.of(context)!.addDetails, color: ColorManager.addEdit,) : sizedBox(),
               ),
