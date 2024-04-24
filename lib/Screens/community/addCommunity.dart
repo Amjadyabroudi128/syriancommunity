@@ -16,8 +16,14 @@ class addCommunity extends StatefulWidget {
 }
 
 class _addCommunityState extends State<addCommunity> {
-  TextEditingController name = TextEditingController();
-  TextEditingController details = TextEditingController();
+  late final TextEditingController name = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
+ late final TextEditingController details = TextEditingController()..addListener(() {
+   setState(() {
+   });
+ });
 
   final CollectionReference community =
   FirebaseFirestore.instance.collection('Community');
@@ -37,14 +43,14 @@ class _addCommunityState extends State<addCommunity> {
               sizedBox(),
               padding(child: Text(AppLocalizations.of(context)!.name),),
               CustomTextForm(hinttext: "BreakFast Club", myController: name,
-                  suffixIcon: IconButton(onPressed: name.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                  suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: Icon(Icons.clear), color: Colors.black,)
               ),
               sizedBox(),
               padding(
                 child: Text(AppLocalizations.of(context)!.details),
               ),
               CustomTextForm(hinttext: "What we do ", myController: details, maxLines: 6,
-                  suffixIcon: IconButton(onPressed: details.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                  suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: Icon(Icons.clear), color: Colors.black,)
               ),
               sizedBox(height: 10,),
               Center(
