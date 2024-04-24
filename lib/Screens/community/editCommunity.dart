@@ -32,7 +32,9 @@ class _EditCommunityState extends State<EditCommunity> {
   FirebaseFirestore.instance.collection('Community');
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return GestureDetector(
+        onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
+    child: Scaffold(
       appBar: AppBar(
         title: Text("adding Community Details"),
       ),
@@ -114,6 +116,7 @@ class _EditCommunityState extends State<EditCommunity> {
           ),
         ),
       ),
+    ),
     );
   }
 }
