@@ -81,7 +81,7 @@ class _AddMemberState extends State<AddMember> {
                                        "image" : url.url,
                                      }
                                  );
-                                 Navigator.of(context).pop();
+                                 Navigator.of(context).pushNamed("ourteam");
                                  clearText();
                            }
                          },
