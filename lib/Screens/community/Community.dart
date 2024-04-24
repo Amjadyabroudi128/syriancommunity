@@ -124,7 +124,6 @@ class _CommunityState extends State<Community> {
 
                                             }else if(value == 1){
                                               community.doc(document.id).delete();
-                                              print("delete success");
                                             }
                                           },
                                       ) : sizedBox(height: 40,),
