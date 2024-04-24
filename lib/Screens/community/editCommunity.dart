@@ -36,7 +36,7 @@ class _EditCommunityState extends State<EditCommunity> {
         onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
     child: Scaffold(
       appBar: AppBar(
-        title: Text("adding Community Details"),
+        title: Text(AppLocalizations.of(context)!.editDetails),
       ),
       body: padding(
         child: SingleChildScrollView(
