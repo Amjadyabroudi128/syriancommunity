@@ -17,8 +17,14 @@ class AddCelebration extends StatefulWidget {
 }
 
 class _AddCelebrationState extends State<AddCelebration> {
-  TextEditingController celebrationName = TextEditingController();
-  TextEditingController celebrationDetail = TextEditingController();
+ late final TextEditingController celebrationName = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
+  late final TextEditingController celebrationDetail = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
 
 
   @override
@@ -35,41 +41,45 @@ class _AddCelebrationState extends State<AddCelebration> {
     }
   },
   builder: (context, state) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.addCelebration),
-      ),
-      body: padding(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              padding(child: Text(AppLocalizations.of(context)!.celebrations)),
-              CustomTextForm(hinttext: "e.g: Christmas", myController: celebrationName,
-                  suffixIcon: IconButton(onPressed: celebrationName.clear, icon: Icon(Icons.clear), color: Colors.black,)
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(AppLocalizations.of(context)!.addCelebration),
+        ),
+        body: padding(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                padding(child: Text(AppLocalizations.of(context)!.celebrations)),
+                CustomTextForm(hinttext: "e.g: Christmas", myController: celebrationName,
+                    suffixIcon: celebrationName.text.isEmpty? null :
+                    IconButton(onPressed: celebrationName.clear, icon: Icon(Icons.clear), color: Colors.black,)
 
-              ),
-              sizedBox(),
-              padding(child: Text(AppLocalizations.of(context)!.details),),
-              CustomTextForm(hinttext: "what we do ", myController: celebrationDetail, maxLines: 6,
-                  suffixIcon: IconButton(onPressed: celebrationDetail.clear, icon: Icon(Icons.clear), color: Colors.black,
-                  )
+                ),
+                sizedBox(),
+                padding(child: Text(AppLocalizations.of(context)!.details),),
+                CustomTextForm(hinttext: "what we do ", myController: celebrationDetail, maxLines: 6,
+                    suffixIcon: celebrationDetail.text.isEmpty ? null : IconButton(onPressed: celebrationDetail.clear, icon: Icon(Icons.clear), color: Colors.black,
+                    )
 
-              ),
-              sizedBox(),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: imageButton()
-              ),
-               Row(
-                 mainAxisAlignment: MainAxisAlignment.center,
-                 children: [
-                   addButton(),
-                   sizedBox(width: 20,),
-                   cancelButton()
-                 ],
-               ),
-            ],
+                ),
+                sizedBox(),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: imageButton()
+                ),
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.center,
+                   children: [
+                     addButton(),
+                     sizedBox(width: 20,),
+                     cancelButton()
+                   ],
+                 ),
+              ],
+            ),
           ),
         ),
       ),
@@ -111,7 +121,9 @@ class _AddCelebrationState extends State<AddCelebration> {
             url: url.url,
             name: celebrationName.text,
             details: celebrationDetail.text);
+
       },
       title: AppLocalizations.of(context)!.submit, color:ColorManager.submit,);
   }
+
 }
