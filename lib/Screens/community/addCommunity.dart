@@ -54,15 +54,7 @@ class _addCommunityState extends State<addCommunity> {
               ),
               sizedBox(height: 10,),
               Center(
-                child: CustomButton(
-                  title: AppLocalizations.of(context)!.image,
-                  onPressed: () async {
-                    await url.pickImage();
-                    setState(() {
-                    });
-                  },
-                  color: ColorManager.addEdit,
-                ),
+                child: imageButton(),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -101,5 +93,16 @@ class _addCommunityState extends State<addCommunity> {
     return CustomButton(onPressed: (){
       Navigator.pop(context);
     }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
+  }
+  imageButton () {
+    return CustomButton(
+      title: AppLocalizations.of(context)!.image,
+      onPressed: () async {
+        await url.pickImage();
+        setState(() {
+        });
+      },
+      color: ColorManager.addEdit,
+    );
   }
 }
