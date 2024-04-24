@@ -51,7 +51,7 @@ class _EditCelebrationState extends State<EditCelebration> {
       onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.addCelebration),
+          title: Text(AppLocalizations.of(context)!.editDetails),
         ),
         body: padding(
           child: SingleChildScrollView(
