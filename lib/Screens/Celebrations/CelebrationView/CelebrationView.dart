@@ -31,6 +31,11 @@ class Celebrations extends StatelessWidget {
   builder: (context, state) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed("homepage");
+            },
+            icon: Icon(Icons.arrow_back)),
         title: Text(AppLocalizations.of(context)!.celebrations),
       ),
       body:  SingleChildScrollView(
@@ -43,7 +48,7 @@ class Celebrations extends StatelessWidget {
                       padding: const EdgeInsets.all(12.0),
                       child: CustomButton(
                           onPressed: (){
-                            Navigator.of(context).pushReplacementNamed("addcelebration");
+                            Navigator.of(context).pushNamed("addcelebration");
                           },
                           title: AppLocalizations.of(context)!.addCelebration,color: ColorManager.addEdit,),
                     ) : sizedBox(height: 15,),
