@@ -30,6 +30,11 @@ class _ContactUsState extends State<ContactUs> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed("homepage");
+            },
+            icon: Icon(Icons.arrow_back)),
         title: Text(AppLocalizations.of(context)!.contact),
       ),
       body: ScrollConfiguration(
