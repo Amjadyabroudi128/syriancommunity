@@ -15,12 +15,32 @@ class AddContactDetails extends StatefulWidget {
 
 class _AddContactDetailsState extends State<AddContactDetails> {
 
-  TextEditingController place = TextEditingController();
-  TextEditingController road = TextEditingController();
-  TextEditingController city = TextEditingController();
-  TextEditingController postcode = TextEditingController();
-  TextEditingController email = TextEditingController();
-  TextEditingController phone = TextEditingController();
+  late final TextEditingController place = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
+  late  TextEditingController road = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
+  late  TextEditingController city = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
+  late  TextEditingController postcode = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
+  late  TextEditingController email = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
+  late  TextEditingController phone = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
+
+
   final CollectionReference contact =
   FirebaseFirestore.instance.collection('contact');
   @override
