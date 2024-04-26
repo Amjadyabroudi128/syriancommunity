@@ -93,7 +93,10 @@ class _AddInfoState extends State<AddInfo> {
                              Navigator.of(context).pushNamed("homepage");
                            }
                          },
-                            title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,),
+                            title: AppLocalizations.of(context)!.submit,
+                         color: (name.text.isEmpty)
+                             || (details.text.isEmpty) ? Colors.grey : ColorManager.submit
+                       ),
                        sizedBox(width: 15,),
                        cancelButton(),
                      ],
