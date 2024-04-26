@@ -18,8 +18,11 @@ class AddInfo extends StatefulWidget {
 }
 
 class _AddInfoState extends State<AddInfo> {
-  TextEditingController name = TextEditingController();
-  TextEditingController details = TextEditingController();
+  late final TextEditingController name = TextEditingController();
+ late final TextEditingController details = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
   DateTime today = DateTime.now();
 
   @override
