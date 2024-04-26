@@ -18,7 +18,10 @@ class AddInfo extends StatefulWidget {
 }
 
 class _AddInfoState extends State<AddInfo> {
-  late final TextEditingController name = TextEditingController();
+  late final TextEditingController name = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
  late final TextEditingController details = TextEditingController()..addListener(() {
     setState(() {
     });
