@@ -18,8 +18,14 @@ class EditHome extends StatefulWidget {
 }
 
 class _EditHomeState extends State<EditHome> {
-  TextEditingController name = TextEditingController();
-  TextEditingController details = TextEditingController();
+  late final TextEditingController name = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
+  late final TextEditingController details = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
   void initState() {
     super.initState();
     name.text = widget.oldName;
@@ -29,7 +35,10 @@ class _EditHomeState extends State<EditHome> {
   Widget build(BuildContext context) {
     final CollectionReference home =
     FirebaseFirestore.instance.collection('home');
-    return Scaffold(
+    return GestureDetector(
+        onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
+
+    child: Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.editDetails),
       ),
@@ -63,7 +72,9 @@ class _EditHomeState extends State<EditHome> {
                               );
                               Navigator.of(context).pushNamed("homepage");
                             },
-                            title: AppLocalizations.of(context)!.update, color: ColorManager.submit,),
+                            title: AppLocalizations.of(context)!.update,
+                      color: (name.text.isEmpty)
+                          || (details.text.isEmpty) ? Colors.grey : ColorManager.submit),
                     sizedBox(width: 10,),
                     CustomButton(onPressed: (){
                       Navigator.pop(context);
@@ -76,6 +87,7 @@ class _EditHomeState extends State<EditHome> {
           ),
         ),
       ),
+    )
     );
   }
 }
