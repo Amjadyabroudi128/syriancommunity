@@ -92,9 +92,7 @@ class _AddInfoState extends State<AddInfo> {
                          },
                             title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,),
                        sizedBox(width: 15,),
-                       CustomButton(onPressed: (){
-                         Navigator.pop(context);
-                       }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,)
+                       cancelButton(),
                      ],
                    ),
 
@@ -109,5 +107,9 @@ class _AddInfoState extends State<AddInfo> {
     name.clear();
     details.clear();
   }
-
+ cancelButton () {
+    return CustomButton(onPressed: (){
+      Navigator.pop(context);
+    }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
+ }
 }
