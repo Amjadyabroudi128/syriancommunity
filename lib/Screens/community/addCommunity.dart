@@ -75,7 +75,9 @@ class _addCommunityState extends State<addCommunity> {
                        Navigator.pushReplacementNamed(context,'community');
                       }
                     }
-                    , title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,
+                    , title: AppLocalizations.of(context)!.submit,
+                    color: (name.text.isEmpty)
+                        || (details.text.isEmpty) ? Colors.grey : ColorManager.submit
                     ),
                   sizedBox(width: 10,),
                   cancelButton(),
