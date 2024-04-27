@@ -38,5 +38,6 @@
   "delete": "Delete",
   "news" : "here you will see all the information you need about the community ",
   "cancel": "cancel",
-  "thisPage": "this page "
+  "thisPage": "this page ",
+  "addedSuccessfully" : "Added Successfully"
 }
