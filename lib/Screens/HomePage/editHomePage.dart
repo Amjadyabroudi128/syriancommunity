@@ -42,9 +42,9 @@ class _EditHomeState extends State<EditHome> {
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.editDetails),
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: padding(
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.only(top: 60, left: 10, right: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -58,7 +58,7 @@ class _EditHomeState extends State<EditHome> {
                 CustomTextForm(hinttext: "details", myController: details, maxLines: 6,
                     suffixIcon: IconButton(onPressed: details.clear, icon: Icon(Icons.clear), color: Colors.black,)
                 ),
-                sizedBox(),
+                sizedBox(height: 10,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -89,7 +89,6 @@ class _EditHomeState extends State<EditHome> {
           ),
         ),
       ),
-    )
     );
   }
 }
