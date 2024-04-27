@@ -67,35 +67,24 @@ class _AddInfoState extends State<AddInfo> {
                        mainAxisAlignment: MainAxisAlignment.center,
                        children: [
                          CustomButton(
-                           // onPressed: () async {
-                           //   if (name == null) {
-                           //     await home.doc().set(
-                           //       {
-                           //       "details": details.text,
-                           //       "time" : today
-                           //       }
-                           //     );
-                           //   } else if (details == null){
-                           //         await home.doc().set(
-                           //           {
-                           //           "name" : name.text,
-                           //             "time" :today,
-                           //           }
-                           //         );
-                           //   } else {
-                           //     await home.doc().set(
-                           //         {
-                           //           "name" : name.text,
-                           //           "details" : details.text,
-                           //           "time" :today,
-                           //         }
-                           //     );
-                           //     clearText();
-                           //     await FirebaseApi().initNotifications();
-                           //     await FirebaseMessaging.instance.subscribeToTopic("topic");
-                           //     Navigator.of(context).pushNamed("homepage");
-                           //   }
-                           // },
+                          onPressed: () async {
+                            if ( name.text.isEmpty || details.text.isEmpty ) {
+                                ScaffoldMessenger.of(context).showSnackBar
+                                  (const SnackBar(content: Text("please add something"),));
+                            } else {
+                              home.doc().set(
+                                  {
+                                    "name" : name.text,
+                                    "details" : details.text,
+                                    "time" :today,
+                                  }
+                                  );
+                              clearText();
+                              await FirebaseApi().initNotifications();
+                              await FirebaseMessaging.instance.subscribeToTopic("topic");
+                              Navigator.of(context).pushNamed("homepage");
+                            }
+                          },
                               title: AppLocalizations.of(context)!.submit,
                            color: (name.text.isEmpty)
                                || (details.text.isEmpty) ? Colors.grey : ColorManager.submit
