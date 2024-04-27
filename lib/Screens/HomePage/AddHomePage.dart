@@ -83,6 +83,8 @@ class _AddInfoState extends State<AddInfo> {
                               await FirebaseApi().initNotifications();
                               await FirebaseMessaging.instance.subscribeToTopic("topic");
                               Navigator.of(context).pushNamed("homepage");
+                              ScaffoldMessenger.of(context).showSnackBar
+                                ( SnackBar(content: Text("${AppLocalizations.of(context)!.addedSuccessfully}",)));
                             }
                           },
                               title: AppLocalizations.of(context)!.submit,
