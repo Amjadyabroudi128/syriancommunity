@@ -34,13 +34,11 @@ class _AddInfoState extends State<AddInfo> {
     FirebaseFirestore.instance.collection('home');
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
-
       child: Scaffold(
         appBar: AppBar(
           title: Text(AppLocalizations.of(context)!.addDetails),
         ),
-        body: Center(
-          child: SingleChildScrollView(
+          body: SingleChildScrollView(
             child: padding(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,33 +64,9 @@ class _AddInfoState extends State<AddInfo> {
                      Row(
                        mainAxisAlignment: MainAxisAlignment.center,
                        children: [
-                         CustomButton(
-                          onPressed: () async {
-                            if ( name.text.isEmpty || details.text.isEmpty ) {
-                                ScaffoldMessenger.of(context).showSnackBar
-                                  ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
-                            } else {
-                              home.doc().set(
-                                  {
-                                    "name" : name.text,
-                                    "details" : details.text,
-                                    "time" :today,
-                                  }
-                                  );
-                              clearText();
-                              await FirebaseApi().initNotifications();
-                              await FirebaseMessaging.instance.subscribeToTopic("topic");
-                              Navigator.of(context).pushNamed("homepage");
-                              ScaffoldMessenger.of(context).showSnackBar
-                                ( SnackBar(content: Text("${AppLocalizations.of(context)!.addedSuccessfully}",)));
-                            }
-                          },
-                              title: AppLocalizations.of(context)!.submit,
-                           color: (name.text.isEmpty)
-                               || (details.text.isEmpty) ? Colors.grey : ColorManager.submit
-                         ),
-                         sizedBox(width: 15,),
                          cancelButton(),
+                         sizedBox(width: 15,),
+                         submitButton(),
                        ],
                      ),
 
@@ -100,7 +74,7 @@ class _AddInfoState extends State<AddInfo> {
               ),
             ),
           ),
-        ),
+
       ),
     );
   }
@@ -112,5 +86,32 @@ class _AddInfoState extends State<AddInfo> {
     return CustomButton(onPressed: (){
       Navigator.pop(context);
     }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
+ }
+ submitButton () {
+    return CustomButton(
+        onPressed: () async {
+          if ( name.text.isEmpty || details.text.isEmpty ) {
+            ScaffoldMessenger.of(context).showSnackBar
+              ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
+          } else {
+            FirebaseFirestore.instance.collection("home").doc().set(
+                {
+                  "name" : name.text,
+                  "details" : details.text,
+                  "time" :today,
+                }
+            );
+            clearText();
+            await FirebaseApi().initNotifications();
+            await FirebaseMessaging.instance.subscribeToTopic("topic");
+            Navigator.of(context).pushNamed("homepage");
+            ScaffoldMessenger.of(context).showSnackBar
+              ( SnackBar(content: Text("${AppLocalizations.of(context)!.addedSuccessfully}",)));
+          }
+        },
+        title: AppLocalizations.of(context)!.submit,
+        color: (name.text.isEmpty)
+            || (details.text.isEmpty) ? Colors.grey : ColorManager.submit
+    );
  }
 }
