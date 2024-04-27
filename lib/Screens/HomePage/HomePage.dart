@@ -135,6 +135,8 @@ class _HomePageState extends State<HomePage> {
                                                         );
                                             } else if (value == 1) {
                                               myHome.doc(document.id).delete();
+                                              ScaffoldMessenger.of(context).showSnackBar
+                                                (const SnackBar(content: Text("deleted"),));
                                             }
                                             },
                                         popUpAnimationStyle: AnimationStyle(

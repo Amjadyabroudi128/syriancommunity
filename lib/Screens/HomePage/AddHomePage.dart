@@ -70,7 +70,7 @@ class _AddInfoState extends State<AddInfo> {
                           onPressed: () async {
                             if ( name.text.isEmpty || details.text.isEmpty ) {
                                 ScaffoldMessenger.of(context).showSnackBar
-                                  (const SnackBar(content: Text("please add something"),));
+                                  ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
                             } else {
                               home.doc().set(
                                   {
