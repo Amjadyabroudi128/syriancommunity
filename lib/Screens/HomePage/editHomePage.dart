@@ -71,6 +71,8 @@ class _EditHomeState extends State<EditHome> {
                                 }
                               );
                               Navigator.of(context).pushNamed("homepage");
+                              ScaffoldMessenger.of(context).showSnackBar
+                                ( SnackBar(content: Text("${AppLocalizations.of(context)!.edited}",)));
                             },
                             title: AppLocalizations.of(context)!.update,
                       color: (name.text.isEmpty)
