@@ -39,7 +39,8 @@ class _AddInfoState extends State<AddInfo> {
           title: Text(AppLocalizations.of(context)!.addDetails),
         ),
           body: SingleChildScrollView(
-            child: padding(
+            child: Padding(
+              padding: EdgeInsets.only(top: 60, left: 10, right: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
