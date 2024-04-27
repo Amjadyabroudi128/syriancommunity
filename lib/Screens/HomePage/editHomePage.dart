@@ -62,25 +62,25 @@ class _EditHomeState extends State<EditHome> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    CustomButton(
-                            onPressed: () async {
-                              await home.doc(widget.DocID).update(
-                                {
-                                  "name" : name.text,
-                                  "details" : details.text,
-                                }
-                              );
-                              Navigator.of(context).pushNamed("homepage");
-                              ScaffoldMessenger.of(context).showSnackBar
-                                ( SnackBar(content: Text("${AppLocalizations.of(context)!.edited}",)));
-                            },
-                            title: AppLocalizations.of(context)!.update,
-                      color: (name.text.isEmpty)
-                          || (details.text.isEmpty) ? Colors.grey : ColorManager.submit),
-                    sizedBox(width: 10,),
                     CustomButton(onPressed: (){
                       Navigator.pop(context);
-                    }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,)
+                    }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,),
+                    sizedBox(width: 10,),
+                    CustomButton(
+                        onPressed: () async {
+                          await home.doc(widget.DocID).update(
+                              {
+                                "name" : name.text,
+                                "details" : details.text,
+                              }
+                          );
+                          Navigator.of(context).pushNamed("homepage");
+                          ScaffoldMessenger.of(context).showSnackBar
+                            ( SnackBar(content: Text("${AppLocalizations.of(context)!.edited}",)));
+                        },
+                        title: AppLocalizations.of(context)!.update,
+                        color: (name.text.isEmpty)
+                            || (details.text.isEmpty) ? Colors.grey : ColorManager.submit),
                   ],
                 )
 
