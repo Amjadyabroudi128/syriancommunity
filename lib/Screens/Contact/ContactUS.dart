@@ -163,8 +163,16 @@ class _ContactUsState extends State<ContactUs> {
                                         title: "${AppLocalizations.of(context)!.edit}"
                                             " ${AppLocalizations.of(context)!.thisPage}",
                                         color: ColorManager.addEdit,
-                                      )
+                                      ),
+                                      sizedBox(width: 12,),
+                                      CustomButton(onPressed: () {
+                                        contact.doc(document.id).delete();
+                                      }, title: AppLocalizations.of(context)!.delete,
+                                        color: ColorManager.delete,
+                                      ),
+
                                     ],
+
                                   ) : SizedBox.shrink(),
                                 ],
                               ),
