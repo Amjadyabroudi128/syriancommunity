@@ -45,7 +45,9 @@ class _AddContactDetailsState extends State<EditDetails> {
   FirebaseFirestore.instance.collection('contact');
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return GestureDetector(
+        onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
+      child: Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.editDetails),
       ),
@@ -102,6 +104,7 @@ class _AddContactDetailsState extends State<EditDetails> {
           ),
         ),
       ),
+      )
     );
   }
   void clearText() {
