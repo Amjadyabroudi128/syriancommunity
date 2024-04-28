@@ -90,9 +90,10 @@ class _AddContactDetailsState extends State<AddContactDetails> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  submitButton(),
+                  cancelButton(),
                   sizedBox(width: 15,),
-                  cancelButton()
+                  submitButton(),
+
                 ],
               )
             ],
