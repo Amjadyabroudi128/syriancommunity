@@ -120,16 +120,25 @@ class _AddContactDetailsState extends State<AddContactDetails> {
   }
   submitButton() {
     return CustomButton(
-      onPressed: ()async {
-        await contact.doc().set({
-          "place" : place.text,
-          "street name" : road.text,
-          "city" : city.text,
-          "post code" : postcode.text,
-          "email" : email.text,
-          "phone" : phone.text
-        });
-        Navigator.of(context).pop();
+      onPressed: () async{
+        if (place.text.isEmpty || road.text.isEmpty
+        || city.text.isEmpty || postcode.text.isEmpty
+        || email.text.isEmpty || phone.text.isEmpty) {
+          ScaffoldMessenger.of(context).showSnackBar
+            ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
+        } else {
+          await contact.doc().set(
+            {
+                  "place" : place.text,
+                  "street name" : road.text,
+                  "city" : city.text,
+                  "post code" : postcode.text,
+                  "email" : email.text,
+                  "phone" : phone.text
+            }
+          );
+          Navigator.of(context).pushNamed("contactus");
+        }
       },
       title: AppLocalizations.of(context)!.submit,
       color: (place.text.isEmpty ) || (road.text.isEmpty)
