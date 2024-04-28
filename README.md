@@ -13,6 +13,13 @@ side bar with English and Arabic
 
 ![Screenshot (27)](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/6e02b8b3-95e6-4392-b0ff-868e631da7c9)
 
+add contact details 
+
+made submit color grey until all fields are there 
+
+![Screenshot (29)](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/dc3aa9a6-dc43-4673-9e89-872209431c80)
+
+
 
 The Contact Us page 
 
