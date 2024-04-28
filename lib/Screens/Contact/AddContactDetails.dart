@@ -131,7 +131,10 @@ class _AddContactDetailsState extends State<AddContactDetails> {
         });
         Navigator.of(context).pop();
       },
-      title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,
+      title: AppLocalizations.of(context)!.submit,
+      color: (place.text.isEmpty ) || (road.text.isEmpty)
+          || (city.text.isEmpty) ||(postcode.text.isEmpty)
+          ||(email.text.isEmpty) || (phone.text.isEmpty) ? Colors.grey : ColorManager.submit ,
     );
   }
 
