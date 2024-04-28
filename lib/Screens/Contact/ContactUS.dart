@@ -167,6 +167,8 @@ class _ContactUsState extends State<ContactUs> {
                                       sizedBox(width: 12,),
                                       CustomButton(onPressed: () {
                                         contact.doc(document.id).delete();
+                                        ScaffoldMessenger.of(context).showSnackBar
+                                          ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted),));
                                       }, title: AppLocalizations.of(context)!.delete,
                                         color: ColorManager.delete,
                                       ),
