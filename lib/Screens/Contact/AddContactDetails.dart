@@ -49,7 +49,12 @@ class _AddContactDetailsState extends State<AddContactDetails> {
         onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
     child: Scaffold(
         appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.addDetails),
+          title: Text(AppLocalizations.of(context)!.addDetails), 
+          leading: IconButton(onPressed: (){
+            Navigator.of(context).pushNamed("contactus");
+          },
+              icon: Icon(Icons.arrow_back, )
+          ) ,
         ),
       body: padding(
         child: SingleChildScrollView(
