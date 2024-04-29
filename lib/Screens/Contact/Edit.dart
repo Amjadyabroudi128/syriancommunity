@@ -49,6 +49,10 @@ class _AddContactDetailsState extends State<EditDetails> {
         onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
       child: Scaffold(
       appBar: AppBar(
+        leading: IconButton(onPressed: (){
+          Navigator.of(context).pushNamed("contactus");
+        },
+            icon: Icon(Icons.arrow_back)),
         title: Text(AppLocalizations.of(context)!.editDetails),
       ),
       body: Padding(
@@ -125,7 +129,7 @@ class _AddContactDetailsState extends State<EditDetails> {
         "email" : email.text,
         "phone" : phone.text
       });
-      Navigator.pop(context);
+      Navigator.of(context).pushNamed("contactus");
       clearText();
     }, title: AppLocalizations.of(context)!.update, color: ColorManager.submit,);
   }
