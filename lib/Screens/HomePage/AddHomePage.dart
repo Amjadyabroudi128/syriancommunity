@@ -30,8 +30,6 @@ class _AddInfoState extends State<AddInfo> {
 
   @override
   Widget build(BuildContext context) {
-    final CollectionReference home =
-    FirebaseFirestore.instance.collection('home');
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
       child: Scaffold(
