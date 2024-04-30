@@ -70,13 +70,13 @@ import 'fontSize.dart';
      ),
 
      expansionTileTheme: ExpansionTileThemeData(
-         backgroundColor: ColorManager.expanstionTile,
+         backgroundColor: Colors.white,
          expansionAnimationStyle: AnimationStyle(
              duration: Duration(milliseconds: 200)
          ),
          collapsedIconColor: Colors.black,
          textColor: Colors.black,
-         iconColor: Colors.black
+         iconColor: Colors.black,
      ),
      buttonTheme: ButtonThemeData(
        shape: RoundedRectangleBorder(
