@@ -33,49 +33,52 @@ class _LoginState extends State<Login> {
     }
   },
   builder: (context, state) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.login),
-      ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(AppLocalizations.of(context)!.loginAdmin),
-               sizedBox(height: 19,),
-              CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: testEmail,),
-              sizedBox(height: 15,),
-              CustomTextForm(hinttext: AppLocalizations.of(context)!.password, obscureText: _isHidden, maxLines: 1,
-                myController: testPassword,
-                suffixIcon: IconButton(
-                  onPressed: (){
-                    setState(() {
-                      _togglePasswordView();
-                    });
-                  },
-                  icon: Icon(_isHidden ? Icons.visibility : Icons.visibility_off,
-                    color: _isHidden ? ColorManager.delete : ColorManager.submit,
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(AppLocalizations.of(context)!.login),
+        ),
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(AppLocalizations.of(context)!.loginAdmin),
+                 sizedBox(height: 19,),
+                CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: testEmail,),
+                sizedBox(height: 15,),
+                CustomTextForm(hinttext: AppLocalizations.of(context)!.password, obscureText: _isHidden, maxLines: 1,
+                  myController: testPassword,
+                  suffixIcon: IconButton(
+                    onPressed: (){
+                      setState(() {
+                        _togglePasswordView();
+                      });
+                    },
+                    icon: Icon(_isHidden ? Icons.visibility : Icons.visibility_off,
+                      color: _isHidden ? ColorManager.delete : ColorManager.submit,
+                    ),
                   ),
                 ),
-              ),
-              sizedBox(height: 20,),
-               Container(
-                 decoration: const BoxDecoration(
-                   gradient: LinearGradient(
-                     colors: [
-                       Colors.lightBlueAccent,
-                       Colors.blueAccent,
-                       Colors.blueGrey
-                     ],
-                     begin: Alignment.topLeft,
-                     end: Alignment.bottomRight,
-                   )
+                sizedBox(height: 20,),
+                 Container(
+                   decoration: const BoxDecoration(
+                     gradient: LinearGradient(
+                       colors: [
+                         Colors.lightBlueAccent,
+                         Colors.blueAccent,
+                         Colors.blueGrey
+                       ],
+                       begin: Alignment.topLeft,
+                       end: Alignment.bottomRight,
+                     )
+                   ),
+                   child: loginButton()
                  ),
-                 child: loginButton()
-               ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
