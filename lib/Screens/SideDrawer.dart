@@ -92,7 +92,7 @@ class _SideDrawerState extends State<SideDrawer> {
                   onTap: (){
                     auth.signOut();
                     ScaffoldMessenger.of(context).showSnackBar
-                      ( const SnackBar(content: Text("Logged out Successfully"),));
+                      (  SnackBar(content: Text(AppLocalizations.of(context)!.signedOut),));
                     Navigator.of(context).pushNamed("homepage");
                   },
                 );
