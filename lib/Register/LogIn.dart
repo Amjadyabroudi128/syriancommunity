@@ -27,7 +27,7 @@ class _LoginState extends State<Login> {
     if (state is LoginSuccess)  {
       Navigator.of(context).pushReplacementNamed("homepage");
       ScaffoldMessenger.of(context).showSnackBar
-        ( SnackBar(content: Text("logged In"),));
+        ( SnackBar(content: Text(AppLocalizations.of(context)!.login),));
     } else if (state is LoginLoading) {
 
     }
