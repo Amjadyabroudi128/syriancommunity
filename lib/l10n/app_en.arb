@@ -7,6 +7,7 @@
   "celebrations": "celebrations",
   "login": "login",
   "logout": "logout",
+  "LoggedOut": "Logged out Successfully",
   "admin" :"Login as admin to to add things to pages",
   "communityResources": "community Resources",
   "visitHere": "visit us here",
