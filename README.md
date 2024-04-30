@@ -23,6 +23,7 @@ made submit color grey until all fields are there
 
 The Contact Us page 
 
+the phone number will call once pressed  "does not work on emulator "
 
 ![Screenshot (26)](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/79cd72f9-b711-4796-881e-65d5736689b7)
 
