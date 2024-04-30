@@ -91,6 +91,8 @@ class _SideDrawerState extends State<SideDrawer> {
                   title: Text(AppLocalizations.of(context)!.logout),
                   onTap: (){
                     auth.signOut();
+                    ScaffoldMessenger.of(context).showSnackBar
+                      ( const SnackBar(content: Text("Logged out Successfully"),));
                     Navigator.of(context).pushNamed("homepage");
                   },
                 );
@@ -100,14 +102,13 @@ class _SideDrawerState extends State<SideDrawer> {
                   leading: Icon(Icons.login),
                   title: Text(AppLocalizations.of(context)!.login),
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        CupertinoPageRoute<Widget>(
+                    Navigator.push(context, CupertinoPageRoute<Widget>(
                         builder: (BuildContext context) {
-                      return const Login();
+                          return  Login();
                     },
                     )
                     );
+
                   },
                 );
               }
@@ -140,6 +141,8 @@ class _SideDrawerState extends State<SideDrawer> {
         ],
       ),
     );
+
   }
 }
+
 
