@@ -72,29 +72,31 @@ class _AddMemberState extends State<AddMember> {
                        cancelButton(),
                        sizedBox(width: 15,),
                        CustomButton(
-                         onPressed: ()async {
-                           if (url.url == null) {
-                             await members.doc().set(
-                                 {
-                                   "name": name.text,
-                                   "details": details.text
-                                 }
-                             );
-                             Navigator.of(context).pop();
-                             clearText();
+                         onPressed: () async {
+                           if ( name.text.isEmpty || details.text.isEmpty ) {
+                             ScaffoldMessenger.of(context).showSnackBar
+                               ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
+                           } else if ( url.url == null) {
+                                 await members.doc().set(
+                                     {
+                                       "name": name.text,
+                                       "details": details.text
+                                     }
+                                 );
+                                 Navigator.of(context).pop();
+                                 clearText();
                            } else {
-                             await members.doc().set(
-                                 {
-                                   "name" : name.text,
-                                   "details" : details.text,
-                                   "image" : url.url,
-                                 }
-                             );
-                             Navigator.of(context).pushNamed("ourteam");
-                             clearText();
+                                 await members.doc().set(
+                                     {
+                                       "name" : name.text,
+                                       "details" : details.text,
+                                       "image" : url.url,
+                                     }
+                                 );
+                                 Navigator.of(context).pushNamed("ourteam");
+                                 clearText();
                            }
                          },
-
                          title: AppLocalizations.of(context)!.submit,
                          color: (name.text.isEmpty)
                              || (details.text.isEmpty) ? Colors.grey : ColorManager.submit),
