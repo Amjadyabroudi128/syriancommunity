@@ -36,9 +36,9 @@ class _AddMemberState extends State<AddMember> {
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.addThings),
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: padding(
+        body : Padding(
+          padding: EdgeInsets.all(20),
+          child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               // crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,7 +104,6 @@ class _AddMemberState extends State<AddMember> {
             ),
           ),
         ),
-      ),
     );
   }
   void clearText() {
