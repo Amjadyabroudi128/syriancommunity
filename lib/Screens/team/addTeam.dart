@@ -55,15 +55,7 @@ class _AddMemberState extends State<AddMember> {
                 ),
                 sizedBox(height: 12,),
                 Center(
-                  child: CustomButton(
-                    title: AppLocalizations.of(context)!.image,
-                    onPressed: () async {
-                    await url.pickImage();
-                      setState(() {
-                      });
-                    },
-                    color: ColorManager.addEdit,
-                  ),
+                  child: imageButton(),
                 ),
                 sizedBox(height: 15,),
                    Row(
@@ -121,5 +113,16 @@ class _AddMemberState extends State<AddMember> {
         title: AppLocalizations.of(context)!.submit,
         color: (name.text.isEmpty)
             || (details.text.isEmpty) ? Colors.grey : ColorManager.submit);
+  }
+  imageButton () {
+    return CustomButton(
+      title: AppLocalizations.of(context)!.image,
+      onPressed: () async {
+        await url.pickImage();
+        setState(() {
+        });
+      },
+      color: ColorManager.addEdit,
+    );
   }
 }
