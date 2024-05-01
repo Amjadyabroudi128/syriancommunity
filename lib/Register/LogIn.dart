@@ -44,9 +44,8 @@ class _LoginState extends State<Login> {
         appBar: AppBar(
           title: Text(AppLocalizations.of(context)!.login),
         ),
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(15.0),
+          body:  Padding(
+            padding: const EdgeInsets.all(20.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -88,7 +87,7 @@ class _LoginState extends State<Login> {
               ],
             ),
           ),
-        ),
+
       ),
     );
   },
