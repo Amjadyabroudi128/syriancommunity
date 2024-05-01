@@ -69,9 +69,7 @@ class _AddMemberState extends State<AddMember> {
                    Row(
                      mainAxisAlignment: MainAxisAlignment.center,
                      children: [
-                       CustomButton(onPressed: (){
-                         Navigator.of(context).pop();
-                       }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,),
+                       cancelButton(),
                        sizedBox(width: 15,),
                        CustomButton(
                          onPressed: ()async {
@@ -111,5 +109,10 @@ class _AddMemberState extends State<AddMember> {
   void clearText() {
     name.clear();
     details.clear();
+  }
+  cancelButton () {
+    return CustomButton(onPressed: (){
+      Navigator.of(context).pop();
+    }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
   }
 }
