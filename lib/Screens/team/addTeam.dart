@@ -18,8 +18,14 @@ class AddMember extends StatefulWidget {
 }
 
 class _AddMemberState extends State<AddMember> {
-  TextEditingController name = TextEditingController();
-  TextEditingController details = TextEditingController();
+ late final TextEditingController name = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
+  late final TextEditingController details = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
 
   final CollectionReference members =
   FirebaseFirestore.instance.collection('members');
@@ -39,12 +45,12 @@ class _AddMemberState extends State<AddMember> {
               children: [
                 padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
                 CustomTextForm(hinttext: "name", myController: name,
-                    suffixIcon: IconButton(onPressed: name.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                    suffixIcon: name.text.isEmpty ? null : IconButton(onPressed: name.clear, icon: Icon(Icons.clear), color: Colors.black,)
                 ),
                 sizedBox(height: 20,),
                 padding(child: Text(AppLocalizations.of(context)!.details, style: TextStyles.font14green,)),
                 CustomTextForm(maxLines: null, hinttext: "details", myController: details,
-                  suffixIcon: IconButton(onPressed: details.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                  suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: Icon(Icons.clear), color: Colors.black,)
                 ),
                 sizedBox(height: 12,),
                 Center(
