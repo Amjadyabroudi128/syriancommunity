@@ -68,35 +68,35 @@ class _AddMemberState extends State<AddMember> {
                    Row(
                      mainAxisAlignment: MainAxisAlignment.center,
                      children: [
+                       CustomButton(onPressed: (){
+                         Navigator.of(context).pop();
+                       }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,),
+                       sizedBox(width: 15,),
                        CustomButton(
                          onPressed: ()async {
                            if (url.url == null) {
                              await members.doc().set(
-                               {
-                               "name": name.text,
-                               "details": details.text
-                               }
+                                 {
+                                   "name": name.text,
+                                   "details": details.text
+                                 }
                              );
                              Navigator.of(context).pop();
                              clearText();
                            } else {
-                                 await members.doc().set(
-                                     {
-                                       "name" : name.text,
-                                       "details" : details.text,
-                                       "image" : url.url,
-                                     }
-                                 );
-                                 Navigator.of(context).pushNamed("ourteam");
-                                 clearText();
+                             await members.doc().set(
+                                 {
+                                   "name" : name.text,
+                                   "details" : details.text,
+                                   "image" : url.url,
+                                 }
+                             );
+                             Navigator.of(context).pushNamed("ourteam");
+                             clearText();
                            }
                          },
 
-                          title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,),
-                       sizedBox(width: 15,),
-                       CustomButton(onPressed: (){
-                         Navigator.of(context).pop();
-                       }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,)
+                         title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,),
                      ],
                    ),
 
