@@ -3,9 +3,6 @@ import 'colors.dart';
 import 'font_weight_helper.dart';
 
  class TextStyles {
-   static TextStyle font15 = TextStyle(
-     fontSize: 15,
-   );
    static TextStyle font20white = TextStyle(
      fontSize: 20,
      color: Colors.white
