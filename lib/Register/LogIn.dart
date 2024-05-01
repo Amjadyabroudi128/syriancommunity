@@ -15,9 +15,14 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-   final testEmail = TextEditingController();
-   final testPassword = TextEditingController();
-
+   late final testEmail = TextEditingController()..addListener(() {
+     setState(() {
+     });
+   });
+  late final testPassword = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
    bool _isHidden = true;
 
   @override
@@ -63,20 +68,23 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 sizedBox(height: 20,),
-                 Container(
-                   decoration: const BoxDecoration(
-                     gradient: LinearGradient(
-                       colors: [
-                         Colors.lightBlueAccent,
-                         Colors.blueAccent,
-                         Colors.blueGrey
-                       ],
-                       begin: Alignment.topLeft,
-                       end: Alignment.bottomRight,
-                     )
-                   ),
-                   child: loginButton()
-                 ),
+                (testEmail.text.isEmpty) || (testPassword.text.isEmpty) ? Container(
+                  color: Colors.grey,
+                  child: loginButton(),
+                ) :  Container(
+                    decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            Colors.lightBlueAccent,
+                            Colors.blueAccent,
+                            Colors.blueGrey
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        )
+                    ),
+                    child: loginButton()
+                ),
               ],
             ),
           ),
