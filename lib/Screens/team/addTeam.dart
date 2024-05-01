@@ -95,7 +95,9 @@ class _AddMemberState extends State<AddMember> {
                            }
                          },
 
-                         title: AppLocalizations.of(context)!.submit, color: ColorManager.submit,),
+                         title: AppLocalizations.of(context)!.submit,
+                         color: (name.text.isEmpty)
+                             || (details.text.isEmpty) ? Colors.grey : ColorManager.submit),
                      ],
                    ),
 
