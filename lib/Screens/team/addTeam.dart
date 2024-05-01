@@ -44,7 +44,7 @@ class _AddMemberState extends State<AddMember> {
               // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
-                CustomTextForm(hinttext: "name", myController: name,
+                CustomTextForm(hinttext: "Member  Name", myController: name,
                     suffixIcon: name.text.isEmpty ? null : IconButton(onPressed: name.clear, icon: Icon(Icons.clear), color: Colors.black,)
                 ),
                 sizedBox(height: 20,),
