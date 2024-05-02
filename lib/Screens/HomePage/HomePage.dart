@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
           builder: (BuildContext context) {
             return IconButton(
               icon: Icon(
-                CupertinoIcons.list_bullet
+                CupertinoIcons.list_bullet,
               ),
               onPressed: (){
                 Scaffold.of(context).openDrawer();
@@ -142,6 +142,7 @@ class _HomePageState extends State<HomePage> {
                                         popUpAnimationStyle: AnimationStyle(
                                           duration: Duration(milliseconds: 400)
                                         ),
+                                        iconColor: Colors.black,
                                           ): SizedBox.shrink(),
                                     ),
                                   ],
