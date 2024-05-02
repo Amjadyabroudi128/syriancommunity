@@ -9,7 +9,7 @@ import 'fontSize.dart';
      borderRadius: BorderRadius.circular(18.0),
    );
    static final themeData = ThemeData(
-     useMaterial3: false,
+     // useMaterial3: false,
    ).copyWith(
      cardColor: ColorManager.cardColor,
      cardTheme: CardTheme(
@@ -53,14 +53,18 @@ import 'fontSize.dart';
          color: ColorManager.specialGreen,
          centerTitle: true,
          toolbarHeight: 65,
+         titleTextStyle: TextStyle(
+           fontSize: 22,
+           color: Colors.white
+         ),
          iconTheme: IconThemeData(
              size: 25,
              color: Colors.white
          )
      ),
-
      popupMenuTheme: PopupMenuThemeData(
-
+       surfaceTintColor: Colors.white,
+       iconColor: Colors.black,
        shape: RoundedRectangleBorder(
            borderRadius: BorderRadius.all(
              Radius.circular(20.0),
@@ -70,7 +74,6 @@ import 'fontSize.dart';
      ),
 
      expansionTileTheme: ExpansionTileThemeData(
-         backgroundColor: Colors.white,
          expansionAnimationStyle: AnimationStyle(
              duration: Duration(milliseconds: 200)
          ),
@@ -99,6 +102,7 @@ import 'fontSize.dart';
      ),
      listTileTheme: ListTileThemeData(
        iconColor: Colors.black
-     )
+     ),
+
    );
  }
