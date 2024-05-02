@@ -167,6 +167,9 @@ class Celebrations extends StatelessWidget {
                                                       context.read<DeleteCubit>().delete(document.id);
                                                     }
                                                     },
+                                                popUpAnimationStyle: AnimationStyle(
+                                                    duration: Duration(milliseconds: 400)
+                                                ),
                                               ) :  SizedBox(),
                                             ),
                                           ],

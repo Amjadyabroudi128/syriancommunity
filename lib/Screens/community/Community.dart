@@ -131,6 +131,9 @@ class _CommunityState extends State<Community> {
                                               community.doc(document.id).delete();
                                             }
                                           },
+                                        popUpAnimationStyle: AnimationStyle(
+                                            duration: Duration(milliseconds: 400)
+                                        ),
                                       ) : sizedBox(height: 40,),
                                     ),
                                 ],
