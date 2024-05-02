@@ -5,11 +5,13 @@ class MyPopUpMenu extends StatelessWidget {
   final PopupMenuItemSelected onSelected;
   final AnimationStyle? popUpAnimationStyle;
   final Widget? icon;
-  const MyPopUpMenu({super.key, required this.itemBuilder, required this.onSelected, this.popUpAnimationStyle, this.icon, });
+  final Color? iconColor;
+  const MyPopUpMenu({super.key, required this.itemBuilder, required this.onSelected, this.popUpAnimationStyle, this.icon, this.iconColor, });
 
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
+      iconColor: iconColor,
       icon: icon,
       itemBuilder: itemBuilder,
       onSelected: onSelected,
