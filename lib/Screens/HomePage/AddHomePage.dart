@@ -44,16 +44,16 @@ class _AddInfoState extends State<AddInfo> {
                 children: [
                   padding(child: Text(AppLocalizations.of(context)!.name)),
                     CustomTextForm(
-                        hinttext: "name",
+                        hinttext: "info name",
                         myController: name,
                         suffixIcon: name.text.isEmpty ? null :
-                        IconButton(onPressed: name.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                        IconButton(onPressed: name.clear, icon: Icon(Icons.clear),)
 
                     ),
                   sizedBox(),
                   padding(child: Text(AppLocalizations.of(context)!.details,)),
                   CustomTextForm(
-                      hinttext: "details",
+                      hinttext: "info details",
                       myController: details,
                     maxLines: 6,
                       suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: Icon(Icons.clear), color: Colors.black,)
