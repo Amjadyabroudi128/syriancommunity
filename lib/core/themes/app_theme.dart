@@ -91,6 +91,7 @@ import 'fontSize.dart';
      ),
 
      inputDecorationTheme: InputDecorationTheme(
+       suffixIconColor: Colors.black,
          hintStyle: TextStyles.hintText,
          // contentPadding: EdgeInsets.all(25),
          border: OutlineInputBorder(
@@ -101,7 +102,11 @@ import 'fontSize.dart';
          focusedBorder: _border
      ),
      listTileTheme: ListTileThemeData(
-       iconColor: Colors.black
+       iconColor: Colors.black,
+       titleTextStyle: TextStyle(
+         fontSize: 15,
+         color: Colors.black
+       ),
      ),
 
    );
