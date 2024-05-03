@@ -68,7 +68,7 @@ class _EditMemberState extends State<EditMember> {
                 ),
                 padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
                 CustomTextForm(hinttext: "name", myController: name,
-                    suffixIcon: IconButton(onPressed: name.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                    suffixIcon: IconButton(onPressed: name.clear, icon: Icon(Icons.clear),)
 
                 ),
                 sizedBox(height: 20,),
@@ -77,7 +77,7 @@ class _EditMemberState extends State<EditMember> {
                   maxLines: 5,
                     hinttext: "details",
                     myController: details,
-                    suffixIcon: IconButton(onPressed: details.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                    suffixIcon: IconButton(onPressed: details.clear, icon: Icon(Icons.clear),)
 
                 ),
                 sizedBox(height: 2,),
