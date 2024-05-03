@@ -55,60 +55,60 @@ class _AddContactDetailsState extends State<EditDetails> {
             icon: Icon(Icons.arrow_back)),
         title: Text(AppLocalizations.of(context)!.editDetails),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              padding(child: Text(AppLocalizations.of(context)!.place)),
-              sizedBox(height: 8,),
-              CustomTextForm(hinttext: "e.g : Brighton college", myController: place,
-                  suffixIcon: IconButton(onPressed: place.clear, icon: Icon(Icons.clear), color: Colors.black,)
-              ),
-              sizedBox(),
-              padding(child: Text(AppLocalizations.of(context)!.streetName)),
-              sizedBox(height: 7,),
-              CustomTextForm(hinttext: "e.g: Eastern Road",  myController: road,
-                  suffixIcon: IconButton(onPressed: road.clear, icon: Icon(Icons.clear), color: Colors.black,)
-              ),
-              padding(child: Text(AppLocalizations.of(context)!.city)),
-              sizedBox(height: 7,),
-              CustomTextForm(hinttext: "e.g: Brighton", myController: city,
-                  suffixIcon: IconButton(onPressed: city.clear, icon: Icon(Icons.clear), color: Colors.black,)
-              ),
-              padding(child: Text(AppLocalizations.of(context)!.postCode)),
-              sizedBox(height: 7,),
-              CustomTextForm(hinttext: "e.g: BN2 OAL", myController: postcode,
-                  suffixIcon: IconButton(onPressed: postcode.clear, icon: Icon(Icons.clear), color: Colors.black,)
-              ),
-              padding(child: Text(AppLocalizations.of(context)!.email)),
-              sizedBox(height: 7,),
-              CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: email,
-                  suffixIcon: IconButton(onPressed: email.clear, icon: Icon(Icons.clear), color: Colors.black,)
-              ),
-              padding(child: Text(AppLocalizations.of(context)!.phone),),
-              sizedBox(height: 7,),
-              CustomTextForm(hinttext: AppLocalizations.of(context)!.phone, myController: phone,
-                  suffixIcon: IconButton(onPressed: phone.clear, icon: Icon(Icons.clear), color: Colors.black,)
-              ),
-              sizedBox(height: 5,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                 updateButton(),
-                  sizedBox(width: 10,),
-                  CustomButton(onPressed: (){
-                    Navigator.pop(context);
-                  }, title: "Cancel", color: ColorManager.delete,)
-                ],
-              )
+      body: ScrollConfiguration(
+        behavior: ScrollBehavior(),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                padding(child: Text(AppLocalizations.of(context)!.place)),
+                sizedBox(height: 8,),
+                CustomTextForm(hinttext: "e.g : Brighton college", myController: place,
+                    suffixIcon: IconButton(onPressed: place.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                ),
+                sizedBox(),
+                padding(child: Text(AppLocalizations.of(context)!.streetName)),
+                sizedBox(height: 7,),
+                CustomTextForm(hinttext: "e.g: Eastern Road",  myController: road,
+                    suffixIcon: IconButton(onPressed: road.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                ),
+                padding(child: Text(AppLocalizations.of(context)!.city)),
+                sizedBox(height: 7,),
+                CustomTextForm(hinttext: "e.g: Brighton", myController: city,
+                    suffixIcon: IconButton(onPressed: city.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                ),
+                padding(child: Text(AppLocalizations.of(context)!.postCode)),
+                sizedBox(height: 7,),
+                CustomTextForm(hinttext: "e.g: BN2 OAL", myController: postcode,
+                    suffixIcon: IconButton(onPressed: postcode.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                ),
+                padding(child: Text(AppLocalizations.of(context)!.email)),
+                sizedBox(height: 7,),
+                CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: email,
+                    suffixIcon: IconButton(onPressed: email.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                ),
+                padding(child: Text(AppLocalizations.of(context)!.phone),),
+                sizedBox(height: 7,),
+                CustomTextForm(hinttext: AppLocalizations.of(context)!.phone, myController: phone,
+                    suffixIcon: IconButton(onPressed: phone.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                ),
+                sizedBox(height: 5,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                   updateButton(),
+                    sizedBox(width: 10,),
+                    CustomButton(onPressed: (){
+                      Navigator.pop(context);
+                    }, title: "Cancel", color: ColorManager.delete,)
+                  ],
+                )
 
-            ],
+              ],
+            ),
           ),
         ),
       ),
-      )
     );
   }
   void clearText() {
