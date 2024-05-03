@@ -142,7 +142,6 @@ class _HomePageState extends State<HomePage> {
                                         popUpAnimationStyle: AnimationStyle(
                                           duration: Duration(milliseconds: 400)
                                         ),
-                                        iconColor: Colors.black,
                                           ): SizedBox.shrink(),
                                     ),
                                   ],
