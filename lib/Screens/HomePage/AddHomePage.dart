@@ -56,7 +56,8 @@ class _AddInfoState extends State<AddInfo> {
                       hinttext: "info details",
                       myController: details,
                     maxLines: 6,
-                      suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                      suffixIcon: details.text.isEmpty ? null :
+                      IconButton(onPressed: details.clear, icon: Icon(Icons.clear),)
 
                   ),
                   sizedBox(height: 10,),
