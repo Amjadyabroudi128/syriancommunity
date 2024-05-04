@@ -48,15 +48,15 @@ class _MyAppState extends State<MyApp> {
       _locale = locale;
     });
   }
-  @override
+
+      @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
           create: (context) => AuthCubit(),
         ),
-        BlocProvider(
-            create: (context) => AddCelebrationCubit()),
+        BlocProvider(create: (context) => AddCelebrationCubit()),
         BlocProvider(create: (context) => EditCelebrationCubit()),
         BlocProvider(create: (context) => DeleteCubit())
       ],

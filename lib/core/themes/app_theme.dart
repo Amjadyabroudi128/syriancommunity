@@ -8,7 +8,6 @@ import 'fontSize.dart';
          color: ColorManager.borderColor), //<-- SEE HERE
      borderRadius: BorderRadius.circular(18.0),
    );
-
    static final themeData = ThemeData(
      // useMaterial3: false,
    ).copyWith(
