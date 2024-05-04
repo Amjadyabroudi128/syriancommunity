@@ -31,6 +31,8 @@ class _HomePageState extends State<HomePage> {
     FirebaseFirestore.instance.collection('home');
 
     User? user = FirebaseAuth.instance.currentUser;
+    bool isDark = false;
+
     return Scaffold(
       appBar: AppBar(
         leading: Builder(
@@ -43,6 +45,7 @@ class _HomePageState extends State<HomePage> {
                 Scaffold.of(context).openDrawer();
               },
             );
+
           },
         ),
         title: Text(AppLocalizations.of(context)!.syrianCommunity),

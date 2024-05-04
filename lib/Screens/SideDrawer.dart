@@ -20,6 +20,8 @@ class SideDrawer extends StatefulWidget {
 class _SideDrawerState extends State<SideDrawer> {
 
   final FirebaseAuth auth = FirebaseAuth.instance;
+  bool isDark = false;
+  ThemeMode themeMode = ThemeMode.system;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -138,6 +140,15 @@ class _SideDrawerState extends State<SideDrawer> {
 
               ],
             ),
+          IconButton(
+            onPressed: () {
+              themeMode = ThemeMode.light;
+              setState(() {
+                isDark = !isDark;
+              });
+            },
+            icon: isDark ? Icon(Icons.dark_mode) : Icon(Icons.light_mode),
+          )
         ],
       ),
     );

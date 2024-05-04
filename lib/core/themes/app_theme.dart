@@ -11,6 +11,7 @@ import 'fontSize.dart';
    static final themeData = ThemeData(
      // useMaterial3: false,
    ).copyWith(
+
      cardColor: ColorManager.cardColor,
      cardTheme: CardTheme(
        elevation: 0,
