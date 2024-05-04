@@ -45,10 +45,10 @@ class _HomePageState extends State<HomePage> {
                 Scaffold.of(context).openDrawer();
               },
             );
-
           },
         ),
         title: Text(AppLocalizations.of(context)!.syrianCommunity),
+
       ),
       drawer: SideDrawer(),
       body: padding(

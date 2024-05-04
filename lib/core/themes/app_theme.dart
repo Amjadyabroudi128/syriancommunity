@@ -8,10 +8,10 @@ import 'fontSize.dart';
          color: ColorManager.borderColor), //<-- SEE HERE
      borderRadius: BorderRadius.circular(18.0),
    );
+
    static final themeData = ThemeData(
      // useMaterial3: false,
    ).copyWith(
-
      cardColor: ColorManager.cardColor,
      cardTheme: CardTheme(
        elevation: 0,
@@ -101,6 +101,5 @@ import 'fontSize.dart';
          color: Colors.black
        ),
      ),
-
    );
  }

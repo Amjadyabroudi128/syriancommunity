@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/Register/LogIn.dart';
 import 'package:syrianadmin/components/ListTile.dart';
+import 'package:syrianadmin/core/themes/app_theme.dart';
 import '../components/Container.dart';
 import '../main.dart';
 
@@ -20,8 +21,6 @@ class SideDrawer extends StatefulWidget {
 class _SideDrawerState extends State<SideDrawer> {
 
   final FirebaseAuth auth = FirebaseAuth.instance;
-  bool isDark = false;
-  ThemeMode themeMode = ThemeMode.system;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -140,15 +139,6 @@ class _SideDrawerState extends State<SideDrawer> {
 
               ],
             ),
-          IconButton(
-            onPressed: () {
-              themeMode = ThemeMode.light;
-              setState(() {
-                isDark = !isDark;
-              });
-            },
-            icon: isDark ? Icon(Icons.dark_mode) : Icon(Icons.light_mode),
-          )
         ],
       ),
     );
