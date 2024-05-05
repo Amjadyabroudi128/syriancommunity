@@ -104,7 +104,7 @@ class _ContactUsState extends State<ContactUs> {
                                          MYlist(
                                             leading: Icon(Icons.phone),
                                             title: GestureDetector(
-                                                child: Text(data["phone"], style: TextStyles.ListTile,),
+                                                child: Text(data["phone"], style: TextStyles.font16green,),
                                               onTap: (){
                                                 launchUrl(
                                                     Uri.parse("tel: ${data["phone"]}")
@@ -129,10 +129,10 @@ class _ContactUsState extends State<ContactUs> {
                                         child: Column(
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            SelectableText(data["place"], style: TextStyles.ListTile,),
-                                            SelectableText(data["street name"], style: TextStyles.ListTile,),
+                                            SelectableText(data["place"],),
+                                            SelectableText(data["street name"],),
                                             SelectableText(data["post code"], style: TextStyle(fontSize: 15),),
-                                            SelectableText(data["city"], style: TextStyles.ListTile,),
+                                            SelectableText(data["city"],),
                                           ],
                                         ),
                                       ),
