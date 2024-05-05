@@ -17,7 +17,17 @@ import 'fontSize.dart';
          borderRadius: BorderRadius.circular(18.0),
        ),
      ),
+     inputDecorationTheme: InputDecorationTheme(
+         // contentPadding: EdgeInsets.all(25),
+         border: OutlineInputBorder(
+           borderRadius: BorderRadius.circular(10),
+           borderSide: BorderSide(
 
+           ),
+         ),
+         enabledBorder: _border,
+         focusedBorder: _border
+     ),
    );
    static final themeData = ThemeData(
      // useMaterial3: false,
