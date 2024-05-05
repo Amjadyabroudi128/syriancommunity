@@ -21,6 +21,9 @@ class SideDrawer extends StatefulWidget {
 class _SideDrawerState extends State<SideDrawer> {
 
   final FirebaseAuth auth = FirebaseAuth.instance;
+  bool isDark = false;
+
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
