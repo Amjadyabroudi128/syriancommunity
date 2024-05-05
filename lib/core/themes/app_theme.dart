@@ -10,10 +10,9 @@ import 'fontSize.dart';
    );
    static final darkTheme = ThemeData(
      brightness: Brightness.dark,
-       primaryColor: Colors.orange,
      cardTheme: CardTheme(
        elevation: 0,
-       color: Colors.orange,
+       color: Colors.black45,
        shape: RoundedRectangleBorder(
          borderRadius: BorderRadius.circular(18.0),
        ),
