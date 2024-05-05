@@ -8,6 +8,18 @@ import 'fontSize.dart';
          color: ColorManager.borderColor), //<-- SEE HERE
      borderRadius: BorderRadius.circular(18.0),
    );
+   static final darkTheme = ThemeData(
+     brightness: Brightness.dark,
+       primaryColor: Colors.orange,
+     cardTheme: CardTheme(
+       elevation: 0,
+       color: Colors.orange,
+       shape: RoundedRectangleBorder(
+         borderRadius: BorderRadius.circular(18.0),
+       ),
+     ),
+
+   );
    static final themeData = ThemeData(
      // useMaterial3: false,
    ).copyWith(
