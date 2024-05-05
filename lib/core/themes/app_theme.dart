@@ -28,7 +28,18 @@ import 'fontSize.dart';
          enabledBorder: _border,
          focusedBorder: _border
      ),
+     popupMenuTheme: PopupMenuThemeData(
+       surfaceTintColor: Colors.white,
+       iconColor: Colors.white,
+       shape: RoundedRectangleBorder(
+           borderRadius: BorderRadius.all(
+             Radius.circular(20.0),
+           )
+       ),
+     ),
    );
+
+
    static final themeData = ThemeData(
      // useMaterial3: false,
    ).copyWith(
