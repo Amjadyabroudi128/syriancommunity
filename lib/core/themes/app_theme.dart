@@ -37,6 +37,17 @@ import 'fontSize.dart';
            )
        ),
      ),
+     appBarTheme: AppBarTheme(
+         color: ColorManager.specialGreen,
+         centerTitle: true,
+         toolbarHeight: 65,
+         titleTextStyle: TextStyle(
+             fontSize: 22,
+         ),
+         iconTheme: IconThemeData(
+             size: 25,
+         )
+     ),
    );
 
 
