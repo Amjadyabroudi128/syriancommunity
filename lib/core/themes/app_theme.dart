@@ -30,7 +30,7 @@ import 'fontSize.dart';
          focusedBorder: _border
      ),
      popupMenuTheme: PopupMenuThemeData(
-       surfaceTintColor: Colors.white,
+       surfaceTintColor: Colors.lightBlueAccent,
        iconColor: Colors.white,
        shape: RoundedRectangleBorder(
            borderRadius: BorderRadius.all(
@@ -63,6 +63,10 @@ import 'fontSize.dart';
        collapsedIconColor: Colors.white,
        textColor: Colors.white,
        iconColor: Colors.white,
+     ),
+     iconTheme: IconThemeData(
+         size: 30,
+       color: Colors.white
      ),
    );
 
