@@ -72,9 +72,9 @@ class _AddCelebrationState extends State<AddCelebration> {
                  Row(
                    mainAxisAlignment: MainAxisAlignment.center,
                    children: [
-                     addButton(),
+                     cancelButton(),
                      sizedBox(width: 20,),
-                     cancelButton()
+                     addButton(),
                    ],
                  ),
               ],
