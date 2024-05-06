@@ -24,6 +24,7 @@ import 'core/themes/app_theme.dart';
   );
   await FirebaseApi().initNotifications();
   await FirebaseMessaging.instance.subscribeToTopic("topic");
+
   runApp(const MyApp());
 }
 
@@ -35,6 +36,7 @@ class MyApp extends StatefulWidget {
   static void setLocale(BuildContext context, Locale newLocale) {
     _MyAppState? state = context.findAncestorStateOfType<_MyAppState>();
     state?.setLocale(newLocale);
+
   }
 }
 

@@ -43,14 +43,14 @@ class _addCommunityState extends State<addCommunity> {
               sizedBox(),
               padding(child: Text(AppLocalizations.of(context)!.name),),
               CustomTextForm(hinttext: "BreakFast Club", myController: name,
-                  suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                  suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: Icon(Icons.clear),)
               ),
               sizedBox(),
               padding(
                 child: Text(AppLocalizations.of(context)!.details),
               ),
               CustomTextForm(hinttext: "What we do ", myController: details, maxLines: 6,
-                  suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                  suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: Icon(Icons.clear),)
               ),
               sizedBox(height: 10,),
               Center(
