@@ -48,6 +48,21 @@ import 'fontSize.dart';
              size: 25,
          )
      ),
+     listTileTheme: ListTileThemeData(
+       iconColor: Colors.white,
+       titleTextStyle: TextStyle(
+           fontSize: 15,
+           color: Colors.white
+       ),
+     ),
+     expansionTileTheme: ExpansionTileThemeData(
+       expansionAnimationStyle: AnimationStyle(
+           duration: Duration(milliseconds: 200)
+       ),
+       collapsedIconColor: Colors.white,
+       textColor: Colors.white,
+       iconColor: Colors.white,
+     ),
    );
 
 
