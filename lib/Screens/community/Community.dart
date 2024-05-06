@@ -36,121 +36,124 @@ class _CommunityState extends State<Community> {
             icon: Icon(Icons.arrow_back)),
         title: Text(AppLocalizations.of(context)!.communityResources),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            padding(
-              child: Center(
-                child: user != null ? CustomButton(
-                    onPressed: (){
-                      Navigator.of(context).pushNamed("addCommunity");
-                    },
-                    title: AppLocalizations.of(context)!.addDetails, color: ColorManager.addEdit,) : sizedBox(),
+      body: ScrollConfiguration(
+        behavior: ScrollBehavior(),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              padding(
+                child: Center(
+                  child: user != null ? CustomButton(
+                      onPressed: (){
+                        Navigator.of(context).pushNamed("addCommunity");
+                      },
+                      title: AppLocalizations.of(context)!.addDetails, color: ColorManager.addEdit,) : sizedBox(),
+                ),
               ),
-            ),
-            StreamBuilder(
-              stream: community.snapshots(),
-              builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-            if (snapshot.hasError) {
-              return Text('Something went wrong');
-            }
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return Text("Loading");
-            }
-            return SingleChildScrollView(
-              child: ListView(
-                physics: ScrollPhysics(),
-                shrinkWrap: true,
-                children: snapshot.data!.docs.map((DocumentSnapshot document){
-                  Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        padding(
-                          child: user != null ? GestureDetector(
-                            child: Card(
+              StreamBuilder(
+                stream: community.snapshots(),
+                builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+              if (snapshot.hasError) {
+                return Text('Something went wrong');
+              }
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return Text("Loading");
+              }
+              return SingleChildScrollView(
+                child: ListView(
+                  physics: ScrollPhysics(),
+                  shrinkWrap: true,
+                  children: snapshot.data!.docs.map((DocumentSnapshot document){
+                    Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          padding(
+                            child: user != null ? GestureDetector(
+                              child: Card(
+                                child: data["image"] != null ? myImage(
+                                  src: data["image"],
+                                  height: MediaQuery.of(context).size.height * 0.40,
+                                ) : SizedBox.shrink(),
+                              ),
+                              onTap: (){
+                                Navigator.of(context).push(
+                                    MaterialPageRoute(builder: (context) =>
+                                        EditCommunity(DocID: document.id ,
+                                          oldName: data["name"],
+                                          oldUrl: data["image"],
+                                          oldDetails: data["details"],)
+                                    ));
+                              },
+                            ) : Card(
                               child: data["image"] != null ? myImage(
                                 src: data["image"],
-                                height: MediaQuery.of(context).size.height * 0.40,
+                                  height: MediaQuery.of(context).size.height * 0.40,
                               ) : SizedBox.shrink(),
                             ),
-                            onTap: (){
-                              Navigator.of(context).push(
-                                  MaterialPageRoute(builder: (context) =>
-                                      EditCommunity(DocID: document.id ,
-                                        oldName: data["name"],
-                                        oldUrl: data["image"],
-                                        oldDetails: data["details"],)
-                                  ));
-                            },
-                          ) : Card(
-                            child: data["image"] != null ? myImage(
-                              src: data["image"],
-                                height: MediaQuery.of(context).size.height * 0.40,
-                            ) : SizedBox.shrink(),
                           ),
-                        ),
-                        Text(data["name"], style: TextStyles.font14green,),
-                        sizedBox(height: 12,),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width,
-                          child: IntrinsicHeight(
-                            child: Card(
-                              child: Column(
-                                children: [
-                                    padding(
-                                      child: Text(data["details"], style: TextStyles.font17,),
-                                    ),
-                                    Padding(
-                                      padding:  EdgeInsets.only(left: 310, ),
-                                      child: user != null ? MyPopUpMenu(
-                                        itemBuilder: (context) {
-                                        return [
-                                          PopupMenuItem<int>(
-                                            value: 0,
-                                            child: Text(AppLocalizations.of(context)!.edit),
-                                          ),
-                                          PopupMenuItem<int>(
-                                            value: 1,
-                                            child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),
-                                          ),
-                                        ];
-                                        },
-                                          onSelected:(value){
-                                            if(value == 0){
-                                              Navigator.of(context).push(
-                                                  CupertinoPageRoute(builder: (context) =>
-                                                      EditCommunity(DocID: document.id ,
-                                                        oldName: data["name"],
-                                                        oldUrl: data["image"],
-                                                        oldDetails: data["details"],)
-                                                  ));
-
-                                            }else if(value == 1){
-                                              community.doc(document.id).delete();
-                                            }
+                          Text(data["name"], style: TextStyles.font14green,),
+                          sizedBox(height: 12,),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width,
+                            child: IntrinsicHeight(
+                              child: Card(
+                                child: Column(
+                                  children: [
+                                      padding(
+                                        child: Text(data["details"], style: TextStyles.font17,),
+                                      ),
+                                      Padding(
+                                        padding:  EdgeInsets.only(left: 310, ),
+                                        child: user != null ? MyPopUpMenu(
+                                          itemBuilder: (context) {
+                                          return [
+                                            PopupMenuItem<int>(
+                                              value: 0,
+                                              child: Text(AppLocalizations.of(context)!.edit),
+                                            ),
+                                            PopupMenuItem<int>(
+                                              value: 1,
+                                              child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),
+                                            ),
+                                          ];
                                           },
-                                        popUpAnimationStyle: AnimationStyle(
-                                            duration: Duration(milliseconds: 400)
-                                        ),
-                                      ) : sizedBox(height: 40,),
-                                    ),
-                                ],
+                                            onSelected:(value){
+                                              if(value == 0){
+                                                Navigator.of(context).push(
+                                                    CupertinoPageRoute(builder: (context) =>
+                                                        EditCommunity(DocID: document.id ,
+                                                          oldName: data["name"],
+                                                          oldUrl: data["image"],
+                                                          oldDetails: data["details"],)
+                                                    ));
+
+                                              }else if(value == 1){
+                                                community.doc(document.id).delete();
+                                              }
+                                            },
+                                          popUpAnimationStyle: AnimationStyle(
+                                              duration: Duration(milliseconds: 400)
+                                          ),
+                                        ) : sizedBox(height: 40,),
+                                      ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  );
+                        ],
+                      ),
+                    );
+                  },
+                  ).toList(),
+                ),
+                );
                 },
-                ).toList(),
-              ),
-              );
-              },
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

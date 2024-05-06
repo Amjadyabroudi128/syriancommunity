@@ -127,7 +127,6 @@ import 'fontSize.dart';
            )
        ),
      ),
-
      expansionTileTheme: ExpansionTileThemeData(
          expansionAnimationStyle: AnimationStyle(
              duration: Duration(milliseconds: 200)
