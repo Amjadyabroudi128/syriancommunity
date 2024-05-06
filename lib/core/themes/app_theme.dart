@@ -18,6 +18,7 @@ import 'fontSize.dart';
        ),
      ),
      inputDecorationTheme: InputDecorationTheme(
+       suffixIconColor: Colors.white,
          // contentPadding: EdgeInsets.all(25),
          border: OutlineInputBorder(
            borderRadius: BorderRadius.circular(10),
