@@ -38,7 +38,8 @@ class _EditCommunityState extends State<EditCommunity> {
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.editDetails),
       ),
-      body: padding(
+      body: ScrollConfiguration(
+        behavior: ScrollBehavior(),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
