@@ -90,21 +90,26 @@ class _addCommunityState extends State<addCommunity> {
   }
   submitButton() {
     return CustomButton(onPressed: () async {
-      if(url.url == null) {
-        await   community.doc().set({
-          "name" : name.text,
-          "details" : details.text
-        });
-        Navigator.pushReplacementNamed(context, 'community');
-      } else {
-        await community.doc().set({
-          "name" : name.text,
-          "details" : details.text,
-          "image" : url.url,
-        });
-        Navigator.pushReplacementNamed(context,'community');
+      if ( name.text.isEmpty || details.text.isEmpty ) {
+        ScaffoldMessenger.of(context).showSnackBar
+          ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
       }
     }
+    //   if(url.url == null) {
+    //     await   community.doc().set({
+    //       "name" : name.text,
+    //       "details" : details.text
+    //     });
+    //     Navigator.pushReplacementNamed(context, 'community');
+    //   } else {
+    //     await community.doc().set({
+    //       "name" : name.text,
+    //       "details" : details.text,
+    //       "image" : url.url,
+    //     });
+    //     Navigator.pushReplacementNamed(context,'community');
+    //   }
+    // }
         , title: AppLocalizations.of(context)!.submit,
         color: (name.text.isEmpty)
             || (details.text.isEmpty) ? Colors.grey : ColorManager.submit
