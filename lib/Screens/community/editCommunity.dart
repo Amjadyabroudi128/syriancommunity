@@ -61,12 +61,12 @@ class _EditCommunityState extends State<EditCommunity> {
               sizedBox(),
               padding(child: Text(AppLocalizations.of(context)!.name)),
               CustomTextForm(hinttext: "BreakFast Club", myController: name,
-                  suffixIcon: IconButton(onPressed: name.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                  suffixIcon: IconButton(onPressed: name.clear, icon: Icon(Icons.clear),)
               ),
               sizedBox(),
               padding(child: Text(AppLocalizations.of(context)!.details)),
               CustomTextForm(hinttext: "What we do ", myController: details, maxLines: 6,
-                  suffixIcon: IconButton(onPressed: details.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                  suffixIcon: IconButton(onPressed: details.clear, icon: Icon(Icons.clear),)
               ),
               sizedBox(),
               Center(
