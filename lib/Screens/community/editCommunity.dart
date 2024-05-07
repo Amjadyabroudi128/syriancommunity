@@ -111,7 +111,7 @@ class _EditCommunityState extends State<EditCommunity> {
     return CustomButton(onPressed: () async {
       if(widget.oldName == name.text && widget.oldDetails == details.text) {
         ScaffoldMessenger.of(context).showSnackBar
-          ( SnackBar(content: Text("please update somethings"),));
+          ( SnackBar(content: Text("please update somethings"), duration: Duration(seconds: 1),));
       } else {
           await community.doc(widget.DocID).update({
             "name" : name.text,
