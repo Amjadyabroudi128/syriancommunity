@@ -75,33 +75,9 @@ class _EditCommunityState extends State<EditCommunity> {
                Row(
                  mainAxisAlignment: MainAxisAlignment.center,
                  children: [
-                   CustomButton(
-                     onPressed: (){
-                       Navigator.pop(context);
-                     },
-                     title: AppLocalizations.of(context)!.cancel,
-                     color: ColorManager.delete,
-                   ),
+                   cancelButton(),
                    sizedBox(width: 15,),
-                   CustomButton(onPressed: () async {
-                     if(url.url == null) {
-                       await community.doc(widget.DocID).update({
-                         "name" : name.text,
-                         "details" : details.text,
-                       });
-                       Navigator.pop(context);
-                     } else {
-                       await community.doc(widget.DocID).update({
-                         "name" : name.text,
-                         "details" : details.text,
-                         "image" : url.url
-                       });
-                       Navigator.pop(context);
-                     }
-                   }
-                     , title: AppLocalizations.of(context)!.update,
-                     color: ColorManager.submit,
-                   ),
+                   submitButton(),
                  ],
                ),
             ],
@@ -120,6 +96,42 @@ class _EditCommunityState extends State<EditCommunity> {
         });
       },
       color: ColorManager.addEdit,
+    );
+  }
+  cancelButton() {
+    return CustomButton(
+      onPressed: (){
+        Navigator.pop(context);
+      },
+      title: AppLocalizations.of(context)!.cancel,
+      color: ColorManager.delete,
+    );
+  }
+  submitButton () {
+    return CustomButton(onPressed: () async {
+      // if(url.url == null) {
+      //   await community.doc(widget.DocID).update({
+      //     "name" : name.text,
+      //     "details" : details.text,
+      //   });
+      //   Navigator.pop(context);
+      // } else {
+
+      // }
+      if(widget.oldName == name.text && widget.oldDetails == details.text) {
+        ScaffoldMessenger.of(context).showSnackBar
+          ( SnackBar(content: Text("please update somethings"),));
+      } else {
+          await community.doc(widget.DocID).update({
+            "name" : name.text,
+            "details" : details.text,
+            "image" : url.url
+          });
+          Navigator.pop(context);
+      }
+    }
+      , title: AppLocalizations.of(context)!.update,
+      color: ColorManager.submit,
     );
   }
 }
