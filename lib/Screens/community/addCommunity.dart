@@ -61,26 +61,7 @@ class _addCommunityState extends State<addCommunity> {
                 children: [
                   cancelButton(),
                   sizedBox(width: 10,),
-                  CustomButton(onPressed: () async {
-                    if(url.url == null) {
-                      await   community.doc().set({
-                        "name" : name.text,
-                        "details" : details.text
-                      });
-                      Navigator.pushReplacementNamed(context, 'community');
-                    } else {
-                      await community.doc().set({
-                        "name" : name.text,
-                        "details" : details.text,
-                        "image" : url.url,
-                      });
-                      Navigator.pushReplacementNamed(context,'community');
-                    }
-                  }
-                      , title: AppLocalizations.of(context)!.submit,
-                      color: (name.text.isEmpty)
-                          || (details.text.isEmpty) ? Colors.grey : ColorManager.submit
-                  ),
+                  submitButton(),
                 ],
               ),
 
@@ -105,6 +86,28 @@ class _addCommunityState extends State<addCommunity> {
         });
       },
       color: ColorManager.addEdit,
+    );
+  }
+  submitButton() {
+    return CustomButton(onPressed: () async {
+      if(url.url == null) {
+        await   community.doc().set({
+          "name" : name.text,
+          "details" : details.text
+        });
+        Navigator.pushReplacementNamed(context, 'community');
+      } else {
+        await community.doc().set({
+          "name" : name.text,
+          "details" : details.text,
+          "image" : url.url,
+        });
+        Navigator.pushReplacementNamed(context,'community');
+      }
+    }
+        , title: AppLocalizations.of(context)!.submit,
+        color: (name.text.isEmpty)
+            || (details.text.isEmpty) ? Colors.grey : ColorManager.submit
     );
   }
 }
