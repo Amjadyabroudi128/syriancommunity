@@ -109,15 +109,6 @@ class _EditCommunityState extends State<EditCommunity> {
   }
   submitButton () {
     return CustomButton(onPressed: () async {
-      // if(url.url == null) {
-      //   await community.doc(widget.DocID).update({
-      //     "name" : name.text,
-      //     "details" : details.text,
-      //   });
-      //   Navigator.pop(context);
-      // } else {
-
-      // }
       if(widget.oldName == name.text && widget.oldDetails == details.text) {
         ScaffoldMessenger.of(context).showSnackBar
           ( SnackBar(content: Text("please update somethings"),));
