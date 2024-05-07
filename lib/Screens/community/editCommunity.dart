@@ -70,16 +70,7 @@ class _EditCommunityState extends State<EditCommunity> {
               ),
               sizedBox(),
               Center(
-                child: CustomButton(
-                  title: AppLocalizations.of(context)!.image,
-                  onPressed: () async {
-                    await url.pickImage();
-                    setState(() {
-                    });
-                  },
-                  color: ColorManager.addEdit,
-                ),
-
+                child: imageButton()
               ),
                Row(
                  mainAxisAlignment: MainAxisAlignment.center,
@@ -118,6 +109,17 @@ class _EditCommunityState extends State<EditCommunity> {
         ),
       ),
     ),
+    );
+  }
+  imageButton () {
+    return CustomButton(
+      title: AppLocalizations.of(context)!.image,
+      onPressed: () async {
+        await url.pickImage();
+        setState(() {
+        });
+      },
+      color: ColorManager.addEdit,
     );
   }
 }
