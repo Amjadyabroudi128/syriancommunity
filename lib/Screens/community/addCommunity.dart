@@ -92,24 +92,22 @@ class _addCommunityState extends State<addCommunity> {
     return CustomButton(onPressed: () async {
       if ( name.text.isEmpty || details.text.isEmpty ) {
         ScaffoldMessenger.of(context).showSnackBar
-          ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
-      }
+          ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings), duration: Duration(seconds: 1),));
+      } else if (url.url == null) {
+            await   community.doc().set({
+              "name" : name.text,
+              "details" : details.text
+            });
+            Navigator.pushReplacementNamed(context, 'community');
+      }  else {
+            await community.doc().set({
+              "name" : name.text,
+              "details" : details.text,
+              "image" : url.url,
+            });
+            Navigator.pushReplacementNamed(context,'community');
+          }
     }
-    //   if(url.url == null) {
-    //     await   community.doc().set({
-    //       "name" : name.text,
-    //       "details" : details.text
-    //     });
-    //     Navigator.pushReplacementNamed(context, 'community');
-    //   } else {
-    //     await community.doc().set({
-    //       "name" : name.text,
-    //       "details" : details.text,
-    //       "image" : url.url,
-    //     });
-    //     Navigator.pushReplacementNamed(context,'community');
-    //   }
-    // }
         , title: AppLocalizations.of(context)!.submit,
         color: (name.text.isEmpty)
             || (details.text.isEmpty) ? Colors.grey : ColorManager.submit
