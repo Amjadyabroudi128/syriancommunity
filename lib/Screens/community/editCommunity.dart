@@ -65,7 +65,7 @@ class _EditCommunityState extends State<EditCommunity> {
               ),
               sizedBox(),
               padding(child: Text(AppLocalizations.of(context)!.details)),
-              CustomTextForm(hinttext: "What we do ", myController: details, maxLines: 6,
+              CustomTextForm(hinttext: "What we do ", myController: details,
                   suffixIcon: IconButton(onPressed: details.clear, icon: Icon(Icons.clear),)
               ),
               sizedBox(),
