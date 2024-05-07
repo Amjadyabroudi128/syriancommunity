@@ -59,28 +59,28 @@ class _addCommunityState extends State<addCommunity> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CustomButton(onPressed: () async {
-                      if(url.url == null) {
-                     await   community.doc().set({
-                          "name" : name.text,
-                          "details" : details.text
-                        });
-                     Navigator.pushReplacementNamed(context, 'community');
-                      } else {
-                       await community.doc().set({
-                          "name" : name.text,
-                          "details" : details.text,
-                          "image" : url.url,
-                        });
-                       Navigator.pushReplacementNamed(context,'community');
-                      }
-                    }
-                    , title: AppLocalizations.of(context)!.submit,
-                    color: (name.text.isEmpty)
-                        || (details.text.isEmpty) ? Colors.grey : ColorManager.submit
-                    ),
-                  sizedBox(width: 10,),
                   cancelButton(),
+                  sizedBox(width: 10,),
+                  CustomButton(onPressed: () async {
+                    if(url.url == null) {
+                      await   community.doc().set({
+                        "name" : name.text,
+                        "details" : details.text
+                      });
+                      Navigator.pushReplacementNamed(context, 'community');
+                    } else {
+                      await community.doc().set({
+                        "name" : name.text,
+                        "details" : details.text,
+                        "image" : url.url,
+                      });
+                      Navigator.pushReplacementNamed(context,'community');
+                    }
+                  }
+                      , title: AppLocalizations.of(context)!.submit,
+                      color: (name.text.isEmpty)
+                          || (details.text.isEmpty) ? Colors.grey : ColorManager.submit
+                  ),
                 ],
               ),
 
