@@ -119,6 +119,7 @@ import 'fontSize.dart';
          )
      ),
      popupMenuTheme: PopupMenuThemeData(
+       position: PopupMenuPosition.over,
        surfaceTintColor: Colors.white,
        iconColor: Colors.black,
        shape: RoundedRectangleBorder(
