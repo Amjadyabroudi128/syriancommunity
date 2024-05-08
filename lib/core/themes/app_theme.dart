@@ -70,7 +70,6 @@ import 'fontSize.dart';
      ),
    );
 
-
    static final themeData = ThemeData(
      // useMaterial3: false,
    ).copyWith(
@@ -96,7 +95,10 @@ import 'fontSize.dart';
        ),
      ),
      drawerTheme: DrawerThemeData(
-         backgroundColor: Colors.white
+         backgroundColor: Colors.white,
+       endShape: RoundedRectangleBorder(
+         borderRadius: BorderRadius.circular(20),
+       )
      ),
      dividerTheme: DividerThemeData(
        indent: 40,
