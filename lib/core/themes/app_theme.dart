@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'colors.dart';
 import 'fontSize.dart';
@@ -108,6 +109,11 @@ import 'fontSize.dart';
      ),
 
      appBarTheme: AppBarTheme(
+       shape: RoundedRectangleBorder(
+         borderRadius: BorderRadius.only(
+           bottomRight: Radius.circular(20)
+         )
+       ),
          color: ColorManager.specialGreen,
          centerTitle: true,
          toolbarHeight: 65,
