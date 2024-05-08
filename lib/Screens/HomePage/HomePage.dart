@@ -31,8 +31,6 @@ class _HomePageState extends State<HomePage> {
     FirebaseFirestore.instance.collection('home');
 
     User? user = FirebaseAuth.instance.currentUser;
-    bool isDark = false;
-
     return Scaffold(
       appBar: AppBar(
         leading: Builder(
