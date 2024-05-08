@@ -3,6 +3,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
+import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../Api/Firebase_api.dart';
@@ -47,7 +48,7 @@ class _AddInfoState extends State<AddInfo> {
                         hinttext: "info name",
                         myController: name,
                         suffixIcon: name.text.isEmpty ? null :
-                        IconButton(onPressed: name.clear, icon: Icon(Icons.clear),)
+                        IconButton(onPressed: name.clear, icon: myIcons.clear,)
 
                     ),
                   sizedBox(),
@@ -57,7 +58,7 @@ class _AddInfoState extends State<AddInfo> {
                       myController: details,
                     maxLines: 6,
                       suffixIcon: details.text.isEmpty ? null :
-                      IconButton(onPressed: details.clear, icon: Icon(Icons.clear),)
+                      IconButton(onPressed: details.clear, icon: myIcons.clear,)
 
                   ),
                   sizedBox(height: 10,),
