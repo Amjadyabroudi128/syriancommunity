@@ -48,5 +48,8 @@ import 'font_weight_helper.dart';
      decoration: TextDecoration.underline,
        fontSize: 16
    );
-
+   static TextStyle  appBarText = TextStyle(
+       fontSize: 22,
+       color: Colors.white
+   );
  }
