@@ -131,7 +131,8 @@ class _EditCommunityState extends State<EditCommunity> {
         isUpdated = true;
       });
     }
-      , title:  AppLocalizations.of(context)!.update,
+      , title:  (widget.oldName == name.text && widget.oldDetails == details.text)
+        ? "Updating"  : AppLocalizations.of(context)!.update ,
       color:(widget.oldName == name.text && widget.oldDetails == details.text)  ? Colors.grey : ColorManager.submit
     );
   }
