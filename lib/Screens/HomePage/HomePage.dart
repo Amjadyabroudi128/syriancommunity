@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
+import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
@@ -36,9 +37,7 @@ class _HomePageState extends State<HomePage> {
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
-              icon: Icon(
-                CupertinoIcons.list_bullet,
-              ),
+              icon: myIcons.drawer,
               onPressed: (){
                 Scaffold.of(context).openDrawer();
               },
