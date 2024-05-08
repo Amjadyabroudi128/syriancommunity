@@ -117,10 +117,7 @@ import 'fontSize.dart';
          color: ColorManager.specialGreen,
          centerTitle: true,
          toolbarHeight: 65,
-         titleTextStyle: TextStyle(
-           fontSize: 22,
-           color: Colors.white
-         ),
+         titleTextStyle: TextStyles.appBarText,
          iconTheme: IconThemeData(
              size: 25,
              color: Colors.white
