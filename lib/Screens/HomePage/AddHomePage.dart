@@ -90,7 +90,7 @@ class _AddInfoState extends State<AddInfo> {
  submitButton () {
     return CustomButton(
         onPressed: () async {
-          if ( name.text.isEmpty || details.text.isEmpty ) {
+          if ( name.text.isEmpty && details.text.isEmpty ) {
             ScaffoldMessenger.of(context).showSnackBar
               ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
           } else {
@@ -111,7 +111,7 @@ class _AddInfoState extends State<AddInfo> {
         },
         title: AppLocalizations.of(context)!.submit,
         color: (name.text.isEmpty)
-            || (details.text.isEmpty) ? Colors.grey : ColorManager.submit
+            && (details.text.isEmpty) ? Colors.grey : ColorManager.submit
     );
  }
 }
