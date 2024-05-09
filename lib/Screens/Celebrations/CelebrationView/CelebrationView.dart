@@ -102,7 +102,6 @@ class Celebrations extends StatelessWidget {
                                   children: [
                                     Text(data["name"], style: TextStyles.font14green,),
                                     sizedBox(height: 5,),
-                                    // padding(child: Text(data["name"], style: TextStyles.font14green,)),
                                     user != null ? GestureDetector(
                                         child: Container(
                                           child: data["image"] != null? myImage(

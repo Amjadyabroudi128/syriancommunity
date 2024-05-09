@@ -78,8 +78,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                 CustomTextForm(hinttext: "e.g: Christmas", myController: celebrationName),
                 sizedBox(),
                 padding(child: Text(AppLocalizations.of(context)!.details)),
-                CustomTextForm(hinttext: "what we do ", myController: celebrationDetails,
-                  maxLines: 7,),
+                CustomTextForm(hinttext: "what we do ", myController: celebrationDetails,),
                 sizedBox(),
                 padding(
                   child: Center(
