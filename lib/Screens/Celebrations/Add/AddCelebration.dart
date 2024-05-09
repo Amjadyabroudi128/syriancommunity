@@ -5,6 +5,7 @@ import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../../components/TextField.dart';
@@ -54,16 +55,14 @@ class _AddCelebrationState extends State<AddCelebration> {
                 padding(child: Text(AppLocalizations.of(context)!.celebrations)),
                 CustomTextForm(hinttext: "e.g: Christmas", myController: celebrationName,
                     suffixIcon: celebrationName.text.isEmpty? null :
-                    IconButton(onPressed: celebrationName.clear, icon: Icon(Icons.clear),)
-
+                    IconButton(onPressed: celebrationName.clear, icon: myIcons.clear,)
                 ),
                 sizedBox(),
                 padding(child: Text(AppLocalizations.of(context)!.details),),
                 CustomTextForm(hinttext: "what we do ", myController: celebrationDetail, maxLines: 6,
-                    suffixIcon: celebrationDetail.text.isEmpty ? null : IconButton(onPressed: celebrationDetail.clear, icon: Icon(Icons.clear),
-                    )
-
-                ),
+                    suffixIcon: celebrationDetail.text.isEmpty ?
+                    null : IconButton(onPressed: celebrationDetail.clear, icon: myIcons.clear,),
+                    ),
                 sizedBox(),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
