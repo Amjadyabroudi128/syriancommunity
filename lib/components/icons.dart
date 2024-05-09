@@ -6,4 +6,5 @@ class myIcons {
   static Icon drawer = Icon(CupertinoIcons.list_bullet,);
   static Icon clear = Icon(Icons.clear);
   static Icon home = Icon(CupertinoIcons.home,);
+  static Icon ourGroup = Icon(CupertinoIcons.group_solid,);
  }
