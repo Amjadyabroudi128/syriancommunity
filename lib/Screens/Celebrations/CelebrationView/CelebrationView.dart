@@ -6,6 +6,7 @@ import 'package:syrianadmin/Screens/Celebrations/Delete/delete_cubit.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations/editCelebrations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
@@ -35,7 +36,7 @@ class Celebrations extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pushNamed("homepage");
             },
-            icon: Icon(Icons.arrow_back)),
+            icon: myIcons.goBack),
         title: Text(AppLocalizations.of(context)!.celebrations),
       ),
       body:  ScrollConfiguration(
