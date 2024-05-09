@@ -5,7 +5,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/Register/LogIn.dart';
 import 'package:syrianadmin/components/ListTile.dart';
 import 'package:syrianadmin/components/icons.dart';
-import 'package:syrianadmin/core/themes/app_theme.dart';
 import '../components/Container.dart';
 import '../main.dart';
 
