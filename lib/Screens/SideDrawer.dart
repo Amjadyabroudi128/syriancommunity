@@ -52,9 +52,7 @@ class _SideDrawerState extends State<SideDrawer> {
             ),
             MYlist(
               title: Text(AppLocalizations.of(context)!.team),
-              leading: Icon(
-                CupertinoIcons.group_solid,
-              ),
+              leading: myIcons.ourGroup,
               onTap: (){
                 Navigator.pop(context);
                 Navigator.of(context).pushNamed("ourteam");
