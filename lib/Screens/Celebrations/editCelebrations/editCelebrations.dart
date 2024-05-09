@@ -90,9 +90,9 @@ class _EditCelebrationState extends State<EditCelebration> {
                    Row(
                      mainAxisAlignment: MainAxisAlignment.center,
                      children: [
-                       editButton(),
+                       cancelButton(),
                        sizedBox(width: 20,),
-                       cancelButton()
+                       editButton(),
                      ],
                    ),
                 ],
