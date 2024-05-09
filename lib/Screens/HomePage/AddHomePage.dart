@@ -56,7 +56,6 @@ class _AddInfoState extends State<AddInfo> {
                   CustomTextForm(
                       hinttext: "info details",
                       myController: details,
-                    maxLines: 6,
                       suffixIcon: details.text.isEmpty ? null :
                       IconButton(onPressed: details.clear, icon: myIcons.clear,)
 
