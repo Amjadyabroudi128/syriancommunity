@@ -5,4 +5,5 @@ class myIcons {
   static Icon goBack = Icon(Icons.arrow_back);
   static Icon drawer = Icon(CupertinoIcons.list_bullet,);
   static Icon clear = Icon(Icons.clear);
+  static Icon home = Icon(CupertinoIcons.home,);
  }
