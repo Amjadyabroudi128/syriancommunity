@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/Register/LogIn.dart';
 import 'package:syrianadmin/components/ListTile.dart';
+import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/core/themes/app_theme.dart';
 import '../components/Container.dart';
 import '../main.dart';
@@ -33,9 +34,7 @@ class _SideDrawerState extends State<SideDrawer> {
           Containers.image,
             MYlist(
               title: Text(AppLocalizations.of(context)!.home),
-              leading: Icon(
-                CupertinoIcons.home,
-              ),
+              leading: myIcons.home,
               onTap: (){
                 Navigator.of(context).pushReplacementNamed("homepage");
               },
