@@ -7,4 +7,5 @@ class myIcons {
   static Icon clear = Icon(Icons.clear);
   static Icon home = Icon(CupertinoIcons.home,);
   static Icon ourGroup = Icon(CupertinoIcons.group_solid,);
+  static Icon email = Icon(CupertinoIcons.mail_solid,);
  }
