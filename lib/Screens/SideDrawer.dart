@@ -40,9 +40,7 @@ class _SideDrawerState extends State<SideDrawer> {
             ),
             MYlist(
               title: Text(AppLocalizations.of(context)!.contact),
-              leading: Icon(
-                CupertinoIcons.mail_solid,
-              ),
+              leading: myIcons.email,
               onTap: (){
                 Navigator.pop(context);
                 Navigator.of(context).pushNamed("contactus");
