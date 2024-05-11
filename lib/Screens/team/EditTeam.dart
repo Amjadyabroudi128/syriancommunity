@@ -69,15 +69,14 @@ class _EditMemberState extends State<EditMember> {
                   ),
                 ),
                 padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
-                CustomTextForm(hinttext: "name", myController: name,
+                CustomTextForm(hinttext: "Member name", myController: name,
                     suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,)
 
                 ),
                 sizedBox(height: 20,),
                 padding(child: Text(AppLocalizations.of(context)!.details, style: TextStyles.font14green,)),
                 CustomTextForm(
-                  maxLines: 5,
-                    hinttext: "details",
+                    hinttext: "Member details",
                     myController: details,
                     suffixIcon: IconButton(onPressed: details.clear, icon: myIcons.clear,)
 
