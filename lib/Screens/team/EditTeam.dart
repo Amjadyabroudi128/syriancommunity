@@ -98,9 +98,9 @@ class _EditMemberState extends State<EditMember> {
                  Row(
                    mainAxisAlignment: MainAxisAlignment.center,
                    children: [
-                     submitUpdate(),
+                     cancelButton(),
                      sizedBox(width: 16,),
-                     cancelButton()
+                     submitUpdate(),
                    ],
                  ),
               ],
