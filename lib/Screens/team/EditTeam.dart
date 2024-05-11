@@ -26,12 +26,13 @@ class EditMember extends StatefulWidget {
 class _EditMemberState extends State<EditMember> {
   TextEditingController name = TextEditingController();
   TextEditingController details = TextEditingController();
-
+  bool? isUpdated;
   void initState() {
     super.initState();
     name.text = widget.oldName;
     details.text = widget.oldDetail;
     url.url = widget.oldUrl;
+    isUpdated = isUpdated;
   }
   final CollectionReference members =
   FirebaseFirestore.instance.collection('members');
@@ -121,16 +122,28 @@ class _EditMemberState extends State<EditMember> {
   }
   submitUpdate () {
     return CustomButton(
-      onPressed: () async {
-        await members.doc(widget.DocID).update(
-            {
-              "image" : url.url,
-              "name" : name.text,
-              "details" : details.text
-            }
-        );
-        Navigator.pop(context);
+      onPressed: () {
+        if(name.text == widget.oldName && details.text == widget.oldDetail) {
+          setState(() {
+            isUpdated = false;
+            ScaffoldMessenger.of(context).showSnackBar
+              ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
+          });
+        } else {
+          setState(() async {
+            isUpdated = true;
+              await members.doc(widget.DocID).update(
+                  {
+                    "image" : url.url,
+                    "name" : name.text,
+                    "details" : details.text
+                  }
+              );
+              Navigator.pop(context);
+          });
+        }
       },
-      title: AppLocalizations.of(context)!.edit, color: ColorManager.submit,);
+      title: AppLocalizations.of(context)!.edit,
+      color: ColorManager.submit,);
   }
 }
