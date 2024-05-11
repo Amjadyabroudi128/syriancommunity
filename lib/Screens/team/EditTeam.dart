@@ -98,18 +98,7 @@ class _EditMemberState extends State<EditMember> {
                  Row(
                    mainAxisAlignment: MainAxisAlignment.center,
                    children: [
-                     CustomButton(
-                          onPressed: () async {
-                            await members.doc(widget.DocID).update(
-                                {
-                                  "image" : url.url,
-                                  "name" : name.text,
-                                  "details" : details.text
-                                }
-                            );
-                            Navigator.pop(context);
-                          },
-                       title: AppLocalizations.of(context)!.edit, color: ColorManager.submit,),
+                     submitUpdate(),
                      sizedBox(width: 16,),
                      cancelButton()
                    ],
@@ -130,5 +119,19 @@ class _EditMemberState extends State<EditMember> {
       Navigator.pop(context);
 
     }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
+  }
+  submitUpdate () {
+    return CustomButton(
+      onPressed: () async {
+        await members.doc(widget.DocID).update(
+            {
+              "image" : url.url,
+              "name" : name.text,
+              "details" : details.text
+            }
+        );
+        Navigator.pop(context);
+      },
+      title: AppLocalizations.of(context)!.edit, color: ColorManager.submit,);
   }
 }
