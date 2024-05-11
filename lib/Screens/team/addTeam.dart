@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
@@ -46,12 +47,12 @@ class _AddMemberState extends State<AddMember> {
               children: [
                 padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
                 CustomTextForm(hinttext: "Member  Name", myController: name,
-                    suffixIcon: name.text.isEmpty ? null : IconButton(onPressed: name.clear, icon: Icon(Icons.clear),)
+                    suffixIcon: name.text.isEmpty ? null : IconButton(onPressed: name.clear, icon: myIcons.clear,)
                 ),
                 sizedBox(height: 20,),
                 padding(child: Text(AppLocalizations.of(context)!.details, style: TextStyles.font14green,)),
                 CustomTextForm(maxLines: null, hinttext: "details",  myController: details,
-                  suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: Icon(Icons.clear),)
+                  suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear,)
                 ),
                 sizedBox(height: 12,),
                 Center(
