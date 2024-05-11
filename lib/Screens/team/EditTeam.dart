@@ -122,7 +122,7 @@ class _EditMemberState extends State<EditMember> {
   }
   submitUpdate () {
     return CustomButton(
-      onPressed: () {
+      onPressed: () async {
         if(name.text == widget.oldName && details.text == widget.oldDetail) {
           setState(() {
             isUpdated = false;
