@@ -41,7 +41,8 @@ class _EditMemberState extends State<EditMember> {
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)!.editDetails),
       ),
-      body: Center(
+      body: ScrollConfiguration(
+        behavior: ScrollBehavior(),
         child: SingleChildScrollView(
           child: padding(
             child: Column(
