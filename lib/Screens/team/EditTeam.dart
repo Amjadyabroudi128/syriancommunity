@@ -2,6 +2,7 @@ import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
@@ -69,7 +70,7 @@ class _EditMemberState extends State<EditMember> {
                 ),
                 padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
                 CustomTextForm(hinttext: "name", myController: name,
-                    suffixIcon: IconButton(onPressed: name.clear, icon: Icon(Icons.clear),)
+                    suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,)
 
                 ),
                 sizedBox(height: 20,),
@@ -78,7 +79,7 @@ class _EditMemberState extends State<EditMember> {
                   maxLines: 5,
                     hinttext: "details",
                     myController: details,
-                    suffixIcon: IconButton(onPressed: details.clear, icon: Icon(Icons.clear),)
+                    suffixIcon: IconButton(onPressed: details.clear, icon: myIcons.clear,)
 
                 ),
                 sizedBox(height: 2,),
