@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
+import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
@@ -32,7 +33,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
             onPressed: () {
               Navigator.of(context).pushNamed("homepage");
             },
-            icon: Icon(Icons.arrow_back)),
+            icon: myIcons.goBack),
         title: Text(AppLocalizations.of(context)!.team),
       ),
       body: Padding(
