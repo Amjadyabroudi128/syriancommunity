@@ -51,7 +51,7 @@ class _AddMemberState extends State<AddMember> {
                 ),
                 sizedBox(height: 20,),
                 padding(child: Text(AppLocalizations.of(context)!.details, style: TextStyles.font14green,)),
-                CustomTextForm(maxLines: null, hinttext: "details",  myController: details,
+                CustomTextForm(maxLines: null, hinttext: "Member details",  myController: details,
                   suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear,)
                 ),
                 sizedBox(height: 12,),
