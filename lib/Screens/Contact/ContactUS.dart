@@ -35,7 +35,11 @@ class _ContactUsState extends State<ContactUs> {
             onPressed: () {
               Navigator.of(context).pushNamed("homepage");
             },
-            icon: Image.asset("images/arrow.png")
+            icon: ImageIcon(
+              AssetImage("images/arrow.png"),
+              color: Colors.white,
+              size: 20,
+            )
         ),
         title: Text(AppLocalizations.of(context)!.contact),
       ),
