@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/myImages.dart';
 class Containers {
   static Container location = Container(
@@ -12,6 +13,7 @@ class Containers {
       ),
       markers: {
         Marker(
+          icon: ,
             markerId: MarkerId("college"),
             position: LatLng(50.82062318563144, -0.12208351759729541),
             draggable: true,
