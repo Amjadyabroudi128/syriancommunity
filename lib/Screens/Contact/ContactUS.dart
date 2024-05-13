@@ -108,7 +108,7 @@ class _ContactUsState extends State<ContactUs> {
                                           ),
                                         Divider(),
                                          MYlist(
-                                            leading: Icon(Icons.phone),
+                                            leading: myIcons.phone,
                                             title: GestureDetector(
                                                 child: Text(data["phone"], style: TextStyles.font16green,),
                                               onTap: (){
