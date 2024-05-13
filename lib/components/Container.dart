@@ -13,7 +13,7 @@ class Containers {
       ),
       markers: {
         Marker(
-          icon: ,
+
             markerId: MarkerId("college"),
             position: LatLng(50.82062318563144, -0.12208351759729541),
             draggable: true,
