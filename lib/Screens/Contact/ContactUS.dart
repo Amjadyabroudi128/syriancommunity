@@ -8,6 +8,7 @@ import 'package:syrianadmin/components/ListTile.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -34,7 +35,8 @@ class _ContactUsState extends State<ContactUs> {
             onPressed: () {
               Navigator.of(context).pushNamed("homepage");
             },
-            icon: Icon(Icons.arrow_back)),
+            icon: Image.asset("images/arrow.png")
+        ),
         title: Text(AppLocalizations.of(context)!.contact),
       ),
       body: ScrollConfiguration(
