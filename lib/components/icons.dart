@@ -8,6 +8,6 @@ class myIcons {
   static Icon home = Icon(CupertinoIcons.home,);
   static Icon ourGroup = Icon(CupertinoIcons.group_solid,);
   static Icon email = Icon(CupertinoIcons.mail_solid,);
-  static String marker = "images/arrow.png";
+  static String marker = "images/arrow.png" ;
   static Icon phone = Icon(Icons.phone);
  }

@@ -32,15 +32,15 @@ class _ContactUsState extends State<ContactUs> {
     super.initState();
   }
   BitmapDescriptor markerIcon = BitmapDescriptor.defaultMarker;
-  addCustomIcon () async {
-   return BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(
-          size: Size(48, 48)
+  addCustomIcon ()  {
+    BitmapDescriptor.fromAssetImage(
+        const ImageConfiguration(
+          size: Size(1, 1)
         ),
         myIcons.marker,
     ).then((icon) {
       setState(() {
-        markerIcon = icon;
+        markerIcon = icon ;
       });
     });
   }
@@ -174,7 +174,6 @@ class _ContactUsState extends State<ContactUs> {
                                               onDragEnd: (value) {
                                               },
                                             icon: markerIcon,
-
                                           )
                                         },
                                       ),
