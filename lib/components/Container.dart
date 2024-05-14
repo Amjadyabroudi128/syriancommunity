@@ -4,8 +4,6 @@ import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/myImages.dart';
 class Containers {
 
-
-  // static Container location =
   static Container image = Container(
     height: 250,
     decoration: BoxDecoration(
