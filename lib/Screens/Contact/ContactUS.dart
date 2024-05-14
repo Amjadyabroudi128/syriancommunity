@@ -33,11 +33,10 @@ class _ContactUsState extends State<ContactUs> {
     super.initState();
   }
   BitmapDescriptor markerIcon = BitmapDescriptor.defaultMarker;
-  addCustomIcon () {
-    BitmapDescriptor.fromAssetImage(
+  addCustomIcon () async {
+   return BitmapDescriptor.fromAssetImage(
         ImageConfiguration(
-          devicePixelRatio: 1.5,
-          size: Size(25, 26)
+          size: Size(48, 48)
         ),
         "images/arrow.png",
     ).then((icon) {
@@ -54,11 +53,7 @@ class _ContactUsState extends State<ContactUs> {
             onPressed: () {
               Navigator.of(context).pushNamed("homepage");
             },
-            icon: ImageIcon(
-              AssetImage("images/arrow.png"),
-              color: Colors.white,
-              size: 20,
-            )
+            icon: myIcons.goBack
         ),
         title: Text(AppLocalizations.of(context)!.contact),
       ),
