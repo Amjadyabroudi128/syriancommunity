@@ -26,6 +26,7 @@ class _ContactUsState extends State<ContactUs> {
   final CollectionReference contact =
       FirebaseFirestore.instance.collection('contact');
   User? user = FirebaseAuth.instance.currentUser;
+
   @override
   void initState() {
     addCustomIcon();
@@ -35,9 +36,10 @@ class _ContactUsState extends State<ContactUs> {
   addCustomIcon ()  {
     BitmapDescriptor.fromAssetImage(
         const ImageConfiguration(
-          size: Size(1, 1)
+          size: Size(70, 1)
         ),
         myIcons.marker,
+      mipmaps: true
     ).then((icon) {
       setState(() {
         markerIcon = icon ;
