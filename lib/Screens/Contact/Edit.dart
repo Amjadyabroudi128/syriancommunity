@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 
 import '../../components/Sizedbox.dart';
@@ -52,7 +53,8 @@ class _AddContactDetailsState extends State<EditDetails> {
         leading: IconButton(onPressed: (){
           Navigator.of(context).pushNamed("contactus");
         },
-            icon: Icon(Icons.arrow_back)),
+            icon: myIcons.goBack,
+        ),
         title: Text(AppLocalizations.of(context)!.editDetails),
       ),
       body: ScrollConfiguration(
@@ -64,33 +66,33 @@ class _AddContactDetailsState extends State<EditDetails> {
                 padding(child: Text(AppLocalizations.of(context)!.place)),
                 sizedBox(height: 8,),
                 CustomTextForm(hinttext: "e.g : Brighton college", myController: place,
-                    suffixIcon: IconButton(onPressed: place.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                    suffixIcon: IconButton(onPressed: place.clear, icon: Icon(Icons.clear),)
                 ),
                 sizedBox(),
                 padding(child: Text(AppLocalizations.of(context)!.streetName)),
                 sizedBox(height: 7,),
                 CustomTextForm(hinttext: "e.g: Eastern Road",  myController: road,
-                    suffixIcon: IconButton(onPressed: road.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                    suffixIcon: IconButton(onPressed: road.clear, icon: Icon(Icons.clear), )
                 ),
                 padding(child: Text(AppLocalizations.of(context)!.city)),
                 sizedBox(height: 7,),
                 CustomTextForm(hinttext: "e.g: Brighton", myController: city,
-                    suffixIcon: IconButton(onPressed: city.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                    suffixIcon: IconButton(onPressed: city.clear, icon: Icon(Icons.clear), )
                 ),
                 padding(child: Text(AppLocalizations.of(context)!.postCode)),
                 sizedBox(height: 7,),
                 CustomTextForm(hinttext: "e.g: BN2 OAL", myController: postcode,
-                    suffixIcon: IconButton(onPressed: postcode.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                    suffixIcon: IconButton(onPressed: postcode.clear, icon: Icon(Icons.clear),)
                 ),
                 padding(child: Text(AppLocalizations.of(context)!.email)),
                 sizedBox(height: 7,),
                 CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: email,
-                    suffixIcon: IconButton(onPressed: email.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                    suffixIcon: IconButton(onPressed: email.clear, icon: Icon(Icons.clear),)
                 ),
                 padding(child: Text(AppLocalizations.of(context)!.phone),),
                 sizedBox(height: 7,),
                 CustomTextForm(hinttext: AppLocalizations.of(context)!.phone, myController: phone,
-                    suffixIcon: IconButton(onPressed: phone.clear, icon: Icon(Icons.clear), color: Colors.black,)
+                    suffixIcon: IconButton(onPressed: phone.clear, icon: Icon(Icons.clear),)
                 ),
                 sizedBox(height: 5,),
                 Row(
