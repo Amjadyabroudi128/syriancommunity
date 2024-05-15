@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CustomTextForm extends StatelessWidget {
-  final String hinttext;
+  final String? hinttext;
   final TextEditingController? myController;
   final int? maxLines;
   final TextDirection? textDirection;
   final Widget? suffixIcon;
   final bool? obscureText;
   CustomTextForm
-  ({super.key,   required this.hinttext,
+  ({super.key,  this.hinttext,
    this.myController, this.maxLines, this.textDirection, this.suffixIcon, this.obscureText,
 
 });
