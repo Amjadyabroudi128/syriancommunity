@@ -36,7 +36,7 @@ class _ContactUsState extends State<ContactUs> {
   addCustomIcon ()  {
     BitmapDescriptor.fromAssetImage(
         const ImageConfiguration(
-          size: Size(70, 1)
+          platform: TargetPlatform.android,
         ),
         myIcons.marker,
       mipmaps: true
@@ -54,7 +54,9 @@ class _ContactUsState extends State<ContactUs> {
             onPressed: () {
               Navigator.of(context).pushNamed("homepage");
             },
-            icon: myIcons.goBack
+            icon: ImageIcon(
+              AssetImage("images/pin.png"),
+            )
         ),
         title: Text(AppLocalizations.of(context)!.contact),
       ),
@@ -176,8 +178,9 @@ class _ContactUsState extends State<ContactUs> {
                                               onDragEnd: (value) {
                                               },
                                             icon: markerIcon,
-                                          )
+                                          ),
                                         },
+
                                       ),
                                     ),
                                   sizedBox(height: 10,),
