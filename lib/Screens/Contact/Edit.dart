@@ -98,11 +98,9 @@ class _AddContactDetailsState extends State<EditDetails> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                   updateButton(),
+                    cancelButton(),
                     sizedBox(width: 10,),
-                    CustomButton(onPressed: (){
-                      Navigator.pop(context);
-                    }, title: "Cancel", color: ColorManager.delete,)
+                    updateButton(),
                   ],
                 )
 
