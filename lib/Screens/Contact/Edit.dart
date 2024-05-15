@@ -135,4 +135,9 @@ class _AddContactDetailsState extends State<EditDetails> {
       clearText();
     }, title: AppLocalizations.of(context)!.update, color: ColorManager.submit,);
   }
+  cancelButton () {
+   return CustomButton(onPressed: (){
+      Navigator.pop(context);
+    }, title: "Cancel", color: ColorManager.delete,);
+  }
 }
