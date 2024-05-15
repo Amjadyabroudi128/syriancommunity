@@ -54,9 +54,7 @@ class _ContactUsState extends State<ContactUs> {
             onPressed: () {
               Navigator.of(context).pushNamed("homepage");
             },
-            icon: ImageIcon(
-              AssetImage("images/pin.png"),
-            )
+            icon: myIcons.goBack
         ),
         title: Text(AppLocalizations.of(context)!.contact),
       ),
