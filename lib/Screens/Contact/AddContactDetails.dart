@@ -55,7 +55,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
             Navigator.of(context).pushNamed("contactus");
           },
               icon: myIcons.goBack
-          ) ,
+          ),
         ),
       body: padding(
         child: SingleChildScrollView(

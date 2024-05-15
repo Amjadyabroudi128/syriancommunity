@@ -36,6 +36,11 @@ class _AddInfoState extends State<AddInfo> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(AppLocalizations.of(context)!.addDetails),
+          leading: IconButton(onPressed: (){
+            Navigator.of(context).pushNamed("homepage");
+          },
+              icon: myIcons.goBack
+          ),
         ),
           body: SingleChildScrollView(
             child: Padding(
