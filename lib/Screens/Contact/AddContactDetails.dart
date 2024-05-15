@@ -4,6 +4,7 @@ import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 class AddContactDetails extends StatefulWidget {
@@ -53,7 +54,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
           leading: IconButton(onPressed: (){
             Navigator.of(context).pushNamed("contactus");
           },
-              icon: Icon(Icons.arrow_back, )
+              icon: myIcons.goBack
           ) ,
         ),
       body: padding(
