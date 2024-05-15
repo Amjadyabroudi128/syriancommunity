@@ -120,17 +120,28 @@ class _AddContactDetailsState extends State<EditDetails> {
     phone.clear();
   }
   updateButton() {
-    return CustomButton(onPressed: () async {
-      await contact.doc(widget.DocID).update({
-        "place" : place.text,
-        "street name" : road.text,
-        "city" : city.text,
-        "post code" : postcode.text,
-        "email" : email.text,
-        "phone" : phone.text
-      });
-      Navigator.of(context).pushNamed("contactus");
-      clearText();
+    return CustomButton(
+      onPressed: () async {
+        if (place.text == widget.oldPlace && road.text == widget.oldRoad
+            && city.text == widget.oldCity && postcode.text == widget.oldPostCode
+            && email.text == widget.oldEmail && phone.text == widget.oldPHone) {
+          ScaffoldMessenger.of(context).showSnackBar
+            (SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
+        }
+        else {
+          await contact.doc(widget.DocID).update({
+            "place": place.text,
+            "street name": road.text,
+            "city": city.text,
+            "post code": postcode.text,
+            "email": email.text,
+            "phone": phone.text,
+
+          });
+          Navigator.of(context).pushNamed("contactus");
+          clearText();
+        }
+
     }, title: AppLocalizations.of(context)!.update, color: ColorManager.submit,);
   }
   cancelButton () {
