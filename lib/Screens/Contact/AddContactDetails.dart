@@ -64,18 +64,18 @@ class _AddContactDetailsState extends State<AddContactDetails> {
             children: [
               // sizedBox(height: 10,),
               padding(child: Text(AppLocalizations.of(context)!.place)),
-              sizedBox(height: 8,),
+              sizedBox(height: 2,),
               CustomTextForm(hinttext: "e.g : Brighton college", myController: place,
                   suffixIcon: place.text.isEmpty ? null :  IconButton(onPressed: place.clear, icon: Icon(Icons.clear),)
               ),
               sizedBox(),
               padding(child: Text(AppLocalizations.of(context)!.streetName)),
-              sizedBox(height: 7,),
+              sizedBox(height: 2,),
               CustomTextForm(hinttext: "e.g: Eastern Road",  myController: road,
                   suffixIcon: road.text.isEmpty? null : IconButton(onPressed: road.clear, icon: Icon(Icons.clear),)
               ),
               padding(child: Text(AppLocalizations.of(context)!.city)),
-              sizedBox(height: 7,),
+              sizedBox(height: 2,),
               CustomTextForm(hinttext: "e.g: Brighton", myController: city,
                   suffixIcon: city.text.isEmpty ? null : IconButton(onPressed: city.clear, icon: Icon(Icons.clear),)
               ),
@@ -85,12 +85,12 @@ class _AddContactDetailsState extends State<AddContactDetails> {
                   suffixIcon: postcode.text.isEmpty ? null : IconButton(onPressed: postcode.clear, icon: Icon(Icons.clear),)
               ),
               padding(child: Text(AppLocalizations.of(context)!.email)),
-              sizedBox(height: 7,),
+              sizedBox(height: 2,),
               CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: email,
                   suffixIcon: email.text.isEmpty ? null : IconButton(onPressed: email.clear, icon: Icon(Icons.clear),)
               ),
               padding(child: Text(AppLocalizations.of(context)!.phone),),
-              sizedBox(height: 7,),
+              sizedBox(height: 2,),
               CustomTextForm(hinttext: AppLocalizations.of(context)!.phone, myController: phone,
                   suffixIcon: phone.text.isEmpty ? null :  IconButton(onPressed: phone.clear, icon: Icon(Icons.clear),)
               ),
