@@ -57,9 +57,7 @@ class _SideDrawerState extends State<SideDrawer> {
             ),
             MYlist(
               title: Text(AppLocalizations.of(context)!.communityResources),
-              leading: Icon(
-                CupertinoIcons.book_circle,
-              ),
+              leading: myIcons.communityResources,
               onTap: (){
                 Navigator.pop(context);
                 Navigator.of(context).pushNamed("community");
