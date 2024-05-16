@@ -27,6 +27,10 @@ the phone number will call once pressed  "does not work on emulator "
 
 ![Screenshot (26)](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/79cd72f9-b711-4796-881e-65d5736689b7)
 
+team 
+![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/aadf2514-3580-457e-9d33-bce44534aea8)
+
+
 
 I have Learnt a lot of things while making this app and i feel like it was very beneficial for me 
 * Image picking from gallery/camera
