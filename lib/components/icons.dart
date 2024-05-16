@@ -11,4 +11,5 @@ class myIcons {
   static String marker = "images/arrow.png" ;
   static Icon phone = Icon(Icons.phone);
   static Icon communityResources = Icon(CupertinoIcons.book_circle,);
+  static Icon celebrations = Icon(Icons.celebration,);
  }
