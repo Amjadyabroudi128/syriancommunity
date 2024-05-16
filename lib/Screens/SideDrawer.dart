@@ -65,9 +65,7 @@ class _SideDrawerState extends State<SideDrawer> {
             ),
             MYlist(
               title: Text(AppLocalizations.of(context)!.celebrations),
-              leading: Icon(
-                Icons.celebration,
-              ),
+              leading: myIcons.celebrations,
               onTap: (){
                 Navigator.pop(context);
                 Navigator.of(context).pushNamed("celebrations");
