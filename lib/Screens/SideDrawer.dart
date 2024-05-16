@@ -109,9 +109,7 @@ class _SideDrawerState extends State<SideDrawer> {
             ),
 
             ExpansionTile(
-                leading: Icon(
-                  CupertinoIcons.globe,
-                ),
+                leading: myIcons.language,
                 title: Text(AppLocalizations.of(context)!.language),
 
                 children: <Widget>[
