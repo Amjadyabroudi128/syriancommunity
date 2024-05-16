@@ -13,4 +13,5 @@ class myIcons {
   static Icon communityResources = Icon(CupertinoIcons.book_circle,);
   static Icon celebrations = Icon(Icons.celebration,);
   static Icon language = Icon(CupertinoIcons.globe);
+  static String Arabic = "🇸🇦";
  }
