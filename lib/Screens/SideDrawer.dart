@@ -121,7 +121,7 @@ class _SideDrawerState extends State<SideDrawer> {
                     },
                   ),
                   MYlist(
-                    leading: Text("🇸🇦"),
+                    leading: Text(myIcons.Arabic),
                     title: Text(AppLocalizations.of(context)!.arabic),
                     onTap: (){
                       MyApp.setLocale(context, Locale("ar"));
