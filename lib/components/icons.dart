@@ -10,4 +10,5 @@ class myIcons {
   static Icon email = Icon(CupertinoIcons.mail_solid,);
   static String marker = "images/arrow.png" ;
   static Icon phone = Icon(Icons.phone);
+  static Icon communityResources = Icon(CupertinoIcons.book_circle,);
  }
