@@ -114,7 +114,7 @@ class _SideDrawerState extends State<SideDrawer> {
 
                 children: <Widget>[
                   MYlist(
-                    leading: Text("🇬🇧"),
+                    leading: Text(myIcons.english),
                     title: Text(AppLocalizations.of(context)!.english),
                     onTap: (){
                       MyApp.setLocale(context, Locale("en"));
