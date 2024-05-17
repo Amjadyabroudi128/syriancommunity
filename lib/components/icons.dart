@@ -16,4 +16,5 @@ class myIcons {
   static String Arabic = "🇸🇦";
   static String english = "🇬🇧";
   static Icon Login = Icon(Icons.login);
+  static Icon logout = Icon(Icons.logout);
  }
