@@ -85,15 +85,7 @@ class _EditMemberState extends State<EditMember> {
                 ),
                 sizedBox(height: 2,),
                 Center(
-                  child: CustomButton(
-                    title: AppLocalizations.of(context)!.image,
-                    onPressed: () async {
-                      await url.pickImage();
-                      setState(() {
-                      });
-                    },
-                    color: ColorManager.addEdit,
-                  ),
+                  child: imageButton()
                 ),
                 sizedBox(height: 5,),
                  Row(
@@ -147,6 +139,17 @@ class _EditMemberState extends State<EditMember> {
       },
       title: (name.text == widget.oldName && details.text == widget.oldDetail ? "waiting": AppLocalizations.of(context)!.update),
       color: (name.text == widget.oldName && details.text == widget.oldDetail ? Colors.grey : ColorManager.submit)
+    );
+  }
+  imageButton () {
+    return CustomButton(
+      title: AppLocalizations.of(context)!.image,
+      onPressed: () async {
+        await url.pickImage();
+        setState(() {
+        });
+      },
+      color: ColorManager.addEdit,
     );
   }
 }
