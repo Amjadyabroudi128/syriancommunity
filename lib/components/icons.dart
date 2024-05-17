@@ -15,4 +15,5 @@ class myIcons {
   static Icon language = Icon(CupertinoIcons.globe);
   static String Arabic = "🇸🇦";
   static String english = "🇬🇧";
+  static Icon Login = Icon(Icons.login);
  }
