@@ -80,7 +80,7 @@ class _SideDrawerState extends State<SideDrawer> {
                 if (snapshot.hasData) {
                   // Return the list tile for signed in users
                   return MYlist(
-                    leading: Icon(Icons.logout),
+                    leading: myIcons.logout,
                     title: Text(AppLocalizations.of(context)!.logout),
                     onTap: (){
                       auth.signOut();
