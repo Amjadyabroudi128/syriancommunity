@@ -92,7 +92,7 @@ class _SideDrawerState extends State<SideDrawer> {
                 } else {
                   // Return the list tile for signed out users
                   return MYlist(
-                    leading: Icon(Icons.login),
+                    leading: myIcons.Login,
                     title: Text(AppLocalizations.of(context)!.login),
                     onTap: () {
                       Navigator.push(context, CupertinoPageRoute<Widget>(
