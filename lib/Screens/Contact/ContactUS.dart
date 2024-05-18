@@ -236,11 +236,7 @@ class _ContactUsState extends State<ContactUs> {
           onPressed: () {
             launchUrl(Uri.parse(
                 'https://www.facebook.com/groups/SyrianCommunityGroup'));},
-          icon: Icon(
-            Icons.facebook,
-            color: ColorManager.fbColor,
-            size: 38,
-          ),
+          icon: myIcons.facebook
         ),
         title: Text("${AppLocalizations.of(context)!.visit} "
             "${AppLocalizations.of(context)!.facebook}"),
