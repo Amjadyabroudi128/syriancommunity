@@ -137,7 +137,7 @@ class _EditMemberState extends State<EditMember> {
           });
         }
       },
-      title: (name.text == widget.oldName && details.text == widget.oldDetail ? "waiting": AppLocalizations.of(context)!.update),
+      title:  AppLocalizations.of(context)!.update,
       color: (name.text == widget.oldName && details.text == widget.oldDetail ? Colors.grey : ColorManager.submit)
     );
   }
