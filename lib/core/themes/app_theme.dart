@@ -69,6 +69,11 @@ import 'fontSize.dart';
          size: 30,
        color: Colors.white
      ),
+     textSelectionTheme: TextSelectionThemeData(
+         selectionColor: Colors.blueAccent,
+         cursorColor: Colors.grey,
+         selectionHandleColor: Colors.grey
+     ),
    );
 
    static final themeData = ThemeData(
@@ -92,7 +97,6 @@ import 'fontSize.dart';
        cursorColor: Colors.black,
        selectionHandleColor: Colors.black
      ),
-
      textButtonTheme: TextButtonThemeData(
        style: TextButton.styleFrom(
          minimumSize: Size(200, 50),
