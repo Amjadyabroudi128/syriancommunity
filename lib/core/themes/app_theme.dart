@@ -73,6 +73,7 @@ import 'fontSize.dart';
 
    static final themeData = ThemeData(
      // useMaterial3: false,
+
    ).copyWith(
      cardColor: ColorManager.cardColor,
      cardTheme: CardTheme(
@@ -88,8 +89,10 @@ import 'fontSize.dart';
      ),
      textSelectionTheme: TextSelectionThemeData(
        selectionColor: Colors.grey,
-       cursorColor: Colors.black
+       cursorColor: Colors.black,
+       selectionHandleColor: Colors.black
      ),
+
      textButtonTheme: TextButtonThemeData(
        style: TextButton.styleFrom(
          minimumSize: Size(200, 50),
