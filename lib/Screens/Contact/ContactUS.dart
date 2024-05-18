@@ -150,7 +150,7 @@ class _ContactUsState extends State<ContactUs> {
                                           children: [
                                             SelectableText(data["place"],),
                                             SelectableText(data["street name"],),
-                                            SelectableText(data["post code"], style: TextStyle(fontSize: 15),),
+                                            SelectableText(data["post code"],),
                                             SelectableText(data["city"],),
                                           ],
                                         ),

@@ -86,6 +86,10 @@ import 'fontSize.dart';
          size: 30,
          color: Colors.black
      ),
+     textSelectionTheme: TextSelectionThemeData(
+       selectionColor: Colors.grey,
+       cursorColor: Colors.black
+     ),
      textButtonTheme: TextButtonThemeData(
        style: TextButton.styleFrom(
          minimumSize: Size(200, 50),
