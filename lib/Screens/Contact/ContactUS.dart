@@ -109,9 +109,7 @@ class _ContactUsState extends State<ContactUs> {
                                     child: Column(
                                       children: [
                                          MYlist(
-                                            leading: Icon(
-                                                Icons.email
-                                            ),
+                                            leading: myIcons.normalEmail,
                                             title: GestureDetector(
                                                 child: Text(data["email"], style: TextStyles.emailLink),
                                               onTap: (){
