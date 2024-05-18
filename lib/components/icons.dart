@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../core/themes/colors.dart';
+
 class myIcons {
   static Icon goBack = Icon(Icons.arrow_back);
   static Icon drawer = Icon(CupertinoIcons.list_bullet,);
@@ -10,6 +12,7 @@ class myIcons {
   static Icon email = Icon(CupertinoIcons.mail_solid,);
   static Icon normalEmail = Icon(Icons.email);
   static String marker = "images/arrow.png" ;
+  static Icon facebook = Icon(Icons.facebook, color: ColorManager.fbColor, size: 38,);
   static Icon phone = Icon(Icons.phone);
   static Icon communityResources = Icon(CupertinoIcons.book_circle,);
   static Icon celebrations = Icon(Icons.celebration,);
