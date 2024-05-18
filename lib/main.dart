@@ -68,7 +68,7 @@ class _MyAppState extends State<MyApp> {
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         locale: _locale,
-        themeMode: ThemeMode.system,
+        themeMode: ThemeMode.system, // theme depends on system
         theme: AppTheme.themeData,
         darkTheme: AppTheme.darkTheme,
         home: HomePage(),
