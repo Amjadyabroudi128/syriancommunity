@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../components/Sizedbox.dart';
@@ -50,13 +51,13 @@ class _EditHomeState extends State<EditHome> {
               children: [
                 padding(child: Text(AppLocalizations.of(context)!.name)),
                 CustomTextForm(hinttext: "info name", myController: name,
-                    suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: Icon(Icons.clear),)
+                    suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: myIcons.clear,)
 
                 ),
                 sizedBox(height: 20,),
                 padding(child: Text(AppLocalizations.of(context)!.details)),
                 CustomTextForm(hinttext: "info details", myController: details, maxLines: 6,
-                    suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: Icon(Icons.clear), )                ),
+                    suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear )                ),
                 sizedBox(height: 10,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
