@@ -44,13 +44,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
               child: Column(
                 children: [
                   padding(
-                    child: user != null ? CustomButton(
-                      onPressed: (){
-                        Navigator.of(context).pushNamed("addMember");
-                      },
-                      title: AppLocalizations.of(context)!.addThings,
-                      color: ColorManager.addEdit,
-                    ) : sizedBox(),
+                    child: user != null ? addMember() : sizedBox(),
                   ),
                   StreamBuilder(
                     stream: members.snapshots(),
@@ -175,5 +169,15 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
       ),
     );
   }
+  addMember () {
+    return CustomButton(
+      onPressed: (){
+        Navigator.of(context).pushNamed("addMember");
+      },
+      title: AppLocalizations.of(context)!.addThings,
+      color: ColorManager.addEdit,
+    );
+  }
 }
+
 

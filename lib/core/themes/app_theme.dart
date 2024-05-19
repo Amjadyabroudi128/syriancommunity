@@ -10,6 +10,7 @@ import 'fontSize.dart';
      borderRadius: BorderRadius.circular(18.0),
    );
    static final darkTheme = ThemeData(
+
      brightness: Brightness.dark,
      cardTheme: CardTheme(
        elevation: 0,
