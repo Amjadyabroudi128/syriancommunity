@@ -25,7 +25,6 @@ import 'fontSize.dart';
          border: OutlineInputBorder(
            borderRadius: BorderRadius.circular(10),
            borderSide: BorderSide(
-
            ),
          ),
          enabledBorder: _border,
@@ -74,6 +73,14 @@ import 'fontSize.dart';
          selectionColor: Colors.blueAccent,
          cursorColor: Colors.grey,
          selectionHandleColor: Colors.grey
+     ),
+     buttonTheme: ButtonThemeData(
+       shape: RoundedRectangleBorder(
+           borderRadius: BorderRadius.all(
+             Radius.circular(15),
+           )
+       ),
+       textTheme: ButtonTextTheme.primary, // this gives the best text color for the button
      ),
    );
 
