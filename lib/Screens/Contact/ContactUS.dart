@@ -68,13 +68,7 @@ class _ContactUsState extends State<ContactUs> {
                 children: [
                   Center(
                       child: user != null
-                          ? CustomButton(
-                              onPressed: () {
-                                Navigator.of(context).pushReplacementNamed("addcontact");
-                              },
-                              title: AppLocalizations.of(context)!.addThings,
-                              color: ColorManager.addEdit,
-                      )
+                          ? addInfo()
                           : sizedBox(
                               height: 15,
                             )),
@@ -241,6 +235,15 @@ class _ContactUsState extends State<ContactUs> {
         title: Text("${AppLocalizations.of(context)!.visit} "
             "${AppLocalizations.of(context)!.facebook}"),
       ),
+    );
+  }
+  addInfo () {
+    return CustomButton(
+      onPressed: () {
+        Navigator.of(context).pushReplacementNamed("addcontact");
+      },
+      title: AppLocalizations.of(context)!.addThings,
+      color: ColorManager.addEdit,
     );
   }
 }
