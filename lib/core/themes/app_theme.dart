@@ -47,14 +47,18 @@ import 'fontSize.dart';
        ),
      ),
      appBarTheme: AppBarTheme(
+         shape: RoundedRectangleBorder(
+             borderRadius: BorderRadius.only(
+                 bottomRight: Radius.circular(20)
+             )
+         ),
          color: ColorManager.specialGreen,
          centerTitle: true,
          toolbarHeight: 65,
-         titleTextStyle: TextStyle(
-             fontSize: 22,
-         ),
+         titleTextStyle: TextStyles.appBarText,
          iconTheme: IconThemeData(
              size: 25,
+             color: Colors.white
          )
      ),
      listTileTheme: ListTileThemeData(
