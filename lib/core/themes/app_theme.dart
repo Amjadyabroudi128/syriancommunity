@@ -11,7 +11,8 @@ import 'fontSize.dart';
    );
    static final _DarkBorder = OutlineInputBorder(
      borderSide: BorderSide(
-         color: Colors.white
+         color: ColorManager.DarkBorder,
+       width: 3
      ),
      borderRadius: BorderRadius.circular(18.0),
    );
