@@ -4,6 +4,7 @@ import 'package:syrianadmin/Cubits/auth_cubit/auth_cubit.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 class Login extends StatefulWidget {
@@ -60,11 +61,11 @@ class _LoginState extends State<Login> {
                         _togglePasswordView();
                       });
                     },
-                    icon: Icon(_isHidden ? Icons.visibility : Icons.visibility_off,
+                    // icon: Icon(_isHidden ? Icons.visibility : Icons.visibility_off,
+                    icon: _isHidden ? myIcons.visible : myIcons.nonVisible,
                       color: _isHidden ? ColorManager.delete : ColorManager.submit,
                     ),
                   ),
-                ),
                 sizedBox(height: 20,),
                 (testEmail.text.isEmpty) || (testPassword.text.isEmpty) ? Container(
                   color: Colors.grey,
