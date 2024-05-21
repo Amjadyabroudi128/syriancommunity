@@ -21,4 +21,6 @@ class myIcons {
   static String english = "🇬🇧";
   static Icon Login = Icon(Icons.login);
   static Icon logout = Icon(Icons.logout);
+  static Icon visible = Icon(Icons.visibility);
+  static Icon nonVisible = Icon(Icons.visibility_off);
  }
