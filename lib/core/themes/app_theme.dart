@@ -82,6 +82,15 @@ import 'fontSize.dart';
        ),
        textTheme: ButtonTextTheme.primary, // this gives the best text color for the button
      ),
+     textButtonTheme: TextButtonThemeData(
+       style: TextButton.styleFrom(
+         minimumSize: Size(200, 50),
+         shape:  RoundedRectangleBorder(
+           borderRadius: BorderRadius.circular(9.0),
+         ),
+         padding:  EdgeInsets.symmetric(vertical: 9),
+       ),
+     ),
    );
 
    static final themeData = ThemeData(
