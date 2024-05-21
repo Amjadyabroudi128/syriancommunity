@@ -32,6 +32,9 @@ team
 ![Screenshot (32)](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/1b08b4ab-8bac-4400-9654-162b45931dd6)
 
 
+theme depends on the System 
+
+![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/98562e9e-7c19-44e5-844a-4700b409b951)
 
 
 
