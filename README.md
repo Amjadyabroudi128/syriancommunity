@@ -36,9 +36,10 @@ theme depends on the System
 
 ![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/98562e9e-7c19-44e5-844a-4700b409b951)
 
-light mode 
+light mode and dark mode
 
-![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/cdf84b94-0443-495b-842f-17c7acc73e52)
+![image](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/cdf84b94-0443-495b-842f-17c7acc73e52), ![Screenshot 2024-05-21 191704](https://github.com/Amjadyabroudi128/syriancommunity/assets/61939508/4d5f90f2-bacc-4e8a-841b-d33a61f0340c)
+
 
 
 I have Learnt a lot of things while making this app and i feel like it was very beneficial for me 
