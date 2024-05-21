@@ -9,6 +9,12 @@ import 'fontSize.dart';
          color: ColorManager.borderColor), //<-- SEE HERE
      borderRadius: BorderRadius.circular(18.0),
    );
+   static final _DarkBorder = OutlineInputBorder(
+     borderSide: BorderSide(
+         color: Colors.white
+     ),
+     borderRadius: BorderRadius.circular(18.0),
+   );
    static final darkTheme = ThemeData(
 
      brightness: Brightness.dark,
@@ -27,8 +33,8 @@ import 'fontSize.dart';
            borderSide: BorderSide(
            ),
          ),
-         enabledBorder: _border,
-         focusedBorder: _border
+         enabledBorder: _DarkBorder,
+         focusedBorder: _DarkBorder
      ),
      popupMenuTheme: PopupMenuThemeData(
        surfaceTintColor: Colors.lightBlueAccent,
