@@ -44,7 +44,7 @@ class _LoginState extends State<Login> {
           title: Text(AppLocalizations.of(context)!.login),
         ),
           body:  Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(7.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
