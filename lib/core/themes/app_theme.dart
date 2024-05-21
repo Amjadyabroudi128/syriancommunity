@@ -17,7 +17,6 @@ import 'fontSize.dart';
      borderRadius: BorderRadius.circular(18.0),
    );
    static final darkTheme = ThemeData(
-
      brightness: Brightness.dark,
      cardTheme: CardTheme(
        elevation: 0,
@@ -45,6 +44,12 @@ import 'fontSize.dart';
              Radius.circular(20.0),
            )
        ),
+     ),
+     drawerTheme: DrawerThemeData(
+         backgroundColor: Colors.white,
+         endShape: RoundedRectangleBorder(
+           borderRadius: BorderRadius.circular(20),
+         )
      ),
      appBarTheme: AppBarTheme(
          shape: RoundedRectangleBorder(
