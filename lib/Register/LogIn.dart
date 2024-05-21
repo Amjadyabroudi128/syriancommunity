@@ -61,7 +61,6 @@ class _LoginState extends State<Login> {
                         _togglePasswordView();
                       });
                     },
-                    // icon: Icon(_isHidden ? Icons.visibility : Icons.visibility_off,
                     icon: _isHidden ? myIcons.visible : myIcons.nonVisible,
                       color: _isHidden ? ColorManager.delete : ColorManager.submit,
                     ),
