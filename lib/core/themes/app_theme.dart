@@ -65,6 +65,21 @@ import 'fontSize.dart';
              color: Colors.white
          )
      ),
+     snackBarTheme: SnackBarThemeData(
+       insetPadding: EdgeInsets.all(10),
+       backgroundColor: Colors.white,
+       contentTextStyle: TextStyle(
+         color: Colors.black,
+         fontSize: 20,
+         fontWeight: FontWeight.bold
+       ),
+       showCloseIcon: true,
+       shape: RoundedRectangleBorder(
+           borderRadius: BorderRadius.only(
+               bottomRight: Radius.circular(60),
+           )
+       ),
+     ),
      listTileTheme: ListTileThemeData(
        iconColor: Colors.white,
        titleTextStyle: TextStyle(
