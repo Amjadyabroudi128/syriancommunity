@@ -7,14 +7,17 @@ class CustomTextForm extends StatelessWidget {
   final TextDirection? textDirection;
   final Widget? suffixIcon;
   final bool? obscureText;
+  final int? minLines;
   CustomTextForm
   ({super.key,  this.hinttext,
-   this.myController, this.maxLines, this.textDirection, this.suffixIcon, this.obscureText,
+   this.myController, this.maxLines, this.textDirection, this.suffixIcon, this.obscureText, this.minLines,
 
 });
 @override
 Widget build(BuildContext context) {
   return TextField(
+    keyboardType: TextInputType.multiline,
+    minLines: minLines,
     textDirection: textDirection,
     maxLines: maxLines,
     controller: myController,
