@@ -52,4 +52,9 @@ import 'font_weight_helper.dart';
        fontSize: 22,
        color: Colors.white
    );
+   static TextStyle  lightSnackBar = TextStyle(
+       color: Colors.white,
+       fontSize: 20,
+       fontWeight: FontWeight.bold
+   );
  }
