@@ -142,6 +142,21 @@ import 'fontSize.dart';
        cursorColor: Colors.black,
        selectionHandleColor: Colors.black
      ),
+     snackBarTheme: SnackBarThemeData(
+       insetPadding: EdgeInsets.all(10),
+       backgroundColor: Colors.black,
+       contentTextStyle: TextStyle(
+           color: Colors.white,
+           fontSize: 20,
+           fontWeight: FontWeight.bold
+       ),
+       showCloseIcon: true,
+       shape: RoundedRectangleBorder(
+           borderRadius: BorderRadius.only(
+             bottomRight: Radius.circular(60),
+           )
+       ),
+     ),
      textButtonTheme: TextButtonThemeData(
        style: TextButton.styleFrom(
          minimumSize: Size(200, 50),
