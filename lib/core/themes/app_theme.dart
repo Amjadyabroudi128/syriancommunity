@@ -46,7 +46,6 @@ import 'fontSize.dart';
        ),
      ),
      drawerTheme: DrawerThemeData(
-         backgroundColor: Colors.white,
          endShape: RoundedRectangleBorder(
            borderRadius: BorderRadius.circular(20),
          )
