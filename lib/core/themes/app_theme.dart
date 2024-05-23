@@ -146,9 +146,11 @@ import 'fontSize.dart';
        contentTextStyle: TextStyles.lightSnackBar,
        showCloseIcon: true,
        closeIconColor: Colors.white,
+       behavior: SnackBarBehavior.floating,
+       width: 350.0,
        shape: RoundedRectangleBorder(
            borderRadius: BorderRadius.only(
-             bottomRight: Radius.circular(10),
+             bottomRight: Radius.circular(30),
            )
        ),
      ),
