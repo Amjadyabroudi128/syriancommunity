@@ -33,6 +33,8 @@ class _AddCelebrationState extends State<AddCelebration> {
   listener: (context, state) {
     if (state is AddSuccess) {
       Navigator.of(context).pushReplacementNamed("celebrations");
+      ScaffoldMessenger.of(context).showSnackBar
+        ( SnackBar(content: Text("${AppLocalizations.of(context)!.addedSuccessfully}",)));
       clearText();
     }
     else if ( state is AddLoading){
@@ -121,7 +123,9 @@ class _AddCelebrationState extends State<AddCelebration> {
             details: celebrationDetail.text);
 
       },
-      title: AppLocalizations.of(context)!.submit, color:ColorManager.submit,);
+      title: AppLocalizations.of(context)!.submit,
+     color: (celebrationName.text.isEmpty)
+         && (celebrationDetail.text.isEmpty) ? Colors.grey : ColorManager.submit);
   }
 
 }
