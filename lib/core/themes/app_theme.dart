@@ -71,6 +71,7 @@ import 'fontSize.dart';
        backgroundColor: Colors.white,
        contentTextStyle: TextStyles.darkSnackBar,
        showCloseIcon: true,
+       closeIconColor: Colors.black,
        shape: RoundedRectangleBorder(
            borderRadius: BorderRadius.only(
                bottomRight: Radius.circular(10),
@@ -144,6 +145,7 @@ import 'fontSize.dart';
        backgroundColor: Colors.black,
        contentTextStyle: TextStyles.lightSnackBar,
        showCloseIcon: true,
+       closeIconColor: Colors.white,
        shape: RoundedRectangleBorder(
            borderRadius: BorderRadius.only(
              bottomRight: Radius.circular(10),
