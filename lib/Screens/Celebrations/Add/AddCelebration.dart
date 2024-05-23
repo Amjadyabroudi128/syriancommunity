@@ -37,10 +37,7 @@ class _AddCelebrationState extends State<AddCelebration> {
         ( SnackBar(content: Text("${AppLocalizations.of(context)!.addedSuccessfully}",)));
       clearText();
     }
-    else if ( state is AddLoading){
-      print("still loading data");
-
-    }
+    else if ( state is AddLoading){}
   },
   builder: (context, state) {
     return GestureDetector(

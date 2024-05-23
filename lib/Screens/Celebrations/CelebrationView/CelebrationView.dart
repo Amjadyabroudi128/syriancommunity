@@ -26,7 +26,8 @@ class Celebrations extends StatelessWidget {
     return BlocConsumer<DeleteCubit, DeleteState>(
   listener: (context, state) {
     if (state is DeleteSuccess) {
-      print("delete success");
+      ScaffoldMessenger.of(context).showSnackBar
+        ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted),));
     }
   },
   builder: (context, state) {
@@ -167,8 +168,7 @@ class Celebrations extends StatelessWidget {
                                                         );
                                                       }else if(value == 1){
                                                         context.read<DeleteCubit>().delete(document.id);
-                                                        ScaffoldMessenger.of(context).showSnackBar
-                                                          ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted),));
+
                                                       }
                                                       },
                                                   popUpAnimationStyle: AnimationStyle(
