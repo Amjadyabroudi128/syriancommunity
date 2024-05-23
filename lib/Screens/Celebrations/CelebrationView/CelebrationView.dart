@@ -167,6 +167,8 @@ class Celebrations extends StatelessWidget {
                                                         );
                                                       }else if(value == 1){
                                                         context.read<DeleteCubit>().delete(document.id);
+                                                        ScaffoldMessenger.of(context).showSnackBar
+                                                          ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted),));
                                                       }
                                                       },
                                                   popUpAnimationStyle: AnimationStyle(
