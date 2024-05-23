@@ -60,6 +60,7 @@ import 'fontSize.dart';
          centerTitle: true,
          toolbarHeight: 65,
          titleTextStyle: TextStyles.appBarText,
+
          iconTheme: IconThemeData(
              size: 25,
              color: Colors.white
@@ -72,7 +73,7 @@ import 'fontSize.dart';
        showCloseIcon: true,
        shape: RoundedRectangleBorder(
            borderRadius: BorderRadius.only(
-               bottomRight: Radius.circular(60),
+               bottomRight: Radius.circular(10),
            )
        ),
      ),
@@ -145,7 +146,7 @@ import 'fontSize.dart';
        showCloseIcon: true,
        shape: RoundedRectangleBorder(
            borderRadius: BorderRadius.only(
-             bottomRight: Radius.circular(60),
+             bottomRight: Radius.circular(10),
            )
        ),
      ),
