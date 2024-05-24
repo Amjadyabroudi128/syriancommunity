@@ -44,11 +44,7 @@ class _CommunityState extends State<Community> {
             children: [
               padding(
                 child: Center(
-                  child: user != null ? CustomButton(
-                      onPressed: (){
-                        Navigator.of(context).pushNamed("addCommunity");
-                      },
-                      title: AppLocalizations.of(context)!.addDetails, color: ColorManager.addEdit,) : sizedBox(),
+                  child: user != null ? addThings(): sizedBox(),
                 ),
               ),
               StreamBuilder(
@@ -160,5 +156,12 @@ class _CommunityState extends State<Community> {
         ),
       ),
     );
+  }
+  addThings () {
+    return CustomButton(
+      onPressed: (){
+        Navigator.of(context).pushNamed("addCommunity");
+      },
+      title: AppLocalizations.of(context)!.addDetails, color: ColorManager.addEdit,);
   }
 }
