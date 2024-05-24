@@ -149,7 +149,7 @@ import 'fontSize.dart';
        showCloseIcon: true,
        closeIconColor: Colors.white,
        behavior: SnackBarBehavior.floating,
-       width: 350.0,
+       width: 380.0,
        shape: RoundedRectangleBorder(
            borderRadius: BorderRadius.only(
              bottomRight: Radius.circular(30),
