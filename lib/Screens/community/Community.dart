@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
+import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
@@ -33,7 +34,7 @@ class _CommunityState extends State<Community> {
             onPressed: () {
               Navigator.of(context).pushNamed("homepage");
             },
-            icon: Icon(Icons.arrow_back)),
+            icon: myIcons.goBack),
         title: Text(AppLocalizations.of(context)!.communityResources),
       ),
       body: ScrollConfiguration(
@@ -131,6 +132,8 @@ class _CommunityState extends State<Community> {
 
                                               }else if(value == 1){
                                                 community.doc(document.id).delete();
+                                                ScaffoldMessenger.of(context).showSnackBar
+                                                  ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted)));
                                               }
                                             },
                                           popUpAnimationStyle: AnimationStyle(
