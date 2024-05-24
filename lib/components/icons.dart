@@ -23,4 +23,5 @@ class myIcons {
   static Icon logout = Icon(Icons.logout);
   static Icon visible = Icon(Icons.visibility);
   static Icon nonVisible = Icon(Icons.visibility_off);
- }
+  static String logo = "images/syrianlogo.jpg";
+}
