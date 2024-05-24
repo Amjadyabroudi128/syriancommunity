@@ -47,6 +47,7 @@ class _EditCommunityState extends State<EditCommunity> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                sizedBox(height: 10,),
                 GestureDetector(
                   onTap: () async {
                     await url.pickImage();
@@ -61,20 +62,21 @@ class _EditCommunityState extends State<EditCommunity> {
                     ) : SizedBox.shrink(),
                   ),
                 ),
-                sizedBox(),
+                sizedBox(height: 3,),
                 padding(child: Text(AppLocalizations.of(context)!.name)),
                 CustomTextForm(hinttext: "BreakFast Club", myController: name,
                     suffixIcon: IconButton(onPressed: name.clear, icon: Icon(Icons.clear),)
                 ),
-                sizedBox(),
+                sizedBox(height: 5,),
                 padding(child: Text(AppLocalizations.of(context)!.details)),
                 CustomTextForm(hinttext: "What we do ", myController: details,
                     suffixIcon: IconButton(onPressed: details.clear, icon: Icon(Icons.clear),)
                 ),
-                sizedBox(),
+                sizedBox(height: 4,),
                 Center(
                     child: imageButton()
                 ),
+                sizedBox(height: 3,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
