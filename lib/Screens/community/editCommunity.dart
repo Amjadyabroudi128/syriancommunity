@@ -128,6 +128,8 @@ class _EditCommunityState extends State<EditCommunity> {
           "image" : url.url
         });
         Navigator.pop(context);
+        ScaffoldMessenger.of(context).showSnackBar
+          ( SnackBar(content: Text("${AppLocalizations.of(context)!.edited}",)));
       }
       setState(() {
         isUpdated = true;
