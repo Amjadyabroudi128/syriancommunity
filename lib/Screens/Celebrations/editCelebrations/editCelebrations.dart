@@ -81,7 +81,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                   sizedBox(),
                   padding(child: Text(AppLocalizations.of(context)!.details)),
                   CustomTextForm(hinttext: "what we do ", myController: celebrationDetails,),
-                  sizedBox(),
+                  sizedBox(height: 5,),
                   padding(
                     child: Center(
                           child: imageButton()
