@@ -37,7 +37,10 @@ class _AddCelebrationState extends State<AddCelebration> {
         ( SnackBar(content: Text("${AppLocalizations.of(context)!.addedSuccessfully}",)));
       clearText();
     }
-    else if ( state is AddLoading){}
+    else if ( state is AddLoading){
+      ScaffoldMessenger.of(context).showSnackBar
+        ( SnackBar(content: Text("${AppLocalizations.of(context)!.addThings}",)));
+    }
   },
   builder: (context, state) {
     return GestureDetector(
@@ -113,10 +116,6 @@ class _AddCelebrationState extends State<AddCelebration> {
   }
   addButton () {
    return  CustomButton(
-      // onPressed: ()async {
-
-      //
-      // },
      onPressed: () async {
        if(celebrationName.text.isEmpty && celebrationDetail.text.isEmpty) {
          ScaffoldMessenger.of(context).showSnackBar
