@@ -113,13 +113,21 @@ class _AddCelebrationState extends State<AddCelebration> {
   }
   addButton () {
    return  CustomButton(
-      onPressed: ()async {
-        await context.read<AddCelebrationCubit>().addCelebration(
-            url: url.url,
-            name: celebrationName.text,
-            details: celebrationDetail.text);
+      // onPressed: ()async {
 
-      },
+      //
+      // },
+     onPressed: () async {
+       if(celebrationName.text.isEmpty && celebrationDetail.text.isEmpty) {
+         ScaffoldMessenger.of(context).showSnackBar
+           ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
+       } else {
+           await context.read<AddCelebrationCubit>().addCelebration(
+               url: url.url,
+               name: celebrationName.text,
+               details: celebrationDetail.text);
+       }
+     },
       title: AppLocalizations.of(context)!.submit,
      color: (celebrationName.text.isEmpty)
          && (celebrationDetail.text.isEmpty) ? Colors.grey : ColorManager.submit);
