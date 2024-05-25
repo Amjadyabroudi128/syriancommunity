@@ -127,13 +127,20 @@ class _EditCelebrationState extends State<EditCelebration> {
     );
   }
   editButton () {
-    return CustomButton(onPressed: () async {
-      context.read<EditCelebrationCubit>().EditCelebration(widget.DocID,
-          {
-            "name": celebrationName.text,
-            "details": celebrationDetails.text,
-            "image": url.url
-          });
-    }, title: AppLocalizations.of(context)!.update, color: ColorManager.submit,);
+    return CustomButton(
+      onPressed: () async {
+        if (celebrationName.text == widget.oldName && celebrationDetails.text == widget.oldDetail) {
+          ScaffoldMessenger.of(context).showSnackBar
+            ( SnackBar(content: Text(AppLocalizations.of(context)!.editDetails),));
+        } else {
+            context.read<EditCelebrationCubit>().EditCelebration(widget.DocID,
+                {
+                  "name": celebrationName.text,
+                  "details": celebrationDetails.text,
+                  "image": url.url
+                });
+        }
+      },
+      title: AppLocalizations.of(context)!.update, color: ColorManager.submit,);
   }
 }
