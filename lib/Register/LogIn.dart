@@ -67,11 +67,15 @@ class _LoginState extends State<Login> {
                   ),
                 sizedBox(height: 20,),
                 (testEmail.text.isEmpty) || (testPassword.text.isEmpty) ? Container(
-                  color: Colors.grey,
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(10)
+                  ),
+
                   child: loginButton(),
                 ) :  Container(
-                    decoration: const BoxDecoration(
-                        gradient: LinearGradient(
+                    decoration:  BoxDecoration(
+                        gradient: const LinearGradient(
                           colors: [
                             Colors.lightBlueAccent,
                             Colors.blueAccent,
@@ -79,7 +83,8 @@ class _LoginState extends State<Login> {
                           ],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                        )
+                        ),
+                      borderRadius: BorderRadius.circular(10)
                     ),
                     child: loginButton()
                 ),
