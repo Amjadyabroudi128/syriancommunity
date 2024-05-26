@@ -65,11 +65,12 @@ class _AddCelebrationState extends State<AddCelebration> {
                     suffixIcon: celebrationDetail.text.isEmpty ?
                     null : IconButton(onPressed: celebrationDetail.clear, icon: myIcons.clear,),
                     ),
-                sizedBox(),
+                sizedBox(height: 5,),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: imageButton()
                 ),
+                 sizedBox(height: 5,),
                  Row(
                    mainAxisAlignment: MainAxisAlignment.center,
                    children: [
