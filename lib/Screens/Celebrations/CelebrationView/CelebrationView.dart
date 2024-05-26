@@ -22,7 +22,15 @@ class Celebrations extends StatelessWidget {
   FirebaseFirestore.instance.collection('Celebrations');
   @override
   Widget build(BuildContext context) {
+     addCelebration () {
+      return  CustomButton(
+        onPressed: (){
+          Navigator.of(context).pushNamed("addcelebration");
+        },
+        title: AppLocalizations.of(context)!.addCelebration,color: ColorManager.addEdit,);
+    }
     User? user = FirebaseAuth.instance.currentUser;
+
     return BlocConsumer<DeleteCubit, DeleteState>(
   listener: (context, state) {
     if (state is DeleteSuccess) {
@@ -30,7 +38,9 @@ class Celebrations extends StatelessWidget {
         ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted),));
     }
   },
+
   builder: (context, state) {
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -50,11 +60,7 @@ class Celebrations extends StatelessWidget {
                     Center(
                       child: user != null ? Padding(
                         padding: const EdgeInsets.all(12.0),
-                        child: CustomButton(
-                            onPressed: (){
-                              Navigator.of(context).pushNamed("addcelebration");
-                            },
-                            title: AppLocalizations.of(context)!.addCelebration,color: ColorManager.addEdit,),
+                        child: addCelebration(),
                       ) : sizedBox(height: 15,),
                     ),
                     padding(child: Text(AppLocalizations.of(context)!.celebrations, style: TextStyles.font16green,)),
@@ -197,9 +203,11 @@ class Celebrations extends StatelessWidget {
               ),
           ),
         ),
-
     );
   },
 );
+
   }
+
 }
+
