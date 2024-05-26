@@ -105,6 +105,7 @@ import 'fontSize.dart';
          selectionHandleColor: Colors.grey
      ),
      buttonTheme: ButtonThemeData(
+
        shape: RoundedRectangleBorder(
            borderRadius: BorderRadius.all(
              Radius.circular(15),
@@ -114,7 +115,9 @@ import 'fontSize.dart';
      ),
      textButtonTheme: TextButtonThemeData(
        style: TextButton.styleFrom(
-         minimumSize: Size(200, 50),
+         fixedSize: Size(200, 60),
+         backgroundColor: Colors.transparent,
+         shadowColor: Colors.transparent,
          shape:  RoundedRectangleBorder(
            borderRadius: BorderRadius.circular(9.0),
          ),
