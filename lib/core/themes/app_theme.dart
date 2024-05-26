@@ -124,10 +124,15 @@ import 'fontSize.dart';
          padding:  EdgeInsets.symmetric(vertical: 9),
        ),
      ),
+     dividerTheme: DividerThemeData(
+         indent: 40,
+         endIndent: 40,
+         thickness: 0.5,
+         color: ColorManager.borderColor
+     ),
    );
 
-   static final themeData = ThemeData(
-   ).copyWith(
+   static final themeData = ThemeData().copyWith(
      cardColor: ColorManager.cardColor,
      cardTheme: CardTheme(
        elevation: 0,
@@ -182,7 +187,6 @@ import 'fontSize.dart';
        thickness: 0.5,
        color: ColorManager.borderColor
      ),
-
      appBarTheme: AppBarTheme(
        shape: RoundedRectangleBorder(
          borderRadius: BorderRadius.only(
@@ -224,7 +228,6 @@ import 'fontSize.dart';
        ),
        textTheme: ButtonTextTheme.primary, // his gives the best text color for the button
      ),
-
      inputDecorationTheme: InputDecorationTheme(
        suffixIconColor: Colors.black,
          hintStyle: TextStyles.hintText,
