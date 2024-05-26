@@ -13,22 +13,22 @@ import 'package:syrianadmin/components/popUpMenu.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 import '../../../components/SubmitButton.dart';
-class Celebrations extends StatelessWidget {
+class Celebrations extends StatefulWidget {
   final document;
 
    Celebrations({Key? key, this.document}) : super(key: key);
 
+  @override
+  State<Celebrations> createState() => _CelebrationsState();
+}
+
+class _CelebrationsState extends State<Celebrations> {
   final CollectionReference celebrations =
   FirebaseFirestore.instance.collection('Celebrations');
+
   @override
   Widget build(BuildContext context) {
-     addCelebration () {
-      return  CustomButton(
-        onPressed: (){
-          Navigator.of(context).pushNamed("addcelebration");
-        },
-        title: AppLocalizations.of(context)!.addCelebration,color: ColorManager.addEdit,);
-    }
+
     User? user = FirebaseAuth.instance.currentUser;
 
     return BlocConsumer<DeleteCubit, DeleteState>(
@@ -80,7 +80,7 @@ class Celebrations extends StatelessWidget {
                         if (snapshot.hasError) {
                           return Text('Something went wrong');
                         }
-            
+
                         if (snapshot.connectionState == ConnectionState.waiting) {
                           return Text("Loading");
                         }
@@ -136,7 +136,7 @@ class Celebrations extends StatelessWidget {
                                          src: data["image"],
                                        ) : SizedBox.shrink(),
                                      ),
-            
+
                                    SizedBox(
                                       width: MediaQuery.of(context).size.width,
                                       child: IntrinsicHeight(
@@ -186,7 +186,7 @@ class Celebrations extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-            
+
                                     )
                                   ]
                                 ),
@@ -198,7 +198,7 @@ class Celebrations extends StatelessWidget {
                       },
                     )
                   ],
-            
+
                 ),
               ),
           ),
@@ -208,6 +208,14 @@ class Celebrations extends StatelessWidget {
 );
 
   }
-
+  addCelebration () {
+    return  CustomButton(
+      onPressed: (){
+        Navigator.of(context).pushNamed("addcelebration");
+      },
+      title: AppLocalizations.of(context)!.addCelebration,color: ColorManager.addEdit,);
+  }
 }
+
+
 
