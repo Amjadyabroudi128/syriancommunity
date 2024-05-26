@@ -18,6 +18,7 @@ import 'fontSize.dart';
    );
    static final darkTheme = ThemeData(
      brightness: Brightness.dark,
+   ).copyWith(
      cardTheme: CardTheme(
        elevation: 0,
        color: Colors.black45,
@@ -26,7 +27,7 @@ import 'fontSize.dart';
        ),
      ),
      inputDecorationTheme: InputDecorationTheme(
-       suffixIconColor: Colors.white,
+         suffixIconColor: Colors.white,
          // contentPadding: EdgeInsets.all(25),
          border: OutlineInputBorder(
            borderRadius: BorderRadius.circular(10),
@@ -76,7 +77,7 @@ import 'fontSize.dart';
        width: 350.0,
        shape: RoundedRectangleBorder(
            borderRadius: BorderRadius.only(
-               bottomRight: Radius.circular(10),
+             bottomRight: Radius.circular(10),
            )
        ),
      ),
@@ -97,7 +98,7 @@ import 'fontSize.dart';
      ),
      iconTheme: IconThemeData(
          size: 30,
-       color: Colors.white
+         color: Colors.white
      ),
      textSelectionTheme: TextSelectionThemeData(
          selectionColor: Colors.blueAccent,
