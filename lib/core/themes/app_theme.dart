@@ -159,6 +159,8 @@ import 'fontSize.dart';
      textButtonTheme: TextButtonThemeData(
        style: TextButton.styleFrom(
          fixedSize: Size(200, 60),
+         backgroundColor: Colors.transparent,
+         shadowColor: Colors.transparent,
          shape:  RoundedRectangleBorder(
            borderRadius: BorderRadius.circular(9.0),
          ),
