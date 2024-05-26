@@ -158,7 +158,7 @@ import 'fontSize.dart';
      ),
      textButtonTheme: TextButtonThemeData(
        style: TextButton.styleFrom(
-         minimumSize: Size(200, 50),
+         fixedSize: Size(200, 60),
          shape:  RoundedRectangleBorder(
            borderRadius: BorderRadius.circular(9.0),
          ),
@@ -217,7 +217,7 @@ import 'fontSize.dart';
              Radius.circular(15),
            )
        ),
-       textTheme: ButtonTextTheme.primary, // this gives the best text color for the button
+       textTheme: ButtonTextTheme.primary, // his gives the best text color for the button
      ),
 
      inputDecorationTheme: InputDecorationTheme(
