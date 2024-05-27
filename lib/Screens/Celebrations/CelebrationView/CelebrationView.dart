@@ -46,11 +46,7 @@ class _CelebrationsState extends State<Celebrations> {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed("homepage");
-            },
-            icon: myIcons.goBack),
+        leading: goBack(),
         title: Text(AppLocalizations.of(context)!.celebrations),
       ),
       body:  ScrollConfiguration(
@@ -176,7 +172,6 @@ class _CelebrationsState extends State<Celebrations> {
                                                           ),
                                                         );
                                                       }else if(value == 1){
-                                                        // context.read<DeleteCubit>().delete(document.id);
                                                         BlocProvider.of<DeleteCubit>(context).delete(document.id);
 
                                                       }
@@ -218,6 +213,13 @@ class _CelebrationsState extends State<Celebrations> {
         Navigator.of(context).pushNamed("addcelebration");
       },
       title: AppLocalizations.of(context)!.addCelebration,color: ColorManager.addEdit,);
+  }
+  goBack () {
+   return IconButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed("homepage");
+        },
+        icon: myIcons.goBack);
   }
 }
 
