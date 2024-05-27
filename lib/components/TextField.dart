@@ -6,11 +6,11 @@ class CustomTextForm extends StatelessWidget {
   final int? maxLines;
   final TextDirection? textDirection;
   final Widget? suffixIcon;
-  final bool? obscureText;
+  final bool obscureText;
   final int? minLines;
   CustomTextForm
   ({super.key,  this.hinttext,
-   this.myController, this.maxLines, this.textDirection, this.suffixIcon, this.obscureText, this.minLines,
+   this.myController, this.maxLines, this.textDirection, this.suffixIcon, this.obscureText = false, this.minLines,
 
 });
 @override
@@ -25,7 +25,7 @@ Widget build(BuildContext context) {
         hintText: hinttext,
         suffixIcon: suffixIcon
      ),
-    obscureText: obscureText ?? false,
+    obscureText: obscureText,
   );
   // custom text field
 }
