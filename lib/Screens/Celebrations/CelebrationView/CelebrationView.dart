@@ -34,8 +34,11 @@ class _CelebrationsState extends State<Celebrations> {
     return BlocConsumer<DeleteCubit, DeleteState>(
   listener: (context, state) {
     if (state is DeleteSuccess) {
+      ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar
-        ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted),));
+        ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted)));
+    } else {
+
     }
   },
 
@@ -173,7 +176,8 @@ class _CelebrationsState extends State<Celebrations> {
                                                           ),
                                                         );
                                                       }else if(value == 1){
-                                                        context.read<DeleteCubit>().delete(document.id);
+                                                        // context.read<DeleteCubit>().delete(document.id);
+                                                        BlocProvider.of<DeleteCubit>(context).delete(document.id);
 
                                                       }
                                                       },
