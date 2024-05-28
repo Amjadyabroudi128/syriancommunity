@@ -5,15 +5,19 @@ class myImage extends StatelessWidget {
  final double? height;
  final double? width;
  final BoxFit? fit;
-  const myImage({super.key,  this.src, this.height, this.width, this.fit});
+ final VoidCallback? onPressed;
+  const myImage({super.key,  this.src, this.height, this.width, this.fit, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
-    return Image.network(
-      src!,
-      width: width,
-      height: height,
-      fit: fit,
+    return GestureDetector(
+      child: Image.network(
+        src!,
+        width: width,
+        height: height,
+        fit: fit,
+      ),
+      onTap: onPressed,
     );
   }
 }
