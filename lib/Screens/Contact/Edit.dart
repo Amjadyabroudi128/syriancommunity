@@ -66,33 +66,33 @@ class _AddContactDetailsState extends State<EditDetails> {
                 padding(child: Text(AppLocalizations.of(context)!.place)),
                 sizedBox(height: 8,),
                 CustomTextForm( myController: place,
-                    suffixIcon: IconButton(onPressed: place.clear, icon: Icon(Icons.clear),)
+                    suffixIcon: IconButton(onPressed: place.clear, icon: myIcons.clear)
                 ),
                 sizedBox(),
                 padding(child: Text(AppLocalizations.of(context)!.streetName)),
                 sizedBox(height: 7,),
                 CustomTextForm( myController: road,
-                    suffixIcon: IconButton(onPressed: road.clear, icon: Icon(Icons.clear), )
+                    suffixIcon: IconButton(onPressed: road.clear, icon: myIcons.clear )
                 ),
                 padding(child: Text(AppLocalizations.of(context)!.city)),
                 sizedBox(height: 7,),
                 CustomTextForm( myController: city,
-                    suffixIcon: IconButton(onPressed: city.clear, icon: Icon(Icons.clear), )
+                    suffixIcon: IconButton(onPressed: city.clear, icon: myIcons.clear )
                 ),
                 padding(child: Text(AppLocalizations.of(context)!.postCode)),
                 sizedBox(height: 7,),
                 CustomTextForm(myController: postcode,
-                    suffixIcon: IconButton(onPressed: postcode.clear, icon: Icon(Icons.clear),)
+                    suffixIcon: IconButton(onPressed: postcode.clear, icon: myIcons.clear)
                 ),
                 padding(child: Text(AppLocalizations.of(context)!.email)),
                 sizedBox(height: 7,),
                 CustomTextForm( myController: email,
-                    suffixIcon: IconButton(onPressed: email.clear, icon: Icon(Icons.clear),)
+                    suffixIcon: IconButton(onPressed: email.clear, icon: myIcons.clear)
                 ),
                 padding(child: Text(AppLocalizations.of(context)!.phone),),
                 sizedBox(height: 7,),
                 CustomTextForm( myController: phone,
-                    suffixIcon: IconButton(onPressed: phone.clear, icon: Icon(Icons.clear),)
+                    suffixIcon: IconButton(onPressed: phone.clear, icon: myIcons.clear)
                 ),
                 sizedBox(height: 5,),
                 Row(
