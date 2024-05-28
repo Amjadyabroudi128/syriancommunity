@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/Screens/Contact/ContactUS.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 
@@ -51,7 +52,8 @@ class _AddContactDetailsState extends State<EditDetails> {
       child: Scaffold(
       appBar: AppBar(
         leading: IconButton(onPressed: (){
-          Navigator.of(context).pushNamed("contactus");
+          // Navigator.of(context).pushNamed("contactus");
+          Navigator.push(context, ContactUs.route());
         },
             icon: myIcons.goBack,
         ),

@@ -15,7 +15,9 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 
 class ContactUs extends StatefulWidget {
-
+  static route() => MaterialPageRoute(
+    builder: (context) => ContactUs(),
+  );
   final document;
   const ContactUs({@required this.document});
 
