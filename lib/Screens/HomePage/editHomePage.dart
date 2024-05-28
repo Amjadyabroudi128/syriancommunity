@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/Screens/HomePage/HomePage.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
@@ -88,7 +89,8 @@ class _EditHomeState extends State<EditHome> {
                 "details" : details.text,
               }
           );
-          Navigator.of(context).pushNamed("homepage");
+          // Navigator.of(context).pushNamed("homepage");
+          Navigator.push(context, HomePage.route());
           ScaffoldMessenger.of(context).showSnackBar
             ( SnackBar(content: Text("${AppLocalizations.of(context)!.edited}",)));
         },
