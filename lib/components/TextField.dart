@@ -8,11 +8,8 @@ class CustomTextForm extends StatelessWidget {
   final Widget? suffixIcon;
   final bool obscureText;
   final int? minLines;
-  CustomTextForm
-  ({super.key,  this.hinttext,
-   this.myController, this.maxLines, this.textDirection, this.suffixIcon, this.obscureText = false, this.minLines,
-
-});
+  CustomTextForm({super.key,  this.hinttext,
+   this.myController, this.maxLines, this.textDirection, this.suffixIcon, this.obscureText = false, this.minLines,});
 @override
 Widget build(BuildContext context) {
   return TextField(
