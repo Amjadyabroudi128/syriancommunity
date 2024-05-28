@@ -66,23 +66,23 @@ class _AddContactDetailsState extends State<AddContactDetails> {
               padding(child: Text(AppLocalizations.of(context)!.place)),
               sizedBox(height: 2,),
               CustomTextForm(hinttext: "e.g : Brighton college", myController: place,
-                  suffixIcon: place.text.isEmpty ? null :  IconButton(onPressed: place.clear, icon: Icon(Icons.clear),)
+                  suffixIcon: place.text.isEmpty ? null :  IconButton(onPressed: place.clear, icon: myIcons.clear,)
               ),
               sizedBox(),
               padding(child: Text(AppLocalizations.of(context)!.streetName)),
               sizedBox(height: 2,),
               CustomTextForm(hinttext: "e.g: Eastern Road",  myController: road,
-                  suffixIcon: road.text.isEmpty? null : IconButton(onPressed: road.clear, icon: Icon(Icons.clear),)
+                  suffixIcon: road.text.isEmpty? null : IconButton(onPressed: road.clear, icon: myIcons.clear)
               ),
               padding(child: Text(AppLocalizations.of(context)!.city)),
               sizedBox(height: 2,),
               CustomTextForm(hinttext: "e.g: Brighton", myController: city,
-                  suffixIcon: city.text.isEmpty ? null : IconButton(onPressed: city.clear, icon: Icon(Icons.clear),)
+                  suffixIcon: city.text.isEmpty ? null : IconButton(onPressed: city.clear, icon: myIcons.clear)
               ),
               padding(child: Text(AppLocalizations.of(context)!.postCode)),
               sizedBox(height: 7,),
               CustomTextForm(hinttext: "e.g: BN2 OAL", myController: postcode,
-                  suffixIcon: postcode.text.isEmpty ? null : IconButton(onPressed: postcode.clear, icon: Icon(Icons.clear),)
+                  suffixIcon: postcode.text.isEmpty ? null : IconButton(onPressed: postcode.clear, icon: myIcons.clear)
               ),
               padding(child: Text(AppLocalizations.of(context)!.email)),
               sizedBox(height: 2,),

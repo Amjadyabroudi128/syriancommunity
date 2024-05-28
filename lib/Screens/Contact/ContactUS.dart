@@ -15,6 +15,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 
 class ContactUs extends StatefulWidget {
+
   final document;
   const ContactUs({@required this.document});
 
@@ -26,7 +27,6 @@ class _ContactUsState extends State<ContactUs> {
   final CollectionReference contact =
       FirebaseFirestore.instance.collection('contact');
   User? user = FirebaseAuth.instance.currentUser;
-
   @override
   void initState() {
     addCustomIcon();
@@ -46,6 +46,7 @@ class _ContactUsState extends State<ContactUs> {
       });
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
