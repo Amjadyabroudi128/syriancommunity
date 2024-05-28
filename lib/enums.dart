@@ -1,0 +1,2 @@
+
+enum myPop {delete, edit}
