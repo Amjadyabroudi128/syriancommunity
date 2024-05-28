@@ -87,12 +87,12 @@ class _AddContactDetailsState extends State<AddContactDetails> {
               padding(child: Text(AppLocalizations.of(context)!.email)),
               sizedBox(height: 2,),
               CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: email,
-                  suffixIcon: email.text.isEmpty ? null : IconButton(onPressed: email.clear, icon: Icon(Icons.clear),)
+                  suffixIcon: email.text.isEmpty ? null : IconButton(onPressed: email.clear, icon: myIcons.clear)
               ),
               padding(child: Text(AppLocalizations.of(context)!.phone),),
               sizedBox(height: 2,),
               CustomTextForm(hinttext: AppLocalizations.of(context)!.phone, myController: phone,
-                  suffixIcon: phone.text.isEmpty ? null :  IconButton(onPressed: phone.clear, icon: Icon(Icons.clear),)
+                  suffixIcon: phone.text.isEmpty ? null :  IconButton(onPressed: phone.clear, icon: myIcons.clear)
               ),
               sizedBox(height: 10,),
               Row(
