@@ -77,26 +77,24 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                               children: [
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: user != null ? GestureDetector(
-                                  child: Card(
-                                    shape: const CircleBorder(),
-                                    clipBehavior: Clip.antiAlias,
-                                    child: data["image"] !=  null ? myImage(
-                                      src: data["image"],
-                                      height: 240,
-                                      width: 240,
-                                      fit: BoxFit.cover,
-                                    ) : SizedBox.shrink(),
-                                  ),
-                                  onTap: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(builder: (context) =>
-                                            EditMember(DocID: document.id ,
-                                              oldName: data["name"],
-                                              oldDetail: data["details"],
-                                              oldUrl: data["image"],)
-                                        ));
-                                  },
+                                child: user != null ? Card(
+                                  shape: const CircleBorder(),
+                                  clipBehavior: Clip.antiAlias,
+                                  child: data["image"] !=  null ? myImage(
+                                    src: data["image"],
+                                    height: 240,
+                                    width: 240,
+                                    fit: BoxFit.cover,
+                                    onPressed: (){
+                                        Navigator.of(context).push(
+                                            MaterialPageRoute(builder: (context) =>
+                                                EditMember(DocID: document.id ,
+                                                  oldName: data["name"],
+                                                  oldDetail: data["details"],
+                                                  oldUrl: data["image"],)
+                                            ));
+                                    },
+                                  ) : SizedBox.shrink(),
                                 ) :
                                 Card(
                                   shape: const CircleBorder(),
