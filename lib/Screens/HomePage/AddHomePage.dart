@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/Screens/HomePage/HomePage.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
 import 'package:syrianadmin/components/icons.dart';
@@ -12,6 +13,9 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../components/Sizedbox.dart';
 
 class AddInfo extends StatefulWidget {
+  static route() => MaterialPageRoute(
+    builder: (context) => AddInfo(),
+  );
   const AddInfo({Key? key}) : super(key: key);
 
   @override
@@ -37,7 +41,8 @@ class _AddInfoState extends State<AddInfo> {
         appBar: AppBar(
           title: Text(AppLocalizations.of(context)!.addDetails),
           leading: IconButton(onPressed: (){
-            Navigator.of(context).pushNamed("homepage");
+            // Navigator.of(context).pushNamed("homepage");
+            Navigator.push(context, HomePage.route());
           },
               icon: myIcons.goBack
           ),
@@ -109,7 +114,7 @@ class _AddInfoState extends State<AddInfo> {
             clearText();
             await FirebaseApi().initNotifications();
             await FirebaseMessaging.instance.subscribeToTopic("topic");
-            Navigator.of(context).pushNamed("homepage");
+            Navigator.push(context, HomePage.route());
             ScaffoldMessenger.of(context).showSnackBar
               ( SnackBar(content: Text("${AppLocalizations.of(context)!.addedSuccessfully}",)));
           }
