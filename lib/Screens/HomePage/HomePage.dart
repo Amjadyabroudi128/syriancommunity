@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/Screens/HomePage/AddHomePage.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/icons.dart';
@@ -9,11 +10,15 @@ import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
+import 'package:syrianadmin/enums.dart';
 import '../../components/formatedData.dart';
 import '../SideDrawer.dart';
 import 'editHomePage.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HomePage extends StatefulWidget {
+  static route() => MaterialPageRoute(
+    builder: (context) => HomePage(),
+  );
   final document;
 
   const HomePage({Key? key, this.document}) : super(key: key);
@@ -57,7 +62,7 @@ class _HomePageState extends State<HomePage> {
               Column(
                 children: [
                   user != null ? CustomButton(onPressed: (){
-                    Navigator.of(context).pushNamed("addInfo");
+                    Navigator.push(context, AddInfo.route());
                   }, title: AppLocalizations.of(context)!.addThings, color: ColorManager.addEdit) : sizedBox(),
                   const sizedBox(),
                    Text(AppLocalizations.of(context)!.news),
@@ -112,18 +117,18 @@ class _HomePageState extends State<HomePage> {
                                         child: user != null ? MyPopUpMenu(
                                               itemBuilder: (context) {
                                                 return [
-                                                  PopupMenuItem<int>(
-                                                    value: 0,
+                                                  PopupMenuItem<myPop>(
+                                                    value: myPop.edit,
                                                     child: Text(AppLocalizations.of(context)!.edit),
                                                   ),
-                                                  PopupMenuItem<int>(
-                                                    value: 1,
+                                                  PopupMenuItem<myPop>(
+                                                    value: myPop.delete,
                                                     child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),
                                                   ),
                                                 ];
                                               },
-                                              onSelected: (value) {
-                                                if(value == 0) {
+                                              onSelected: (selectedPop) {
+                                                if(selectedPop == myPop.edit) {
                                                   Navigator.of(context).push(
                                                       CupertinoPageRoute(
                                                           builder: (context) {
@@ -135,7 +140,7 @@ class _HomePageState extends State<HomePage> {
                                                               }
                                                               )
                                                             );
-                                                } else if (value == 1) {
+                                                } else if (selectedPop == myPop.delete) {
                                                   myHome.doc(document.id).delete();
                                                   ScaffoldMessenger.of(context).showSnackBar
                                                     ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted),));
