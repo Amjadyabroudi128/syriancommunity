@@ -62,4 +62,9 @@ import 'font_weight_helper.dart';
        fontSize: 20,
        fontWeight: FontWeightHelper.medium
    );
+   static TextStyle darkLabel = TextStyle(
+     color: Colors.grey,
+     fontSize: 15,
+     fontWeight: FontWeightHelper.medium
+   );
  }
