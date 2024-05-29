@@ -55,6 +55,7 @@ class _LoginState extends State<Login> {
                   myController: testEmail,
                   keyboardType: TextInputType.emailAddress,
                   prefixIcon: myIcons.email,
+                  label: Text("Email Address"),
                 ),
                 sizedBox(height: 15,),
                 CustomTextForm(hinttext: AppLocalizations.of(context)!.password, obscureText: _isHidden, maxLines: 1,
@@ -69,6 +70,7 @@ class _LoginState extends State<Login> {
                       color: _isHidden ? ColorManager.delete : ColorManager.submit,
                     ),
                   keyboardType: TextInputType.visiblePassword,
+
                   ),
                 sizedBox(height: 20,),
                 (testEmail.text.isEmpty) || (testPassword.text.isEmpty) ? Container(
