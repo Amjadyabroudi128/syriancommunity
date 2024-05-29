@@ -51,7 +51,10 @@ class _LoginState extends State<Login> {
               children: [
                 Text(AppLocalizations.of(context)!.loginAdmin),
                  sizedBox(height: 19,),
-                CustomTextForm(hinttext: AppLocalizations.of(context)!.email, myController: testEmail,),
+                CustomTextForm(hinttext: AppLocalizations.of(context)!.email,
+                  myController: testEmail,
+                  keyboardType: TextInputType.emailAddress,
+                ),
                 sizedBox(height: 15,),
                 CustomTextForm(hinttext: AppLocalizations.of(context)!.password, obscureText: _isHidden, maxLines: 1,
                   myController: testPassword,
