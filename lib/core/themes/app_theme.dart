@@ -19,6 +19,7 @@ import 'fontSize.dart';
    static final darkTheme = ThemeData(
      brightness: Brightness.dark,
    ).copyWith(
+
      cardTheme: CardTheme(
        elevation: 0,
        color: Colors.black45,
@@ -28,7 +29,12 @@ import 'fontSize.dart';
      ),
      inputDecorationTheme: InputDecorationTheme(
          suffixIconColor: Colors.white,
+         labelStyle: TextStyles.darkLabel,
          // contentPadding: EdgeInsets.all(25),
+         floatingLabelStyle: TextStyle(
+           fontSize: 22,
+           color: Colors.white
+         ),
          border: OutlineInputBorder(
            borderRadius: BorderRadius.circular(10),
            borderSide: BorderSide(
