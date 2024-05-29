@@ -64,6 +64,7 @@ class _LoginState extends State<Login> {
                     icon: _isHidden ? myIcons.visible : myIcons.nonVisible,
                       color: _isHidden ? ColorManager.delete : ColorManager.submit,
                     ),
+                  keyboardType: TextInputType.visiblePassword,
                   ),
                 sizedBox(height: 20,),
                 (testEmail.text.isEmpty) || (testPassword.text.isEmpty) ? Container(
