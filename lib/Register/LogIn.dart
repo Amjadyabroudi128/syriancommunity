@@ -80,12 +80,8 @@ class _LoginState extends State<Login> {
                   child: loginButton(),
                 ) :  Container(
                     decoration:  BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [
-                            Colors.lightBlueAccent,
-                            Colors.blueAccent,
-                            Colors.blueGrey
-                          ],
+                        gradient:  LinearGradient(
+                          colors: ColorManager.LoginButton,
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
