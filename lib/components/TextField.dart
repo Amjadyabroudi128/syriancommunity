@@ -9,9 +9,13 @@ class CustomTextForm extends StatelessWidget {
   final bool obscureText;
   final int? minLines;
   final Widget? prefixIcon;
+  final Widget? label;
+  final String? labelText;
   final TextInputType? keyboardType;
   CustomTextForm({super.key,  this.hinttext,
-   this.myController, this.maxLines, this.textDirection, this.suffixIcon, this.obscureText = false, this.minLines, this.keyboardType, this.prefixIcon,});
+   this.myController, this.maxLines, this.textDirection,
+    this.suffixIcon, this.obscureText = false, this.minLines,
+    this.keyboardType, this.prefixIcon, this.label, this.labelText,});
 @override
 Widget build(BuildContext context) {
   return TextField(
@@ -24,7 +28,7 @@ Widget build(BuildContext context) {
         hintText: hinttext,
         suffixIcon: suffixIcon,
       prefixIcon: prefixIcon,
-
+      label: label,
      ),
     obscureText: obscureText,
   );
