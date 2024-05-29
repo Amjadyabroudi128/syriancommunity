@@ -54,7 +54,7 @@ class _LoginState extends State<Login> {
                 CustomTextForm(hinttext: AppLocalizations.of(context)!.email,
                   myController: testEmail,
                   keyboardType: TextInputType.emailAddress,
-                  prefixIcon: Icon(Icons.email),
+                  prefixIcon: myIcons.email,
                 ),
                 sizedBox(height: 15,),
                 CustomTextForm(hinttext: AppLocalizations.of(context)!.password, obscureText: _isHidden, maxLines: 1,
