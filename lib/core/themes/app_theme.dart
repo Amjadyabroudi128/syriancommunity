@@ -30,7 +30,6 @@ import 'fontSize.dart';
      inputDecorationTheme: InputDecorationTheme(
          suffixIconColor: Colors.white,
          labelStyle: TextStyles.darkLabel,
-         // contentPadding: EdgeInsets.all(25),
          floatingLabelStyle: TextStyles.floatingLabel,
          border: OutlineInputBorder(
            borderRadius: BorderRadius.circular(10),
@@ -136,6 +135,19 @@ import 'fontSize.dart';
    );
 
    static final themeData = ThemeData().copyWith(
+     inputDecorationTheme: InputDecorationTheme(
+         suffixIconColor: Colors.black,
+         hintStyle: TextStyles.hintText,
+         // floatingLabelStyle: ,
+         labelStyle: TextStyles.lightLabel,
+         // contentPadding: EdgeInsets.all(25),
+         border: OutlineInputBorder(
+           borderRadius: BorderRadius.circular(10),
+           borderSide: BorderSide(color: ColorManager.hintText),
+         ),
+         enabledBorder: _border,
+         focusedBorder: _border
+     ),
      cardColor: ColorManager.cardColor,
      cardTheme: CardTheme(
        elevation: 0,
@@ -231,17 +243,7 @@ import 'fontSize.dart';
        ),
        textTheme: ButtonTextTheme.primary, // his gives the best text color for the button
      ),
-     inputDecorationTheme: InputDecorationTheme(
-       suffixIconColor: Colors.black,
-         hintStyle: TextStyles.hintText,
-         // contentPadding: EdgeInsets.all(25),
-         border: OutlineInputBorder(
-           borderRadius: BorderRadius.circular(10),
-           borderSide: BorderSide(color: ColorManager.hintText),
-         ),
-         enabledBorder: _border,
-         focusedBorder: _border
-     ),
+
      listTileTheme: ListTileThemeData(
        iconColor: Colors.black,
        titleTextStyle: TextStyle(
