@@ -51,11 +51,11 @@ class _LoginState extends State<Login> {
               children: [
                 Text(AppLocalizations.of(context)!.loginAdmin),
                  sizedBox(height: 19,),
-                CustomTextForm(hinttext: AppLocalizations.of(context)!.email,
+                CustomTextForm(
                   myController: testEmail,
                   keyboardType: TextInputType.emailAddress,
                   prefixIcon: myIcons.email,
-                  label: Text("Email Address"),
+                  label: Text(AppLocalizations.of(context)!.email),
                 ),
                 sizedBox(height: 15,),
                 CustomTextForm(
@@ -79,7 +79,6 @@ class _LoginState extends State<Login> {
                     color: Colors.grey,
                     borderRadius: BorderRadius.circular(10)
                   ),
-
                   child: loginButton(),
                 ) :  Container(
                     decoration:  BoxDecoration(
