@@ -24,4 +24,5 @@ class myIcons {
   static Icon visible = Icon(Icons.visibility);
   static Icon nonVisible = Icon(Icons.visibility_off);
   static String logo = "images/syrianlogo.jpg";
+  static Icon pass = Icon(Icons.lock, size: 24,);
 }

@@ -19,7 +19,6 @@ import 'fontSize.dart';
    static final darkTheme = ThemeData(
      brightness: Brightness.dark,
    ).copyWith(
-
      cardTheme: CardTheme(
        elevation: 0,
        color: Colors.black45,
