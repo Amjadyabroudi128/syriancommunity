@@ -31,10 +31,7 @@ import 'fontSize.dart';
          suffixIconColor: Colors.white,
          labelStyle: TextStyles.darkLabel,
          // contentPadding: EdgeInsets.all(25),
-         floatingLabelStyle: TextStyle(
-           fontSize: 22,
-           color: Colors.white
-         ),
+         floatingLabelStyle: TextStyles.floatingLabel,
          border: OutlineInputBorder(
            borderRadius: BorderRadius.circular(10),
            borderSide: BorderSide(
