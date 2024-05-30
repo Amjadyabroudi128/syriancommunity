@@ -138,7 +138,7 @@ import 'fontSize.dart';
      inputDecorationTheme: InputDecorationTheme(
          suffixIconColor: Colors.black,
          hintStyle: TextStyles.hintText,
-         // floatingLabelStyle: ,
+         floatingLabelStyle: TextStyles.lightFloating,
          labelStyle: TextStyles.lightLabel,
          // contentPadding: EdgeInsets.all(25),
          border: OutlineInputBorder(
