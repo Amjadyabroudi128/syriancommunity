@@ -71,4 +71,9 @@ import 'font_weight_helper.dart';
        fontSize: 22,
        color: Colors.white70
    );
+   static TextStyle lightLabel = TextStyle(
+     color: Colors.black,
+     fontSize: 15,
+     fontWeight: FontWeightHelper.medium
+   );
  }
