@@ -70,7 +70,6 @@ class _LoginState extends State<Login> {
                       color: _isHidden ? ColorManager.delete : ColorManager.submit,
                     ),
                   keyboardType: TextInputType.visiblePassword,
-
                   ),
                 sizedBox(height: 20,),
                 (testEmail.text.isEmpty) || (testPassword.text.isEmpty) ? Container(
