@@ -11,16 +11,14 @@ class CustomTextForm extends StatelessWidget {
   final Widget? prefixIcon;
   final Widget? label;
   final String? labelText;
-  final void Function(String)? onPressed;
   final TextInputType? keyboardType;
   CustomTextForm({super.key,  this.hinttext,
    this.myController, this.maxLines, this.textDirection,
     this.suffixIcon, this.obscureText = false, this.minLines,
-    this.keyboardType, this.prefixIcon, this.label, this.labelText, this.onPressed,});
+    this.keyboardType, this.prefixIcon, this.label, this.labelText,});
 @override
 Widget build(BuildContext context) {
   return TextField(
-    onChanged: onPressed,
     keyboardType: keyboardType,
     minLines: minLines,
     textDirection: textDirection,
