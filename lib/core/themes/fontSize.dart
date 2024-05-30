@@ -76,4 +76,8 @@ import 'font_weight_helper.dart';
      fontSize: 15,
      fontWeight: FontWeightHelper.medium
    );
+   static TextStyle lightFloating = TextStyle(
+     fontSize: 22,
+     color: ColorManager.hintText
+   );
  }
