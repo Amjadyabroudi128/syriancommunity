@@ -67,4 +67,8 @@ import 'font_weight_helper.dart';
      fontSize: 15,
      fontWeight: FontWeightHelper.medium
    );
+   static TextStyle floatingLabel = TextStyle(
+       fontSize: 22,
+       color: Colors.white70
+   );
  }
