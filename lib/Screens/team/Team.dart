@@ -9,6 +9,7 @@ import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
+import 'package:syrianadmin/enums.dart';
 import 'EditTeam.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -121,12 +122,12 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                             child: user != null ? MyPopUpMenu(
                                               itemBuilder: (context){
                                                 return [
-                                                  PopupMenuItem<int>(
-                                                      value: 0,
+                                                  PopupMenuItem<myPop>(
+                                                      value: myPop.edit,
                                                       child: Text(AppLocalizations.of(context)!.edit)
                                                   ),
-                                                  PopupMenuItem<int>(
-                                                    value: 1,
+                                                  PopupMenuItem<myPop>(
+                                                    value: myPop.delete,
                                                     child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),
                                                   ),
                                                 ];
