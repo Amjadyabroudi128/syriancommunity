@@ -51,23 +51,21 @@ class _EditMemberState extends State<EditMember> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                GestureDetector(
-                  onTap: () async {
-                    await url.pickImage();
-                    setState(() {
-                    });
-                  },
-                  child: Card(
-                    shape: const CircleBorder(),
-                    clipBehavior: Clip.antiAlias,
-                    child: Center(
-                      child: url.url != null ? myImage(
-                        src: url.url,
-                        width: 240,
-                        height: 240,
-                        fit: BoxFit.cover
-                      ) : SizedBox.shrink(),
-                    ),
+                Card(
+                  shape: const CircleBorder(),
+                  clipBehavior: Clip.antiAlias,
+                  child: Center(
+                    child: url.url != null ? myImage(
+                      onPressed: () async {
+                        await url.pickImage();
+                        setState(() {
+                        });
+                      },
+                      src: url.url,
+                      width: 240,
+                      height: 240,
+                      fit: BoxFit.cover
+                    ) : SizedBox.shrink(),
                   ),
                 ),
                 padding(child: Text("Member name", style: TextStyles.font14green,)),
