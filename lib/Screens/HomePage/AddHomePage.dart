@@ -55,7 +55,7 @@ class _AddInfoState extends State<AddInfo> {
                 children: [
                   padding(child: Text(AppLocalizations.of(context)!.name)),
                     CustomTextForm(
-                        hinttext: "info name",
+                        label: Text("info name"),
                         myController: name,
                         suffixIcon: name.text.isEmpty ? null :
                         IconButton(onPressed: name.clear, icon: myIcons.clear,)
@@ -64,7 +64,7 @@ class _AddInfoState extends State<AddInfo> {
                   sizedBox(),
                   padding(child: Text(AppLocalizations.of(context)!.details,)),
                   CustomTextForm(
-                      hinttext: "info details",
+                      label: Text("info Details"),
                       myController: details,
                       suffixIcon: details.text.isEmpty ? null :
                       IconButton(onPressed: details.clear, icon: myIcons.clear,)
