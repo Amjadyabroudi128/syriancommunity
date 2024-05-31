@@ -58,7 +58,7 @@ import 'font_weight_helper.dart';
        fontWeight: FontWeightHelper.medium
    );
    static TextStyle darkSnackBar = TextStyle(
-       color: Colors.black,
+       color: Colors.white,
        fontSize: 20,
        fontWeight: FontWeightHelper.medium
    );
