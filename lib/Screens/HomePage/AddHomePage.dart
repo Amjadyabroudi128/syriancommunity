@@ -61,10 +61,11 @@ class _AddInfoState extends State<AddInfo> {
                         IconButton(onPressed: name.clear, icon: myIcons.clear,)
 
                     ),
-                  sizedBox(),
-                  padding(child: Text(AppLocalizations.of(context)!.details,)),
+                  sizedBox(height: 10,),
+                  padding(child: Text("info Details")),
+                  sizedBox(height: 3,),
                   CustomTextForm(
-                      label: Text("info Details"),
+                      label: Text(AppLocalizations.of(context)!.details),
                       myController: details,
                       suffixIcon: details.text.isEmpty ? null :
                       IconButton(onPressed: details.clear, icon: myIcons.clear,)
