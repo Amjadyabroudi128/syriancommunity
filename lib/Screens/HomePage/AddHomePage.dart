@@ -53,16 +53,17 @@ class _AddInfoState extends State<AddInfo> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  padding(child: Text(AppLocalizations.of(context)!.name)),
+                  padding(child: Text("post Name")),
+                    sizedBox(height: 3,),
                     CustomTextForm(
-                        label: Text("info name"),
+                        label: Text(AppLocalizations.of(context)!.name),
                         myController: name,
                         suffixIcon: name.text.isEmpty ? null :
                         IconButton(onPressed: name.clear, icon: myIcons.clear,)
 
                     ),
                   sizedBox(height: 10,),
-                  padding(child: Text("info Details")),
+                  padding(child: Text("post Details")),
                   sizedBox(height: 3,),
                   CustomTextForm(
                       label: Text(AppLocalizations.of(context)!.details),
