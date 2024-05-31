@@ -43,15 +43,20 @@ class _AddMemberState extends State<AddMember> {
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
-                CustomTextForm(hinttext: "Member  Name", myController: name,
+                padding(child: Text("Member name", style: TextStyles.font14green,)),
+                sizedBox(height: 3,),
+                CustomTextForm(
+                  label: Text(AppLocalizations.of(context)!.name),
+                    myController: name,
                     suffixIcon: name.text.isEmpty ? null : IconButton(onPressed: name.clear, icon: myIcons.clear,)
                 ),
                 sizedBox(height: 20,),
-                padding(child: Text(AppLocalizations.of(context)!.details, style: TextStyles.font14green,)),
-                CustomTextForm(maxLines: null, hinttext: "Member details",  myController: details,
+                padding(child: Text("Member's Details", style: TextStyles.font14green,)),
+                sizedBox(height: 3,),
+                CustomTextForm(
+                  label: Text(AppLocalizations.of(context)!.details),
+                    myController: details,
                   suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear,)
                 ),
                 sizedBox(height: 12,),
