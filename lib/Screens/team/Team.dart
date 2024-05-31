@@ -132,8 +132,8 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                                   ),
                                                 ];
                                                 },
-                                              onSelected:(value){
-                                                if(value == 0){
+                                              onSelected:(selectedPop){
+                                                if(selectedPop == myPop.edit){
                                             Navigator.of(context).push(
                                                 MaterialPageRoute(builder: (context) =>
                                                     EditMember(DocID: document.id ,
@@ -141,7 +141,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                                       oldDetail: data["details"],
                                                       oldUrl: data["image"],)
                                             ));
-                                   } else if(value == 1){
+                                   } else if(selectedPop == myPop.delete){
                                     members.doc(document.id).delete();
                                   }
                                 }, popUpAnimationStyle: AnimationStyle(duration: Duration(milliseconds: 400)),
