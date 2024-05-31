@@ -70,15 +70,18 @@ class _EditMemberState extends State<EditMember> {
                     ),
                   ),
                 ),
-                padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
-                CustomTextForm(hinttext: "Member name", myController: name,
+                padding(child: Text("Member name", style: TextStyles.font14green,)),
+                sizedBox(height: 3,),
+                CustomTextForm(
+                    label: Text(AppLocalizations.of(context)!.name),
+                 myController: name,
                     suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,)
 
                 ),
                 sizedBox(height: 20,),
-                padding(child: Text(AppLocalizations.of(context)!.details, style: TextStyles.font14green,)),
+                padding(child: Text("Member's Details", style: TextStyles.font14green,)),
                 CustomTextForm(
-                    hinttext: "Member details",
+                    label: Text(AppLocalizations.of(context)!.details),
                     myController: details,
                     suffixIcon: IconButton(onPressed: details.clear, icon: myIcons.clear,)
 
