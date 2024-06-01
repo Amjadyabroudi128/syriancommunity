@@ -35,13 +35,13 @@ class _AddInfoState extends State<AddInfo> {
 
   @override
   Widget build(BuildContext context) {
+    String id = AppLocalizations.of(context)!.addDetails;
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.addDetails),
+          title: Text(id),
           leading: IconButton(onPressed: (){
-            // Navigator.of(context).pushNamed("homepage");
             Navigator.push(context, HomePage.route());
           },
               icon: myIcons.goBack

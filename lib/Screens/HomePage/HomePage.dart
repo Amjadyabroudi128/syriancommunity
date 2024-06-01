@@ -50,7 +50,6 @@ class _HomePageState extends State<HomePage> {
           },
         ),
         title: Text(AppLocalizations.of(context)!.syrianCommunity),
-
       ),
       drawer: SideDrawer(),
       body: padding(
