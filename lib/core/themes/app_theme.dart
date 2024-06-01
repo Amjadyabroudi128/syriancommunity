@@ -166,15 +166,15 @@ import 'fontSize.dart';
      ),
      snackBarTheme: SnackBarThemeData(
        insetPadding: EdgeInsets.all(10),
-       backgroundColor: Colors.black,
-       contentTextStyle: TextStyles.lightSnackBar,
+       backgroundColor: Colors.black.withOpacity(0.55),
+       contentTextStyle: TextStyles.darkSnackBar,
        showCloseIcon: true,
        closeIconColor: Colors.white,
        behavior: SnackBarBehavior.floating,
        width: 380.0,
        shape: RoundedRectangleBorder(
            borderRadius: BorderRadius.only(
-             bottomRight: Radius.circular(30),
+             bottomRight: Radius.circular(20),
            )
        ),
      ),
