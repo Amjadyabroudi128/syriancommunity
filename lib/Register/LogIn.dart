@@ -38,11 +38,12 @@ class _LoginState extends State<Login> {
     }
   },
   builder: (context, state) {
+    String logIn = AppLocalizations.of(context)!.login;
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.login),
+          title: Text(logIn),
         ),
           body:  Padding(
             padding: const EdgeInsets.all(7.0),
