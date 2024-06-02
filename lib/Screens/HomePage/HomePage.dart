@@ -37,6 +37,7 @@ class _HomePageState extends State<HomePage> {
     FirebaseFirestore.instance.collection('home');
 
     User? user = FirebaseAuth.instance.currentUser;
+    String appBarTitle = AppLocalizations.of(context)!.syrianCommunity;
     return Scaffold(
       appBar: AppBar(
         leading: Builder(
@@ -49,7 +50,7 @@ class _HomePageState extends State<HomePage> {
             );
           },
         ),
-        title: Text(AppLocalizations.of(context)!.syrianCommunity),
+        title: Text(appBarTitle),
       ),
       drawer: SideDrawer(),
       body: padding(
