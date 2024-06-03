@@ -37,12 +37,13 @@ class _EditHomeState extends State<EditHome> {
   Widget build(BuildContext context) {
     final CollectionReference home =
     FirebaseFirestore.instance.collection('home');
+    String editTitle = AppLocalizations.of(context)!.editDetails ;
     return GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
 
     child: Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.editDetails),
+        title: Text(editTitle),
       ),
         body: SingleChildScrollView(
           child: Padding(
