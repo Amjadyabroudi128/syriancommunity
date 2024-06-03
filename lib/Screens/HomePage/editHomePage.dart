@@ -35,8 +35,6 @@ class _EditHomeState extends State<EditHome> {
   }
   @override
   Widget build(BuildContext context) {
-    final CollectionReference home =
-    FirebaseFirestore.instance.collection('home');
     String editTitle = AppLocalizations.of(context)!.editDetails ;
     return GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
@@ -51,8 +49,9 @@ class _EditHomeState extends State<EditHome> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                padding(child: Text(AppLocalizations.of(context)!.name)),
-                CustomTextForm(hinttext: "info name", myController: name,
+                padding(child: Text("post Name")),
+                CustomTextForm(
+                    label: Text(AppLocalizations.of(context)!.name), myController: name,
                     suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: myIcons.clear,)
 
                 ),
