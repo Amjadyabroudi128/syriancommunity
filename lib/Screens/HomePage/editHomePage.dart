@@ -50,6 +50,7 @@ class _EditHomeState extends State<EditHome> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 padding(child: Text("post Name")),
+                sizedBox(height: 3,),
                 CustomTextForm(
                     label: Text(AppLocalizations.of(context)!.name), myController: name,
                     suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: myIcons.clear,)
@@ -57,6 +58,7 @@ class _EditHomeState extends State<EditHome> {
                 ),
                 sizedBox(height: 20,),
                 padding(child: Text("post Details")),
+                sizedBox(height: 3,),
                 CustomTextForm(
                   label: Text(AppLocalizations.of(context)!.details),
                     myController: details,
