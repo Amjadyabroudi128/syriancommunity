@@ -42,5 +42,6 @@
   "news" : "here you will see all the information you need about the community ",
   "cancel": "cancel",
   "thisPage": "this page ",
-  "addedSuccessfully" : "Added Successfully"
+  "addedSuccessfully" : "Added Successfully",
+  "error" : "Something was wrong "
 }

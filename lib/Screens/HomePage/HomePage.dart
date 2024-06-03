@@ -70,7 +70,8 @@ class _HomePageState extends State<HomePage> {
                     stream: home.snapshots(),
                     builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
                       if (snapshot.hasError) {
-                        return Text('Something went wrong');
+
+                        return Text(AppLocalizations.of(context)!.error);
                       }
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return const Text("Loading");
