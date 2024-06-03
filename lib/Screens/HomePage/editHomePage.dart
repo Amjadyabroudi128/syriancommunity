@@ -84,16 +84,21 @@ class _EditHomeState extends State<EditHome> {
     FirebaseFirestore.instance.collection('home');
     return CustomButton(
         onPressed: () async {
-          await home.doc(widget.DocID).update(
-              {
-                "name" : name.text,
-                "details" : details.text,
-              }
-          );
-          // Navigator.of(context).pushNamed("homepage");
-          Navigator.push(context, HomePage.route());
-          ScaffoldMessenger.of(context).showSnackBar
-            ( SnackBar(content: Text("${AppLocalizations.of(context)!.edited}",)));
+          if (name.text == widget.oldName && details.text == widget.oldDetail) {
+            ScaffoldMessenger.of(context).showSnackBar
+              (SnackBar(content: Text(
+              "${AppLocalizations.of(context)!.editDetails}",)));
+          }
+          else {
+            await home.doc(widget.DocID).update({
+              "name": name.text,
+              "details": details.text,
+
+            });
+            Navigator.push(context, HomePage.route());
+            ScaffoldMessenger.of(context).showSnackBar
+              ( SnackBar(content: Text("${AppLocalizations.of(context)!.edited}",)));
+          }
         },
         title: AppLocalizations.of(context)!.update,
         color: (name.text.isEmpty)
