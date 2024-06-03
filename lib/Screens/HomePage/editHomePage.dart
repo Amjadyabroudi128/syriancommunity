@@ -56,8 +56,10 @@ class _EditHomeState extends State<EditHome> {
 
                 ),
                 sizedBox(height: 20,),
-                padding(child: Text(AppLocalizations.of(context)!.details)),
-                CustomTextForm(hinttext: "info details", myController: details, maxLines: 6,
+                padding(child: Text("post Details")),
+                CustomTextForm(
+                  label: Text(AppLocalizations.of(context)!.details),
+                    myController: details,
                     suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear )                ),
                 sizedBox(height: 10,),
                 Row(
