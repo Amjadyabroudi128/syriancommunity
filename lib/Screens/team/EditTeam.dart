@@ -119,7 +119,7 @@ class _EditMemberState extends State<EditMember> {
   submitUpdate () {
     return CustomButton(
       onPressed: () async {
-        if(name.text == widget.oldName && details.text == widget.oldDetail) {
+        if(name.text == widget.oldName || details.text == widget.oldDetail) {
           setState(() {
             isUpdated = false;
             ScaffoldMessenger.of(context).showSnackBar
@@ -142,7 +142,7 @@ class _EditMemberState extends State<EditMember> {
         }
       },
       title:  AppLocalizations.of(context)!.update,
-      color: (name.text == widget.oldName && details.text == widget.oldDetail ? Colors.grey : ColorManager.submit)
+      color: changingColor()
     );
   }
   imageButton () {
@@ -155,5 +155,12 @@ class _EditMemberState extends State<EditMember> {
       },
       color: ColorManager.addEdit,
     );
+  }
+  changingColor () {
+    if (name.text == widget.oldName && details.text == widget.oldDetail) {
+      return Colors.grey;
+    } else {
+      return ColorManager.submit;
+    }
   }
 }
