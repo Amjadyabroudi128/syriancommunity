@@ -38,11 +38,12 @@ class _EditMemberState extends State<EditMember> {
   FirebaseFirestore.instance.collection('members');
   @override
   Widget build(BuildContext context) {
+    String edit = AppLocalizations.of(context)!.editDetails;
     return GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
     child: Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.editDetails),
+        title: Text(edit),
       ),
       body: ScrollConfiguration(
         behavior: ScrollBehavior(),
