@@ -32,11 +32,12 @@ class _AddMemberState extends State<AddMember> {
   FirebaseFirestore.instance.collection('members');
   @override
   Widget build(BuildContext context) {
+    String addThings = AppLocalizations.of(context)!.addThings;
     return GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
     child: Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.addThings),
+        title: Text(addThings),
       ),
         body : Padding(
           padding: EdgeInsets.all(20),
