@@ -46,7 +46,7 @@ class _AddMemberState extends State<AddMember> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
-                sizedBox(height: 3,),
+                sizedBox(height: 6,),
                 CustomTextForm(
                   label: Text("Member's name "),
                     myController: name,
@@ -54,7 +54,7 @@ class _AddMemberState extends State<AddMember> {
                 ),
                 sizedBox(height: 20,),
                 padding(child: Text(AppLocalizations.of(context)!.details, style: TextStyles.font14green,)),
-                sizedBox(height: 3,),
+                sizedBox(height: 6,),
                 CustomTextForm(
                   label: Text("Member's Details"),
                     myController: details,
