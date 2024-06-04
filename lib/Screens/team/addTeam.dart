@@ -45,18 +45,18 @@ class _AddMemberState extends State<AddMember> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                padding(child: Text("Member name", style: TextStyles.font14green,)),
+                padding(child: Text(AppLocalizations.of(context)!.name, style: TextStyles.font14green,)),
                 sizedBox(height: 3,),
                 CustomTextForm(
-                  label: Text(AppLocalizations.of(context)!.name),
+                  label: Text("Member's name "),
                     myController: name,
                     suffixIcon: name.text.isEmpty ? null : IconButton(onPressed: name.clear, icon: myIcons.clear,)
                 ),
                 sizedBox(height: 20,),
-                padding(child: Text("Member's Details", style: TextStyles.font14green,)),
+                padding(child: Text(AppLocalizations.of(context)!.details, style: TextStyles.font14green,)),
                 sizedBox(height: 3,),
                 CustomTextForm(
-                  label: Text(AppLocalizations.of(context)!.details),
+                  label: Text("Member's Details"),
                     myController: details,
                   suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear,)
                 ),
