@@ -142,7 +142,7 @@ class _EditMemberState extends State<EditMember> {
         }
       },
       title:  AppLocalizations.of(context)!.update,
-      color: changingColor()
+      color: (name.text == widget.oldName && details.text == widget.oldDetail ? Colors.grey : ColorManager.submit)
     );
   }
   imageButton () {
@@ -155,12 +155,5 @@ class _EditMemberState extends State<EditMember> {
       },
       color: ColorManager.addEdit,
     );
-  }
-  changingColor () {
-    if (name.text == widget.oldName && details.text == widget.oldDetail) {
-      return Colors.grey;
-    } else {
-      return ColorManager.submit;
-    }
   }
 }
