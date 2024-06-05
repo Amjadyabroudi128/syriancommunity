@@ -24,8 +24,14 @@ class EditMember extends StatefulWidget {
 }
 
 class _EditMemberState extends State<EditMember> {
-  TextEditingController name = TextEditingController();
-  TextEditingController details = TextEditingController();
+  late final TextEditingController name = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
+ late final TextEditingController details = TextEditingController()..addListener(() {
+   setState(() {
+   });
+ });
   bool? isUpdated;
   void initState() {
     super.initState();
@@ -142,8 +148,8 @@ class _EditMemberState extends State<EditMember> {
         }
       },
       title:  AppLocalizations.of(context)!.update,
-      color: (name.text == widget.oldName && details.text == widget.oldDetail ? Colors.grey : ColorManager.submit)
-    );
+      color: (name.text == widget.oldName)
+          && (details.text == widget.oldDetail) ? Colors.grey : ColorManager.submit);
   }
   imageButton () {
     return CustomButton(
