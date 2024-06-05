@@ -125,7 +125,7 @@ class _EditMemberState extends State<EditMember> {
   submitUpdate () {
     return CustomButton(
       onPressed: () async {
-        if(name.text == widget.oldName || details.text == widget.oldDetail) {
+        if(name.text == widget.oldName && details.text == widget.oldDetail) {
           setState(() {
             isUpdated = false;
             ScaffoldMessenger.of(context).showSnackBar
