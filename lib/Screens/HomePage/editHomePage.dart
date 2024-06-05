@@ -67,9 +67,7 @@ class _EditHomeState extends State<EditHome> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    CustomButton(onPressed: (){
-                      Navigator.pop(context);
-                    }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,),
+                    cancelButton(),
                     sizedBox(width: 10,),
                     updateButton(),
                   ],
@@ -104,7 +102,12 @@ class _EditHomeState extends State<EditHome> {
           }
         },
         title: AppLocalizations.of(context)!.update,
-        color: (name.text.isEmpty)
-            || (details.text.isEmpty) ? Colors.grey : ColorManager.submit);
+        color: (name.text == widget.oldName)
+         && (details.text == widget.oldDetail) ? Colors.grey : ColorManager.submit );
+  }
+  cancelButton () {
+  return CustomButton(onPressed: (){
+      Navigator.pop(context);
+    }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
   }
 }
