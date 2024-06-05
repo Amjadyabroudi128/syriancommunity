@@ -28,6 +28,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
 
   @override
   Widget build(BuildContext context) {
+    String team = AppLocalizations.of(context)!.team;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -35,7 +36,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
               Navigator.of(context).pushNamed("homepage");
             },
             icon: myIcons.goBack),
-        title: Text(AppLocalizations.of(context)!.team),
+        title: Text(team),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
