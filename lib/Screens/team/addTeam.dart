@@ -103,6 +103,8 @@ class _AddMemberState extends State<AddMember> {
                   "details": details.text
                 }
             );
+            ScaffoldMessenger.of(context).showSnackBar
+              ( SnackBar(content: Text(AppLocalizations.of(context)!.addedSuccessfully),));
             Navigator.of(context).pop();
             clearText();
           } else {
