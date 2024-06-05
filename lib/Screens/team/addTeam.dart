@@ -115,13 +115,15 @@ class _AddMemberState extends State<AddMember> {
                   "image" : url.url,
                 }
             );
+            ScaffoldMessenger.of(context).showSnackBar
+              ( SnackBar(content: Text(AppLocalizations.of(context)!.addedSuccessfully),));
             Navigator.of(context).pushNamed("ourteam");
             clearText();
           }
         },
         title: AppLocalizations.of(context)!.submit,
         color: (name.text.isEmpty)
-            || (details.text.isEmpty) ? Colors.grey : ColorManager.submit);
+            && (details.text.isEmpty) ? Colors.grey : ColorManager.submit);
   }
   imageButton () {
     return CustomButton(
