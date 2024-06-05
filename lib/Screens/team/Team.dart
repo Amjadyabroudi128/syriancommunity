@@ -147,6 +147,8 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                             ));
                                    } else if(selectedPop == myPop.delete){
                                     members.doc(document.id).delete();
+                                    ScaffoldMessenger.of(context).showSnackBar
+                                      ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted),));
                                   }
                                 }, popUpAnimationStyle: AnimationStyle(duration: Duration(milliseconds: 400)),
                               ) : SizedBox(),
