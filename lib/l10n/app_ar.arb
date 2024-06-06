@@ -43,5 +43,7 @@
   "cancel": "إلغاء",
   "thisPage": "هذه الصفحة",
   "addedSuccessfully": "اضيف بنجاح",
-  "error": "خطأ ما"
+  "error": "خطأ ما",
+  "addName": "إضافة اسم العضو",
+  "memberDetails": "إضافة تفاصيل العضو"
 }
