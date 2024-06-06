@@ -43,5 +43,7 @@
   "cancel": "cancel",
   "thisPage": "this page ",
   "addedSuccessfully" : "Added Successfully",
-  "error" : "Something was wrong "
+  "error" : "Something was wrong ",
+  "addName": "add Member's name",
+  "memberDetails": "add member's details"
 }
