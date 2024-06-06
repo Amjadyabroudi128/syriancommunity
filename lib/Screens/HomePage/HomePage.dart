@@ -38,6 +38,11 @@ class _HomePageState extends State<HomePage> {
 
     User? user = FirebaseAuth.instance.currentUser;
     String appBarTitle = AppLocalizations.of(context)!.syrianCommunity;
+    addButton() {
+     return CustomButton(onPressed: (){
+        Navigator.push(context, AddInfo.route());
+      }, title: AppLocalizations.of(context)!.addThings, color: ColorManager.addEdit);
+    }
     return Scaffold(
       appBar: AppBar(
         leading: Builder(
@@ -61,11 +66,10 @@ class _HomePageState extends State<HomePage> {
             children: [
               Column(
                 children: [
-                  user != null ? CustomButton(onPressed: (){
-                    Navigator.push(context, AddInfo.route());
-                  }, title: AppLocalizations.of(context)!.addThings, color: ColorManager.addEdit) : sizedBox(),
-                  const sizedBox(),
+                  user != null ? addButton(): sizedBox(),
+                  const sizedBox(height: 6,),
                    Text(AppLocalizations.of(context)!.news),
+                  sizedBox(height: 5,),
                   StreamBuilder(
                     stream: home.snapshots(),
                     builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
