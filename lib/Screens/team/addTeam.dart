@@ -133,10 +133,10 @@ class _AddMemberState extends State<AddMember> {
           }
           else if (name.text.isEmpty) {
             ScaffoldMessenger.of(context)
-                .showSnackBar(SnackBar(content: Text("Add Member's Name")));
+                .showSnackBar(SnackBar(content: Text(AppLocalizations.of(context)!.addName)));
           } else if (details.text.isEmpty) {
             ScaffoldMessenger.of(context)
-                .showSnackBar(SnackBar(content: Text("Add Member's details")));
+                .showSnackBar(SnackBar(content: Text(AppLocalizations.of(context)!.memberDetails)));
           } else if (url.url == null) {
             await members
                 .doc()
