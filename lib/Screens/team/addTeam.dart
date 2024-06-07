@@ -94,7 +94,7 @@ class _AddMemberState extends State<AddMember> {
                               ),
                       validator: (details){
                         if(details == null || details.isEmpty) {
-                          return AppLocalizations.of(context)!.addDetails;
+                          return "ADD DEtails";
                         }
                         return null;
                       },
@@ -171,6 +171,10 @@ class _AddMemberState extends State<AddMember> {
       title: AppLocalizations.of(context)!.cancel,
       color: ColorManager.delete,
     );
+  }
+
+  addButton() {
+    return ;
   }
 
   imageButton() {
