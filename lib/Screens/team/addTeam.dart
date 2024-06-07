@@ -91,7 +91,14 @@ class _AddMemberState extends State<AddMember> {
                             : IconButton(
                                 onPressed: details.clear,
                                 icon: myIcons.clear,
-                              )),
+                              ),
+                      validator: (details){
+                        if(details == null || details.isEmpty) {
+                          return AppLocalizations.of(context)!.addDetails;
+                        }
+                        return null;
+                      },
+                    ),
                     sizedBox(
                       height: 12,
                     ),
@@ -164,10 +171,6 @@ class _AddMemberState extends State<AddMember> {
       title: AppLocalizations.of(context)!.cancel,
       color: ColorManager.delete,
     );
-  }
-
-  addButton() {
-    return ;
   }
 
   imageButton() {
