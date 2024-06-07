@@ -94,7 +94,7 @@ class _AddMemberState extends State<AddMember> {
                               ),
                       validator: (details){
                         if(details == null || details.isEmpty) {
-                          return AppLocalizations.of(context)!.addName;
+                          return AppLocalizations.of(context)!.memberDetails;
                         }
                         return null;
                       },
