@@ -18,7 +18,7 @@ class CustomTextForm extends StatelessWidget {
     this.keyboardType, this.prefixIcon, this.label, this.labelText,});
 @override
 Widget build(BuildContext context) {
-  return TextField(
+  return TextFormField(
     keyboardType: keyboardType,
     minLines: minLines,
     textDirection: textDirection,
@@ -30,6 +30,7 @@ Widget build(BuildContext context) {
       prefixIcon: prefixIcon,
       label: label,
      ),
+
     obscureText: obscureText,
   );
   // custom text field
