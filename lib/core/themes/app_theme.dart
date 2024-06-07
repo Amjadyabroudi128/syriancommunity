@@ -74,11 +74,11 @@ import 'fontSize.dart';
        contentTextStyle: TextStyles.darkSnackBar,
        showCloseIcon: true,
        closeIconColor: Colors.white54,
-       behavior: SnackBarBehavior.floating,
-       width: 370.0,
+       // behavior: SnackBarBehavior.floating,
+       // width: 390,
        shape: RoundedRectangleBorder(
            borderRadius: BorderRadius.only(
-             bottomRight: Radius.circular(14),
+             bottomRight: Radius.circular(6),
            )
        ),
      ),
@@ -165,16 +165,16 @@ import 'fontSize.dart';
        selectionHandleColor: Colors.black
      ),
      snackBarTheme: SnackBarThemeData(
-       insetPadding: EdgeInsets.all(10),
+       insetPadding: EdgeInsets.all(25),
        backgroundColor: Colors.black.withOpacity(0.55),
        contentTextStyle: TextStyles.darkSnackBar,
        showCloseIcon: true,
        closeIconColor: Colors.white,
-       behavior: SnackBarBehavior.floating,
-       width: 380.0,
+       // behavior: SnackBarBehavior.floating,
+       // width: 380.0,
        shape: RoundedRectangleBorder(
            borderRadius: BorderRadius.only(
-             bottomRight: Radius.circular(20),
+             bottomRight: Radius.circular(6),
            )
        ),
      ),
