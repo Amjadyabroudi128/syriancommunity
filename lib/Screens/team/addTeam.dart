@@ -32,7 +32,7 @@ class _AddMemberState extends State<AddMember> {
       FirebaseFirestore.instance.collection('members');
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
     String addThings = AppLocalizations.of(context)!.addThings;
     return GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
@@ -44,7 +44,7 @@ class _AddMemberState extends State<AddMember> {
             padding: EdgeInsets.all(20),
             child: SingleChildScrollView(
               child: Form(
-                key: _formKey,
+                key: formKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -64,7 +64,14 @@ class _AddMemberState extends State<AddMember> {
                             : IconButton(
                                 onPressed: name.clear,
                                 icon: myIcons.clear,
-                              )),
+                              ),
+                      validator: (name){
+                          if(name == null || name.isEmpty) {
+                            return AppLocalizations.of(context)!.addName;
+                          }
+                          return null;
+                      },
+                    ),
                     sizedBox(
                       height: 20,
                     ),
@@ -101,7 +108,39 @@ class _AddMemberState extends State<AddMember> {
                         sizedBox(
                           width: 15,
                         ),
-                        addButton(),
+                        CustomButton(
+                            onPressed: () async {
+                              formKey.currentState!.validate();
+                              if (name.text.isEmpty || details.text.isEmpty) {
+                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                  content: Text(AppLocalizations.of(context)!.addThings),
+                                ));
+                              } else if (url.url == null) {
+                                await members
+                                    .doc()
+                                    .set({"name": name.text, "details": details.text});
+                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                  content: Text(AppLocalizations.of(context)!.addedSuccessfully),
+                                ));
+                                Navigator.of(context).pop();
+                                clearText();
+                              } else {
+                                await members.doc().set({
+                                  "name": name.text,
+                                  "details": details.text,
+                                  "image": url.url,
+                                });
+                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                  content: Text(AppLocalizations.of(context)!.addedSuccessfully),
+                                ));
+                                Navigator.of(context).pushNamed("ourteam");
+                                clearText();
+                              }
+                            },
+                            title: AppLocalizations.of(context)!.submit,
+                            color: (name.text.isEmpty) && (details.text.isEmpty)
+                                ? Colors.grey
+                                : ColorManager.submit)
                       ],
                     ),
                   ],
@@ -128,45 +167,7 @@ class _AddMemberState extends State<AddMember> {
   }
 
   addButton() {
-    return CustomButton(
-        onPressed: () async {
-          if (name.text.isEmpty && details.text.isEmpty) {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text(AppLocalizations.of(context)!.addThings),
-            ));
-          }
-          else if (name.text.isEmpty) {
-            ScaffoldMessenger.of(context)
-                .showSnackBar(SnackBar(content: Text(AppLocalizations.of(context)!.addName)));
-          } else if (details.text.isEmpty) {
-            ScaffoldMessenger.of(context)
-                .showSnackBar(SnackBar(content: Text(AppLocalizations.of(context)!.memberDetails)));
-          } else if (url.url == null) {
-            await members
-                .doc()
-                .set({"name": name.text, "details": details.text});
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text(AppLocalizations.of(context)!.addedSuccessfully),
-            ));
-            Navigator.of(context).pop();
-            clearText();
-          } else {
-            await members.doc().set({
-              "name": name.text,
-              "details": details.text,
-              "image": url.url,
-            });
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text(AppLocalizations.of(context)!.addedSuccessfully),
-            ));
-            Navigator.of(context).pushNamed("ourteam");
-            clearText();
-          }
-        },
-        title: AppLocalizations.of(context)!.submit,
-        color: (name.text.isEmpty) && (details.text.isEmpty)
-            ? Colors.grey
-            : ColorManager.submit);
+    return ;
   }
 
   imageButton() {
