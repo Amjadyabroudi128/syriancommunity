@@ -32,6 +32,7 @@ class _AddMemberState extends State<AddMember> {
       FirebaseFirestore.instance.collection('members');
   @override
   Widget build(BuildContext context) {
+    final _formKey = GlobalKey<FormState>();
     String addThings = AppLocalizations.of(context)!.addThings;
     return GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
@@ -42,66 +43,69 @@ class _AddMemberState extends State<AddMember> {
           body: Padding(
             padding: EdgeInsets.all(20),
             child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  padding(
-                      child: Text(
-                    AppLocalizations.of(context)!.name,
-                    style: TextStyles.font14green,
-                  )),
-                  sizedBox(
-                    height: 6,
-                  ),
-                  CustomTextForm(
-                      label: Text("Member's name "),
-                      myController: name,
-                      suffixIcon: name.text.isEmpty
-                          ? null
-                          : IconButton(
-                              onPressed: name.clear,
-                              icon: myIcons.clear,
-                            )),
-                  sizedBox(
-                    height: 20,
-                  ),
-                  padding(
-                      child: Text(
-                    AppLocalizations.of(context)!.details,
-                    style: TextStyles.font14green,
-                  )),
-                  sizedBox(
-                    height: 6,
-                  ),
-                  CustomTextForm(
-                      label: Text("Member's Details"),
-                      myController: details,
-                      suffixIcon: details.text.isEmpty
-                          ? null
-                          : IconButton(
-                              onPressed: details.clear,
-                              icon: myIcons.clear,
-                            )),
-                  sizedBox(
-                    height: 12,
-                  ),
-                  Center(
-                    child: imageButton(),
-                  ),
-                  sizedBox(
-                    height: 15,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      cancelButton(),
-                      sizedBox(
-                        width: 15,
-                      ),
-                      addButton(),
-                    ],
-                  ),
-                ],
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    padding(
+                        child: Text(
+                      AppLocalizations.of(context)!.name,
+                      style: TextStyles.font14green,
+                    )),
+                    sizedBox(
+                      height: 6,
+                    ),
+                    CustomTextForm(
+                        label: Text("Member's name "),
+                        myController: name,
+                        suffixIcon: name.text.isEmpty
+                            ? null
+                            : IconButton(
+                                onPressed: name.clear,
+                                icon: myIcons.clear,
+                              )),
+                    sizedBox(
+                      height: 20,
+                    ),
+                    padding(
+                        child: Text(
+                      AppLocalizations.of(context)!.details,
+                      style: TextStyles.font14green,
+                    )),
+                    sizedBox(
+                      height: 6,
+                    ),
+                    CustomTextForm(
+                        label: Text("Member's Details"),
+                        myController: details,
+                        suffixIcon: details.text.isEmpty
+                            ? null
+                            : IconButton(
+                                onPressed: details.clear,
+                                icon: myIcons.clear,
+                              )),
+                    sizedBox(
+                      height: 12,
+                    ),
+                    Center(
+                      child: imageButton(),
+                    ),
+                    sizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        cancelButton(),
+                        sizedBox(
+                          width: 15,
+                        ),
+                        addButton(),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
