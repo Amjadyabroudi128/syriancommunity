@@ -40,11 +40,13 @@ class _EditMemberState extends State<EditMember> {
     url.url = widget.oldUrl;
     isUpdated = isUpdated;
   }
+  static final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final CollectionReference members =
   FirebaseFirestore.instance.collection('members');
   @override
   Widget build(BuildContext context) {
     String edit = AppLocalizations.of(context)!.editDetails;
+
     return GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
     child: Scaffold(
@@ -55,56 +57,85 @@ class _EditMemberState extends State<EditMember> {
         behavior: ScrollBehavior(),
         child: SingleChildScrollView(
           child: padding(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Card(
-                  shape: const CircleBorder(),
-                  clipBehavior: Clip.antiAlias,
-                  child: Center(
-                    child: url.url != null ? myImage(
-                      onPressed: () async {
-                        await url.pickImage();
-                        setState(() {
-                        });
-                      },
-                      src: url.url,
-                      width: 240,
-                      height: 240,
-                      fit: BoxFit.cover
-                    ) : SizedBox.shrink(),
+            child: Form(
+              key: formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Card(
+                    shape: const CircleBorder(),
+                    clipBehavior: Clip.antiAlias,
+                    child: Center(
+                      child: url.url != null ? myImage(
+                        onPressed: () async {
+                          await url.pickImage();
+                          setState(() {
+                          });
+                        },
+                        src: url.url,
+                        width: 240,
+                        height: 240,
+                        fit: BoxFit.cover
+                      ) : SizedBox.shrink(),
+                    ),
                   ),
-                ),
-                padding(child: Text("Member name", style: TextStyles.font14green,)),
-                sizedBox(height: 3,),
-                CustomTextForm(
-                    label: Text(AppLocalizations.of(context)!.name),
-                 myController: name,
-                    suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,)
+                  padding(child: Text("Member name", style: TextStyles.font14green,)),
+                  sizedBox(height: 3,),
+                  CustomTextForm(
+                      label: Text(AppLocalizations.of(context)!.name),
+                   myController: name,
+                      suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,)
 
-                ),
-                sizedBox(height: 20,),
-                padding(child: Text("Member's Details", style: TextStyles.font14green,)),
-                CustomTextForm(
-                    label: Text(AppLocalizations.of(context)!.details),
-                    myController: details,
-                    suffixIcon: IconButton(onPressed: details.clear, icon: myIcons.clear,)
+                  ),
+                  sizedBox(height: 20,),
+                  padding(child: Text("Member's Details", style: TextStyles.font14green,)),
+                  CustomTextForm(
+                      label: Text(AppLocalizations.of(context)!.details),
+                      myController: details,
+                      suffixIcon: IconButton(onPressed: details.clear, icon: myIcons.clear,)
 
-                ),
-                sizedBox(height: 2,),
-                Center(
-                  child: imageButton()
-                ),
-                sizedBox(height: 5,),
-                 Row(
-                   mainAxisAlignment: MainAxisAlignment.center,
-                   children: [
-                     cancelButton(),
-                     sizedBox(width: 16,),
-                     submitUpdate(),
-                   ],
-                 ),
-              ],
+                  ),
+                  sizedBox(height: 2,),
+                  Center(
+                    child: imageButton()
+                  ),
+                  sizedBox(height: 5,),
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                       cancelButton(),
+                       sizedBox(width: 16,),
+                CustomButton(
+                onPressed: () async {
+                  if(name.text == widget.oldName && details.text == widget.oldDetail) {
+                    setState(() {
+                      isUpdated = false;
+                      ScaffoldMessenger.of(context).showSnackBar
+                        ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
+                    });
+                  } else {
+                    setState(() async {
+                      isUpdated = true;
+                      await members.doc(widget.DocID).update(
+                          {
+                            "image" : url.url,
+                            "name" : name.text,
+                            "details" : details.text
+                          }
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar
+                        ( SnackBar(content: Text(AppLocalizations.of(context)!.edited),));
+                      Navigator.pop(context);
+                    });
+                  }
+                },
+                title:  AppLocalizations.of(context)!.update,
+                color: (name.text == widget.oldName)
+                    && (details.text == widget.oldDetail) ? Colors.grey : ColorManager.submit),
+                     ],
+                   ),
+                ],
+              ),
             ),
           ),
         ),
@@ -121,35 +152,6 @@ class _EditMemberState extends State<EditMember> {
       Navigator.pop(context);
 
     }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
-  }
-  submitUpdate () {
-    return CustomButton(
-      onPressed: () async {
-        if(name.text == widget.oldName && details.text == widget.oldDetail) {
-          setState(() {
-            isUpdated = false;
-            ScaffoldMessenger.of(context).showSnackBar
-              ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
-          });
-        } else {
-          setState(() async {
-            isUpdated = true;
-              await members.doc(widget.DocID).update(
-                  {
-                    "image" : url.url,
-                    "name" : name.text,
-                    "details" : details.text
-                  }
-              );
-            ScaffoldMessenger.of(context).showSnackBar
-              ( SnackBar(content: Text(AppLocalizations.of(context)!.edited),));
-              Navigator.pop(context);
-          });
-        }
-      },
-      title:  AppLocalizations.of(context)!.update,
-      color: (name.text == widget.oldName)
-          && (details.text == widget.oldDetail) ? Colors.grey : ColorManager.submit);
   }
   imageButton () {
     return CustomButton(
