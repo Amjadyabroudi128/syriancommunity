@@ -45,5 +45,7 @@
   "addedSuccessfully": "اضيف بنجاح",
   "error": "خطأ ما",
   "addName": "إضافة اسم العضو",
-  "memberDetails": "إضافة تفاصيل العضو"
+  "memberDetails": "إضافة  العضو",
+  "editMember": "تعديل اسم العضو",
+  "editMemberDetails": "تعديل تفاصيل العضو"
 }

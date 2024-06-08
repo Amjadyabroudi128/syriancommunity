@@ -45,5 +45,7 @@
   "addedSuccessfully" : "Added Successfully",
   "error" : "Something was wrong ",
   "addName": "add Member's name",
-  "memberDetails": "add member's details"
+  "memberDetails": "add member's details",
+  "editMember": "edit Member's name",
+  "editMemberDetails": "edit member Details"
 }
