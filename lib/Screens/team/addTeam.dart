@@ -27,12 +27,12 @@ class _AddMemberState extends State<AddMember> {
     ..addListener(() {
       setState(() {});
     });
-
+   static final formKey = GlobalKey<FormState>();
   final CollectionReference members =
       FirebaseFirestore.instance.collection('members');
   @override
   Widget build(BuildContext context) {
-    final formKey = GlobalKey<FormState>();
+
     String addThings = AppLocalizations.of(context)!.addThings;
     return GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
@@ -122,6 +122,7 @@ class _AddMemberState extends State<AddMember> {
                                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                                   content: Text(AppLocalizations.of(context)!.addThings),
                                 ));
+                                
                               } else if (url.url == null) {
                                 await members
                                     .doc()
@@ -171,10 +172,6 @@ class _AddMemberState extends State<AddMember> {
       title: AppLocalizations.of(context)!.cancel,
       color: ColorManager.delete,
     );
-  }
-
-  addButton() {
-    return ;
   }
 
   imageButton() {
