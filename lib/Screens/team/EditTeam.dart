@@ -86,7 +86,7 @@ class _EditMemberState extends State<EditMember> {
                       suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,),
                     validator: (name){
                       if(name == null || name == widget.oldName ) {
-                        return AppLocalizations.of(context)!.edit;
+                        return AppLocalizations.of(context)!.editMember;
                       }
                       return null;
                     },
@@ -97,8 +97,13 @@ class _EditMemberState extends State<EditMember> {
                   CustomTextForm(
                       label: Text(AppLocalizations.of(context)!.details),
                       myController: details,
-                      suffixIcon: IconButton(onPressed: details.clear, icon: myIcons.clear,)
-
+                      suffixIcon: IconButton(onPressed: details.clear, icon: myIcons.clear,),
+                    validator: (name){
+                      if(name == null || name == widget.oldDetail ) {
+                        return AppLocalizations.of(context)!.editMemberDetails;
+                      }
+                      return null;
+                    },
                   ),
                   sizedBox(height: 2,),
                   Center(
