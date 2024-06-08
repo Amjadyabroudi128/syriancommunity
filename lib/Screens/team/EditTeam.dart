@@ -46,7 +46,6 @@ class _EditMemberState extends State<EditMember> {
   @override
   Widget build(BuildContext context) {
     String edit = AppLocalizations.of(context)!.editDetails;
-
     return GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
     child: Scaffold(
@@ -84,7 +83,13 @@ class _EditMemberState extends State<EditMember> {
                   CustomTextForm(
                       label: Text(AppLocalizations.of(context)!.name),
                    myController: name,
-                      suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,)
+                      suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,),
+                    validator: (name){
+                      if(name == null || name == widget.oldName ) {
+                        return AppLocalizations.of(context)!.edit;
+                      }
+                      return null;
+                    },
 
                   ),
                   sizedBox(height: 20,),
@@ -107,6 +112,7 @@ class _EditMemberState extends State<EditMember> {
                        sizedBox(width: 16,),
                 CustomButton(
                 onPressed: () async {
+                  formKey.currentState!.validate();
                   if(name.text == widget.oldName && details.text == widget.oldDetail) {
                     setState(() {
                       isUpdated = false;
