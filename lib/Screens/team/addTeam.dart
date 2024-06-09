@@ -73,7 +73,7 @@ class _AddMemberState extends State<AddMember> {
                       },
                     ),
                     sizedBox(
-                      height: 20,
+                      height: 12,
                     ),
                     padding(
                         child: Text(
@@ -99,21 +99,13 @@ class _AddMemberState extends State<AddMember> {
                         return null;
                       },
                     ),
-                    sizedBox(
-                      height: 12,
-                    ),
-                    Center(
-                      child: imageButton(),
-                    ),
-                    sizedBox(
-                      height: 15,
-                    ),
+                    sizedBox(height: 7),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         cancelButton(),
                         sizedBox(
-                          width: 15,
+                          width: 13,
                         ),
                         CustomButton(
                             onPressed: () async {
@@ -122,7 +114,7 @@ class _AddMemberState extends State<AddMember> {
                                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                                   content: Text(AppLocalizations.of(context)!.addThings),
                                 ));
-                                
+
                               } else if (url.url == null) {
                                 await members
                                     .doc()
@@ -151,6 +143,12 @@ class _AddMemberState extends State<AddMember> {
                                 : ColorManager.submit)
                       ],
                     ),
+                    sizedBox(
+                      height: 6,
+                    ),
+                    Center(child: imageButton(),),
+
+
                   ],
                 ),
               ),
