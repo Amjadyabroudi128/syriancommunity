@@ -59,6 +59,12 @@ class _LoginState extends State<Login> {
                     keyboardType: TextInputType.emailAddress,
                     prefixIcon: myIcons.email,
                     label: Text(AppLocalizations.of(context)!.email),
+                    validator: (value){
+                      if (value == null || testEmail.text.isEmpty){
+                        return "Enter the community's email";
+                      }
+                      return null;
+                    },
                   ),
                   sizedBox(height: 15,),
                   CustomTextForm(
