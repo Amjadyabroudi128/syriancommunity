@@ -92,8 +92,8 @@ class _AddMemberState extends State<AddMember> {
                                 onPressed: details.clear,
                                 icon: myIcons.clear,
                               ),
-                      validator: (details){
-                        if(details == null || details.isEmpty) {
+                      validator: (value){
+                        if(value == null || details.text.isEmpty) {
                           return AppLocalizations.of(context)!.memberDetails;
                         }
                         return null;
