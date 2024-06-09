@@ -125,6 +125,7 @@ class _LoginState extends State<Login> {
   loginButton () {
     return TextButton(
       onPressed: () async {
+        formKey.currentState!.validate();
         await  BlocProvider.of<AuthCubit>(context).login(email: testEmail.text, password: testPassword.text);
       },
       child:  Text(AppLocalizations.of(context)!.login,style: TextStyles.font20white,
