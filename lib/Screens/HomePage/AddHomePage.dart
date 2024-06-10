@@ -62,8 +62,13 @@ class _AddInfoState extends State<AddInfo> {
                           label: Text(AppLocalizations.of(context)!.name),
                           myController: name,
                           suffixIcon: name.text.isEmpty ? null :
-                          IconButton(onPressed: name.clear, icon: myIcons.clear,)
-
+                          IconButton(onPressed: name.clear, icon: myIcons.clear,),
+                        validator: (value) {
+                          if(value == null || name.text.isEmpty) {
+                            AppLocalizations.of(context)!.addName;
+                          }
+                          return null;
+                        },
                       ),
                     sizedBox(height: 10,),
                     padding(child: Text("post Details")),
