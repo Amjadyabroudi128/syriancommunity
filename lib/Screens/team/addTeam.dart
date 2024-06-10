@@ -45,6 +45,7 @@ class _AddMemberState extends State<AddMember> {
             child: SingleChildScrollView(
               child: Form(
                 key: formKey,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
