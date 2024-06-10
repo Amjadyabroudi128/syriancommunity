@@ -39,6 +39,12 @@ class _AddMemberState extends State<AddMember> {
         child: Scaffold(
           appBar: AppBar(
             title: Text(addThings),
+            leading: IconButton(
+                onPressed: (){
+                  Navigator.of(context).pushNamed("ourteam");
+
+                },
+                icon: myIcons.goBack),
           ),
           body: Padding(
             padding: EdgeInsets.all(20),
