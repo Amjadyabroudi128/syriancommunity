@@ -32,6 +32,7 @@ class _AddInfoState extends State<AddInfo> {
     });
   });
   DateTime today = DateTime.now();
+  static final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -50,39 +51,47 @@ class _AddInfoState extends State<AddInfo> {
           body: SingleChildScrollView(
             child: Padding(
               padding: EdgeInsets.only(top: 60, left: 10, right: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  padding(child: Text("post Name")),
+              child: Form(
+                key: formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    padding(child: Text("post Name")),
+                      sizedBox(height: 3,),
+                      CustomTextForm(
+                          label: Text(AppLocalizations.of(context)!.name),
+                          myController: name,
+                          suffixIcon: name.text.isEmpty ? null :
+                          IconButton(onPressed: name.clear, icon: myIcons.clear,)
+
+                      ),
+                    sizedBox(height: 10,),
+                    padding(child: Text("post Details")),
                     sizedBox(height: 3,),
                     CustomTextForm(
-                        label: Text(AppLocalizations.of(context)!.name),
-                        myController: name,
-                        suffixIcon: name.text.isEmpty ? null :
-                        IconButton(onPressed: name.clear, icon: myIcons.clear,)
+                        label: Text(AppLocalizations.of(context)!.details),
+                        myController: details,
+                        suffixIcon: details.text.isEmpty ? null :
+                        IconButton(onPressed: details.clear, icon: myIcons.clear,),
+                      validator: (value) {
+                          if(value == null || details.text.isEmpty) {
+                            AppLocalizations.of(context)!.addDetails;
+                          }
+                      },
 
                     ),
-                  sizedBox(height: 10,),
-                  padding(child: Text("post Details")),
-                  sizedBox(height: 3,),
-                  CustomTextForm(
-                      label: Text(AppLocalizations.of(context)!.details),
-                      myController: details,
-                      suffixIcon: details.text.isEmpty ? null :
-                      IconButton(onPressed: details.clear, icon: myIcons.clear,)
+                    sizedBox(height: 10,),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.center,
+                         children: [
+                           cancelButton(),
+                           sizedBox(width: 15,),
+                           submitButton(),
+                         ],
+                       ),
 
-                  ),
-                  sizedBox(height: 10,),
-                     Row(
-                       mainAxisAlignment: MainAxisAlignment.center,
-                       children: [
-                         cancelButton(),
-                         sizedBox(width: 15,),
-                         submitButton(),
-                       ],
-                     ),
-
-                ],
+                  ],
+                ),
               ),
             ),
           ),
