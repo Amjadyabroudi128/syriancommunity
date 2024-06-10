@@ -65,7 +65,7 @@ class _AddInfoState extends State<AddInfo> {
                           IconButton(onPressed: name.clear, icon: myIcons.clear,),
                         validator: (value) {
                           if(value == null || name.text.isEmpty) {
-                            AppLocalizations.of(context)!.addName;
+                           return AppLocalizations.of(context)!.addThings;
                           }
                           return null;
                         },
@@ -80,11 +80,10 @@ class _AddInfoState extends State<AddInfo> {
                         IconButton(onPressed: details.clear, icon: myIcons.clear,),
                       validator: (value) {
                           if(value == null || details.text.isEmpty) {
-                            AppLocalizations.of(context)!.addDetails;
+                          return AppLocalizations.of(context)!.addDetails;
                           }
                           return null;
                       },
-
                     ),
                     sizedBox(height: 10,),
                        Row(
@@ -92,7 +91,32 @@ class _AddInfoState extends State<AddInfo> {
                          children: [
                            cancelButton(),
                            sizedBox(width: 15,),
-                           submitButton(),
+                           CustomButton(
+                               onPressed: () async {
+                                 formKey.currentState!.validate();
+                                 if ( name.text.isEmpty || details.text.isEmpty ) {
+                                   ScaffoldMessenger.of(context).showSnackBar
+                                     ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
+                                 } else {
+                                 await FirebaseFirestore.instance.collection("home").doc().set(
+                                       {
+                                         "name" : name.text,
+                                         "details" : details.text,
+                                         "time" :today,
+                                       }
+                                   );
+                                   clearText();
+                                   await FirebaseApi().initNotifications();
+                                   await FirebaseMessaging.instance.subscribeToTopic("topic");
+                                   Navigator.push(context, HomePage.route());
+                                   ScaffoldMessenger.of(context).showSnackBar
+                                     ( SnackBar(content: Text("${AppLocalizations.of(context)!.addedSuccessfully}",)));
+                                 }
+                               },
+                               title: AppLocalizations.of(context)!.submit,
+                               color: (name.text.isEmpty)
+                                   && (details.text.isEmpty) ? Colors.grey : ColorManager.submit
+                           ),
                          ],
                        ),
 
@@ -114,31 +138,7 @@ class _AddInfoState extends State<AddInfo> {
       Navigator.pop(context);
     }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
  }
- submitButton () {
-    return CustomButton(
-        onPressed: () async {
-          if ( name.text.isEmpty && details.text.isEmpty ) {
-            ScaffoldMessenger.of(context).showSnackBar
-              ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
-          } else {
-            FirebaseFirestore.instance.collection("home").doc().set(
-                {
-                  "name" : name.text,
-                  "details" : details.text,
-                  "time" :today,
-                }
-            );
-            clearText();
-            await FirebaseApi().initNotifications();
-            await FirebaseMessaging.instance.subscribeToTopic("topic");
-            Navigator.push(context, HomePage.route());
-            ScaffoldMessenger.of(context).showSnackBar
-              ( SnackBar(content: Text("${AppLocalizations.of(context)!.addedSuccessfully}",)));
-          }
-        },
-        title: AppLocalizations.of(context)!.submit,
-        color: (name.text.isEmpty)
-            && (details.text.isEmpty) ? Colors.grey : ColorManager.submit
-    );
- }
+ // submitButton () {
+ //    return ;
+ // }
 }
