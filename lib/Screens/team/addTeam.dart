@@ -42,6 +42,7 @@ class _AddMemberState extends State<AddMember> {
             leading: IconButton(
                 onPressed: (){
                   Navigator.of(context).pushNamed("ourteam");
+                  formKey.currentState!.reset();
 
                 },
                 icon: myIcons.goBack),
