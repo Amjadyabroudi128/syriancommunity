@@ -44,6 +44,9 @@ class _AddInfoState extends State<AddInfo> {
           title: Text(id),
           leading: IconButton(onPressed: (){
             Navigator.push(context, HomePage.route());
+            setState(() {
+              formKey.currentState!.reset();
+            });
           },
               icon: myIcons.goBack
           ),
@@ -53,6 +56,7 @@ class _AddInfoState extends State<AddInfo> {
               padding: EdgeInsets.only(top: 60, left: 10, right: 20),
               child: Form(
                 key: formKey,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
