@@ -77,6 +77,7 @@ class _AddInfoState extends State<AddInfo> {
                           if(value == null || details.text.isEmpty) {
                             AppLocalizations.of(context)!.addDetails;
                           }
+                          return null;
                       },
 
                     ),
