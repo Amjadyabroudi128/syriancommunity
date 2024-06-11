@@ -97,10 +97,8 @@ class _AddInfoState extends State<AddInfo> {
                            sizedBox(width: 15,),
                            CustomButton(
                                onPressed: () async {
-                                 formKey.currentState!.validate();
                                  if ( name.text.isEmpty || details.text.isEmpty ) {
-                                   ScaffoldMessenger.of(context).showSnackBar
-                                     ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
+                                   formKey.currentState!.validate();
                                  } else {
                                  await FirebaseFirestore.instance.collection("home").doc().set(
                                        {
@@ -109,7 +107,6 @@ class _AddInfoState extends State<AddInfo> {
                                          "time" :today,
                                        }
                                    );
-                                   clearText();
                                    await FirebaseApi().initNotifications();
                                    await FirebaseMessaging.instance.subscribeToTopic("topic");
                                    Navigator.push(context, HomePage.route());
@@ -142,7 +139,4 @@ class _AddInfoState extends State<AddInfo> {
       Navigator.pop(context);
     }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
  }
- // submitButton () {
- //    return ;
- // }
 }
