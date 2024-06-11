@@ -33,6 +33,7 @@ class _EditHomeState extends State<EditHome> {
     name.text = widget.oldName;
     details.text = widget.oldDetail;
   }
+  static final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     String editTitle = AppLocalizations.of(context)!.editDetails ;
@@ -46,34 +47,43 @@ class _EditHomeState extends State<EditHome> {
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.only(top: 60, left: 10, right: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                padding(child: Text("post Name")),
-                sizedBox(height: 3,),
-                CustomTextForm(
-                    label: Text(AppLocalizations.of(context)!.name), myController: name,
-                    suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: myIcons.clear,)
+            child: Form(
+              key: formKey,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  padding(child: Text("post Name")),
+                  sizedBox(height: 3,),
+                  CustomTextForm(
+                      label: Text(AppLocalizations.of(context)!.name), myController: name,
+                      suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: myIcons.clear,),
+                    validator: (value) {
+                      if(value == null || name.text == widget.oldName) {
+                        return AppLocalizations.of(context)!.addThings;
+                      }
+                      return null;
+                    },
+                  ),
+                  sizedBox(height: 20,),
+                  padding(child: Text("post Details")),
+                  sizedBox(height: 3,),
+                  CustomTextForm(
+                    label: Text(AppLocalizations.of(context)!.details),
+                      myController: details,
+                      suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear )                ),
+                  sizedBox(height: 10,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      cancelButton(),
+                      sizedBox(width: 10,),
+                      updateButton(),
+                    ],
+                  )
 
-                ),
-                sizedBox(height: 20,),
-                padding(child: Text("post Details")),
-                sizedBox(height: 3,),
-                CustomTextForm(
-                  label: Text(AppLocalizations.of(context)!.details),
-                    myController: details,
-                    suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear )                ),
-                sizedBox(height: 10,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    cancelButton(),
-                    sizedBox(width: 10,),
-                    updateButton(),
-                  ],
-                )
-
-              ],
+                ],
+              ),
             ),
           ),
         ),
