@@ -103,9 +103,7 @@ class _EditHomeState extends State<EditHome> {
     return CustomButton(
         onPressed: () async {
           if (name.text == widget.oldName && details.text == widget.oldDetail) {
-            ScaffoldMessenger.of(context).showSnackBar
-              (SnackBar(content: Text(
-              "${AppLocalizations.of(context)!.editDetails}",)));
+            formKey.currentState!.validate();
           }
           else {
             await home.doc(widget.DocID).update({
