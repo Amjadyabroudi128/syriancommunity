@@ -106,45 +106,16 @@ class _EditMemberState extends State<EditMember> {
                     },
                   ),
                   sizedBox(height: 2,),
-                  Center(
-                    child: imageButton()
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      cancelButton(),
+                      sizedBox(width: 16,),
+                      editButton(),
+                    ],
                   ),
                   sizedBox(height: 5,),
-                   Row(
-                     mainAxisAlignment: MainAxisAlignment.center,
-                     children: [
-                       cancelButton(),
-                       sizedBox(width: 16,),
-                CustomButton(
-                onPressed: () async {
-                  formKey.currentState!.validate();
-                  if(name.text == widget.oldName && details.text == widget.oldDetail) {
-                    setState(() {
-                      isUpdated = false;
-                      ScaffoldMessenger.of(context).showSnackBar
-                        ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
-                    });
-                  } else {
-                    setState(() async {
-                      isUpdated = true;
-                      await members.doc(widget.DocID).update(
-                          {
-                            "image" : url.url,
-                            "name" : name.text,
-                            "details" : details.text
-                          }
-                      );
-                      ScaffoldMessenger.of(context).showSnackBar
-                        ( SnackBar(content: Text(AppLocalizations.of(context)!.edited),));
-                      Navigator.pop(context);
-                    });
-                  }
-                },
-                title:  AppLocalizations.of(context)!.update,
-                color: (name.text == widget.oldName)
-                    && (details.text == widget.oldDetail) ? Colors.grey : ColorManager.submit),
-                     ],
-                   ),
+                  Center(child: imageButton()),
                 ],
               ),
             ),
@@ -174,5 +145,35 @@ class _EditMemberState extends State<EditMember> {
       },
       color: ColorManager.addEdit,
     );
+  }
+  editButton() {
+   return CustomButton(
+        onPressed: () async {
+          formKey.currentState!.validate();
+          if(name.text == widget.oldName && details.text == widget.oldDetail) {
+            setState(() {
+              isUpdated = false;
+              ScaffoldMessenger.of(context).showSnackBar
+                ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
+            });
+          } else {
+            setState(() async {
+              isUpdated = true;
+              await members.doc(widget.DocID).update(
+                  {
+                    "image" : url.url,
+                    "name" : name.text,
+                    "details" : details.text
+                  }
+              );
+              ScaffoldMessenger.of(context).showSnackBar
+                ( SnackBar(content: Text(AppLocalizations.of(context)!.edited),));
+              Navigator.pop(context);
+            });
+          }
+        },
+        title:  AppLocalizations.of(context)!.update,
+        color: (name.text == widget.oldName)
+            && (details.text == widget.oldDetail) ? Colors.grey : ColorManager.submit);
   }
 }
