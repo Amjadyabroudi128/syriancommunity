@@ -72,8 +72,8 @@ class _EditMemberState extends State<EditMember> {
                           });
                         },
                         src: url.url,
-                        width: 240,
-                        height: 240,
+                        width: 210,
+                        height: 210,
                         fit: BoxFit.cover
                       ) : SizedBox.shrink(),
                     ),
