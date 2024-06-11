@@ -51,6 +51,13 @@ class _EditMemberState extends State<EditMember> {
     child: Scaffold(
       appBar: AppBar(
         title: Text(edit),
+        leading: IconButton(
+            onPressed: (){
+              Navigator.of(context).pushNamed("ourteam");
+              formKey.currentState!.reset();
+
+            },
+            icon: myIcons.goBack),
       ),
       body: ScrollConfiguration(
         behavior: ScrollBehavior(),
