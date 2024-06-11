@@ -103,7 +103,7 @@ class _EditHomeState extends State<EditHome> {
     return CustomButton(
         onPressed: () async {
           if (name.text == widget.oldName && details.text == widget.oldDetail) {
-            Validate().validating();
+            Validate.validating();
           }
           else {
             await home.doc(widget.DocID).update({
