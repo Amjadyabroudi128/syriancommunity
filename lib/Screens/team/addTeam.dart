@@ -115,40 +115,7 @@ class _AddMemberState extends State<AddMember> {
                         sizedBox(
                           width: 13,
                         ),
-                        CustomButton(
-                            onPressed: () async {
-                              formKey.currentState!.validate();
-                              if (name.text.isEmpty || details.text.isEmpty) {
-                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                                  content: Text(AppLocalizations.of(context)!.addThings),
-                                ));
-
-                              } else if (url.url == null) {
-                                await members
-                                    .doc()
-                                    .set({"name": name.text, "details": details.text});
-                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                                  content: Text(AppLocalizations.of(context)!.addedSuccessfully),
-                                ));
-                                Navigator.of(context).pop();
-                                clearText();
-                              } else {
-                                await members.doc().set({
-                                  "name": name.text,
-                                  "details": details.text,
-                                  "image": url.url,
-                                });
-                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                                  content: Text(AppLocalizations.of(context)!.addedSuccessfully),
-                                ));
-                                Navigator.of(context).pushNamed("ourteam");
-                                clearText();
-                              }
-                            },
-                            title: AppLocalizations.of(context)!.submit,
-                            color: (name.text.isEmpty) && (details.text.isEmpty)
-                                ? Colors.grey
-                                : ColorManager.submit)
+                        addButon()
                       ],
                     ),
                     sizedBox(
@@ -189,5 +156,41 @@ class _AddMemberState extends State<AddMember> {
       },
       color: ColorManager.addEdit,
     );
+  }
+  addButon () {
+   return CustomButton(
+        onPressed: () async {
+          formKey.currentState!.validate();
+          if (name.text.isEmpty || details.text.isEmpty) {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text(AppLocalizations.of(context)!.addThings),
+            ));
+
+          } else if (url.url == null) {
+            await members
+                .doc()
+                .set({"name": name.text, "details": details.text});
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text(AppLocalizations.of(context)!.addedSuccessfully),
+            ));
+            Navigator.of(context).pop();
+            clearText();
+          } else {
+            await members.doc().set({
+              "name": name.text,
+              "details": details.text,
+              "image": url.url,
+            });
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text(AppLocalizations.of(context)!.addedSuccessfully),
+            ));
+            Navigator.of(context).pushNamed("ourteam");
+            clearText();
+          }
+        },
+        title: AppLocalizations.of(context)!.submit,
+        color: (name.text.isEmpty) && (details.text.isEmpty)
+            ? Colors.grey
+            : ColorManager.submit);
   }
 }
