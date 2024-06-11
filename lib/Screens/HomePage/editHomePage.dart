@@ -71,7 +71,14 @@ class _EditHomeState extends State<EditHome> {
                   CustomTextForm(
                     label: Text(AppLocalizations.of(context)!.details),
                       myController: details,
-                      suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear )                ),
+                      suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear ),
+                    validator: (value) {
+                      if(value == null || details.text == widget.oldDetail) {
+                        return AppLocalizations.of(context)!.editDetails;
+                      }
+                      return null;
+                    },
+                  ),
                   sizedBox(height: 10,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
