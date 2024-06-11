@@ -10,6 +10,7 @@ import 'package:syrianadmin/core/themes/colors.dart';
 import '../../Api/Firebase_api.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../classes/validate state.dart';
 import '../../components/Sizedbox.dart';
 
 class AddInfo extends StatefulWidget {
@@ -32,7 +33,6 @@ class _AddInfoState extends State<AddInfo> {
     });
   });
   DateTime today = DateTime.now();
-  static final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class _AddInfoState extends State<AddInfo> {
           leading: IconButton(onPressed: (){
             Navigator.push(context, HomePage.route());
             setState(() {
-              formKey.currentState!.reset();
+              Validate.formKey.currentState!.reset();
             });
           },
               icon: myIcons.goBack
@@ -55,7 +55,7 @@ class _AddInfoState extends State<AddInfo> {
             child: Padding(
               padding: EdgeInsets.only(top: 40, left: 10, right: 20),
               child: Form(
-                key: formKey,
+                key: Validate.formKey,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,7 +98,7 @@ class _AddInfoState extends State<AddInfo> {
                            CustomButton(
                                onPressed: () async {
                                  if ( name.text.isEmpty || details.text.isEmpty ) {
-                                   formKey.currentState!.validate();
+                                   Validate.validating();
                                  } else {
                                  await FirebaseFirestore.instance.collection("home").doc().set(
                                        {
@@ -112,6 +112,7 @@ class _AddInfoState extends State<AddInfo> {
                                    Navigator.push(context, HomePage.route());
                                    ScaffoldMessenger.of(context).showSnackBar
                                      ( SnackBar(content: Text("${AppLocalizations.of(context)!.addedSuccessfully}",)));
+                                   clearText();
                                  }
                                },
                                title: AppLocalizations.of(context)!.submit,
