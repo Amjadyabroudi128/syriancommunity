@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/Screens/HomePage/HomePage.dart';
+import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
@@ -33,7 +34,6 @@ class _EditHomeState extends State<EditHome> {
     name.text = widget.oldName;
     details.text = widget.oldDetail;
   }
-  static final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     String editTitle = AppLocalizations.of(context)!.editDetails ;
@@ -48,7 +48,7 @@ class _EditHomeState extends State<EditHome> {
           child: Padding(
             padding: EdgeInsets.only(top: 60, left: 10, right: 20),
             child: Form(
-              key: formKey,
+              key: Validate.formKey,
               autovalidateMode: AutovalidateMode.onUserInteraction,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -103,7 +103,7 @@ class _EditHomeState extends State<EditHome> {
     return CustomButton(
         onPressed: () async {
           if (name.text == widget.oldName && details.text == widget.oldDetail) {
-            formKey.currentState!.validate();
+            Validate().validating();
           }
           else {
             await home.doc(widget.DocID).update({
