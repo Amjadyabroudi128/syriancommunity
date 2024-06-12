@@ -73,6 +73,12 @@ class _AddCelebrationState extends State<AddCelebration> {
                   CustomTextForm(hinttext: "what we do ", myController: celebrationDetail,
                       suffixIcon: celebrationDetail.text.isEmpty ?
                       null : IconButton(onPressed: celebrationDetail.clear, icon: myIcons.clear,),
+                    validator: (value) {
+                      if(value == null || celebrationDetail.text.isEmpty) {
+                        return AppLocalizations.of(context)!.addCelebration;
+                      }
+                      return null;
+                    },
                       ),
                   sizedBox(height: 5,),
                   Padding(
