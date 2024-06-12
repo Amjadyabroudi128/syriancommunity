@@ -137,7 +137,7 @@ class _AddCelebrationState extends State<AddCelebration> {
    return  CustomButton(
      onPressed: () async {
        Validate.validating();
-       if(celebrationName.text.isEmpty && celebrationDetail.text.isEmpty) {
+       if(celebrationName.text.isEmpty || celebrationDetail.text.isEmpty) {
          ScaffoldMessenger.of(context).showSnackBar
            ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
        } else {
@@ -145,11 +145,12 @@ class _AddCelebrationState extends State<AddCelebration> {
                url: url.url,
                name: celebrationName.text,
                details: celebrationDetail.text);
+           Validate.formKey.currentState!.reset();
        }
      },
       title: AppLocalizations.of(context)!.submit,
      color: (celebrationName.text.isEmpty)
-         && (celebrationDetail.text.isEmpty) ? Colors.grey : ColorManager.submit);
+         || (celebrationDetail.text.isEmpty) ? Colors.grey : ColorManager.submit);
   }
 
 }
