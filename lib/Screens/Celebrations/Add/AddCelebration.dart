@@ -58,7 +58,8 @@ class _AddCelebrationState extends State<AddCelebration> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   padding(child: Text(AppLocalizations.of(context)!.celebrations)),
-                  CustomTextForm(hinttext: "e.g: Christmas", myController: celebrationName,
+                  CustomTextForm(myController: celebrationName,
+                      label: Text(AppLocalizations.of(context)!.addCelebration),
                       suffixIcon: celebrationName.text.isEmpty? null :
                       IconButton(onPressed: celebrationName.clear, icon: myIcons.clear,),
                     validator: (value) {
