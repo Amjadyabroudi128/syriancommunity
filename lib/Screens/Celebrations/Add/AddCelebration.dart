@@ -54,6 +54,7 @@ class _AddCelebrationState extends State<AddCelebration> {
           child: SingleChildScrollView(
             child: Form(
               key: Validate.formKey,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
