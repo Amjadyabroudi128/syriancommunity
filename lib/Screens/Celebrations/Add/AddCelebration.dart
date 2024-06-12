@@ -75,7 +75,7 @@ class _AddCelebrationState extends State<AddCelebration> {
                       null : IconButton(onPressed: celebrationDetail.clear, icon: myIcons.clear,),
                     validator: (value) {
                       if(value == null || celebrationDetail.text.isEmpty) {
-                        return AppLocalizations.of(context)!.addCelebration;
+                        return AppLocalizations.of(context)!.addDetails;
                       }
                       return null;
                     },
@@ -134,6 +134,7 @@ class _AddCelebrationState extends State<AddCelebration> {
   addButton () {
    return  CustomButton(
      onPressed: () async {
+       Validate.validating();
        if(celebrationName.text.isEmpty && celebrationDetail.text.isEmpty) {
          ScaffoldMessenger.of(context).showSnackBar
            ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
