@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:syrianadmin/Cubits/auth_cubit/auth_cubit.dart';
+import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -24,7 +25,7 @@ class _LoginState extends State<Login> {
     });
   });
    bool _isHidden = true;
-   static final formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
@@ -48,7 +49,7 @@ class _LoginState extends State<Login> {
           body:  Padding(
             padding: const EdgeInsets.all(7.0),
             child: Form(
-              key: formKey,
+              key: Validate.formKey,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -125,7 +126,7 @@ class _LoginState extends State<Login> {
   loginButton () {
     return TextButton(
       onPressed: () async {
-        formKey.currentState!.validate();
+        Validate.validating();
         await  BlocProvider.of<AuthCubit>(context).login(email: testEmail.text, password: testPassword.text);
       },
       child:  Text(AppLocalizations.of(context)!.login,style: TextStyles.font20white,
