@@ -49,6 +49,11 @@ class _AddCelebrationState extends State<AddCelebration> {
       onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
       child: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+              onPressed: (){
+                Navigator.of(context).pushReplacementNamed("celebrations");
+              },
+              icon: myIcons.goBack),
           title: Text(appBarTitle),
         ),
         body: padding(
