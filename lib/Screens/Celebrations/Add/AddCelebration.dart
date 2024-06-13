@@ -139,8 +139,6 @@ class _AddCelebrationState extends State<AddCelebration> {
      onPressed: () async {
 
        if(celebrationName.text.isEmpty || celebrationDetail.text.isEmpty) {
-         // ScaffoldMessenger.of(context).showSnackBar
-         //   ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
          Validate.validating();
        } else {
            await context.read<AddCelebrationCubit>().addCelebration(
