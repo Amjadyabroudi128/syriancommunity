@@ -39,8 +39,6 @@ class _AddCelebrationState extends State<AddCelebration> {
       clearText();
     }
     else if ( state is AddLoading){
-      ScaffoldMessenger.of(context).showSnackBar
-        ( SnackBar(content: Text("${AppLocalizations.of(context)!.addThings}",)));
     }
   },
   builder: (context, state) {
