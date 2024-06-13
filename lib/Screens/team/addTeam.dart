@@ -39,13 +39,7 @@ class _AddMemberState extends State<AddMember> {
         child: Scaffold(
           appBar: AppBar(
             title: Text(addThings),
-            leading: IconButton(
-                onPressed: (){
-                  Navigator.of(context).pushNamed("ourteam");
-                  formKey.currentState!.reset();
-
-                },
-                icon: myIcons.goBack),
+            leading: goBack()
           ),
           body: Padding(
             padding: EdgeInsets.all(20),
@@ -192,5 +186,14 @@ class _AddMemberState extends State<AddMember> {
         color: (name.text.isEmpty) && (details.text.isEmpty)
             ? Colors.grey
             : ColorManager.submit);
+  }
+  goBack () {
+    return IconButton(
+        onPressed: (){
+          Navigator.of(context).pushNamed("ourteam");
+          formKey.currentState!.reset();
+
+        },
+        icon: myIcons.goBack);
   }
 }
