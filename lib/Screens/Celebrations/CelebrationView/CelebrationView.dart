@@ -108,27 +108,26 @@ class _CelebrationsState extends State<Celebrations> {
                                   children: [
                                     Text(data["name"], style: TextStyles.font14green,),
                                     sizedBox(height: 5,),
-                                    user != null ? GestureDetector(
-                                        child: Container(
-                                          child: data["image"] != null? myImage(
-                                            width: MediaQuery.of(context).size.width * 50,
-                                            height: MediaQuery.of(context).size.height * 0.30,
-                                            src: data["image"],
-                                          ) : SizedBox.shrink(),
-                                          ),
-                                      onTap: () {
+                                    user != null ? Container(
+                                      child: data["image"] != null? myImage(
+                                        onPressed: () {
                                         Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  EditCelebration(
-                                                      DocID: document.id,
-                                                      oldName: data["name"],
-                                                      oldDetail: data["details"],
-                                                      oldUrl: data["image"])
-                                          ),
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              EditCelebration(
+                                                  DocID: document.id,
+                                                  oldName: data["name"],
+                                                  oldDetail: data["details"],
+                                                  oldUrl: data["image"])
+                                      ),
                                         );
-                                      },
-                                    ) :  Container(
+                                        },
+                                        width: MediaQuery.of(context).size.width * 50,
+                                        height: MediaQuery.of(context).size.height * 0.30,
+                                        src: data["image"],
+
+                                      ) : SizedBox.shrink(),
+                                      ) :  Container(
                                        child: data["image"] != null ? myImage(
                                          width: MediaQuery.of(context).size.width,
                                          height: MediaQuery.of(context).size.height * 0.30,
