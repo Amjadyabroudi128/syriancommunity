@@ -8,8 +8,12 @@ class AuthCubit extends Cubit<AuthState> {
 
   Future<void> login({required var email, required var password}) async {
     emit(LoginLoading());
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: email, password: password);
-    emit(LoginSuccess());
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: email, password: password);
+      emit(LoginSuccess());
+    } on Exception catch (e) {
+      emit(LoginFailed());
+    }
   }
 }
