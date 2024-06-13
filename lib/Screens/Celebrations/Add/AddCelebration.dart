@@ -44,11 +44,12 @@ class _AddCelebrationState extends State<AddCelebration> {
     }
   },
   builder: (context, state) {
+   String appBarTitle = AppLocalizations.of(context)!.addCelebration;
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.addCelebration),
+          title: Text(appBarTitle),
         ),
         body: padding(
           child: SingleChildScrollView(
