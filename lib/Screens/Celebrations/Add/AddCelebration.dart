@@ -137,10 +137,11 @@ class _AddCelebrationState extends State<AddCelebration> {
   addButton () {
    return  CustomButton(
      onPressed: () async {
-       Validate.validating();
+
        if(celebrationName.text.isEmpty || celebrationDetail.text.isEmpty) {
-         ScaffoldMessenger.of(context).showSnackBar
-           ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
+         // ScaffoldMessenger.of(context).showSnackBar
+         //   ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
+         Validate.validating();
        } else {
            await context.read<AddCelebrationCubit>().addCelebration(
                url: url.url,
