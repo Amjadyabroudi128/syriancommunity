@@ -34,8 +34,9 @@ class _LoginState extends State<Login> {
       Navigator.of(context).pushReplacementNamed("homepage");
       ScaffoldMessenger.of(context).showSnackBar
         ( SnackBar(content: Text(AppLocalizations.of(context)!.login),));
-    } else if (state is LoginLoading) {
-
+    } if (state is LoginFailed) {
+      ScaffoldMessenger.of(context).showSnackBar
+        ( SnackBar(content: Text("login with community info"),));
     }
   },
   builder: (context, state) {
