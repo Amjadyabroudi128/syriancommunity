@@ -115,7 +115,7 @@ import 'fontSize.dart';
      ),
      textButtonTheme: TextButtonThemeData(
        style: TextButton.styleFrom(
-         fixedSize: Size(170, 55),
+         fixedSize: Size(120, 40),
          backgroundColor: Colors.transparent,
          shadowColor: Colors.transparent,
          shape:  RoundedRectangleBorder(
@@ -176,7 +176,7 @@ import 'fontSize.dart';
      ),
      textButtonTheme: TextButtonThemeData(
        style: TextButton.styleFrom(
-         fixedSize: Size(200, 60),
+         fixedSize: Size(150, 40),
          backgroundColor: Colors.transparent,
          shadowColor: Colors.transparent,
          shape:  RoundedRectangleBorder(
