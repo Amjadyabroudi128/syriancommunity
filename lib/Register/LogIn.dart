@@ -55,7 +55,8 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(AppLocalizations.of(context)!.loginAdmin, style: TextStyle(
-                    fontSize: 25
+                    fontSize: 25,
+
                   )),
                    sizedBox(height: 14,),
                   CustomTextForm(
@@ -94,13 +95,17 @@ class _LoginState extends State<Login> {
                     },
                     ),
                   sizedBox(height: 20,),
-                  (testEmail.text.isEmpty) || (testPassword.text.isEmpty) ? Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(10)
+                  (testEmail.text.isEmpty) || (testPassword.text.isEmpty) ? IntrinsicHeight(
+                    child: Container(
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                      child: loginButton(),
                     ),
-                    child: loginButton(),
                   ) :  Container(
+                    width: 130,
                       decoration:  BoxDecoration(
                           gradient:  LinearGradient(
                             colors: ColorManager.LoginButton,
