@@ -101,17 +101,19 @@ class _LoginState extends State<Login> {
                       ),
                       child: loginButton(),
                     ),
-                  ) :  Container(
-                    width: 130,
-                      decoration:  BoxDecoration(
-                          gradient:  LinearGradient(
-                            colors: ColorManager.LoginButton,
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
-                        borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: loginButton()
+                  ) :  IntrinsicHeight(
+                    child: Container(
+                      width: 120,
+                        decoration:  BoxDecoration(
+                            gradient:  LinearGradient(
+                              colors: ColorManager.LoginButton,
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                            ),
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: loginButton()
+                    ),
                   ),
                 ],
               ),
