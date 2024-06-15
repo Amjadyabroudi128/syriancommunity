@@ -238,7 +238,6 @@ import 'fontSize.dart';
        ),
        textTheme: ButtonTextTheme.primary, // his gives the best text color for the button
      ),
-
      listTileTheme: ListTileThemeData(
        iconColor: Colors.black,
        titleTextStyle: TextStyle(
