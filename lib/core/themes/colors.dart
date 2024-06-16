@@ -6,7 +6,7 @@ class ColorManager {
   static Color dateColor = Color(0xFF9E9E9E);
   static Color hintText = Color(0xFF000000);
   static Color borderColor = Color(0xFF000000);
-  static Color DarkBorder = Colors.grey;
+  static Color DarkBorder = Color(0x99FFFFFF);
   static Color fbColor = Color(0xFF0D47A1);
   static Color? addEdit = Color(0xFF757575);
   static Color delete = Color(0xFFD32F2F);
