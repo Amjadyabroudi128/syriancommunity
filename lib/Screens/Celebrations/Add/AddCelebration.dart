@@ -96,10 +96,9 @@ class _AddCelebrationState extends State<AddCelebration> {
                        addButton(),
                      ],
                    ),
-                  Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding(
                       child: imageButton()
-                  ),
+                      ),
                 ],
               ),
             ),
