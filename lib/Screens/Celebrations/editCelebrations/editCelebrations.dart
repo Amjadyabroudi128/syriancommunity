@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations/edit_celebration_cubit.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
+import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
@@ -59,6 +60,7 @@ class _EditCelebrationState extends State<EditCelebration> {
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: Form(
+                key: Validate.formKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
