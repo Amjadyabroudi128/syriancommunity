@@ -11,6 +11,7 @@ class ColorManager {
   static Color? addEdit = Color(0xFF757575);
   static Color delete = Color(0xFFD32F2F);
   static Color submit =Color(0xFF4CAF50);
+  static Color darkError = (Colors.red[300])!;
   static List<Color> LoginButton = [
     Colors.lightBlueAccent,
     Colors.blueAccent,
