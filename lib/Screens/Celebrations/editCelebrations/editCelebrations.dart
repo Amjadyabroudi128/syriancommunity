@@ -80,7 +80,13 @@ class _EditCelebrationState extends State<EditCelebration> {
                       ),
                     ),
                     padding(child: Text(AppLocalizations.of(context)!.celebrations)),
-                    CustomTextForm(hinttext: "e.g: Christmas", myController: celebrationName),
+                    CustomTextForm(hinttext: "e.g: Christmas", myController: celebrationName,
+                      validator: (value) {
+                        if(value == null || celebrationName.text == widget.oldName) {
+                          return AppLocalizations.of(context)!.addThings;
+                        }
+                        return null;
+                      },),
                     sizedBox(),
                     padding(child: Text(AppLocalizations.of(context)!.details)),
                     CustomTextForm(hinttext: "what we do ", myController: celebrationDetails,),
