@@ -58,44 +58,46 @@ class _EditCelebrationState extends State<EditCelebration> {
           child: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(12.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  sizedBox(
-                    height: 20,
-                  ),
-                  GestureDetector(
-                    onTap: () async {
-                     await url.pickImage();
-                      setState(() {
-                      });
-                    },
-                    child: Center(
-                      child: url.url != null ?myImage(
-                        src: url.url,
-                      ) : SizedBox.shrink(),
+              child: Form(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    sizedBox(
+                      height: 20,
                     ),
-                  ),
-                  padding(child: Text(AppLocalizations.of(context)!.celebrations)),
-                  CustomTextForm(hinttext: "e.g: Christmas", myController: celebrationName),
-                  sizedBox(),
-                  padding(child: Text(AppLocalizations.of(context)!.details)),
-                  CustomTextForm(hinttext: "what we do ", myController: celebrationDetails,),
-                  sizedBox(height: 5,),
-                  padding(
-                    child: Center(
-                          child: imageButton()
-                        ),
+                    GestureDetector(
+                      onTap: () async {
+                       await url.pickImage();
+                        setState(() {
+                        });
+                      },
+                      child: Center(
+                        child: url.url != null ?myImage(
+                          src: url.url,
+                        ) : SizedBox.shrink(),
                       ),
-                   Row(
-                     mainAxisAlignment: MainAxisAlignment.center,
-                     children: [
-                       cancelButton(),
-                       sizedBox(width: 20,),
-                       editButton(),
-                     ],
-                   ),
-                ],
+                    ),
+                    padding(child: Text(AppLocalizations.of(context)!.celebrations)),
+                    CustomTextForm(hinttext: "e.g: Christmas", myController: celebrationName),
+                    sizedBox(),
+                    padding(child: Text(AppLocalizations.of(context)!.details)),
+                    CustomTextForm(hinttext: "what we do ", myController: celebrationDetails,),
+                    sizedBox(height: 5,),
+                    padding(
+                      child: Center(
+                            child: imageButton()
+                          ),
+                        ),
+                     Row(
+                       mainAxisAlignment: MainAxisAlignment.center,
+                       children: [
+                         cancelButton(),
+                         sizedBox(width: 20,),
+                         editButton(),
+                       ],
+                     ),
+                  ],
+                ),
               ),
             ),
           ),
