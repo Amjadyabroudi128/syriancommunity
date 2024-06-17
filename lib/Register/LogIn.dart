@@ -54,13 +54,13 @@ class _LoginState extends State<Login> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(AppLocalizations.of(context)!.loginAdmin, style: TextStyles.LoginAdmin,),
+                  Text(AppLocalizations.of(context)!.loginAdmin, style: TextStyles.loginAdmin,),
                    sizedBox(height: 14,),
                   CustomTextForm(
                     myController: testEmail,
                     keyboardType: TextInputType.emailAddress,
                     prefixIcon: myIcons.email,
-                    label: Text(AppLocalizations.of(context)!.email),
+                    label: Text(AppLocalizations.of(context)!.email,),
                     validator: (value){
                       if (value == null || testEmail.text.isEmpty){
                         return AppLocalizations.of(context)!.email;
