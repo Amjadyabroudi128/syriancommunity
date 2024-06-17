@@ -20,7 +20,8 @@ import 'fontSize.dart';
      borderSide: BorderSide(
        color: Colors.red,
        width: 3,
-     )
+     ),
+     borderRadius: BorderRadius.circular(18.0),
    );
    static final darkTheme = ThemeData(
      brightness: Brightness.dark,
