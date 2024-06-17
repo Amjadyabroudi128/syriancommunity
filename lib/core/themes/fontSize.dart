@@ -80,10 +80,14 @@ import 'font_weight_helper.dart';
      fontSize: 22,
      color: ColorManager.hintText
    );
-   static TextStyle LoginAdmin = TextStyle(
+   static TextStyle loginAdmin = TextStyle(
      fontSize: 25,
      fontWeight: FontWeightHelper.bold,
      decoration: TextDecoration.underline,
      decorationThickness: 2,
+   );
+   static TextStyle darkErrorText = TextStyle (
+       fontSize: 18,
+       color: ColorManager.darkError
    );
  }
