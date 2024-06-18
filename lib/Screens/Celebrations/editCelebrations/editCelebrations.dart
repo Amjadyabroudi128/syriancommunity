@@ -93,7 +93,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                     sizedBox(),
                     padding(child: Text(AppLocalizations.of(context)!.details)),
                     CustomTextForm(
-                      label: Text("what we do"),
+                      label: Text(AppLocalizations.of(context)!.whatWeDo),
                      myController: celebrationDetails,
                       validator: (value) {
                         if(value == null || celebrationDetails.text == widget.oldDetail || celebrationDetails.text.isEmpty) {
