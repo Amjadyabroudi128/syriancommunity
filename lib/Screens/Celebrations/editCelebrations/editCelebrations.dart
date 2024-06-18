@@ -156,8 +156,11 @@ class _EditCelebrationState extends State<EditCelebration> {
   editButton () {
     return CustomButton(
       onPressed: () async {
-        if (celebrationName.text == widget.oldName && celebrationDetails.text == widget.oldDetail) {
+        if (celebrationName.text == widget.oldName && celebrationDetails.text == widget.oldDetail
+            || celebrationName.text.isEmpty || celebrationDetails.text.isEmpty) {
           Validate.validating();
+          ScaffoldMessenger.of(context).showSnackBar
+            ( SnackBar(content: Text("${AppLocalizations.of(context)!.addThings}",)));
         } else {
             context.read<EditCelebrationCubit>().EditCelebration(widget.DocID,
                 {
