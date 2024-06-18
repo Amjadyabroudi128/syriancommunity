@@ -48,5 +48,6 @@
   "memberDetails": "إضافة  العضو",
   "editMember": "تعديل اسم العضو",
   "editMemberDetails": "تعديل تفاصيل العضو",
-  "whatWeDo":"ما نفعله"
+  "whatWeDo":"ما نفعله",
+  "celebrationName": "اسم الاحتفال"
 }
