@@ -11,7 +11,7 @@ import 'fontSize.dart';
    );
    static final _errorBorder = OutlineInputBorder(
      borderSide: BorderSide(width: 1,
-         color: Colors.redAccent), //<-- SEE HERE
+         color: Colors.red), //<-- SEE HERE
      borderRadius: BorderRadius.circular(18.0),
    );
    static final _DarkBorder = OutlineInputBorder(
@@ -161,6 +161,7 @@ import 'fontSize.dart';
          focusedBorder: _border,
          errorBorder: _errorBorder,
          focusedErrorBorder: _errorBorder,
+         errorStyle: TextStyles.darkErrorText
      ),
      cardColor: ColorManager.cardColor,
      cardTheme: CardTheme(
