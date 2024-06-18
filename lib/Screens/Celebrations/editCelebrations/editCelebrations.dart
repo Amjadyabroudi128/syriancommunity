@@ -8,6 +8,7 @@ import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
+import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 
@@ -82,6 +83,8 @@ class _EditCelebrationState extends State<EditCelebration> {
                     ),
                     padding(child: Text(AppLocalizations.of(context)!.celebrations)),
                     CustomTextForm(
+                      suffixIcon: celebrationName.text.isEmpty || celebrationName == widget.oldName ?
+                      null : IconButton(onPressed: celebrationName.clear, icon: myIcons.clear,),
                       label: Text(AppLocalizations.of(context)!.celebrationName),
                      myController: celebrationName,
                       validator: (value) {
@@ -93,6 +96,8 @@ class _EditCelebrationState extends State<EditCelebration> {
                     sizedBox(),
                     padding(child: Text(AppLocalizations.of(context)!.details)),
                     CustomTextForm(
+                      suffixIcon: celebrationDetails.text.isEmpty || celebrationName == widget.oldDetail ?
+                      null : IconButton(onPressed: celebrationName.clear, icon: myIcons.clear,),
                       label: Text(AppLocalizations.of(context)!.whatWeDo),
                      myController: celebrationDetails,
                       validator: (value) {
