@@ -48,11 +48,12 @@ class _EditCelebrationState extends State<EditCelebration> {
     }
   },
   builder: (context, state) {
+    String title = AppLocalizations.of(context)!.editDetails;
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.editDetails),
+          title: Text(title),
         ),
         body: ScrollConfiguration(
           behavior: ScrollBehavior(),
