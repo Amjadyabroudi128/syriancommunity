@@ -85,7 +85,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                       label: Text(AppLocalizations.of(context)!.celebrations),
                      myController: celebrationName,
                       validator: (value) {
-                        if(value == null || celebrationName.text == widget.oldName) {
+                        if(value == null || celebrationName.text == widget.oldName || celebrationName.text.isEmpty) {
                           return AppLocalizations.of(context)!.addThings;
                         }
                         return null;
@@ -96,7 +96,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                       label: Text("what we do"),
                      myController: celebrationDetails,
                       validator: (value) {
-                        if(value == null || celebrationDetails.text == widget.oldDetail) {
+                        if(value == null || celebrationDetails.text == widget.oldDetail || celebrationDetails.text.isEmpty) {
                           return AppLocalizations.of(context)!.addThings;
                         }
                         return null;
