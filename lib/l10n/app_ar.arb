@@ -47,5 +47,6 @@
   "addName": "إضافة اسم العضو",
   "memberDetails": "إضافة  العضو",
   "editMember": "تعديل اسم العضو",
-  "editMemberDetails": "تعديل تفاصيل العضو"
+  "editMemberDetails": "تعديل تفاصيل العضو",
+  "whatWeDo":"ما نفعله"
 }
