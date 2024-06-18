@@ -96,9 +96,9 @@ class _AddCelebrationState extends State<AddCelebration> {
                        addButton(),
                      ],
                    ),
-                      padding(
-                      child: imageButton()
-                      ),
+                      Center(
+                        child: imageButton(),
+                      )
                 ],
               ),
             ),
