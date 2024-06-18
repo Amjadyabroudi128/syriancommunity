@@ -36,7 +36,6 @@ import 'fontSize.dart';
      inputDecorationTheme: InputDecorationTheme(
          suffixIconColor: Colors.white,
          labelStyle: TextStyles.darkLabel,
-
          floatingLabelStyle: TextStyles.floatingLabel,
          border: OutlineInputBorder(
            borderRadius: BorderRadius.circular(10),
@@ -46,6 +45,7 @@ import 'fontSize.dart';
          enabledBorder: _DarkBorder,
          focusedBorder: _DarkBorder,
          errorBorder: darkError,
+         focusedErrorBorder: _DarkBorder,
          errorStyle: TextStyles.darkErrorText
      ),
      popupMenuTheme: PopupMenuThemeData(
