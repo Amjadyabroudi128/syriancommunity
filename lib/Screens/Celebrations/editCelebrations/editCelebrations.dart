@@ -93,6 +93,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                       },),
                     sizedBox(height: 7,),
                     padding(child: Text(AppLocalizations.of(context)!.details)),
+                    sizedBox(height: 4,),
                     CustomTextForm(
                       suffixIcon: celebrationDetails.text.isEmpty || celebrationDetails == widget.oldDetail ?
                       null : IconButton(onPressed: celebrationDetails.clear, icon: myIcons.clear,),
