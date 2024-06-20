@@ -69,17 +69,15 @@ class _EditCelebrationState extends State<EditCelebration> {
                     sizedBox(
                       height: 20,
                     ),
-                    GestureDetector(
-                      onTap: () async {
-                       await url.pickImage();
-                        setState(() {
-                        });
-                      },
-                      child: Center(
-                        child: url.url != null ?myImage(
-                          src: url.url,
-                        ) : SizedBox.shrink(),
-                      ),
+                    Center(
+                      child: url.url != null ?myImage(
+                        onPressed: () async {
+                          await url.pickImage();
+                          setState(() {
+                          });
+                        },
+                        src: url.url,
+                      ) : SizedBox.shrink(),
                     ),
                     padding(child: Text(AppLocalizations.of(context)!.celebrations)),
                     CustomTextForm(
@@ -108,16 +106,16 @@ class _EditCelebrationState extends State<EditCelebration> {
                       },
                     ),
                     sizedBox(height: 5,),
-                    padding(
-                      child: Center(
-                            child: imageButton()
-                          ),
-                        ),
+                    // padding(
+                    //   child: Center(
+                    //         child: imageButton()
+                    //       ),
+                    //     ),
                      Row(
                        mainAxisAlignment: MainAxisAlignment.center,
                        children: [
                          cancelButton(),
-                         sizedBox(width: 20,),
+                         sizedBox(width: 10,),
                          editButton(),
                        ],
                      ),
