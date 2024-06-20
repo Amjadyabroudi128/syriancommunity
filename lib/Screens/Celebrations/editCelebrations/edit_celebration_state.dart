@@ -6,3 +6,7 @@ abstract class EditCelebrationState {}
  class EditCelebrationInitial extends EditCelebrationState {}
  class EditSuccess extends EditCelebrationState {}
  class EditLoading extends EditCelebrationState {}
+ class EditFailure extends EditCelebrationState {
+ String errMessage;
+ EditFailure ({required this.errMessage});
+ }
