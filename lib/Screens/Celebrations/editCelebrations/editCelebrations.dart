@@ -13,6 +13,7 @@ import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 class EditCelebration extends StatefulWidget {
   final String DocID;
@@ -44,8 +45,7 @@ class _EditCelebrationState extends State<EditCelebration> {
   listener: (context, state) {
     if(state is EditSuccess) {
       Navigator.pop(context);
-      ScaffoldMessenger.of(context).showSnackBar
-        ( SnackBar(content: Text("Edited Successfully")));
+      showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
     } else {
       print("loading still");
     }
