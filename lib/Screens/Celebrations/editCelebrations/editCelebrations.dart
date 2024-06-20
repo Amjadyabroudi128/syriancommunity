@@ -91,7 +91,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                         }
                         return null;
                       },),
-                    sizedBox(),
+                    sizedBox(height: 7,),
                     padding(child: Text(AppLocalizations.of(context)!.details)),
                     CustomTextForm(
                       suffixIcon: celebrationDetails.text.isEmpty || celebrationDetails == widget.oldDetail ?
@@ -106,7 +106,6 @@ class _EditCelebrationState extends State<EditCelebration> {
                       },
                     ),
                     sizedBox(height: 5,),
-
                      Row(
                        mainAxisAlignment: MainAxisAlignment.center,
                        children: [
