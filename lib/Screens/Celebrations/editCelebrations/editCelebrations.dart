@@ -45,7 +45,7 @@ class _EditCelebrationState extends State<EditCelebration> {
   listener: (context, state) {
     if(state is EditSuccess) {
       Navigator.pop(context);
-      showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
+      showSnackBar(context, AppLocalizations.of(context)!.editedSuccessfully);
     } else {
       print("loading still");
     }
