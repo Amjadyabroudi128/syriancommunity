@@ -106,11 +106,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                       },
                     ),
                     sizedBox(height: 5,),
-                    // padding(
-                    //   child: Center(
-                    //         child: imageButton()
-                    //       ),
-                    //     ),
+
                      Row(
                        mainAxisAlignment: MainAxisAlignment.center,
                        children: [
