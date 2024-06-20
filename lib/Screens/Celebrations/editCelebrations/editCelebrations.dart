@@ -44,6 +44,8 @@ class _EditCelebrationState extends State<EditCelebration> {
   listener: (context, state) {
     if(state is EditSuccess) {
       Navigator.pop(context);
+      ScaffoldMessenger.of(context).showSnackBar
+        ( SnackBar(content: Text("Edited Successfully")));
     } else {
       print("loading still");
     }
