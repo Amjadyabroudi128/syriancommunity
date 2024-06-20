@@ -119,6 +119,9 @@ class _EditCelebrationState extends State<EditCelebration> {
                          editButton(),
                        ],
                      ),
+                    Center(
+                      child: imageButton(),
+                    )
                   ],
                 ),
               ),
