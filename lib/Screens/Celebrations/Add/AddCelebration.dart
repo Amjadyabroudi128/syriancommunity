@@ -8,6 +8,7 @@ import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../../components/TextField.dart';
 class AddCelebration extends StatefulWidget {
@@ -34,8 +35,7 @@ class _AddCelebrationState extends State<AddCelebration> {
   listener: (context, state) {
     if (state is AddSuccess) {
       Navigator.of(context).pushReplacementNamed("celebrations");
-      ScaffoldMessenger.of(context).showSnackBar
-        ( SnackBar(content: Text("${AppLocalizations.of(context)!.addedSuccessfully}",)));
+      showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
       clearText();
     }
     else if ( state is AddLoading){
