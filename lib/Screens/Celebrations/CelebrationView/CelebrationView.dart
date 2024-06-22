@@ -160,8 +160,8 @@ class _CelebrationsState extends State<Celebrations> {
                                                               ),
                                                       ];
                                                     },
-                                                  onSelected:(value){
-                                                      if(value == 0){
+                                                  onSelected:(selectedValue){
+                                                      if(selectedValue == myPop.edit){
                                                         Navigator.of(context).push(
                                                           MaterialPageRoute(
                                                               builder: (context) => EditCelebration(
@@ -171,7 +171,7 @@ class _CelebrationsState extends State<Celebrations> {
                                                                   oldUrl: data["image"])
                                                           ),
                                                         );
-                                                      }else if(value == 1){
+                                                      }else if(selectedValue == myPop.delete){
                                                         BlocProvider.of<DeleteCubit>(context).delete(document.id);
 
                                                       }
