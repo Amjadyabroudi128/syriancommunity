@@ -12,14 +12,14 @@ class AddCelebrationCubit extends Cubit<AddCelebrationState> {
 
     emit(AddSuccess());
     if (url == null) {
-     await celebrations.doc().set(
+      await celebrations.doc().set(
           {
             "name": name,
             "details": details
           }
       );
     } else {
-     await  celebrations.doc().set(
+      await  celebrations.doc().set(
           {
             "image": url,
             "name": name,
