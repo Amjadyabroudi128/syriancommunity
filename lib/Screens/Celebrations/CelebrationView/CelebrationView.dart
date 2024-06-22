@@ -13,6 +13,7 @@ import 'package:syrianadmin/components/popUpMenu.dart';
 import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
+import 'package:syrianadmin/enums.dart';
 import '../../../components/SubmitButton.dart';
 class Celebrations extends StatefulWidget {
   final document;
@@ -149,12 +150,12 @@ class _CelebrationsState extends State<Celebrations> {
                                                 child: user != null ? MyPopUpMenu(
                                                     itemBuilder: (context) {
                                                       return [
-                                                        PopupMenuItem<int>(
-                                                        value: 0,
+                                                        PopupMenuItem<myPop>(
+                                                        value: myPop.edit,
                                                           child: Text(AppLocalizations.of(context)!.edit),
                                                       ),
-                                                              PopupMenuItem<int>(
-                                                                value: 1,
+                                                              PopupMenuItem<myPop>(
+                                                                value: myPop.delete,
                                                                 child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),
                                                               ),
                                                       ];
