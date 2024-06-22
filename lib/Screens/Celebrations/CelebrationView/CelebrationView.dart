@@ -10,6 +10,7 @@ import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
+import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 import '../../../components/SubmitButton.dart';
@@ -25,29 +26,25 @@ class Celebrations extends StatefulWidget {
 class _CelebrationsState extends State<Celebrations> {
   final CollectionReference celebrations =
   FirebaseFirestore.instance.collection('Celebrations');
-
   @override
   Widget build(BuildContext context) {
-
+    String title = AppLocalizations.of(context)!.celebrations;
     User? user = FirebaseAuth.instance.currentUser;
-
     return BlocConsumer<DeleteCubit, DeleteState>(
   listener: (context, state) {
     if (state is DeleteSuccess) {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
-      ScaffoldMessenger.of(context).showSnackBar
-        ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted)));
+      showSnackBar(context, AppLocalizations.of(context)!.deleted);
     } else {
 
     }
   },
 
   builder: (context, state) {
-
     return Scaffold(
       appBar: AppBar(
         leading: goBack(),
-        title: Text(AppLocalizations.of(context)!.celebrations),
+        title: Text(title),
       ),
       body:  ScrollConfiguration(
           behavior: ScrollBehavior(),
