@@ -4,6 +4,7 @@ import 'package:syrianadmin/Screens/HomePage/HomePage.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../components/Sizedbox.dart';
 import '../../components/SubmitButton.dart';
@@ -112,8 +113,7 @@ class _EditHomeState extends State<EditHome> {
 
             });
             Navigator.push(context, HomePage.route());
-            ScaffoldMessenger.of(context).showSnackBar
-              ( SnackBar(content: Text("${AppLocalizations.of(context)!.edited}",)));
+            showSnackBar(context, AppLocalizations.of(context)!.editedSuccessfully);
           }
         },
         title: AppLocalizations.of(context)!.update,
