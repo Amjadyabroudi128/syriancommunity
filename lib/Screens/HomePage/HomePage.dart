@@ -8,6 +8,7 @@ import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
+import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 import 'package:syrianadmin/enums.dart';
@@ -147,8 +148,7 @@ class _HomePageState extends State<HomePage> {
                                                             );
                                                 } else if (selectedPop == myPop.delete) {
                                                   myHome.doc(document.id).delete();
-                                                  ScaffoldMessenger.of(context).showSnackBar
-                                                    ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted),));
+                                                  showSnackBar(context, AppLocalizations.of(context)!.deleted);
                                                 }
                                                 },
                                             popUpAnimationStyle: AnimationStyle(
