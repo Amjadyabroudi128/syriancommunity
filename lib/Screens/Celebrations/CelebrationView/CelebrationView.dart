@@ -61,12 +61,15 @@ class _CelebrationsState extends State<Celebrations> {
                     ),
                     padding(child: Text(AppLocalizations.of(context)!.celebrations, style: TextStyles.font16green,)),
                     sizedBox(),
-                    Container(
-                      width: 400,
-                      height: 100,
-                      child: padding(
-                        child: Card(
-                          child: Text(AppLocalizations.of(context)!.join, style: TextStyles.font17,),
+                    IntrinsicHeight(
+                      child: Container(
+                        child: padding(
+                          child: Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Text(AppLocalizations.of(context)!.join, style: TextStyles.font17,),
+                            ),
+                          ),
                         ),
                       ),
                     ),
