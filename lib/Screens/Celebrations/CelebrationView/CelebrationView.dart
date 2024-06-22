@@ -66,8 +66,7 @@ class _CelebrationsState extends State<Celebrations> {
                       child: Container(
                         child: padding(
                           child: Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
+                            child: padding(
                               child: Text(AppLocalizations.of(context)!.join, style: TextStyles.font17,),
                             ),
                           ),
