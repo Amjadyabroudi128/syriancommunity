@@ -10,7 +10,13 @@ class EditCelebrationCubit extends Cubit<EditCelebrationState> {
   final CollectionReference celebration = FirebaseFirestore.instance.collection("Celebrations");
 
   Future <void> EditCelebration(String DocID, Map<String, dynamic> newData) async {
-    await celebration.doc(DocID).update(newData);
-    emit(EditSuccess());
+    emit(EditLoading());
+
+    try {
+       await celebration.doc(DocID).update(newData);
+       emit(EditSuccess());
+    } catch (e) {
+      emit(EditFailure(errMessage: "couldn't add things"));
+    }
   }
 }
