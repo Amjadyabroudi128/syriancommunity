@@ -75,12 +75,12 @@ class _AddCelebrationState extends State<AddCelebration> {
                               onPressed: celebrationName.clear,
                               icon: myIcons.clear,
                             ),
-                      // validator: (value) {
-                      //   if (value == null || celebrationName.text.isEmpty) {
-                      //     return AppLocalizations.of(context)!.addCelebration;
-                      //   }
-                      //   return null;
-                      // },
+                      validator: (value) {
+                        if (value == null || celebrationName.text.isEmpty) {
+                          return AppLocalizations.of(context)!.addCelebration;
+                        }
+                        return null;
+                      },
                     ),
                     sizedBox(),
                     padding(
@@ -95,12 +95,12 @@ class _AddCelebrationState extends State<AddCelebration> {
                               onPressed: celebrationDetail.clear,
                               icon: myIcons.clear,
                             ),
-                      // validator: (value) {
-                      //   if (value == null || celebrationDetail.text.isEmpty) {
-                      //     return AppLocalizations.of(context)!.addDetails;
-                      //   }
-                      //   return null;
-                      // },
+                      validator: (value) {
+                        if (value == null || celebrationDetail.text.isEmpty) {
+                          return AppLocalizations.of(context)!.addDetails;
+                        }
+                        return null;
+                      },
                     ),
                     sizedBox(
                       height: 5,
@@ -155,22 +155,24 @@ class _AddCelebrationState extends State<AddCelebration> {
       color: ColorManager.delete,
     );
   }
-  addButton () {
-   return  CustomButton(
-     onPressed: () async {
 
-       if(celebrationName.text.isEmpty || celebrationDetail.text.isEmpty) {
-         Validate.validating();
-       } else {
-           await context.read<AddCelebrationCubit>().addCelebration(
-               url: url.url,
-               name: celebrationName.text,
-               details: celebrationDetail.text);
-           Validate.formKey.currentState!.reset();
-       }
-     },
-      title: AppLocalizations.of(context)!.submit,
-     color: (celebrationName.text.isEmpty)
-         || (celebrationDetail.text.isEmpty) ? Colors.grey : ColorManager.submit);
+  addButton() {
+    return CustomButton(
+        onPressed: () async {
+          if (celebrationName.text.isEmpty || celebrationDetail.text.isEmpty) {
+            Validate.validating();
+          } else {
+            await context.read<AddCelebrationCubit>().addCelebration(
+                url: url.url,
+                name: celebrationName.text,
+                details: celebrationDetail.text);
+            Validate.formKey.currentState!.reset();
+          }
+        },
+        title: AppLocalizations.of(context)!.submit,
+        color:
+            (celebrationName.text.isEmpty) || (celebrationDetail.text.isEmpty)
+                ? Colors.grey
+                : ColorManager.submit);
   }
 }
