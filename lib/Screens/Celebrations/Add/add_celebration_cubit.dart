@@ -27,6 +27,14 @@ class AddCelebrationCubit extends Cubit<AddCelebrationState> {
               }
           );   emit(AddSuccess());
       }
-    } catch (e){}
+    } on FirebaseException catch (e){
+      if(e.code == "No name") {
+        emit(AddFailure(errMessage: "please add a name"));
+      } else if (e.code == "no Details") {
+        emit(AddFailure(errMessage: "pleasee add details"));
+      }
+    } catch (e) {
+      emit(AddFailure(errMessage: "something else happened: $e"));
+    }
   }
 }
