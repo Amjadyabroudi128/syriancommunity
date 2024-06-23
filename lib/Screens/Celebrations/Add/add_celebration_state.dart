@@ -6,9 +6,8 @@ abstract class AddCelebrationState {}
  class AddCelebrationInitial extends AddCelebrationState {}
 
  class AddLoading extends AddCelebrationState {}
-
  class AddSuccess extends AddCelebrationState {}
 class AddFailure extends AddCelebrationState {
- String errMessage;
+final String errMessage;
  AddFailure ({required this.errMessage});
 }
