@@ -13,7 +13,7 @@ class DeleteCubit extends Cubit<DeleteState> {
        celebration.doc(DocID).delete();
        emit(DeleteSuccess());
     } catch (e) {
-      DeleteFailure(errMessage: "something is wrong ")
+      DeleteFailure(errMessage: "something is wrong ");
     }
   }
 }
