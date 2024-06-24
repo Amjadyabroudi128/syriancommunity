@@ -73,6 +73,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                 },
                 child: Form(
                   key: Validate.formKey,
+
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -203,6 +204,7 @@ class _EditCelebrationState extends State<EditCelebration> {
             "details": celebrationDetails.text,
             "image": url.url
           });
+          Validate.formKey.currentState!.reset();
         }
       },
       title: AppLocalizations.of(context)!.update,
