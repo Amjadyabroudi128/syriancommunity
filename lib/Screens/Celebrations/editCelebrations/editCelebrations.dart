@@ -71,7 +71,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                 listener: (context, state) {
                   if (state is EditSuccess) {
                     Navigator.of(context).pushReplacementNamed("celebrations");
-                    showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
+                    showSnackBar(context, AppLocalizations.of(context)!.editedSuccessfully);
                   }
                   else if ( state is EditFailure){
                     showSnackBar(context, state.errMessage);
