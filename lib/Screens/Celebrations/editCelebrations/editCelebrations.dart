@@ -73,7 +73,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                 },
                 child: Form(
                   key: Validate.formKey,
-
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
