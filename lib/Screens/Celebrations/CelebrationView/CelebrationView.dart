@@ -31,16 +31,6 @@ class _CelebrationsState extends State<Celebrations> {
   Widget build(BuildContext context) {
     String title = AppLocalizations.of(context)!.celebrations;
     User? user = FirebaseAuth.instance.currentUser;
-  //   return BlocConsumer<DeleteCubit, DeleteState>(
-  // listener: (context, state) {
-  //   if (state is DeleteSuccess) {
-  //
-  //   } else {
-  //
-  //   }
-  // },
-  //
-  // builder: (context, state) {
     return Scaffold(
       appBar: AppBar(
         leading: goBack(),
