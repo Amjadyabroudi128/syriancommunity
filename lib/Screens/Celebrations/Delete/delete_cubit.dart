@@ -7,9 +7,13 @@ part 'delete_state.dart';
 class DeleteCubit extends Cubit<DeleteState> {
   DeleteCubit() : super(DeleteInitial());
   final CollectionReference celebration = FirebaseFirestore.instance.collection("Celebrations");
-
   Future <void> delete(String DocID,) async {
-    celebration.doc(DocID).delete();
-    emit(DeleteSuccess());
+    emit(DeleteLoading());
+    try {
+       celebration.doc(DocID).delete();
+       emit(DeleteSuccess());
+    } catch (e) {
+      DeleteFailure(errMessage: "something is wrong ")
+    }
   }
 }
