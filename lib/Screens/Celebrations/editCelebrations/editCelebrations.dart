@@ -35,8 +35,14 @@ class EditCelebration extends StatefulWidget {
 }
 
 class _EditCelebrationState extends State<EditCelebration> {
-  TextEditingController celebrationName = TextEditingController();
-  TextEditingController celebrationDetails = TextEditingController();
+  late final TextEditingController celebrationName = TextEditingController()
+    ..addListener(() {
+      setState(() {});
+    });
+  late final TextEditingController celebrationDetails = TextEditingController()
+    ..addListener(() {
+      setState(() {});
+    });
 
   void initState() {
     super.initState();
