@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/components/snackBar.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
@@ -156,10 +157,7 @@ class _AddMemberState extends State<AddMember> {
         onPressed: () async {
           formKey.currentState!.validate();
           if (name.text.isEmpty || details.text.isEmpty) {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text(AppLocalizations.of(context)!.addThings),
-            ));
-
+            showSnackBar(context, AppLocalizations.of(context)!.addThings);
           } else if (url.url == null) {
             await members
                 .doc()
