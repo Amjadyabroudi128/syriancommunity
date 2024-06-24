@@ -31,17 +31,16 @@ class _CelebrationsState extends State<Celebrations> {
   Widget build(BuildContext context) {
     String title = AppLocalizations.of(context)!.celebrations;
     User? user = FirebaseAuth.instance.currentUser;
-    return BlocConsumer<DeleteCubit, DeleteState>(
-  listener: (context, state) {
-    if (state is DeleteSuccess) {
-      ScaffoldMessenger.of(context).hideCurrentSnackBar();
-      showSnackBar(context, AppLocalizations.of(context)!.deleted);
-    } else {
-
-    }
-  },
-
-  builder: (context, state) {
+  //   return BlocConsumer<DeleteCubit, DeleteState>(
+  // listener: (context, state) {
+  //   if (state is DeleteSuccess) {
+  //
+  //   } else {
+  //
+  //   }
+  // },
+  //
+  // builder: (context, state) {
     return Scaffold(
       appBar: AppBar(
         leading: goBack(),
@@ -135,7 +134,16 @@ class _CelebrationsState extends State<Celebrations> {
                                        ) : SizedBox.shrink(),
                                      ),
 
-                                   SizedBox(
+                                   BlocListener<DeleteCubit, DeleteState>(
+                                     listener: (context, state) {
+                                        if (state is DeleteSuccess) {
+                                          ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                                          showSnackBar(context, AppLocalizations.of(context)!.deleted);
+                                        } else if (state is DeleteFailure) {
+                                          state.errMessage;
+                                        }
+                                        },
+                                        child: SizedBox(
                                       width: MediaQuery.of(context).size.width,
                                       child: IntrinsicHeight(
                                         child: Card(
@@ -185,7 +193,8 @@ class _CelebrationsState extends State<Celebrations> {
                                         ),
                                       ),
 
-                                    )
+                                    ),
+                                   ),
                                   ]
                                 ),
                               );
@@ -202,9 +211,6 @@ class _CelebrationsState extends State<Celebrations> {
           ),
         ),
     );
-  },
-);
-
   }
   addCelebration () {
     return  CustomButton(
