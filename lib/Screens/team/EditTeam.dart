@@ -174,8 +174,8 @@ class _EditMemberState extends State<EditMember> {
                     "details" : details.text
                   }
               );
-              ScaffoldMessenger.of(context).showSnackBar
-                ( SnackBar(content: Text(AppLocalizations.of(context)!.edited),));
+              showSnackBar(context, AppLocalizations.of(context)!.editedSuccessfully);
+
               Navigator.pop(context);
             });
           }
