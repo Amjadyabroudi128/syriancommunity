@@ -174,9 +174,7 @@ class _AddMemberState extends State<AddMember> {
               "details": details.text,
               "image": url.url,
             });
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text(AppLocalizations.of(context)!.addedSuccessfully),
-            ));
+            showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
             Navigator.of(context).pushNamed("ourteam");
             clearText();
           }
