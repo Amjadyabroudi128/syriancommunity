@@ -22,7 +22,7 @@ class AuthCubit extends Cubit<AuthState> {
   //     emit(LoginFailed(errMessage: 'something not right '));
   //   }
   // }
-  Future<void> login({required String email, required String password}) async {
+  Future login({required String email, required String password}) async {
     emit(LoginLoading());
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
