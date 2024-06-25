@@ -162,9 +162,7 @@ class _AddMemberState extends State<AddMember> {
             await members
                 .doc()
                 .set({"name": name.text, "details": details.text});
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text(AppLocalizations.of(context)!.addedSuccessfully),
-            ));
+            showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
             Navigator.of(context).pop();
             clearText();
           } else {
