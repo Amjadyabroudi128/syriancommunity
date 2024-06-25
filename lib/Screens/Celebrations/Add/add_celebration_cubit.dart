@@ -19,13 +19,13 @@ class AddCelebrationCubit extends Cubit<AddCelebrationState> {
             }
         ); emit(AddSuccess());
       } else {
-          await  celebrations.doc().set(
-              {
-                "image": url,
-                "name": name,
-                "details": details
-              }
-          );   emit(AddSuccess());
+        await celebrations.doc().set(
+            {
+              "image": url,
+              "name": name,
+              "details": details
+            }
+        );   emit(AddSuccess());
       }
     } on FirebaseException catch (e){
       if(e.code == "No name") {
