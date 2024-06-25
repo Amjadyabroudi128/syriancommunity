@@ -6,6 +6,7 @@ import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/icons.dart';
+import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 class Login extends StatefulWidget {
@@ -28,20 +29,21 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AuthCubit, AuthState>(
-  listener: (context, state) {
-    if (state is LoginSuccess)  {
-      Navigator.of(context).pushReplacementNamed("homepage");
-      ScaffoldMessenger.of(context).showSnackBar
-        ( SnackBar(content: Text(AppLocalizations.of(context)!.login),));
-    } if (state is LoginFailed) {
-      ScaffoldMessenger.of(context).showSnackBar
-        ( SnackBar(content: Text("login with community info"),));
-    }
-  },
-  builder: (context, state) {
+  //   return BlocConsumer<AuthCubit, AuthState>(
+  // listener: (context, state) {
+
+  // builder: (context, state) {
     String logIn = AppLocalizations.of(context)!.login;
-    return GestureDetector(
+    return BlocListener<AuthCubit, AuthState>(
+  listener: (context, state) {
+      if (state is LoginSuccess)  {
+        Navigator.of(context).pushReplacementNamed("homepage");
+        showSnackBar(context, AppLocalizations.of(context)!.login);
+      } if (state is LoginFailed) {
+        showSnackBar(context, "something went wrong");
+      }
+  },
+  child: GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
       child: Scaffold(
         appBar: AppBar(
@@ -121,8 +123,7 @@ class _LoginState extends State<Login> {
           ),
 
       ),
-    );
-  },
+    ),
 );
   }
   void _togglePasswordView() {

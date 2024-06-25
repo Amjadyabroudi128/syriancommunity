@@ -7,6 +7,5 @@ class AuthInitial extends AuthState {}
 
 
 class LoginLoading extends AuthState {}
-
 class LoginSuccess extends AuthState {}
 class LoginFailed extends AuthState {}
