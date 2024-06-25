@@ -5,6 +5,7 @@ import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 import '../../components/SubmitButton.dart';
@@ -160,8 +161,8 @@ class _EditMemberState extends State<EditMember> {
           if(name.text == widget.oldName && details.text == widget.oldDetail) {
             setState(() {
               isUpdated = false;
-              ScaffoldMessenger.of(context).showSnackBar
-                ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
+              showSnackBar(context, AppLocalizations.of(context)!.addThings);
+
             });
           } else {
             setState(() async {
