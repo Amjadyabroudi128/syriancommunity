@@ -153,7 +153,7 @@ class _EditMemberState extends State<EditMember> {
   editButton() {
    return CustomButton(
         onPressed: () async {
-          formKey.currentState!.validate();
+          Validate.validating();
           if(name.text == widget.oldName && details.text == widget.oldDetail) {
             setState(() {
               isUpdated = false;
@@ -171,7 +171,6 @@ class _EditMemberState extends State<EditMember> {
                   }
               );
               showSnackBar(context, AppLocalizations.of(context)!.editedSuccessfully);
-
               Navigator.pop(context);
             });
           }
