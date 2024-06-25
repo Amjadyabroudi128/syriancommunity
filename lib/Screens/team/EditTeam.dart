@@ -52,13 +52,7 @@ class _EditMemberState extends State<EditMember> {
     child: Scaffold(
       appBar: AppBar(
         title: Text(edit),
-        leading: IconButton(
-            onPressed: (){
-              Navigator.of(context).pushNamed("ourteam");
-              formKey.currentState!.reset();
-
-            },
-            icon: myIcons.goBack),
+        leading: goBack(),
       ),
       body: ScrollConfiguration(
         behavior: ScrollBehavior(),
@@ -183,5 +177,13 @@ class _EditMemberState extends State<EditMember> {
         title:  AppLocalizations.of(context)!.update,
         color: (name.text == widget.oldName)
             && (details.text == widget.oldDetail) ? Colors.grey : ColorManager.submit);
+  }
+  goBack () {
+    return IconButton(
+        onPressed: (){
+          Navigator.of(context).pushNamed("ourteam");
+          formKey.currentState!.reset();
+        },
+        icon: myIcons.goBack);
   }
 }
