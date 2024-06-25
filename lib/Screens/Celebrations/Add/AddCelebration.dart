@@ -34,47 +34,47 @@ class _AddCelebrationState extends State<AddCelebration> {
     String appBarTitle = AppLocalizations.of(context)!.addCelebration;
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
-      child: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacementNamed("celebrations");
-              },
-              icon: myIcons.goBack),
-          title: Text(appBarTitle),
-        ),
-        body: padding(
-          child: SingleChildScrollView(
-            child: Form(
-              key: Validate.formKey,
-              autovalidateMode: AutovalidateMode.onUserInteraction,
-              child: BlocListener<AddCelebrationCubit, AddCelebrationState>(
-                listener: (context, state) {
-                  if (state is AddSuccess) {
-                    Navigator.of(context).pushReplacementNamed("celebrations");
-                    showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
-                    clearText();
-                  }
-                  else if ( state is AddFailure){
-                    showSnackBar(context, state.errMessage);
-                  }
+      child: BlocListener<AddCelebrationCubit, AddCelebrationState>(
+    listener: (context, state) {
+      if (state is AddSuccess) {
+        Navigator.of(context).pushReplacementNamed("celebrations");
+        showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
+        clearText();
+      }
+      else if ( state is AddFailure){
+        showSnackBar(context, state.errMessage);
+      }
+    },
+        child: Scaffold(
+          appBar: AppBar(
+            leading: IconButton(
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed("celebrations");
                 },
+                icon: myIcons.goBack),
+            title: Text(appBarTitle),
+          ),
+          body: padding(
+            child: SingleChildScrollView(
+              child: Form(
+                key: Validate.formKey,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     padding(
                         child:
-                            Text(AppLocalizations.of(context)!.celebrations)),
+                        Text(AppLocalizations.of(context)!.celebrations)),
                     CustomTextForm(
                       myController: celebrationName,
                       label:
-                          Text(AppLocalizations.of(context)!.celebrationName),
+                      Text(AppLocalizations.of(context)!.celebrationName),
                       suffixIcon: celebrationName.text.isEmpty
                           ? null
                           : IconButton(
-                              onPressed: celebrationName.clear,
-                              icon: myIcons.clear,
-                            ),
+                        onPressed: celebrationName.clear,
+                        icon: myIcons.clear,
+                      ),
                       validator: (value) {
                         if (value == null || celebrationName.text.isEmpty) {
                           return AppLocalizations.of(context)!.addCelebration;
@@ -92,9 +92,9 @@ class _AddCelebrationState extends State<AddCelebration> {
                       suffixIcon: celebrationDetail.text.isEmpty
                           ? null
                           : IconButton(
-                              onPressed: celebrationDetail.clear,
-                              icon: myIcons.clear,
-                            ),
+                        onPressed: celebrationDetail.clear,
+                        icon: myIcons.clear,
+                      ),
                       validator: (value) {
                         if (value == null || celebrationDetail.text.isEmpty) {
                           return AppLocalizations.of(context)!.addDetails;
@@ -171,8 +171,8 @@ class _AddCelebrationState extends State<AddCelebration> {
         },
         title: AppLocalizations.of(context)!.submit,
         color:
-            (celebrationName.text.isEmpty) || (celebrationDetail.text.isEmpty)
-                ? Colors.grey
-                : ColorManager.submit);
+        (celebrationName.text.isEmpty) || (celebrationDetail.text.isEmpty)
+            ? Colors.grey
+            : ColorManager.submit);
   }
 }
