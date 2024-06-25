@@ -40,7 +40,7 @@ class _LoginState extends State<Login> {
         Navigator.of(context).pushReplacementNamed("homepage");
         showSnackBar(context, AppLocalizations.of(context)!.login);
       } if (state is LoginFailed) {
-        showSnackBar(context, "something went wrong");
+        showSnackBar(context, state.errMessage);
       }
   },
   child: GestureDetector(
@@ -138,7 +138,6 @@ class _LoginState extends State<Login> {
         await  BlocProvider.of<AuthCubit>(context).login(email: testEmail.text, password: testPassword.text);
       },
       child:  Text(AppLocalizations.of(context)!.login,style: TextStyles.font20white,
-
       ),
     );
   }
