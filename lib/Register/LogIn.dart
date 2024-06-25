@@ -29,10 +29,6 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-  //   return BlocConsumer<AuthCubit, AuthState>(
-  // listener: (context, state) {
-
-  // builder: (context, state) {
     String logIn = AppLocalizations.of(context)!.login;
     return BlocListener<AuthCubit, AuthState>(
   listener: (context, state) {
