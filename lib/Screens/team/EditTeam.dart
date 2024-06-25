@@ -1,6 +1,7 @@
 import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
@@ -59,7 +60,8 @@ class _EditMemberState extends State<EditMember> {
         child: SingleChildScrollView(
           child: padding(
             child: Form(
-              key: formKey,
+              key: Validate.formKey,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
