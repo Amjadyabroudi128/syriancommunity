@@ -156,7 +156,7 @@ class _AddMemberState extends State<AddMember> {
   addButon () {
    return CustomButton(
         onPressed: () async {
-          formKey.currentState!.validate();
+          Validate.validating();
           if (name.text.isEmpty || details.text.isEmpty) {
             showSnackBar(context, AppLocalizations.of(context)!.addThings);
           } else if (url.url == null) {
