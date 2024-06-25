@@ -29,7 +29,6 @@ class _AddMemberState extends State<AddMember> {
     ..addListener(() {
       setState(() {});
     });
-   static final formKey = GlobalKey<FormState>();
   final CollectionReference members =
       FirebaseFirestore.instance.collection('members');
   @override
