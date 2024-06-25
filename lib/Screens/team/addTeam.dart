@@ -188,7 +188,7 @@ class _AddMemberState extends State<AddMember> {
     return IconButton(
         onPressed: (){
           Navigator.of(context).pushNamed("ourteam");
-          formKey.currentState!.reset();
+          Validate.formKey.currentState!.reset();
 
         },
         icon: myIcons.goBack);
