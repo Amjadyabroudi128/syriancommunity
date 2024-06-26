@@ -99,20 +99,7 @@ class _LoginState extends State<Login> {
                       ),
                       child: loginButton(),
                     ),
-                  ) :  IntrinsicHeight(
-                    child: Container(
-                      width: 120,
-                        decoration:  BoxDecoration(
-                            gradient:  LinearGradient(
-                              colors: ColorManager.LoginButton,
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                            ),
-                          borderRadius: BorderRadius.circular(10)
-                        ),
-                        child: loginButton()
-                    ),
-                  ),
+                  ) :  ButtonContainer(),
                 ],
               ),
             ),
@@ -121,6 +108,23 @@ class _LoginState extends State<Login> {
       ),
     ),
 );
+  }
+
+  IntrinsicHeight ButtonContainer() {
+    return IntrinsicHeight(
+                  child: Container(
+                    width: 120,
+                      decoration:  BoxDecoration(
+                          gradient:  LinearGradient(
+                            colors: ColorManager.LoginButton,
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                      child: loginButton()
+                  ),
+                );
   }
   void _togglePasswordView() {
     setState(() {
