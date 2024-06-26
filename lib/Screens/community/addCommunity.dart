@@ -29,11 +29,12 @@ class _addCommunityState extends State<addCommunity> {
   FirebaseFirestore.instance.collection('Community');
   @override
   Widget build(BuildContext context) {
+    String addDetails = AppLocalizations.of(context)!.addDetails;
     return GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
     child: Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.addDetails),
+        title: Text(addDetails),
       ),
       body: padding(
         child: SingleChildScrollView(
