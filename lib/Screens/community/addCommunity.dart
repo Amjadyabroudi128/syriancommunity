@@ -48,9 +48,9 @@ class _addCommunityState extends State<addCommunity> {
               ),
               sizedBox(),
               padding(
-                child: Text(AppLocalizations.of(context)!.details),
+                child: Text("what we do"),
               ),
-              CustomTextForm(hinttext: "What we do ", myController: details, maxLines: 6,
+              CustomTextForm(label: Text(AppLocalizations.of(context)!.details), myController: details, maxLines: 6,
                   suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: Icon(Icons.clear),)
               ),
               sizedBox(height: 10,),
