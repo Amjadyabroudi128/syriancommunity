@@ -30,16 +30,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     String logIn = AppLocalizations.of(context)!.login;
-    return BlocListener<AuthCubit, AuthState>(
-  listener: (context, state) {
-      if (state is LoginSuccess)  {
-        Navigator.of(context).pushReplacementNamed("homepage");
-        showSnackBar(context, AppLocalizations.of(context)!.login);
-      } if (state is LoginFailed) {
-        showSnackBar(context, state.errMessage);
-      }
-  },
-  child: GestureDetector(
+     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
       child: Scaffold(
         appBar: AppBar(
@@ -47,7 +38,16 @@ class _LoginState extends State<Login> {
         ),
           body:  Padding(
             padding: const EdgeInsets.all(7.0),
-            child: Form(
+            child: BlocListener<AuthCubit, AuthState>(
+              listener: (context, state) {
+                if (state is LoginSuccess)  {
+                  Navigator.of(context).pushReplacementNamed("homepage");
+                  showSnackBar(context, AppLocalizations.of(context)!.login);
+                } if (state is LoginFailed) {
+                  showSnackBar(context, state.errMessage);
+                }
+              },
+              child: Form(
               key: Validate.formKey,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -103,11 +103,10 @@ class _LoginState extends State<Login> {
                 ],
               ),
             ),
+           ),
           ),
-
       ),
-    ),
-);
+     );
   }
 
   IntrinsicHeight ButtonContainer() {
