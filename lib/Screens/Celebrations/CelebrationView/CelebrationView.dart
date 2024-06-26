@@ -52,12 +52,10 @@ class _CelebrationsState extends State<Celebrations> {
                     padding(child: Text(AppLocalizations.of(context)!.celebrations, style: TextStyles.font16green,)),
                     sizedBox(),
                     IntrinsicHeight(
-                      child: Container(
-                        child: padding(
-                          child: Card(
-                            child: padding(
-                              child: Text(AppLocalizations.of(context)!.join, style: TextStyles.font17,),
-                            ),
+                      child: padding(
+                        child: Card(
+                          child: padding(
+                            child: Text(AppLocalizations.of(context)!.join, style: TextStyles.font17,),
                           ),
                         ),
                       ),
