@@ -50,5 +50,6 @@
   "editMemberDetails": "تعديل تفاصيل العضو",
   "whatWeDo":"ما نفعله",
   "celebrationName": "اسم الاحتفال",
-  "editedSuccessfully": "تعدل بنجاح"
+  "editedSuccessfully": "تعدل بنجاح",
+  "wrongEmail": "بريد إلكتروني خاطئ"
 }
