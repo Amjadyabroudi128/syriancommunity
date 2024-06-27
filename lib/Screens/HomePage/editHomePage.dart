@@ -5,6 +5,7 @@ import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/snackBar.dart';
+import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../components/Sizedbox.dart';
 import '../../components/SubmitButton.dart';
@@ -99,15 +100,14 @@ class _EditHomeState extends State<EditHome> {
     );
   }
   updateButton () {
-    final CollectionReference home =
-    FirebaseFirestore.instance.collection('home');
+
     return CustomButton(
         onPressed: () async {
           if (name.text == widget.oldName && details.text == widget.oldDetail) {
             Validate.validating();
           }
           else {
-            await home.doc(widget.DocID).update({
+            await dbColl.myHome.doc(widget.DocID).update({
               "name": name.text,
               "details": details.text,
 
