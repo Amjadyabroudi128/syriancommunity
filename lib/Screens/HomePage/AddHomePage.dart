@@ -96,29 +96,7 @@ class _AddInfoState extends State<AddInfo> {
                          children: [
                            cancelButton(),
                            sizedBox(width: 15,),
-                           CustomButton(
-                               onPressed: () async {
-                                 if ( name.text.isEmpty || details.text.isEmpty ) {
-                                   Validate.validating();
-                                 } else {
-                                 await FirebaseFirestore.instance.collection("home").doc().set(
-                                       {
-                                         "name" : name.text,
-                                         "details" : details.text,
-                                         "time" :today,
-                                       }
-                                   );
-                                   await FirebaseApi().initNotifications();
-                                   await FirebaseMessaging.instance.subscribeToTopic("topic");
-                                   Navigator.push(context, HomePage.route());
-                                 showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
-                                 clearText();
-                                 }
-                               },
-                               title: AppLocalizations.of(context)!.submit,
-                               color: (name.text.isEmpty)
-                                   && (details.text.isEmpty) ? Colors.grey : ColorManager.submit
-                           ),
+                           addButton()
                          ],
                        ),
 
@@ -139,5 +117,30 @@ class _AddInfoState extends State<AddInfo> {
     return CustomButton(onPressed: (){
       Navigator.pop(context);
     }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
+ }
+ addButton() {
+   return CustomButton(
+       onPressed: () async {
+         if ( name.text.isEmpty || details.text.isEmpty ) {
+           Validate.validating();
+         } else {
+           await FirebaseFirestore.instance.collection("home").doc().set(
+               {
+                 "name" : name.text,
+                 "details" : details.text,
+                 "time" :today,
+               }
+           );
+           await FirebaseApi().initNotifications();
+           await FirebaseMessaging.instance.subscribeToTopic("topic");
+           Navigator.push(context, HomePage.route());
+           showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
+           clearText();
+         }
+       },
+       title: AppLocalizations.of(context)!.submit,
+       color: (name.text.isEmpty)
+           && (details.text.isEmpty) ? Colors.grey : ColorManager.submit
+   );
  }
 }
