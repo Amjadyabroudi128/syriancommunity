@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/FirebaseCollections.dart';
 import 'package:syrianadmin/Screens/HomePage/HomePage.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
@@ -119,13 +120,12 @@ class _AddInfoState extends State<AddInfo> {
     }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
  }
  addButton() {
-    CollectionReference homeDB = FirebaseFirestore.instance.collection("home");
    return CustomButton(
        onPressed: () async {
          if ( name.text.isEmpty || details.text.isEmpty ) {
            Validate.validating();
          } else {
-           await homeDB.doc().set(
+           await dbColl.myHome.doc().set(
                {
                  "name" : name.text,
                  "details" : details.text,
