@@ -57,7 +57,7 @@ class _LoginState extends State<Login> {
                   CustomTextForm(
                     suffixIcon: testEmail.text.isEmpty? null :
                     IconButton(onPressed: testEmail.clear,
-                      icon: Icon(Icons.clear),),
+                      icon: myIcons.clear,),
                     myController: testEmail,
                     keyboardType: TextInputType.emailAddress,
                     prefixIcon: myIcons.email,
