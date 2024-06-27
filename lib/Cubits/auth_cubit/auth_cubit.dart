@@ -18,7 +18,7 @@ class AuthCubit extends Cubit<AuthState> {
       if (ex.code == 'user-not-found') {
         emit(LoginFailed(errMessage: AppLocalizations.of(context)!.wrongEmail));
       } else if (ex.code == 'wrong-password') {
-        emit(LoginFailed(errMessage: 'Wrong password'));
+        emit(LoginFailed(errMessage: AppLocalizations.of(context)!.wrongPassword));
       } else {
         emit(LoginFailed(errMessage: 'Authentication error: ${ex.message}'));
       }
