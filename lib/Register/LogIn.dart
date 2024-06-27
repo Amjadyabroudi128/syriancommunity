@@ -55,6 +55,9 @@ class _LoginState extends State<Login> {
                   Text(AppLocalizations.of(context)!.loginAdmin, style: TextStyles.loginAdmin,),
                    sizedBox(height: 14,),
                   CustomTextForm(
+                    suffixIcon: testEmail.text.isEmpty? null :
+                    IconButton(onPressed: testEmail.clear,
+                      icon: Icon(Icons.clear),),
                     myController: testEmail,
                     keyboardType: TextInputType.emailAddress,
                     prefixIcon: myIcons.email,
