@@ -51,5 +51,6 @@
   "whatWeDo": "what we do ",
   "celebrationName": "e.g. Mother's day ",
   "editedSuccessfully": "edited Successfully",
-  "wrongEmail" : "Wrong Email"
+  "wrongEmail" : "Wrong Email",
+  "wrongPassword" : "Wrong Password"
 }
