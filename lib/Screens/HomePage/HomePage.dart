@@ -9,6 +9,7 @@ import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
 import 'package:syrianadmin/components/snackBar.dart';
+import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 import 'package:syrianadmin/enums.dart';
@@ -34,9 +35,8 @@ class _HomePageState extends State<HomePage> {
     var home =
     FirebaseFirestore.instance.collection('home').orderBy("time", descending: true);
 
-    final CollectionReference myHome =
-    FirebaseFirestore.instance.collection('home');
-
+    // final CollectionReference myHome =
+    // FirebaseFirestore.instance.collection('home');
     User? user = FirebaseAuth.instance.currentUser;
     String appBarTitle = AppLocalizations.of(context)!.syrianCommunity;
     addButton() {
@@ -147,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                                                               )
                                                             );
                                                 } else if (selectedPop == myPop.delete) {
-                                                  myHome.doc(document.id).delete();
+                                                  dbColl.myHome.doc(document.id).delete();
                                                   showSnackBar(context, AppLocalizations.of(context)!.deleted);
                                                 }
                                                 },
