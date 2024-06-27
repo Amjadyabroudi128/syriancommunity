@@ -119,12 +119,13 @@ class _AddInfoState extends State<AddInfo> {
     }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
  }
  addButton() {
+    CollectionReference homeDB = FirebaseFirestore.instance.collection("home");
    return CustomButton(
        onPressed: () async {
          if ( name.text.isEmpty || details.text.isEmpty ) {
            Validate.validating();
          } else {
-           await FirebaseFirestore.instance.collection("home").doc().set(
+           await homeDB.doc().set(
                {
                  "name" : name.text,
                  "details" : details.text,
