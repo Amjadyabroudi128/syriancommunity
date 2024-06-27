@@ -73,15 +73,23 @@ class _LoginState extends State<Login> {
                   CustomTextForm(
                      obscureText: _isHidden, maxLines: 1,
                     myController: testPassword,
-                    suffixIcon: IconButton(
-                      onPressed: (){
-                        setState(() {
-                          _togglePasswordView();
-                        });
-                      },
-                      icon: _isHidden ? myIcons.visible : myIcons.nonVisible,
-                        color: _isHidden ? ColorManager.delete : ColorManager.submit,
-                      ),
+                    suffixIcon: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.min,
+                      children:  [
+                        IconButton(
+                          onPressed: (){
+                            setState(() {
+                              _togglePasswordView();
+                            });
+                          },
+                          icon: _isHidden ? myIcons.visible : myIcons.nonVisible,
+                            color: _isHidden ? ColorManager.delete : ColorManager.submit,
+                          ),
+                       testPassword.text.isEmpty ? sizedBox() : IconButton(onPressed: testPassword.clear,
+                          icon: myIcons.clear,)
+                      ],
+                    ),
                     keyboardType: TextInputType.visiblePassword,
                     label: Text(AppLocalizations.of(context)!.password),
                     prefixIcon: myIcons.pass,
