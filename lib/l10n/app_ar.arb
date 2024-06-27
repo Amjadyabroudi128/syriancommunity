@@ -51,5 +51,6 @@
   "whatWeDo":"ما نفعله",
   "celebrationName": "اسم الاحتفال",
   "editedSuccessfully": "تعدل بنجاح",
-  "wrongEmail": "بريد إلكتروني خاطئ"
+  "wrongEmail": "بريد إلكتروني خاطئ",
+  "wrongPassword": "كلمة سر خاطئة "
 }
