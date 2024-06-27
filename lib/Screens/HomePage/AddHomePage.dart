@@ -6,6 +6,7 @@ import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../Api/Firebase_api.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -110,9 +111,8 @@ class _AddInfoState extends State<AddInfo> {
                                    await FirebaseApi().initNotifications();
                                    await FirebaseMessaging.instance.subscribeToTopic("topic");
                                    Navigator.push(context, HomePage.route());
-                                   ScaffoldMessenger.of(context).showSnackBar
-                                     ( SnackBar(content: Text("${AppLocalizations.of(context)!.addedSuccessfully}",)));
-                                   clearText();
+                                 showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
+                                 clearText();
                                  }
                                },
                                title: AppLocalizations.of(context)!.submit,
