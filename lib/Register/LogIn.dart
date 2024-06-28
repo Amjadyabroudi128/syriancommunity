@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:syrianadmin/Bloc/auth_bloc.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/TextField.dart';
@@ -9,6 +8,8 @@ import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
+
+import 'Bloc/auth_bloc.dart';
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
@@ -145,9 +146,6 @@ class _LoginState extends State<Login> {
     return TextButton(
       onPressed: () async {
         Validate.validating();
-        // await  BlocProvider.of<AuthBloc>(context).login(
-        //     email: testEmail.text, password:
-        // testPassword.text, context: context);
         BlocProvider.of<AuthBloc>(context).add(LoginEvent(email: testEmail.text, password: testPassword.text));
       },
       child:  Text(AppLocalizations.of(context)!.login,style: TextStyles.font20white,
