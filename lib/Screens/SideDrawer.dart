@@ -6,6 +6,7 @@ import 'package:syrianadmin/Register/LogIn.dart';
 import 'package:syrianadmin/components/ListTile.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/snackBar.dart';
+import 'package:syrianadmin/core/FirebaseCollections.dart';
 import '../components/Container.dart';
 import '../main.dart';
 
@@ -20,9 +21,6 @@ class SideDrawer extends StatefulWidget {
 }
 
 class _SideDrawerState extends State<SideDrawer> {
-
-  final FirebaseAuth auth = FirebaseAuth.instance;
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -74,7 +72,7 @@ class _SideDrawerState extends State<SideDrawer> {
             ),
             StreamBuilder<User?>(
               // The stream is the auth state changes from Firebase
-              stream: auth.authStateChanges(),
+              stream: dbColl.auth.authStateChanges(),
               // The builder takes a snapshot of the stream data
               builder: (context, snapshot) {
                 // If the snapshot has data, it means the user is signed in
@@ -84,7 +82,7 @@ class _SideDrawerState extends State<SideDrawer> {
                     leading: myIcons.logout,
                     title: Text(AppLocalizations.of(context)!.logout),
                     onTap: (){
-                      auth.signOut();
+                      dbColl.auth.signOut();
                       showSnackBar(context, AppLocalizations.of(context)!.signedOut);
                       Navigator.of(context).pushReplacementNamed("homepage");
                     },
