@@ -34,9 +34,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     var home =
     FirebaseFirestore.instance.collection('home').orderBy("time", descending: true);
-
-    // final CollectionReference myHome =
-    // FirebaseFirestore.instance.collection('home');
     User? user = FirebaseAuth.instance.currentUser;
     String appBarTitle = AppLocalizations.of(context)!.syrianCommunity;
     addButton() {
