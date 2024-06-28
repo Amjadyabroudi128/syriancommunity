@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:syrianadmin/Cubits/auth_cubit/auth_cubit.dart';
+import 'package:syrianadmin/Bloc/auth_bloc.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/TextField.dart';
@@ -38,7 +38,7 @@ class _LoginState extends State<Login> {
         ),
           body:  Padding(
             padding: const EdgeInsets.all(7.0),
-            child: BlocListener<AuthCubit, AuthState>(
+            child: BlocListener<AuthBloc, AuthState>(
               listener: (context, state) {
                 if (state is LoginSuccess)  {
                   Navigator.of(context).pushReplacementNamed("homepage");
@@ -145,9 +145,10 @@ class _LoginState extends State<Login> {
     return TextButton(
       onPressed: () async {
         Validate.validating();
-        await  BlocProvider.of<AuthCubit>(context).login(
-            email: testEmail.text, password:
-        testPassword.text, context: context);
+        // await  BlocProvider.of<AuthBloc>(context).login(
+        //     email: testEmail.text, password:
+        // testPassword.text, context: context);
+        BlocProvider.of<AuthBloc>(context).add(LoginEvent(email: testEmail.text, password: testPassword.text));
       },
       child:  Text(AppLocalizations.of(context)!.login,style: TextStyles.font20white,
       ),
