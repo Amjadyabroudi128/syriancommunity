@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:syrianadmin/Bloc/auth_bloc.dart';
 import 'package:syrianadmin/Cubits/auth_cubit/auth_cubit.dart';
 import 'package:syrianadmin/Screens/Celebrations/Add/add_celebration_cubit.dart';
 import 'package:syrianadmin/Screens/Celebrations/Delete/delete_cubit.dart';
@@ -58,7 +59,8 @@ class _MyAppState extends State<MyApp> {
           create: (context) => AuthCubit(),),
         BlocProvider(create: (context) => AddCelebrationCubit(),),
         BlocProvider(create: (context) => EditCelebrationCubit()),
-        BlocProvider(create: (context) => DeleteCubit())
+        BlocProvider(create: (context) => DeleteCubit()),
+        BlocProvider(create: (context) => AuthBloc()),
       ],
       child: MaterialApp(
        debugShowCheckedModeBanner: false,
