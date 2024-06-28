@@ -5,6 +5,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/Register/LogIn.dart';
 import 'package:syrianadmin/components/ListTile.dart';
 import 'package:syrianadmin/components/icons.dart';
+import 'package:syrianadmin/components/snackBar.dart';
 import '../components/Container.dart';
 import '../main.dart';
 
@@ -84,8 +85,7 @@ class _SideDrawerState extends State<SideDrawer> {
                     title: Text(AppLocalizations.of(context)!.logout),
                     onTap: (){
                       auth.signOut();
-                      ScaffoldMessenger.of(context).showSnackBar
-                        (  SnackBar(content: Text(AppLocalizations.of(context)!.signedOut),));
+                      showSnackBar(context, AppLocalizations.of(context)!.signedOut);
                       Navigator.of(context).pushReplacementNamed("homepage");
                     },
                   );
