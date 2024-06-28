@@ -82,6 +82,13 @@ class _LoginState extends State<Login> {
                           onPressed: (){
                             setState(() {
                               _togglePasswordView();
+                             }
+                            );
+                            Future.delayed(Duration(seconds: 1), () {
+                              if (mounted)
+                                setState(() {
+                                  _togglePasswordView();
+                                });
                             });
                           },
                           icon: _isHidden ? myIcons.visible : myIcons.nonVisible,
