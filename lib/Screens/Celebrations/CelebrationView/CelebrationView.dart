@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:syrianadmin/Screens/Celebrations/Delete/delete_cubit.dart';
+import 'package:syrianadmin/Screens/Celebrations/Delete/bloc/delete_bloc.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations/editCelebrations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
@@ -122,7 +122,7 @@ class _CelebrationsState extends State<Celebrations> {
                                        ) : SizedBox.shrink(),
                                      ),
 
-                                   BlocListener<DeleteCubit, DeleteState>(
+                                   BlocListener<DeleteBloc, DeleteState>(
                                      listener: (context, state) {
                                         if (state is DeleteSuccess) {
                                           ScaffoldMessenger.of(context).hideCurrentSnackBar();
@@ -167,8 +167,9 @@ class _CelebrationsState extends State<Celebrations> {
                                                           ),
                                                         );
                                                       }else if(selectedValue == myPop.delete){
-                                                        BlocProvider.of<DeleteCubit>(context).delete(document.id);
-
+                                                        BlocProvider.of<DeleteBloc>(context).add(
+                                                            DeleteCelebration(DocID: document.id)
+                                                        );
                                                       }
                                                       },
                                                   popUpAnimationStyle: AnimationStyle(
