@@ -11,7 +11,8 @@ class AddBloc extends Bloc<AddEvent, AddState> {
     final CollectionReference celebrations =
     FirebaseFirestore.instance.collection('Celebrations');
     on<AddEvent>((event, emit) async{
-      if (event is AddCelebration) {
+      emit(AddLoading());
+      if (event is addCelebration) {
         try {
           if (url == null) {
             await celebrations.doc().set(
