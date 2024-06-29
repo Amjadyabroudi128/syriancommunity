@@ -2,13 +2,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:syrianadmin/Screens/Celebrations/Add/add_celebration_cubit.dart';
 import 'package:syrianadmin/Screens/Celebrations/Delete/delete_cubit.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations/edit_celebration_cubit.dart';
 import 'package:syrianadmin/appRoute.dart';
 import 'package:syrianadmin/components/firebase_options.dart';
 import 'Api/Firebase_api.dart';
 import 'Register/Bloc/auth_bloc.dart';
+import 'Screens/Celebrations/Add/Bloc/add_bloc.dart';
 import 'Screens/HomePage/HomePage.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'core/themes/app_theme.dart';
@@ -54,10 +54,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => AddCelebrationCubit(),),
         BlocProvider(create: (context) => EditCelebrationCubit()),
         BlocProvider(create: (context) => DeleteCubit()),
         BlocProvider(create: (context) => AuthBloc()),
+        BlocProvider(create: (context) => AddBloc()),
       ],
       child: MaterialApp(
        debugShowCheckedModeBanner: false,
