@@ -8,7 +8,6 @@ part 'delete_state.dart';
 
 class DeleteBloc extends Bloc<DeleteEvent, DeleteState> {
   DeleteBloc() : super(DeleteInitial()) {
-    dbColl.celebration;
     on<DeleteEvent>((event, emit) {
       if (event is DeleteCelebration) {
         emit(DeleteLoading());
