@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:syrianadmin/Screens/Celebrations/Add/add_celebration_cubit.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
@@ -11,6 +10,7 @@ import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../../components/TextField.dart';
+import 'Bloc/add_bloc.dart';
 
 class AddCelebration extends StatefulWidget {
   const AddCelebration({Key? key}) : super(key: key);
@@ -34,7 +34,7 @@ class _AddCelebrationState extends State<AddCelebration> {
     String appBarTitle = AppLocalizations.of(context)!.addCelebration;
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
-      child: BlocListener<AddCelebrationCubit, AddCelebrationState>(
+      child: BlocListener<AddBloc, AddState>(
     listener: (context, state) {
       if (state is AddSuccess) {
         Navigator.of(context).pushReplacementNamed("celebrations");
@@ -162,10 +162,9 @@ class _AddCelebrationState extends State<AddCelebration> {
           if (celebrationName.text.isEmpty || celebrationDetail.text.isEmpty) {
             Validate.validating();
           } else {
-            await context.read<AddCelebrationCubit>().addCelebration(
-                url: url.url,
-                name: celebrationName.text,
-                details: celebrationDetail.text);
+            BlocProvider.of<AddBloc>(context).add(
+              addCelebration(name: celebrationName.text, details: celebrationDetail.text)
+            );
             Validate.formKey.currentState!.reset();
           }
         },
