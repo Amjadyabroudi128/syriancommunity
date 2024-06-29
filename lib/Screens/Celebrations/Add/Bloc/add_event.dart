@@ -2,7 +2,7 @@ part of 'add_bloc.dart';
 
 @immutable
 sealed class AddEvent {}
-class AddCelebration {
+class AddCelebration extends AddEvent{
   final String name;
   final String details;
   AddCelebration ({required this.name, required this.details});
