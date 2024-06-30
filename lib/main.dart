@@ -8,7 +8,7 @@ import 'package:syrianadmin/appRoute.dart';
 import 'package:syrianadmin/components/firebase_options.dart';
 import 'Api/Firebase_api.dart';
 import 'Register/Bloc/auth_bloc.dart';
-import 'Screens/Celebrations/Add/Bloc/add_bloc.dart';
+import 'Screens/Celebrations/Add/controller/add_bloc.dart';
 import 'Screens/HomePage/HomePage.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'core/themes/app_theme.dart';

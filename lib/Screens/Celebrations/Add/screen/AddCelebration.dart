@@ -9,8 +9,8 @@ import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
-import '../../../components/TextField.dart';
-import 'Bloc/add_bloc.dart';
+import '../../../../components/TextField.dart';
+import '../controller/add_bloc.dart';
 
 class AddCelebration extends StatefulWidget {
   const AddCelebration({Key? key}) : super(key: key);

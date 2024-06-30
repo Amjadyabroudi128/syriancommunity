@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:syrianadmin/Screens/Celebrations/Delete/bloc/delete_bloc.dart';
-import 'package:syrianadmin/Screens/Celebrations/editCelebrations/editCelebrations.dart';
+import 'package:syrianadmin/Screens/Celebrations/editCelebrations/screen/editCelebrations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/icons.dart';
