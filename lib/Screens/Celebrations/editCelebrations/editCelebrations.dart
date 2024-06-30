@@ -51,8 +51,6 @@ class _EditCelebrationState extends State<EditCelebration> {
     url.url = widget.oldUrl;
   }
 
-  final CollectionReference celebrations =
-      FirebaseFirestore.instance.collection('Celebrations');
   @override
   Widget build(BuildContext context) {
     String title = AppLocalizations.of(context)!.editDetails;

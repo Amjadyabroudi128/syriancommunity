@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
 
 part 'edit_celebration_event.dart';
