@@ -205,9 +205,6 @@ class _EditCelebrationState extends State<EditCelebration> {
           Validate.validating();
           showSnackBar(context, AppLocalizations.of(context)!.addThings);
         } else {
-          // context.read<EditCelebrationCubit>().EditCelebration(widget.DocID, {
-
-          // });
           BlocProvider.of<EditCelebrationBloc>(context).add(
             editCelebration(DocID: widget.DocID, newData: {
                 "name": celebrationName.text,
