@@ -11,7 +11,6 @@ class EditCelebrationCubit extends Cubit<EditCelebrationState> {
 
   Future <void> EditCelebration(String DocID, Map<String, dynamic> newData) async {
     emit(EditLoading());
-
     try {
        await celebration.doc(DocID).update(newData);
        emit(EditSuccess());
