@@ -206,10 +206,15 @@ class _EditCelebrationState extends State<EditCelebration> {
           showSnackBar(context, AppLocalizations.of(context)!.addThings);
         } else {
           // context.read<EditCelebrationCubit>().EditCelebration(widget.DocID, {
-          //   "name": celebrationName.text,
-          //   "details": celebrationDetails.text,
-          //   "image": url.url
+
           // });
+          BlocProvider.of<EditCelebrationBloc>(context).add(
+            editCelebration(DocID: widget.DocID, newData: {
+                "name": celebrationName.text,
+                "details": celebrationDetails.text,
+                "image": url.url
+            })
+          );
           Validate.formKey.currentState!.reset();
         }
       },
