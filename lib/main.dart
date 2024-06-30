@@ -3,7 +3,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:syrianadmin/Screens/Celebrations/Delete/bloc/delete_bloc.dart';
-import 'package:syrianadmin/Screens/Celebrations/editCelebrations/edit_celebration_cubit.dart';
+import 'package:syrianadmin/Screens/Celebrations/editCelebrations/controller/edit_celebration_bloc.dart';
 import 'package:syrianadmin/appRoute.dart';
 import 'package:syrianadmin/components/firebase_options.dart';
 import 'Api/Firebase_api.dart';
@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => EditCelebrationCubit()),
+        BlocProvider(create: (context) => EditCelebrationBloc()),
         BlocProvider(create: (context) => DeleteBloc()),
         BlocProvider(create: (context) => AuthBloc()),
         BlocProvider(create: (context) => AddBloc()),
