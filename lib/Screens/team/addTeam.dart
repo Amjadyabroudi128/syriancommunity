@@ -1,10 +1,10 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/snackBar.dart';
+import 'package:syrianadmin/core/FirebaseCollections.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
@@ -29,8 +29,6 @@ class _AddMemberState extends State<AddMember> {
     ..addListener(() {
       setState(() {});
     });
-  final CollectionReference members =
-      FirebaseFirestore.instance.collection('members');
   @override
   Widget build(BuildContext context) {
 
@@ -159,14 +157,14 @@ class _AddMemberState extends State<AddMember> {
           if (name.text.isEmpty || details.text.isEmpty) {
             showSnackBar(context, AppLocalizations.of(context)!.addThings);
           } else if (url.url == null) {
-            await members
+            await dbColl.members
                 .doc()
                 .set({"name": name.text, "details": details.text});
             showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
             Navigator.of(context).pop();
             clearText();
           } else {
-            await members.doc().set({
+            await dbColl.members.doc().set({
               "name": name.text,
               "details": details.text,
               "image": url.url,
