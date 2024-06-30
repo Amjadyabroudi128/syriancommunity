@@ -162,7 +162,7 @@ class _AddCelebrationState extends State<AddCelebration> {
           if (celebrationName.text.isEmpty || celebrationDetail.text.isEmpty) {
             Validate.validating();
           } else {
-            BlocProvider.of<AddBloc>(context).add(
+            context.read<AddBloc>().add(
               addCelebration(name: celebrationName.text, details: celebrationDetail.text)
             );
             Validate.formKey.currentState!.reset();
