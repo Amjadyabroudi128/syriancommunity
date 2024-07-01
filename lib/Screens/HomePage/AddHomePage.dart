@@ -136,6 +136,7 @@ class _AddInfoState extends State<AddInfo> {
            Navigator.push(context, HomePage.route());
            showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
            clearText();
+           Validate.formKey.currentState!.reset();
          }
        },
        title: AppLocalizations.of(context)!.submit,
