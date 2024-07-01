@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'colors.dart';
 import 'font_weight_helper.dart';
 
@@ -25,7 +26,7 @@ import 'font_weight_helper.dart';
      fontSize: 17,
    );
    static TextStyle fontdate = TextStyle(
-     fontSize: 15,
+     fontSize: 15.sp,
      color: ColorManager.dateColor
    );
    static TextStyle hintText = TextStyle(
