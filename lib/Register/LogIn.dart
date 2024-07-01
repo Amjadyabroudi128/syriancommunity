@@ -74,7 +74,7 @@ class _LoginState extends State<Login> {
                         return null;
                       },
                     ),
-                    sizedBox(height: 15,),
+                    sizedBox(height: 15.h,),
                     CustomTextForm(
                        obscureText: _isHidden, maxLines: 1,
                       myController: testPassword,
@@ -112,7 +112,7 @@ class _LoginState extends State<Login> {
                          return null;
                       },
                       ),
-                    sizedBox(height: 20,),
+                    sizedBox(height: 20.h,),
                     (testEmail.text.isEmpty) || (testPassword.text.isEmpty) ? IntrinsicHeight(
                       child: Container(
                         // width: 110.w,
