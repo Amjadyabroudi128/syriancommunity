@@ -5,7 +5,7 @@ import 'font_weight_helper.dart';
 
  class TextStyles {
    static TextStyle font20white = TextStyle(
-     fontSize: 20,
+     fontSize: 19.sp,
      color: Colors.white
    );
    static TextStyle font20grey = TextStyle(
