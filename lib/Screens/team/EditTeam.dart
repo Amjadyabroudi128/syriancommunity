@@ -7,6 +7,7 @@ import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/snackBar.dart';
+import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 import '../../components/SubmitButton.dart';
@@ -43,8 +44,6 @@ class _EditMemberState extends State<EditMember> {
     isUpdated = isUpdated;
   }
   static final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  final CollectionReference members =
-  FirebaseFirestore.instance.collection('members');
   @override
   Widget build(BuildContext context) {
     String edit = AppLocalizations.of(context)!.editDetails;
@@ -163,7 +162,7 @@ class _EditMemberState extends State<EditMember> {
           } else {
             setState(() async {
               isUpdated = true;
-              await members.doc(widget.DocID).update(
+              await dbColl.members.doc(widget.DocID).update(
                   {
                     "image" : url.url,
                     "name" : name.text,
