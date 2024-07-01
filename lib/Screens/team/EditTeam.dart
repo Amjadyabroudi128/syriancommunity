@@ -43,7 +43,6 @@ class _EditMemberState extends State<EditMember> {
     url.url = widget.oldUrl;
     isUpdated = isUpdated;
   }
-  static final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     String edit = AppLocalizations.of(context)!.editDetails;
@@ -182,7 +181,7 @@ class _EditMemberState extends State<EditMember> {
     return IconButton(
         onPressed: (){
           Navigator.of(context).pushNamed("ourteam");
-          formKey.currentState!.reset();
+          Validate.formKey.currentState!.reset();
         },
         icon: myIcons.goBack);
   }
