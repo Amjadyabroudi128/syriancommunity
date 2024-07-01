@@ -1,3 +1,4 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
@@ -34,6 +35,7 @@ class _EditMemberState extends State<EditMember> {
    setState(() {
    });
  });
+ late final minTextAdapt;
   bool? isUpdated;
   void initState() {
     super.initState();
@@ -45,85 +47,89 @@ class _EditMemberState extends State<EditMember> {
   @override
   Widget build(BuildContext context) {
     String edit = AppLocalizations.of(context)!.editDetails;
-    return GestureDetector(
-        onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
-    child: Scaffold(
-      appBar: AppBar(
-        title: Text(edit),
-        leading: goBack(),
-      ),
-      body: ScrollConfiguration(
-        behavior: ScrollBehavior(),
-        child: SingleChildScrollView(
-          child: padding(
-            child: Form(
-              key: Validate.formKey,
-              autovalidateMode: AutovalidateMode.onUserInteraction,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Card(
-                    shape: const CircleBorder(),
-                    clipBehavior: Clip.antiAlias,
-                    child: Center(
-                      child: url.url != null ? myImage(
-                        onPressed: () async {
-                          await url.pickImage();
-                          setState(() {
-                          });
-                        },
-                        src: url.url,
-                        width: 210,
-                        height: 210,
-                        fit: BoxFit.cover
-                      ) : SizedBox.shrink(),
+    return ScreenUtilInit(
+      minTextAdapt: true,
+      splitScreenMode: true,
+      child: GestureDetector(
+          onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(edit),
+          leading: goBack(),
+        ),
+        body: ScrollConfiguration(
+          behavior: ScrollBehavior(),
+          child: SingleChildScrollView(
+            child: padding(
+              child: Form(
+                key: Validate.formKey,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Card(
+                      shape: const CircleBorder(),
+                      clipBehavior: Clip.antiAlias,
+                      child: Center(
+                        child: url.url != null ? myImage(
+                          onPressed: () async {
+                            await url.pickImage();
+                            setState(() {
+                            });
+                          },
+                          src: url.url,
+                          width: 210,
+                          height: 210,
+                          fit: BoxFit.cover
+                        ) : SizedBox.shrink(),
+                      ),
                     ),
-                  ),
-                  padding(child: Text("Member name", style: TextStyles.font14green,)),
-                  sizedBox(height: 3,),
-                  CustomTextForm(
-                      label: Text(AppLocalizations.of(context)!.name),
-                   myController: name,
-                      suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,),
-                    validator: (name){
-                      if(name == null || name == widget.oldName ) {
-                        return AppLocalizations.of(context)!.editMember;
-                      }
-                      return null;
-                    },
-
-                  ),
-                  sizedBox(height: 20,),
-                  padding(child: Text("Member's Details", style: TextStyles.font14green,)),
-                  CustomTextForm(
-                      label: Text(AppLocalizations.of(context)!.details),
-                      myController: details,
-                      suffixIcon: IconButton(onPressed: details.clear, icon: myIcons.clear,),
-                    validator: (name){
-                      if(name == null || name == widget.oldDetail ) {
-                        return AppLocalizations.of(context)!.editMemberDetails;
-                      }
-                      return null;
-                    },
-                  ),
-                  sizedBox(height: 2,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      cancelButton(),
-                      sizedBox(width: 16,),
-                      editButton(),
-                    ],
-                  ),
-                  sizedBox(height: 5,),
-                  Center(child: imageButton()),
-                ],
+                    padding(child: Text("Member name", style: TextStyles.font14green,)),
+                    sizedBox(height: 3,),
+                    CustomTextForm(
+                        label: Text(AppLocalizations.of(context)!.name),
+                     myController: name,
+                        suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,),
+                      validator: (name){
+                        if(name == null || name == widget.oldName ) {
+                          return AppLocalizations.of(context)!.editMember;
+                        }
+                        return null;
+                      },
+      
+                    ),
+                    sizedBox(height: 20,),
+                    padding(child: Text("Member's Details", style: TextStyles.font14green,)),
+                    CustomTextForm(
+                        label: Text(AppLocalizations.of(context)!.details),
+                        myController: details,
+                        suffixIcon: IconButton(onPressed: details.clear, icon: myIcons.clear,),
+                      validator: (name){
+                        if(name == null || name == widget.oldDetail ) {
+                          return AppLocalizations.of(context)!.editMemberDetails;
+                        }
+                        return null;
+                      },
+                    ),
+                    sizedBox(height: 2.h),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        cancelButton(),
+                        sizedBox(width: 12.w,),
+                        editButton(),
+                      ],
+                    ),
+                    sizedBox(height: 3.h,),
+                    Center(child: imageButton()),
+                  ],
+                ),
               ),
             ),
           ),
         ),
       ),
-    ),
+      ),
     );
   }
   void clearText() {
