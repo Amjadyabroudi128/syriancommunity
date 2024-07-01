@@ -6,6 +6,7 @@ import 'package:syrianadmin/Screens/Celebrations/Delete/bloc/delete_bloc.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations/controller/edit_celebration_bloc.dart';
 import 'package:syrianadmin/appRoute.dart';
 import 'package:syrianadmin/components/firebase_options.dart';
+import 'package:syrianadmin/simple_bloc_observer.dart';
 import 'Api/Firebase_api.dart';
 import 'Register/Bloc/auth_bloc.dart';
 import 'Screens/Celebrations/Add/controller/add_bloc.dart';
@@ -24,7 +25,7 @@ import 'core/themes/app_theme.dart';
   );
   await FirebaseApi().initNotifications();
   await FirebaseMessaging.instance.subscribeToTopic("topic");
-
+  Bloc.observer = SimpleBlocObserver();
   runApp(const MyApp());
 }
 
