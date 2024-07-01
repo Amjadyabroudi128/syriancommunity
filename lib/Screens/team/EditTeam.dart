@@ -1,5 +1,4 @@
 import 'package:syrianadmin/classes/pickImage.dart' as url;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
