@@ -115,7 +115,7 @@ class _LoginState extends State<Login> {
                     sizedBox(height: 20,),
                     (testEmail.text.isEmpty) || (testPassword.text.isEmpty) ? IntrinsicHeight(
                       child: Container(
-                        width: 120,
+                        // width: 110.w,
                         decoration: BoxDecoration(
                           color: Colors.grey,
                           borderRadius: BorderRadius.circular(10)
@@ -136,7 +136,7 @@ class _LoginState extends State<Login> {
   IntrinsicHeight ButtonContainer() {
     return IntrinsicHeight(
                   child: Container(
-                    width: 120,
+                    // width: 110.w,
                       decoration:  BoxDecoration(
                           gradient:  LinearGradient(
                             colors: ColorManager.LoginButton,
