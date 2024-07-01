@@ -33,8 +33,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    var home =
-    FirebaseFirestore.instance.collection('home').orderBy("time", descending: true);
     User? user = FirebaseAuth.instance.currentUser;
     String appBarTitle = AppLocalizations.of(context)!.syrianCommunity;
     addButton() {
@@ -73,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                      Text(AppLocalizations.of(context)!.news),
                     sizedBox(height: 5,),
                     StreamBuilder(
-                      stream: home.snapshots(),
+                      stream: dbColl.time.snapshots(),
                       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (snapshot.hasError) {
       
