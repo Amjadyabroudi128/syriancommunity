@@ -67,9 +67,9 @@ class _HomePageState extends State<HomePage> {
                 Column(
                   children: [
                     user != null ? addButton(): sizedBox(),
-                    const sizedBox(height: 6,),
+                     sizedBox(height: 6.h,),
                      Text(AppLocalizations.of(context)!.news),
-                    sizedBox(height: 5,),
+                    sizedBox(height: 5.h,),
                     StreamBuilder(
                       stream: dbColl.time.snapshots(),
                       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
