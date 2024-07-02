@@ -7,6 +7,7 @@ import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
+import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
@@ -146,8 +147,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                             ));
                                    } else if(selectedPop == myPop.delete){
                                     dbColl.members.doc(document.id).delete();
-                                    ScaffoldMessenger.of(context).showSnackBar
-                                      ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted),));
+                                    showSnackBar(context, AppLocalizations.of(context)!.deleted);
                                   }
                                 }, popUpAnimationStyle: AnimationStyle(duration: Duration(milliseconds: 400)),
                               ) : SizedBox(),
