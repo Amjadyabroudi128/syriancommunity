@@ -67,9 +67,9 @@ class _HomePageState extends State<HomePage> {
                 Column(
                   children: [
                     user != null ? addButton(): sizedBox(),
-                     sizedBox(height: 6.h,),
+                    const sizedBox(height: 6,),
                      Text(AppLocalizations.of(context)!.news),
-                    sizedBox(height: 5.h,),
+                    sizedBox(height: 5,),
                     StreamBuilder(
                       stream: dbColl.time.snapshots(),
                       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                                         sizedBox(height: 6,),
                                         Text(data["details"] != null ? data["details"] : SizedBox.shrink()),
                                         Padding(
-                                          padding:  EdgeInsets.only(left: 280.w),
+                                          padding: const EdgeInsets.only(left: 300),
                                           child: user != null ? MyPopUpMenu(
                                                 itemBuilder: (context) {
                                                   return [
