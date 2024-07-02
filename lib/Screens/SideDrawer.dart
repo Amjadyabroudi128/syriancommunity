@@ -26,87 +26,89 @@ class _SideDrawerState extends State<SideDrawer> {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.69,
       child: Drawer(
-        child: ListView(
+        child: SingleChildScrollView(
+          physics: ScrollPhysics(),
           padding: EdgeInsets.zero,
-          children: <Widget>[
-          Containers.image,
-            MYlist(
-              title: Text(AppLocalizations.of(context)!.home),
-              leading: myIcons.home,
-              onTap: (){
-                Navigator.of(context).pushReplacementNamed("homepage");
-              },
-            ),
-            MYlist(
-              title: Text(AppLocalizations.of(context)!.contact),
-              leading: myIcons.email,
-              onTap: (){
-                Navigator.pop(context);
-                Navigator.of(context).pushNamed("contactus");
+          child: Column(
+            children: <Widget>[
+              Containers.image,
+              MYlist(
+                title: Text(AppLocalizations.of(context)!.home),
+                leading: myIcons.home,
+                onTap: (){
+                  Navigator.of(context).pushReplacementNamed("homepage");
+                },
+              ),
+              MYlist(
+                title: Text(AppLocalizations.of(context)!.contact),
+                leading: myIcons.email,
+                onTap: (){
+                  Navigator.pop(context);
+                  Navigator.of(context).pushNamed("contactus");
 
-              },
-            ),
-            MYlist(
-              title: Text(AppLocalizations.of(context)!.team),
-              leading: myIcons.ourGroup,
-              onTap: (){
-                Navigator.pop(context);
-                Navigator.of(context).pushNamed("ourteam");
-              },
-            ),
-            MYlist(
-              title: Text(AppLocalizations.of(context)!.communityResources),
-              leading: myIcons.communityResources,
-              onTap: (){
-                Navigator.pop(context);
-                Navigator.of(context).pushNamed("community");
-              },
-            ),
-            MYlist(
-              title: Text(AppLocalizations.of(context)!.celebrations),
-              leading: myIcons.celebrations,
-              onTap: (){
-                Navigator.pop(context);
-                Navigator.of(context).pushNamed("celebrations");
-              },
-            ),
-            StreamBuilder<User?>(
-              // The stream is the auth state changes from Firebase
-              stream: dbColl.auth.authStateChanges(),
-              // The builder takes a snapshot of the stream data
-              builder: (context, snapshot) {
-                // If the snapshot has data, it means the user is signed in
-                if (snapshot.hasData) {
-                  // Return the list tile for signed in users
-                  return MYlist(
-                    leading: myIcons.logout,
-                    title: Text(AppLocalizations.of(context)!.logout),
-                    onTap: (){
-                      dbColl.auth.signOut();
-                      showSnackBar(context, AppLocalizations.of(context)!.signedOut);
-                      Navigator.of(context).pushReplacementNamed("homepage");
-                    },
-                  );
-                } else {
-                  // Return the list tile for signed out users
-                  return MYlist(
-                    leading: myIcons.Login,
-                    title: Text(AppLocalizations.of(context)!.login),
-                    onTap: () {
-                      Navigator.push(context, CupertinoPageRoute<Widget>(
+                },
+              ),
+              MYlist(
+                title: Text(AppLocalizations.of(context)!.team),
+                leading: myIcons.ourGroup,
+                onTap: (){
+                  Navigator.pop(context);
+                  Navigator.of(context).pushReplacementNamed("ourteam");
+                },
+              ),
+              MYlist(
+                title: Text(AppLocalizations.of(context)!.communityResources),
+                leading: myIcons.communityResources,
+                onTap: (){
+                  Navigator.pop(context);
+                  Navigator.of(context).pushNamed("community");
+                },
+              ),
+              MYlist(
+                title: Text(AppLocalizations.of(context)!.celebrations),
+                leading: myIcons.celebrations,
+                onTap: (){
+                  Navigator.pop(context);
+                  Navigator.of(context).pushNamed("celebrations");
+                },
+              ),
+              StreamBuilder<User?>(
+                // The stream is the auth state changes from Firebase
+                stream: dbColl.auth.authStateChanges(),
+                // The builder takes a snapshot of the stream data
+                builder: (context, snapshot) {
+                  // If the snapshot has data, it means the user is signed in
+                  if (snapshot.hasData) {
+                    // Return the list tile for signed in users
+                    return MYlist(
+                      leading: myIcons.logout,
+                      title: Text(AppLocalizations.of(context)!.logout),
+                      onTap: (){
+                        dbColl.auth.signOut();
+                        showSnackBar(context, AppLocalizations.of(context)!.signedOut);
+                        Navigator.of(context).pushNamed("homepage");
+                      },
+                    );
+                  } else {
+                    // Return the list tile for signed out users
+                    return MYlist(
+                      leading: myIcons.Login,
+                      title: Text(AppLocalizations.of(context)!.login),
+                      onTap: () {
+                        Navigator.push(context, CupertinoPageRoute<Widget>(
                           builder: (BuildContext context) {
                             return  Login();
+                          },
+                        )
+                        );
+
                       },
-                      )
-                      );
+                    );
+                  }
+                },
+              ),
 
-                    },
-                  );
-                }
-              },
-            ),
-
-            ExpansionTile(
+              ExpansionTile(
                 leading: myIcons.language,
                 title: Text(AppLocalizations.of(context)!.language),
 
@@ -128,7 +130,8 @@ class _SideDrawerState extends State<SideDrawer> {
 
                 ],
               ),
-          ],
+            ]
+          ),
         ),
       ),
     );
