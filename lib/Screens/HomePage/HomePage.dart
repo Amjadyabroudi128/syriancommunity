@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                                         sizedBox(height: 6,),
                                         Text(data["details"] != null ? data["details"] : SizedBox.shrink()),
                                         Padding(
-                                          padding: const EdgeInsets.only(left: 300),
+                                          padding:  EdgeInsets.only(left: 280.w),
                                           child: user != null ? MyPopUpMenu(
                                                 itemBuilder: (context) {
                                                   return [
