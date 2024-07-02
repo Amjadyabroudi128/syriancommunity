@@ -7,6 +7,7 @@ import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
+import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 import 'package:syrianadmin/enums.dart';
@@ -22,8 +23,6 @@ class MeetOurTeam extends StatefulWidget {
 }
 
 class _MeetOurTeamState extends State<MeetOurTeam> {
-  final CollectionReference members =
-  FirebaseFirestore.instance.collection('members');
   User? user = FirebaseAuth.instance.currentUser;
 
   @override
@@ -52,7 +51,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                     child: user != null ? addMember() : sizedBox(),
                   ),
                   StreamBuilder(
-                    stream: members.snapshots(),
+                    stream: dbColl.members.snapshots(),
                       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (snapshot.hasError) {
                           return const Text('Something went wrong');
@@ -146,7 +145,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                                       oldUrl: data["image"],)
                                             ));
                                    } else if(selectedPop == myPop.delete){
-                                    members.doc(document.id).delete();
+                                    dbColl.members.doc(document.id).delete();
                                     ScaffoldMessenger.of(context).showSnackBar
                                       ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted),));
                                   }
