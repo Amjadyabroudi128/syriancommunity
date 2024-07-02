@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/icons.dart';
@@ -55,7 +56,7 @@ class _AddMemberState extends State<AddMember> {
                       style: TextStyles.font14green,
                     )),
                     sizedBox(
-                      height: 6,
+                      height: 6.h,
                     ),
                     CustomTextForm(
                         label: Text("Member's name "),
@@ -74,7 +75,7 @@ class _AddMemberState extends State<AddMember> {
                       },
                     ),
                     sizedBox(
-                      height: 12,
+                      height: 7.h,
                     ),
                     padding(
                         child: Text(
