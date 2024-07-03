@@ -230,7 +230,7 @@ import 'fontSize.dart';
              color: Colors.white
          )
      ),
-     popupMenuTheme: PopupMenuThemeData(
+     popupMenuTheme: const PopupMenuThemeData(
        position: PopupMenuPosition.over,
        surfaceTintColor: Colors.white,
        iconColor: Colors.black,
@@ -248,7 +248,7 @@ import 'fontSize.dart';
          textColor: Colors.black,
          iconColor: Colors.black,
      ),
-     buttonTheme: ButtonThemeData(
+     buttonTheme: const ButtonThemeData(
        shape: RoundedRectangleBorder(
            borderRadius: BorderRadius.all(
              Radius.circular(15),
@@ -256,12 +256,13 @@ import 'fontSize.dart';
        ),
        textTheme: ButtonTextTheme.primary, // his gives the best text color for the button
      ),
-     listTileTheme: ListTileThemeData(
+     listTileTheme: const ListTileThemeData(
        iconColor: Colors.black,
        titleTextStyle: TextStyle(
          fontSize: 15,
          color: Colors.black
        ),
      ),
+
    );
  }
