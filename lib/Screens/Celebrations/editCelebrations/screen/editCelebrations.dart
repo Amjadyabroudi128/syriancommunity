@@ -42,6 +42,7 @@ class _EditCelebrationState extends State<EditCelebration> {
       setState(() {});
     });
 
+  @override
   void initState() {
     super.initState();
     celebrationName.text = widget.oldName;
