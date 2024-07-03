@@ -31,6 +31,13 @@ class _AddCelebrationState extends State<AddCelebration> {
 
   @override
   Widget build(BuildContext context) {
+    goBack () {
+     return IconButton(
+          onPressed: () {
+            Navigator.of(context).pushReplacementNamed("celebrations");
+          },
+          icon: myIcons.goBack);
+    }
     String appBarTitle = AppLocalizations.of(context)!.addCelebration;
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
@@ -47,11 +54,7 @@ class _AddCelebrationState extends State<AddCelebration> {
     },
         child: Scaffold(
           appBar: AppBar(
-            leading: IconButton(
-                onPressed: () {
-                  Navigator.of(context).pushReplacementNamed("celebrations");
-                },
-                icon: myIcons.goBack),
+            leading: goBack(),
             title: Text(appBarTitle),
           ),
           body: padding(
