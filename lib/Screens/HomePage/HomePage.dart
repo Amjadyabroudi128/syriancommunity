@@ -33,19 +33,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    User? user = FirebaseAuth.instance.currentUser;
     String appBarTitle = AppLocalizations.of(context)!.syrianCommunity;
     addButton() {
      return CustomButton(onPressed: (){
         Navigator.push(context, AddInfo.route());
       }, title: AppLocalizations.of(context)!.addThings, color: ColorManager.addEdit);
-    }
-    drawerButton () {
-      return IconButton(
-        icon: myIcons.drawer,
-        onPressed: (){
-          Scaffold.of(context).openDrawer();
-        },
-      );
     }
     return ScreenUtilInit(
       minTextAdapt: true,
@@ -73,10 +66,10 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Column(
                   children: [
-                    dbColl.user != null ? addButton(): sizedBox(),
-                     sizedBox(height: 6.h,),
+                    user != null ? addButton(): sizedBox(),
+                    const sizedBox(height: 6,),
                      Text(AppLocalizations.of(context)!.news),
-                    sizedBox(height: 5.h,),
+                    sizedBox(height: 5,),
                     StreamBuilder(
                       stream: dbColl.time.snapshots(),
                       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -126,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                                         Text(data["details"] != null ? data["details"] : SizedBox.shrink()),
                                         Padding(
                                           padding: const EdgeInsets.only(left: 300),
-                                          child: dbColl.user != null ? MyPopUpMenu(
+                                          child: user != null ? MyPopUpMenu(
                                                 itemBuilder: (context) {
                                                   return [
                                                     PopupMenuItem<myPop>(
