@@ -108,8 +108,9 @@ class _addCommunityState extends State<addCommunity> {
   submitButton() {
     return CustomButton(onPressed: () async {
       if ( name.text.isEmpty || details.text.isEmpty ) {
-        ScaffoldMessenger.of(context).showSnackBar
-          ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings), duration: Duration(seconds: 1),));
+        Validate.validating();
+        // ScaffoldMessenger.of(context).showSnackBar
+        //   ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings), duration: Duration(seconds: 1),));
       } else if (url.url == null) {
             await   dbColl.community.doc().set({
               "name" : name.text,
