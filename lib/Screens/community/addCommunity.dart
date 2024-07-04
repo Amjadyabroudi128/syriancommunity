@@ -2,6 +2,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
@@ -44,7 +45,7 @@ class _addCommunityState extends State<addCommunity> {
               sizedBox(),
               padding(child: Text("Event Name"),),
               CustomTextForm(label: Text(AppLocalizations.of(context)!.name), myController: name,
-                  suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: Icon(Icons.clear),)
+                  suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: myIcons.clear)
               ),
               sizedBox(),
               padding(
