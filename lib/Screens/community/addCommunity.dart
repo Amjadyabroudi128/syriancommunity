@@ -54,7 +54,13 @@ class _addCommunityState extends State<addCommunity> {
                   child: Text("what we do"),
                 ),
                 CustomTextForm(label: Text(AppLocalizations.of(context)!.details), myController: details,
-                    suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear)
+                    suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear),
+                  validator: (value) {
+                    if(value == null || name.text.isEmpty) {
+                      return AppLocalizations.of(context)!.addThings;
+                    }
+                    return null;
+                  },
                 ),
                 sizedBox(height: 10,),
                 Row(
