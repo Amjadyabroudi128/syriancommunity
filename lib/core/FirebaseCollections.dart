@@ -9,4 +9,5 @@ class dbColl {
   static CollectionReference members = FirebaseFirestore.instance.collection('members');
   static Query<Map<String, dynamic>> time = FirebaseFirestore.instance.collection("home").orderBy("time", descending: true);
   static User? user = FirebaseAuth.instance.currentUser;
+  static  CollectionReference community = FirebaseFirestore.instance.collection('Community');
 }

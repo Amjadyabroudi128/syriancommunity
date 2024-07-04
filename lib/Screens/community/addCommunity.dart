@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
 import '../../components/SubmitButton.dart';
@@ -26,8 +27,7 @@ class _addCommunityState extends State<addCommunity> {
    });
  });
 
-  final CollectionReference community =
-  FirebaseFirestore.instance.collection('Community');
+
   @override
   Widget build(BuildContext context) {
     String addDetails = AppLocalizations.of(context)!.addDetails;
@@ -45,7 +45,7 @@ class _addCommunityState extends State<addCommunity> {
               sizedBox(),
               padding(child: Text("Event Name"),),
               CustomTextForm(label: Text(AppLocalizations.of(context)!.name), myController: name,
-                  suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: myIcons.clear)
+                  suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: myIcons.clear),
               ),
               sizedBox(),
               padding(
@@ -96,13 +96,13 @@ class _addCommunityState extends State<addCommunity> {
         ScaffoldMessenger.of(context).showSnackBar
           ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings), duration: Duration(seconds: 1),));
       } else if (url.url == null) {
-            await   community.doc().set({
+            await   dbColl.community.doc().set({
               "name" : name.text,
               "details" : details.text
             });
             Navigator.pushReplacementNamed(context, 'community');
       }  else {
-            await community.doc().set({
+            await dbColl.community.doc().set({
               "name" : name.text,
               "details" : details.text,
               "image" : url.url,
