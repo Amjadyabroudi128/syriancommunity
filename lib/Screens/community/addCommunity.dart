@@ -70,12 +70,12 @@ class _addCommunityState extends State<addCommunity> {
                     return null;
                   },
                 ),
-                sizedBox(height: 10,),
+                sizedBox(height: 10.h,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     cancelButton(),
-                    sizedBox(width: 10,),
+                    sizedBox(width: 10.w,),
                     submitButton(),
                   ],
                 ),
