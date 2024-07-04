@@ -4,6 +4,7 @@ import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
@@ -109,8 +110,7 @@ class _addCommunityState extends State<addCommunity> {
     return CustomButton(onPressed: () async {
       if ( name.text.isEmpty || details.text.isEmpty ) {
         Validate.validating();
-        // ScaffoldMessenger.of(context).showSnackBar
-        //   ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings), duration: Duration(seconds: 1),));
+        showSnackBar(context, AppLocalizations.of(context)!.addThings);
       } else if (url.url == null) {
             await   dbColl.community.doc().set({
               "name" : name.text,
