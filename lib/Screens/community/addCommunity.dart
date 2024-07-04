@@ -56,7 +56,7 @@ class _addCommunityState extends State<addCommunity> {
                 CustomTextForm(label: Text(AppLocalizations.of(context)!.details), myController: details,
                     suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear),
                   validator: (value) {
-                    if(value == null || name.text.isEmpty) {
+                    if(value == null || details.text.isEmpty) {
                       return AppLocalizations.of(context)!.addThings;
                     }
                     return null;
