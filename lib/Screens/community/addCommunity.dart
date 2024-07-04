@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:syrianadmin/Screens/HomePage/HomePage.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/icons.dart';
@@ -37,14 +36,11 @@ class _addCommunityState extends State<addCommunity> {
         onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
     child: Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: (){
-          Navigator.push(context, HomePage.route());
-          setState(() {
-            Validate.formKey.currentState!.reset();
-          });
-        },
-            icon: myIcons.goBack
-        ),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed("community");
+            },
+            icon: myIcons.goBack),
         title: Text(addDetails),
       ),
       body: padding(
