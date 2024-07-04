@@ -55,9 +55,6 @@ class _addCommunityState extends State<addCommunity> {
                   suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear)
               ),
               sizedBox(height: 10,),
-              Center(
-                child: imageButton(),
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -65,6 +62,9 @@ class _addCommunityState extends State<addCommunity> {
                   sizedBox(width: 10,),
                   submitButton(),
                 ],
+              ),
+              Center(
+                child: imageButton(),
               ),
 
             ],
