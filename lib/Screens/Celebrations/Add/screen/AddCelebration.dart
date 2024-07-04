@@ -40,10 +40,7 @@ class _AddCelebrationState extends State<AddCelebration> {
           icon: myIcons.goBack);
     }
     String appBarTitle = AppLocalizations.of(context)!.addCelebration;
-    return ScreenUtilInit(
-      minTextAdapt: true,
-      splitScreenMode: true,
-      child: GestureDetector(
+    return  GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
         child: BlocListener<AddBloc, AddState>(
       listener: (context, state) {
@@ -132,8 +129,7 @@ class _AddCelebrationState extends State<AddCelebration> {
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 
   void clearText() {
