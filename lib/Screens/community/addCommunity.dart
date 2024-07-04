@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
@@ -38,35 +39,38 @@ class _addCommunityState extends State<addCommunity> {
       ),
       body: padding(
         child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              sizedBox(),
-              padding(child: Text("Event Name"),),
-              CustomTextForm(label: Text(AppLocalizations.of(context)!.name), myController: name,
-                  suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: myIcons.clear),
-              ),
-              sizedBox(),
-              padding(
-                child: Text("what we do"),
-              ),
-              CustomTextForm(label: Text(AppLocalizations.of(context)!.details), myController: details,
-                  suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear)
-              ),
-              sizedBox(height: 10,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  cancelButton(),
-                  sizedBox(width: 10,),
-                  submitButton(),
-                ],
-              ),
-              Center(
-                child: imageButton(),
-              ),
+          child: Form(
+            key: Validate.formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                sizedBox(),
+                padding(child: Text("Event Name"),),
+                CustomTextForm(label: Text(AppLocalizations.of(context)!.name), myController: name,
+                    suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: myIcons.clear),
+                ),
+                sizedBox(),
+                padding(
+                  child: Text("what we do"),
+                ),
+                CustomTextForm(label: Text(AppLocalizations.of(context)!.details), myController: details,
+                    suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear)
+                ),
+                sizedBox(height: 10,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    cancelButton(),
+                    sizedBox(width: 10,),
+                    submitButton(),
+                  ],
+                ),
+                Center(
+                  child: imageButton(),
+                ),
 
-            ],
+              ],
+            ),
           ),
         ),
       ),
