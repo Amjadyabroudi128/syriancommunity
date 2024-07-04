@@ -42,6 +42,7 @@ class _addCommunityState extends State<addCommunity> {
         child: SingleChildScrollView(
           child: Form(
             key: Validate.formKey,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
