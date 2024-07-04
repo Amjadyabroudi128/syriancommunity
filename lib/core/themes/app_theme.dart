@@ -148,7 +148,14 @@ import 'fontSize.dart';
 
    static final themeData = ThemeData().copyWith(
      inputDecorationTheme: InputDecorationTheme(
-         suffixIconColor: Colors.black,
+       suffixIconColor:WidgetStateColor.resolveWith(
+             (Set<WidgetState> states) {
+           if (states.contains(WidgetState.error)) {
+             return Colors.red;
+           }
+           return Colors.black;
+         },
+       ),
          hintStyle: TextStyles.hintText,
          floatingLabelStyle: TextStyles.lightFloating,
          labelStyle: TextStyles.lightLabel,
