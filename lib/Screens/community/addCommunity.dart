@@ -116,6 +116,7 @@ class _addCommunityState extends State<addCommunity> {
               "name" : name.text,
               "details" : details.text
             });
+            showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
             Navigator.pushReplacementNamed(context, 'community');
       }  else {
             await dbColl.community.doc().set({
@@ -123,6 +124,7 @@ class _addCommunityState extends State<addCommunity> {
               "details" : details.text,
               "image" : url.url,
             });
+            showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
             Navigator.pushReplacementNamed(context,'community');
           }
     }
