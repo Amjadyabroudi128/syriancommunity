@@ -48,6 +48,12 @@ class _addCommunityState extends State<addCommunity> {
                 padding(child: Text("Event Name"),),
                 CustomTextForm(label: Text(AppLocalizations.of(context)!.name), myController: name,
                     suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: myIcons.clear),
+                  validator: (value) {
+                    if(value == null || name.text.isEmpty) {
+                      return AppLocalizations.of(context)!.addThings;
+                    }
+                    return null;
+                  },
                 ),
                 sizedBox(height: 3.h,),
                 padding(
