@@ -1,4 +1,5 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/Screens/HomePage/HomePage.dart';
@@ -15,6 +16,7 @@ import '../../classes/validate state.dart';
 import '../../components/Sizedbox.dart';
 
 class AddInfo extends StatefulWidget {
+
   static route() => MaterialPageRoute(
     builder: (context) => AddInfo(),
   );
@@ -25,20 +27,22 @@ class AddInfo extends StatefulWidget {
 }
 
 class _AddInfoState extends State<AddInfo> {
+  bool _showIcon = false;
   late final TextEditingController name = TextEditingController()..addListener(() {
     setState(() {
+      name.text.isNotEmpty ? _showIcon = false : true;
     });
   });
  late final TextEditingController details = TextEditingController()..addListener(() {
     setState(() {
+      details.text.isNotEmpty ? _showIcon = false : true;
+
     });
   });
   DateTime today = DateTime.now();
-  bool _showIcon = false;
-
   void _checkTextField() {
     setState(() {
-      _showIcon = name.text.isEmpty || details.text.isEmpty;
+      _showIcon = name.text.isEmpty && details.text.isEmpty;
     });
   }
 
@@ -97,7 +101,7 @@ class _AddInfoState extends State<AddInfo> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            _showIcon ? Icon(Icons.warning) : SizedBox.shrink(),
+                            _showIcon ? Icon(CupertinoIcons.exclamationmark) : SizedBox.shrink(),
                             name.text.isEmpty ? sizedBox() : IconButton(onPressed: name.clear,
                               icon: myIcons.clear,),
                           ],
@@ -120,7 +124,7 @@ class _AddInfoState extends State<AddInfo> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          _showIcon ? Icon(Icons.warning) : SizedBox.shrink(),
+                          _showIcon ? Icon(CupertinoIcons.exclamationmark) : SizedBox.shrink(),
                           details.text.isEmpty ? sizedBox() : IconButton(onPressed: details.clear,
                             icon: myIcons.clear,),
                         ],
