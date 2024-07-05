@@ -34,7 +34,34 @@ class _AddInfoState extends State<AddInfo> {
     });
   });
   DateTime today = DateTime.now();
+  bool _showIcon = false;
 
+  void _checkTextField() {
+    setState(() {
+      _showIcon = name.text.isEmpty;
+    });
+  }
+
+  Future<void> _validateAndSubmit() async {
+    if (Validate.formKey.currentState?.validate() ?? false)  {
+      // If the form is valid, perform some action
+      await dbColl.myHome.doc().set(
+          {
+            "name" : name.text,
+            "details" : details.text,
+            "time" :today,
+          }
+      );
+      await FirebaseApi().initNotifications();
+      await FirebaseMessaging.instance.subscribeToTopic("topic");
+      Navigator.push(context, HomePage.route());
+      showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
+      clearText();
+      Validate.formKey.currentState!.reset();
+    } else {
+      _checkTextField();
+    }
+  }
   @override
   Widget build(BuildContext context) {
     String id = AppLocalizations.of(context)!.addDetails;
@@ -66,8 +93,17 @@ class _AddInfoState extends State<AddInfo> {
                       CustomTextForm(
                           label: Text(AppLocalizations.of(context)!.name),
                           myController: name,
-                          suffixIcon: name.text.isEmpty ? null :
-                          IconButton(onPressed: name.clear, icon: myIcons.clear,),
+                        suffixIcon: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            _showIcon ? Icon(Icons.warning) : sizedBox(),
+                            name.text.isEmpty ? sizedBox() : IconButton(onPressed: name.clear,
+
+                              icon: myIcons.clear,)
+                          ],
+                        ),
+                        // _showIcon ? Icon(Icons.warning) : sizedBox(),
                         validator: (value) {
                           if(value == null || name.text.isEmpty) {
                            return AppLocalizations.of(context)!.addThings;
@@ -96,7 +132,7 @@ class _AddInfoState extends State<AddInfo> {
                          children: [
                            cancelButton(),
                            sizedBox(width: 15,),
-                           addButton()
+                           addButton(),
                          ],
                        ),
 
@@ -120,25 +156,7 @@ class _AddInfoState extends State<AddInfo> {
  }
  addButton() {
    return CustomButton(
-       onPressed: () async {
-         if ( name.text.isEmpty || details.text.isEmpty ) {
-           Validate.validating();
-         } else {
-           await dbColl.myHome.doc().set(
-               {
-                 "name" : name.text,
-                 "details" : details.text,
-                 "time" :today,
-               }
-           );
-           await FirebaseApi().initNotifications();
-           await FirebaseMessaging.instance.subscribeToTopic("topic");
-           Navigator.push(context, HomePage.route());
-           showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
-           clearText();
-           Validate.formKey.currentState!.reset();
-         }
-       },
+       onPressed: _validateAndSubmit,
        title: AppLocalizations.of(context)!.submit,
        color: (name.text.isEmpty)
            && (details.text.isEmpty) ? Colors.grey : ColorManager.submit
