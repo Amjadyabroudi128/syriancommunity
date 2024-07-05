@@ -38,7 +38,12 @@ class _AddInfoState extends State<AddInfo> {
 
   void _checkTextField() {
     setState(() {
-      _showIcon = name.text.isEmpty;
+      // _showIcon = name.text.isEmpty;
+      if (name.text.isEmpty) {
+        _showIcon = true;
+      } else {
+        sizedBox();
+      }
     });
   }
 
@@ -97,10 +102,9 @@ class _AddInfoState extends State<AddInfo> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            _showIcon ? Icon(Icons.warning) : sizedBox(),
+                            _showIcon ? Icon(Icons.warning) : SizedBox.shrink(),
                             name.text.isEmpty ? sizedBox() : IconButton(onPressed: name.clear,
-
-                              icon: myIcons.clear,)
+                              icon: myIcons.clear,),
                           ],
                         ),
                         // _showIcon ? Icon(Icons.warning) : sizedBox(),
