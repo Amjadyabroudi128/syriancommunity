@@ -38,12 +38,7 @@ class _AddInfoState extends State<AddInfo> {
 
   void _checkTextField() {
     setState(() {
-      // _showIcon = name.text.isEmpty;
-      if (name.text.isEmpty) {
-        _showIcon = true;
-      } else {
-        sizedBox();
-      }
+      _showIcon = name.text.isEmpty || details.text.isEmpty;
     });
   }
 
@@ -121,8 +116,15 @@ class _AddInfoState extends State<AddInfo> {
                     CustomTextForm(
                         label: Text(AppLocalizations.of(context)!.details),
                         myController: details,
-                        suffixIcon: details.text.isEmpty ? null :
-                        IconButton(onPressed: details.clear, icon: myIcons.clear,),
+                      suffixIcon: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          _showIcon ? Icon(Icons.warning) : SizedBox.shrink(),
+                          details.text.isEmpty ? sizedBox() : IconButton(onPressed: details.clear,
+                            icon: myIcons.clear,),
+                        ],
+                      ),
                       validator: (value) {
                           if(value == null || details.text.isEmpty) {
                           return AppLocalizations.of(context)!.addDetails;
