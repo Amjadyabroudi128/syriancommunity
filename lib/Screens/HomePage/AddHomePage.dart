@@ -9,6 +9,7 @@ import 'package:syrianadmin/components/TextField.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/snackBar.dart';
+import 'package:syrianadmin/core/features/widgets/details_text.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../Api/Firebase_api.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -118,25 +119,7 @@ class _AddInfoState extends State<AddInfo> {
                     sizedBox(height: 10.h,),
                     padding(child: Text("post Details")),
                     sizedBox(height: 3.h,),
-                    CustomTextForm(
-                        label: Text(AppLocalizations.of(context)!.details),
-                        myController: details,
-                      suffixIcon: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          _showIcon ? myIcons.error : SizedBox.shrink(),
-                          details.text.isEmpty ? sizedBox() : IconButton(onPressed: details.clear,
-                            icon: myIcons.clear,),
-                        ],
-                      ),
-                      validator: (value) {
-                          if(value == null || details.text.isEmpty) {
-                          return AppLocalizations.of(context)!.addDetails;
-                          }
-                          return null;
-                      },
-                    ),
+                    textDetails(details: details, showIcon: _showIcon),
                     sizedBox(height: 10,),
                        Row(
                          mainAxisAlignment: MainAxisAlignment.center,
@@ -174,3 +157,5 @@ class _AddInfoState extends State<AddInfo> {
    );
  }
 }
+
+
