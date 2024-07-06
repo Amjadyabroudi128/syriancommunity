@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/Screens/HomePage/HomePage.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
-import 'package:syrianadmin/components/TextField.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/snackBar.dart';
@@ -13,7 +12,6 @@ import 'package:syrianadmin/core/features/widgets/addHomeTexts.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../Api/Firebase_api.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 import '../../classes/validate state.dart';
 import '../../components/Sizedbox.dart';
 
