@@ -36,6 +36,12 @@ class _EditHomeState extends State<EditHome> {
     details.text = widget.oldDetail;
   }
   @override
+  void dispose() {
+    super.dispose();
+    name;
+    details;
+  }
+  @override
   Widget build(BuildContext context) {
     String editTitle = AppLocalizations.of(context)!.editDetails ;
     return GestureDetector(
