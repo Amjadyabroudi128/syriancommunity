@@ -1,6 +1,7 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/Screens/HomePage/HomePage.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
@@ -114,9 +115,9 @@ class _AddInfoState extends State<AddInfo> {
                           return null;
                         },
                       ),
-                    sizedBox(height: 10,),
+                    sizedBox(height: 10.h,),
                     padding(child: Text("post Details")),
-                    sizedBox(height: 3,),
+                    sizedBox(height: 3.h,),
                     CustomTextForm(
                         label: Text(AppLocalizations.of(context)!.details),
                         myController: details,
