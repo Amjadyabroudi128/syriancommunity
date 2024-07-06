@@ -5,6 +5,7 @@ import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
+import 'package:syrianadmin/core/features/widgets/editHomeTexts.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../components/Sizedbox.dart';
 import '../../components/SubmitButton.dart';
@@ -62,30 +63,11 @@ class _EditHomeState extends State<EditHome> {
                 children: [
                   padding(child: Text("post Name")),
                   sizedBox(height: 3,),
-                  CustomTextForm(
-                      label: Text(AppLocalizations.of(context)!.name), myController: name,
-                      suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: myIcons.clear,),
-                    validator: (value) {
-                      if(value == null || name.text == widget.oldName) {
-                        return AppLocalizations.of(context)!.addThings;
-                      }
-                      return null;
-                    },
-                  ),
+                  edithomeText(name: name, widget: widget),
                   sizedBox(height: 20,),
                   padding(child: Text("post Details")),
                   sizedBox(height: 3,),
-                  CustomTextForm(
-                    label: Text(AppLocalizations.of(context)!.details),
-                      myController: details,
-                      suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear ),
-                    validator: (value) {
-                      if(value == null || details.text == widget.oldDetail) {
-                        return AppLocalizations.of(context)!.editDetails;
-                      }
-                      return null;
-                    },
-                  ),
+                  editDetails(details: details, widget: widget),
                   sizedBox(height: 10,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -105,10 +87,12 @@ class _EditHomeState extends State<EditHome> {
     );
   }
   updateButton () {
-
+    bool isUnchangedOrEmpty = (name.text == widget.oldName && details.text == widget.oldDetail) &&
+        widget.oldName.isEmpty == name.text.isEmpty ||
+        widget.oldDetail.isEmpty == details.text.isEmpty;
     return CustomButton(
         onPressed: () async {
-          if (name.text == widget.oldName && details.text == widget.oldDetail) {
+          if (isUnchangedOrEmpty) {
             Validate.validating();
           }
           else {
@@ -131,3 +115,4 @@ class _EditHomeState extends State<EditHome> {
     }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
   }
 }
+
