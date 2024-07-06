@@ -45,6 +45,12 @@ class _AddInfoState extends State<AddInfo> {
       _showIcon = name.text.isEmpty && details.text.isEmpty;
     });
   }
+  @override
+  void dispose() {
+    super.dispose();
+    details;
+    name;
+  }
 
   Future<void> _validateAndSubmit() async {
     if (Validate.formKey.currentState?.validate() ?? false)  {
