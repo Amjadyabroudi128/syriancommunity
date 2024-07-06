@@ -39,3 +39,37 @@ class textDetails extends StatelessWidget {
     );
   }
 }
+class nameText extends StatelessWidget {
+  const nameText({
+    super.key,
+    required this.name,
+    required bool showIcon,
+  }) : _showIcon = showIcon;
+
+  final TextEditingController name;
+  final bool _showIcon;
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomTextForm(
+      label: Text(AppLocalizations.of(context)!.name),
+      myController: name,
+      suffixIcon: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _showIcon ? myIcons.error : SizedBox.shrink(),
+          name.text.isEmpty ? sizedBox() : IconButton(onPressed: name.clear,
+            icon: myIcons.clear,),
+        ],
+      ),
+      // _showIcon ? Icon(Icons.warning) : sizedBox(),
+      validator: (value) {
+        if(value == null || name.text.isEmpty) {
+          return AppLocalizations.of(context)!.addThings;
+        }
+        return null;
+      },
+    );
+  }
+}

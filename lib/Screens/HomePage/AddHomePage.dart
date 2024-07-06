@@ -9,7 +9,7 @@ import 'package:syrianadmin/components/TextField.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/snackBar.dart';
-import 'package:syrianadmin/core/features/widgets/details_text.dart';
+import 'package:syrianadmin/core/features/widgets/addHomeTexts.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../Api/Firebase_api.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -96,26 +96,7 @@ class _AddInfoState extends State<AddInfo> {
                   children: [
                     padding(child: Text("post Name")),
                       sizedBox(height: 3,),
-                      CustomTextForm(
-                          label: Text(AppLocalizations.of(context)!.name),
-                          myController: name,
-                        suffixIcon: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            _showIcon ? myIcons.error : SizedBox.shrink(),
-                            name.text.isEmpty ? sizedBox() : IconButton(onPressed: name.clear,
-                              icon: myIcons.clear,),
-                          ],
-                        ),
-                        // _showIcon ? Icon(Icons.warning) : sizedBox(),
-                        validator: (value) {
-                          if(value == null || name.text.isEmpty) {
-                           return AppLocalizations.of(context)!.addThings;
-                          }
-                          return null;
-                        },
-                      ),
+                    nameText(name: name, showIcon: _showIcon),
                     sizedBox(height: 10.h,),
                     padding(child: Text("post Details")),
                     sizedBox(height: 3.h,),
@@ -157,5 +138,6 @@ class _AddInfoState extends State<AddInfo> {
    );
  }
 }
+
 
 
