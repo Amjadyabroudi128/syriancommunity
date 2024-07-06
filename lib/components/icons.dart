@@ -25,4 +25,5 @@ class myIcons {
   static Icon nonVisible = Icon(Icons.visibility_off);
   static String logo = "images/syrianlogo.jpg";
   static Icon pass = Icon(Icons.lock, size: 24,);
+  static Icon error = Icon(CupertinoIcons.exclamationmark);
 }
