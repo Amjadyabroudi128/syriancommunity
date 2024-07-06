@@ -101,7 +101,7 @@ class _AddInfoState extends State<AddInfo> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            _showIcon ? Icon(CupertinoIcons.exclamationmark) : SizedBox.shrink(),
+                            _showIcon ? myIcons.error : SizedBox.shrink(),
                             name.text.isEmpty ? sizedBox() : IconButton(onPressed: name.clear,
                               icon: myIcons.clear,),
                           ],
