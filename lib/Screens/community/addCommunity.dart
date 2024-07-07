@@ -36,11 +36,7 @@ class _addCommunityState extends State<addCommunity> {
         onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
     child: Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed("community");
-            },
-            icon: myIcons.goBack),
+        leading: goBack(),
         title: Text(addDetails),
       ),
       body: padding(
@@ -138,5 +134,12 @@ class _addCommunityState extends State<addCommunity> {
         color: (name.text.isEmpty)
             || (details.text.isEmpty) ? Colors.grey : ColorManager.submit
     );
+  }
+  goBack () {
+    IconButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed("community");
+        },
+        icon: myIcons.goBack);
   }
 }

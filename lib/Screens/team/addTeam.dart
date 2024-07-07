@@ -107,7 +107,7 @@ class _AddMemberState extends State<AddMember> {
                       children: [
                         cancelButton(),
                         sizedBox(
-                          width: 13,
+                          width: 13.w,
                         ),
                         addButon()
                       ],
