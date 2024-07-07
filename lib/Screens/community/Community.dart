@@ -8,6 +8,7 @@ import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
+import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 import 'editCommunity.dart';
@@ -23,8 +24,6 @@ class Community extends StatefulWidget {
 }
 
 class _CommunityState extends State<Community> {
-  final CollectionReference community =
-  FirebaseFirestore.instance.collection('Community');
   @override
   Widget build(BuildContext context) {
     User? user = FirebaseAuth.instance.currentUser;
@@ -48,7 +47,7 @@ class _CommunityState extends State<Community> {
                 ),
               ),
               StreamBuilder(
-                stream: community.snapshots(),
+                stream: dbColl.community.snapshots(),
                 builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
               if (snapshot.hasError) {
                 return Text('Something went wrong');
@@ -127,7 +126,7 @@ class _CommunityState extends State<Community> {
                                                     ));
 
                                               }else if(value == 1){
-                                                community.doc(document.id).delete();
+                                                dbColl.community.doc(document.id).delete();
                                                 ScaffoldMessenger.of(context).showSnackBar
                                                   ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted)));
                                               }
