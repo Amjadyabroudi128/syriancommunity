@@ -67,22 +67,21 @@ class _CommunityState extends State<Community> {
                       child: Column(
                         children: [
                           padding(
-                            child: user != null ? GestureDetector(
-                              child: Card(
-                                child: data["image"] != null ? myImage(
-                                  src: data["image"],
-                                  height: MediaQuery.of(context).size.height * 0.40,
-                                ) : SizedBox.shrink(),
-                              ),
-                              onTap: (){
-                                Navigator.of(context).push(
-                                    MaterialPageRoute(builder: (context) =>
-                                        EditCommunity(DocID: document.id ,
-                                          oldName: data["name"],
-                                          oldUrl: data["image"],
-                                          oldDetails: data["details"],)
-                                    ));
-                              },
+                            child: user != null ? Card(
+                              child: data["image"] != null ? myImage(
+                                onPressed: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(builder: (context) =>
+                                            EditCommunity(DocID: document.id ,
+                                              oldName: data["name"],
+                                              oldUrl: data["image"],
+                                              oldDetails: data["details"],)
+                                        ));
+
+                                },
+                                src: data["image"],
+                                height: MediaQuery.of(context).size.height * 0.40,
+                              ) : SizedBox.shrink(),
                             ) : Card(
                               child: data["image"] != null ? myImage(
                                 src: data["image"],
