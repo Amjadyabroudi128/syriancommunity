@@ -8,6 +8,7 @@ import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
+import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
@@ -127,8 +128,9 @@ class _CommunityState extends State<Community> {
 
                                               }else if(value == 1){
                                                 dbColl.community.doc(document.id).delete();
-                                                ScaffoldMessenger.of(context).showSnackBar
-                                                  ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted)));
+                                                // ScaffoldMessenger.of(context).showSnackBar
+                                                //   ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted)));
+                                                showSnackBar(context, AppLocalizations.of(context)!.deleted);
                                               }
                                             },
                                           popUpAnimationStyle: AnimationStyle(
