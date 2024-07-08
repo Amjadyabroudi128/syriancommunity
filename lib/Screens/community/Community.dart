@@ -118,7 +118,7 @@ class _CommunityState extends State<Community> {
                                           ];
                                           },
                                             onSelected:(value){
-                                              if(value == 0){
+                                              if(value == myPop.edit){
                                                 Navigator.of(context).push(
                                                     CupertinoPageRoute(builder: (context) =>
                                                         EditCommunity(DocID: document.id ,
@@ -127,7 +127,7 @@ class _CommunityState extends State<Community> {
                                                           oldDetails: data["details"],)
                                                     ));
 
-                                              }else if(value == 1){
+                                              }else if(value == myPop.delete){
                                                 dbColl.community.doc(document.id).delete();
                                                 showSnackBar(context, AppLocalizations.of(context)!.deleted);
                                               }
