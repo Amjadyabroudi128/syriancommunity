@@ -59,7 +59,7 @@ class _CommunityState extends State<Community> {
                   return Text('Something went wrong');
                 }
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Text("Loading");
+                  return CircularProgressIndicator();
                 }
                 return SingleChildScrollView(
                   child: ListView(
