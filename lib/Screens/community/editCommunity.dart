@@ -33,6 +33,13 @@ class _EditCommunityState extends State<EditCommunity> {
    bool? isUpdated;
   final CollectionReference community =
   FirebaseFirestore.instance.collection('Community');
+  void dispose() {
+    super.dispose();
+    name;
+    details;
+    isUpdated;
+    url.url;
+  }
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
