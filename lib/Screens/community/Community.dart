@@ -127,8 +127,6 @@ class _CommunityState extends State<Community> {
 
                                               }else if(value == 1){
                                                 dbColl.community.doc(document.id).delete();
-                                                // ScaffoldMessenger.of(context).showSnackBar
-                                                //   ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted)));
                                                 showSnackBar(context, AppLocalizations.of(context)!.deleted);
                                               }
                                             },
