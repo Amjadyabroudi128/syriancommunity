@@ -135,7 +135,7 @@ class _CommunityState extends State<Community> {
                                           popUpAnimationStyle: AnimationStyle(
                                               duration: Duration(milliseconds: 400)
                                           ),
-                                        ) : sizedBox(height: 40,),
+                                        ) : sizedBox(height: 40.h,),
                                       ),
                                   ],
                                 ),
