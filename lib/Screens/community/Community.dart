@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/icons.dart';
@@ -12,6 +13,7 @@ import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
+import 'package:syrianadmin/enums.dart';
 import 'editCommunity.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -90,7 +92,7 @@ class _CommunityState extends State<Community> {
                             ),
                           ),
                           Text(data["name"], style: TextStyles.font14green,),
-                          sizedBox(height: 12,),
+                          sizedBox(height: 12.h,),
                           SizedBox(
                             width: MediaQuery.of(context).size.width,
                             child: IntrinsicHeight(
@@ -105,8 +107,8 @@ class _CommunityState extends State<Community> {
                                         child: user != null ? MyPopUpMenu(
                                           itemBuilder: (context) {
                                           return [
-                                            PopupMenuItem<int>(
-                                              value: 0,
+                                            PopupMenuItem<myPop>(
+                                              value: myPop.edit,
                                               child: Text(AppLocalizations.of(context)!.edit),
                                             ),
                                             PopupMenuItem<int>(
