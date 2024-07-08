@@ -111,8 +111,8 @@ class _CommunityState extends State<Community> {
                                               value: myPop.edit,
                                               child: Text(AppLocalizations.of(context)!.edit),
                                             ),
-                                            PopupMenuItem<int>(
-                                              value: 1,
+                                            PopupMenuItem<myPop>(
+                                              value: myPop.delete,
                                               child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),
                                             ),
                                           ];
