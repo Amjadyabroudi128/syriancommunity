@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
@@ -141,8 +142,9 @@ class _EditCommunityState extends State<EditCommunity> {
           "image" : url.url
         });
         Navigator.pop(context);
-        ScaffoldMessenger.of(context).showSnackBar
-          ( SnackBar(content: Text("${AppLocalizations.of(context)!.edited}",)));
+        // ScaffoldMessenger.of(context).showSnackBar
+        //   ( SnackBar(content: Text("${AppLocalizations.of(context)!.edited}",)));
+        showSnackBar(context, AppLocalizations.of(context)!.editedSuccessfully);
       }
       setState(() {
         isUpdated = true;
