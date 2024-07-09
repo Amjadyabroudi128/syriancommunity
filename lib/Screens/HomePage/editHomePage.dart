@@ -85,9 +85,8 @@ class _EditHomeState extends State<EditHome> {
     );
   }
   updateButton () {
-    bool isUnchangedOrEmpty = (name.text == widget.oldName && details.text == widget.oldDetail) &&
-        widget.oldName.isEmpty == name.text.isEmpty ||
-        widget.oldDetail.isEmpty == details.text.isEmpty;
+    bool isUnchangedOrEmpty = (name.text == widget.oldName && details.text == widget.oldDetail) ||
+          name.text.isEmpty || details.text.isEmpty;
     return CustomButton(
         onPressed: () async {
           if (isUnchangedOrEmpty) {
@@ -103,7 +102,8 @@ class _EditHomeState extends State<EditHome> {
             showSnackBar(context, AppLocalizations.of(context)!.editedSuccessfully);
           }
         },
-        title: AppLocalizations.of(context)!.update,
+        title:  (widget.oldName == name.text && widget.oldDetail == details.text || name.text.isEmpty || details.text.isEmpty)
+            ? "Updating"  : AppLocalizations.of(context)!.update,
         color: (name.text == widget.oldName)
          && (details.text == widget.oldDetail) ? Colors.grey : ColorManager.submit );
   }
