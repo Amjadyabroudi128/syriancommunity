@@ -150,7 +150,7 @@ class _EditCommunityState extends State<EditCommunity> {
     }
       , title:  (widget.oldName == name.text && widget.oldDetails == details.text || name.text.isEmpty || details.text.isEmpty)
         ? "Updating"  : AppLocalizations.of(context)!.update ,
-      color:(widget.oldName == name.text && widget.oldDetails == details.text)  ? Colors.grey : ColorManager.submit
+      color:(widget.oldName == name.text && widget.oldDetails == details.text || name.text.isEmpty || details.text.isEmpty)  ? Colors.grey : ColorManager.submit
     );
   }
 }
