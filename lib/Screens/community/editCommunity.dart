@@ -130,8 +130,9 @@ class _EditCommunityState extends State<EditCommunity> {
     return CustomButton(
       onPressed: () async {
       if(widget.oldName == name.text && widget.oldDetails == details.text) {
-        ScaffoldMessenger.of(context).showSnackBar
-          ( SnackBar(content: Text("please update somethings"), duration: Duration(seconds: 1),));
+        // ScaffoldMessenger.of(context).showSnackBar
+        //   ( SnackBar(content: Text("please update somethings"), duration: Duration(seconds: 1),));
+        showSnackBar(context, AppLocalizations.of(context)!.update);
         setState(() {
           isUpdated = false;
         });
@@ -142,8 +143,6 @@ class _EditCommunityState extends State<EditCommunity> {
           "image" : url.url
         });
         Navigator.pop(context);
-        // ScaffoldMessenger.of(context).showSnackBar
-        //   ( SnackBar(content: Text("${AppLocalizations.of(context)!.edited}",)));
         showSnackBar(context, AppLocalizations.of(context)!.editedSuccessfully);
       }
       setState(() {
