@@ -95,11 +95,13 @@ class _EditCommunityState extends State<EditCommunity> {
                     submitButton(),
                   ],
                 ),
+                // Center(
+                //     child: imageButton()
+                // ),
+                // sizedBox(height: 3,),
                 Center(
-                    child: imageButton()
-                ),
-                sizedBox(height: 3,),
-
+                  child: imageButton(),
+                )
               ],
             ),
           ),
