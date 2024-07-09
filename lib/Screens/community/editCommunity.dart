@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
@@ -86,12 +87,12 @@ class _EditCommunityState extends State<EditCommunity> {
                 CustomTextForm(hinttext: "What we do ", myController: details,
                     suffixIcon: IconButton(onPressed: details.clear, icon: Icon(Icons.clear),)
                 ),
-                sizedBox(height: 4,),
+                sizedBox(height: 6.h,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     cancelButton(),
-                    sizedBox(width: 10,),
+                    sizedBox(width: 10.w,),
                     submitButton(),
                   ],
                 ),
