@@ -87,18 +87,19 @@ class _EditCommunityState extends State<EditCommunity> {
                     suffixIcon: IconButton(onPressed: details.clear, icon: Icon(Icons.clear),)
                 ),
                 sizedBox(height: 4,),
-                Center(
-                    child: imageButton()
-                ),
-                sizedBox(height: 3,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     cancelButton(),
-                    sizedBox(width: 15,),
+                    sizedBox(width: 10,),
                     submitButton(),
                   ],
                 ),
+                Center(
+                    child: imageButton()
+                ),
+                sizedBox(height: 3,),
+
               ],
             ),
           ),
