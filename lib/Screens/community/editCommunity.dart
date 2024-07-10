@@ -84,7 +84,7 @@ class _EditCommunityState extends State<EditCommunity> {
                     myController: name,
                     suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,)
                 ),
-                sizedBox(height: 5,),
+                sizedBox(height: 5.h,),
                 padding(child: Text("Edit Details ")),
                 CustomTextForm(
                     label: Text(AppLocalizations.of(context)!.details),
