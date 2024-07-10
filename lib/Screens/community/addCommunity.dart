@@ -53,7 +53,7 @@ class _addCommunityState extends State<addCommunity> {
                     suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: myIcons.clear),
                   validator: (value) {
                     if(value == null || name.text.isEmpty) {
-                      return AppLocalizations.of(context)!.addThings;
+                      return "\u2757 ${AppLocalizations.of(context)!.addThings}";
                     }
                     return null;
                   },
