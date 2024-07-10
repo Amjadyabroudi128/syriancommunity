@@ -1,10 +1,10 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/snackBar.dart';
+import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
@@ -34,8 +34,6 @@ class _EditCommunityState extends State<EditCommunity> {
     isUpdated = false;
   }
    bool? isUpdated;
-  final CollectionReference community =
-  FirebaseFirestore.instance.collection('Community');
   void dispose() {
     super.dispose();
     name;
@@ -139,7 +137,7 @@ class _EditCommunityState extends State<EditCommunity> {
           isUpdated = false;
         });
       } else {
-        await community.doc(widget.DocID).update({
+        await dbColl.community.doc(widget.DocID).update({
           "name" : name.text,
           "details" : details.text,
           "image" : url.url
