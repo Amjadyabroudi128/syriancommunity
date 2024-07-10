@@ -129,9 +129,10 @@ class _EditCommunityState extends State<EditCommunity> {
     );
   }
   submitButton () {
-    return CustomButton(
+    bool isUnchangedOrEmpty = (name.text == widget.oldName && details.text == widget.oldDetails) ||
+        name.text.isEmpty || details.text.isEmpty;    return CustomButton(
       onPressed: () async {
-      if(widget.oldName == name.text && widget.oldDetails == details.text) {
+      if(isUnchangedOrEmpty) {
         showSnackBar(context, AppLocalizations.of(context)!.update, duration: Duration(seconds: 2));
         setState(() {
           isUpdated = false;
@@ -148,8 +149,7 @@ class _EditCommunityState extends State<EditCommunity> {
       setState(() {
         isUpdated = true;
       });
-    }
-      , title:  (widget.oldName == name.text && widget.oldDetails == details.text || name.text.isEmpty || details.text.isEmpty)
+    }, title:  (widget.oldName == name.text && widget.oldDetails == details.text || name.text.isEmpty || details.text.isEmpty)
         ? "Updating"  : AppLocalizations.of(context)!.update ,
       color:(widget.oldName == name.text && widget.oldDetails == details.text || name.text.isEmpty || details.text.isEmpty)  ? Colors.grey : ColorManager.submit
     );
