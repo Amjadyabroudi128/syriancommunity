@@ -40,11 +40,13 @@ class _AddInfoState extends State<AddInfo> {
     });
   });
   DateTime today = DateTime.now();
+  late IconData errorIcon;
   void _checkTextField() {
     setState(() {
       _showIcon = name.text.isEmpty && details.text.isEmpty;
     });
   }
+
   @override
   void dispose() {
     super.dispose();
