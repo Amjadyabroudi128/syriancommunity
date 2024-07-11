@@ -146,9 +146,11 @@ class _EditCommunityState extends State<EditCommunity> {
   }
   submitButton () {
     bool isUnchangedOrEmpty = (name.text == widget.oldName && details.text == widget.oldDetails) ||
-        name.text.isEmpty || details.text.isEmpty;    return CustomButton(
+        name.text.isEmpty || details.text.isEmpty;
+    return CustomButton(
       onPressed: () async {
       if(isUnchangedOrEmpty) {
+        Validate.validating();
         showSnackBar(context, AppLocalizations.of(context)!.update, duration: Duration(seconds: 2));
         setState(() {
           isUpdated = false;
