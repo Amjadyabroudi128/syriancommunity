@@ -57,51 +57,53 @@ class _EditCommunityState extends State<EditCommunity> {
         body: ScrollConfiguration(
           behavior: ScrollBehavior(),
           child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                sizedBox(height: 10,),
-                GestureDetector(
-                  onTap: () async {
-                    await url.pickImage();
-                    setState(() {
-                    });
-                  },
-                  child: Center(
-                    child: url.url != null ?myImage(
-                      src: url.url,
-                      height: MediaQuery.of(context).size.height * 0.40,
-                      width: MediaQuery.of(context).size.width,
-                    ) : SizedBox.shrink(),
+            child: Form(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  sizedBox(height: 10,),
+                  GestureDetector(
+                    onTap: () async {
+                      await url.pickImage();
+                      setState(() {
+                      });
+                    },
+                    child: Center(
+                      child: url.url != null ?myImage(
+                        src: url.url,
+                        height: MediaQuery.of(context).size.height * 0.40,
+                        width: MediaQuery.of(context).size.width,
+                      ) : SizedBox.shrink(),
+                    ),
                   ),
-                ),
-                sizedBox(height: 3,),
-                padding(child: Text("Edit Name")),
-                CustomTextForm(
-                  label: Text(AppLocalizations.of(context)!.name),
-                    myController: name,
-                    suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,)
-                ),
-                sizedBox(height: 5.h,),
-                padding(child: Text("Edit Details ")),
-                CustomTextForm(
-                    label: Text(AppLocalizations.of(context)!.details),
-                    myController: details,
-                    suffixIcon: IconButton(onPressed: details.clear, icon: myIcons.clear,)
-                ),
-                sizedBox(height: 6.h,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    cancelButton(),
-                    sizedBox(width: 10.w,),
-                    submitButton(),
-                  ],
-                ),
-                Center(
-                  child: imageButton(),
-                )
-              ],
+                  sizedBox(height: 3,),
+                  padding(child: Text("Edit Name")),
+                  CustomTextForm(
+                    label: Text(AppLocalizations.of(context)!.name),
+                      myController: name,
+                      suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,)
+                  ),
+                  sizedBox(height: 5.h,),
+                  padding(child: Text("Edit Details ")),
+                  CustomTextForm(
+                      label: Text(AppLocalizations.of(context)!.details),
+                      myController: details,
+                      suffixIcon: IconButton(onPressed: details.clear, icon: myIcons.clear,)
+                  ),
+                  sizedBox(height: 6.h,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      cancelButton(),
+                      sizedBox(width: 10.w,),
+                      submitButton(),
+                    ],
+                  ),
+                  Center(
+                    child: imageButton(),
+                  )
+                ],
+              ),
             ),
           ),
         ),
