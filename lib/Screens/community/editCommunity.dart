@@ -98,7 +98,7 @@ class _EditCommunityState extends State<EditCommunity> {
                       myController: details,
                       suffixIcon: IconButton(onPressed: details.clear, icon: myIcons.clear,),
                     validator: (value) {
-                      if(value == null || details.text.isEmpty) {
+                      if(value == null || details.text.isEmpty || details.text == widget.oldDetails) {
                         return "\u2757 ${AppLocalizations.of(context)!.addThings}";
                       }
                       return null;
