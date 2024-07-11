@@ -83,7 +83,13 @@ class _EditCommunityState extends State<EditCommunity> {
                   CustomTextForm(
                     label: Text(AppLocalizations.of(context)!.name),
                       myController: name,
-                      suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,)
+                      suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,),
+                    validator: (value) {
+                      if(value == null || name.text.isEmpty) {
+                        return "\u2757 ${AppLocalizations.of(context)!.addThings}";
+                      }
+                      return null;
+                    },
                   ),
                   sizedBox(height: 5.h,),
                   padding(child: Text("Edit Details ")),
