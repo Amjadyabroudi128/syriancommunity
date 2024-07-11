@@ -24,8 +24,14 @@ class EditCommunity extends StatefulWidget {
 }
 
 class _EditCommunityState extends State<EditCommunity> {
-  TextEditingController name = TextEditingController();
-  TextEditingController details = TextEditingController();
+  late final TextEditingController name = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
+  late final TextEditingController details = TextEditingController()..addListener(() {
+    setState(() {
+    });
+  });
 
   void initState() {
     super.initState();
@@ -85,7 +91,7 @@ class _EditCommunityState extends State<EditCommunity> {
                       myController: name,
                       suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,),
                     validator: (value) {
-                      if(value == null || name.text.isEmpty || name.text == widget.oldName) {
+                      if(value == null || name.text == widget.oldName) {
                         return "\u2757 ${AppLocalizations.of(context)!.addThings}";
                       }
                       return null;
@@ -98,7 +104,7 @@ class _EditCommunityState extends State<EditCommunity> {
                       myController: details,
                       suffixIcon: IconButton(onPressed: details.clear, icon: myIcons.clear,),
                     validator: (value) {
-                      if(value == null || details.text.isEmpty || details.text == widget.oldDetails) {
+                      if(value == null || details.text == widget.oldDetails) {
                         return "\u2757 ${AppLocalizations.of(context)!.addThings}";
                       }
                       return null;
