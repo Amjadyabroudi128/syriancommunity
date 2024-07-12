@@ -153,6 +153,8 @@ class _EditCommunityState extends State<EditCommunity> {
   submitButton () {
     bool isUnchangedOrEmpty = (name.text == widget.oldName && details.text == widget.oldDetails) ||
         name.text.isEmpty || details.text.isEmpty;
+    Color buttonColor = (widget.oldName == name.text && widget.oldDetails == details.text ||
+        name.text.isEmpty || details.text.isEmpty)  ? Colors.grey : ColorManager.submit;
     return CustomButton(
       onPressed: () async {
       if(isUnchangedOrEmpty) {
@@ -175,7 +177,7 @@ class _EditCommunityState extends State<EditCommunity> {
       });
     }, title:  (widget.oldName == name.text && widget.oldDetails == details.text || name.text.isEmpty || details.text.isEmpty)
         ? "Updating"  : AppLocalizations.of(context)!.update ,
-      color:(widget.oldName == name.text && widget.oldDetails == details.text || name.text.isEmpty || details.text.isEmpty)  ? Colors.grey : ColorManager.submit
+      color:  buttonColor
     );
   }
 }
