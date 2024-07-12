@@ -109,8 +109,9 @@ class _addCommunityState extends State<addCommunity> {
     );
   }
   submitButton() {
+    bool isEmpty = (name.text.isEmpty || details.text.isEmpty);
     return CustomButton(onPressed: () async {
-      if ( name.text.isEmpty || details.text.isEmpty ) {
+      if (isEmpty) {
         Validate.validating();
         showSnackBar(context, AppLocalizations.of(context)!.addThings);
       } else if (url.url == null) {
