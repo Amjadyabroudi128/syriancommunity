@@ -10,6 +10,7 @@ class ColorManager {
   static Color fbColor = Color(0xFF0D47A1);
   static Color? addEdit = Color(0xFF757575);
   static Color delete = Color(0xFFD32F2F);
+  static Color emptyLogin = Colors.grey;
   static Color submit =Color(0xFF4CAF50);
   static Color darkError = (Colors.red[300])!;
   static List<Color> LoginButton = [
