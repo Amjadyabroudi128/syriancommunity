@@ -110,6 +110,8 @@ class _addCommunityState extends State<addCommunity> {
   }
   submitButton() {
     bool isEmpty = (name.text.isEmpty || details.text.isEmpty);
+    Color btnColor = (name.text.isEmpty)
+        || (details.text.isEmpty) ? Colors.grey : ColorManager.submit;
     return CustomButton(onPressed: () async {
       if (isEmpty) {
         Validate.validating();
@@ -132,8 +134,7 @@ class _addCommunityState extends State<addCommunity> {
           }
     }
         , title: AppLocalizations.of(context)!.submit,
-        color: (name.text.isEmpty)
-            || (details.text.isEmpty) ? Colors.grey : ColorManager.submit
+        color: btnColor
     );
   }
   goBack () {
