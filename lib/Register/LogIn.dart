@@ -118,7 +118,8 @@ class _LoginState extends State<Login> {
                       child: Container(
                         // width: 110.w,
                         decoration: BoxDecoration(
-                          color: Colors.grey,
+                          // color: Colors.grey,
+                          color: ColorManager.emptyLogin,
                           borderRadius: BorderRadius.circular(10)
                         ),
                         child: loginButton(),
