@@ -51,11 +51,12 @@ class _EditCommunityState extends State<EditCommunity> {
   }
   @override
   Widget build(BuildContext context) {
+    String editTitle = AppLocalizations.of(context)!.editDetails ;
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.editDetails),
+          title: Text(editTitle),
           leading: goBack(
             onPressed: (){
               Navigator.of(context).pushNamed("community");
