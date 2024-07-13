@@ -40,7 +40,6 @@ class _CommunityState extends State<Community> {
             onPressed: (){
               Navigator.of(context).pushNamed("homepage");
             },
-            icon: myIcons.goBack,
           ),
           title: Text(AppLocalizations.of(context)!.communityResources),
         ),
