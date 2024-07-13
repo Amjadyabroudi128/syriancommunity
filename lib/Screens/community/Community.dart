@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
+import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
@@ -35,11 +36,12 @@ class _CommunityState extends State<Community> {
       splitScreenMode: true,
       child: Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed("homepage");
-              },
-              icon: myIcons.goBack),
+          leading: goBack(
+            onPressed: (){
+              Navigator.of(context).pushNamed("homepage");
+            },
+            icon: myIcons.goBack,
+          ),
           title: Text(AppLocalizations.of(context)!.communityResources),
         ),
         body: ScrollConfiguration(
