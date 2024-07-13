@@ -85,12 +85,12 @@ class _CommunityState extends State<Community> {
 
                                   },
                                   src: data["image"],
-                                  height: MediaQuery.of(context).size.height * 0.40,
+                                  height: MediaQuery.of(context).size.height * 0.40.h,
                                 ) : SizedBox.shrink(),
                               ) : Card(
                                 child: data["image"] != null ? myImage(
                                   src: data["image"],
-                                    height: MediaQuery.of(context).size.height * 0.40,
+                                    height: MediaQuery.of(context).size.height * 0.40.h,
                                 ) : SizedBox.shrink(),
                               ),
                             ),
