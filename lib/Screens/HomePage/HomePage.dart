@@ -150,9 +150,6 @@ class _HomePageState extends State<HomePage> {
                                                     showSnackBar(context, AppLocalizations.of(context)!.deleted);
                                                   }
                                                   },
-                                              popUpAnimationStyle: AnimationStyle(
-                                                duration: Duration(milliseconds: 400)
-                                              ),
                                           ): SizedBox.shrink(),
       
                                         ),
