@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/snackBar.dart';
@@ -36,7 +37,11 @@ class _addCommunityState extends State<addCommunity> {
         onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
     child: Scaffold(
       appBar: AppBar(
-        leading: goBack(),
+        leading: goBack(
+          onPressed: (){
+            Navigator.of(context).pushNamed("community");
+          },
+        ),
         title: Text(addDetails),
       ),
       body: padding(
@@ -117,31 +122,24 @@ class _addCommunityState extends State<addCommunity> {
         Validate.validating();
         showSnackBar(context, AppLocalizations.of(context)!.addThings);
       } else if (url.url == null) {
-            await   dbColl.community.doc().set({
-              "name" : name.text,
-              "details" : details.text
-            });
-            showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
-            Navigator.pushReplacementNamed(context, 'community');
-      }  else {
-            await dbColl.community.doc().set({
-              "name" : name.text,
-              "details" : details.text,
-              "image" : url.url,
-            });
-            showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
-            Navigator.pushReplacementNamed(context,'community');
-          }
+        await dbColl.community.doc().set({
+          "name": name.text,
+          "details": details.text
+        });
+        showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
+        Navigator.pushReplacementNamed(context, 'community');
+      } else {
+        await dbColl.community.doc().set({
+          "name": name.text,
+          "details": details.text,
+          "image": url.url,
+        });
+        showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
+        Navigator.pushReplacementNamed(context, 'community');
+      }
     }
         , title: AppLocalizations.of(context)!.submit,
         color: btnColor
     );
-  }
-  goBack () {
-    IconButton(
-        onPressed: () {
-          Navigator.of(context).pushNamed("community");
-        },
-        icon: myIcons.goBack);
   }
 }
