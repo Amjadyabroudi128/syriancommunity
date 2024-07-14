@@ -15,7 +15,9 @@ class MyPopUpMenu extends StatelessWidget {
       icon: icon,
       itemBuilder: itemBuilder,
       onSelected: onSelected,
-      popUpAnimationStyle: popUpAnimationStyle,
+      popUpAnimationStyle: AnimationStyle(
+          duration: Duration(milliseconds: 400)
+      ),
     );
   }
 }
