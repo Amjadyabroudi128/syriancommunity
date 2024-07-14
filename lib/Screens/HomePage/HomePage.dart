@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             sizedBox(
-                              width: MediaQuery.of(context).size.width ,
+                              width: MediaQuery.of(context).size.width.w,
                               child: IntrinsicHeight(
                                 child: Card(
                                   child: padding(
