@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/Screens/HomePage/AddHomePage.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
+import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
@@ -13,6 +14,7 @@ import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
+import 'package:syrianadmin/core/themes/font_weight_helper.dart';
 import 'package:syrianadmin/enums.dart';
 import '../../components/formatedData.dart';
 import '../SideDrawer.dart';
@@ -78,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                           return Text(AppLocalizations.of(context)!.error);
                         }
                         if (snapshot.connectionState == ConnectionState.waiting) {
-                          return const Text("Loading");
+                          return  kLoading;
                         }
                         if (snapshot.data!.docs.isEmpty) {
                           return  SafeArea(
@@ -86,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                              child: Column(
                                children: [
                                  sizedBox(height: 200,),
-                                 Text("nothing to see here yet :( ", style: TextStyles.font20grey,)
+                                 kNothing
                                ],
                              ),
                             ),
@@ -112,9 +114,11 @@ class _HomePageState extends State<HomePage> {
                                       children: [
                                         Text(formattedDate(data["time" ],context), style: TextStyles.fontdate,),
                                           sizedBox(height: 6,),
-                                          Text(data["name"] != null ? data["name"] : SizedBox.shrink(), style: TextStyle(
-                                            fontWeight: FontWeight.bold
-                                          ),),
+                                          Text(data["name"] != null ? data["name"] : SizedBox.shrink(),
+                                            style: TextStyle(
+                                              fontWeight: FontWeightHelper.medium
+                                            ),
+                                          ),
                                         sizedBox(height: 6,),
                                         Text(data["details"] != null ? data["details"] : SizedBox.shrink()),
                                         Padding(
