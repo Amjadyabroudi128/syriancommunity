@@ -65,7 +65,7 @@ class _AddInfoState extends State<AddInfo> {
           }
       );
       await FirebaseApi().initNotifications();
-      await FirebaseMessaging.instance.subscribeToTopic("topic");
+      await dbColl.notification;
       Navigator.push(context, HomePage.route());
       showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
       clearText();

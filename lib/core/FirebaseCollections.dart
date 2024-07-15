@@ -1,6 +1,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 class dbColl {
   static CollectionReference myHome = FirebaseFirestore.instance.collection("home");
@@ -10,4 +11,5 @@ class dbColl {
   static Query<Map<String, dynamic>> time = FirebaseFirestore.instance.collection("home").orderBy("time", descending: true);
   static User? user = FirebaseAuth.instance.currentUser;
   static  CollectionReference community = FirebaseFirestore.instance.collection('Community');
+  static Future notification = FirebaseMessaging.instance.subscribeToTopic("topic");
 }
