@@ -115,7 +115,7 @@ class _AddMemberState extends State<AddMember> {
                         sizedBox(
                           width: 13.w,
                         ),
-                        addButon()
+                        addButton()
                       ],
                     ),
                     sizedBox(
@@ -157,7 +157,7 @@ class _AddMemberState extends State<AddMember> {
       color: ColorManager.addEdit,
     );
   }
-  addButon () {
+  addButton () {
    return CustomButton(
         onPressed: () async {
           Validate.validating();
