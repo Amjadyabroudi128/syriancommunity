@@ -2,6 +2,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/Screens/HomePage/HomePage.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
@@ -82,14 +83,14 @@ class _AddInfoState extends State<AddInfo> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(id),
-          leading: IconButton(onPressed: (){
-            Navigator.push(context, HomePage.route());
-            setState(() {
-              Validate.formKey.currentState!.reset();
-            });
-          },
-              icon: myIcons.goBack
-          ),
+          leading: goBack(
+            onPressed: () {
+                Navigator.push(context, HomePage.route());
+                setState(() {
+                  Validate.formKey.currentState!.reset();
+                });
+            },
+          )
         ),
           body: SingleChildScrollView(
             child: Padding(
