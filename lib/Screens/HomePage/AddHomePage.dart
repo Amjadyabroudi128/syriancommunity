@@ -139,7 +139,7 @@ class _AddInfoState extends State<AddInfo> {
        onPressed: _validateAndSubmit,
        title: AppLocalizations.of(context)!.submit,
        color: (name.text.isEmpty)
-           && (details.text.isEmpty) ? Colors.grey : ColorManager.submit
+           && (details.text.isEmpty) ? ColorManager.emptyLogin : ColorManager.submit
    );
  }
 }
