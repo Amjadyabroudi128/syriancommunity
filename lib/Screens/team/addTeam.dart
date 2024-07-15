@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/snackBar.dart';
@@ -39,7 +40,12 @@ class _AddMemberState extends State<AddMember> {
         child: Scaffold(
           appBar: AppBar(
             title: Text(addThings),
-            leading: goBack()
+            leading: goBack(
+              onPressed: (){
+                Navigator.of(context).pushNamed("ourteam");
+                Validate.formKey.currentState!.reset();
+              },
+            )
           ),
           body: Padding(
             padding: EdgeInsets.all(20),
@@ -179,13 +185,5 @@ class _AddMemberState extends State<AddMember> {
         color: (name.text.isEmpty) && (details.text.isEmpty)
             ? Colors.grey
             : ColorManager.submit);
-  }
-  goBack () {
-    return IconButton(
-        onPressed: (){
-          Navigator.of(context).pushNamed("ourteam");
-          Validate.formKey.currentState!.reset();
-        },
-        icon: myIcons.goBack);
   }
 }
