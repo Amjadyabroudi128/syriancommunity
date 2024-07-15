@@ -158,11 +158,11 @@ class _AddMemberState extends State<AddMember> {
     );
   }
   addButton () {
-   return CustomButton(
+    bool isEmpty = (name.text.isEmpty || details.text.isEmpty);
+    return CustomButton(
         onPressed: () async {
-          Validate.validating();
-          if (name.text.isEmpty || details.text.isEmpty) {
-            showSnackBar(context, AppLocalizations.of(context)!.addThings);
+          if (isEmpty) {
+            Validate.validating();
           } else if (url.url == null) {
             await dbColl.members
                 .doc()
