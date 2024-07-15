@@ -116,9 +116,7 @@ class _LoginState extends State<Login> {
                     sizedBox(height: 20.h,),
                     (testEmail.text.isEmpty) || (testPassword.text.isEmpty) ? IntrinsicHeight(
                       child: Container(
-                        // width: 110.w,
                         decoration: BoxDecoration(
-                          // color: Colors.grey,
                           color: ColorManager.emptyLogin,
                           borderRadius: BorderRadius.circular(10)
                         ),
