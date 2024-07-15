@@ -75,7 +75,7 @@ class _AddMemberState extends State<AddMember> {
                               ),
                       validator: (value){
                           if(value == null || name.text.isEmpty) {
-                            return AppLocalizations.of(context)!.addName;
+                            return "\u2757 ${AppLocalizations.of(context)!.addName}";
                           }
                           return null;
                       },
@@ -102,7 +102,7 @@ class _AddMemberState extends State<AddMember> {
                               ),
                       validator: (value){
                         if(value == null || details.text.isEmpty) {
-                          return AppLocalizations.of(context)!.memberDetails;
+                          return "\u2757 ${AppLocalizations.of(context)!.memberDetails}";
                         }
                         return null;
                       },
@@ -183,7 +183,7 @@ class _AddMemberState extends State<AddMember> {
         },
         title: AppLocalizations.of(context)!.submit,
         color: (name.text.isEmpty) && (details.text.isEmpty)
-            ? Colors.grey
+            ? ColorManager.emptyLogin
             : ColorManager.submit);
   }
 }
