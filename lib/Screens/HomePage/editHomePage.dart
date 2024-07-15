@@ -105,7 +105,7 @@ class _EditHomeState extends State<EditHome> {
         title:  (widget.oldName == name.text && widget.oldDetail == details.text || name.text.isEmpty || details.text.isEmpty)
             ? "Updating"  : AppLocalizations.of(context)!.update,
         color: (name.text == widget.oldName)
-         && (details.text == widget.oldDetail) ? Colors.grey : ColorManager.submit );
+         && (details.text == widget.oldDetail) ? ColorManager.emptyLogin : ColorManager.submit );
   }
   cancelButton () {
   return CustomButton(onPressed: (){
