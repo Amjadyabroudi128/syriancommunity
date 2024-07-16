@@ -171,8 +171,8 @@ class _CelebrationsState extends State<Celebrations> {
                                                           ),
                                                         );
                                                       }else if(selectedValue == myPop.delete){
-                                                        BlocProvider.of<DeleteBloc>(context).add(
-                                                            DeleteCelebration(DocID: document.id)
+                                                        context.read<DeleteBloc>().add(
+                                                          DeleteCelebration(DocID: document.id)
                                                         );
                                                       }
                                                       },
