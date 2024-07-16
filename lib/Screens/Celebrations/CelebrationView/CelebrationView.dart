@@ -6,6 +6,7 @@ import 'package:syrianadmin/Screens/Celebrations/Delete/bloc/delete_bloc.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations/screen/editCelebrations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
@@ -173,7 +174,7 @@ class _CelebrationsState extends State<Celebrations> {
                                                       }
                                                       },
                                                   popUpAnimationStyle: AnimationStyle(
-                                                      duration: Duration(milliseconds: 400)
+                                                      duration: kDuration
                                                   ),
                                                 ) :  SizedBox(),
                                               ),
