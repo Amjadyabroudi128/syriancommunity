@@ -65,11 +65,11 @@ class _CelebrationsState extends State<Celebrations> {
                       stream: celebrations.snapshots(),
                       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (snapshot.hasError) {
-                          return Text('Something went wrong');
+                          return wrong;
                         }
 
                         if (snapshot.connectionState == ConnectionState.waiting) {
-                          return Text("Loading");
+                          return kLoading;
                         }
                         if (snapshot.data!.docs.isEmpty) {
                           return SafeArea(
