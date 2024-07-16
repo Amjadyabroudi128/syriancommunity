@@ -12,6 +12,7 @@ import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
 import 'package:syrianadmin/components/snackBar.dart';
+import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 import 'package:syrianadmin/enums.dart';
@@ -26,8 +27,6 @@ class Celebrations extends StatefulWidget {
 }
 
 class _CelebrationsState extends State<Celebrations> {
-  final CollectionReference celebrations =
-  FirebaseFirestore.instance.collection('Celebrations');
   @override
   Widget build(BuildContext context) {
     String title = AppLocalizations.of(context)!.celebrations;
@@ -62,7 +61,7 @@ class _CelebrationsState extends State<Celebrations> {
                       ),
                     ),
                     StreamBuilder(
-                      stream: celebrations.snapshots(),
+                      stream: dbColl.celebration.snapshots(),
                       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (snapshot.hasError) {
                           return wrong;
