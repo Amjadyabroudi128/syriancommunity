@@ -157,6 +157,8 @@ class _EditCommunityState extends State<EditCommunity> {
         name.text.isEmpty || details.text.isEmpty;
     Color buttonColor = (widget.oldName == name.text && widget.oldDetails == details.text ||
         name.text.isEmpty || details.text.isEmpty)  ? Colors.grey : ColorManager.submit;
+    String btnTitle = (widget.oldName == name.text && widget.oldDetails == details.text || name.text.isEmpty || details.text.isEmpty)
+        ? "Updating"  : AppLocalizations.of(context)!.update;
     return CustomButton(
       onPressed: () async {
       if(isUnchangedOrEmpty) {
@@ -177,8 +179,7 @@ class _EditCommunityState extends State<EditCommunity> {
       setState(() {
         isUpdated = true;
       });
-    }, title:  (widget.oldName == name.text && widget.oldDetails == details.text || name.text.isEmpty || details.text.isEmpty)
-        ? "Updating"  : AppLocalizations.of(context)!.update ,
+    }, title:  btnTitle,
       color:  buttonColor
     );
   }
