@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
+import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/goBack.dart';
-import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
@@ -57,10 +57,22 @@ class _CommunityState extends State<Community> {
                   stream: dbColl.community.snapshots(),
                   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
                 if (snapshot.hasError) {
-                  return Text('Something went wrong');
+                  return wrong;
                 }
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return CircularProgressIndicator();
+                }
+                if (snapshot.data!.docs.isEmpty) {
+                  return SafeArea(
+                    child: Center(
+                      child: Column(
+                        children: [
+                          sizedBox(height: 200,),
+                          kNothing
+                        ],
+                      ),
+                    ),
+                  );
                 }
                 return SingleChildScrollView(
                   child: ListView(
@@ -137,7 +149,7 @@ class _CommunityState extends State<Community> {
                                                 }
                                               },
                                             popUpAnimationStyle: AnimationStyle(
-                                                duration: Duration(milliseconds: 400)
+                                                duration: kDuration
                                             ),
                                           ) : sizedBox(height: 40.h,),
                                         ),
