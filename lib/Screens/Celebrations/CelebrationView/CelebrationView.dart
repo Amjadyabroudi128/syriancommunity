@@ -77,7 +77,7 @@ class _CelebrationsState extends State<Celebrations> {
                               child: Column(
                                 children: [
                                   sizedBox(height: 200,),
-                                  Text("nothing to see here ", style: TextStyles.font20grey,)
+                                  kNothing
                                 ],
                               ),
                             ),
