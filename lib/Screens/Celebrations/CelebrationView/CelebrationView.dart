@@ -8,7 +8,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/goBack.dart';
-import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
@@ -32,13 +31,6 @@ class _CelebrationsState extends State<Celebrations> {
   Widget build(BuildContext context) {
     String title = AppLocalizations.of(context)!.celebrations;
     User? user = FirebaseAuth.instance.currentUser;
-    // goBack () {
-    //  return IconButton(
-    //       onPressed: () {
-    //
-    //       },
-    //       icon: myIcons.goBack);
-    // }
     return Scaffold(
       appBar: AppBar(
         leading: goBack(
