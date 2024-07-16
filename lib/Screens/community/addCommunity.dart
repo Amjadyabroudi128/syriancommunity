@@ -116,7 +116,7 @@ class _addCommunityState extends State<addCommunity> {
   submitButton() {
     bool isEmpty = (name.text.isEmpty || details.text.isEmpty);
     Color btnColor = (name.text.isEmpty)
-        || (details.text.isEmpty) ? Colors.grey : ColorManager.submit;
+        || (details.text.isEmpty) ? ColorManager.emptyLogin : ColorManager.submit;
     return CustomButton(onPressed: () async {
       if (isEmpty) {
         Validate.validating();
