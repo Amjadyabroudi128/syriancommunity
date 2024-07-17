@@ -23,7 +23,7 @@ class edithomeText extends StatelessWidget {
       suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: myIcons.clear,),
       validator: (value) {
         if(value == null || name.text == widget.oldName) {
-          return AppLocalizations.of(context)!.addThings;
+          return "\u2757 ${AppLocalizations.of(context)!.addThings}";
         }
         return null;
       },
@@ -48,7 +48,7 @@ class editDetails extends StatelessWidget {
       suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear ),
       validator: (value) {
         if(value == null || details.text == widget.oldDetail) {
-          return AppLocalizations.of(context)!.editDetails;
+          return "\u2757 ${AppLocalizations.of(context)!.editDetails}";
         }
         return null;
       },
