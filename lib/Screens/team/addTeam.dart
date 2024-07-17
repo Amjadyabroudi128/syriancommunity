@@ -160,6 +160,7 @@ class _AddMemberState extends State<AddMember> {
   addButton () {
     bool isEmpty = (name.text.isEmpty || details.text.isEmpty);
     Color btnColor = (name.text.isEmpty) || (details.text.isEmpty) ? ColorManager.emptyLogin : ColorManager.submit;
+    String btnTitle = AppLocalizations.of(context)!.submit;
     return CustomButton(
         onPressed: () async {
           if (isEmpty) {
@@ -182,7 +183,7 @@ class _AddMemberState extends State<AddMember> {
             clearText();
           }
         },
-        title: AppLocalizations.of(context)!.submit,
+        title: btnTitle,
         color: btnColor
     );
   }
