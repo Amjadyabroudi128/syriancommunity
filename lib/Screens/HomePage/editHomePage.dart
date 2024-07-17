@@ -87,6 +87,8 @@ class _EditHomeState extends State<EditHome> {
   updateButton () {
     bool isUnchangedOrEmpty = (name.text == widget.oldName && details.text == widget.oldDetail) ||
           name.text.isEmpty || details.text.isEmpty;
+   String btnTitle = (widget.oldName == name.text && widget.oldDetail == details.text || name.text.isEmpty || details.text.isEmpty)
+        ? "Updating"  : AppLocalizations.of(context)!.update;
     return CustomButton(
         onPressed: () async {
           if (isUnchangedOrEmpty) {
@@ -102,8 +104,7 @@ class _EditHomeState extends State<EditHome> {
             showSnackBar(context, AppLocalizations.of(context)!.editedSuccessfully);
           }
         },
-        title:  (widget.oldName == name.text && widget.oldDetail == details.text || name.text.isEmpty || details.text.isEmpty)
-            ? "Updating"  : AppLocalizations.of(context)!.update,
+        title:  btnTitle,
         color: (name.text == widget.oldName)
          && (details.text == widget.oldDetail) ? ColorManager.emptyLogin : ColorManager.submit );
   }
