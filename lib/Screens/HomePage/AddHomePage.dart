@@ -135,11 +135,12 @@ class _AddInfoState extends State<AddInfo> {
     }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
  }
  addButton() {
+    Color btnClr = (name.text.isEmpty)
+        && (details.text.isEmpty) ? ColorManager.emptyLogin : ColorManager.submit;
    return CustomButton(
        onPressed: _validateAndSubmit,
        title: AppLocalizations.of(context)!.submit,
-       color: (name.text.isEmpty)
-           && (details.text.isEmpty) ? ColorManager.emptyLogin : ColorManager.submit
+       color: btnClr
    );
  }
 }
