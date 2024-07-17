@@ -67,7 +67,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                               child: Column(
                                 children: [
                                   sizedBox(height: 200),
-                                  Text("nothing to see here yet", style: TextStyles.font20grey,)
+                                  kNothing
                                 ],
                               ),
                             ),
