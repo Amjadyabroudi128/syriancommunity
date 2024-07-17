@@ -59,7 +59,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                           return wrong;
                         }
                         if (snapshot.connectionState == ConnectionState.waiting) {
-                          return Text("Loading");
+                          return kLoading;
                         }
                         if (snapshot.data!.docs.isEmpty) {
                           return SafeArea(
