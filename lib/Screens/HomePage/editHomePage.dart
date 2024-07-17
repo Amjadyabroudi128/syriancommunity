@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/Screens/HomePage/HomePage.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/padding.dart';
@@ -60,13 +61,13 @@ class _EditHomeState extends State<EditHome> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   padding(child: Text("post Name")),
-                  sizedBox(height: 3,),
+                  sizedBox(height: 3.h,),
                   edithomeText(name: name, widget: widget),
-                  sizedBox(height: 20,),
+                  sizedBox(height: 20.h,),
                   padding(child: Text("post Details")),
-                  sizedBox(height: 3,),
+                  sizedBox(height: 3.h,),
                   editDetails(details: details, widget: widget),
-                  sizedBox(height: 10,),
+                  sizedBox(height: 10.h,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
