@@ -42,6 +42,7 @@ class _HomePageState extends State<HomePage> {
         Navigator.push(context, AddInfo.route());
       }, title: AppLocalizations.of(context)!.addThings, color: ColorManager.addEdit);
     }
+    Text error = Text(AppLocalizations.of(context)!.error);
     return ScreenUtilInit(
       minTextAdapt: true,
       splitScreenMode: true,
@@ -69,15 +70,15 @@ class _HomePageState extends State<HomePage> {
                 Column(
                   children: [
                     user != null ? addButton(): sizedBox(),
-                    const sizedBox(height: 6,),
+                     sizedBox(height: 6.h,),
                      Text(AppLocalizations.of(context)!.news),
-                    sizedBox(height: 5,),
+                    sizedBox(height: 5.h,),
                     StreamBuilder(
                       stream: dbColl.time.snapshots(),
                       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (snapshot.hasError) {
       
-                          return Text(AppLocalizations.of(context)!.error);
+                          return error;
                         }
                         if (snapshot.connectionState == ConnectionState.waiting) {
                           return  kLoading;
