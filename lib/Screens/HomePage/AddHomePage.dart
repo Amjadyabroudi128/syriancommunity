@@ -106,7 +106,7 @@ class _AddInfoState extends State<AddInfo> {
                     padding(child: Text("post Details")),
                     sizedBox(height: 3.h,),
                     textDetails(details: details, showIcon: _showIcon),
-                    sizedBox(height: 10,),
+                    sizedBox(height: 10.h,),
                        Row(
                          mainAxisAlignment: MainAxisAlignment.center,
                          children: [
