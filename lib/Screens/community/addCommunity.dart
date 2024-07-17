@@ -117,6 +117,7 @@ class _addCommunityState extends State<addCommunity> {
     bool isEmpty = (name.text.isEmpty || details.text.isEmpty);
     Color btnColor = (name.text.isEmpty)
         || (details.text.isEmpty) ? ColorManager.emptyLogin : ColorManager.submit;
+    String btnTitle = AppLocalizations.of(context)!.submit;
     return CustomButton(onPressed: () async {
       if (isEmpty) {
         Validate.validating();
@@ -138,7 +139,7 @@ class _addCommunityState extends State<addCommunity> {
         Navigator.pushReplacementNamed(context, 'community');
       }
     }
-        , title: AppLocalizations.of(context)!.submit,
+        , title: btnTitle,
         color: btnColor
     );
   }
