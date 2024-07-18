@@ -150,7 +150,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                     dbColl.members.doc(document.id).delete();
                                     showSnackBar(context, AppLocalizations.of(context)!.deleted);
                                   }
-                                }, popUpAnimationStyle: AnimationStyle(duration: Duration(milliseconds: 400)),
+                                }, popUpAnimationStyle: AnimationStyle(duration: kDuration),
                               ) : SizedBox(),
 
                                           ),
