@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/Screens/Celebrations/Delete/bloc/delete_bloc.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations/controller/edit_celebration_bloc.dart';
 import 'package:syrianadmin/appRoute.dart';
@@ -60,19 +61,24 @@ class _MyAppState extends State<MyApp> {
         BlocProvider(create: (context) => AuthBloc()),
         BlocProvider(create: (context) => AddBloc()),
       ],
-      child: MaterialApp(
-       debugShowCheckedModeBanner: false,
-        initialRoute: "homepage",
-        title: "Syrian Community ",
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
-        locale: _locale,
-        themeMode: ThemeMode.system, // theme depends on system
-        theme: AppTheme.themeData,
-        darkTheme: AppTheme.darkTheme,
-        home: HomePage(),
-        navigatorKey: NavigatorKey,
-        onGenerateRoute: AppRouter.onGenerateRoute,
+      child: ScreenUtilInit(
+        splitScreenMode: true,
+        minTextAdapt: true,
+        // only call it once in the app
+        child: MaterialApp(
+         debugShowCheckedModeBanner: false,
+          initialRoute: "homepage",
+          title: "Syrian Community ",
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: _locale,
+          themeMode: ThemeMode.system, // theme depends on system
+          theme: AppTheme.themeData,
+          darkTheme: AppTheme.darkTheme,
+          home: HomePage(),
+          navigatorKey: NavigatorKey,
+          onGenerateRoute: AppRouter.onGenerateRoute,
+        ),
       ),
     );
   }
