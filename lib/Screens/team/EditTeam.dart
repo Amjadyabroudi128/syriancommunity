@@ -180,7 +180,7 @@ class _EditMemberState extends State<EditMember> {
         },
         title:  AppLocalizations.of(context)!.update,
         color: (name.text == widget.oldName)
-            && (details.text == widget.oldDetail) ? Colors.grey : ColorManager.submit);
+            && (details.text == widget.oldDetail) ? ColorManager.addEdit : ColorManager.submit);
   }
   goBack () {
     return IconButton(
