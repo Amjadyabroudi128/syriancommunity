@@ -43,142 +43,136 @@ class _HomePageState extends State<HomePage> {
       }, title: AppLocalizations.of(context)!.addThings, color: ColorManager.addEdit);
     }
     Text error = Text(AppLocalizations.of(context)!.error);
-    return ScreenUtilInit(
-      minTextAdapt: true,
-      splitScreenMode: true,
-      child: Scaffold(
-        appBar: AppBar(
-          leading: Builder(
-            builder: (BuildContext context) {
-              return IconButton(
-                icon: myIcons.drawer,
-                onPressed: (){
-                  Scaffold.of(context).openDrawer();
-                },
-              );
-            },
-          ),
-          title: Text(appBarTitle),
+    return Scaffold(
+      appBar: AppBar(
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: myIcons.drawer,
+              onPressed: (){
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          },
         ),
-        drawer: SideDrawer(),
-        body: padding(
-          // padding: const EdgeInsets.all(15.0),
-          child: ScrollConfiguration(
-            behavior: ScrollBehavior(),
-            child: ListView(
-              children: [
-                Column(
-                  children: [
-                    user != null ? addButton(): sizedBox(),
-                     sizedBox(height: 6.h,),
-                     Text(AppLocalizations.of(context)!.news),
-                    sizedBox(height: 5.h,),
-                    StreamBuilder(
-                      stream: dbColl.time.snapshots(),
-                      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-                        if (snapshot.hasError) {
-      
-                          return error;
-                        }
-                        if (snapshot.connectionState == ConnectionState.waiting) {
-                          return  kLoading;
-                        }
-                        if (snapshot.data!.docs.isEmpty) {
-                          return  SafeArea(
-                            child: Center(
-                             child: Column(
-                               children: [
-                                 sizedBox(height: 200,),
-                                 kNothing
-                               ],
-                             ),
-                            ),
-                          );
-                        }
-                        return SingleChildScrollView(
-                          child: ListView(
-                            physics: ScrollPhysics(),
-                            shrinkWrap: true,
-                            children: snapshot.data!.docs.map((DocumentSnapshot document){
-                              Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
-      
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            sizedBox(
-                              width: MediaQuery.of(context).size.width.w,
-                              child: IntrinsicHeight(
-                                child: Card(
-                                  child: padding(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(formattedDate(data["time" ],context), style: TextStyles.fontdate,),
-                                          sizedBox(height: 6,),
-                                          Text(data["name"] != null ? data["name"] : SizedBox.shrink(),
-                                            style: TextStyle(
-                                              fontWeight: FontWeightHelper.medium
-                                            ),
-                                          ),
+        title: Text(appBarTitle),
+      ),
+      drawer: SideDrawer(),
+      body: padding(
+        // padding: const EdgeInsets.all(15.0),
+        child: ScrollConfiguration(
+          behavior: ScrollBehavior(),
+          child: ListView(
+            children: [
+              Column(
+                children: [
+                  user != null ? addButton(): sizedBox(),
+                   sizedBox(height: 6),
+                   Text(AppLocalizations.of(context)!.news),
+                  sizedBox(height: 5),
+                  StreamBuilder(
+                    stream: dbColl.time.snapshots(),
+                    builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                      if (snapshot.hasError) {
+                        return error;
+                      }
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return  kLoading;
+                      }
+                      if (snapshot.data!.docs.isEmpty) {
+                        return  SafeArea(
+                          child: Center(
+                           child: Column(
+                             children: [
+                               sizedBox(height: 200,),
+                               kNothing
+                             ],
+                           ),
+                          ),
+                        );
+                      }
+                      return SingleChildScrollView(
+                        child: ListView(
+                          physics: ScrollPhysics(),
+                          shrinkWrap: true,
+                          children: snapshot.data!.docs.map((DocumentSnapshot document){
+                            Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          sizedBox(
+                            width: MediaQuery.of(context).size.width.w,
+                            child: IntrinsicHeight(
+                              child: Card(
+                                child: padding(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(formattedDate(data["time" ],context), style: TextStyles.fontdate,),
                                         sizedBox(height: 6,),
-                                        Text(data["details"] != null ? data["details"] : SizedBox.shrink()),
-                                        Padding(
-                                          padding: const EdgeInsets.only(left: 300),
-                                          child: user != null ? MyPopUpMenu(
-                                                itemBuilder: (context) {
-                                                  return [
-                                                    PopupMenuItem<myPop>(
-                                                      value: myPop.edit,
-                                                      child: Text(AppLocalizations.of(context)!.edit),
-                                                    ),
-                                                    PopupMenuItem<myPop>(
-                                                      value: myPop.delete,
-                                                      child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),
-                                                    ),
-                                                  ];
-                                                },
-                                                onSelected: (selectedPop) {
-                                                  if(selectedPop == myPop.edit) {
-                                                    Navigator.of(context).push(
-                                                        CupertinoPageRoute(
-                                                            builder: (context) {
-                                                              return
-                                                                EditHome(DocID: document.id,
-                                                                  oldName: document["name"],
-                                                                  oldDetail: document["details"],
-                                                                  );
-                                                                }
-                                                                )
-                                                              );
-                                                  } else if (selectedPop == myPop.delete) {
-                                                    dbColl.myHome.doc(document.id).delete();
-                                                    showSnackBar(context, AppLocalizations.of(context)!.deleted);
-                                                  }
-                                                  },
-                                          ): SizedBox.shrink(),
-      
+                                        Text(data["name"] != null ? data["name"] : SizedBox.shrink(),
+                                          style: TextStyle(
+                                            fontWeight: FontWeightHelper.medium
+                                          ),
                                         ),
-                                      ],
-                                    ),
+                                      sizedBox(height: 6,),
+                                      Text(data["details"] != null ? data["details"] : SizedBox.shrink()),
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 300),
+                                        child: user != null ? MyPopUpMenu(
+                                              itemBuilder: (context) {
+                                                return [
+                                                  PopupMenuItem<myPop>(
+                                                    value: myPop.edit,
+                                                    child: Text(AppLocalizations.of(context)!.edit),
+                                                  ),
+                                                  PopupMenuItem<myPop>(
+                                                    value: myPop.delete,
+                                                    child: Text(AppLocalizations.of(context)!.delete, style: TextStyles.delete,),
+                                                  ),
+                                                ];
+                                              },
+                                              onSelected: (selectedPop) {
+                                                if(selectedPop == myPop.edit) {
+                                                  Navigator.of(context).push(
+                                                      CupertinoPageRoute(
+                                                          builder: (context) {
+                                                            return
+                                                              EditHome(DocID: document.id,
+                                                                oldName: document["name"],
+                                                                oldDetail: document["details"],
+                                                                );
+                                                              }
+                                                              )
+                                                            );
+                                                } else if (selectedPop == myPop.delete) {
+                                                  dbColl.myHome.doc(document.id).delete();
+                                                  showSnackBar(context, AppLocalizations.of(context)!.deleted);
+                                                }
+                                                },
+                                        ): SizedBox.shrink(),
+
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
                             ),
-                          ],
-                        );
-                        },
-                          ).toList(),
-                        )
-                        );
+                          ),
+                        ],
+                      );
                       },
-                    )
-                  ],
-                )
-              ],
-            ),
+                        ).toList(),
+                      )
+                      );
+                    },
+                  )
+                ],
+              )
+            ],
           ),
-        )
-      ),
+        ),
+      )
     );
   }
 }
