@@ -143,9 +143,6 @@ class _CommunityState extends State<Community> {
                                                 showSnackBar(context, AppLocalizations.of(context)!.deleted);
                                               }
                                             },
-                                          popUpAnimationStyle: AnimationStyle(
-                                              duration: kDuration
-                                          ),
                                         ) : sizedBox(height: 40.h,),
                                       ),
                                   ],

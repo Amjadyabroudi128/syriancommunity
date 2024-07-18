@@ -10,13 +10,14 @@ class MyPopUpMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const kDuration = Duration(milliseconds: 400);
     return PopupMenuButton(
       iconColor: iconColor,
       icon: icon,
       itemBuilder: itemBuilder,
       onSelected: onSelected,
       popUpAnimationStyle: AnimationStyle(
-          duration: Duration(milliseconds: 400)
+          duration: kDuration
       ),
     );
   }

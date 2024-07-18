@@ -176,9 +176,7 @@ class _CelebrationsState extends State<Celebrations> {
                                                         );
                                                       }
                                                       },
-                                                  popUpAnimationStyle: AnimationStyle(
-                                                      duration: kDuration
-                                                  ),
+
                                                 ) :  SizedBox(),
                                               ),
                                             ],
