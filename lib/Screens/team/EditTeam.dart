@@ -143,10 +143,13 @@ class _EditMemberState extends State<EditMember> {
     details.clear();
   }
   cancelButton() {
+    String Cancel = AppLocalizations.of(context)!.cancel;
+    Color cncClr = ColorManager.delete;
     return CustomButton(onPressed: (){
       Navigator.pop(context);
 
-    }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
+    }, title: Cancel,
+      color: cncClr);
   }
   imageButton () {
     return CustomButton(
