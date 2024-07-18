@@ -154,6 +154,7 @@ class _EditMemberState extends State<EditMember> {
     );
   }
   editButton() {
+    String btnTitle = AppLocalizations.of(context)!.update;
    return CustomButton(
         onPressed: () async {
           Validate.validating();
@@ -178,7 +179,7 @@ class _EditMemberState extends State<EditMember> {
             });
           }
         },
-        title:  AppLocalizations.of(context)!.update,
+        title:  btnTitle,
         color: (name.text == widget.oldName)
             && (details.text == widget.oldDetail) ? ColorManager.addEdit : ColorManager.submit);
   }
