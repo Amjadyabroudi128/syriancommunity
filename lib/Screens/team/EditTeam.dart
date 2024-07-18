@@ -157,10 +157,12 @@ class _EditMemberState extends State<EditMember> {
     String btnTitle = AppLocalizations.of(context)!.update;
     Color btnClr = (widget.oldName == name.text && widget.oldDetail == details.text ||
         name.text.isEmpty || details.text.isEmpty)  ? Colors.grey : ColorManager.submit;
+    bool isChangedorEmpty = (name.text == widget.oldName && details.text == widget.oldDetail) ||
+        name.text.isEmpty || details.text.isEmpty;
    return CustomButton(
         onPressed: () async {
           Validate.validating();
-          if(name.text == widget.oldName && details.text == widget.oldDetail) {
+          if(isChangedorEmpty) {
             setState(() {
               isUpdated = false;
               showSnackBar(context, AppLocalizations.of(context)!.addThings);
