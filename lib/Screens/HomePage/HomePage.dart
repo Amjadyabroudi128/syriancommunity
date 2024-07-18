@@ -110,11 +110,11 @@ class _HomePageState extends State<HomePage> {
                                     children: [
                                       Text(formattedDate(data["time" ],context), style: TextStyles.fontdate,),
                                         sizedBox(height: 6,),
-                                        Text(data["name"] != null ? data["name"] : SizedBox.shrink(), style: TextStyle(
+                                        Text(data["name"] ?? SizedBox.shrink(), style: TextStyle(
                                           fontWeight: FontWeight.bold
                                         ),),
                                       sizedBox(height: 6,),
-                                      Text(data["details"] != null ? data["details"] : SizedBox.shrink()),
+                                      Text(data["details"] ?? SizedBox.shrink()),
                                       Padding(
                                         padding: const EdgeInsets.only(left: 300),
                                         child: user != null ? MyPopUpMenu(
