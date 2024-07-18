@@ -90,9 +90,12 @@ class _EditMemberState extends State<EditMember> {
                         label: Text(AppLocalizations.of(context)!.name),
                      myController: name,
                         suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,),
-                      validator: (name){
-                        if(name == null || name == widget.oldName ) {
+                      validator: (value){
+                        if(value == null || value == widget.oldName ) {
                           return AppLocalizations.of(context)!.editMember;
+                        }
+                        if (name.text.isEmpty) {
+                          return AppLocalizations.of(context)!.memberDetails;
                         }
                         return null;
                       },
@@ -104,9 +107,12 @@ class _EditMemberState extends State<EditMember> {
                         label: Text(AppLocalizations.of(context)!.details),
                         myController: details,
                         suffixIcon: IconButton(onPressed: details.clear, icon: myIcons.clear,),
-                      validator: (name){
-                        if(name == null || name == widget.oldDetail ) {
+                      validator: (value){
+                        if(value == null || value == widget.oldDetail) {
                           return AppLocalizations.of(context)!.editMemberDetails;
+                        }
+                        if (details.text.isEmpty) {
+                          return AppLocalizations.of(context)!.memberDetails;
                         }
                         return null;
                       },
@@ -165,7 +171,7 @@ class _EditMemberState extends State<EditMember> {
           if(isChangedorEmpty) {
             setState(() {
               isUpdated = false;
-              showSnackBar(context, AppLocalizations.of(context)!.addThings);
+              showSnackBar(context, AppLocalizations.of(context)!.editDetails);
 
             });
           } else {
