@@ -155,6 +155,8 @@ class _EditMemberState extends State<EditMember> {
   }
   editButton() {
     String btnTitle = AppLocalizations.of(context)!.update;
+    Color btnClr = (widget.oldName == name.text && widget.oldDetail == details.text ||
+        name.text.isEmpty || details.text.isEmpty)  ? Colors.grey : ColorManager.submit;
    return CustomButton(
         onPressed: () async {
           Validate.validating();
@@ -180,8 +182,8 @@ class _EditMemberState extends State<EditMember> {
           }
         },
         title:  btnTitle,
-        color: (name.text == widget.oldName)
-            && (details.text == widget.oldDetail) ? ColorManager.addEdit : ColorManager.submit);
+        color: btnClr,
+   );
   }
   goBack () {
     return IconButton(
