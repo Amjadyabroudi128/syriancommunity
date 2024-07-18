@@ -91,7 +91,7 @@ class _EditMemberState extends State<EditMember> {
                      myController: name,
                         suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,),
                       validator: (value){
-                        if(value == null || value == widget.oldName ) {
+                        if( value == widget.oldName ) {
                           return AppLocalizations.of(context)!.editMember;
                         }
                         if (name.text.isEmpty) {
@@ -108,7 +108,7 @@ class _EditMemberState extends State<EditMember> {
                         myController: details,
                         suffixIcon: IconButton(onPressed: details.clear, icon: myIcons.clear,),
                       validator: (value){
-                        if(value == null || value == widget.oldDetail) {
+                        if( value == widget.oldDetail) {
                           return AppLocalizations.of(context)!.editMemberDetails;
                         }
                         if (details.text.isEmpty) {
