@@ -69,7 +69,7 @@ class _LoginState extends State<Login> {
                     label: Text(AppLocalizations.of(context)!.email,),
                     validator: (value){
                       if (value == null || testEmail.text.isEmpty){
-                        return AppLocalizations.of(context)!.email;
+                        return "\u2757 ${AppLocalizations.of(context)!.email}";
                       }
                       return null;
                     },
