@@ -33,103 +33,99 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     String logIn = AppLocalizations.of(context)!.login;
-     return ScreenUtilInit(
-       minTextAdapt: true,
-       splitScreenMode: true,
-       child: GestureDetector(
-        onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text(logIn),
-          ),
-            body:  Padding(
-              padding: const EdgeInsets.all(7.0),
-              child: BlocListener<AuthBloc, AuthState>(
-                listener: (context, state) {
-                  if (state is LoginSuccess)  {
-                    Navigator.of(context).pushReplacementNamed("homepage");
-                    showSnackBar(context, AppLocalizations.of(context)!.login);
-                  } if (state is LoginFailed) {
-                    showSnackBar(context, state.errMessage);
-                  }
-                },
-                child: Form(
-                key: Validate.formKey,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(AppLocalizations.of(context)!.loginAdmin, style: TextStyles.loginAdmin,),
-                     sizedBox(height: 14.h,),
-                    CustomTextForm(
-                      suffixIcon: testEmail.text.isEmpty? null :
-                      IconButton(onPressed: testEmail.clear,
-                        icon: myIcons.clear,),
-                      myController: testEmail,
-                      keyboardType: TextInputType.emailAddress,
-                      prefixIcon: myIcons.email,
-                      label: Text(AppLocalizations.of(context)!.email,),
-                      validator: (value){
-                        if (value == null || testEmail.text.isEmpty){
-                          return AppLocalizations.of(context)!.email;
-                        }
-                        return null;
-                      },
-                    ),
-                    sizedBox(height: 15.h,),
-                    CustomTextForm(
-                       obscureText: _isHidden, maxLines: 1,
-                      myController: testPassword,
-                      suffixIcon: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        mainAxisSize: MainAxisSize.min,
-                        children:  [
-                          IconButton(
-                            onPressed: (){
-                              setState(() {
-                                _togglePasswordView();
-                               }
-                              );
-                              Future.delayed(Duration(seconds: 1), () {
-                                if (mounted)
-                                  setState(() {
-                                    _togglePasswordView();
-                                  });
-                              });
-                            },
-                            icon: _isHidden ? myIcons.visible : myIcons.nonVisible,
-                              color: _isHidden ? ColorManager.delete : ColorManager.submit,
-                            ),
-                         testPassword.text.isEmpty ? sizedBox() : IconButton(onPressed: testPassword.clear,
-                            icon: myIcons.clear,)
-                        ],
-                      ),
-                      keyboardType: TextInputType.visiblePassword,
-                      label: Text(AppLocalizations.of(context)!.password),
-                      prefixIcon: myIcons.pass,
-                      validator: (pass){
-                         if (pass == null || testPassword.text.isEmpty){
-                           return AppLocalizations.of(context)!.password;
-                         }
-                         return null;
-                      },
-                      ),
-                    sizedBox(height: 20.h,),
-                    (testEmail.text.isEmpty) || (testPassword.text.isEmpty) ? IntrinsicHeight(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: ColorManager.emptyLogin,
-                          borderRadius: BorderRadius.circular(10)
-                        ),
-                        child: loginButton(),
-                      ),
-                    ) :  ButtonContainer(),
-                  ],
-                ),
-              ),
-             ),
-            ),
+     return GestureDetector(
+      onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(logIn),
         ),
-       ),
+          body:  Padding(
+            padding: const EdgeInsets.all(7.0),
+            child: BlocListener<AuthBloc, AuthState>(
+              listener: (context, state) {
+                if (state is LoginSuccess)  {
+                  Navigator.of(context).pushReplacementNamed("homepage");
+                  showSnackBar(context, AppLocalizations.of(context)!.login);
+                } if (state is LoginFailed) {
+                  showSnackBar(context, state.errMessage);
+                }
+              },
+              child: Form(
+              key: Validate.formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(AppLocalizations.of(context)!.loginAdmin, style: TextStyles.loginAdmin,),
+                   sizedBox(height: 14.h,),
+                  CustomTextForm(
+                    suffixIcon: testEmail.text.isEmpty? null :
+                    IconButton(onPressed: testEmail.clear,
+                      icon: myIcons.clear,),
+                    myController: testEmail,
+                    keyboardType: TextInputType.emailAddress,
+                    prefixIcon: myIcons.email,
+                    label: Text(AppLocalizations.of(context)!.email,),
+                    validator: (value){
+                      if (value == null || testEmail.text.isEmpty){
+                        return AppLocalizations.of(context)!.email;
+                      }
+                      return null;
+                    },
+                  ),
+                  sizedBox(height: 15.h,),
+                  CustomTextForm(
+                     obscureText: _isHidden, maxLines: 1,
+                    myController: testPassword,
+                    suffixIcon: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.min,
+                      children:  [
+                        IconButton(
+                          onPressed: (){
+                            setState(() {
+                              _togglePasswordView();
+                             }
+                            );
+                            Future.delayed(Duration(seconds: 1), () {
+                              if (mounted)
+                                setState(() {
+                                  _togglePasswordView();
+                                });
+                            });
+                          },
+                          icon: _isHidden ? myIcons.visible : myIcons.nonVisible,
+                            color: _isHidden ? ColorManager.delete : ColorManager.submit,
+                          ),
+                       testPassword.text.isEmpty ? sizedBox() : IconButton(onPressed: testPassword.clear,
+                          icon: myIcons.clear,)
+                      ],
+                    ),
+                    keyboardType: TextInputType.visiblePassword,
+                    label: Text(AppLocalizations.of(context)!.password),
+                    prefixIcon: myIcons.pass,
+                    validator: (pass){
+                       if (pass == null || testPassword.text.isEmpty){
+                         return AppLocalizations.of(context)!.password;
+                       }
+                       return null;
+                    },
+                    ),
+                  sizedBox(height: 20.h,),
+                  (testEmail.text.isEmpty) || (testPassword.text.isEmpty) ? IntrinsicHeight(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: ColorManager.emptyLogin,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                      child: loginButton(),
+                    ),
+                  ) :  ButtonContainer(),
+                ],
+              ),
+            ),
+           ),
+          ),
+      ),
      );
   }
 
