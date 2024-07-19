@@ -107,7 +107,7 @@ class _LoginState extends State<Login> {
                     prefixIcon: myIcons.pass,
                     validator: (pass){
                        if (pass == null || testPassword.text.isEmpty){
-                         return AppLocalizations.of(context)!.password;
+                         return "\u2757 ${AppLocalizations.of(context)!.password}";
                        }
                        return null;
                     },
