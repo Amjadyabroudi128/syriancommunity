@@ -7,4 +7,5 @@ import 'package:syrianadmin/core/themes/fontSize.dart';
  Text wrong = Text("something went wrong");
  Text kLoading = Text("Loading");
   Icon email = Icon(CupertinoIcons.mail_solid,);
+  Duration passDuration = Duration(seconds: 1);
   Icon home =  myIcons.home;

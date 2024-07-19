@@ -5,6 +5,7 @@ import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
@@ -86,7 +87,7 @@ class _LoginState extends State<Login> {
                               _togglePasswordView();
                              }
                             );
-                            Future.delayed(Duration(seconds: 1), () {
+                            Future.delayed(passDuration, () {
                               if (mounted)
                                 setState(() {
                                   _togglePasswordView();
