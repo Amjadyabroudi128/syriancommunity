@@ -34,6 +34,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     String logIn = AppLocalizations.of(context)!.login;
+    bool isEmpty = testEmail.text.isEmpty || testPassword.text.isEmpty;
      return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
       child: Scaffold(
@@ -112,7 +113,7 @@ class _LoginState extends State<Login> {
                     },
                     ),
                   sizedBox(height: 20.h,),
-                  (testEmail.text.isEmpty) || (testPassword.text.isEmpty) ? IntrinsicHeight(
+                  (isEmpty) ? IntrinsicHeight(
                     child: Container(
                       decoration: BoxDecoration(
                         color: ColorManager.emptyLogin,
