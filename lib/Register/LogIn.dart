@@ -105,6 +105,7 @@ class _LoginState extends State<Login> {
                     keyboardType: TextInputType.visiblePassword,
                     label: Text(AppLocalizations.of(context)!.password),
                     prefixIcon: isEmpty ? locked: unLocked,
+                    prefixIconColor: isEmpty ? null : ColorManager.submit,
                     validator: (pass){
                        if (pass == null || testPassword.text.isEmpty){
                          return "\u2757 ${AppLocalizations.of(context)!.password}";
