@@ -1,5 +1,6 @@
 
  import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 
@@ -9,3 +10,5 @@ import 'package:syrianadmin/core/themes/fontSize.dart';
   Icon email = Icon(CupertinoIcons.mail_solid,);
   Duration passDuration = Duration(seconds: 1);
   Icon home =  myIcons.home;
+  Icon locked = Icon(Icons.lock);
+  Icon unLocked = Icon(Icons.lock_open);
