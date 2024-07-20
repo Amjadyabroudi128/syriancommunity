@@ -47,6 +47,7 @@ class _LoginState extends State<Login> {
               listener: (context, state) {
                 if (state is LoginSuccess)  {
                   Navigator.of(context).pushReplacementNamed("homepage");
+                  ScaffoldMessenger.of(context).hideCurrentSnackBar();
                   showSnackBar(context, AppLocalizations.of(context)!.login);
                 } if (state is LoginFailed) {
                   showSnackBar(context, state.errMessage);
