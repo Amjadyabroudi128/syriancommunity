@@ -13,10 +13,11 @@ class CustomTextForm extends StatelessWidget {
   final String? labelText;
   final FormFieldValidator<String>? validator;
   final TextInputType? keyboardType;
-  CustomTextForm({super.key,  this.hinttext,
+  final Color? prefixIconColor;
+  const CustomTextForm({super.key,  this.hinttext,
    this.myController, this.maxLines, this.textDirection,
     this.suffixIcon, this.obscureText = false, this.minLines,
-    this.keyboardType, this.prefixIcon, this.label, this.labelText, this.validator, });
+    this.keyboardType, this.prefixIcon, this.label, this.labelText, this.validator, this.prefixIconColor, });
 @override
 Widget build(BuildContext context) {
   return TextFormField(
@@ -30,6 +31,7 @@ Widget build(BuildContext context) {
         hintText: hinttext,
         suffixIcon: suffixIcon,
       prefixIcon: prefixIcon,
+      prefixIconColor: prefixIconColor ,
       label: label,
      ),
 
