@@ -82,7 +82,7 @@ class _AddCelebrationState extends State<AddCelebration> {
                           ),
                           validator: (value) {
                             if (value == null || celebrationName.text.isEmpty) {
-                              return AppLocalizations.of(context)!.addCelebration;
+                              return "\u2757 ${AppLocalizations.of(context)!.addCelebration}";
                             }
                             return null;
                           },
