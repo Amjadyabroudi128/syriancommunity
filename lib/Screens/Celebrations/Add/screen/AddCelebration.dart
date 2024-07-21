@@ -162,9 +162,10 @@ class _AddCelebrationState extends State<AddCelebration> {
   }
 
   addButton() {
+    bool isEmpty = celebrationName.text.isEmpty || celebrationDetail.text.isEmpty;
     return CustomButton(
         onPressed: () async {
-          if (celebrationName.text.isEmpty || celebrationDetail.text.isEmpty) {
+          if (isEmpty) {
             Validate.validating();
           } else {
             context.read<AddBloc>().add(
@@ -174,8 +175,7 @@ class _AddCelebrationState extends State<AddCelebration> {
           }
         },
         title: AppLocalizations.of(context)!.submit,
-        color:
-        (celebrationName.text.isEmpty) || (celebrationDetail.text.isEmpty)
+        color: (celebrationName.text.isEmpty) || (celebrationDetail.text.isEmpty)
             ? Colors.grey
             : ColorManager.submit);
   }
