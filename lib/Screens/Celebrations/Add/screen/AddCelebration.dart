@@ -163,7 +163,8 @@ class _AddCelebrationState extends State<AddCelebration> {
 
   addButton() {
     bool isEmpty = celebrationName.text.isEmpty || celebrationDetail.text.isEmpty;
-    String btnTitle = AppLocalizations.of(context)!.submit
+    String btnTitle = AppLocalizations.of(context)!.submit;
+    Color btnClr = (celebrationName.text.isEmpty) || (celebrationDetail.text.isEmpty) ? Colors.grey : ColorManager.submit;
     return CustomButton(
         onPressed: () async {
           if (isEmpty) {
@@ -176,8 +177,7 @@ class _AddCelebrationState extends State<AddCelebration> {
           }
         },
         title: btnTitle,
-        color: (celebrationName.text.isEmpty) || (celebrationDetail.text.isEmpty)
-            ? Colors.grey
-            : ColorManager.submit);
+        color: btnClr
+    );
   }
 }
