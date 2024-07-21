@@ -6,6 +6,7 @@ import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/snackBar.dart';
@@ -33,13 +34,6 @@ class _AddCelebrationState extends State<AddCelebration> {
 
   @override
   Widget build(BuildContext context) {
-    goBack () {
-     return IconButton(
-          onPressed: () {
-            Navigator.of(context).pushReplacementNamed("celebrations");
-          },
-          icon: myIcons.goBack);
-    }
     String appBarTitle = AppLocalizations.of(context)!.addCelebration;
     return  GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
@@ -56,7 +50,11 @@ class _AddCelebrationState extends State<AddCelebration> {
       },
           child: Scaffold(
             appBar: AppBar(
-              leading: goBack(),
+              leading: goBack(
+                onPressed: (){
+                  Navigator.of(context).pushReplacementNamed("celebrations");
+                },
+              ),
               title: Text(appBarTitle),
             ),
             body: padding(
