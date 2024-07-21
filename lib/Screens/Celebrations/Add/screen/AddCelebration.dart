@@ -163,6 +163,7 @@ class _AddCelebrationState extends State<AddCelebration> {
 
   addButton() {
     bool isEmpty = celebrationName.text.isEmpty || celebrationDetail.text.isEmpty;
+    String btnTitle = AppLocalizations.of(context)!.submit
     return CustomButton(
         onPressed: () async {
           if (isEmpty) {
@@ -174,7 +175,7 @@ class _AddCelebrationState extends State<AddCelebration> {
             Validate.formKey.currentState!.reset();
           }
         },
-        title: AppLocalizations.of(context)!.submit,
+        title: btnTitle,
         color: (celebrationName.text.isEmpty) || (celebrationDetail.text.isEmpty)
             ? Colors.grey
             : ColorManager.submit);
