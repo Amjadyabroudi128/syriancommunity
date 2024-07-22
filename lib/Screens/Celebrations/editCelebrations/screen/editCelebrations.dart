@@ -183,12 +183,14 @@ class _EditCelebrationState extends State<EditCelebration> {
   }
 
   cancelButton() {
+    String cancel = AppLocalizations.of(context)!.cancel;
+    Color clr = ColorManager.delete;
     return CustomButton(
       onPressed: () {
         Navigator.pop(context);
       },
-      title: AppLocalizations.of(context)!.cancel,
-      color: ColorManager.delete,
+      title: cancel,
+      color: clr
     );
   }
 
