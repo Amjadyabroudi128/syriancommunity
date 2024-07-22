@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations/controller/edit_celebration_bloc.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:syrianadmin/classes/validate%20state.dart';
@@ -98,8 +99,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                           child:
                               Text(AppLocalizations.of(context)!.celebrations)),
                       CustomTextForm(
-                        suffixIcon: celebrationName.text.isEmpty ||
-                                celebrationName == widget.oldName
+                        suffixIcon: celebrationName.text.isEmpty || celebrationName == widget.oldName
                             ? null
                             : IconButton(
                                 onPressed: celebrationName.clear,
@@ -109,26 +109,25 @@ class _EditCelebrationState extends State<EditCelebration> {
                             Text(AppLocalizations.of(context)!.celebrationName),
                         myController: celebrationName,
                         validator: (value) {
-                          if (value == null ||
-                              celebrationName.text == widget.oldName ||
-                              celebrationName.text.isEmpty) {
+                          if (value == widget.oldName) {
+                            return AppLocalizations.of(context)!.editDetails;
+                          }
+                          if (celebrationName.text.isEmpty) {
                             return AppLocalizations.of(context)!.addThings;
                           }
                           return null;
                         },
                       ),
                       sizedBox(
-                        height: 7,
+                        height: 7.h,
                       ),
                       padding(
                           child: Text(AppLocalizations.of(context)!.details)),
                       sizedBox(
-                        height: 4,
+                        height: 4.h,
                       ),
                       CustomTextForm(
-                        suffixIcon: celebrationDetails.text.isEmpty ||
-                                celebrationDetails == widget.oldDetail
-                            ? null
+                        suffixIcon: celebrationDetails.text.isEmpty || celebrationDetails == widget.oldDetail ? null
                             : IconButton(
                                 onPressed: celebrationDetails.clear,
                                 icon: myIcons.clear,
@@ -136,9 +135,10 @@ class _EditCelebrationState extends State<EditCelebration> {
                         label: Text(AppLocalizations.of(context)!.whatWeDo),
                         myController: celebrationDetails,
                         validator: (value) {
-                          if (value == null ||
-                              celebrationDetails.text == widget.oldDetail ||
-                              celebrationDetails.text.isEmpty) {
+                          if (value == widget.oldDetail) {
+                            return AppLocalizations.of(context)!.editDetails;
+                          }
+                          if (celebrationDetails.text.isEmpty) {
                             return AppLocalizations.of(context)!.addThings;
                           }
                           return null;
