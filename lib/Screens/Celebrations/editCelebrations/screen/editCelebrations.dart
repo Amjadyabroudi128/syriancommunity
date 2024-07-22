@@ -145,14 +145,14 @@ class _EditCelebrationState extends State<EditCelebration> {
                         },
                       ),
                       sizedBox(
-                        height: 5,
+                        height: 5.h,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           cancelButton(),
                           sizedBox(
-                            width: 10,
+                            width: 10.w,
                           ),
                           editButton(),
                         ],
@@ -193,6 +193,7 @@ class _EditCelebrationState extends State<EditCelebration> {
   }
 
   editButton() {
+    String btnTitle = AppLocalizations.of(context)!.update;
     return CustomButton(
       onPressed: () async {
         if (celebrationName.text == widget.oldName &&
@@ -212,7 +213,7 @@ class _EditCelebrationState extends State<EditCelebration> {
           Validate.formKey.currentState!.reset();
         }
       },
-      title: AppLocalizations.of(context)!.update,
+      title: btnTitle,
       color: ColorManager.submit,
     );
   }
