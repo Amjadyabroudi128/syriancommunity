@@ -113,7 +113,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                             return "\u2757 ${AppLocalizations.of(context)!.editDetails}";
                           }
                           if (celebrationName.text.isEmpty) {
-                            return AppLocalizations.of(context)!.addThings;
+                            return "\u2757 ${AppLocalizations.of(context)!.addThings}";
                           }
                           return null;
                         },
@@ -139,7 +139,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                             return "\u2757 ${AppLocalizations.of(context)!.editDetails}";
                           }
                           if (celebrationDetails.text.isEmpty) {
-                            return AppLocalizations.of(context)!.addThings;
+                            return "\u2757 ${AppLocalizations.of(context)!.addThings}";
                           }
                           return null;
                         },
