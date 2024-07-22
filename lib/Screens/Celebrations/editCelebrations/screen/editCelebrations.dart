@@ -172,8 +172,9 @@ class _EditCelebrationState extends State<EditCelebration> {
   }
 
   imageButton() {
+   String  imgTitle = AppLocalizations.of(context)!.image;
     return CustomButton(
-      title: AppLocalizations.of(context)!.image,
+      title: imgTitle,
       onPressed: () async {
         await url.pickImage();
         setState(() {});
