@@ -194,12 +194,13 @@ class _EditCelebrationState extends State<EditCelebration> {
 
   editButton() {
     String btnTitle = AppLocalizations.of(context)!.update;
+    bool isChangedorEmpty = celebrationName.text == widget.oldName &&
+        celebrationDetails.text == widget.oldDetail ||
+        celebrationName.text.isEmpty ||
+        celebrationDetails.text.isEmpty;
     return CustomButton(
       onPressed: () async {
-        if (celebrationName.text == widget.oldName &&
-                celebrationDetails.text == widget.oldDetail ||
-            celebrationName.text.isEmpty ||
-            celebrationDetails.text.isEmpty) {
+        if (isChangedorEmpty) {
           Validate.validating();
           showSnackBar(context, AppLocalizations.of(context)!.addThings);
         } else {
