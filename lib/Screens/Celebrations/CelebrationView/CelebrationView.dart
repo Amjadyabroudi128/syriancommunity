@@ -2,10 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/Screens/Celebrations/Delete/bloc/delete_bloc.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations/screen/editCelebrations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/addEvent.dart';
 import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/image.network.dart';
@@ -50,8 +52,14 @@ class _CelebrationsState extends State<Celebrations> {
                     Center(
                       child: user != null ? Padding(
                         padding: const EdgeInsets.all(12.0),
-                        child: addCelebration(),
-                      ) : sizedBox(height: 15,),
+                        child: addEvent(
+                          onPressed: (){
+                            Navigator.of(context).pushNamed("addcelebration");
+                          },
+                          title: AppLocalizations.of(context)!.addCelebration,
+                          color: ColorManager.addEdit,
+                        ),
+                      ) : sizedBox(height: 15.h,),
                     ),
                     padding(child: Text(AppLocalizations.of(context)!.celebrations, style: TextStyles.font16green,)),
                     sizedBox(),
@@ -203,13 +211,7 @@ class _CelebrationsState extends State<Celebrations> {
         ),
     );
   }
-  addCelebration () {
-    return  CustomButton(
-      onPressed: (){
-        Navigator.of(context).pushNamed("addcelebration");
-      },
-      title: AppLocalizations.of(context)!.addCelebration,color: ColorManager.addEdit,);
-  }
+
 
 
 }
