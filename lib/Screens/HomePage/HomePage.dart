@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/Screens/HomePage/AddHomePage.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
+import 'package:syrianadmin/components/addEvent.dart';
 import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
@@ -36,10 +37,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     User? user = FirebaseAuth.instance.currentUser;
     String appBarTitle = AppLocalizations.of(context)!.syrianCommunity;
-    addButton() {
-     return CustomButton(onPressed: (){
+    addHome() {
+      return addEvent(onPressed: (){
         Navigator.push(context, AddInfo.route());
-      }, title: AppLocalizations.of(context)!.addThings, color: ColorManager.addEdit);
+      },
+          title: AppLocalizations.of(context)!.addThings,
+          color: ColorManager.addEdit);
     }
     return Scaffold(
       appBar: AppBar(
@@ -64,7 +67,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               Column(
                 children: [
-                  user != null ? addButton(): sizedBox(),
+                  user != null ? addHome(): sizedBox(),
                    sizedBox(height: 6.h,),
                    Text(AppLocalizations.of(context)!.news),
                   sizedBox(height: 5.h,),
