@@ -110,7 +110,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                         myController: celebrationName,
                         validator: (value) {
                           if (value == widget.oldName) {
-                            return AppLocalizations.of(context)!.editDetails;
+                            return "\u2757 ${AppLocalizations.of(context)!.editDetails}";
                           }
                           if (celebrationName.text.isEmpty) {
                             return AppLocalizations.of(context)!.addThings;
@@ -136,7 +136,7 @@ class _EditCelebrationState extends State<EditCelebration> {
                         myController: celebrationDetails,
                         validator: (value) {
                           if (value == widget.oldDetail) {
-                            return AppLocalizations.of(context)!.editDetails;
+                            return "\u2757 ${AppLocalizations.of(context)!.editDetails}";
                           }
                           if (celebrationDetails.text.isEmpty) {
                             return AppLocalizations.of(context)!.addThings;
