@@ -198,6 +198,8 @@ class _EditCelebrationState extends State<EditCelebration> {
         celebrationDetails.text == widget.oldDetail ||
         celebrationName.text.isEmpty ||
         celebrationDetails.text.isEmpty;
+    Color btnClr = (widget.oldName == celebrationName.text && widget.oldDetail == celebrationDetails.text ||
+        celebrationName.text.isEmpty || celebrationDetails.text.isEmpty)  ? ColorManager.emptyLogin : ColorManager.submit;
     return CustomButton(
       onPressed: () async {
         if (isChangedorEmpty) {
@@ -215,7 +217,7 @@ class _EditCelebrationState extends State<EditCelebration> {
         }
       },
       title: btnTitle,
-      color: ColorManager.submit,
+      color: btnClr
     );
   }
 }
