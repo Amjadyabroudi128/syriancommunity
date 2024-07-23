@@ -113,11 +113,11 @@ class _HomePageState extends State<HomePage> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(formattedDate(data["time" ],context), style: TextStyles.fontdate,),
-                                        sizedBox(height: 6,),
+                                        sizedBox(height: 6.h,),
                                         Text(data["name"] ?? SizedBox.shrink(), style: TextStyle(
                                           fontWeight: FontWeight.bold
                                         ),),
-                                      sizedBox(height: 6,),
+                                      sizedBox(height: 6.h,),
                                       Text(data["details"] ?? SizedBox.shrink()),
                                       Padding(
                                         padding: const EdgeInsets.only(left: 300),
