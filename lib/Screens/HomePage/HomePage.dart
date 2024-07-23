@@ -38,11 +38,12 @@ class _HomePageState extends State<HomePage> {
     String appBarTitle = AppLocalizations.of(context)!.syrianCommunity;
     addHome() {
     String btnTitle = AppLocalizations.of(context)!.addThings;
+    Color? btnClr = ColorManager.addEdit;
       return addEvent(onPressed: (){
         Navigator.push(context, AddInfo.route());
       },
           title: AppLocalizations.of(context)!.addThings,
-          color: ColorManager.addEdit);
+          color: btnClr);
     }
     return Scaffold(
       appBar: AppBar(
