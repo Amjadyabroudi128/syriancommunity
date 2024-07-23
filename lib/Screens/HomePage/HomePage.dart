@@ -37,6 +37,7 @@ class _HomePageState extends State<HomePage> {
     User? user = FirebaseAuth.instance.currentUser;
     String appBarTitle = AppLocalizations.of(context)!.syrianCommunity;
     addHome() {
+    String btnTitle = AppLocalizations.of(context)!.addThings;
       return addEvent(onPressed: (){
         Navigator.push(context, AddInfo.route());
       },
