@@ -32,7 +32,7 @@ class textDetails extends StatelessWidget {
       ),
       validator: (value) {
         if(value == null || details.text.isEmpty) {
-          return AppLocalizations.of(context)!.addDetails;
+          return "\u2757 ${AppLocalizations.of(context)!.addDetails}";
         }
         return null;
       },
