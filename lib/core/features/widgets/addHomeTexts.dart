@@ -66,7 +66,7 @@ class nameText extends StatelessWidget {
       // _showIcon ? Icon(Icons.warning) : sizedBox(),
       validator: (value) {
         if(value == null || name.text.isEmpty) {
-          return AppLocalizations.of(context)!.addThings;
+          return "\u2757 ${AppLocalizations.of(context)!.addThings}";
         }
         return null;
       },
