@@ -130,9 +130,12 @@ class _AddInfoState extends State<AddInfo> {
     details.clear();
   }
  cancelButton () {
+    Color cancelClr = ColorManager.delete;
+    String cancelTitle = AppLocalizations.of(context)!.cancel;
     return CustomButton(onPressed: (){
       Navigator.pop(context);
-    }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
+    }, title: cancelTitle,
+        color: cancelClr);
  }
  addButton() {
     Color btnClr = (name.text.isEmpty)
