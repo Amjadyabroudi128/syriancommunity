@@ -140,9 +140,10 @@ class _AddInfoState extends State<AddInfo> {
  addButton() {
     Color btnClr = (name.text.isEmpty)
         && (details.text.isEmpty) ? ColorManager.emptyLogin : ColorManager.submit;
+    String submit = AppLocalizations.of(context)!.submit;
    return CustomButton(
        onPressed: _validateAndSubmit,
-       title: AppLocalizations.of(context)!.submit,
+       title: submit,
        color: btnClr
    );
  }
