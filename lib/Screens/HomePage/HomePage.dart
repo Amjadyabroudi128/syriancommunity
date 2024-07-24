@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
       return addEvent(onPressed: (){
         Navigator.push(context, AddInfo.route());
       },
-          title: AppLocalizations.of(context)!.addThings,
+          title: btnTitle,
           color: btnClr);
     }
     return Scaffold(
