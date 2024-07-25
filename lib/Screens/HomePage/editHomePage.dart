@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/Screens/HomePage/HomePage.dart';
+import 'package:syrianadmin/Screens/HomePage/widgets/editHomeTexts.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
-import 'package:syrianadmin/core/features/widgets/editHomeTexts.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import '../../components/Sizedbox.dart';
 import '../../components/SubmitButton.dart';
