@@ -153,8 +153,9 @@ class _EditMemberState extends State<EditMember> {
   }
   imageButton () {
     Color? imgClr = ColorManager.addEdit;
+    String title = AppLocalizations.of(context)!.image;
     return CustomButton(
-      title: AppLocalizations.of(context)!.image,
+      title: title,
       onPressed: () async {
         await url.pickImage();
         setState(() {
