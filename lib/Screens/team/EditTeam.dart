@@ -3,6 +3,7 @@ import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
@@ -55,7 +56,12 @@ class _EditMemberState extends State<EditMember> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(edit),
-          leading: goBack(),
+            leading: goBack(
+              onPressed: (){
+                Navigator.of(context).pushNamed("ourteam");
+                Validate.formKey.currentState!.reset();
+              },
+            )
         ),
         body: ScrollConfiguration(
           behavior: ScrollBehavior(),
@@ -198,12 +204,5 @@ class _EditMemberState extends State<EditMember> {
         color: btnClr,
    );
   }
-  goBack () {
-    return IconButton(
-        onPressed: (){
-          Navigator.of(context).pushNamed("ourteam");
-          Validate.formKey.currentState!.reset();
-        },
-        icon: myIcons.goBack);
-  }
+
 }
