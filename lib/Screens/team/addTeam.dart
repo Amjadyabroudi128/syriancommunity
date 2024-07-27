@@ -138,12 +138,14 @@ class _AddMemberState extends State<AddMember> {
   }
 
   cancelButton() {
+    String title = AppLocalizations.of(context)!.cancel;
+    Color btnClr = ColorManager.delete;
     return CustomButton(
       onPressed: () {
         Navigator.of(context).pop();
       },
-      title: AppLocalizations.of(context)!.cancel,
-      color: ColorManager.delete,
+      title: title,
+      color: btnClr,
     );
   }
 
