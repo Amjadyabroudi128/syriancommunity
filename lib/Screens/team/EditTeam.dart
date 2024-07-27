@@ -167,7 +167,7 @@ class _EditMemberState extends State<EditMember> {
         setState(() {
         });
       },
-      color: ColorManager.addEdit
+      color: imgClr
     );
   }
   editButton() {
