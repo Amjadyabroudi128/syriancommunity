@@ -89,7 +89,7 @@ class _AddMemberState extends State<AddMember> {
                       style: TextStyles.font14green,
                     )),
                     sizedBox(
-                      height: 6,
+                      height: 6.h,
                     ),
                     CustomTextForm(
                         label: Text("Member's Details"),
@@ -107,7 +107,7 @@ class _AddMemberState extends State<AddMember> {
                         return null;
                       },
                     ),
-                    sizedBox(height: 7),
+                    sizedBox(height: 7.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
