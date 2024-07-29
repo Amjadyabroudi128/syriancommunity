@@ -118,7 +118,8 @@ class _EditMemberState extends State<EditMember> {
                           return AppLocalizations.of(context)!.editMemberDetails;
                         }
                         if (details.text.isEmpty) {
-                          return AppLocalizations.of(context)!.memberDetails;
+                          return "\u2757 ${AppLocalizations.of(context)!.memberDetails}";
+                        //   return "${AppLocalizations.of(context)!.addName}";
                         }
                         return null;
                       },
