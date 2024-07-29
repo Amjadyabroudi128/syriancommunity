@@ -98,10 +98,10 @@ class _EditMemberState extends State<EditMember> {
                         suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,),
                       validator: (value){
                         if( value == widget.oldName ) {
-                          return AppLocalizations.of(context)!.editMember;
+                          return "\u2757 ${AppLocalizations.of(context)!.editMember}";
                         }
                         if (name.text.isEmpty) {
-                          return AppLocalizations.of(context)!.memberDetails;
+                          return "\u2757 ${AppLocalizations.of(context)!.memberDetails}";
                         }
                         return null;
                       },
