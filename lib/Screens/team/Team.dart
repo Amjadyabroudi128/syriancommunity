@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/constants.dart';
+import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
@@ -29,17 +30,14 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
 
   @override
   Widget build(BuildContext context) {
-    homePage() {
-      return IconButton(
-          onPressed: () {
-            Navigator.of(context).pushNamed("homepage");
-          },
-          icon: myIcons.goBack);
-    }
     String team = AppLocalizations.of(context)!.team;
     return Scaffold(
       appBar: AppBar(
-        leading: homePage(),
+        leading: goBack(
+          onPressed: (){
+            Navigator.of(context).pushNamed("homepage");
+          },
+        ),
         title: Text(team),
       ),
       body: Padding(
