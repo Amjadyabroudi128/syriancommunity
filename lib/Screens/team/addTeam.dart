@@ -151,13 +151,14 @@ class _AddMemberState extends State<AddMember> {
 
   imageButton() {
     String title = AppLocalizations.of(context)!.image;
+    Color? imgClr = ColorManager.addEdit;
     return CustomButton(
       title: title,
       onPressed: () async {
         await url.pickImage();
         setState(() {});
       },
-      color: ColorManager.addEdit,
+      color: imgClr,
     );
   }
   addButton () {
