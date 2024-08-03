@@ -106,8 +106,9 @@ class _addCommunityState extends State<addCommunity> {
     }, title: title, color: cancel);
   }
   imageButton () {
+    String title = AppLocalizations.of(context)!.image;
     return CustomButton(
-      title: AppLocalizations.of(context)!.image,
+      title: title,
       onPressed: () async {
         await url.pickImage();
         setState(() {
