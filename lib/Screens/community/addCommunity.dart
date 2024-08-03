@@ -113,7 +113,7 @@ class _addCommunityState extends State<addCommunity> {
         setState(() {
         });
       },
-      color: ColorManager.addEdit,
+      color: add,
     );
   }
   submitButton() {

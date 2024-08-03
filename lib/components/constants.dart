@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 
+import '../core/themes/colors.dart';
+
  Text kNothing =  Text("nothing to see here yet :( ", style: TextStyles.font20grey,);
  Text wrong = Text("something went wrong");
  Text kLoading = Text("Loading");
@@ -13,3 +15,4 @@ import 'package:syrianadmin/core/themes/fontSize.dart';
   Icon locked = Icon(Icons.lock);
   Icon unLocked = Icon(Icons.lock_open);
   Color cancel = Colors.red;
+  Color? add = ColorManager.addEdit;
