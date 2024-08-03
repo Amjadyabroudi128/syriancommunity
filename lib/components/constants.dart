@@ -12,3 +12,4 @@ import 'package:syrianadmin/core/themes/fontSize.dart';
   Icon home =  myIcons.home;
   Icon locked = Icon(Icons.lock);
   Icon unLocked = Icon(Icons.lock_open);
+  Color cancel = Colors.red;

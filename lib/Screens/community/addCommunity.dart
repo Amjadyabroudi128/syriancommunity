@@ -12,6 +12,8 @@ import 'package:syrianadmin/classes/pickImage.dart' as url;
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../components/constants.dart';
 class addCommunity extends StatefulWidget {
   const addCommunity({Key? key}) : super(key: key);
 
@@ -98,9 +100,10 @@ class _addCommunityState extends State<addCommunity> {
     );
   }
   cancelButton () {
+    String title = AppLocalizations.of(context)!.cancel;
     return CustomButton(onPressed: (){
       Navigator.pop(context);
-    }, title: AppLocalizations.of(context)!.cancel, color: ColorManager.delete,);
+    }, title: title, color: cancel);
   }
   imageButton () {
     return CustomButton(
