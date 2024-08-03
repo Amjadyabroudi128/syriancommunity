@@ -12,7 +12,6 @@ import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
 import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
-import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 import 'package:syrianadmin/enums.dart';
 import 'editCommunity.dart';
