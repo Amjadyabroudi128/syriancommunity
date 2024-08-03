@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
@@ -140,7 +141,7 @@ class _EditCommunityState extends State<EditCommunity> {
         setState(() {
         });
       },
-      color: ColorManager.addEdit,
+      color: add,
     );
   }
   cancelButton() {
@@ -149,7 +150,7 @@ class _EditCommunityState extends State<EditCommunity> {
         Navigator.pop(context);
       },
       title: AppLocalizations.of(context)!.cancel,
-      color: ColorManager.delete,
+      color: cancel,
     );
   }
   submitButton () {
