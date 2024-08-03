@@ -119,7 +119,7 @@ class _AddMemberState extends State<AddMember> {
                       ],
                     ),
                     sizedBox(
-                      height: 6,
+                      height: 6.h,
                     ),
                     Center(child: imageButton(),),
 
