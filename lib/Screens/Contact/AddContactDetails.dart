@@ -4,6 +4,7 @@ import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
@@ -50,11 +51,11 @@ class _AddContactDetailsState extends State<AddContactDetails> {
         onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
     child: Scaffold(
         appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.addDetails), 
-          leading: IconButton(onPressed: (){
-            Navigator.of(context).pushNamed("contactus");
-          },
-              icon: myIcons.goBack
+          title: Text(AppLocalizations.of(context)!.addDetails),
+          leading: goBack(
+            onPressed: () {
+              Navigator.of(context).pushNamed("contactus");
+            },
           ),
         ),
       body: padding(
