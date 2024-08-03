@@ -113,9 +113,10 @@ class _EditHomeState extends State<EditHome> {
   }
   cancelButton () {
     Color cnclClr = ColorManager.delete;
+    String title = AppLocalizations.of(context)!.cancel;
   return CustomButton(onPressed: (){
       Navigator.pop(context);
-    }, title: AppLocalizations.of(context)!.cancel,
+    }, title: title,
     color: cnclClr);
   }
 }
