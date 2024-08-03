@@ -11,5 +11,6 @@ class dbColl {
   static Query<Map<String, dynamic>> time = FirebaseFirestore.instance.collection("home").orderBy("time", descending: true);
   static User? user = FirebaseAuth.instance.currentUser;
   static  CollectionReference community = FirebaseFirestore.instance.collection('Community');
+  static CollectionReference contact = FirebaseFirestore.instance.collection('contact');
   static Future notification = FirebaseMessaging.instance.subscribeToTopic("topic");
 }

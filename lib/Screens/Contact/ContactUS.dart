@@ -10,6 +10,7 @@ import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
@@ -26,8 +27,7 @@ class ContactUs extends StatefulWidget {
 }
 
 class _ContactUsState extends State<ContactUs> {
-  final CollectionReference contact =
-      FirebaseFirestore.instance.collection('contact');
+
   User? user = FirebaseAuth.instance.currentUser;
   @override
   void initState() {
@@ -80,7 +80,7 @@ class _ContactUsState extends State<ContactUs> {
                   ),
                   // Text(AppLocalizations.of(context)!.visitHere, style: TextStyles.font15,),
                   StreamBuilder<QuerySnapshot>(
-                      stream: contact.snapshots(),
+                      stream: dbColl.contact.snapshots(),
                       builder: (BuildContext context,
                           AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (snapshot.hasError) {
@@ -202,7 +202,7 @@ class _ContactUsState extends State<ContactUs> {
                                       ),
                                       sizedBox(width: 12,),
                                       CustomButton(onPressed: () {
-                                        contact.doc(document.id).delete();
+                                        dbColl.contact.doc(document.id).delete();
                                         ScaffoldMessenger.of(context).showSnackBar
                                           ( SnackBar(content: Text(AppLocalizations.of(context)!.deleted),));
                                       }, title: AppLocalizations.of(context)!.delete,
