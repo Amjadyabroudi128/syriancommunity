@@ -167,11 +167,10 @@ class _CommunityState extends State<Community> {
   }
   addThings () {
     String addThings = AppLocalizations.of(context)!.addDetails;
-    Color? btnClr = ColorManager.addEdit;
     return CustomButton(
       onPressed: (){
         Navigator.of(context).pushNamed("addCommunity");
       },
-      title: addThings, color: btnClr,);
+      title: addThings, color: add,);
   }
 }
