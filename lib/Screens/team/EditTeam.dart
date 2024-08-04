@@ -3,6 +3,7 @@ import 'package:syrianadmin/classes/pickImage.dart' as url;
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
@@ -150,12 +151,12 @@ class _EditMemberState extends State<EditMember> {
   }
   cancelButton() {
     String Cancel = AppLocalizations.of(context)!.cancel;
-    Color cncClr = ColorManager.delete;
+
     return CustomButton(onPressed: (){
       Navigator.pop(context);
 
     }, title: Cancel,
-      color: cncClr);
+      color: cancelClr);
   }
   imageButton () {
     Color? imgClr = ColorManager.addEdit;

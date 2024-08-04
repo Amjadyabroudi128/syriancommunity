@@ -150,7 +150,7 @@ class _EditCommunityState extends State<EditCommunity> {
         Navigator.pop(context);
       },
       title: AppLocalizations.of(context)!.cancel,
-      color: cancel,
+      color: cancelClr,
     );
   }
   submitButton () {

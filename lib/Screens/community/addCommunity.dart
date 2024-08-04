@@ -103,7 +103,7 @@ class _addCommunityState extends State<addCommunity> {
     String title = AppLocalizations.of(context)!.cancel;
     return CustomButton(onPressed: (){
       Navigator.pop(context);
-    }, title: title, color: cancel);
+    }, title: title, color: cancelClr);
   }
   imageButton () {
     String title = AppLocalizations.of(context)!.image;
