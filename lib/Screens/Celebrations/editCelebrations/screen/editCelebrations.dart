@@ -7,6 +7,7 @@ import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
+import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/image.network.dart';
 import 'package:syrianadmin/components/padding.dart';
@@ -179,19 +180,18 @@ class _EditCelebrationState extends State<EditCelebration> {
         await url.pickImage();
         setState(() {});
       },
-      color: ColorManager.addEdit,
+      color: add,
     );
   }
 
   cancelButton() {
     String cancel = AppLocalizations.of(context)!.cancel;
-    Color clr = ColorManager.delete;
     return CustomButton(
       onPressed: () {
         Navigator.pop(context);
       },
       title: cancel,
-      color: clr
+      color: cancelClr
     );
   }
 

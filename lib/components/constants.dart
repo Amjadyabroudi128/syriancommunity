@@ -14,5 +14,5 @@ import '../core/themes/colors.dart';
   Icon home =  myIcons.home;
   Icon locked = Icon(Icons.lock);
   Icon unLocked = Icon(Icons.lock_open);
-  Color cancelClr = Colors.red;
+  Color cancelClr = ColorManager.delete;
   Color? add = ColorManager.addEdit;
