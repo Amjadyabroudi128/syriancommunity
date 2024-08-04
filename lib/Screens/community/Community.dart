@@ -45,7 +45,7 @@ class _CommunityState extends State<Community> {
           child: Column(
             children: [
               Center(
-                  child: user != null ? addThings(): sizedBox()
+                  child: user != null ? addEvent(): sizedBox()
               ),
               StreamBuilder(
                 stream: dbColl.community.snapshots(),
@@ -164,12 +164,12 @@ class _CommunityState extends State<Community> {
       ),
     );
   }
-  addThings () {
-    String addThings = AppLocalizations.of(context)!.addDetails;
-    return CustomButton(
-      onPressed: (){
-        Navigator.of(context).pushNamed("addCommunity");
-      },
-      title: addThings, color: add,);
-  }
+ addEvent () {
+     String addThings = AppLocalizations.of(context)!.addDetails;
+     return CustomButton(
+       onPressed: (){
+         Navigator.of(context).pushNamed("addCommunity");
+       },
+       title: addThings, color: add,);
+ }
 }
