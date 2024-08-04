@@ -6,6 +6,7 @@ import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
@@ -149,12 +150,13 @@ class _AddCelebrationState extends State<AddCelebration> {
   }
 
   cancelButton() {
+    String cancelTitle = AppLocalizations.of(context)!.cancel;
     return CustomButton(
       onPressed: () {
         Navigator.pop(context);
       },
-      title: AppLocalizations.of(context)!.cancel,
-      color: ColorManager.delete,
+      title: cancelTitle,
+      color: cancelClr,
     );
   }
 
