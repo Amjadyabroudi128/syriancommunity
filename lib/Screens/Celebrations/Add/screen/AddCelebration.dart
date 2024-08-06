@@ -144,7 +144,7 @@ class _AddCelebrationState extends State<AddCelebration> {
           url.pickImage();
           setState(() {});
         },
-        color: ColorManager.addEdit,
+        color: add,
       ),
     );
   }
