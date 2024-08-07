@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/Screens/HomePage/widgets/addHomeTexts.dart';
+import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/Screens/HomePage/HomePage.dart';
@@ -130,7 +131,6 @@ class _AddInfoState extends State<AddInfo> {
     details.clear();
   }
  cancelButton () {
-    Color cancelClr = ColorManager.delete;
     String cancelTitle = AppLocalizations.of(context)!.cancel;
     return CustomButton(onPressed: (){
       Navigator.pop(context);

@@ -151,7 +151,6 @@ class _EditMemberState extends State<EditMember> {
   }
   cancelButton() {
     String Cancel = AppLocalizations.of(context)!.cancel;
-
     return CustomButton(onPressed: (){
       Navigator.pop(context);
 
