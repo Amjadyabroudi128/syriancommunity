@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
+import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
@@ -139,13 +140,13 @@ class _AddMemberState extends State<AddMember> {
 
   cancelButton() {
     String title = AppLocalizations.of(context)!.cancel;
-    Color btnClr = ColorManager.delete;
+    // Color btnClr = ColorManager.delete;
     return CustomButton(
       onPressed: () {
         Navigator.of(context).pop();
       },
       title: title,
-      color: btnClr,
+      color: cancelClr,
     );
   }
 
