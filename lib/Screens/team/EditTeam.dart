@@ -159,7 +159,6 @@ class _EditMemberState extends State<EditMember> {
       color: cancelClr);
   }
   imageButton () {
-    Color? imgClr = ColorManager.addEdit;
     String title = AppLocalizations.of(context)!.image;
     return CustomButton(
       title: title,
@@ -168,7 +167,7 @@ class _EditMemberState extends State<EditMember> {
         setState(() {
         });
       },
-      color: imgClr
+      color: add
     );
   }
   editButton() {
