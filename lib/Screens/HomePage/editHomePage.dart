@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/Screens/HomePage/HomePage.dart';
 import 'package:syrianadmin/Screens/HomePage/widgets/editHomeTexts.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
+import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
@@ -112,12 +113,11 @@ class _EditHomeState extends State<EditHome> {
     );
   }
   cancelButton () {
-    Color cnclClr = ColorManager.delete;
     String title = AppLocalizations.of(context)!.cancel;
   return CustomButton(onPressed: (){
       Navigator.pop(context);
     }, title: title,
-    color: cnclClr);
+    color: cancelClr);
   }
 }
 
