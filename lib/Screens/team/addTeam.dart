@@ -140,7 +140,6 @@ class _AddMemberState extends State<AddMember> {
 
   cancelButton() {
     String title = AppLocalizations.of(context)!.cancel;
-    // Color btnClr = ColorManager.delete;
     return CustomButton(
       onPressed: () {
         Navigator.of(context).pop();
@@ -152,14 +151,13 @@ class _AddMemberState extends State<AddMember> {
 
   imageButton() {
     String title = AppLocalizations.of(context)!.image;
-    Color? imgClr = ColorManager.addEdit;
     return CustomButton(
       title: title,
       onPressed: () async {
         await url.pickImage();
         setState(() {});
       },
-      color: imgClr,
+      color: add,
     );
   }
   addButton () {
