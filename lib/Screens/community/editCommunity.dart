@@ -134,8 +134,9 @@ class _EditCommunityState extends State<EditCommunity> {
     );
   }
   imageButton () {
+    String imgTitle = AppLocalizations.of(context)!.image;
     return CustomButton(
-      title: AppLocalizations.of(context)!.image,
+      title: imgTitle,
       onPressed: () async {
         await url.pickImage();
         setState(() {
@@ -145,11 +146,12 @@ class _EditCommunityState extends State<EditCommunity> {
     );
   }
   cancelButton() {
+    String title = AppLocalizations.of(context)!.cancel;
     return CustomButton(
       onPressed: (){
         Navigator.pop(context);
       },
-      title: AppLocalizations.of(context)!.cancel,
+      title: title,
       color: cancelClr,
     );
   }
