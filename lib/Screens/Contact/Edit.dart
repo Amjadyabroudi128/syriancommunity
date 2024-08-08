@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/Screens/Contact/ContactUS.dart';
+import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
@@ -149,6 +150,6 @@ class _AddContactDetailsState extends State<EditDetails> {
   cancelButton () {
    return CustomButton(onPressed: (){
       Navigator.pop(context);
-    }, title: "Cancel", color: ColorManager.delete,);
+    }, title: "Cancel", color: cancelClr);
   }
 }
