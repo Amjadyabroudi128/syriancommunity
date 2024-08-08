@@ -56,7 +56,7 @@ class _CelebrationsState extends State<Celebrations> {
                             Navigator.of(context).pushNamed("addcelebration");
                           },
                           title: AppLocalizations.of(context)!.addCelebration,
-                          color: ColorManager.addEdit,
+                          color: add,
                         ),
                       ) : sizedBox(height: 15.h,),
                     ),
