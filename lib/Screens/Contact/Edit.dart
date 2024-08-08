@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/Screens/Contact/ContactUS.dart';
+import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 
@@ -51,11 +52,10 @@ class _AddContactDetailsState extends State<EditDetails> {
         onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
       child: Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: (){
-          // Navigator.of(context).pushNamed("contactus");
-          Navigator.push(context, ContactUs.route());
-        },
-            icon: myIcons.goBack,
+        leading: goBack(
+          onPressed: (){
+            Navigator.push(context, ContactUs.route());
+          },
         ),
         title: Text(AppLocalizations.of(context)!.editDetails),
       ),
