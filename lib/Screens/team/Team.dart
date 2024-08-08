@@ -173,13 +173,12 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
   }
   addMember () {
     String kTitle = AppLocalizations.of(context)!.addThings;
-    Color? kClr = ColorManager.addEdit;
     return CustomButton(
       onPressed: (){
         Navigator.of(context).pushNamed("addMember");
       },
       title: kTitle,
-      color: kClr,
+      color: add,
     );
   }
 }
