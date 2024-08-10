@@ -7,7 +7,6 @@ import 'package:syrianadmin/Screens/Celebrations/Delete/bloc/delete_bloc.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations/screen/editCelebrations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
-import 'package:syrianadmin/components/addEvent.dart';
 import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/image.network.dart';
@@ -15,7 +14,6 @@ import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/popUpMenu.dart';
 import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
-import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 import 'package:syrianadmin/enums.dart';
 
