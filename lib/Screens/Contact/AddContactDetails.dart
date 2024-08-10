@@ -64,9 +64,9 @@ class _AddContactDetailsState extends State<AddContactDetails> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // sizedBox(height: 10,),
-              padding(child: Text(AppLocalizations.of(context)!.place)),
+              padding(child: Text("e.g Brighton College ")),
               sizedBox(height: 2,),
-              CustomTextForm(hinttext: "e.g : Brighton college", myController: place,
+              CustomTextForm(label: Text(AppLocalizations.of(context)!.place), myController: place,
                   suffixIcon: place.text.isEmpty ? null :  IconButton(onPressed: place.clear, icon: myIcons.clear,)
               ),
               sizedBox(),
