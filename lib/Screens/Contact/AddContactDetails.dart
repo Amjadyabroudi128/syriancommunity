@@ -8,6 +8,8 @@ import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
+
+import '../../components/snackBar.dart';
 class AddContactDetails extends StatefulWidget {
   const AddContactDetails({Key? key}) : super(key: key);
 
@@ -134,8 +136,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
         if (place.text.isEmpty || road.text.isEmpty
         || city.text.isEmpty || postcode.text.isEmpty
         || email.text.isEmpty || phone.text.isEmpty) {
-          ScaffoldMessenger.of(context).showSnackBar
-            ( SnackBar(content: Text(AppLocalizations.of(context)!.addThings),));
+          showSnackBar(context, AppLocalizations.of(context)!.addThings);
         } else {
           await contact.doc().set(
             {
