@@ -18,6 +18,8 @@ import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 import 'package:syrianadmin/enums.dart';
+
+import '../../../components/SubmitButton.dart';
 class Celebrations extends StatefulWidget {
   final document;
 
@@ -51,13 +53,7 @@ class _CelebrationsState extends State<Celebrations> {
                     Center(
                       child: user != null ? Padding(
                         padding: const EdgeInsets.all(12.0),
-                        child: addEvent(
-                          onPressed: (){
-                            Navigator.of(context).pushNamed("addcelebration");
-                          },
-                          title: AppLocalizations.of(context)!.addCelebration,
-                          color: add,
-                        ),
+                        child: addEvent(),
                       ) : sizedBox(height: 15.h,),
                     ),
                     padding(child: Text(AppLocalizations.of(context)!.celebrations, style: TextStyles.font16green,)),
@@ -210,8 +206,14 @@ class _CelebrationsState extends State<Celebrations> {
         ),
     );
   }
-
-
+  addEvent () {
+    String addThings = AppLocalizations.of(context)!.addDetails;
+    return CustomButton(
+      onPressed: (){
+        Navigator.of(context).pushNamed("addcelebration");
+      },
+      title: addThings, color: add,);
+  }
 
 }
 
