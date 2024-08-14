@@ -148,8 +148,8 @@ class _AddContactDetailsState extends State<AddContactDetails> {
                   "phone" : phone.text
             }
           );
-          ScaffoldMessenger.of(context).showSnackBar
-            ( SnackBar(content: Text(AppLocalizations.of(context)!.addedSuccessfully),));
+          showSnackBar(context, AppLocalizations.of(context)!.addedSuccessfully);
+
           Navigator.of(context).pushNamed("contactus");
         }
       },
