@@ -4,6 +4,7 @@ import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
@@ -157,7 +158,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
       title: title,
       color: (place.text.isEmpty ) || (road.text.isEmpty)
           || (city.text.isEmpty) ||(postcode.text.isEmpty)
-          ||(email.text.isEmpty) || (phone.text.isEmpty) ? Colors.grey : ColorManager.submit ,
+          ||(email.text.isEmpty) || (phone.text.isEmpty) ? add : ColorManager.submit ,
     );
   }
 
