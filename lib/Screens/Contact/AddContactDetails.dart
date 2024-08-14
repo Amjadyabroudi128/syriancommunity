@@ -128,7 +128,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
         Navigator.pop(context);
       },
       title: AppLocalizations.of(context)!.cancel,
-      color: ColorManager.delete,
+      color: cancelClr,
     );
   }
   submitButton() {
