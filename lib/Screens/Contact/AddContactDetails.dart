@@ -131,6 +131,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
     );
   }
   submitButton() {
+    String title = AppLocalizations.of(context)!.submit;
     return CustomButton(
       onPressed: () async{
         if (place.text.isEmpty || road.text.isEmpty
@@ -153,7 +154,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
           Navigator.of(context).pushNamed("contactus");
         }
       },
-      title: AppLocalizations.of(context)!.submit,
+      title: title,
       color: (place.text.isEmpty ) || (road.text.isEmpty)
           || (city.text.isEmpty) ||(postcode.text.isEmpty)
           ||(email.text.isEmpty) || (phone.text.isEmpty) ? Colors.grey : ColorManager.submit ,
