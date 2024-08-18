@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/constants.dart';
@@ -85,8 +86,8 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                   clipBehavior: Clip.antiAlias,
                                   child: data["image"] !=  null ? myImage(
                                     src: data["image"],
-                                    height: 240,
-                                    width: 240,
+                                    height: 210.h,
+                                    width: 220.w,
                                     fit: BoxFit.cover,
                                     onPressed: (){
                                         Navigator.of(context).push(
@@ -104,8 +105,8 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                   clipBehavior: Clip.antiAlias,
                                   child: data["image"] !=  null ? myImage(
                                     src: data["image"],
-                                    height: 240,
-                                    width: 240,
+                                    height: 240.h,
+                                    width: 240.w,
                                     fit: BoxFit.cover,
                                   ) : SizedBox.shrink(),
                                 ),
