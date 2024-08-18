@@ -90,4 +90,10 @@ import 'font_weight_helper.dart';
        fontSize: 18,
        color: ColorManager.darkError
    );
+   static TextStyle expansionE = TextStyle(
+       fontSize: 16, fontWeight: FontWeightHelper.medium
+   );
+   static TextStyle expansionA = TextStyle(
+       fontSize: 18, fontWeight: FontWeightHelper.medium
+   );
  }
