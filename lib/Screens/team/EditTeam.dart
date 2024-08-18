@@ -49,100 +49,96 @@ class _EditMemberState extends State<EditMember> {
   @override
   Widget build(BuildContext context) {
     String edit = AppLocalizations.of(context)!.editDetails;
-    return ScreenUtilInit(
-      minTextAdapt: true,
-      splitScreenMode: true,
-      child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(edit),
-            leading: goBack(
-              onPressed: (){
-                Navigator.of(context).pushNamed("ourteam");
-                Validate.formKey.currentState!.reset();
-              },
-            )
-        ),
-        body: ScrollConfiguration(
-          behavior: ScrollBehavior(),
-          child: SingleChildScrollView(
-            child: padding(
-              child: Form(
-                key: Validate.formKey,
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Card(
-                      shape: const CircleBorder(),
-                      clipBehavior: Clip.antiAlias,
-                      child: Center(
-                        child: url.url != null ? myImage(
-                          onPressed: () async {
-                            await url.pickImage();
-                            setState(() {
-                            });
-                          },
-                          src: url.url,
-                          width: 210.w,
-                          height: 210.h,
-                          fit: BoxFit.cover
-                        ) : SizedBox.shrink(),
-                      ),
+    return GestureDetector(
+        onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
+    child: Scaffold(
+      appBar: AppBar(
+        title: Text(edit),
+          leading: goBack(
+            onPressed: (){
+              Navigator.of(context).pushNamed("ourteam");
+              Validate.formKey.currentState!.reset();
+            },
+          )
+      ),
+      body: ScrollConfiguration(
+        behavior: ScrollBehavior(),
+        child: SingleChildScrollView(
+          child: padding(
+            child: Form(
+              key: Validate.formKey,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Card(
+                    shape: const CircleBorder(),
+                    clipBehavior: Clip.antiAlias,
+                    child: Center(
+                      child: url.url != null ? myImage(
+                        onPressed: () async {
+                          await url.pickImage();
+                          setState(() {
+                          });
+                        },
+                        src: url.url,
+                        width: 210.w,
+                        height: 210.h,
+                        fit: BoxFit.cover
+                      ) : SizedBox.shrink(),
                     ),
-                    padding(child: Text("Member name", style: TextStyles.font14green,)),
-                    sizedBox(height: 3,),
-                    CustomTextForm(
-                        label: Text(AppLocalizations.of(context)!.name),
-                     myController: name,
-                        suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,),
-                      validator: (value){
-                        if( value == widget.oldName ) {
-                          return "\u2757 ${AppLocalizations.of(context)!.editMember}";
-                        }
-                        if (name.text.isEmpty) {
-                          return "\u2757 ${AppLocalizations.of(context)!.memberDetails}";
-                        }
-                        return null;
-                      },
-      
-                    ),
-                    sizedBox(height: 20,),
-                    padding(child: Text("Member's Details", style: TextStyles.font14green,)),
-                    CustomTextForm(
-                        label: Text(AppLocalizations.of(context)!.details),
-                        myController: details,
-                        suffixIcon: IconButton(onPressed: details.clear, icon: myIcons.clear,),
-                      validator: (value){
-                        if( value == widget.oldDetail) {
-                          return "\u2757  ${AppLocalizations.of(context)!.editMemberDetails}";
-                        }
-                        if (details.text.isEmpty) {
-                          return "\u2757 ${AppLocalizations.of(context)!.memberDetails}";
-                        }
-                        return null;
-                      },
-                    ),
-                    sizedBox(height: 2.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        cancelButton(),
-                        sizedBox(width: 12.w,),
-                        editButton(),
-                      ],
-                    ),
-                    sizedBox(height: 3.h,),
-                    Center(child: imageButton()),
-                  ],
-                ),
+                  ),
+                  padding(child: Text("Member name", style: TextStyles.font14green,)),
+                  sizedBox(height: 3,),
+                  CustomTextForm(
+                      label: Text(AppLocalizations.of(context)!.name),
+                   myController: name,
+                      suffixIcon: IconButton(onPressed: name.clear, icon: myIcons.clear,),
+                    validator: (value){
+                      if( value == widget.oldName ) {
+                        return "\u2757 ${AppLocalizations.of(context)!.editMember}";
+                      }
+                      if (name.text.isEmpty) {
+                        return "\u2757 ${AppLocalizations.of(context)!.memberDetails}";
+                      }
+                      return null;
+                    },
+
+                  ),
+                  sizedBox(height: 20,),
+                  padding(child: Text("Member's Details", style: TextStyles.font14green,)),
+                  CustomTextForm(
+                      label: Text(AppLocalizations.of(context)!.details),
+                      myController: details,
+                      suffixIcon: IconButton(onPressed: details.clear, icon: myIcons.clear,),
+                    validator: (value){
+                      if( value == widget.oldDetail) {
+                        return "\u2757  ${AppLocalizations.of(context)!.editMemberDetails}";
+                      }
+                      if (details.text.isEmpty) {
+                        return "\u2757 ${AppLocalizations.of(context)!.memberDetails}";
+                      }
+                      return null;
+                    },
+                  ),
+                  sizedBox(height: 2.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      cancelButton(),
+                      sizedBox(width: 12.w,),
+                      editButton(),
+                    ],
+                  ),
+                  sizedBox(height: 3.h,),
+                  Center(child: imageButton()),
+                ],
               ),
             ),
           ),
         ),
       ),
-      ),
+    ),
     );
   }
   void clearText() {
@@ -171,8 +167,8 @@ class _EditMemberState extends State<EditMember> {
   }
   editButton() {
     String btnTitle = AppLocalizations.of(context)!.update;
-    Color btnClr = (widget.oldName == name.text && widget.oldDetail == details.text ||
-        name.text.isEmpty || details.text.isEmpty)  ? ColorManager.emptyLogin : ColorManager.submit;
+    Color? btnClr = (widget.oldName == name.text && widget.oldDetail == details.text ||
+        name.text.isEmpty || details.text.isEmpty)  ? empty : submit;
     bool isChangedorEmpty = (name.text == widget.oldName && details.text == widget.oldDetail) ||
         name.text.isEmpty || details.text.isEmpty;
    return CustomButton(
