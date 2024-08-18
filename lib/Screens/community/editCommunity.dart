@@ -158,8 +158,8 @@ class _EditCommunityState extends State<EditCommunity> {
   submitButton () {
     bool isUnchangedOrEmpty = (name.text == widget.oldName && details.text == widget.oldDetails) ||
         name.text.isEmpty || details.text.isEmpty;
-    Color buttonColor = (widget.oldName == name.text && widget.oldDetails == details.text ||
-        name.text.isEmpty || details.text.isEmpty)  ? Colors.grey : ColorManager.submit;
+    Color? buttonColor = (widget.oldName == name.text && widget.oldDetails == details.text ||
+        name.text.isEmpty || details.text.isEmpty)  ? empty : submit;
     String btnTitle = (widget.oldName == name.text && widget.oldDetails == details.text || name.text.isEmpty || details.text.isEmpty)
         ? "Updating"  : AppLocalizations.of(context)!.update;
     return CustomButton(
