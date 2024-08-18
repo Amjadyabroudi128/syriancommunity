@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -49,11 +51,16 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         leading: Builder(
           builder: (BuildContext context) {
-            return IconButton(
-              icon: myIcons.drawer,
-              onPressed: (){
-                Scaffold.of(context).openDrawer();
-              },
+            return Container(
+              child: Transform.rotate(
+                angle: pi/4,
+                child: IconButton(
+                  icon: myIcons.drawer,
+                  onPressed: (){
+                    Scaffold.of(context).openDrawer();
+                  },
+                ),
+              ),
             );
           },
         ),
