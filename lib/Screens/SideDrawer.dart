@@ -9,6 +9,7 @@ import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
 import '../components/Container.dart';
+import '../core/themes/fontSize.dart';
 import '../core/themes/font_weight_helper.dart';
 import '../main.dart';
 
@@ -123,7 +124,7 @@ class _SideDrawerState extends State<SideDrawer> {
                   ),
                   MYlist(
                     leading: Text(myIcons.Arabic, style: TextStyle(fontSize: 30),),
-                    title: Text(AppLocalizations.of(context)!.arabic, style: TextStyle(fontSize: 18, fontWeight: FontWeightHelper.medium),),
+                    title: Text(AppLocalizations.of(context)!.arabic, style: TextStyles.expansionA,),
                     onTap: (){
                       MyApp.setLocale(context, Locale("ar"));
                     },
