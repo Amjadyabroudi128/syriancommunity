@@ -16,3 +16,5 @@ import '../core/themes/colors.dart';
   Icon unLocked = Icon(Icons.lock_open);
   Color cancelClr = ColorManager.delete;
   Color? add = ColorManager.addEdit;
+  Color? submit = ColorManager.submit;
+  Color empty = ColorManager.emptyLogin;
