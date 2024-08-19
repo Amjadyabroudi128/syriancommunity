@@ -201,8 +201,8 @@ class _EditCelebrationState extends State<EditCelebration> {
         celebrationDetails.text == widget.oldDetail ||
         celebrationName.text.isEmpty ||
         celebrationDetails.text.isEmpty;
-    Color btnClr = (widget.oldName == celebrationName.text && widget.oldDetail == celebrationDetails.text ||
-        celebrationName.text.isEmpty || celebrationDetails.text.isEmpty)  ? ColorManager.emptyLogin : ColorManager.submit;
+    Color? btnClr = (widget.oldName == celebrationName.text && widget.oldDetail == celebrationDetails.text ||
+        celebrationName.text.isEmpty || celebrationDetails.text.isEmpty)  ? empty: submit;
     return CustomButton(
       onPressed: () async {
         if (isChangedorEmpty) {
