@@ -96,4 +96,10 @@ import 'font_weight_helper.dart';
    static TextStyle expansionA = TextStyle(
        fontSize: 18, fontWeight: FontWeightHelper.medium
    );
+   static TextStyle IconA = TextStyle(
+       fontSize: 30,
+   );
+   static TextStyle IconE = TextStyle(
+     fontSize: 30,
+   );
  }

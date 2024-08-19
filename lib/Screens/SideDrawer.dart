@@ -117,14 +117,14 @@ class _SideDrawerState extends State<SideDrawer> {
                 title: Text(AppLocalizations.of(context)!.language),
                 children: <Widget>[
                   MYlist(
-                    leading: Text(myIcons.english, style: TextStyle(fontSize: 30),),
+                    leading: Text(myIcons.english, style: TextStyles.IconE,),
                     title: Text(AppLocalizations.of(context)!.english,  style: TextStyles.expansionE),
                     onTap: (){
                       MyApp.setLocale(context, Locale("en"));
                     },
                   ),
                   MYlist(
-                    leading: Text(myIcons.Arabic, style: TextStyle(fontSize: 30),),
+                    leading: Text(myIcons.Arabic, style: TextStyles.IconA,),
                     title: Text(AppLocalizations.of(context)!.arabic, style: TextStyles.expansionA,),
                     onTap: (){
                       MyApp.setLocale(context, Locale("ar"));
