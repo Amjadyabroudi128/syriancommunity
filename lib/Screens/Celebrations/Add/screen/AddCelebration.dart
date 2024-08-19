@@ -85,7 +85,7 @@ class _AddCelebrationState extends State<AddCelebration> {
                             return null;
                           },
                         ),
-                      sizedBox(),
+                      sizedBox(height: 4,),
                       padding(
                         child: Text(AppLocalizations.of(context)!.details),
                       ),
