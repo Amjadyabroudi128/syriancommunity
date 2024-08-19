@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:syrianadmin/Register/LogIn.dart';
+import 'package:syrianadmin/components/AppSizing.dart';
 import 'package:syrianadmin/components/ListTile.dart';
 import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/icons.dart';
@@ -27,7 +28,7 @@ class _SideDrawerState extends State<SideDrawer> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.69,
+      width: AppSizing.sWidth(context),
       child: Drawer(
         child: SingleChildScrollView(
           physics: ScrollPhysics(),
