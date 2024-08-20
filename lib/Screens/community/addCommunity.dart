@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:syrianadmin/Screens/community/TextDetails.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/goBack.dart';
@@ -69,15 +70,7 @@ class _addCommunityState extends State<addCommunity> {
                 padding(
                   child: Text("what we do"),
                 ),
-                CustomTextForm(label: Text(AppLocalizations.of(context)!.details), myController: details,
-                    suffixIcon: details.text.isEmpty ? null : IconButton(onPressed: details.clear, icon: myIcons.clear),
-                  validator: (value) {
-                    if(value == null || details.text.isEmpty) {
-                      return "\u2757 ${AppLocalizations.of(context)!.addThings}";
-                    }
-                    return null;
-                  },
-                ),
+                textDetails(details: details),
                 sizedBox(height: 10.h,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
