@@ -6,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/Screens/Celebrations/Delete/bloc/delete_bloc.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations/screen/editCelebrations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:syrianadmin/components/AppSizing.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/goBack.dart';
@@ -18,6 +17,7 @@ import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 import 'package:syrianadmin/enums.dart';
 
+import '../../../components/AppSizing.dart';
 import '../../../components/SubmitButton.dart';
 class Celebrations extends StatefulWidget {
   final document;
@@ -122,8 +122,8 @@ class _CelebrationsState extends State<Celebrations> {
                                       ) : SizedBox.shrink(),
                                       ) :  Container(
                                        child: data["image"] != null ? myImage(
-                                         width: AppSizing.myWidth(context),
-                                         height: AppSizing.height30(context),
+                                         width: MediaQuery.of(context).size.width,
+                                         height: MediaQuery.of(context).size.height * 0.30,
                                          src: data["image"],
                                        ) : SizedBox.shrink(),
                                      ),
