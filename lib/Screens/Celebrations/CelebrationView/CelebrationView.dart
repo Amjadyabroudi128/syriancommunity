@@ -116,14 +116,14 @@ class _CelebrationsState extends State<Celebrations> {
                                         );
                                         },
                                         width: AppSizing.imageWidth(context),
-                                        height: MediaQuery.of(context).size.height * 0.30,
+                                        height: AppSizing.height30(context),
                                         src: data["image"],
 
                                       ) : SizedBox.shrink(),
                                       ) :  Container(
                                        child: data["image"] != null ? myImage(
                                          width: AppSizing.myWidth(context),
-                                         height: MediaQuery.of(context).size.height * 0.30,
+                                         height: AppSizing.height30(context),
                                          src: data["image"],
                                        ) : SizedBox.shrink(),
                                      ),
