@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:syrianadmin/components/AppSizing.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
 import 'package:syrianadmin/components/constants.dart';
@@ -97,7 +98,7 @@ class _CommunityState extends State<Community> {
                             ) : Card(
                               child: data["image"] != null ? myImage(
                                 src: data["image"],
-                                  height: MediaQuery.of(context).size.height * 0.40.h,
+                                  height: AppSizing.image40(context),
                               ) : SizedBox.shrink(),
                             ),
                           ),
