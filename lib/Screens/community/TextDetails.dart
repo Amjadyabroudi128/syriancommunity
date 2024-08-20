@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../components/TextField.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../components/icons.dart';
 class textDetails extends StatelessWidget {
   const textDetails({
     super.key,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/Screens/community/TextDetails.dart';
+import 'package:syrianadmin/Screens/community/textNAme.dart';
 import 'package:syrianadmin/classes/validate%20state.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/goBack.dart';
@@ -8,7 +9,6 @@ import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/components/snackBar.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
-import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/classes/pickImage.dart' as url;
 import '../../components/SubmitButton.dart';
 import '../../components/TextField.dart';
@@ -57,15 +57,7 @@ class _addCommunityState extends State<addCommunity> {
               children: [
                 sizedBox(),
                 padding(child: Text("Event Name"),),
-                CustomTextForm(label: Text(AppLocalizations.of(context)!.name), myController: name,
-                    suffixIcon: name.text.isEmpty? null : IconButton(onPressed: name.clear, icon: myIcons.clear),
-                  validator: (value) {
-                    if(value == null || name.text.isEmpty) {
-                      return "\u2757 ${AppLocalizations.of(context)!.addThings}";
-                    }
-                    return null;
-                  },
-                ),
+                textName(name: name),
                 sizedBox(height: 3.h,),
                 padding(
                   child: Text("what we do"),
