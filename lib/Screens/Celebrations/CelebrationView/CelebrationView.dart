@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syrianadmin/Screens/Celebrations/Delete/bloc/delete_bloc.dart';
 import 'package:syrianadmin/Screens/Celebrations/editCelebrations/screen/editCelebrations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:syrianadmin/components/AppSizing.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/goBack.dart';
@@ -114,14 +115,14 @@ class _CelebrationsState extends State<Celebrations> {
                                       ),
                                         );
                                         },
-                                        width: MediaQuery.of(context).size.width * 50,
+                                        width: AppSizing.imageWidth(context),
                                         height: MediaQuery.of(context).size.height * 0.30,
                                         src: data["image"],
 
                                       ) : SizedBox.shrink(),
                                       ) :  Container(
                                        child: data["image"] != null ? myImage(
-                                         width: MediaQuery.of(context).size.width,
+                                         width: AppSizing.myWidth(context),
                                          height: MediaQuery.of(context).size.height * 0.30,
                                          src: data["image"],
                                        ) : SizedBox.shrink(),
