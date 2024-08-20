@@ -122,8 +122,8 @@ class _CelebrationsState extends State<Celebrations> {
                                       ) : SizedBox.shrink(),
                                       ) :  Container(
                                        child: data["image"] != null ? myImage(
-                                         width: MediaQuery.of(context).size.width,
-                                         height: MediaQuery.of(context).size.height * 0.30,
+                                         width: AppSizing.myWidth(context),
+                                         height: AppSizing.height30(context),
                                          src: data["image"],
                                        ) : SizedBox.shrink(),
                                      ),
