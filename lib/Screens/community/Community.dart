@@ -30,6 +30,7 @@ class Community extends StatefulWidget {
 class _CommunityState extends State<Community> {
   @override
   Widget build(BuildContext context) {
+    Text title = Text(AppLocalizations.of(context)!.communityResources);
     User? user = FirebaseAuth.instance.currentUser;
     return Scaffold(
       appBar: AppBar(
@@ -38,7 +39,7 @@ class _CommunityState extends State<Community> {
             Navigator.of(context).pushNamed("homepage");
           },
         ),
-        title: Text(AppLocalizations.of(context)!.communityResources),
+        title: title,
       ),
       body: ScrollConfiguration(
         behavior: ScrollBehavior(),
