@@ -91,8 +91,8 @@ class _EditHomeState extends State<EditHome> {
           name.text.isEmpty || details.text.isEmpty;
    String btnTitle = (widget.oldName == name.text && widget.oldDetail == details.text || name.text.isEmpty || details.text.isEmpty)
         ? "Updating"  : AppLocalizations.of(context)!.update;
-   Color btnClr = (name.text == widget.oldName)
-       && (details.text == widget.oldDetail) ? ColorManager.emptyLogin : ColorManager.submit;
+   Color? btnClr = (name.text == widget.oldName)
+       && (details.text == widget.oldDetail) ? empty : submit;
     return CustomButton(
         onPressed: () async {
           if (isUnchangedOrEmpty) {
