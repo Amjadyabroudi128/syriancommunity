@@ -14,6 +14,7 @@ import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 import 'package:syrianadmin/enums.dart';
+import '../../components/AppSizing.dart';
 import 'EditTeam.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -114,7 +115,7 @@ class _MeetOurTeamState extends State<MeetOurTeam> {
                                 Text(data["name"], style: TextStyles.font14green,),
                                 sizedBox(height: 12,),
                                 SizedBox(
-                                  width: MediaQuery.of(context).size.width,
+                                  width: AppSizing.myWidth(context),
                                   child: IntrinsicHeight(
                                     child: Card(
                                       child: Column(
