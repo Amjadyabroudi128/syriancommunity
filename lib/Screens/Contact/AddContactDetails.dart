@@ -50,11 +50,12 @@ class _AddContactDetailsState extends State<AddContactDetails> {
   FirebaseFirestore.instance.collection('contact');
   @override
   Widget build(BuildContext context) {
+    Text contact = Text(AppLocalizations.of(context)!.addDetails);
     return GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
     child: Scaffold(
         appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.addDetails),
+          title: contact,
           leading: goBack(
             onPressed: () {
               Navigator.of(context).pushNamed("contactus");
