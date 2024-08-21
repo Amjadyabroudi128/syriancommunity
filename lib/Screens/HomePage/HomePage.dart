@@ -47,6 +47,7 @@ class _HomePageState extends State<HomePage> {
           title: btnTitle,
           color: btnClr);
     }
+    Text error = Text(AppLocalizations.of(context)!.error);
     return Scaffold(
       appBar: AppBar(
         leading: Builder(
@@ -68,7 +69,6 @@ class _HomePageState extends State<HomePage> {
       ),
       drawer: SideDrawer(),
       body: padding(
-        // padding: const EdgeInsets.all(15.0),
         child: ScrollConfiguration(
           behavior: ScrollBehavior(),
           child: ListView(
@@ -83,8 +83,7 @@ class _HomePageState extends State<HomePage> {
                     stream: dbColl.time.snapshots(),
                     builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
                       if (snapshot.hasError) {
-
-                        return Text(AppLocalizations.of(context)!.error);
+                        return error;
                       }
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return kLoading;

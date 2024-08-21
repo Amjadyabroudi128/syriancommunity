@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
-
+ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../core/themes/colors.dart';
 
  Text kNothing =  Text("nothing to see here yet :( ", style: TextStyles.font20grey,);
