@@ -8,6 +8,7 @@ import 'package:syrianadmin/components/constants.dart';
 import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
+import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 
 import '../../components/snackBar.dart';
@@ -46,8 +47,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
   });
 
 
-  final CollectionReference contact =
-  FirebaseFirestore.instance.collection('contact');
+
   @override
   Widget build(BuildContext context) {
     Text contact = Text(AppLocalizations.of(context)!.addDetails);
@@ -145,7 +145,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
         || email.text.isEmpty || phone.text.isEmpty) {
           showSnackBar(context, AppLocalizations.of(context)!.addThings);
         } else {
-          await contact.doc().set(
+          await dbColl.contact.doc().set(
             {
                   "place" : place.text,
                   "street name" : road.text,
