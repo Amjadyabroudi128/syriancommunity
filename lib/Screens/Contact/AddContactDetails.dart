@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:syrianadmin/components/Sizedbox.dart';
 import 'package:syrianadmin/components/SubmitButton.dart';
@@ -9,8 +8,6 @@ import 'package:syrianadmin/components/goBack.dart';
 import 'package:syrianadmin/components/icons.dart';
 import 'package:syrianadmin/components/padding.dart';
 import 'package:syrianadmin/core/FirebaseCollections.dart';
-import 'package:syrianadmin/core/themes/colors.dart';
-
 import '../../components/snackBar.dart';
 class AddContactDetails extends StatefulWidget {
   const AddContactDetails({Key? key}) : super(key: key);
@@ -74,9 +71,9 @@ class _AddContactDetailsState extends State<AddContactDetails> {
                   suffixIcon: place.text.isEmpty ? null :  IconButton(onPressed: place.clear, icon: myIcons.clear,)
               ),
               sizedBox(),
-              padding(child: Text(AppLocalizations.of(context)!.streetName)),
+              padding(child: Text("e.g eastern Road")),
               sizedBox(height: 2,),
-              CustomTextForm(hinttext: "e.g: Eastern Road",  myController: road,
+              CustomTextForm(label: Text(AppLocalizations.of(context)!.streetName),  myController: road,
                   suffixIcon: road.text.isEmpty? null : IconButton(onPressed: road.clear, icon: myIcons.clear)
               ),
               padding(child: Text(AppLocalizations.of(context)!.city)),
