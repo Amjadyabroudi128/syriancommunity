@@ -135,7 +135,7 @@ class _AddContactDetailsState extends State<AddContactDetails> {
     String title = AppLocalizations.of(context)!.submit;
     Color? btnClr = (place.text.isEmpty ) || (road.text.isEmpty)
         || (city.text.isEmpty) ||(postcode.text.isEmpty)
-        ||(email.text.isEmpty) || (phone.text.isEmpty) ? add : ColorManager.submit ;
+        ||(email.text.isEmpty) || (phone.text.isEmpty) ? add : submit ;
     return CustomButton(
       onPressed: () async{
         if (place.text.isEmpty || road.text.isEmpty
