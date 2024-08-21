@@ -123,11 +123,12 @@ class _AddContactDetailsState extends State<AddContactDetails> {
     email.clear();
   }
   cancelButton() {
+    String cnclTitle = AppLocalizations.of(context)!.cancel;
     return CustomButton(
       onPressed: (){
         Navigator.pop(context);
       },
-      title: AppLocalizations.of(context)!.cancel,
+      title: cnclTitle,
       color: cancelClr,
     );
   }
