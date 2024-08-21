@@ -17,6 +17,7 @@ import 'package:syrianadmin/core/FirebaseCollections.dart';
 import 'package:syrianadmin/core/themes/colors.dart';
 import 'package:syrianadmin/core/themes/fontSize.dart';
 import 'package:syrianadmin/enums.dart';
+import '../../components/AppSizing.dart';
 import '../../components/formatedData.dart';
 import '../SideDrawer.dart';
 import 'editHomePage.dart';
@@ -111,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           sizedBox(
-                            width: MediaQuery.of(context).size.width.w,
+                            width: AppSizing.myWidth(context).w,
                             child: IntrinsicHeight(
                               child: Card(
                                 child: padding(
