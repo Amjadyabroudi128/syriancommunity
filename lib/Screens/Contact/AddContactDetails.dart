@@ -81,9 +81,9 @@ class _AddContactDetailsState extends State<AddContactDetails> {
               CustomTextForm(label: Text(AppLocalizations.of(context)!.city), myController: city,
                   suffixIcon: city.text.isEmpty ? null : IconButton(onPressed: city.clear, icon: myIcons.clear)
               ),
-              padding(child: Text(AppLocalizations.of(context)!.postCode)),
+              padding(child: Text("postCode")),
               sizedBox(height: 7,),
-              CustomTextForm(hinttext: "e.g: BN2 OAL", myController: postcode,
+              CustomTextForm(label: Text(AppLocalizations.of(context)!.postCode), myController: postcode,
                   suffixIcon: postcode.text.isEmpty ? null : IconButton(onPressed: postcode.clear, icon: myIcons.clear)
               ),
               padding(child: Text(AppLocalizations.of(context)!.email)),
